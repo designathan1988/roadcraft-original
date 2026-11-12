@@ -1,0 +1,23 @@
+item5/u00-open-land-view: acted 6018 ms, settled +2 ms, frames 382 long 0 max 42.7 ms | heap 2245->1919 MB, total 13347->12783 MB
+item5/build-b1-draw-tab: acted 2497 ms, settled +1 ms, frames 175 long 0 max 11 ms | heap 1949->2012 MB, total 12783->12959 MB
+item5/build-b2-colours-tab: acted 1084 ms, settled +1 ms, frames 90 long 0 max 7.6 ms | heap 2037->2104 MB, total 13040->13098 MB
+item5/build-b3-models-search: acted 1731 ms, settled +2 ms, frames 129 long 0 max 12.6 ms | heap 2124->2193 MB, total 13208->13243 MB
+item5/build-b4-snap-and-hide-others: acted 2382 ms, settled +7 ms, frames 156 long 1 max 213.8 ms | heap 2210->1819 MB, total 13368->12696 MB
+item5/build-b5-place-tower: FAILED not on screen: Torre residencial | acted 3 ms, settled +1 ms, frames 25 long 0 max 5.6 ms | heap 1846->1902 MB, total 12732->12755 MB | still cpu p50 5 gpu p50 6.19 draws 137
+item5/build-b6-select-placed: acted 1646 ms, settled +1 ms, frames 124 long 0 max 9.8 ms | heap 1940->1982 MB, total 12878->12884 MB
+item5/build-b7-undo-redo: acted 2477 ms, settled +1 ms, frames 174 long 0 max 14.3 ms | heap 2027->2091 MB, total 11946->12080 MB
+item5/pole-01-network: acted 3477 ms, settled +1 ms, frames 234 long 0 max 23.4 ms | heap 2108->2192 MB, total 12127->12290 MB
+item5/pole-02-remove: acted 1252 ms, settled +1 ms, frames 99 long 0 max 11.9 ms | heap 2228->1816 MB, total 12347->11638 MB
+item5/streetscape-01-bench: acted 1241 ms, settled +7 ms, frames 100 long 0 max 25.2 ms | heap 1846->1891 MB, total 11719->11789 MB
+item5/streetscape-02-sign: acted 1231 ms, settled +1 ms, frames 98 long 0 max 14.8 ms | heap 1937->1987 MB, total 11870->11962 MB
+item5/streetscape-03-remove: acted 1232 ms, settled +1 ms, frames 99 long 0 max 15.1 ms | heap 2000->2043 MB, total 12017->12080 MB
+item5/barrier-01-fence-points-end: acted 2329 ms, settled +1 ms, frames 165 long 0 max 8 ms | heap 2072->2137 MB, total 12163->12238 MB
+item5/barrier-02-cancel: acted 1111 ms, settled +1 ms, frames 92 long 0 max 10.5 ms | heap 2177->2220 MB, total 12273->12303 MB
+item5/barrier-03-remove: acted 950 ms, settled +1 ms, frames 81 long 0 max 14.8 ms | heap 2252->1836 MB, total 12380->11696 MB
+item5/street-undo-redo: acted 2048 ms, settled +1 ms, frames 148 long 0 max 9.4 ms | heap 1878->1945 MB, total 11742->11830 MB
+item5/terrain-01-raise: acted 6766 ms, settled +2187 ms, frames 353 long 6 max 1737.3 ms | heap 1946->2196 MB, total 11890->13070 MB
+item5/terrain-02-lower: acted 5052 ms, settled +1 ms, frames 319 long 2 max 91.9 ms | heap 2202->2320 MB, total 12860->12539 MB
+item5/terrain-03-flatten: acted 4957 ms, settled +1 ms, frames 314 long 2 max 111.6 ms | heap 2362->2482 MB, total 12539->12584 MB
+item5/terrain-04-radius-strength-raise: acted 5792 ms, settled +1 ms, frames 365 long 1 max 77.9 ms | heap 2529->2636 MB, total 12603->12688 MB
+item5/terrain-05-river: acted 5551 ms, settled +1 ms, frames 330 long 2 max 331.7 ms | heap 2676->1948 MB, total 12671->11833 MB
+item5/terrain-06-gully: acted 5069 ms, settled +1 ms, frames 328 long 0 max 10.6 ms | heap 1987->2106 MB, total 11825->11947 MB

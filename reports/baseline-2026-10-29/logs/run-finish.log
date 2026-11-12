@@ -1,0 +1,109 @@
+item5/r00-open-land-view: acted 6557 ms, settled +11 ms, frames 378 long 3 max 212.1 ms | heap 2805->3060 MB, total 15020->15101 MB
+item5/terrain-07-mesa: acted 11608 ms, settled +null ms, frames 522 long 7 max 11342.8 ms | heap 3104->4013 MB, total 15106->15879 MB
+item5/terrain-08-sugarloaf: acted 6444 ms, settled +7983 ms, frames 118 long 23 max 2530.7 ms | heap 2611->3363 MB, total 15947->21293 MB
+item5/terrain-08b-canyon-escarpment: acted 7242 ms, settled +14184 ms, frames 283 long 7 max 206.7 ms | heap 3822->2436 MB, total 21773->15469 MB
+item5/terrain-08c-hardness: acted 999 ms, settled +1 ms, frames 85 long 0 max 11.1 ms | heap 2495->2546 MB, total 15695->15705 MB
+item5/terrain-09b-undo-redo: acted 2034 ms, settled +2 ms, frames 147 long 0 max 12.7 ms | heap 2575->2640 MB, total 15791->15875 MB
+item5/soil-01-paint-sand: acted 5135 ms, settled +1 ms, frames 332 long 0 max 37.9 ms | heap 2693->2830 MB, total 15911->16110 MB
+item5/soil-02-map-biome-cerrado: acted 3283 ms, settled +1 ms, frames 222 long 0 max 18.1 ms | heap 2849->2964 MB, total 16110->16293 MB | still cpu p50 8.4 gpu p50 7.92 draws 228
+item5/soil-03-map-biome-back: acted 3300 ms, settled +1 ms, frames 213 long 1 max 178.8 ms | heap 2993->2290 MB, total 16358->15470 MB
+item5/nature-01-plant-wood: acted 5457 ms, settled +1 ms, frames 319 long 0 max 21.5 ms | heap 2322->2413 MB, total 15538->15596 MB
+item5/nature-02-one-tree: acted 1381 ms, settled +1 ms, frames 27 long 0 max 18.9 ms | heap 2427->2451 MB, total 15596->15626 MB [INVALID: window minimised]
+item5/nature-03-cut-trees: acted 21239 ms, settled +1 ms, frames 97 long 0 max 22.1 ms | heap 2456->2236 MB, total 15636->15103 MB [INVALID: window minimised]
+item5/nature-04-flowers: acted 58193 ms, settled +1 ms, frames 93 long 0 max 40.8 ms | heap 2232->2304 MB, total 15095->15213 MB
+item5/nature-05-undo-redo: acted 2034 ms, settled +1 ms, frames 144 long 0 max 12.7 ms | heap 2331->2397 MB, total 15255->15328 MB
+item5/sky-01-create-cloud: acted 3013 ms, settled +1 ms, frames 206 long 0 max 12.6 ms | heap 2451->2573 MB, total 15378->15642 MB | still cpu p50 8.2 gpu p50 8.22 draws 216 [INVALID: window minimised]
+item5/sky-02-scatter-clouds: acted 2812 ms, settled +1 ms, frames 144 long 0 max 16.9 ms | heap 2602->2691 MB, total 15696->15845 MB | still cpu p50 8.5 gpu p50 7.17 draws 214
+item5/sky-03-clear-clouds: acted 1329 ms, settled +1 ms, frames 105 long 0 max 13.4 ms | heap 2709->2225 MB, total 15859->15965 MB
+item5/sky-04-fog-lay: acted 5619 ms, settled +2 ms, frames 358 long 0 max 41.9 ms | heap 2264->2435 MB, total 15141->15375 MB | still cpu p50 15.7 gpu p50 9.94 draws 217
+item5/sky-05-fog-clear: acted 1331 ms, settled +19 ms, frames 98 long 0 max 28.3 ms | heap 2440->2505 MB, total 15454->15483 MB
+item5/sky-06-weather-panel: acted 1357 ms, settled +15 ms, frames 100 long 0 max 24.7 ms | heap 2531->2653 MB, total 15552->15753 MB | still cpu p50 15.9 gpu p50 15.8 draws 226
+item5/sky-07-storm: FAILED not on screen: Tempestade | acted 33 ms, settled +17 ms, frames 28 long 0 max 16.6 ms | heap 2665->2736 MB, total 15803->15907 MB | still cpu p50 15.2 gpu p50 15.96 draws 212
+item5/sky-08-storm-off: FAILED not on screen: Tempestade | acted 34 ms, settled +17 ms, frames 28 long 0 max 19.1 ms | heap 2772->2252 MB, total 15907->15944 MB
+item5/sky-09-fire-smoke: acted 3036 ms, settled +15 ms, frames 194 long 0 max 23 ms | heap 2263->2383 MB, total 15099->15296 MB | still cpu p50 16.3 gpu p50 9.81 draws 225
+item5/sky-12-undo-redo: acted 2552 ms, settled +15 ms, frames 160 long 0 max 23 ms | heap 2431->2509 MB, total 15330->15446 MB
+item5/build-c1-place-tower: acted 7014 ms, settled +16 ms, frames 323 long 1 max 1378.9 ms | heap 2523->2321 MB, total 15539->15692 MB | still cpu p50 16.3 gpu p50 10.01 draws 253
+item5/build-c2-select-and-edit-tabs: acted 1707 ms, settled +18 ms, frames 114 long 0 max 33 ms | heap 2346->2412 MB, total 15359->15459 MB
+item5/build-c3-undo-redo: acted 2578 ms, settled +20 ms, frames 163 long 0 max 23.3 ms | heap 2466->2536 MB, total 15459->15612 MB
+item5/zone-09b-split-into-3: acted 3424 ms, settled +18 ms, frames 140 long 2 max 115.7 ms | heap 2583->2952 MB, total 15612->16166 MB
+item4/p25b-layer-congestion-on: acted 2634 ms, settled +20 ms, frames 152 long 0 max 27.1 ms | heap 3020->2292 MB, total 16177->15677 MB | still cpu p50 17.6 gpu p50 10.05 draws 227
+item4/p26b-layer-congestion-off: acted 851 ms, settled +20 ms, frames 66 long 0 max 23.6 ms | heap 2319->2369 MB, total 15683->15740 MB
+item4/p27b-layer-inside-on: acted 1865 ms, settled +15 ms, frames 94 long 1 max 669.8 ms | heap 2407->2488 MB, total 15822->15826 MB | still cpu p50 15.9 gpu p50 9.58 draws 224
+item4/p28b-layer-inside-off: acted 1601 ms, settled +19 ms, frames 113 long 0 max 24.6 ms | heap 2541->2588 MB, total 15826->15913 MB
+
+C-quality-low-retry: q=low frames 90 cpu p50 15.9 gpu p50 14.68 draws 343
+diagnose bairro: diag-2026-10-29T01-00-16.md, diag-2026-10-29T01-00-16.json
+{
+ "name": "ten-bairro",
+ "commands": 3895,
+ "draws": 1031,
+ "durationMs": 38848.044921875,
+ "top": [
+  [
+   "bindVertexArray",
+   760
+  ],
+  [
+   "drawElements",
+   654
+  ],
+  [
+   "uniformMatrix4fv",
+   596
+  ],
+  [
+   "bindTexture",
+   320
+  ],
+  [
+   "drawElementsInstanced",
+   307
+  ],
+  [
+   "activeTexture",
+   293
+  ],
+  [
+   "useProgram",
+   111
+  ],
+  [
+   "bindFramebuffer",
+   70
+  ],
+  [
+   "drawArrays",
+   65
+  ],
+  [
+   "bindBuffer",
+   64
+  ],
+  [
+   "bufferSubData",
+   64
+  ],
+  [
+   "texParameteri",
+   56
+  ],
+  [
+   "uniform4f",
+   50
+  ],
+  [
+   "scissor",
+   49
+  ],
+  [
+   "
+
+F-idle-minimised: frames 384, all 15478 MB, gpu 55%
+{"step":"before","window":"handle=263016 iconic=False zoomed=False foreground=False rect=0,0,1936,1032","innerW":1920,"innerH":993,"dpr":1,"canvas":[1920,993,1920,993],"targetMB":246.2,"textureMB":664.8,"glTextures":519,"gl":{"createTexture":0,"deleteTexture":0,"createFramebuffer":0,"deleteFramebuffer":0,"texStorage2D":0,"texStorageTexels":0,"renderbufferStorage":0,"rbTexels":0}}
+{"step":"restored (un-maximised)","window":"handle=263016 iconic=False zoomed=False foreground=False rect=0,0,1936,1032","innerW":1920,"innerH":993,"dpr":1,"canvas":[1920,993,1920,993],"targetMB":246.2,"textureMB":664.8,"glTextures":519,"gl":{"createTexture":0,"deleteTexture":0,"createFramebuffer":0,"deleteFramebuffer":0,"texStorage2D":0,"texStorageTexels":0,"renderbufferStorage":0,"rbTexels":0}}
+{"step":"1 px narrower","window":"handle=263016 iconic=False zoomed=False foreground=False rect=0,0,1935,1032","innerW":1919,"innerH":993,"dpr":1,"canvas":[1919,993,1919,993],"targetMB":246.1,"textureMB":664.8,"glTextures":519,"gl":{"createTexture":0,"deleteTexture":0,"createFramebuffer":0,"deleteFramebuffer":0,"texStorage2D":0,"texStorageTexels":0,"renderbufferStorage":0,"rbTexels":0}}
+{"step":"maximised","window":"handle=263016 iconic=False zoomed=True foreground=False rect=-8,-8,2568,1040","innerW":2560,"innerH":1009,"dpr":1,"canvas":[2560,1009,2560,1009],"targetMB":311,"textureMB":664.8,"glTextures":519,"gl":{"createTexture":0,"deleteTexture":0,"createFramebuffer":0,"deleteFramebuffer":0,"texStorage2D":0,"texStorageTexels":0,"renderbufferStorage":0,"rbTexels":0}}
+{"step":"restored","window":"handle=263016 iconic=False zoomed=False foreground=False rect=0,0,1935,1032","innerW":1919,"innerH":993,"dpr":1,"canvas":[1919,993,1919,993],"targetMB":246.1,"textureMB":664.8,"glTextures":519,"gl":{"createTexture":0,"deleteTexture":0,"createFramebuffer":0,"deleteFramebuffer":0,"texStorage2D":0,"texStorageTexels":0,"renderbufferStorage":0,"rbTexels":0}}
+{"step":"maximised again (as measured)","window":"handle=263016 iconic=False zoomed=True foreground=False rect=-8,-8,2568,1040","innerW":2560,"innerH":1009,"dpr":1,"canvas":[2560,1009,2560,1009],"targetMB":311,"textureMB":664.8,"glTextures":519,"gl":{"createTexture":0,"deleteTexture":0,"createFramebuffer":0,"deleteFramebuffer":0,"texStorage2D":0,"texStorageTexels":0,"renderbufferStorage":0,"rbTexels":0}}
+
+FINISH-EXIT 127

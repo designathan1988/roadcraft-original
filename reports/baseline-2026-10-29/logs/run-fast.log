@@ -1,0 +1,222 @@
+A-still-rua: frames 180 >50ms 0 cpu p50 9.4 max 19.1 | gpu p50 7.71 max 8.2 | draws 328 tris 4165470 | progs +0 | up 22 MB | detail 0 MB | all 15381 MB
+A-still-perto: frames 165 >50ms 0 cpu p50 13 max 32.6 | gpu p50 7.29 max 12.45 | draws 349 tris 2955292 | progs +0 | up 48 MB | detail 0 MB | all 15381 MB
+A-still-bairro: frames 162 >50ms 1 cpu p50 12.2 max 124.5 | gpu p50 8.39 max 13.55 | draws 353 tris 3310406 | progs +0 | up 58 MB | detail 0 MB | all 0 MB
+A-still-longe: frames 65 >50ms 10 cpu p50 25.4 max 443.9 | gpu p50 14.15 max 143.94 | draws 352 tris 8241673 | progs +0 | up 35 MB | detail 0 MB | all 0 MB
+A-still-cidade: frames 40 >50ms 1 cpu p50 16.6 max 317.3 | gpu p50 19.31 max 81.81 | draws 186 tris 9344059 | progs +0 | up 24 MB | detail 0 MB | all 0 MB
+A-bairro-min-N: frames 17 >50ms 17 cpu p50 105.4 max 1078.1 | gpu p50 28.87 max 81.06 | draws 785 tris 14010823 | progs +0 | up 28 MB | detail 0 MB | all 0 MB
+A-bairro-max-N: frames 168 >50ms 1 cpu p50 11.4 max 124.8 | gpu p50 7.04 max 8.39 | draws 303 tris 2168292 | progs +0 | up 51 MB | detail 0 MB | all 0 MB
+A-bairro-mid-E: frames 179 >50ms 0 cpu p50 10.9 max 25.6 | gpu p50 7.87 max 8.7 | draws 376 tris 3008076 | progs +0 | up 49 MB | detail 0 MB | all 0 MB
+A-bairro-mid-S: frames 180 >50ms 0 cpu p50 10.5 max 23.6 | gpu p50 7.94 max 8.36 | draws 383 tris 3010834 | progs +0 | up 53 MB | detail 0 MB | all 0 MB
+A-bairro-mid-W: frames 171 >50ms 0 cpu p50 11.5 max 27.1 | gpu p50 8.07 max 8.89 | draws 393 tris 3208800 | progs +0 | up 48 MB | detail 0 MB | all 0 MB
+A-bairro-ortho: frames 177 >50ms 0 cpu p50 13.9 max 22 | gpu p50 7.42 max 10.29 | draws 375 tris 2736540 | progs +0 | up 48 MB | detail 0 MB | all 0 MB
+A-move-panSlow: frames 306 >50ms 0 cpu p50 16.2 max 48 | gpu p50 7.96 max 12.83 | draws 373 tris 3287190 | progs +0 | up 84 MB | detail 0 MB | all 0 MB
+A-move-panFast: frames 140 >50ms 13 cpu p50 29.2 max 93.4 | gpu p50 12.3 max 182.68 | draws 883 tris 11700456 | progs +0 | up 140 MB | detail 0 MB | all 0 MB
+A-move-panKeys: frames 70 >50ms 15 cpu p50 22.6 max 254.1 | gpu p50 11 max 205.44 | draws 190 tris 2356930 | progs +0 | up 107 MB | detail 0 MB | all 0 MB
+A-move-orbit: frames 160 >50ms 38 cpu p50 36.6 max 307.9 | gpu p50 16 max 170.81 | draws 432 tris 4230067 | progs +0 | up 375 MB | detail 0 MB | all 0 MB
+A-move-zoomIn: frames 194 >50ms 21 cpu p50 27.6 max 128.8 | gpu p50 14.53 max 43.91 | draws 557 tris 10003643 | progs +0 | up 275 MB | detail 0 MB | all 0 MB
+A-move-zoomOut: frames 98 >50ms 79 cpu p50 121.3 max 821.8 | gpu p50 48.02 max 518.69 | draws 706 tris 37081191 | progs +0 | up 190 MB | detail 0 MB | all 0 MB
+A-move-tilt: frames 169 >50ms 12 cpu p50 15.7 max 124.7 | gpu p50 7.25 max 27.94 | draws 960 tris 18356658 | progs +0 | up 152 MB | detail 0 MB | all 0 MB
+A-move-turn90: frames 151 >50ms 10 cpu p50 16.6 max 124 | gpu p50 7.53 max 33.18 | draws 388 tris 3030708 | progs +0 | up 304 MB | detail 0 MB | all 0 MB
+A-move-homeCentreReset: frames 212 >50ms 17 cpu p50 11.2 max 83.7 | gpu p50 16.44 max 84.66 | draws 209 tris 11600638 | progs +0 | up 47 MB | detail 0 MB | all 0 MB
+A-move-zoomOut-street-to-city: frames 194 >50ms 106 cpu p50 58.5 max 367.3 | gpu p50 19.12 max 272.15 | draws 732 tris 40627590 | progs +0 | up 380 MB | detail 0 MB | all 0 MB
+trace saved
+FAST-EXIT 127
+lap 1: heap 4832.9 MB, all 21075 MB, vram 4117
+lap 2: heap 2959.3 MB, all 16891 MB, vram 4172
+lap 3: heap 2186.8 MB, all 15421 MB, vram 4180
+B-sim-1: frames 229 >50ms 0 cpu p50 9.5 max 22.5 | gpu p50 11.51 max 18.47 | draws 362 tris 3159555 | progs +0 | up 30 MB | detail 0 MB | all 15298 MB
+B-sim-1: {"stepMs":3.2651133092764444,"vehicles":269,"people":44,"workers":19,"busy":1,"waiting":11,"jobsPerS":80.4,"msgsOutPerS":128,"msgBytesOutPerS":0}
+B-sim-pause: frames 301 >50ms 0 cpu p50 9.8 max 16.2 | gpu p50 11.57 max 14.19 | draws 364 tris 3160436 | progs +0 | up 29 MB | detail 0 MB | all 15633 MB
+B-sim-pause: {"stepMs":9.673763677527297,"vehicles":271,"people":44,"workers":19,"busy":1,"waiting":10,"jobsPerS":100.4,"msgsOutPerS":161.6,"msgBytesOutPerS":0}
+B-sim-2: frames 301 >50ms 0 cpu p50 10.6 max 16.9 | gpu p50 11.43 max 14.58 | draws 366 tris 3174559 | progs +0 | up 64 MB | detail 0 MB | all 15892 MB
+B-sim-2: {"stepMs":3.7400217836552314,"vehicles":423,"people":72,"workers":19,"busy":1,"waiting":10,"jobsPerS":98.2,"msgsOutPerS":159.6,"msgBytesOutPerS":0}
+B-sim-4: frames 299 >50ms 0 cpu p50 11.3 max 19.7 | gpu p50 8.01 max 16.97 | draws 374 tris 3182069 | progs +0 | up 95 MB | detail 0 MB | all 15084 MB
+B-sim-4: {"stepMs":4.388520141157657,"vehicles":498,"people":110,"workers":19,"busy":1,"waiting":10,"jobsPerS":102.6,"msgsOutPerS":158.8,"msgBytesOutPerS":0}
+C-quality-low: frames 0 >50ms 0 cpu p50 0 max 0 | gpu p50 0 max 0 | draws 326 tris 3027824 | progs +0 | up 0 MB | detail 0 MB | all 14861 MB
+C-quality-medium: frames 165 >50ms 1 cpu p50 10.1 max 191.3 | gpu p50 5.74 max 191.98 | draws 361 tris 3180334 | progs +1 | up 19 MB | detail 0 MB | all 14562 MB
+C-quality-high: frames 181 >50ms 0 cpu p50 9.4 max 19.5 | gpu p50 7.19 max 8.1 | draws 370 tris 3180579 | progs +0 | up 50 MB | detail 0 MB | all 14993 MB
+C-option-Sombras=Sem_sombras: frames 111 >50ms 1 cpu p50 9.4 max 160.2 | gpu p50 8.18 max 117.76 | draws 372 tris 3178199 | progs +4 | up 6 MB | detail 0 MB | all 14525 MB
+C-option-Sombras=Baixas: frames 120 >50ms 0 cpu p50 10.4 max 20.5 | gpu p50 8.14 max 9.37 | draws 373 tris 3180963 | progs +0 | up 28 MB | detail 0 MB | all 14758 MB
+C-option-Sombras=Médias: frames 121 >50ms 0 cpu p50 11.2 max 19.9 | gpu p50 8.28 max 9.82 | draws 374 tris 3180719 | progs +0 | up 37 MB | detail 0 MB | all 14882 MB
+C-option-Sombras=Altas: frames 121 >50ms 0 cpu p50 9.7 max 17.7 | gpu p50 8.38 max 8.76 | draws 377 tris 3180789 | progs +0 | up 25 MB | detail 0 MB | all 15254 MB
+C-option-Oclusão_de_ambiente=Desligado: frames 121 >50ms 0 cpu p50 9.7 max 16.3 | gpu p50 6.14 max 8.25 | draws 372 tris 3179601 | progs +0 | up 30 MB | detail 0 MB | all 15239 MB
+C-option-Oclusão_de_ambiente=Ligado: frames 116 >50ms 1 cpu p50 10.3 max 50.8 | gpu p50 8.04 max 9.23 | draws 374 tris 3180301 | progs +0 | up 30 MB | detail 0 MB | all 15340 MB
+C-option-Suavização_de_bordas_SMAA_=Desligado: frames 121 >50ms 0 cpu p50 9.6 max 13.5 | gpu p50 7.69 max 8.44 | draws 371 tris 3179980 | progs +0 | up 29 MB | detail 0 MB | all 14753 MB
+C-option-Suavização_de_bordas_SMAA_=Ligado: frames 120 >50ms 0 cpu p50 10 max 21.3 | gpu p50 8.01 max 8.74 | draws 374 tris 3179735 | progs +0 | up 30 MB | detail 0 MB | all 14899 MB
+C-option-Resolução_dinâmica=Desligado: frames 121 >50ms 0 cpu p50 10.8 max 18.5 | gpu p50 8.02 max 8.97 | draws 374 tris 3179643 | progs +0 | up 30 MB | detail 0 MB | all 14942 MB
+C-option-Resolução_dinâmica=Ligado: frames 122 >50ms 0 cpu p50 10.3 max 18.9 | gpu p50 8.01 max 9.64 | draws 374 tris 3179439 | progs +0 | up 28 MB | detail 0 MB | all 15005 MB
+C-option-Limite_de_quadros_por_segundo=Sem_limite: frames 121 >50ms 0 cpu p50 10.2 max 19.8 | gpu p50 8.01 max 8.72 | draws 374 tris 3179265 | progs +0 | up 29 MB | detail 0 MB | all 14403 MB
+C-option-Limite_de_quadros_por_segundo=30: frames 60 >50ms 0 cpu p50 9.9 max 22.3 | gpu p50 8.53 max 11.76 | draws 374 tris 3179271 | progs +0 | up 17 MB | detail 0 MB | all 14517 MB
+C-option-Limite_de_quadros_por_segundo=60: frames 120 >50ms 0 cpu p50 10.3 max 20.2 | gpu p50 8.53 max 10.37 | draws 374 tris 3178111 | progs +0 | up 29 MB | detail 0 MB | all 14557 MB
+C-option-Limite_de_quadros_por_segundo=120: frames 121 >50ms 0 cpu p50 9.1 max 13.8 | gpu p50 8.03 max 9.04 | draws 374 tris 3177781 | progs +0 | up 28 MB | detail 0 MB | all 14724 MB
+C-option-Limite_de_quadros_por_segundo=144: frames 120 >50ms 0 cpu p50 9.4 max 20 | gpu p50 8.02 max 9.01 | draws 374 tris 3177659 | progs +0 | up 28 MB | detail 0 MB | all 14718 MB
+C-option-Tela_cheia=Desligado: frames 121 >50ms 0 cpu p50 9.1 max 12.7 | gpu p50 7.99 max 8.85 | draws 374 tris 3178059 | progs +0 | up 33 MB | detail 0 MB | all 14870 MB
+C-option-Tela_cheia=Ligado: frames 0 >50ms 0 cpu p50 0 max 0 | gpu p50 0 max 0 | draws 438 tris 5067665 | progs +0 | up 0 MB | detail 43.6 MB | all 15529 MB
+diagnose bairro: Error: no Measure now
+{
+ "name": "ten-bairro",
+ "commands": 2340,
+ "draws": 376,
+ "durationMs": 7982.530029296875,
+ "top": [
+  [
+   "bindTexture",
+   343
+  ],
+  [
+   "bindVertexArray",
+   339
+  ],
+  [
+   "activeTexture",
+   321
+  ],
+  [
+   "uniformMatrix4fv",
+   283
+  ],
+  [
+   "drawElements",
+   182
+  ],
+  [
+   "drawElementsInstanced",
+   161
+  ],
+  [
+   "useProgram",
+   68
+  ],
+  [
+   "bindBuffer",
+   66
+  ],
+  [
+   "bufferSubData",
+   66
+  ],
+  [
+   "bindFramebuffer",
+   62
+  ],
+  [
+   "depthMask",
+   44
+  ],
+  [
+   "scissor",
+   36
+  ],
+  [
+   "viewport",
+   34
+  ],
+  [
+   "disable",
+   32
+  ],
+  [
+   "enable",
+
+item4/p00-reference-district-closed: acted 11 ms, settled +1 ms, frames 26 long 0 max 18 ms | heap 3117->3196 MB, total 15187->15208 MB | still cpu p50 10.1 gpu p50 8.22 draws 374
+item4/p01-menu-open: acted 341 ms, settled +1 ms, frames 45 long 0 max 19.8 ms | heap 3211->3316 MB, total 15411->15526 MB | still cpu p50 12.8 gpu p50 8.46 draws 374
+item4/p02-menu-newMap-confirm-dismissed: acted 1140 ms, settled +1 ms, frames 94 long 0 max 16.3 ms | heap 2279->2316 MB, total 15655->14618 MB
+item4/p03-menu-newWorld-confirm-dismissed: acted 1446 ms, settled +17 ms, frames 112 long 0 max 21.1 ms | heap 2370->2427 MB, total 14618->14802 MB
+item4/p04-menu-newLargeWorld-confirm-dismissed: acted 1413 ms, settled +1 ms, frames 109 long 0 max 19.8 ms | heap 2471->2528 MB, total 14822->14912 MB
+item4/p05-menu-quality-row: acted 633 ms, settled +1 ms, frames 59 long 0 max 25.2 ms | heap 2554->2600 MB, total 15044->15059 MB
+item4/p06-menu-language-english: acted 1160 ms, settled +1 ms, frames 94 long 0 max 17 ms | heap 2650->2703 MB, total 15195->15320 MB
+item4/p07-menu-language-portugues: acted 1100 ms, settled +1 ms, frames 91 long 0 max 16.1 ms | heap 2750->2807 MB, total 15320->15538 MB
+item4/p08-menu-paint-us: acted 1871 ms, settled +1 ms, frames 131 long 0 max 39.3 ms | heap 2264->2329 MB, total 15605->14734 MB
+item4/p09-menu-paint-eu: acted 1826 ms, settled +1 ms, frames 134 long 0 max 23.9 ms | heap 2371->2423 MB, total 14801->14967 MB
+item4/p10-menu-paint-classic: acted 1828 ms, settled +15 ms, frames 136 long 0 max 19.3 ms | heap 2478->2545 MB, total 14967->15109 MB
+item4/p11-menu-paint-br: acted 1799 ms, settled +1 ms, frames 133 long 0 max 20 ms | heap 2578->2648 MB, total 15133->15292 MB
+item4/p12-menu-about: acted 813 ms, settled +1 ms, frames 74 long 0 max 18.1 ms | heap 2676->2770 MB, total 15299->15429 MB | still cpu p50 12.4 gpu p50 8.51 draws 374
+item4/p13-about-closed: acted 532 ms, settled +1 ms, frames 57 long 0 max 13.6 ms | heap 2805->2858 MB, total 15520->15625 MB
+item4/p14-graphics-options: acted 1137 ms, settled +20 ms, frames 85 long 1 max 74.3 ms | heap 2891->2323 MB, total 15689->14790 MB | still cpu p50 12.3 gpu p50 8.32 draws 374
+item4/p15-graphics-options-closed: acted 557 ms, settled +1 ms, frames 59 long 0 max 16.8 ms | heap 2352->2397 MB, total 14845->14927 MB
+item4/p16-effects-panel-F7: acted 1050 ms, settled +16 ms, frames 86 long 0 max 18.4 ms | heap 2442->2537 MB, total 14980->15238 MB | still cpu p50 12.3 gpu p50 8.44 draws 374
+item4/p17-effects-panel-closed: acted 552 ms, settled +15 ms, frames 59 long 0 max 16.7 ms | heap 2561->2620 MB, total 15332->15379 MB
+item4/p18-menu-closed: acted 231 ms, settled +1 ms, frames 39 long 0 max 15.7 ms | heap 2642->2686 MB, total 15423->15480 MB
+item4/p20-layers-open: acted 634 ms, settled +1 ms, frames 63 long 0 max 15 ms | heap 2713->2816 MB, total 15480->15647 MB | still cpu p50 11.5 gpu p50 8.22 draws 374
+item4/p21-layer-grid-on: acted 1203 ms, settled +1 ms, frames 87 long 1 max 63 ms | heap 2850->2347 MB, total 15724->14869 MB | still cpu p50 12.4 gpu p50 8.22 draws 374
+item4/p22-layer-grid-off: acted 831 ms, settled +1 ms, frames 76 long 0 max 16.9 ms | heap 2394->2439 MB, total 15003->15028 MB
+item4/p23-layer-zone-colours-on: acted 1124 ms, settled +12 ms, frames 94 long 0 max 15.9 ms | heap 2471->2575 MB, total 15163->15246 MB | still cpu p50 11.4 gpu p50 8.21 draws 374
+item4/p24-layer-zone-colours-off: acted 799 ms, settled +1 ms, frames 72 long 0 max 13.5 ms | heap 2603->2656 MB, total 15338->15407 MB
+item4/p25-layer-congestion-on: FAILED not on screen: Mapa de congestionamento | acted 31 ms, settled +14 ms, frames 28 long 0 max 15.9 ms | heap 2683->2773 MB, total 15494->15667 MB | still cpu p50 12.4 gpu p50 8.21 draws 374
+item4/p26-layer-congestion-off: FAILED not on screen: Mapa de congestionamento | acted 19 ms, settled +1 ms, frames 26 long 0 max 14.1 ms | heap 2795->2848 MB, total 15770->15832 MB
+item4/p27-layer-inside-on: FAILED not on screen: Interior dos prédios | acted 33 ms, settled +14 ms, frames 29 long 0 max 14.8 ms | heap 2272->2363 MB, total 15832->15011 MB | still cpu p50 11.6 gpu p50 8.21 draws 374
+item4/p28-layer-inside-off: FAILED not on screen: Interior dos prédios | acted 17 ms, settled +13 ms, frames 27 long 0 max 14.6 ms | heap 2377->2427 MB, total 15078->15184 MB
+item4/p29-layers-closed: acted 216 ms, settled +1 ms, frames 38 long 0 max 12.4 ms | heap 2469->2514 MB, total 15209->15343 MB
+item4/p30-simulation-open: acted 816 ms, settled +1 ms, frames 74 long 0 max 13.9 ms | heap 2550->2631 MB, total 15343->15480 MB | still cpu p50 11.3 gpu p50 8.22 draws 374
+item4/p31-demand-low: acted 1816 ms, settled +1 ms, frames 134 long 0 max 16.8 ms | heap 2672->2730 MB, total 15542->15732 MB
+item4/p32-demand-peak: acted 1819 ms, settled +1 ms, frames 133 long 0 max 19.6 ms | heap 2773->2289 MB, total 15780->15512 MB | still cpu p50 11.6 gpu p50 8.22 draws 374
+item4/p33-demand-normal: acted 1323 ms, settled +1 ms, frames 105 long 0 max 15.5 ms | heap 2319->2367 MB, total 15036->15140 MB
+item4/p34-simulation-closed: acted 252 ms, settled +2 ms, frames 39 long 0 max 23 ms | heap 2415->2472 MB, total 15261->15295 MB
+item4/p40-camera-open: acted 846 ms, settled +1 ms, frames 76 long 0 max 19 ms | heap 2487->2583 MB, total 15357->15545 MB | still cpu p50 11.2 gpu p50 8.22 draws 374
+item4/p41-camera-turn-left: acted 1544 ms, settled +1 ms, frames 113 long 1 max 61.1 ms | heap 2607->2678 MB, total 15592->15770 MB
+item4/p42-camera-turn-right: acted 1544 ms, settled +1 ms, frames 118 long 0 max 18.2 ms | heap 2712->2777 MB, total 15869->15931 MB
+item4/p43-camera-tilt-down: acted 1507 ms, settled +71 ms, frames 100 long 2 max 132.1 ms | heap 2837->2307 MB, total 15963->15270 MB
+item4/p44-camera-tilt-up: acted 1513 ms, settled +1 ms, frames 116 long 0 max 18 ms | heap 2339->2405 MB, total 15366->15422 MB
+item4/p45-camera-north: acted 1481 ms, settled +null ms, frames 9 long 1 max 104.9 ms | heap 2416->2240 MB, total 15471->15164 MB
+item4/p46-camera-perspective-off: acted 1797 ms, settled +null ms, frames 5 long 1 max 144 ms | heap 2240->2275 MB, total 15164->14442 MB | still cpu p50 0 gpu p50 0 draws 360
+item4/p47-camera-perspective-on: acted 1784 ms, settled +1 ms, frames 117 long 2 max 85.8 ms | heap 2278->2464 MB, total 14359->14647 MB
+item4/p48-camera-frame: acted 2817 ms, settled +1 ms, frames 92 long 19 max 229.2 ms | heap 2507->2944 MB, total 14647->15034 MB
+item4/p49-camera-closed: acted 229 ms, settled +1 ms, frames 38 long 0 max 15.9 ms | heap 3082->2396 MB, total 15041->15285 MB
+item4/p50-help-open: acted 813 ms, settled +1 ms, frames 74 long 0 max 14.3 ms | heap 2540->2885 MB, total 14847->15021 MB | still cpu p50 9.8 gpu p50 16.08 draws 216
+item4/p51-help-closed: acted 220 ms, settled +1 ms, frames 38 long 0 max 17.7 ms | heap 3021->3178 MB, total 15021->15137 MB
+item4/p52-compass-click: acted 1813 ms, settled +1 ms, frames 95 long 8 max 123.3 ms | heap 3304->2521 MB, total 15355->15331 MB
+item4/p53-F9-monitor: acted 1030 ms, settled +1 ms, frames 87 long 0 max 17.6 ms | heap 2648->2995 MB, total 15331->15041 MB | still cpu p50 9.4 gpu p50 16.18 draws 200
+item4/p54-F9-monitor-closed: acted 217 ms, settled +1 ms, frames 38 long 0 max 12.1 ms | heap 3133->3297 MB, total 15121->15346 MB
+item4/p54a-profiler-HUD-ShiftF9: acted 1018 ms, settled +1 ms, frames 80 long 1 max 52 ms | heap 3430->2640 MB, total 15533->15062 MB | still cpu p50 10.2 gpu p50 16.33 draws 200
+item4/p54b-profiler-HUD-closed: acted 219 ms, settled +10 ms, frames 39 long 0 max 10.7 ms | heap 2766->2941 MB, total 15144->15144 MB
+item4/p55-F8-changes: acted 1038 ms, settled +11 ms, frames 87 long 0 max 20.1 ms | heap 3074->3433 MB, total 15195->15401 MB | still cpu p50 10 gpu p50 16.35 draws 200
+item4/p56-F8-changes-off: acted 227 ms, settled +2 ms, frames 36 long 0 max 22.7 ms | heap 2400->2562 MB, total 15643->15246 MB
+item4/p57-sky-night: acted 2823 ms, settled +12 ms, frames 192 long 0 max 27.2 ms | heap 2710->3181 MB, total 15313->15380 MB | still cpu p50 10.8 gpu p50 16.53 draws 245
+item4/p58-sky-daynight: acted 2828 ms, settled +1 ms, frames 191 long 1 max 52.7 ms | heap 3312->2734 MB, total 15380->15237 MB | still cpu p50 9.9 gpu p50 16.4 draws 200
+item4/p59-sky-day: acted 2805 ms, settled +1 ms, frames 193 long 0 max 20.6 ms | heap 2841->3206 MB, total 15359->15395 MB
+item4/p60-info-inspect-drawer: acted 790 ms, settled +12 ms, frames 66 long 1 max 72.3 ms | heap 3321->2632 MB, total 15448->15258 MB | still cpu p50 9.7 gpu p50 16.2 draws 200
+item4/p61-inspect-pick-road: acted 1366 ms, settled +2 ms, frames 107 long 0 max 24.2 ms | heap 2750->3146 MB, total 15258->15372 MB | still cpu p50 9.8 gpu p50 16.35 draws 200
+item4/p62-inspect-closed: acted 450 ms, settled +1 ms, frames 52 long 0 max 15.9 ms | heap 3276->2404 MB, total 15372->15484 MB
+item4/p63-roads-drawer-catalog: acted 1133 ms, settled +1 ms, frames 93 long 0 max 18.3 ms | heap 2574->2917 MB, total 15180->15251 MB | still cpu p50 9.9 gpu p50 16.26 draws 200
+item4/p64-roads-drawer-closed: acted 430 ms, settled +1 ms, frames 51 long 0 max 11.7 ms | heap 3056->3244 MB, total 15382->15420 MB
+item4/p65-zones-drawer: acted 1204 ms, settled +23 ms, frames 81 long 2 max 101 ms | heap 3353->2633 MB, total 15563->15483 MB | still cpu p50 10.4 gpu p50 16.13 draws 200
+item4/p66-zones-closed: acted 443 ms, settled +2 ms, frames 52 long 0 max 12.2 ms | heap 2779->2972 MB, total 15483->15477 MB
+item4/p67-build-drawer-workspace: acted 1847 ms, settled +1 ms, frames 133 long 0 max 23.6 ms | heap 3123->2480 MB, total 15610->15497 MB | still cpu p50 10 gpu p50 16.35 draws 200
+item4/p68-build-closed: acted 447 ms, settled +1 ms, frames 52 long 0 max 11.7 ms | heap 2639->2845 MB, total 15497->15478 MB
+item4/p69-landscape-drawer: acted 1172 ms, settled +2 ms, frames 94 long 0 max 24.1 ms | heap 2985->3407 MB, total 15560->15536 MB | still cpu p50 9.6 gpu p50 16.29 draws 200
+item4/p70-landscape-closed: acted 431 ms, settled +2 ms, frames 51 long 0 max 14.9 ms | heap 2435->2618 MB, total 15402->15434 MB
+item4/p71-transit-drawer: acted 1102 ms, settled +1 ms, frames 90 long 0 max 25.2 ms | heap 2783->3200 MB, total 15478->15448 MB | still cpu p50 9.4 gpu p50 16.34 draws 200
+item4/p72-transit-closed: acted 430 ms, settled +16 ms, frames 49 long 1 max 62 ms | heap 3348->2463 MB, total 15448->15606 MB
+item4/p73-demolish-drawer: acted 1083 ms, settled +1 ms, frames 90 long 0 max 13.3 ms | heap 2641->3062 MB, total 15340->15410 MB | still cpu p50 9.9 gpu p50 16.2 draws 200
+item4/p74-demolish-closed: acted 447 ms, settled +1 ms, frames 52 long 0 max 15.4 ms | heap 3206->3416 MB, total 15450->15552 MB
+
+E item5-tools.json stopped: Error: spawnSync node ETIMEDOUT
+{
+ "label": "ten-panels-tools",
+ "threads": 28,
+ "saved": 56,
+ "failures": []
+}
+
+node:internal/process/promises:394
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+ProtocolError: Protocol error (Page.handleJavaScriptDialog): No dialog is showing
+    at C:\Users\Jonathan\Documents\Projects\city\roadcraft\node_modules\playwright-core\lib\coreBundle.js:34783:61
+    at new Promise (<anonymous>)
+    at _CRSession.send (C:\Users\Jonathan\Documents\Projects\city\roadcraft\node_modules\playwright-core\lib\coreBundle.js:34782:16)
+    at Dialog._onHandle (C:\Users\Jonathan\Documents\Projects\city\roadcraft\node_modules\playwright-core\lib\coreBundle.js:37653:32)
+    at Dialog._dismiss (C:\Users\Jonathan\Documents\Projects\city\roadcraft\node_modules\playwright-core\lib\coreBundle.js:12960:20)
+    at Dialog._close (C:\Users\Jonathan\Documents\Projects\city\roadcraft\node_modules\playwright-core\lib\coreBundle.js:12966:22)
+    at DialogManager.dialogDidOpen (C:\Users\Jonathan\Documents\Projects\city\roadcraft\node_modules\playwright-core\lib\coreBundle.js:12986:18)
+    at _FrameSession._onDialog (C:\Users\Jonathan\Documents\Projects\city\roadcraft\node_modules\playwright-core\lib\coreBundle.js:37646:49)
+    at _CRSession.<anonymous> (C:\Users\Jonathan\Documents\Projects\city\roadcraft\node_modules\playwright-core\lib\coreBundle.js:37320:103)
+    at _CRSession.emit (node:events:514:28) {
+  type: 'error',
+  method: 'Page.handleJavaScriptDialog',
+  logs: undefined
+}
+
+Node.js v24.22.0
+FAST-EXIT 1

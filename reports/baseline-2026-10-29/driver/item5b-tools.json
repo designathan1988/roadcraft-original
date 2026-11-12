@@ -1,0 +1,1314 @@
+[
+ {
+  "name": "item5/u00-open-land-view",
+  "do": [
+   {
+    "view": {
+     "x": 8600,
+     "y": 0,
+     "zoom": 2.5,
+     "az": 0,
+     "el": 55
+    },
+    "settle": 6000
+   }
+  ]
+ },
+ {
+  "name": "item5/build-b1-draw-tab",
+  "do": [
+   {
+    "key": "h",
+    "code": "KeyH"
+   },
+   {
+    "wait": 1200
+   },
+   {
+    "click": "Desenhar"
+   },
+   {
+    "wait": 800
+   }
+  ]
+ },
+ {
+  "name": "item5/build-b2-colours-tab",
+  "do": [
+   {
+    "click": "Cores"
+   },
+   {
+    "wait": 800
+   }
+  ]
+ },
+ {
+  "name": "item5/build-b3-models-search",
+  "do": [
+   {
+    "click": "Modelos"
+   },
+   {
+    "sel": "input[type=search], input[placeholder]"
+   },
+   {
+    "type": "casa"
+   },
+   {
+    "wait": 1000
+   }
+  ]
+ },
+ {
+  "name": "item5/build-b4-snap-and-hide-others",
+  "do": [
+   {
+    "click": "Encaixe"
+   },
+   {
+    "wait": 500
+   },
+   {
+    "key": "Escape",
+    "code": "Escape"
+   },
+   {
+    "click": "Ocultar outros"
+   },
+   {
+    "wait": 800
+   },
+   {
+    "click": "Ocultar outros"
+   }
+  ]
+ },
+ {
+  "name": "item5/build-b5-place-tower",
+  "do": [
+   {
+    "click": "Torre residencial"
+   },
+   {
+    "wait": 800
+   },
+   {
+    "at": [
+     1500,
+     520
+    ]
+   },
+   {
+    "wait": 2500
+   }
+  ],
+  "still": 2000
+ },
+ {
+  "name": "item5/build-b6-select-placed",
+  "do": [
+   {
+    "at": [
+     1500,
+     500
+    ]
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item5/build-b7-undo-redo",
+  "do": [
+   {
+    "key": "z",
+    "code": "KeyZ",
+    "mods": 2
+   },
+   {
+    "wait": 800
+   },
+   {
+    "key": "y",
+    "code": "KeyY",
+    "mods": 2
+   },
+   {
+    "wait": 800
+   },
+   {
+    "key": "Escape",
+    "code": "Escape"
+   },
+   {
+    "key": "Escape",
+    "code": "Escape"
+   }
+  ]
+ },
+ {
+  "name": "item5/pole-01-network",
+  "do": [
+   {
+    "key": "t",
+    "code": "KeyT"
+   },
+   {
+    "wait": 800
+   },
+   {
+    "click": "Rua"
+   },
+   {
+    "click": "Construir rede"
+   },
+   {
+    "at": [
+     1020,
+     400
+    ]
+   },
+   {
+    "at": [
+     1200,
+     400
+    ]
+   },
+   {
+    "at": [
+     1400,
+     400
+    ]
+   },
+   {
+    "key": "Escape",
+    "code": "Escape"
+   },
+   {
+    "wait": 1200
+   }
+  ]
+ },
+ {
+  "name": "item5/pole-02-remove",
+  "do": [
+   {
+    "click": "Remover postes"
+   },
+   {
+    "at": [
+     1200,
+     400
+    ]
+   },
+   {
+    "wait": 800
+   }
+  ]
+ },
+ {
+  "name": "item5/streetscape-01-bench",
+  "do": [
+   {
+    "click": "Banco"
+   },
+   {
+    "at": [
+     1150,
+     405
+    ]
+   },
+   {
+    "wait": 800
+   }
+  ]
+ },
+ {
+  "name": "item5/streetscape-02-sign",
+  "do": [
+   {
+    "click": "Placa"
+   },
+   {
+    "at": [
+     1300,
+     405
+    ]
+   },
+   {
+    "wait": 800
+   }
+  ]
+ },
+ {
+  "name": "item5/streetscape-03-remove",
+  "do": [
+   {
+    "click": "Banco"
+   },
+   {
+    "at": [
+     1150,
+     405
+    ],
+    "mods": 8
+   },
+   {
+    "wait": 800
+   }
+  ]
+ },
+ {
+  "name": "item5/barrier-01-fence-points-end",
+  "do": [
+   {
+    "click": "Cerca"
+   },
+   {
+    "at": [
+     700,
+     560
+    ]
+   },
+   {
+    "at": [
+     850,
+     560
+    ]
+   },
+   {
+    "at": [
+     850,
+     650
+    ]
+   },
+   {
+    "key": "Backspace",
+    "code": "Backspace"
+   },
+   {
+    "dbl": [
+     900,
+     660
+    ]
+   },
+   {
+    "wait": 1200
+   }
+  ]
+ },
+ {
+  "name": "item5/barrier-02-cancel",
+  "do": [
+   {
+    "at": [
+     700,
+     700
+    ]
+   },
+   {
+    "at": [
+     800,
+     700
+    ]
+   },
+   {
+    "key": "Escape",
+    "code": "Escape"
+   },
+   {
+    "wait": 600
+   }
+  ]
+ },
+ {
+  "name": "item5/barrier-03-remove",
+  "do": [
+   {
+    "at": [
+     780,
+     560
+    ],
+    "mods": 8
+   },
+   {
+    "wait": 800
+   }
+  ]
+ },
+ {
+  "name": "item5/street-undo-redo",
+  "do": [
+   {
+    "key": "z",
+    "code": "KeyZ",
+    "mods": 2
+   },
+   {
+    "wait": 800
+   },
+   {
+    "key": "y",
+    "code": "KeyY",
+    "mods": 2
+   },
+   {
+    "wait": 800
+   }
+  ]
+ },
+ {
+  "name": "item5/terrain-01-raise",
+  "do": [
+   {
+    "click": "Relevo"
+   },
+   {
+    "click": "Elevar"
+   },
+   {
+    "drag": [
+     650,
+     300,
+     800,
+     330
+    ],
+    "ms": 1500
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item5/terrain-02-lower",
+  "do": [
+   {
+    "click": "Rebaixar"
+   },
+   {
+    "drag": [
+     650,
+     380,
+     800,
+     400
+    ],
+    "ms": 1500
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item5/terrain-03-flatten",
+  "do": [
+   {
+    "click": "Nivelar"
+   },
+   {
+    "drag": [
+     650,
+     340,
+     800,
+     360
+    ],
+    "ms": 1500
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item5/terrain-04-radius-strength-raise",
+  "do": [
+   {
+    "key": "]",
+    "code": "BracketRight"
+   },
+   {
+    "key": "]",
+    "code": "BracketRight"
+   },
+   {
+    "key": "=",
+    "code": "Equal"
+   },
+   {
+    "click": "Elevar"
+   },
+   {
+    "drag": [
+     600,
+     650,
+     700,
+     700
+    ],
+    "ms": 1500
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item5/terrain-05-river",
+  "do": [
+   {
+    "click": "Rio"
+   },
+   {
+    "drag": [
+     500,
+     700,
+     900,
+     760
+    ],
+    "ms": 1500
+   },
+   {
+    "wait": 2000
+   }
+  ]
+ },
+ {
+  "name": "item5/terrain-06-gully",
+  "do": [
+   {
+    "click": "Ravinas"
+   },
+   {
+    "drag": [
+     600,
+     500,
+     800,
+     520
+    ],
+    "ms": 1500
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item5/terrain-07-mesa",
+  "do": [
+   {
+    "click": "Chapada (arenito)"
+   },
+   {
+    "drag": [
+     500,
+     300,
+     560,
+     320
+    ],
+    "ms": 1200
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item5/terrain-08-sugarloaf",
+  "do": [
+   {
+    "click": "Pão de açúcar (granito)"
+   },
+   {
+    "at": [
+     560,
+     420
+    ]
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item5/terrain-09-undo-redo",
+  "do": [
+   {
+    "key": "z",
+    "code": "KeyZ",
+    "mods": 2
+   },
+   {
+    "wait": 800
+   },
+   {
+    "key": "y",
+    "code": "KeyY",
+    "mods": 2
+   },
+   {
+    "wait": 800
+   }
+  ]
+ },
+ {
+  "name": "item5/soil-01-paint-sand",
+  "do": [
+   {
+    "click": "Solo"
+   },
+   {
+    "click": "Areia"
+   },
+   {
+    "drag": [
+     600,
+     600,
+     750,
+     620
+    ],
+    "ms": 1500
+   },
+   {
+    "wait": 1200
+   }
+  ]
+ },
+ {
+  "name": "item5/soil-02-map-biome-cerrado",
+  "do": [
+   {
+    "click": "Bioma do mapa: Cerrado"
+   },
+   {
+    "wait": 3000
+   }
+  ],
+  "still": 2000
+ },
+ {
+  "name": "item5/soil-03-map-biome-back",
+  "do": [
+   {
+    "click": "Bioma do mapa: Sem ecossistema"
+   },
+   {
+    "wait": 3000
+   }
+  ]
+ },
+ {
+  "name": "item5/nature-01-plant-wood",
+  "do": [
+   {
+    "click": "Natureza"
+   },
+   {
+    "click": "Plantar bosque"
+   },
+   {
+    "drag": [
+     1700,
+     750,
+     1900,
+     800
+    ],
+    "ms": 1500
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item5/nature-02-one-tree",
+  "do": [
+   {
+    "click": "Uma árvore por clique"
+   },
+   {
+    "at": [
+     1950,
+     700
+    ]
+   },
+   {
+    "at": [
+     1980,
+     720
+    ]
+   },
+   {
+    "wait": 800
+   }
+  ]
+ },
+ {
+  "name": "item5/nature-03-cut-trees",
+  "do": [
+   {
+    "click": "Cortar árvores"
+   },
+   {
+    "drag": [
+     1700,
+     760,
+     1760,
+     780
+    ],
+    "ms": 800
+   },
+   {
+    "wait": 1000
+   }
+  ]
+ },
+ {
+  "name": "item5/nature-04-flowers",
+  "do": [
+   {
+    "click": "Flores"
+   },
+   {
+    "drag": [
+     1700,
+     650,
+     1850,
+     660
+    ],
+    "ms": 1000
+   },
+   {
+    "wait": 1000
+   }
+  ]
+ },
+ {
+  "name": "item5/nature-05-undo-redo",
+  "do": [
+   {
+    "key": "z",
+    "code": "KeyZ",
+    "mods": 2
+   },
+   {
+    "wait": 800
+   },
+   {
+    "key": "y",
+    "code": "KeyY",
+    "mods": 2
+   },
+   {
+    "wait": 800
+   }
+  ]
+ },
+ {
+  "name": "item5/sky-01-create-cloud",
+  "do": [
+   {
+    "click": "Céu e clima"
+   },
+   {
+    "click": "Nuvens"
+   },
+   {
+    "click": "Criar nuvem"
+   },
+   {
+    "at": [
+     1280,
+     400
+    ]
+   },
+   {
+    "wait": 2000
+   }
+  ],
+  "still": 2000
+ },
+ {
+  "name": "item5/sky-02-scatter-clouds",
+  "do": [
+   {
+    "click": "Espalhar pelo céu"
+   },
+   {
+    "wait": 2500
+   }
+  ],
+  "still": 2000
+ },
+ {
+  "name": "item5/sky-03-clear-clouds",
+  "do": [
+   {
+    "click": "Apagar todas as nuvens"
+   },
+   {
+    "wait": 1000
+   }
+  ]
+ },
+ {
+  "name": "item5/sky-04-fog-lay",
+  "do": [
+   {
+    "click": "Neblina"
+   },
+   {
+    "wait": 500
+   },
+   {
+    "drag": [
+     900,
+     300,
+     1300,
+     330
+    ],
+    "ms": 1500
+   },
+   {
+    "wait": 1500
+   }
+  ],
+  "still": 2000
+ },
+ {
+  "name": "item5/sky-05-fog-clear",
+  "do": [
+   {
+    "click": "Apagar toda a neblina"
+   },
+   {
+    "wait": 1000
+   }
+  ]
+ },
+ {
+  "name": "item5/sky-06-weather-panel",
+  "do": [
+   {
+    "click": "Clima"
+   },
+   {
+    "wait": 1000
+   }
+  ],
+  "still": 2000
+ },
+ {
+  "name": "item5/sky-07-storm",
+  "do": [
+   {
+    "click": "Tempestade"
+   },
+   {
+    "wait": 3000
+   }
+  ],
+  "still": 2000
+ },
+ {
+  "name": "item5/sky-08-storm-off",
+  "do": [
+   {
+    "click": "Tempestade"
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item5/sky-09-fire-smoke",
+  "do": [
+   {
+    "click": "Fogo"
+   },
+   {
+    "at": [
+     1800,
+     600
+    ]
+   },
+   {
+    "click": "Fumaça"
+   },
+   {
+    "at": [
+     1850,
+     600
+    ]
+   },
+   {
+    "wait": 2000
+   }
+  ],
+  "still": 2000
+ },
+ {
+  "name": "item5/sky-10-night",
+  "do": [
+   {
+    "click": "☾ Noite"
+   },
+   {
+    "wait": 3000
+   }
+  ],
+  "still": 2000
+ },
+ {
+  "name": "item5/sky-11-day",
+  "do": [
+   {
+    "click": "☀ Dia"
+   },
+   {
+    "wait": 2000
+   },
+   {
+    "key": "Escape",
+    "code": "Escape"
+   },
+   {
+    "key": "Escape",
+    "code": "Escape"
+   }
+  ]
+ },
+ {
+  "name": "item5/transit-01-stop",
+  "do": [
+   {
+    "key": "o",
+    "code": "KeyO"
+   },
+   {
+    "click": "Ponto de ônibus"
+   },
+   {
+    "at": [
+     1150,
+     418
+    ]
+   },
+   {
+    "at": [
+     1450,
+     418
+    ]
+   },
+   {
+    "wait": 1000
+   }
+  ]
+ },
+ {
+  "name": "item5/transit-02-terminal",
+  "do": [
+   {
+    "click": "Terminal de ônibus"
+   },
+   {
+    "at": [
+     1300,
+     470
+    ]
+   },
+   {
+    "wait": 1200
+   }
+  ]
+ },
+ {
+  "name": "item5/transit-03-line",
+  "do": [
+   {
+    "click": "Criar linha"
+   },
+   {
+    "at": [
+     1150,
+     418
+    ]
+   },
+   {
+    "at": [
+     1450,
+     418
+    ]
+   },
+   {
+    "key": "Enter",
+    "code": "Enter"
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item5/transit-04-more-fewer",
+  "do": [
+   {
+    "click": "Mais veículos"
+   },
+   {
+    "click": "Mais veículos"
+   },
+   {
+    "click": "Menos veículos"
+   },
+   {
+    "wait": 1000
+   }
+  ]
+ },
+ {
+  "name": "item5/transit-05-train-track",
+  "do": [
+   {
+    "click": "Trilho de trem"
+   },
+   {
+    "at": [
+     600,
+     760
+    ]
+   },
+   {
+    "dbl": [
+     950,
+     760
+    ]
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item5/transit-06-train-station",
+  "do": [
+   {
+    "click": "Estação de trem"
+   },
+   {
+    "at": [
+     780,
+     760
+    ]
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item5/transit-07-metro-track",
+  "do": [
+   {
+    "click": "Trilho de metrô"
+   },
+   {
+    "at": [
+     600,
+     820
+    ]
+   },
+   {
+    "dbl": [
+     950,
+     820
+    ]
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item5/transit-08-metro-station",
+  "do": [
+   {
+    "click": "Estação de metrô"
+   },
+   {
+    "at": [
+     780,
+     820
+    ]
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item5/transit-09-remove-line",
+  "do": [
+   {
+    "click": "Apagar a linha"
+   },
+   {
+    "wait": 1000
+   }
+  ]
+ },
+ {
+  "name": "item5/transit-10-undo-redo",
+  "do": [
+   {
+    "key": "z",
+    "code": "KeyZ",
+    "mods": 2
+   },
+   {
+    "wait": 800
+   },
+   {
+    "key": "y",
+    "code": "KeyY",
+    "mods": 2
+   },
+   {
+    "wait": 800
+   },
+   {
+    "key": "Escape",
+    "code": "Escape"
+   },
+   {
+    "key": "Escape",
+    "code": "Escape"
+   }
+  ]
+ },
+ {
+  "name": "item5/city-view-for-demolish",
+  "do": [
+   {
+    "view": {
+     "x": 0,
+     "y": 0,
+     "zoom": 3.5,
+     "az": 0,
+     "el": 55
+    },
+    "settle": 6000
+   }
+  ]
+ },
+ {
+  "name": "item5/bulldoze-01-building",
+  "do": [
+   {
+    "key": "b",
+    "code": "KeyB"
+   },
+   {
+    "at": [
+     1280,
+     504
+    ]
+   },
+   {
+    "wait": 2000
+   }
+  ]
+ },
+ {
+  "name": "item5/bulldoze-02-pistol",
+  "do": [
+   {
+    "click": "Pistola"
+   },
+   {
+    "at": [
+     1100,
+     450
+    ]
+   },
+   {
+    "at": [
+     1110,
+     455
+    ]
+   },
+   {
+    "wait": 2000
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item5/bulldoze-03-bomb",
+  "do": [
+   {
+    "click": "Bomba"
+   },
+   {
+    "at": [
+     1500,
+     550
+    ]
+   },
+   {
+    "wait": 4000
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item5/bulldoze-04-undo-redo",
+  "do": [
+   {
+    "key": "z",
+    "code": "KeyZ",
+    "mods": 2
+   },
+   {
+    "wait": 1500
+   },
+   {
+    "key": "y",
+    "code": "KeyY",
+    "mods": 2
+   },
+   {
+    "wait": 1500
+   },
+   {
+    "key": "Escape",
+    "code": "Escape"
+   }
+  ]
+ },
+ {
+  "name": "item5/inside-01-toggle",
+  "do": [
+   {
+    "key": "i",
+    "code": "KeyI"
+   },
+   {
+    "dbl": [
+     1280,
+     504
+    ]
+   },
+   {
+    "wait": 2500
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item5/inside-02-floor-up",
+  "do": [
+   {
+    "click": "Andar acima"
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item5/inside-03-floor-down",
+  "do": [
+   {
+    "click": "Andar abaixo"
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item5/inside-04-off",
+  "do": [
+   {
+    "click": "Camadas do mapa"
+   },
+   {
+    "click": "Interior dos prédios"
+   },
+   {
+    "key": "Escape",
+    "code": "Escape"
+   },
+   {
+    "key": "Escape",
+    "code": "Escape"
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item5/distance-300m",
+  "do": [
+   {
+    "view": {
+     "x": 0,
+     "y": 0,
+     "zoom": 4.2,
+     "az": 0,
+     "el": 20
+    },
+    "settle": 6000
+   }
+  ]
+ },
+ {
+  "name": "item5/distance-700m",
+  "do": [
+   {
+    "view": {
+     "x": 0,
+     "y": 0,
+     "zoom": 1.8,
+     "az": 0,
+     "el": 20
+    },
+    "settle": 6000
+   }
+  ]
+ },
+ {
+  "name": "item5/distance-1400m",
+  "do": [
+   {
+    "view": {
+     "x": 0,
+     "y": 0,
+     "zoom": 0.9,
+     "az": 0,
+     "el": 20
+    },
+    "settle": 6000
+   }
+  ]
+ },
+ {
+  "name": "item5/distance-2000m",
+  "do": [
+   {
+    "view": {
+     "x": 0,
+     "y": 0,
+     "zoom": 0.63,
+     "az": 0,
+     "el": 20
+    },
+    "settle": 6000
+   }
+  ]
+ }
+]

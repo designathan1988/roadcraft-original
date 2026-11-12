@@ -1,0 +1,22 @@
+Debugger listening on ws://127.0.0.1:57359/826c8f6c-dc35-441c-bc5c-a33b6f516883
+For help, see: https://nodejs.org/learn/getting-started/debugging
+Debugger listening on ws://127.0.0.1:57360/33ff1fa8-1b9d-44f3-a010-dac4751ea2c3
+For help, see: https://nodejs.org/learn/getting-started/debugging
+
+> roadcraft@7.0.0 desktop:dev
+> node scripts/desktopDev.mjs
+
+Debugger listening on ws://127.0.0.1:57361/f8dc916f-e9ba-48ec-857c-2b2a1d37434f
+For help, see: https://nodejs.org/learn/getting-started/debugging
+
+Debugger listening on ws://127.0.0.1:57363/d5a05337-109c-400b-a169-22f40535628e
+For help, see: https://nodejs.org/learn/getting-started/debugging
+
+DevTools listening on ws://127.0.0.1:9333/devtools/browser/c54906c9-d569-4d28-9884-224cadb5758b
+the saves writer stopped 0
+job process 1 stopped 0
+job process 2 stopped 0
+job process 3 stopped 0
+job process 4 stopped 0
+job process 5 stopped 0
+the simulation process stopped 0

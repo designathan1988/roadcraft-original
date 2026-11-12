@@ -1,0 +1,825 @@
+[
+ {
+  "name": "item4/p00-reference-district-closed",
+  "do": [],
+  "still": 10000
+ },
+ {
+  "name": "item4/p01-menu-open",
+  "do": [
+   {
+    "click": "Menu"
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p02-menu-newMap-confirm-dismissed",
+  "do": [
+   {
+    "dialog": "dismiss"
+   },
+   {
+    "click": "Novo mapa"
+   },
+   {
+    "wait": 800
+   }
+  ],
+  "still": 0
+ },
+ {
+  "name": "item4/p03-menu-newWorld-confirm-dismissed",
+  "do": [
+   {
+    "click": "Menu"
+   },
+   {
+    "click": "Nova cidade"
+   },
+   {
+    "wait": 800
+   }
+  ]
+ },
+ {
+  "name": "item4/p04-menu-newLargeWorld-confirm-dismissed",
+  "do": [
+   {
+    "click": "Menu"
+   },
+   {
+    "click": "Nova metrópole"
+   },
+   {
+    "wait": 800
+   }
+  ]
+ },
+ {
+  "name": "item4/p05-menu-quality-row",
+  "do": [
+   {
+    "click": "Menu"
+   },
+   {
+    "wait": 300
+   }
+  ],
+  "still": 0
+ },
+ {
+  "name": "item4/p06-menu-language-english",
+  "do": [
+   {
+    "click": "English"
+   },
+   {
+    "wait": 800
+   }
+  ]
+ },
+ {
+  "name": "item4/p07-menu-language-portugues",
+  "do": [
+   {
+    "click": "Português"
+   },
+   {
+    "wait": 800
+   }
+  ]
+ },
+ {
+  "name": "item4/p08-menu-paint-us",
+  "do": [
+   {
+    "click": "EUA"
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item4/p09-menu-paint-eu",
+  "do": [
+   {
+    "click": "Europa"
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item4/p10-menu-paint-classic",
+  "do": [
+   {
+    "click": "Clássica"
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item4/p11-menu-paint-br",
+  "do": [
+   {
+    "click": "Brasil"
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item4/p12-menu-about",
+  "do": [
+   {
+    "click": "Sobre"
+   },
+   {
+    "wait": 500
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p13-about-closed",
+  "do": [
+   {
+    "key": "Escape",
+    "code": "Escape"
+   },
+   {
+    "wait": 300
+   }
+  ]
+ },
+ {
+  "name": "item4/p14-graphics-options",
+  "do": [
+   {
+    "click": "Menu"
+   },
+   {
+    "click": "Opções gráficas"
+   },
+   {
+    "wait": 500
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p15-graphics-options-closed",
+  "do": [
+   {
+    "key": "Escape",
+    "code": "Escape"
+   },
+   {
+    "wait": 300
+   }
+  ]
+ },
+ {
+  "name": "item4/p16-effects-panel-F7",
+  "do": [
+   {
+    "key": "F7",
+    "code": "F7"
+   },
+   {
+    "wait": 800
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p17-effects-panel-closed",
+  "do": [
+   {
+    "key": "F7",
+    "code": "F7"
+   },
+   {
+    "wait": 300
+   }
+  ]
+ },
+ {
+  "name": "item4/p18-menu-closed",
+  "do": [
+   {
+    "key": "Escape",
+    "code": "Escape"
+   }
+  ]
+ },
+ {
+  "name": "item4/p20-layers-open",
+  "do": [
+   {
+    "click": "Camadas do mapa"
+   },
+   {
+    "wait": 300
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p21-layer-grid-on",
+  "do": [
+   {
+    "click": "Grade"
+   },
+   {
+    "wait": 800
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p22-layer-grid-off",
+  "do": [
+   {
+    "click": "Grade"
+   },
+   {
+    "wait": 500
+   }
+  ]
+ },
+ {
+  "name": "item4/p23-layer-zone-colours-on",
+  "do": [
+   {
+    "sel": ".v2-pop button[role=switch]:nth-of-type(2)"
+   },
+   {
+    "wait": 800
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p24-layer-zone-colours-off",
+  "do": [
+   {
+    "sel": ".v2-pop button[role=switch]:nth-of-type(2)"
+   },
+   {
+    "wait": 500
+   }
+  ]
+ },
+ {
+  "name": "item4/p25-layer-congestion-on",
+  "do": [
+   {
+    "click": "Mapa de congestionamento"
+   },
+   {
+    "wait": 800
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p26-layer-congestion-off",
+  "do": [
+   {
+    "click": "Mapa de congestionamento"
+   },
+   {
+    "wait": 500
+   }
+  ]
+ },
+ {
+  "name": "item4/p27-layer-inside-on",
+  "do": [
+   {
+    "click": "Interior dos prédios"
+   },
+   {
+    "wait": 1500
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p28-layer-inside-off",
+  "do": [
+   {
+    "click": "Interior dos prédios"
+   },
+   {
+    "wait": 800
+   }
+  ]
+ },
+ {
+  "name": "item4/p29-layers-closed",
+  "do": [
+   {
+    "key": "Escape",
+    "code": "Escape"
+   }
+  ]
+ },
+ {
+  "name": "item4/p30-simulation-open",
+  "do": [
+   {
+    "click": "Simulação"
+   },
+   {
+    "wait": 500
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p31-demand-low",
+  "do": [
+   {
+    "click": "Baixa"
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item4/p32-demand-peak",
+  "do": [
+   {
+    "click": "Pico"
+   },
+   {
+    "wait": 1500
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p33-demand-normal",
+  "do": [
+   {
+    "click": "Normal"
+   },
+   {
+    "wait": 1000
+   }
+  ]
+ },
+ {
+  "name": "item4/p34-simulation-closed",
+  "do": [
+   {
+    "key": "Escape",
+    "code": "Escape"
+   }
+  ]
+ },
+ {
+  "name": "item4/p40-camera-open",
+  "do": [
+   {
+    "click": "Câmera"
+   },
+   {
+    "wait": 500
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p41-camera-turn-left",
+  "do": [
+   {
+    "click": "Girar à esquerda"
+   },
+   {
+    "wait": 1200
+   }
+  ]
+ },
+ {
+  "name": "item4/p42-camera-turn-right",
+  "do": [
+   {
+    "click": "Girar à direita"
+   },
+   {
+    "wait": 1200
+   }
+  ]
+ },
+ {
+  "name": "item4/p43-camera-tilt-down",
+  "do": [
+   {
+    "click": "Baixar a câmera"
+   },
+   {
+    "wait": 1200
+   }
+  ]
+ },
+ {
+  "name": "item4/p44-camera-tilt-up",
+  "do": [
+   {
+    "click": "Erguer a câmera"
+   },
+   {
+    "wait": 1200
+   }
+  ]
+ },
+ {
+  "name": "item4/p45-camera-north",
+  "do": [
+   {
+    "click": "Norte para cima"
+   },
+   {
+    "wait": 1200
+   }
+  ]
+ },
+ {
+  "name": "item4/p46-camera-perspective-off",
+  "do": [
+   {
+    "click": "Câmera em perspectiva"
+   },
+   {
+    "wait": 1500
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p47-camera-perspective-on",
+  "do": [
+   {
+    "click": "Câmera em perspectiva"
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item4/p48-camera-frame",
+  "do": [
+   {
+    "click": "Enquadrar a câmera"
+   },
+   {
+    "wait": 2500
+   }
+  ]
+ },
+ {
+  "name": "item4/p49-camera-closed",
+  "do": [
+   {
+    "key": "Escape",
+    "code": "Escape"
+   }
+  ]
+ },
+ {
+  "name": "item4/p50-help-open",
+  "do": [
+   {
+    "click": "Ajuda"
+   },
+   {
+    "wait": 500
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p51-help-closed",
+  "do": [
+   {
+    "key": "Escape",
+    "code": "Escape"
+   }
+  ]
+ },
+ {
+  "name": "item4/p52-compass-click",
+  "do": [
+   {
+    "click": "Bússola"
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "name": "item4/p53-F9-monitor",
+  "do": [
+   {
+    "key": "F9",
+    "code": "F9"
+   },
+   {
+    "wait": 800
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p54-F9-monitor-closed",
+  "do": [
+   {
+    "key": "F9",
+    "code": "F9"
+   }
+  ]
+ },
+ {
+  "name": "item4/p54a-profiler-HUD-ShiftF9",
+  "do": [
+   {
+    "key": "F9",
+    "code": "F9",
+    "mods": 8
+   },
+   {
+    "wait": 800
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p54b-profiler-HUD-closed",
+  "do": [
+   {
+    "key": "F9",
+    "code": "F9",
+    "mods": 8
+   }
+  ]
+ },
+ {
+  "name": "item4/p55-F8-changes",
+  "do": [
+   {
+    "key": "F8",
+    "code": "F8"
+   },
+   {
+    "wait": 800
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p56-F8-changes-off",
+  "do": [
+   {
+    "key": "F8",
+    "code": "F8"
+   }
+  ]
+ },
+ {
+  "name": "item4/p57-sky-night",
+  "do": [
+   {
+    "click": "☾ Noite"
+   },
+   {
+    "wait": 2500
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p58-sky-daynight",
+  "do": [
+   {
+    "click": "◐ Dia e noite"
+   },
+   {
+    "wait": 2500
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p59-sky-day",
+  "do": [
+   {
+    "click": "☀ Dia"
+   },
+   {
+    "wait": 2500
+   }
+  ]
+ },
+ {
+  "name": "item4/p60-info-inspect-drawer",
+  "do": [
+   {
+    "sel": "button[data-cat=info]"
+   },
+   {
+    "wait": 500
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p61-inspect-pick-road",
+  "do": [
+   {
+    "at": [
+     1280,
+     504
+    ]
+   },
+   {
+    "wait": 1200
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p62-inspect-closed",
+  "do": [
+   {
+    "key": "Escape",
+    "code": "Escape"
+   },
+   {
+    "key": "Escape",
+    "code": "Escape"
+   }
+  ]
+ },
+ {
+  "name": "item4/p63-roads-drawer-catalog",
+  "do": [
+   {
+    "sel": "button[data-cat=roads]"
+   },
+   {
+    "wait": 800
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p64-roads-drawer-closed",
+  "do": [
+   {
+    "key": "Escape",
+    "code": "Escape"
+   },
+   {
+    "key": "Escape",
+    "code": "Escape"
+   }
+  ]
+ },
+ {
+  "name": "item4/p65-zones-drawer",
+  "do": [
+   {
+    "sel": "button[data-cat=zones]"
+   },
+   {
+    "wait": 800
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p66-zones-closed",
+  "do": [
+   {
+    "key": "Escape",
+    "code": "Escape"
+   },
+   {
+    "key": "Escape",
+    "code": "Escape"
+   }
+  ]
+ },
+ {
+  "name": "item4/p67-build-drawer-workspace",
+  "do": [
+   {
+    "sel": "button[data-cat=build]"
+   },
+   {
+    "wait": 1500
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p68-build-closed",
+  "do": [
+   {
+    "key": "Escape",
+    "code": "Escape"
+   },
+   {
+    "key": "Escape",
+    "code": "Escape"
+   }
+  ]
+ },
+ {
+  "name": "item4/p69-landscape-drawer",
+  "do": [
+   {
+    "sel": "button[data-cat=landscape]"
+   },
+   {
+    "wait": 800
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p70-landscape-closed",
+  "do": [
+   {
+    "key": "Escape",
+    "code": "Escape"
+   },
+   {
+    "key": "Escape",
+    "code": "Escape"
+   }
+  ]
+ },
+ {
+  "name": "item4/p71-transit-drawer",
+  "do": [
+   {
+    "sel": "button[data-cat=transit]"
+   },
+   {
+    "wait": 800
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p72-transit-closed",
+  "do": [
+   {
+    "key": "Escape",
+    "code": "Escape"
+   },
+   {
+    "key": "Escape",
+    "code": "Escape"
+   }
+  ]
+ },
+ {
+  "name": "item4/p73-demolish-drawer",
+  "do": [
+   {
+    "sel": "button[data-cat=demolish]"
+   },
+   {
+    "wait": 800
+   }
+  ],
+  "still": 10000
+ },
+ {
+  "name": "item4/p74-demolish-closed",
+  "do": [
+   {
+    "key": "Escape",
+    "code": "Escape"
+   },
+   {
+    "key": "Escape",
+    "code": "Escape"
+   }
+  ]
+ }
+]

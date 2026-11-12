@@ -1,0 +1,1622 @@
+[
+ {
+  "file": "page.cpuprofile",
+  "wallMs": 33862,
+  "busyMs": 27114,
+  "idleMs": 6749,
+  "programMs": 2596,
+  "gcMs": 422,
+  "jsWithSourceMs": 21947,
+  "nativeNoUrlMs": 2148,
+  "samples": 58538,
+  "topSelf": [
+   {
+    "fn": "casterChanges",
+    "at": "renderer.ts:748",
+    "selfMs": 1589.3,
+    "totalMs": 1861.2
+   },
+   {
+    "fn": "projectObject",
+    "at": "../../three/build/three.module.js:17897",
+    "selfMs": 954.4,
+    "totalMs": 2466
+   },
+   {
+    "fn": "multiplyMatrices",
+    "at": "../../three/build/three.core.js:10570",
+    "selfMs": 679.5,
+    "totalMs": 679.5
+   },
+   {
+    "fn": "setProgram",
+    "at": "../../three/build/three.module.js:18407",
+    "selfMs": 609.8,
+    "totalMs": 3319
+   },
+   {
+    "fn": "bindVertexArray",
+    "at": null,
+    "selfMs": 524.4,
+    "totalMs": 524.4
+   },
+   {
+    "fn": "WebGLRenderer.renderBufferDirect",
+    "at": "../../three/build/three.module.js:17233",
+    "selfMs": 474,
+    "totalMs": 5479.8
+   },
+   {
+    "fn": "readTick",
+    "at": "simClient.ts:547",
+    "selfMs": 461.2,
+    "totalMs": 557.6
+   },
+   {
+    "fn": "writeTile",
+    "at": "densityCars.ts:490",
+    "selfMs": 390.5,
+    "totalMs": 696.9
+   },
+   {
+    "fn": "getBindingState",
+    "at": "../../three/build/three.module.js:1680",
+    "selfMs": 319.8,
+    "totalMs": 319.8
+   },
+   {
+    "fn": "update",
+    "at": "../../three/build/three.module.js:242",
+    "selfMs": 314.6,
+    "totalMs": 616.5
+   },
+   {
+    "fn": "sync",
+    "at": "agents.ts:1846",
+    "selfMs": 307.7,
+    "totalMs": 3443.1
+   },
+   {
+    "fn": "draw",
+    "at": "renderer.ts:3434",
+    "selfMs": 304.3,
+    "totalMs": 21654.9
+   },
+   {
+    "fn": "needsUpdate",
+    "at": "../../three/build/three.module.js:1759",
+    "selfMs": 291.7,
+    "totalMs": 293.3
+   },
+   {
+    "fn": "port.onmessage",
+    "at": "processWorker.ts:147",
+    "selfMs": 274.7,
+    "totalMs": 860.7
+   },
+   {
+    "fn": "upload",
+    "at": "../../three/build/three.module.js:6123",
+    "selfMs": 242,
+    "totalMs": 1108.2
+   },
+   {
+    "fn": "copy",
+    "at": "../../three/build/three.core.js:5006",
+    "selfMs": 238.1,
+    "totalMs": 238.1
+   },
+   {
+    "fn": "updateMatrixWorld",
+    "at": "../../three/build/three.core.js:13067",
+    "selfMs": 233.4,
+    "totalMs": 528.2
+   },
+   {
+    "fn": "draw",
+    "at": "riggedCitizens.ts:869",
+    "selfMs": 209.4,
+    "totalMs": 687.1
+   },
+   {
+    "fn": "renderObject",
+    "at": "../../three/build/three.module.js:18192",
+    "selfMs": 207.9,
+    "totalMs": 6435.2
+   },
+   {
+    "fn": "drawVehicle",
+    "at": "agents.ts:1911",
+    "selfMs": 205.8,
+    "totalMs": 1555.1
+   },
+   {
+    "fn": "settle",
+    "at": "cellKeeps.ts:153",
+    "selfMs": 203.2,
+    "totalMs": 626.8
+   },
+   {
+    "fn": "setValueM4",
+    "at": "../../three/build/three.module.js:5284",
+    "selfMs": 199.8,
+    "totalMs": 420.6
+   },
+   {
+    "fn": "bufferSubData",
+    "at": null,
+    "selfMs": 195.8,
+    "totalMs": 195.8
+   },
+   {
+    "fn": "drawOf",
+    "at": "agents.ts:1689",
+    "selfMs": 190.2,
+    "totalMs": 190.8
+   },
+   {
+    "fn": "exposedCells",
+    "at": "massCells.ts:664",
+    "selfMs": 188.2,
+    "totalMs": 201.8
+   },
+   {
+    "fn": "renderObjects",
+    "at": "../../three/build/three.module.js:18165",
+    "selfMs": 183.1,
+    "totalMs": 6666.3
+   },
+   {
+    "fn": "arraysEqual",
+    "at": "../../three/build/three.module.js:5064",
+    "selfMs": 180.3,
+    "totalMs": 180.3
+   },
+   {
+    "fn": "refreshUniformsCommon",
+    "at": "../../three/build/three.module.js:15139",
+    "selfMs": 174,
+    "totalMs": 249.4
+   },
+   {
+    "fn": "test",
+    "at": "../../three/build/three.core.js:11882",
+    "selfMs": 167.8,
+    "totalMs": 167.8
+   },
+   {
+    "fn": "compose",
+    "at": "../../three/build/three.core.js:11030",
+    "selfMs": 152.7,
+    "totalMs": 152.7
+   }
+  ],
+  "topTotal": [
+   {
+    "fn": "(anonymous)",
+    "at": "hiddenWork.ts:145",
+    "selfMs": 27,
+    "totalMs": 23965.2
+   },
+   {
+    "fn": "shown",
+    "at": "frameLoop.ts:44",
+    "selfMs": 7.8,
+    "totalMs": 22278.6
+   },
+   {
+    "fn": "frame",
+    "at": "main.ts:2704",
+    "selfMs": 52.9,
+    "totalMs": 22264.2
+   },
+   {
+    "fn": "draw",
+    "at": "renderer.ts:3434",
+    "selfMs": 304.3,
+    "totalMs": 21654.9
+   },
+   {
+    "fn": "WebGLRenderer.render",
+    "at": "../../three/build/three.module.js:17674",
+    "selfMs": 44.4,
+    "totalMs": 10015.3
+   },
+   {
+    "fn": "render",
+    "at": "postprocess.ts:462",
+    "selfMs": 11.3,
+    "totalMs": 9683.7
+   },
+   {
+    "fn": "render",
+    "at": "../../three/examples/jsm/postprocessing/EffectComposer.js:214",
+    "selfMs": 3.3,
+    "totalMs": 9647.3
+   },
+   {
+    "fn": "pass.render",
+    "at": "postprocess.ts:438",
+    "selfMs": 7.6,
+    "totalMs": 9641.5
+   },
+   {
+    "fn": "scenePass.render",
+    "at": "postprocess.ts:167",
+    "selfMs": 4.5,
+    "totalMs": 9331
+   },
+   {
+    "fn": "render",
+    "at": "../../three/examples/jsm/postprocessing/RenderPass.js:121",
+    "selfMs": 1.1,
+    "totalMs": 8274.6
+   },
+   {
+    "fn": "renderScene",
+    "at": "../../three/build/three.module.js:18015",
+    "selfMs": 1,
+    "totalMs": 6685
+   },
+   {
+    "fn": "renderObjects",
+    "at": "../../three/build/three.module.js:18165",
+    "selfMs": 183.1,
+    "totalMs": 6666.3
+   },
+   {
+    "fn": "renderObject",
+    "at": "../../three/build/three.module.js:18192",
+    "selfMs": 207.9,
+    "totalMs": 6435.2
+   },
+   {
+    "fn": "WebGLRenderer.renderBufferDirect",
+    "at": "../../three/build/three.module.js:17233",
+    "selfMs": 474,
+    "totalMs": 5479.8
+   },
+   {
+    "fn": "sync",
+    "at": "agents.ts:1846",
+    "selfMs": 307.7,
+    "totalMs": 3443.1
+   },
+   {
+    "fn": "setProgram",
+    "at": "../../three/build/three.module.js:18407",
+    "selfMs": 609.8,
+    "totalMs": 3319
+   },
+   {
+    "fn": "projectObject",
+    "at": "../../three/build/three.module.js:17897",
+    "selfMs": 954.4,
+    "totalMs": 2466
+   },
+   {
+    "fn": "casterChanges",
+    "at": "renderer.ts:748",
+    "selfMs": 1589.3,
+    "totalMs": 1861.2
+   },
+   {
+    "fn": "drawVehicle",
+    "at": "agents.ts:1911",
+    "selfMs": 205.8,
+    "totalMs": 1555.1
+   },
+   {
+    "fn": "setup",
+    "at": "../../three/build/three.module.js:1623",
+    "selfMs": 109.2,
+    "totalMs": 1294.3
+   },
+   {
+    "fn": "upload",
+    "at": "../../three/build/three.module.js:6123",
+    "selfMs": 242,
+    "totalMs": 1108.2
+   },
+   {
+    "fn": "draw",
+    "at": "depthFirst.ts:55",
+    "selfMs": 12.8,
+    "totalMs": 1040.1
+   },
+   {
+    "fn": "setValue",
+    "at": "../../three/build/three.module.js:6107",
+    "selfMs": 99.9,
+    "totalMs": 905.4
+   },
+   {
+    "fn": "port.onmessage",
+    "at": "processWorker.ts:147",
+    "selfMs": 274.7,
+    "totalMs": 860.7
+   },
+   {
+    "fn": "update",
+    "at": "densityCars.ts:559",
+    "selfMs": 82.3,
+    "totalMs": 793.7
+   },
+   {
+    "fn": "worker.onmessage",
+    "at": "jobPool.ts:174",
+    "selfMs": 73.7,
+    "totalMs": 791.5
+   },
+   {
+    "fn": "update",
+    "at": "../../three/build/three.module.js:4612",
+    "selfMs": 54.2,
+    "totalMs": 770.6
+   },
+   {
+    "fn": "writeTile",
+    "at": "densityCars.ts:490",
+    "selfMs": 390.5,
+    "totalMs": 696.9
+   },
+   {
+    "fn": "draw",
+    "at": "riggedCitizens.ts:869",
+    "selfMs": 209.4,
+    "totalMs": 687.1
+   },
+   {
+    "fn": "renderPalettes",
+    "at": "agents.ts:1844",
+    "selfMs": 0.6,
+    "totalMs": 685.4
+   }
+  ]
+ },
+ {
+  "file": "worker_job.worker.ts_804A79.cpuprofile",
+  "wallMs": 33707,
+  "busyMs": 15821,
+  "idleMs": 17886,
+  "programMs": 402,
+  "gcMs": 1671,
+  "jsWithSourceMs": 13648,
+  "nativeNoUrlMs": 100,
+  "samples": 59623,
+  "topSelf": [
+   {
+    "fn": "value",
+    "at": "recordTable.ts:527",
+    "selfMs": 9050.8,
+    "totalMs": 9584
+   },
+   {
+    "fn": "volumeCorners",
+    "at": "geometry.ts:153",
+    "selfMs": 1524.7,
+    "totalMs": 2125
+   },
+   {
+    "fn": "coverCellOf",
+    "at": "layerCells.ts:158",
+    "selfMs": 867,
+    "totalMs": 12864.4
+   },
+   {
+    "fn": "localToWorld",
+    "at": "geometry.ts:32",
+    "selfMs": 535.5,
+    "totalMs": 535.5
+   },
+   {
+    "fn": "string",
+    "at": "recordTable.ts:505",
+    "selfMs": 527.6,
+    "totalMs": 527.6
+   },
+   {
+    "fn": "TableReader.collected",
+    "at": "recordTable.ts:481",
+    "selfMs": 220.4,
+    "totalMs": 220.4
+   },
+   {
+    "fn": "rowRecords",
+    "at": "rowRefs.ts:63",
+    "selfMs": 212,
+    "totalMs": 9877.9
+   },
+   {
+    "fn": "host.onmessage",
+    "at": "job.worker.ts?worker_file&type=module:78",
+    "selfMs": 191.3,
+    "totalMs": 13433.9
+   },
+   {
+    "fn": "packCover",
+    "at": "layerCells.ts:202",
+    "selfMs": 120.6,
+    "totalMs": 120.6
+   },
+   {
+    "fn": "scope.onmessage",
+    "at": "coverCell.worker.ts:21",
+    "selfMs": 112.9,
+    "totalMs": 13213.9
+   },
+   {
+    "fn": "postMessage",
+    "at": null,
+    "selfMs": 73.9,
+    "totalMs": 73.9
+   },
+   {
+    "fn": "reader",
+    "at": "recordTable.ts:438",
+    "selfMs": 53.5,
+    "totalMs": 53.5
+   },
+   {
+    "fn": "volumeRectLocal",
+    "at": "geometry.ts:148",
+    "selfMs": 50.4,
+    "totalMs": 50.4
+   },
+   {
+    "fn": "postMessage",
+    "at": "job.worker.ts?worker_file&type=module:99",
+    "selfMs": 36.3,
+    "totalMs": 110.1
+   },
+   {
+    "fn": "multiplyMatrices",
+    "at": "../../three/build/three.core.js:10570",
+    "selfMs": 33.2,
+    "totalMs": 33.2
+   },
+   {
+    "fn": "RecordTable",
+    "at": "recordTable.ts:413",
+    "selfMs": 29.2,
+    "totalMs": 35.8
+   },
+   {
+    "fn": "MessageEvent",
+    "at": null,
+    "selfMs": 25.7,
+    "totalMs": 25.7
+   },
+   {
+    "fn": "updateMatrix",
+    "at": "../../three/build/three.core.js:13035",
+    "selfMs": 16.6,
+    "totalMs": 16.6
+   },
+   {
+    "fn": "layout",
+    "at": "recordTable.ts:82",
+    "selfMs": 7.2,
+    "totalMs": 7.2
+   },
+   {
+    "fn": "setFromRotationMatrix",
+    "at": "../../three/build/three.core.js:11523",
+    "selfMs": 6.5,
+    "totalMs": 6.5
+   },
+   {
+    "fn": "skip",
+    "at": "recordTable.ts:572",
+    "selfMs": 6.2,
+    "totalMs": 6.2
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "geometry.ts:154",
+    "selfMs": 4.8,
+    "totalMs": 28.1
+   },
+   {
+    "fn": "localFootprint",
+    "at": "footprints.ts:17",
+    "selfMs": 4.6,
+    "totalMs": 4.6
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "citizenBake.ts:186",
+    "selfMs": 4.3,
+    "totalMs": 68
+   },
+   {
+    "fn": "offsetRing",
+    "at": "footprints.ts:170",
+    "selfMs": 4,
+    "totalMs": 6.6
+   },
+   {
+    "fn": "worldRotation",
+    "at": "citizenWalk.ts:216",
+    "selfMs": 3.3,
+    "totalMs": 3.3
+   },
+   {
+    "fn": "updateMatrixWorld",
+    "at": "../../three/build/three.core.js:13067",
+    "selfMs": 3.3,
+    "totalMs": 31.1
+   },
+   {
+    "fn": "onQuaternionChange",
+    "at": "../../three/build/three.core.js:12042",
+    "selfMs": 2.8,
+    "totalMs": 9.3
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "footprints.ts:171",
+    "selfMs": 2.6,
+    "totalMs": 2.6
+   },
+   {
+    "fn": "getObjectByProperty",
+    "at": "../../three/build/three.core.js:12835",
+    "selfMs": 2.3,
+    "totalMs": 2.3
+   }
+  ],
+  "topTotal": [
+   {
+    "fn": "host.onmessage",
+    "at": "job.worker.ts?worker_file&type=module:78",
+    "selfMs": 191.3,
+    "totalMs": 13433.9
+   },
+   {
+    "fn": "scope.onmessage",
+    "at": "coverCell.worker.ts:21",
+    "selfMs": 112.9,
+    "totalMs": 13213.9
+   },
+   {
+    "fn": "coverCellOf",
+    "at": "layerCells.ts:158",
+    "selfMs": 867,
+    "totalMs": 12864.4
+   },
+   {
+    "fn": "rowRecords",
+    "at": "rowRefs.ts:63",
+    "selfMs": 212,
+    "totalMs": 9877.9
+   },
+   {
+    "fn": "value",
+    "at": "recordTable.ts:527",
+    "selfMs": 9050.8,
+    "totalMs": 9584
+   },
+   {
+    "fn": "volumeCorners",
+    "at": "geometry.ts:153",
+    "selfMs": 1524.7,
+    "totalMs": 2125
+   },
+   {
+    "fn": "localToWorld",
+    "at": "geometry.ts:32",
+    "selfMs": 535.5,
+    "totalMs": 535.5
+   },
+   {
+    "fn": "string",
+    "at": "recordTable.ts:505",
+    "selfMs": 527.6,
+    "totalMs": 527.6
+   },
+   {
+    "fn": "TableReader.collected",
+    "at": "recordTable.ts:481",
+    "selfMs": 220.4,
+    "totalMs": 220.4
+   },
+   {
+    "fn": "packCover",
+    "at": "layerCells.ts:202",
+    "selfMs": 120.6,
+    "totalMs": 120.6
+   },
+   {
+    "fn": "postMessage",
+    "at": "job.worker.ts?worker_file&type=module:99",
+    "selfMs": 36.3,
+    "totalMs": 110.1
+   },
+   {
+    "fn": "bakeFrames",
+    "at": "citizenBake.ts:128",
+    "selfMs": 2.2,
+    "totalMs": 83.8
+   },
+   {
+    "fn": "postMessage",
+    "at": null,
+    "selfMs": 73.9,
+    "totalMs": 73.9
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "citizenBake.ts:186",
+    "selfMs": 4.3,
+    "totalMs": 68
+   },
+   {
+    "fn": "reader",
+    "at": "recordTable.ts:438",
+    "selfMs": 53.5,
+    "totalMs": 53.5
+   },
+   {
+    "fn": "volumeRectLocal",
+    "at": "geometry.ts:148",
+    "selfMs": 50.4,
+    "totalMs": 50.4
+   },
+   {
+    "fn": "RecordTable",
+    "at": "recordTable.ts:413",
+    "selfMs": 29.2,
+    "totalMs": 35.8
+   },
+   {
+    "fn": "multiplyMatrices",
+    "at": "../../three/build/three.core.js:10570",
+    "selfMs": 33.2,
+    "totalMs": 33.2
+   },
+   {
+    "fn": "updateMatrixWorld",
+    "at": "../../three/build/three.core.js:13067",
+    "selfMs": 3.3,
+    "totalMs": 31.1
+   },
+   {
+    "fn": "pose",
+    "at": "citizenWalk.ts:243",
+    "selfMs": 2.1,
+    "totalMs": 31
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "geometry.ts:154",
+    "selfMs": 4.8,
+    "totalMs": 28.1
+   },
+   {
+    "fn": "MessageEvent",
+    "at": null,
+    "selfMs": 25.7,
+    "totalMs": 25.7
+   },
+   {
+    "fn": "turnInWorld",
+    "at": "citizenBake.ts:212",
+    "selfMs": 0.5,
+    "totalMs": 20.9
+   },
+   {
+    "fn": "updateMatrix",
+    "at": "../../three/build/three.core.js:13035",
+    "selfMs": 16.6,
+    "totalMs": 16.6
+   },
+   {
+    "fn": "updateWorldMatrix",
+    "at": "../../three/build/three.core.js:13116",
+    "selfMs": 0.5,
+    "totalMs": 13.4
+   },
+   {
+    "fn": "update",
+    "at": "../../three/build/three.core.js:25135",
+    "selfMs": 0.5,
+    "totalMs": 9.7
+   },
+   {
+    "fn": "onQuaternionChange",
+    "at": "../../three/build/three.core.js:12042",
+    "selfMs": 2.8,
+    "totalMs": 9.3
+   },
+   {
+    "fn": "layout",
+    "at": "recordTable.ts:82",
+    "selfMs": 7.2,
+    "totalMs": 7.2
+   },
+   {
+    "fn": "offsetRing",
+    "at": "footprints.ts:170",
+    "selfMs": 4,
+    "totalMs": 6.6
+   },
+   {
+    "fn": "setFromRotationMatrix",
+    "at": "../../three/build/three.core.js:11523",
+    "selfMs": 6.5,
+    "totalMs": 6.5
+   }
+  ]
+ },
+ {
+  "file": "job-thread_24552_worker_1_WorkerThread_1.cpuprofile",
+  "wallMs": 35154,
+  "busyMs": 14405,
+  "idleMs": 20749,
+  "programMs": 50,
+  "gcMs": 147,
+  "jsWithSourceMs": 14176,
+  "nativeNoUrlMs": 32,
+  "samples": 62022,
+  "topSelf": [
+   {
+    "fn": "divergeObstacle",
+    "at": "src/sim/vehicles/leaderIndex.ts:118 ~decl",
+    "selfMs": 698.3,
+    "totalMs": 938
+   },
+   {
+    "fn": "lanelet",
+    "at": "src/sim/world.ts:291 ~decl",
+    "selfMs": 656.1,
+    "totalMs": 656.1
+   },
+   {
+    "fn": "step",
+    "at": "src/sim/pipeline.ts:29 ~decl",
+    "selfMs": 643.9,
+    "totalMs": 12147.3
+   },
+   {
+    "fn": "integrateAll",
+    "at": "src/sim/vehicles/integrate.ts:18 ~decl",
+    "selfMs": 419.8,
+    "totalMs": 1941.6
+   },
+   {
+    "fn": "connector",
+    "at": "src/sim/world.ts:403 ~decl",
+    "selfMs": 403.5,
+    "totalMs": 403.5
+   },
+   {
+    "fn": "node",
+    "at": "src/sim/meso/model.ts:118 ~decl",
+    "selfMs": 358.5,
+    "totalMs": 416.2
+   },
+   {
+    "fn": "publish",
+    "at": "src/sim/host/simHost.ts:198 ~decl",
+    "selfMs": 357.1,
+    "totalMs": 1853.8
+   },
+   {
+    "fn": "ensureVehicleRoutes",
+    "at": "src/sim/pipeline.ts:78 ~decl",
+    "selfMs": 334.7,
+    "totalMs": 1362.4
+   },
+   {
+    "fn": "stepWalkers",
+    "at": "src/sim/agents/walk.ts:1007 ~decl",
+    "selfMs": 313,
+    "totalMs": 960.7
+   },
+   {
+    "fn": "stopShortOfIntrusion",
+    "at": "src/sim/intersections/admission.ts:153 ~decl",
+    "selfMs": 302,
+    "totalMs": 433.7
+   },
+   {
+    "fn": "findLeader",
+    "at": "src/sim/vehicles/leaderIndex.ts:14 ~decl",
+    "selfMs": 288.1,
+    "totalMs": 653.9
+   },
+   {
+    "fn": "snapshotInto",
+    "at": "src/sim/vehicles/state.ts:171 ~decl",
+    "selfMs": 251.5,
+    "totalMs": 251.5
+   },
+   {
+    "fn": "iidm",
+    "at": "src/sim/drive/operational.ts:19 ~decl",
+    "selfMs": 249.7,
+    "totalMs": 249.7
+   },
+   {
+    "fn": "sampleAtInto",
+    "at": "src/core/polyline.ts:153 ~decl",
+    "selfMs": 206.8,
+    "totalMs": 424
+   },
+   {
+    "fn": "junctionOfLane",
+    "at": "src/sim/world.ts:551 ~decl",
+    "selfMs": 205.2,
+    "totalMs": 205.2
+   },
+   {
+    "fn": "writeVehicle",
+    "at": "src/sim/host/simHost.ts:255 ~decl",
+    "selfMs": 200.3,
+    "totalMs": 1304.2
+   },
+   {
+    "fn": "longitudinalConstraints",
+    "at": "src/sim/vehicles/obstacles.ts:109 ~decl",
+    "selfMs": 197.2,
+    "totalMs": 2826.7
+   },
+   {
+    "fn": "reconcileReservedChain",
+    "at": "src/sim/pipeline.ts:165 ~decl",
+    "selfMs": 189.1,
+    "totalMs": 201.6
+   },
+   {
+    "fn": "bodyFrame",
+    "at": "src/sim/pose.ts:152 ~decl",
+    "selfMs": 173,
+    "totalMs": 533.3
+   },
+   {
+    "fn": "curveSpeedCap",
+    "at": "src/sim/vehicles/curvature.ts:84 ~decl",
+    "selfMs": 168.9,
+    "totalMs": 401.4
+   },
+   {
+    "fn": "get length",
+    "at": "src/core/polyline.ts:123 ~decl",
+    "selfMs": 164.5,
+    "totalMs": 164.5
+   },
+   {
+    "fn": "pedestrianAhead",
+    "at": "src/sim/vehicles/obstacles.ts:20 ~decl",
+    "selfMs": 161.1,
+    "totalMs": 304
+   },
+   {
+    "fn": "admit",
+    "at": "src/sim/intersections/admission.ts:74 ~decl",
+    "selfMs": 156.5,
+    "totalMs": 953.9
+   },
+   {
+    "fn": "nextObstacle",
+    "at": "src/sim/vehicles/idm.ts:55 ~decl",
+    "selfMs": 143.3,
+    "totalMs": 143.3
+   },
+   {
+    "fn": "rt",
+    "at": "src/sim/world.ts:408 ~decl",
+    "selfMs": 140.3,
+    "totalMs": 140.3
+   },
+   {
+    "fn": "planTrip",
+    "at": "src/sim/drive/tactical.ts:39 ~decl",
+    "selfMs": 138.3,
+    "totalMs": 821.5
+   },
+   {
+    "fn": "linkFlows",
+    "at": "src/sim/meso/model.ts:379 ~decl",
+    "selfMs": 132.9,
+    "totalMs": 132.9
+   },
+   {
+    "fn": "resetConstraints",
+    "at": "src/sim/vehicles/idm.ts:49 ~decl",
+    "selfMs": 131.9,
+    "totalMs": 131.9
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "src/core/identityMemo.ts:1 ~decl",
+    "selfMs": 124.3,
+    "totalMs": 124.6
+   },
+   {
+    "fn": "mergeObstacle",
+    "at": "src/sim/vehicles/obstacles.ts:75 ~decl",
+    "selfMs": 122.4,
+    "totalMs": 198.3
+   }
+  ],
+  "topTotal": [
+   {
+    "fn": "(anonymous)",
+    "at": "src/sim/sim.worker.ts:4 ~decl",
+    "selfMs": 2.6,
+    "totalMs": 14145.3
+   },
+   {
+    "fn": "handle",
+    "at": "src/sim/host/simHost.ts:91 ~decl",
+    "selfMs": 6.2,
+    "totalMs": 14142.2
+   },
+   {
+    "fn": "frame",
+    "at": "src/sim/host/simHost.ts:33 ~decl",
+    "selfMs": 55.3,
+    "totalMs": 14131.9
+   },
+   {
+    "fn": "advance",
+    "at": "src/sim/clock.ts:21 ~decl",
+    "selfMs": 2.9,
+    "totalMs": 12182.7
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "src/sim/host/simHost.ts:31 ~decl",
+    "selfMs": 2.6,
+    "totalMs": 12161.6
+   },
+   {
+    "fn": "step",
+    "at": "src/sim/pipeline.ts:29 ~decl",
+    "selfMs": 643.9,
+    "totalMs": 12147.3
+   },
+   {
+    "fn": "longitudinalConstraints",
+    "at": "src/sim/vehicles/obstacles.ts:109 ~decl",
+    "selfMs": 197.2,
+    "totalMs": 2826.7
+   },
+   {
+    "fn": "integrateAll",
+    "at": "src/sim/vehicles/integrate.ts:18 ~decl",
+    "selfMs": 419.8,
+    "totalMs": 1941.6
+   },
+   {
+    "fn": "publish",
+    "at": "src/sim/host/simHost.ts:198 ~decl",
+    "selfMs": 357.1,
+    "totalMs": 1853.8
+   },
+   {
+    "fn": "ensureVehicleRoutes",
+    "at": "src/sim/pipeline.ts:78 ~decl",
+    "selfMs": 334.7,
+    "totalMs": 1362.4
+   },
+   {
+    "fn": "writeVehicle",
+    "at": "src/sim/host/simHost.ts:255 ~decl",
+    "selfMs": 200.3,
+    "totalMs": 1304.2
+   },
+   {
+    "fn": "step",
+    "at": "src/sim/meso/meso.ts:32 ~decl",
+    "selfMs": 2.3,
+    "totalMs": 1108.4
+   },
+   {
+    "fn": "stepAdmission",
+    "at": "src/sim/intersections/admission.ts:58 ~decl",
+    "selfMs": 38.1,
+    "totalMs": 1079.3
+   },
+   {
+    "fn": "step",
+    "at": "src/sim/agents/walk.ts:378 ~decl",
+    "selfMs": 11.8,
+    "totalMs": 975.2
+   },
+   {
+    "fn": "stepWalkers",
+    "at": "src/sim/agents/walk.ts:1007 ~decl",
+    "selfMs": 313,
+    "totalMs": 960.7
+   },
+   {
+    "fn": "admit",
+    "at": "src/sim/intersections/admission.ts:74 ~decl",
+    "selfMs": 156.5,
+    "totalMs": 953.9
+   },
+   {
+    "fn": "divergeObstacle",
+    "at": "src/sim/vehicles/leaderIndex.ts:118 ~decl",
+    "selfMs": 698.3,
+    "totalMs": 938
+   },
+   {
+    "fn": "planFrom",
+    "at": "src/sim/routing/router.ts:107 ~decl",
+    "selfMs": 8.7,
+    "totalMs": 868.3
+   },
+   {
+    "fn": "planTrip",
+    "at": "src/sim/drive/tactical.ts:39 ~decl",
+    "selfMs": 138.3,
+    "totalMs": 821.5
+   },
+   {
+    "fn": "work",
+    "at": "src/sim/meso/meso.ts:22 ~decl",
+    "selfMs": 0.9,
+    "totalMs": 814
+   },
+   {
+    "fn": "vehicleFramesInto",
+    "at": "src/sim/pose.ts:96 ~decl",
+    "selfMs": 97.4,
+    "totalMs": 706.4
+   },
+   {
+    "fn": "lanelet",
+    "at": "src/sim/world.ts:291 ~decl",
+    "selfMs": 656.1,
+    "totalMs": 656.1
+   },
+   {
+    "fn": "findLeader",
+    "at": "src/sim/vehicles/leaderIndex.ts:14 ~decl",
+    "selfMs": 288.1,
+    "totalMs": 653.9
+   },
+   {
+    "fn": "stepSome",
+    "at": "src/sim/meso/model.ts:364 ~decl",
+    "selfMs": 1.1,
+    "totalMs": 642.6
+   },
+   {
+    "fn": "axleFrame",
+    "at": "src/sim/pose.ts:61 ~decl",
+    "selfMs": 84.7,
+    "totalMs": 616.9
+   },
+   {
+    "fn": "reconsiderRoute",
+    "at": "src/sim/routing/router.ts:312 ~decl",
+    "selfMs": 75.7,
+    "totalMs": 540.6
+   },
+   {
+    "fn": "bodyFrame",
+    "at": "src/sim/pose.ts:152 ~decl",
+    "selfMs": 173,
+    "totalMs": 533.3
+   },
+   {
+    "fn": "physicalSpeed",
+    "at": "src/sim/drive/physicalMotion.ts:10 ~decl",
+    "selfMs": 14.2,
+    "totalMs": 437.3
+   },
+   {
+    "fn": "stopShortOfIntrusion",
+    "at": "src/sim/intersections/admission.ts:153 ~decl",
+    "selfMs": 302,
+    "totalMs": 433.7
+   },
+   {
+    "fn": "sampleAtInto",
+    "at": "src/core/polyline.ts:153 ~decl",
+    "selfMs": 206.8,
+    "totalMs": 424
+   }
+  ]
+ },
+ {
+  "file": "job-process_24552.cpuprofile",
+  "wallMs": 35147,
+  "busyMs": 883,
+  "idleMs": 34264,
+  "programMs": 98,
+  "gcMs": 39,
+  "jsWithSourceMs": 205,
+  "nativeNoUrlMs": 541,
+  "samples": 62651,
+  "topSelf": [
+   {
+    "fn": "postMessage",
+    "at": null,
+    "selfMs": 538.4,
+    "totalMs": 538.4
+   },
+   {
+    "fn": "postMessage",
+    "at": "node:electron/js2c/utility_init",
+    "selfMs": 161.4,
+    "totalMs": 680.9
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:internal/worker",
+    "selfMs": 19.6,
+    "totalMs": 702.1
+   },
+   {
+    "fn": "postMessage",
+    "at": "node:internal/worker",
+    "selfMs": 8.2,
+    "totalMs": 27.1
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:electron/js2c/utility_init",
+    "selfMs": 4.1,
+    "totalMs": 36.2
+   },
+   {
+    "fn": "writeBuffer",
+    "at": null,
+    "selfMs": 2.8,
+    "totalMs": 2.8
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:internal/event_target",
+    "selfMs": 2.7,
+    "totalMs": 708.6
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/desktop/jobs.cjs",
+    "selfMs": 2.3,
+    "totalMs": 30.9
+   },
+   {
+    "fn": "buffersIn",
+    "at": "file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/desktop/jobs.cjs",
+    "selfMs": 2.1,
+    "totalMs": 2.1
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:internal/per_context/messageport",
+    "selfMs": 1.7,
+    "totalMs": 710.3
+   },
+   {
+    "fn": "emit",
+    "at": "node:events",
+    "selfMs": 1.1,
+    "totalMs": 716.7
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/desktop/jobs.cjs",
+    "selfMs": 0.5,
+    "totalMs": 681.4
+   },
+   {
+    "fn": "nextTick",
+    "at": "node:internal/process/task_queues",
+    "selfMs": 0.5,
+    "totalMs": 0.5
+   },
+   {
+    "fn": "addChunk",
+    "at": "node:internal/streams/readable",
+    "selfMs": 0.5,
+    "totalMs": 3.8
+   }
+  ],
+  "topTotal": [
+   {
+    "fn": "emit",
+    "at": "node:events",
+    "selfMs": 1.1,
+    "totalMs": 716.7
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:internal/per_context/messageport",
+    "selfMs": 1.7,
+    "totalMs": 710.3
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:internal/event_target",
+    "selfMs": 2.7,
+    "totalMs": 708.6
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:internal/worker",
+    "selfMs": 19.6,
+    "totalMs": 702.1
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/desktop/jobs.cjs",
+    "selfMs": 0.5,
+    "totalMs": 681.4
+   },
+   {
+    "fn": "postMessage",
+    "at": "node:electron/js2c/utility_init",
+    "selfMs": 161.4,
+    "totalMs": 680.9
+   },
+   {
+    "fn": "postMessage",
+    "at": null,
+    "selfMs": 538.4,
+    "totalMs": 538.4
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:electron/js2c/utility_init",
+    "selfMs": 4.1,
+    "totalMs": 36.2
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/desktop/jobs.cjs",
+    "selfMs": 2.3,
+    "totalMs": 30.9
+   },
+   {
+    "fn": "postMessage",
+    "at": "node:internal/worker",
+    "selfMs": 8.2,
+    "totalMs": 27.1
+   },
+   {
+    "fn": "addChunk",
+    "at": "node:internal/streams/readable",
+    "selfMs": 0.5,
+    "totalMs": 3.8
+   },
+   {
+    "fn": "writeBuffer",
+    "at": null,
+    "selfMs": 2.8,
+    "totalMs": 2.8
+   },
+   {
+    "fn": "buffersIn",
+    "at": "file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/desktop/jobs.cjs",
+    "selfMs": 2.1,
+    "totalMs": 2.1
+   },
+   {
+    "fn": "nextTick",
+    "at": "node:internal/process/task_queues",
+    "selfMs": 0.5,
+    "totalMs": 0.5
+   }
+  ]
+ },
+ {
+  "file": "job-thread_38284_worker_4_WorkerThread_1.cpuprofile",
+  "wallMs": 34589,
+  "busyMs": 137,
+  "idleMs": 34452,
+  "programMs": 137,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 61469,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_35072_worker_3_WorkerThread_1.cpuprofile",
+  "wallMs": 35127,
+  "busyMs": 116,
+  "idleMs": 35011,
+  "programMs": 116,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 62432,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_32144_worker_2_WorkerThread_3.cpuprofile",
+  "wallMs": 34688,
+  "busyMs": 109,
+  "idleMs": 34579,
+  "programMs": 109,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 61685,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_35072_worker_2_WorkerThread_2.cpuprofile",
+  "wallMs": 35059,
+  "busyMs": 108,
+  "idleMs": 34951,
+  "programMs": 108,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 62326,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_35072_worker_1_WorkerThread_3.cpuprofile",
+  "wallMs": 35000,
+  "busyMs": 107,
+  "idleMs": 34892,
+  "programMs": 107,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 62221,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_12432_worker_1_WorkerThread_3.cpuprofile",
+  "wallMs": 35186,
+  "busyMs": 105,
+  "idleMs": 35081,
+  "programMs": 105,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 62553,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_38284_worker_2_WorkerThread_3.cpuprofile",
+  "wallMs": 34472,
+  "busyMs": 105,
+  "idleMs": 34367,
+  "programMs": 104,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 61320,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_12432_worker_3_WorkerThread_1.cpuprofile",
+  "wallMs": 35287,
+  "busyMs": 101,
+  "idleMs": 35185,
+  "programMs": 101,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 62746,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_38284_worker_1_WorkerThread_4.cpuprofile",
+  "wallMs": 34422,
+  "busyMs": 101,
+  "idleMs": 34321,
+  "programMs": 101,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 61238,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_22236_worker_2_WorkerThread_2.cpuprofile",
+  "wallMs": 34896,
+  "busyMs": 100,
+  "idleMs": 34796,
+  "programMs": 100,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 62057,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_32144_worker_4_WorkerThread_1.cpuprofile",
+  "wallMs": 34795,
+  "busyMs": 100,
+  "idleMs": 34695,
+  "programMs": 100,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 61885,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_22236_worker_1_WorkerThread_3.cpuprofile",
+  "wallMs": 34842,
+  "busyMs": 99,
+  "idleMs": 34744,
+  "programMs": 99,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 61967,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_22236_worker_3_WorkerThread_1.cpuprofile",
+  "wallMs": 34947,
+  "busyMs": 99,
+  "idleMs": 34848,
+  "programMs": 99,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 62147,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_38284_worker_3_WorkerThread_2.cpuprofile",
+  "wallMs": 34518,
+  "busyMs": 99,
+  "idleMs": 34419,
+  "programMs": 99,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 61412,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_12432_worker_2_WorkerThread_2.cpuprofile",
+  "wallMs": 35233,
+  "busyMs": 98,
+  "idleMs": 35135,
+  "programMs": 98,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 62655,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_32144_worker_1_WorkerThread_4.cpuprofile",
+  "wallMs": 34627,
+  "busyMs": 97,
+  "idleMs": 34531,
+  "programMs": 97,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 61601,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_32144_worker_3_WorkerThread_2.cpuprofile",
+  "wallMs": 34739,
+  "busyMs": 96,
+  "idleMs": 34643,
+  "programMs": 96,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 61796,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-process_33080.cpuprofile",
+  "wallMs": 35163,
+  "busyMs": 33,
+  "idleMs": 35130,
+  "programMs": 33,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 62648,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-process_32144.cpuprofile",
+  "wallMs": 34793,
+  "busyMs": 16,
+  "idleMs": 34777,
+  "programMs": 16,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 62031,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-process_35072.cpuprofile",
+  "wallMs": 35127,
+  "busyMs": 16,
+  "idleMs": 35112,
+  "programMs": 15,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 62602,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-process_38284.cpuprofile",
+  "wallMs": 34584,
+  "busyMs": 15,
+  "idleMs": 34570,
+  "programMs": 14,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 61676,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-process_12432.cpuprofile",
+  "wallMs": 35283,
+  "busyMs": 14,
+  "idleMs": 35269,
+  "programMs": 14,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 62901,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-process_22236.cpuprofile",
+  "wallMs": 34945,
+  "busyMs": 14,
+  "idleMs": 34931,
+  "programMs": 14,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 62294,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "worker_job.worker.ts_EB4452.cpuprofile",
+  "wallMs": 35120,
+  "busyMs": 0,
+  "idleMs": 35120,
+  "programMs": 0,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 62624,
+  "topSelf": [],
+  "topTotal": []
+ }
+]

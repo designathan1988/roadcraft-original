@@ -1,0 +1,1281 @@
+[
+ {
+  "file": "page.heapprofile",
+  "sampledLiveMB": 19607.5,
+  "noUrlMB": 2780.8,
+  "top": [
+   {
+    "fn": "draw",
+    "at": "riggedCitizens.ts:869",
+    "MB": 2940.57
+   },
+   {
+    "fn": "sync",
+    "at": "agents.ts:1846",
+    "MB": 1318.43
+   },
+   {
+    "fn": "writeTile",
+    "at": "densityCars.ts:490",
+    "MB": 1267.99
+   },
+   {
+    "fn": "casterChanges",
+    "at": "renderer.ts:748",
+    "MB": 999.73
+   },
+   {
+    "fn": "multiplyMatrices",
+    "at": "../../three/build/three.core.js:10570",
+    "MB": 843.5
+   },
+   {
+    "fn": "next",
+    "at": null,
+    "MB": 785.92
+   },
+   {
+    "fn": "hypot",
+    "at": null,
+    "MB": 546.02
+   },
+   {
+    "fn": "updateMatrix",
+    "at": "../../three/build/three.core.js:13035",
+    "MB": 513.22
+   },
+   {
+    "fn": "nearestDepth",
+    "at": "farLadders.ts:108",
+    "MB": 483.94
+   },
+   {
+    "fn": "renderObject",
+    "at": "../../three/build/three.module.js:18192",
+    "MB": 471.74
+   },
+   {
+    "fn": "drawVehicle",
+    "at": "agents.ts:1911",
+    "MB": 457.8
+   },
+   {
+    "fn": "values",
+    "at": null,
+    "MB": 403.51
+   },
+   {
+    "fn": "drawCar",
+    "at": "agents.ts:1278",
+    "MB": 318.31
+   },
+   {
+    "fn": "chooseCells",
+    "at": "roadResidency.ts:221",
+    "MB": 298.37
+   },
+   {
+    "fn": "draw",
+    "at": "renderer.ts:3434",
+    "MB": 282.87
+   },
+   {
+    "fn": "add",
+    "at": null,
+    "MB": 280.04
+   },
+   {
+    "fn": "getParameters",
+    "at": "../../three/build/three.module.js:7357",
+    "MB": 238.1
+   },
+   {
+    "fn": "mixMaterial",
+    "at": "renderer.ts:756",
+    "MB": 233.67
+   },
+   {
+    "fn": "forEachOccluder",
+    "at": "cameraSolids.ts:574",
+    "MB": 209.69
+   },
+   {
+    "fn": "placeWheels",
+    "at": "agents.ts:1206",
+    "MB": 198.79
+   },
+   {
+    "fn": "nearestSegment",
+    "at": "polyline.ts:275",
+    "MB": 190.85
+   },
+   {
+    "fn": "stepGait",
+    "at": "citizenGait.ts:395",
+    "MB": 176.47
+   },
+   {
+    "fn": "personPixels",
+    "at": "renderer.ts:1412",
+    "MB": 172.53
+   },
+   {
+    "fn": "setValueV3f",
+    "at": "../../three/build/three.module.js:5159",
+    "MB": 171.72
+   },
+   {
+    "fn": "readTick",
+    "at": "simClient.ts:547",
+    "MB": 169.63
+   },
+   {
+    "fn": "counted",
+    "at": "hiddenWork.ts:124",
+    "MB": 161.76
+   },
+   {
+    "fn": "walk",
+    "at": "inventory.ts:74",
+    "MB": 154.17
+   },
+   {
+    "fn": "set",
+    "at": null,
+    "MB": 150.82
+   },
+   {
+    "fn": "drawTwoWheeler",
+    "at": "agents.ts:1531",
+    "MB": 145.81
+   },
+   {
+    "fn": "cellBox",
+    "at": "roadResidency.ts:163",
+    "MB": 142.86
+   }
+  ]
+ },
+ {
+  "file": "job-thread_24552_worker_1_WorkerThread_1.heapprofile",
+  "sampledLiveMB": 11277.8,
+  "noUrlMB": 1928.8,
+  "top": [
+   {
+    "fn": "next",
+    "at": null,
+    "MB": 802.66
+   },
+   {
+    "fn": "stepWalkers",
+    "at": "src/sim/agents/walk.ts:1007 ~decl",
+    "MB": 694.66
+   },
+   {
+    "fn": "longitudinalConstraints",
+    "at": "src/sim/vehicles/obstacles.ts:109 ~decl",
+    "MB": 637.68
+   },
+   {
+    "fn": "integrateAll",
+    "at": "src/sim/vehicles/integrate.ts:18 ~decl",
+    "MB": 601
+   },
+   {
+    "fn": "get length",
+    "at": "src/core/polyline.ts:123 ~decl",
+    "MB": 600.05
+   },
+   {
+    "fn": "near",
+    "at": "src/sim/peds/signalPostIndex.ts:93 ~decl",
+    "MB": 485.61
+   },
+   {
+    "fn": "axleFrame",
+    "at": "src/sim/pose.ts:61 ~decl",
+    "MB": 470.49
+   },
+   {
+    "fn": "findLeader",
+    "at": "src/sim/vehicles/leaderIndex.ts:14 ~decl",
+    "MB": 454.3
+   },
+   {
+    "fn": "bodyFrame",
+    "at": "src/sim/pose.ts:152 ~decl",
+    "MB": 453.43
+   },
+   {
+    "fn": "vehicleFramesInto",
+    "at": "src/sim/pose.ts:96 ~decl",
+    "MB": 377.35
+   },
+   {
+    "fn": "Set",
+    "at": null,
+    "MB": 324.65
+   },
+   {
+    "fn": "publish",
+    "at": "src/sim/host/simHost.ts:198 ~decl",
+    "MB": 282.39
+   },
+   {
+    "fn": "writeVehicle",
+    "at": "src/sim/host/simHost.ts:255 ~decl",
+    "MB": 273.08
+   },
+   {
+    "fn": "divergeObstacle",
+    "at": "src/sim/vehicles/leaderIndex.ts:118 ~decl",
+    "MB": 234.24
+   },
+   {
+    "fn": "pop",
+    "at": "src/sim/routing/searchScratch.ts:151 ~decl",
+    "MB": 233.17
+   },
+   {
+    "fn": "set",
+    "at": null,
+    "MB": 230.88
+   },
+   {
+    "fn": "add",
+    "at": null,
+    "MB": 181.47
+   },
+   {
+    "fn": "indexReservations",
+    "at": "src/sim/crossings/permission.ts:54 ~decl",
+    "MB": 162.51
+   },
+   {
+    "fn": "publish",
+    "at": "src/sim/agents/walk.ts:1019 ~decl",
+    "MB": 153.54
+   },
+   {
+    "fn": "admit",
+    "at": "src/sim/intersections/admission.ts:74 ~decl",
+    "MB": 146.87
+   },
+   {
+    "fn": "Map",
+    "at": null,
+    "MB": 145.43
+   },
+   {
+    "fn": "physicalSpeed",
+    "at": "src/sim/drive/physicalMotion.ts:10 ~decl",
+    "MB": 137.81
+   },
+   {
+    "fn": "frameInto",
+    "at": "src/sim/agents/walk.ts:689 ~decl",
+    "MB": 133.87
+   },
+   {
+    "fn": "iidm",
+    "at": "src/sim/drive/operational.ts:19 ~decl",
+    "MB": 128.71
+   },
+   {
+    "fn": "evaluate",
+    "at": "src/sim/intersections/admission.ts:158 ~decl",
+    "MB": 117.43
+   },
+   {
+    "fn": "signals",
+    "at": "src/sim/host/simHost.ts:326 ~decl",
+    "MB": 114.84
+   },
+   {
+    "fn": "stopShortOfIntrusion",
+    "at": "src/sim/intersections/admission.ts:153 ~decl",
+    "MB": 102.84
+   },
+   {
+    "fn": "stallCounters",
+    "at": "src/sim/pipeline.ts:214 ~decl",
+    "MB": 99.66
+   },
+   {
+    "fn": "ensureVehicleRoutes",
+    "at": "src/sim/pipeline.ts:78 ~decl",
+    "MB": 95.69
+   },
+   {
+    "fn": "sort",
+    "at": null,
+    "MB": 94.7
+   }
+  ]
+ },
+ {
+  "file": "job-thread_38284_worker_1_WorkerThread_4.heapprofile",
+  "sampledLiveMB": 529.5,
+  "noUrlMB": 66.4,
+  "top": [
+   {
+    "fn": "flatXY",
+    "at": "src/core/ring.ts:90 ~decl",
+    "MB": 71.73
+   },
+   {
+    "fn": "get fillet",
+    "at": "src/world/junction/corners.ts:22 ~decl",
+    "MB": 27.96
+   },
+   {
+    "fn": "frameFromNode",
+    "at": "src/world/geometry.ts:50 ~decl",
+    "MB": 22.58
+   },
+   {
+    "fn": "buildJunctionRing",
+    "at": "src/world/junction/polygon.ts:109 ~decl",
+    "MB": 20.45
+   },
+   {
+    "fn": "Float64Array",
+    "at": null,
+    "MB": 20.33
+   },
+   {
+    "fn": "deriveFromLegs",
+    "at": "src/world/junction/derive.ts:37 ~decl",
+    "MB": 19.45
+   },
+   {
+    "fn": "(anonymous in buildLegs)",
+    "at": "src/world/junction/legs.ts:8 ~decl",
+    "MB": 17.55
+   },
+   {
+    "fn": "offsetPolyline",
+    "at": "src/core/offset.ts:46 ~decl",
+    "MB": 16.46
+   },
+   {
+    "fn": "legOf",
+    "at": "src/world/junction/legs.ts:45 ~decl",
+    "MB": 16.31
+   },
+   {
+    "fn": "Ring",
+    "at": "src/core/ring.ts:173 ~decl",
+    "MB": 16.27
+   },
+   {
+    "fn": "resolveCorner",
+    "at": "src/world/junction/corners.ts:75 ~decl",
+    "MB": 15.49
+   },
+   {
+    "fn": "ribbonRing",
+    "at": "src/world/ribbons.ts:157 ~decl",
+    "MB": 15.43
+   },
+   {
+    "fn": "get dir",
+    "at": "src/world/junction/legs.ts:33 ~decl",
+    "MB": 13.79
+   },
+   {
+    "fn": "legTongue",
+    "at": "src/world/junction/polygon.ts:63 ~decl",
+    "MB": 13.03
+   },
+   {
+    "fn": "sub",
+    "at": "src/core/polyline.ts:198 ~decl",
+    "MB": 12.96
+   },
+   {
+    "fn": "filletCorner",
+    "at": "src/core/fillet.ts:19 ~decl",
+    "MB": 12.78
+   },
+   {
+    "fn": "next",
+    "at": null,
+    "MB": 10.69
+   },
+   {
+    "fn": "computeCorners",
+    "at": "src/world/junction/corners.ts:64 ~decl",
+    "MB": 9.45
+   },
+   {
+    "fn": "get origin",
+    "at": "src/world/junction/legs.ts:32 ~decl",
+    "MB": 8.51
+   },
+   {
+    "fn": "get nrm",
+    "at": "src/world/junction/legs.ts:34 ~decl",
+    "MB": 6.94
+   },
+   {
+    "fn": "hypot",
+    "at": null,
+    "MB": 6.63
+   },
+   {
+    "fn": "Map",
+    "at": null,
+    "MB": 5.91
+   },
+   {
+    "fn": "rasterise",
+    "at": "src/core/regionIndex.ts:286 ~decl",
+    "MB": 5.69
+   },
+   {
+    "fn": "sort",
+    "at": null,
+    "MB": 5.6
+   },
+   {
+    "fn": "reconcileSegment",
+    "at": "src/world/networkBuild.ts:262 ~decl",
+    "MB": 5.47
+   },
+   {
+    "fn": "roadProfile",
+    "at": "src/world/roadTypes.ts:248 ~decl",
+    "MB": 5.06
+   },
+   {
+    "fn": "isSimple",
+    "at": "src/core/polygon.ts:8 ~decl",
+    "MB": 5
+   },
+   {
+    "fn": "ribbonParts",
+    "at": "src/world/ribbons.ts:114 ~decl",
+    "MB": 4.69
+   },
+   {
+    "fn": "clipToBox",
+    "at": "src/world/walkable.ts:84 ~decl",
+    "MB": 4.48
+   },
+   {
+    "fn": "buildLegs",
+    "at": "src/world/junction/legs.ts:89 ~decl",
+    "MB": 4.28
+   }
+  ]
+ },
+ {
+  "file": "worker_job.worker.ts_74DE4D.heapprofile",
+  "sampledLiveMB": 416.5,
+  "noUrlMB": 57.7,
+  "top": [
+   {
+    "fn": "multiplyMatrices",
+    "at": "../../three/build/three.core.js:10570",
+    "MB": 69.98
+   },
+   {
+    "fn": "value",
+    "at": "recordTable.ts:527",
+    "MB": 65
+   },
+   {
+    "fn": "updateMatrix",
+    "at": "../../three/build/three.core.js:13035",
+    "MB": 40.19
+   },
+   {
+    "fn": "workOutLayout",
+    "at": "geometry.ts:651",
+    "MB": 25.11
+   },
+   {
+    "fn": "sampleFootprint",
+    "at": "foundation.ts:88",
+    "MB": 20.38
+   },
+   {
+    "fn": "sideFrame",
+    "at": "footprints.ts:40",
+    "MB": 16.64
+   },
+   {
+    "fn": "updateWorldMatrix",
+    "at": "../../three/build/three.core.js:13116",
+    "MB": 14.35
+   },
+   {
+    "fn": "next",
+    "at": null,
+    "MB": 13.41
+   },
+   {
+    "fn": "WeakRef",
+    "at": null,
+    "MB": 11.84
+   },
+   {
+    "fn": "set",
+    "at": null,
+    "MB": 11.83
+   },
+   {
+    "fn": "onQuaternionChange",
+    "at": "../../three/build/three.core.js:12042",
+    "MB": 11.06
+   },
+   {
+    "fn": "gardenPlants",
+    "at": "gardenPlace.ts:36",
+    "MB": 10.82
+   },
+   {
+    "fn": "register",
+    "at": null,
+    "MB": 9.63
+   },
+   {
+    "fn": "edgeFrame",
+    "at": "footprints.ts:31",
+    "MB": 9
+   },
+   {
+    "fn": "lotFront",
+    "at": "foundation.ts:308",
+    "MB": 5.91
+   },
+   {
+    "fn": "spansAgainst",
+    "at": "geometry.ts:343",
+    "MB": 5.88
+   },
+   {
+    "fn": "volumeCorners",
+    "at": "geometry.ts:153",
+    "MB": 4.88
+   },
+   {
+    "fn": "take",
+    "at": "foundation.ts:99",
+    "MB": 4.84
+   },
+   {
+    "fn": "coverCellOf",
+    "at": "layerCells.ts:158",
+    "MB": 4.51
+   },
+   {
+    "fn": "pavedHeightFrom",
+    "at": "paving.ts:12",
+    "MB": 4.1
+   },
+   {
+    "fn": "(anonymous in sampleFootprint)",
+    "at": "sharedGround.ts:181",
+    "MB": 3.28
+   },
+   {
+    "fn": "string",
+    "at": "recordTable.ts:505",
+    "MB": 3.22
+   },
+   {
+    "fn": "bayWidth",
+    "at": "geometry.ts:319",
+    "MB": 3.16
+   },
+   {
+    "fn": "delete",
+    "at": null,
+    "MB": 3.12
+   },
+   {
+    "fn": "u32",
+    "at": "rng.ts:46",
+    "MB": 2.72
+   },
+   {
+    "fn": "near",
+    "at": "roadField.ts:250",
+    "MB": 2.44
+   },
+   {
+    "fn": "followPieces",
+    "at": "elements.ts:97",
+    "MB": 2.41
+   },
+   {
+    "fn": "subarray",
+    "at": null,
+    "MB": 2.38
+   },
+   {
+    "fn": "gardenPack",
+    "at": "gardenPlace.ts:70",
+    "MB": 2.16
+   },
+   {
+    "fn": "localFootprint",
+    "at": "footprints.ts:17",
+    "MB": 1.91
+   }
+  ]
+ },
+ {
+  "file": "job-thread_32144_worker_1_WorkerThread_4.heapprofile",
+  "sampledLiveMB": 377.4,
+  "noUrlMB": 46.8,
+  "top": [
+   {
+    "fn": "flatXY",
+    "at": "src/core/ring.ts:90 ~decl",
+    "MB": 51.86
+   },
+   {
+    "fn": "buildJunctionRing",
+    "at": "src/world/junction/polygon.ts:109 ~decl",
+    "MB": 16.77
+   },
+   {
+    "fn": "get fillet",
+    "at": "src/world/junction/corners.ts:22 ~decl",
+    "MB": 16.33
+   },
+   {
+    "fn": "Float64Array",
+    "at": null,
+    "MB": 15.2
+   },
+   {
+    "fn": "frameFromNode",
+    "at": "src/world/geometry.ts:50 ~decl",
+    "MB": 13.97
+   },
+   {
+    "fn": "deriveFromLegs",
+    "at": "src/world/junction/derive.ts:37 ~decl",
+    "MB": 12.92
+   },
+   {
+    "fn": "offsetPolyline",
+    "at": "src/core/offset.ts:46 ~decl",
+    "MB": 11.79
+   },
+   {
+    "fn": "resolveCorner",
+    "at": "src/world/junction/corners.ts:75 ~decl",
+    "MB": 11.36
+   },
+   {
+    "fn": "(anonymous in map)",
+    "at": "src/world/junction/legs.ts:8 ~decl",
+    "MB": 11.08
+   },
+   {
+    "fn": "ribbonRing",
+    "at": "src/world/ribbons.ts:157 ~decl",
+    "MB": 10.86
+   },
+   {
+    "fn": "legTongue",
+    "at": "src/world/junction/polygon.ts:63 ~decl",
+    "MB": 10.53
+   },
+   {
+    "fn": "legOf",
+    "at": "src/world/junction/legs.ts:45 ~decl",
+    "MB": 10.39
+   },
+   {
+    "fn": "Ring",
+    "at": "src/core/ring.ts:173 ~decl",
+    "MB": 10.09
+   },
+   {
+    "fn": "sub",
+    "at": "src/core/polyline.ts:198 ~decl",
+    "MB": 8.86
+   },
+   {
+    "fn": "get dir",
+    "at": "src/world/junction/legs.ts:33 ~decl",
+    "MB": 8.69
+   },
+   {
+    "fn": "filletCorner",
+    "at": "src/core/fillet.ts:19 ~decl",
+    "MB": 8.52
+   },
+   {
+    "fn": "get nrm",
+    "at": "src/world/junction/legs.ts:34 ~decl",
+    "MB": 7.29
+   },
+   {
+    "fn": "computeCorners",
+    "at": "src/world/junction/corners.ts:64 ~decl",
+    "MB": 6.82
+   },
+   {
+    "fn": "next",
+    "at": null,
+    "MB": 6.22
+   },
+   {
+    "fn": "get origin",
+    "at": "src/world/junction/legs.ts:32 ~decl",
+    "MB": 5.22
+   },
+   {
+    "fn": "sort",
+    "at": null,
+    "MB": 4.91
+   },
+   {
+    "fn": "rasterise",
+    "at": "src/core/regionIndex.ts:286 ~decl",
+    "MB": 4.6
+   },
+   {
+    "fn": "roadProfile",
+    "at": "src/world/roadTypes.ts:248 ~decl",
+    "MB": 4.6
+   },
+   {
+    "fn": "Map",
+    "at": null,
+    "MB": 4.44
+   },
+   {
+    "fn": "hypot",
+    "at": null,
+    "MB": 4.25
+   },
+   {
+    "fn": "clipToBox",
+    "at": "src/world/walkable.ts:84 ~decl",
+    "MB": 3.76
+   },
+   {
+    "fn": "reconcileSegment",
+    "at": "src/world/networkBuild.ts:262 ~decl",
+    "MB": 3.66
+   },
+   {
+    "fn": "keepsWidth",
+    "at": "src/world/junction/derive.ts:91 ~decl",
+    "MB": 3.59
+   },
+   {
+    "fn": "(anonymous in map)",
+    "at": "src/core/regionIndex.ts:5 ~decl",
+    "MB": 3.34
+   },
+   {
+    "fn": "isSimple",
+    "at": "src/core/polygon.ts:8 ~decl",
+    "MB": 3.28
+   }
+  ]
+ },
+ {
+  "file": "job-thread_38284_worker_3_WorkerThread_2.heapprofile",
+  "sampledLiveMB": 52.1,
+  "noUrlMB": 8.1,
+  "top": [
+   {
+    "fn": "flatXY",
+    "at": "src/core/ring.ts:90 ~decl",
+    "MB": 6.34
+   },
+   {
+    "fn": "get fillet",
+    "at": "src/world/junction/corners.ts:22 ~decl",
+    "MB": 2.82
+   },
+   {
+    "fn": "buildJunctionRing",
+    "at": "src/world/junction/polygon.ts:109 ~decl",
+    "MB": 2.19
+   },
+   {
+    "fn": "frameFromNode",
+    "at": "src/world/geometry.ts:50 ~decl",
+    "MB": 2.07
+   },
+   {
+    "fn": "get dir",
+    "at": "src/world/junction/legs.ts:33 ~decl",
+    "MB": 2
+   },
+   {
+    "fn": "next",
+    "at": null,
+    "MB": 1.94
+   },
+   {
+    "fn": "Float64Array",
+    "at": null,
+    "MB": 1.75
+   },
+   {
+    "fn": "walk",
+    "at": "src/jobs/processWorker.ts:33 ~decl",
+    "MB": 1.63
+   },
+   {
+    "fn": "legOf",
+    "at": "src/world/junction/legs.ts:45 ~decl",
+    "MB": 1.63
+   },
+   {
+    "fn": "deriveFromLegs",
+    "at": "src/world/junction/derive.ts:37 ~decl",
+    "MB": 1.44
+   },
+   {
+    "fn": "(anonymous in map)",
+    "at": "src/world/junction/legs.ts:8 ~decl",
+    "MB": 1.34
+   },
+   {
+    "fn": "Ring",
+    "at": "src/core/ring.ts:173 ~decl",
+    "MB": 1.32
+   },
+   {
+    "fn": "offsetPolyline",
+    "at": "src/core/offset.ts:46 ~decl",
+    "MB": 1.31
+   },
+   {
+    "fn": "legTongue",
+    "at": "src/world/junction/polygon.ts:63 ~decl",
+    "MB": 1.28
+   },
+   {
+    "fn": "filletCorner",
+    "at": "src/core/fillet.ts:19 ~decl",
+    "MB": 1.1
+   },
+   {
+    "fn": "sub",
+    "at": "src/core/polyline.ts:198 ~decl",
+    "MB": 1.1
+   },
+   {
+    "fn": "get origin",
+    "at": "src/world/junction/legs.ts:32 ~decl",
+    "MB": 1.09
+   },
+   {
+    "fn": "get nrm",
+    "at": "src/world/junction/legs.ts:34 ~decl",
+    "MB": 1.06
+   },
+   {
+    "fn": "ribbonRing",
+    "at": "src/world/ribbons.ts:157 ~decl",
+    "MB": 0.97
+   },
+   {
+    "fn": "cornerOf",
+    "at": "src/world/junction/corners.ts:29 ~decl",
+    "MB": 0.88
+   },
+   {
+    "fn": "resolveCorner",
+    "at": "src/world/junction/corners.ts:75 ~decl",
+    "MB": 0.81
+   },
+   {
+    "fn": "lineLine",
+    "at": "src/core/intersect.ts:5 ~decl",
+    "MB": 0.78
+   },
+   {
+    "fn": "keepsWidth",
+    "at": "src/world/junction/derive.ts:91 ~decl",
+    "MB": 0.75
+   },
+   {
+    "fn": "roadProfile",
+    "at": "src/world/roadTypes.ts:248 ~decl",
+    "MB": 0.66
+   },
+   {
+    "fn": "sort",
+    "at": null,
+    "MB": 0.63
+   },
+   {
+    "fn": "reconcileSegment",
+    "at": "src/world/networkBuild.ts:262 ~decl",
+    "MB": 0.59
+   },
+   {
+    "fn": "values",
+    "at": null,
+    "MB": 0.59
+   },
+   {
+    "fn": "postMessage",
+    "at": "src/jobs/threadSelf.ts:31 ~decl",
+    "MB": 0.53
+   },
+   {
+    "fn": "Map",
+    "at": null,
+    "MB": 0.53
+   },
+   {
+    "fn": "hypot",
+    "at": null,
+    "MB": 0.5
+   }
+  ]
+ },
+ {
+  "file": "job-process_24552.heapprofile",
+  "sampledLiveMB": 38.2,
+  "noUrlMB": 34.2,
+  "top": [
+   {
+    "fn": "(V8 API)",
+    "at": null,
+    "MB": 27.7
+   },
+   {
+    "fn": "keys",
+    "at": null,
+    "MB": 2.47
+   },
+   {
+    "fn": "Set",
+    "at": null,
+    "MB": 2.25
+   },
+   {
+    "fn": "(anonymous in emit)",
+    "at": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\desktop\\jobs.cjs",
+    "MB": 1.22
+   },
+   {
+    "fn": "buffersIn",
+    "at": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\desktop\\jobs.cjs",
+    "MB": 0.88
+   },
+   {
+    "fn": "(anonymous in emit)",
+    "at": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\desktop\\jobs.cjs",
+    "MB": 0.84
+   },
+   {
+    "fn": "(anonymous in (root))",
+    "at": "node:electron/js2c/utility_init",
+    "MB": 0.84
+   },
+   {
+    "fn": "(IDLE)",
+    "at": null,
+    "MB": 0.75
+   },
+   {
+    "fn": "map",
+    "at": null,
+    "MB": 0.38
+   },
+   {
+    "fn": "values",
+    "at": null,
+    "MB": 0.31
+   },
+   {
+    "fn": "withPorts",
+    "at": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\desktop\\jobs.cjs",
+    "MB": 0.25
+   },
+   {
+    "fn": "next",
+    "at": null,
+    "MB": 0.16
+   },
+   {
+    "fn": "set",
+    "at": null,
+    "MB": 0.13
+   },
+   {
+    "fn": "postMessage",
+    "at": "node:internal/worker",
+    "MB": 0.03
+   },
+   {
+    "fn": "add",
+    "at": null,
+    "MB": 0.03
+   }
+  ]
+ },
+ {
+  "file": "job-process_38284.heapprofile",
+  "sampledLiveMB": 3.5,
+  "noUrlMB": 3.1,
+  "top": [
+   {
+    "fn": "(V8 API)",
+    "at": null,
+    "MB": 2.27
+   },
+   {
+    "fn": "keys",
+    "at": null,
+    "MB": 0.69
+   },
+   {
+    "fn": "postMessage",
+    "at": "node:electron/js2c/utility_init",
+    "MB": 0.41
+   },
+   {
+    "fn": "add",
+    "at": null,
+    "MB": 0.16
+   }
+  ]
+ },
+ {
+  "file": "job-process_32144.heapprofile",
+  "sampledLiveMB": 1.2,
+  "noUrlMB": 1.1,
+  "top": [
+   {
+    "fn": "(V8 API)",
+    "at": null,
+    "MB": 0.83
+   },
+   {
+    "fn": "keys",
+    "at": null,
+    "MB": 0.22
+   },
+   {
+    "fn": "add",
+    "at": null,
+    "MB": 0.07
+   },
+   {
+    "fn": "postMessage",
+    "at": "node:internal/worker",
+    "MB": 0.07
+   }
+  ]
+ },
+ {
+  "file": "worker_job.worker.ts_349078.heapprofile",
+  "sampledLiveMB": 1.1,
+  "noUrlMB": 0.2,
+  "top": [
+   {
+    "fn": "request.onsuccess",
+    "at": "derivedCache.ts:126",
+    "MB": 0.81
+   },
+   {
+    "fn": "add",
+    "at": null,
+    "MB": 0.09
+   },
+   {
+    "fn": "Set",
+    "at": null,
+    "MB": 0.06
+   },
+   {
+    "fn": "postMessage",
+    "at": "job.worker.ts?worker_file&type=module:99",
+    "MB": 0.03
+   },
+   {
+    "fn": "(anonymous in (root))",
+    "at": "derivedWriter.worker.ts:32",
+    "MB": 0.03
+   },
+   {
+    "fn": "Promise",
+    "at": null,
+    "MB": 0.03
+   },
+   {
+    "fn": "next",
+    "at": null,
+    "MB": 0.03
+   }
+  ]
+ },
+ {
+  "file": "job-process_33080.heapprofile",
+  "sampledLiveMB": 0.4,
+  "noUrlMB": 0.1,
+  "top": [
+   {
+    "fn": "(V8 API)",
+    "at": null,
+    "MB": 0.06
+   },
+   {
+    "fn": "nextTick",
+    "at": "node:internal/process/task_queues",
+    "MB": 0.06
+   },
+   {
+    "fn": "write",
+    "at": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\desktop\\saves.cjs",
+    "MB": 0.03
+   },
+   {
+    "fn": "Readable.on",
+    "at": "node:internal/streams/readable",
+    "MB": 0.03
+   },
+   {
+    "fn": "Map",
+    "at": null,
+    "MB": 0.03
+   },
+   {
+    "fn": "(anonymous in _rmchildren)",
+    "at": "node:electron/js2c/node_init",
+    "MB": 0.03
+   },
+   {
+    "fn": "push",
+    "at": null,
+    "MB": 0.03
+   },
+   {
+    "fn": "processTicksAndRejections",
+    "at": "node:internal/process/task_queues",
+    "MB": 0.03
+   },
+   {
+    "fn": "eachLimited",
+    "at": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\desktop\\saves.cjs",
+    "MB": 0.03
+   },
+   {
+    "fn": "wrappedFn",
+    "at": "node:internal/errors",
+    "MB": 0.03
+   }
+  ]
+ },
+ {
+  "file": "job-process_12432.heapprofile",
+  "sampledLiveMB": 0,
+  "noUrlMB": 0,
+  "top": []
+ },
+ {
+  "file": "job-process_22236.heapprofile",
+  "sampledLiveMB": 0,
+  "noUrlMB": 0,
+  "top": []
+ },
+ {
+  "file": "job-process_35072.heapprofile",
+  "sampledLiveMB": 0,
+  "noUrlMB": 0,
+  "top": []
+ },
+ {
+  "file": "job-thread_12432_worker_1_WorkerThread_3.heapprofile",
+  "sampledLiveMB": 0,
+  "noUrlMB": 0,
+  "top": []
+ },
+ {
+  "file": "job-thread_12432_worker_2_WorkerThread_2.heapprofile",
+  "sampledLiveMB": 0,
+  "noUrlMB": 0,
+  "top": []
+ },
+ {
+  "file": "job-thread_12432_worker_3_WorkerThread_1.heapprofile",
+  "sampledLiveMB": 0,
+  "noUrlMB": 0,
+  "top": []
+ },
+ {
+  "file": "job-thread_22236_worker_1_WorkerThread_3.heapprofile",
+  "sampledLiveMB": 0,
+  "noUrlMB": 0,
+  "top": []
+ },
+ {
+  "file": "job-thread_22236_worker_2_WorkerThread_2.heapprofile",
+  "sampledLiveMB": 0,
+  "noUrlMB": 0,
+  "top": []
+ },
+ {
+  "file": "job-thread_22236_worker_3_WorkerThread_1.heapprofile",
+  "sampledLiveMB": 0,
+  "noUrlMB": 0,
+  "top": []
+ },
+ {
+  "file": "job-thread_32144_worker_2_WorkerThread_3.heapprofile",
+  "sampledLiveMB": 0,
+  "noUrlMB": 0,
+  "top": []
+ },
+ {
+  "file": "job-thread_32144_worker_3_WorkerThread_2.heapprofile",
+  "sampledLiveMB": 0,
+  "noUrlMB": 0,
+  "top": []
+ },
+ {
+  "file": "job-thread_32144_worker_4_WorkerThread_1.heapprofile",
+  "sampledLiveMB": 0,
+  "noUrlMB": 0,
+  "top": []
+ },
+ {
+  "file": "job-thread_35072_worker_1_WorkerThread_3.heapprofile",
+  "sampledLiveMB": 0,
+  "noUrlMB": 0,
+  "top": []
+ },
+ {
+  "file": "job-thread_35072_worker_2_WorkerThread_2.heapprofile",
+  "sampledLiveMB": 0,
+  "noUrlMB": 0,
+  "top": []
+ },
+ {
+  "file": "job-thread_35072_worker_3_WorkerThread_1.heapprofile",
+  "sampledLiveMB": 0,
+  "noUrlMB": 0,
+  "top": []
+ },
+ {
+  "file": "job-thread_38284_worker_2_WorkerThread_3.heapprofile",
+  "sampledLiveMB": 0,
+  "noUrlMB": 0,
+  "top": []
+ },
+ {
+  "file": "job-thread_38284_worker_4_WorkerThread_1.heapprofile",
+  "sampledLiveMB": 0,
+  "noUrlMB": 0,
+  "top": []
+ }
+]

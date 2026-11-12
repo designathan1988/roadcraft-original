@@ -1,0 +1,13 @@
+still/ten/persp/rua-min-N: frames 379 long 5 cpu p50 15.5 p95 23 max 507.2 | gpu p50 15.94 p99 24.68 max 48.08 | draws 505 tris 6942266 | progs +0 | up 137.6 MB
+still/ten/persp/rua-min-E: frames 439 long 5 cpu p50 16.2 p95 39.9 max 144.8 | gpu p50 15.2 p99 23.41 max 37.29 | draws 727 tris 7949783 | progs +7 | up 447.3 MB
+still/ten/persp/rua-min-S: frames 281 long 20 cpu p50 27.3 p95 50.9 max 307.5 | gpu p50 14.79 p99 53.1 max 57.31 | draws 762 tris 8722826 | progs +0 | up 582.6 MB
+still/ten/persp/rua-min-W: frames 430 long 0 cpu p50 20.5 p95 27.3 max 31.8 | gpu p50 14.23 p99 16.56 max 17.55 | draws 690 tris 6629327 | progs +0 | up 85.9 MB
+still/ten/persp/rua-mid-N: frames 534 long 0 cpu p50 16 p95 21 max 25.8 | gpu p50 7.8 p99 9.73 max 12.69 | draws 360 tris 2947682 | progs +0 | up 104.0 MB
+still/ten/persp/rua-mid-E: frames 549 long 0 cpu p50 15.1 p95 20.7 max 30.8 | gpu p50 7.55 p99 8.48 max 10.06 | draws 373 tris 3329305 | progs +0 | up 101.2 MB
+still/ten/persp/rua-mid-S: frames 598 long 0 cpu p50 9.2 p95 12.4 max 26.9 | gpu p50 7.5 p99 7.99 max 20.57 | draws 371 tris 3301145 | progs +0 | up 118.6 MB
+still/ten/persp/rua-mid-W: frames 367 long 0 cpu p50 9.7 p95 15.8 max 20 | gpu p50 7.41 p99 44.43 max 49.53 | draws 399 tris 3416619 | progs +0 | up 68.1 MB
+still/ten/persp/rua-max-N [INVALID: window minimised]: frames 0 long 0 cpu p50 0 p95 0 max 0 | gpu p50 0 p99 0 max 0 | draws 308 tris 2439048 | progs +0 | up 0.0 MB
+still/ten/persp/rua-max-E: frames 588 long 0 cpu p50 13.3 p95 18.2 max 23.8 | gpu p50 7.7 p99 8.51 max 11.72 | draws 303 tris 2311840 | progs +0 | up 82.5 MB
+still/ten/persp/rua-max-S: frames 540 long 1 cpu p50 15.5 p95 22.3 max 89.3 | gpu p50 7.64 p99 8.64 max 17.54 | draws 349 tris 3192190 | progs +0 | up 119.9 MB
+still/ten/persp/rua-max-W: frames 578 long 0 cpu p50 14.2 p95 19 max 24.9 | gpu p50 7.8 p99 8.42 max 11.17 | draws 335 tris 2713599 | progs +0 | up 97.4 MB
+still/ten/persp/perto-min-N: frames 341 long 0 cpu p50 26.6 p95 33.9 max 46.3 | gpu p50 19.71 p99 23.75 max 30.09 | draws 711 tris 11965562 | progs +0 | up 256.5 MB

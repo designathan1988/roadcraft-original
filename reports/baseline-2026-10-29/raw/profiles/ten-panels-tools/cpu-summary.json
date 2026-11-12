@@ -1,0 +1,3220 @@
+[
+ {
+  "file": "page.cpuprofile",
+  "wallMs": 243085,
+  "busyMs": 193744,
+  "idleMs": 49341,
+  "programMs": 11930,
+  "gcMs": 2497,
+  "jsWithSourceMs": 165280,
+  "nativeNoUrlMs": 14037,
+  "samples": 430162,
+  "topSelf": [
+   {
+    "fn": "casterChanges",
+    "at": "renderer.ts:748",
+    "selfMs": 10582,
+    "totalMs": 12595.9
+   },
+   {
+    "fn": "projectObject",
+    "at": "../../three/build/three.module.js:17897",
+    "selfMs": 6473.7,
+    "totalMs": 17399.9
+   },
+   {
+    "fn": "sync",
+    "at": "agents.ts:1846",
+    "selfMs": 6346.1,
+    "totalMs": 42483
+   },
+   {
+    "fn": "draw",
+    "at": "riggedCitizens.ts:869",
+    "selfMs": 5097,
+    "totalMs": 15975.1
+   },
+   {
+    "fn": "readTick",
+    "at": "simClient.ts:547",
+    "selfMs": 4653.6,
+    "totalMs": 5582.7
+   },
+   {
+    "fn": "multiplyMatrices",
+    "at": "../../three/build/three.core.js:10570",
+    "selfMs": 4643.4,
+    "totalMs": 4643.4
+   },
+   {
+    "fn": "setProgram",
+    "at": "../../three/build/three.module.js:18407",
+    "selfMs": 4246.9,
+    "totalMs": 25419.4
+   },
+   {
+    "fn": "bindVertexArray",
+    "at": null,
+    "selfMs": 3591.4,
+    "totalMs": 3591.4
+   },
+   {
+    "fn": "WebGLRenderer.renderBufferDirect",
+    "at": "../../three/build/three.module.js:17233",
+    "selfMs": 3550.8,
+    "totalMs": 41195.1
+   },
+   {
+    "fn": "draw",
+    "at": "renderer.ts:3434",
+    "selfMs": 3029.4,
+    "totalMs": 165534.4
+   },
+   {
+    "fn": "getBindingState",
+    "at": "../../three/build/three.module.js:1680",
+    "selfMs": 2511.5,
+    "totalMs": 2512.1
+   },
+   {
+    "fn": "update",
+    "at": "../../three/build/three.module.js:242",
+    "selfMs": 2490.4,
+    "totalMs": 4808.9
+   },
+   {
+    "fn": "needsUpdate",
+    "at": "../../three/build/three.module.js:1759",
+    "selfMs": 1956.6,
+    "totalMs": 1970
+   },
+   {
+    "fn": "rampRiseIn",
+    "at": "rampRise.ts:79",
+    "selfMs": 1853.3,
+    "totalMs": 2022.4
+   },
+   {
+    "fn": "upload",
+    "at": "../../three/build/three.module.js:6123",
+    "selfMs": 1852.1,
+    "totalMs": 8881.8
+   },
+   {
+    "fn": "writeTile",
+    "at": "densityCars.ts:490",
+    "selfMs": 1753.9,
+    "totalMs": 4505.2
+   },
+   {
+    "fn": "updateMatrixWorld",
+    "at": "../../three/build/three.core.js:13067",
+    "selfMs": 1685.7,
+    "totalMs": 3632.6
+   },
+   {
+    "fn": "setValueM4",
+    "at": "../../three/build/three.module.js:5284",
+    "selfMs": 1600.2,
+    "totalMs": 3205.8
+   },
+   {
+    "fn": "copy",
+    "at": "../../three/build/three.core.js:5006",
+    "selfMs": 1530.9,
+    "totalMs": 1530.9
+   },
+   {
+    "fn": "wrap",
+    "at": "citizenGait.ts:310",
+    "selfMs": 1523.1,
+    "totalMs": 1523.1
+   },
+   {
+    "fn": "bufferSubData",
+    "at": null,
+    "selfMs": 1399.9,
+    "totalMs": 1399.9
+   },
+   {
+    "fn": "drawVehicle",
+    "at": "agents.ts:1911",
+    "selfMs": 1399,
+    "totalMs": 10689.8
+   },
+   {
+    "fn": "renderObject",
+    "at": "../../three/build/three.module.js:18192",
+    "selfMs": 1383.2,
+    "totalMs": 48095
+   },
+   {
+    "fn": "heightAtArc",
+    "at": "roadField.ts:131",
+    "selfMs": 1369.6,
+    "totalMs": 1369.6
+   },
+   {
+    "fn": "port.onmessage",
+    "at": "processWorker.ts:147",
+    "selfMs": 1362.8,
+    "totalMs": 7241.7
+   },
+   {
+    "fn": "stepGait",
+    "at": "citizenGait.ts:395",
+    "selfMs": 1348.1,
+    "totalMs": 6390.5
+   },
+   {
+    "fn": "arraysEqual",
+    "at": "../../three/build/three.module.js:5064",
+    "selfMs": 1291.7,
+    "totalMs": 1291.7
+   },
+   {
+    "fn": "refreshUniformsCommon",
+    "at": "../../three/build/three.module.js:15139",
+    "selfMs": 1265.5,
+    "totalMs": 1923.3
+   },
+   {
+    "fn": "compose",
+    "at": "../../three/build/three.core.js:11030",
+    "selfMs": 1265.4,
+    "totalMs": 1265.4
+   },
+   {
+    "fn": "exposedCells",
+    "at": "massCells.ts:664",
+    "selfMs": 1253.6,
+    "totalMs": 1353.4
+   }
+  ],
+  "topTotal": [
+   {
+    "fn": "(anonymous)",
+    "at": "hiddenWork.ts:145",
+    "selfMs": 110.8,
+    "totalMs": 177421.2
+   },
+   {
+    "fn": "(anonymous)",
+    "at": null,
+    "selfMs": 27.8,
+    "totalMs": 171048.9
+   },
+   {
+    "fn": "shown",
+    "at": "frameLoop.ts:44",
+    "selfMs": 21.6,
+    "totalMs": 169766.7
+   },
+   {
+    "fn": "frame",
+    "at": "main.ts:2704",
+    "selfMs": 297.4,
+    "totalMs": 169712.1
+   },
+   {
+    "fn": "draw",
+    "at": "renderer.ts:3434",
+    "selfMs": 3029.4,
+    "totalMs": 165534.4
+   },
+   {
+    "fn": "WebGLRenderer.render",
+    "at": "../../three/build/three.module.js:17674",
+    "selfMs": 374.5,
+    "totalMs": 73731.1
+   },
+   {
+    "fn": "render",
+    "at": "postprocess.ts:462",
+    "selfMs": 107.8,
+    "totalMs": 71027.3
+   },
+   {
+    "fn": "render",
+    "at": "../../three/examples/jsm/postprocessing/EffectComposer.js:214",
+    "selfMs": 60.7,
+    "totalMs": 70780.5
+   },
+   {
+    "fn": "pass.render",
+    "at": "postprocess.ts:438",
+    "selfMs": 74.3,
+    "totalMs": 70689.6
+   },
+   {
+    "fn": "scenePass.render",
+    "at": "postprocess.ts:167",
+    "selfMs": 56.7,
+    "totalMs": 67679.5
+   },
+   {
+    "fn": "render",
+    "at": "../../three/examples/jsm/postprocessing/RenderPass.js:121",
+    "selfMs": 26.7,
+    "totalMs": 59693.3
+   },
+   {
+    "fn": "renderScene",
+    "at": "../../three/build/three.module.js:18015",
+    "selfMs": 22.2,
+    "totalMs": 49867.9
+   },
+   {
+    "fn": "renderObjects",
+    "at": "../../three/build/three.module.js:18165",
+    "selfMs": 1250.1,
+    "totalMs": 49713.6
+   },
+   {
+    "fn": "renderObject",
+    "at": "../../three/build/three.module.js:18192",
+    "selfMs": 1383.2,
+    "totalMs": 48095
+   },
+   {
+    "fn": "sync",
+    "at": "agents.ts:1846",
+    "selfMs": 6346.1,
+    "totalMs": 42483
+   },
+   {
+    "fn": "WebGLRenderer.renderBufferDirect",
+    "at": "../../three/build/three.module.js:17233",
+    "selfMs": 3550.8,
+    "totalMs": 41195.1
+   },
+   {
+    "fn": "setProgram",
+    "at": "../../three/build/three.module.js:18407",
+    "selfMs": 4246.9,
+    "totalMs": 25419.4
+   },
+   {
+    "fn": "projectObject",
+    "at": "../../three/build/three.module.js:17897",
+    "selfMs": 6473.7,
+    "totalMs": 17399.9
+   },
+   {
+    "fn": "draw",
+    "at": "riggedCitizens.ts:869",
+    "selfMs": 5097,
+    "totalMs": 15975.1
+   },
+   {
+    "fn": "casterChanges",
+    "at": "renderer.ts:748",
+    "selfMs": 10582,
+    "totalMs": 12595.9
+   },
+   {
+    "fn": "drawVehicle",
+    "at": "agents.ts:1911",
+    "selfMs": 1399,
+    "totalMs": 10689.8
+   },
+   {
+    "fn": "setup",
+    "at": "../../three/build/three.module.js:1623",
+    "selfMs": 772.7,
+    "totalMs": 9258
+   },
+   {
+    "fn": "upload",
+    "at": "../../three/build/three.module.js:6123",
+    "selfMs": 1852.1,
+    "totalMs": 8881.8
+   },
+   {
+    "fn": "draw",
+    "at": "depthFirst.ts:55",
+    "selfMs": 95.9,
+    "totalMs": 7834.1
+   },
+   {
+    "fn": "port.onmessage",
+    "at": "processWorker.ts:147",
+    "selfMs": 1362.8,
+    "totalMs": 7241.7
+   },
+   {
+    "fn": "setValue",
+    "at": "../../three/build/three.module.js:6107",
+    "selfMs": 920,
+    "totalMs": 7105
+   },
+   {
+    "fn": "stepGait",
+    "at": "citizenGait.ts:395",
+    "selfMs": 1348.1,
+    "totalMs": 6390.5
+   },
+   {
+    "fn": "update",
+    "at": "../../three/build/three.module.js:4612",
+    "selfMs": 429.5,
+    "totalMs": 5938
+   },
+   {
+    "fn": "worker.onmessage",
+    "at": "simClient.ts:257",
+    "selfMs": 21.5,
+    "totalMs": 5869.5
+   },
+   {
+    "fn": "receive",
+    "at": "simClient.ts:516",
+    "selfMs": 266.8,
+    "totalMs": 5850.2
+   }
+  ]
+ },
+ {
+  "file": "job-thread_24552_worker_1_WorkerThread_1.cpuprofile",
+  "wallMs": 246722,
+  "busyMs": 88472,
+  "idleMs": 158251,
+  "programMs": 728,
+  "gcMs": 2600,
+  "jsWithSourceMs": 84882,
+  "nativeNoUrlMs": 261,
+  "samples": 438146,
+  "topSelf": [
+   {
+    "fn": "stepWalkers",
+    "at": "src/sim/agents/walk.ts:1007 ~decl",
+    "selfMs": 5196,
+    "totalMs": 15104.8
+   },
+   {
+    "fn": "publish",
+    "at": "src/sim/host/simHost.ts:198 ~decl",
+    "selfMs": 3187.6,
+    "totalMs": 11947.1
+   },
+   {
+    "fn": "lanelet",
+    "at": "src/sim/world.ts:291 ~decl",
+    "selfMs": 2880.8,
+    "totalMs": 2880.8
+   },
+   {
+    "fn": "step",
+    "at": "src/sim/pipeline.ts:29 ~decl",
+    "selfMs": 2687.8,
+    "totalMs": 71401
+   },
+   {
+    "fn": "integrateAll",
+    "at": "src/sim/vehicles/integrate.ts:18 ~decl",
+    "selfMs": 2293,
+    "totalMs": 9399.7
+   },
+   {
+    "fn": "node",
+    "at": "src/sim/meso/model.ts:118 ~decl",
+    "selfMs": 1885.1,
+    "totalMs": 2183.1
+   },
+   {
+    "fn": "connector",
+    "at": "src/sim/world.ts:403 ~decl",
+    "selfMs": 1749.8,
+    "totalMs": 1749.8
+   },
+   {
+    "fn": "snapshotInto",
+    "at": "src/sim/vehicles/state.ts:171 ~decl",
+    "selfMs": 1652.8,
+    "totalMs": 1652.8
+   },
+   {
+    "fn": "near",
+    "at": "src/sim/peds/signalPostIndex.ts:93 ~decl",
+    "selfMs": 1612.9,
+    "totalMs": 1628.9
+   },
+   {
+    "fn": "get length",
+    "at": "src/core/polyline.ts:123 ~decl",
+    "selfMs": 1600.4,
+    "totalMs": 1601
+   },
+   {
+    "fn": "ensureVehicleRoutes",
+    "at": "src/sim/pipeline.ts:78 ~decl",
+    "selfMs": 1566.9,
+    "totalMs": 6047.4
+   },
+   {
+    "fn": "publish",
+    "at": "src/sim/agents/walk.ts:1019 ~decl",
+    "selfMs": 1536.8,
+    "totalMs": 2547
+   },
+   {
+    "fn": "junctionOfLane",
+    "at": "src/sim/world.ts:551 ~decl",
+    "selfMs": 1486.1,
+    "totalMs": 1486.1
+   },
+   {
+    "fn": "sampleAtInto",
+    "at": "src/core/polyline.ts:153 ~decl",
+    "selfMs": 1485.6,
+    "totalMs": 3569.4
+   },
+   {
+    "fn": "findLeader",
+    "at": "src/sim/vehicles/leaderIndex.ts:14 ~decl",
+    "selfMs": 1462.4,
+    "totalMs": 3470.7
+   },
+   {
+    "fn": "divergeObstacle",
+    "at": "src/sim/vehicles/leaderIndex.ts:118 ~decl",
+    "selfMs": 1409.8,
+    "totalMs": 2459.9
+   },
+   {
+    "fn": "frameInto",
+    "at": "src/sim/agents/walk.ts:689 ~decl",
+    "selfMs": 1152.9,
+    "totalMs": 2844.9
+   },
+   {
+    "fn": "iidm",
+    "at": "src/sim/drive/operational.ts:19 ~decl",
+    "selfMs": 1059.2,
+    "totalMs": 1059.2
+   },
+   {
+    "fn": "stopShortOfIntrusion",
+    "at": "src/sim/intersections/admission.ts:153 ~decl",
+    "selfMs": 992.6,
+    "totalMs": 1491.2
+   },
+   {
+    "fn": "writeVehicle",
+    "at": "src/sim/host/simHost.ts:255 ~decl",
+    "selfMs": 989.7,
+    "totalMs": 7083.2
+   },
+   {
+    "fn": "pedestrianAhead",
+    "at": "src/sim/vehicles/obstacles.ts:20 ~decl",
+    "selfMs": 960,
+    "totalMs": 2073.7
+   },
+   {
+    "fn": "longitudinalConstraints",
+    "at": "src/sim/vehicles/obstacles.ts:109 ~decl",
+    "selfMs": 951.8,
+    "totalMs": 12919.4
+   },
+   {
+    "fn": "frame",
+    "at": "src/sim/host/simHost.ts:33 ~decl",
+    "selfMs": 911.5,
+    "totalMs": 84584.3
+   },
+   {
+    "fn": "bodyFrame",
+    "at": "src/sim/pose.ts:152 ~decl",
+    "selfMs": 901.6,
+    "totalMs": 2848
+   },
+   {
+    "fn": "mergeObstacle",
+    "at": "src/sim/vehicles/obstacles.ts:75 ~decl",
+    "selfMs": 886.5,
+    "totalMs": 1327.7
+   },
+   {
+    "fn": "reconcileReservedChain",
+    "at": "src/sim/pipeline.ts:165 ~decl",
+    "selfMs": 867.1,
+    "totalMs": 900.9
+   },
+   {
+    "fn": "admit",
+    "at": "src/sim/intersections/admission.ts:74 ~decl",
+    "selfMs": 834.1,
+    "totalMs": 5214.7
+   },
+   {
+    "fn": "crossingOf",
+    "at": "src/sim/agents/walk.ts:836 ~decl",
+    "selfMs": 823.5,
+    "totalMs": 957.8
+   },
+   {
+    "fn": "curveSpeedCap",
+    "at": "src/sim/vehicles/curvature.ts:84 ~decl",
+    "selfMs": 814.4,
+    "totalMs": 1952.3
+   },
+   {
+    "fn": "rt",
+    "at": "src/sim/world.ts:408 ~decl",
+    "selfMs": 757.8,
+    "totalMs": 757.8
+   }
+  ],
+  "topTotal": [
+   {
+    "fn": "(anonymous)",
+    "at": "src/sim/sim.worker.ts:4 ~decl",
+    "selfMs": 27.9,
+    "totalMs": 84654.8
+   },
+   {
+    "fn": "handle",
+    "at": "src/sim/host/simHost.ts:91 ~decl",
+    "selfMs": 26,
+    "totalMs": 84626.3
+   },
+   {
+    "fn": "frame",
+    "at": "src/sim/host/simHost.ts:33 ~decl",
+    "selfMs": 911.5,
+    "totalMs": 84584.3
+   },
+   {
+    "fn": "advance",
+    "at": "src/sim/clock.ts:21 ~decl",
+    "selfMs": 16.3,
+    "totalMs": 71648.3
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "src/sim/host/simHost.ts:31 ~decl",
+    "selfMs": 42.5,
+    "totalMs": 71514.7
+   },
+   {
+    "fn": "step",
+    "at": "src/sim/pipeline.ts:29 ~decl",
+    "selfMs": 2687.8,
+    "totalMs": 71401
+   },
+   {
+    "fn": "step",
+    "at": "src/sim/agents/walk.ts:378 ~decl",
+    "selfMs": 163.1,
+    "totalMs": 15371.6
+   },
+   {
+    "fn": "stepWalkers",
+    "at": "src/sim/agents/walk.ts:1007 ~decl",
+    "selfMs": 5196,
+    "totalMs": 15104.8
+   },
+   {
+    "fn": "longitudinalConstraints",
+    "at": "src/sim/vehicles/obstacles.ts:109 ~decl",
+    "selfMs": 951.8,
+    "totalMs": 12919.4
+   },
+   {
+    "fn": "publish",
+    "at": "src/sim/host/simHost.ts:198 ~decl",
+    "selfMs": 3187.6,
+    "totalMs": 11947.1
+   },
+   {
+    "fn": "integrateAll",
+    "at": "src/sim/vehicles/integrate.ts:18 ~decl",
+    "selfMs": 2293,
+    "totalMs": 9399.7
+   },
+   {
+    "fn": "writeVehicle",
+    "at": "src/sim/host/simHost.ts:255 ~decl",
+    "selfMs": 989.7,
+    "totalMs": 7083.2
+   },
+   {
+    "fn": "ensureVehicleRoutes",
+    "at": "src/sim/pipeline.ts:78 ~decl",
+    "selfMs": 1566.9,
+    "totalMs": 6047.4
+   },
+   {
+    "fn": "stepAdmission",
+    "at": "src/sim/intersections/admission.ts:58 ~decl",
+    "selfMs": 252.1,
+    "totalMs": 6047.2
+   },
+   {
+    "fn": "admit",
+    "at": "src/sim/intersections/admission.ts:74 ~decl",
+    "selfMs": 834.1,
+    "totalMs": 5214.7
+   },
+   {
+    "fn": "step",
+    "at": "src/sim/meso/meso.ts:32 ~decl",
+    "selfMs": 12.1,
+    "totalMs": 4625.9
+   },
+   {
+    "fn": "work",
+    "at": "src/sim/meso/meso.ts:22 ~decl",
+    "selfMs": 14.7,
+    "totalMs": 4324.7
+   },
+   {
+    "fn": "vehicleFramesInto",
+    "at": "src/sim/pose.ts:96 ~decl",
+    "selfMs": 410.6,
+    "totalMs": 3820.5
+   },
+   {
+    "fn": "sampleAtInto",
+    "at": "src/core/polyline.ts:153 ~decl",
+    "selfMs": 1485.6,
+    "totalMs": 3569.4
+   },
+   {
+    "fn": "findLeader",
+    "at": "src/sim/vehicles/leaderIndex.ts:14 ~decl",
+    "selfMs": 1462.4,
+    "totalMs": 3470.7
+   },
+   {
+    "fn": "stepSome",
+    "at": "src/sim/meso/model.ts:364 ~decl",
+    "selfMs": 14.8,
+    "totalMs": 3412
+   },
+   {
+    "fn": "axleFrame",
+    "at": "src/sim/pose.ts:61 ~decl",
+    "selfMs": 488,
+    "totalMs": 3326.7
+   },
+   {
+    "fn": "lanelet",
+    "at": "src/sim/world.ts:291 ~decl",
+    "selfMs": 2880.8,
+    "totalMs": 2880.8
+   },
+   {
+    "fn": "bodyFrame",
+    "at": "src/sim/pose.ts:152 ~decl",
+    "selfMs": 901.6,
+    "totalMs": 2848
+   },
+   {
+    "fn": "frameInto",
+    "at": "src/sim/agents/walk.ts:689 ~decl",
+    "selfMs": 1152.9,
+    "totalMs": 2844.9
+   },
+   {
+    "fn": "planFrom",
+    "at": "src/sim/routing/router.ts:107 ~decl",
+    "selfMs": 30.5,
+    "totalMs": 2750.4
+   },
+   {
+    "fn": "publish",
+    "at": "src/sim/agents/walk.ts:1019 ~decl",
+    "selfMs": 152.7,
+    "totalMs": 2699.9
+   },
+   {
+    "fn": "planTrip",
+    "at": "src/sim/drive/tactical.ts:39 ~decl",
+    "selfMs": 426.6,
+    "totalMs": 2644.5
+   },
+   {
+    "fn": "publish",
+    "at": "src/sim/agents/walk.ts:1019 ~decl",
+    "selfMs": 1536.8,
+    "totalMs": 2547
+   },
+   {
+    "fn": "divergeObstacle",
+    "at": "src/sim/vehicles/leaderIndex.ts:118 ~decl",
+    "selfMs": 1409.8,
+    "totalMs": 2459.9
+   }
+  ]
+ },
+ {
+  "file": "job-process_24552.cpuprofile",
+  "wallMs": 246654,
+  "busyMs": 5500,
+  "idleMs": 241154,
+  "programMs": 494,
+  "gcMs": 113,
+  "jsWithSourceMs": 1357,
+  "nativeNoUrlMs": 3536,
+  "samples": 438257,
+  "topSelf": [
+   {
+    "fn": "postMessage",
+    "at": null,
+    "selfMs": 3533.4,
+    "totalMs": 3533.4
+   },
+   {
+    "fn": "postMessage",
+    "at": "node:electron/js2c/utility_init",
+    "selfMs": 1061,
+    "totalMs": 4514.2
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:internal/worker",
+    "selfMs": 124.6,
+    "totalMs": 4651.2
+   },
+   {
+    "fn": "postMessage",
+    "at": "node:internal/worker",
+    "selfMs": 53.4,
+    "totalMs": 133.5
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:internal/per_context/messageport",
+    "selfMs": 25.4,
+    "totalMs": 4697.9
+   },
+   {
+    "fn": "buffersIn",
+    "at": "file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/desktop/jobs.cjs",
+    "selfMs": 22.5,
+    "totalMs": 22.5
+   },
+   {
+    "fn": "emit",
+    "at": "node:events",
+    "selfMs": 18.8,
+    "totalMs": 4707.1
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:internal/event_target",
+    "selfMs": 18.3,
+    "totalMs": 4673.5
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:electron/js2c/utility_init",
+    "selfMs": 16.4,
+    "totalMs": 191.2
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/desktop/jobs.cjs",
+    "selfMs": 11.3,
+    "totalMs": 167.3
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/desktop/jobs.cjs",
+    "selfMs": 3.4,
+    "totalMs": 4517.6
+   },
+   {
+    "fn": "writeBuffer",
+    "at": null,
+    "selfMs": 2.8,
+    "totalMs": 2.8
+   },
+   {
+    "fn": "set",
+    "at": "node:internal/streams/writable",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "afterWriteDispatched",
+    "at": "node:internal/stream_base_commons",
+    "selfMs": 0.6,
+    "totalMs": 1.2
+   },
+   {
+    "fn": "withPorts",
+    "at": "file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/desktop/jobs.cjs",
+    "selfMs": 0.5,
+    "totalMs": 0.5
+   }
+  ],
+  "topTotal": [
+   {
+    "fn": "emit",
+    "at": "node:events",
+    "selfMs": 18.8,
+    "totalMs": 4707.1
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:internal/per_context/messageport",
+    "selfMs": 25.4,
+    "totalMs": 4697.9
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:internal/event_target",
+    "selfMs": 18.3,
+    "totalMs": 4673.5
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:internal/worker",
+    "selfMs": 124.6,
+    "totalMs": 4651.2
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/desktop/jobs.cjs",
+    "selfMs": 3.4,
+    "totalMs": 4517.6
+   },
+   {
+    "fn": "postMessage",
+    "at": "node:electron/js2c/utility_init",
+    "selfMs": 1061,
+    "totalMs": 4514.2
+   },
+   {
+    "fn": "postMessage",
+    "at": null,
+    "selfMs": 3533.4,
+    "totalMs": 3533.4
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:electron/js2c/utility_init",
+    "selfMs": 16.4,
+    "totalMs": 191.2
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/desktop/jobs.cjs",
+    "selfMs": 11.3,
+    "totalMs": 167.3
+   },
+   {
+    "fn": "postMessage",
+    "at": "node:internal/worker",
+    "selfMs": 53.4,
+    "totalMs": 133.5
+   },
+   {
+    "fn": "buffersIn",
+    "at": "file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/desktop/jobs.cjs",
+    "selfMs": 22.5,
+    "totalMs": 22.5
+   },
+   {
+    "fn": "writeBuffer",
+    "at": null,
+    "selfMs": 2.8,
+    "totalMs": 2.8
+   },
+   {
+    "fn": "afterWriteDispatched",
+    "at": "node:internal/stream_base_commons",
+    "selfMs": 0.6,
+    "totalMs": 1.2
+   },
+   {
+    "fn": "set",
+    "at": "node:internal/streams/writable",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "withPorts",
+    "at": "file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/desktop/jobs.cjs",
+    "selfMs": 0.5,
+    "totalMs": 0.5
+   }
+  ]
+ },
+ {
+  "file": "job-thread_38284_worker_1_WorkerThread_4.cpuprofile",
+  "wallMs": 248869,
+  "busyMs": 843,
+  "idleMs": 248026,
+  "programMs": 99,
+  "gcMs": 176,
+  "jsWithSourceMs": 568,
+  "nativeNoUrlMs": 0,
+  "samples": 442191,
+  "topSelf": [
+   {
+    "fn": "flatXY",
+    "at": "src/core/ring.ts:90 ~decl",
+    "selfMs": 106.7,
+    "totalMs": 106.7
+   },
+   {
+    "fn": "isSimple",
+    "at": "src/core/polygon.ts:8 ~decl",
+    "selfMs": 43.5,
+    "totalMs": 43.5
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "src/world/junction/legs.ts:8 ~decl",
+    "selfMs": 22.9,
+    "totalMs": 61.9
+   },
+   {
+    "fn": "dist",
+    "at": "src/core/vec2.ts:20 ~decl",
+    "selfMs": 16.8,
+    "totalMs": 16.8
+   },
+   {
+    "fn": "rebuild",
+    "at": "src/world/networkBuild.ts:80 ~decl",
+    "selfMs": 13.2,
+    "totalMs": 451.3
+   },
+   {
+    "fn": "buildLegs",
+    "at": "src/world/junction/legs.ts:89 ~decl",
+    "selfMs": 13,
+    "totalMs": 75.4
+   },
+   {
+    "fn": "roadProfile",
+    "at": "src/world/roadTypes.ts:248 ~decl",
+    "selfMs": 11.2,
+    "totalMs": 15.9
+   },
+   {
+    "fn": "buildJunction",
+    "at": "src/world/junction/build.ts:136 ~decl",
+    "selfMs": 7.8,
+    "totalMs": 215.8
+   },
+   {
+    "fn": "deriveFromLegs",
+    "at": "src/world/junction/derive.ts:37 ~decl",
+    "selfMs": 7.8,
+    "totalMs": 75.2
+   },
+   {
+    "fn": "filletCorner",
+    "at": "src/core/fillet.ts:19 ~decl",
+    "selfMs": 7.8,
+    "totalMs": 9.2
+   },
+   {
+    "fn": "get dir",
+    "at": "src/world/junction/legs.ts:33 ~decl",
+    "selfMs": 7.1,
+    "totalMs": 7.1
+   },
+   {
+    "fn": "Ring",
+    "at": "src/core/ring.ts:173 ~decl",
+    "selfMs": 6.9,
+    "totalMs": 6.9
+   },
+   {
+    "fn": "signedArea",
+    "at": "src/core/ring.ts:142 ~decl",
+    "selfMs": 6.6,
+    "totalMs": 50.3
+   },
+   {
+    "fn": "reconcileSegment",
+    "at": "src/world/networkBuild.ts:262 ~decl",
+    "selfMs": 6.2,
+    "totalMs": 9.6
+   },
+   {
+    "fn": "get fillet",
+    "at": "src/world/junction/corners.ts:22 ~decl",
+    "selfMs": 5.8,
+    "totalMs": 5.8
+   },
+   {
+    "fn": "scanReference",
+    "at": "src/core/regionIndex.ts:294 ~decl",
+    "selfMs": 5.8,
+    "totalMs": 10.4
+   },
+   {
+    "fn": "word",
+    "at": "src/core/digest.ts:13 ~decl",
+    "selfMs": 5.6,
+    "totalMs": 5.6
+   },
+   {
+    "fn": "flatten",
+    "at": "src/core/ring.ts:89 ~decl",
+    "selfMs": 5,
+    "totalMs": 34.5
+   },
+   {
+    "fn": "finalTrims",
+    "at": "src/world/networkBuild.ts:354 ~decl",
+    "selfMs": 4.7,
+    "totalMs": 10.4
+   },
+   {
+    "fn": "get length",
+    "at": "src/core/polyline.ts:123 ~decl",
+    "selfMs": 4.6,
+    "totalMs": 5.7
+   },
+   {
+    "fn": "writePlate",
+    "at": "src/world/networkBuild.ts:358 ~decl",
+    "selfMs": 4.5,
+    "totalMs": 4.5
+   },
+   {
+    "fn": "ribbonParts",
+    "at": "src/world/ribbons.ts:114 ~decl",
+    "selfMs": 4.5,
+    "totalMs": 24.6
+   },
+   {
+    "fn": "sampleAtInto",
+    "at": "src/core/polyline.ts:153 ~decl",
+    "selfMs": 4.5,
+    "totalMs": 5.5
+   },
+   {
+    "fn": "get bbox",
+    "at": "src/core/ring.ts:123 ~decl",
+    "selfMs": 4.4,
+    "totalMs": 37.2
+   },
+   {
+    "fn": "solveNode",
+    "at": "src/world/networkBuild.ts:246 ~decl",
+    "selfMs": 4.3,
+    "totalMs": 361.2
+   },
+   {
+    "fn": "nodeCap",
+    "at": "src/world/junction/polygon.ts:82 ~decl",
+    "selfMs": 4.3,
+    "totalMs": 6
+   },
+   {
+    "fn": "addScaled",
+    "at": "src/core/vec2.ts:43 ~decl",
+    "selfMs": 4.2,
+    "totalMs": 4.2
+   },
+   {
+    "fn": "cellsOfSegment",
+    "at": "src/core/regionIndex.ts:323 ~decl",
+    "selfMs": 4.2,
+    "totalMs": 5.8
+   },
+   {
+    "fn": "resolveCorner",
+    "at": "src/world/junction/corners.ts:75 ~decl",
+    "selfMs": 4.1,
+    "totalMs": 32.6
+   },
+   {
+    "fn": "buildJunctionRing",
+    "at": "src/world/junction/polygon.ts:109 ~decl",
+    "selfMs": 4,
+    "totalMs": 106.2
+   }
+  ],
+  "topTotal": [
+   {
+    "fn": "(anonymous)",
+    "at": "node:internal/per_context/messageport",
+    "selfMs": 0.5,
+    "totalMs": 566.7
+   },
+   {
+    "fn": "scope.onmessage",
+    "at": "src/render/furnitureCell.worker.ts:42 ~decl",
+    "selfMs": 1.2,
+    "totalMs": 561
+   },
+   {
+    "fn": "rebuild",
+    "at": "src/world/network.ts:50 ~decl",
+    "selfMs": 1.7,
+    "totalMs": 453
+   },
+   {
+    "fn": "rebuild",
+    "at": "src/world/networkBuild.ts:80 ~decl",
+    "selfMs": 13.2,
+    "totalMs": 451.3
+   },
+   {
+    "fn": "solveNode",
+    "at": "src/world/networkBuild.ts:246 ~decl",
+    "selfMs": 4.3,
+    "totalMs": 361.2
+   },
+   {
+    "fn": "build",
+    "at": "src/world/networkBuild.ts:107 ~decl",
+    "selfMs": 1.1,
+    "totalMs": 216.9
+   },
+   {
+    "fn": "buildJunction",
+    "at": "src/world/junction/build.ts:136 ~decl",
+    "selfMs": 7.8,
+    "totalMs": 215.8
+   },
+   {
+    "fn": "flatXY",
+    "at": "src/core/ring.ts:90 ~decl",
+    "selfMs": 106.7,
+    "totalMs": 106.7
+   },
+   {
+    "fn": "buildJunctionRing",
+    "at": "src/world/junction/polygon.ts:109 ~decl",
+    "selfMs": 4,
+    "totalMs": 106.2
+   },
+   {
+    "fn": "deriveJunctionLevel",
+    "at": "src/world/junction/derive.ts:30 ~decl",
+    "selfMs": 1,
+    "totalMs": 95.7
+   },
+   {
+    "fn": "furniturePlace",
+    "at": "src/render/furniturePlace.ts:72 ~decl",
+    "selfMs": 2.1,
+    "totalMs": 89.2
+   },
+   {
+    "fn": "furnitureOf",
+    "at": "src/world/streetFurniture.ts:71 ~decl",
+    "selfMs": 0.6,
+    "totalMs": 84.9
+   },
+   {
+    "fn": "onAccess",
+    "at": "src/world/streetFurniture.ts:74 ~decl",
+    "selfMs": 1.1,
+    "totalMs": 80
+   },
+   {
+    "fn": "nearCrossingAccess",
+    "at": "src/world/landscape.ts:286 ~decl",
+    "selfMs": 2.6,
+    "totalMs": 78.9
+   },
+   {
+    "fn": "buildLegs",
+    "at": "src/world/junction/legs.ts:89 ~decl",
+    "selfMs": 13,
+    "totalMs": 75.4
+   },
+   {
+    "fn": "deriveFromLegs",
+    "at": "src/world/junction/derive.ts:37 ~decl",
+    "selfMs": 7.8,
+    "totalMs": 75.2
+   },
+   {
+    "fn": "crossingAccessesAt",
+    "at": "src/world/landscape.ts:249 ~decl",
+    "selfMs": 2.4,
+    "totalMs": 72.8
+   },
+   {
+    "fn": "crossingLandingAt",
+    "at": "src/world/network.ts:270 ~decl",
+    "selfMs": 1.1,
+    "totalMs": 70.5
+   },
+   {
+    "fn": "crosswalkDistanceAt",
+    "at": "src/world/network.ts:274 ~decl",
+    "selfMs": 1.1,
+    "totalMs": 68.9
+   },
+   {
+    "fn": "cellOf",
+    "at": "src/world/walkable.ts:47 ~decl",
+    "selfMs": 1.6,
+    "totalMs": 64.6
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "src/world/junction/legs.ts:8 ~decl",
+    "selfMs": 22.9,
+    "totalMs": 61.9
+   },
+   {
+    "fn": "ensurePositive",
+    "at": "src/core/ring.ts:153 ~decl",
+    "selfMs": 0.5,
+    "totalMs": 56
+   },
+   {
+    "fn": "signedArea",
+    "at": "src/core/ring.ts:142 ~decl",
+    "selfMs": 6.6,
+    "totalMs": 50.3
+   },
+   {
+    "fn": "isSimple",
+    "at": "src/core/polygon.ts:8 ~decl",
+    "selfMs": 43.5,
+    "totalMs": 43.5
+   },
+   {
+    "fn": "of",
+    "at": "src/world/junction/levels.ts:207 ~decl",
+    "selfMs": 1.1,
+    "totalMs": 41.6
+   },
+   {
+    "fn": "computeCorners",
+    "at": "src/world/junction/corners.ts:64 ~decl",
+    "selfMs": 3.2,
+    "totalMs": 38.9
+   },
+   {
+    "fn": "get bbox",
+    "at": "src/core/ring.ts:123 ~decl",
+    "selfMs": 4.4,
+    "totalMs": 37.2
+   },
+   {
+    "fn": "boundsOf$1",
+    "at": "src/world/junction/levels.ts:?",
+    "selfMs": 0.6,
+    "totalMs": 35.5
+   },
+   {
+    "fn": "flatten",
+    "at": "src/core/ring.ts:89 ~decl",
+    "selfMs": 5,
+    "totalMs": 34.5
+   },
+   {
+    "fn": "resolveCorner",
+    "at": "src/world/junction/corners.ts:75 ~decl",
+    "selfMs": 4.1,
+    "totalMs": 32.6
+   }
+  ]
+ },
+ {
+  "file": "worker_job.worker.ts_74DE4D.cpuprofile",
+  "wallMs": 246032,
+  "busyMs": 705,
+  "idleMs": 245327,
+  "programMs": 6,
+  "gcMs": 79,
+  "jsWithSourceMs": 617,
+  "nativeNoUrlMs": 3,
+  "samples": 436930,
+  "topSelf": [
+   {
+    "fn": "value",
+    "at": "recordTable.ts:527",
+    "selfMs": 193.3,
+    "totalMs": 215.7
+   },
+   {
+    "fn": "multiplyMatrices",
+    "at": "../../three/build/three.core.js:10570",
+    "selfMs": 70.1,
+    "totalMs": 70.1
+   },
+   {
+    "fn": "workOutLayout",
+    "at": "geometry.ts:651",
+    "selfMs": 29,
+    "totalMs": 69.7
+   },
+   {
+    "fn": "updateMatrix",
+    "at": "../../three/build/three.core.js:13035",
+    "selfMs": 24.7,
+    "totalMs": 24.7
+   },
+   {
+    "fn": "host.onmessage",
+    "at": "job.worker.ts?worker_file&type=module:78",
+    "selfMs": 19.9,
+    "totalMs": 437
+   },
+   {
+    "fn": "string",
+    "at": "recordTable.ts:505",
+    "selfMs": 17,
+    "totalMs": 17
+   },
+   {
+    "fn": "updateWorldMatrix",
+    "at": "../../three/build/three.core.js:13116",
+    "selfMs": 15.6,
+    "totalMs": 31.7
+   },
+   {
+    "fn": "edgeFrame",
+    "at": "footprints.ts:31",
+    "selfMs": 11.9,
+    "totalMs": 16.4
+   },
+   {
+    "fn": "localToWorld",
+    "at": "geometry.ts:32",
+    "selfMs": 10.4,
+    "totalMs": 10.4
+   },
+   {
+    "fn": "setFromRotationMatrix",
+    "at": "../../three/build/three.core.js:11523",
+    "selfMs": 10,
+    "totalMs": 10
+   },
+   {
+    "fn": "updateMatrixWorld",
+    "at": "../../three/build/three.core.js:13067",
+    "selfMs": 8.5,
+    "totalMs": 74
+   },
+   {
+    "fn": "spansAgainst",
+    "at": "geometry.ts:343",
+    "selfMs": 8.1,
+    "totalMs": 16.6
+   },
+   {
+    "fn": "lotFront",
+    "at": "foundation.ts:308",
+    "selfMs": 7.5,
+    "totalMs": 28.8
+   },
+   {
+    "fn": "gardenPlants",
+    "at": "gardenPlace.ts:36",
+    "selfMs": 7.3,
+    "totalMs": 10
+   },
+   {
+    "fn": "pavedHeightFrom",
+    "at": "paving.ts:12",
+    "selfMs": 7.2,
+    "totalMs": 22.4
+   },
+   {
+    "fn": "floorHeight",
+    "at": "foundation.ts:289",
+    "selfMs": 6.9,
+    "totalMs": 130.3
+   },
+   {
+    "fn": "insideSpans",
+    "at": "geometry.ts:401",
+    "selfMs": 6.8,
+    "totalMs": 6.8
+   },
+   {
+    "fn": "sampleFootprint",
+    "at": "foundation.ts:88",
+    "selfMs": 5.6,
+    "totalMs": 17.8
+   },
+   {
+    "fn": "coverCellOf",
+    "at": "layerCells.ts:158",
+    "selfMs": 5.5,
+    "totalMs": 87.1
+   },
+   {
+    "fn": "shape",
+    "at": "recordTable.ts:517",
+    "selfMs": 5.4,
+    "totalMs": 11.2
+   },
+   {
+    "fn": "bayWidth",
+    "at": "geometry.ts:319",
+    "selfMs": 5,
+    "totalMs": 6.5
+   },
+   {
+    "fn": "onQuaternionChange",
+    "at": "../../three/build/three.core.js:12042",
+    "selfMs": 5,
+    "totalMs": 18.3
+   },
+   {
+    "fn": "solidRowsOf",
+    "at": "cameraSolids.ts:433",
+    "selfMs": 5,
+    "totalMs": 7.8
+   },
+   {
+    "fn": "near",
+    "at": "roadField.ts:250",
+    "selfMs": 4.6,
+    "totalMs": 5.8
+   },
+   {
+    "fn": "worldRotation",
+    "at": "citizenWalk.ts:216",
+    "selfMs": 4.6,
+    "totalMs": 5.2
+   },
+   {
+    "fn": "u32",
+    "at": "rng.ts:46",
+    "selfMs": 4.5,
+    "totalMs": 5.1
+   },
+   {
+    "fn": "sideFrame",
+    "at": "footprints.ts:40",
+    "selfMs": 4.5,
+    "totalMs": 4.5
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "sharedGround.ts:181",
+    "selfMs": 4.4,
+    "totalMs": 8.8
+   },
+   {
+    "fn": "boxDistance",
+    "at": "roadField.ts:26",
+    "selfMs": 3.9,
+    "totalMs": 3.9
+   },
+   {
+    "fn": "bakeFrames",
+    "at": "citizenBake.ts:128",
+    "selfMs": 3.9,
+    "totalMs": 178.7
+   }
+  ],
+  "topTotal": [
+   {
+    "fn": "host.onmessage",
+    "at": "job.worker.ts?worker_file&type=module:78",
+    "selfMs": 19.9,
+    "totalMs": 437
+   },
+   {
+    "fn": "rowRecords",
+    "at": "rowRefs.ts:63",
+    "selfMs": 3.4,
+    "totalMs": 220.8
+   },
+   {
+    "fn": "readRow",
+    "at": "recordTable.ts:606",
+    "selfMs": 0.5,
+    "totalMs": 216.2
+   },
+   {
+    "fn": "value",
+    "at": "recordTable.ts:527",
+    "selfMs": 193.3,
+    "totalMs": 215.7
+   },
+   {
+    "fn": "scope.onmessage",
+    "at": "cameraSolid.worker.ts:27",
+    "selfMs": 2.3,
+    "totalMs": 196.8
+   },
+   {
+    "fn": "bakeFrames",
+    "at": "citizenBake.ts:128",
+    "selfMs": 3.9,
+    "totalMs": 178.7
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "citizenBake.ts:186",
+    "selfMs": 2.9,
+    "totalMs": 141.9
+   },
+   {
+    "fn": "floorHeight",
+    "at": "foundation.ts:289",
+    "selfMs": 6.9,
+    "totalMs": 130.3
+   },
+   {
+    "fn": "gardenPacksOf",
+    "at": "gardenPlace.ts:152",
+    "selfMs": 2.2,
+    "totalMs": 125.8
+   },
+   {
+    "fn": "scope.onmessage",
+    "at": "coverCell.worker.ts:21",
+    "selfMs": 0.5,
+    "totalMs": 88.8
+   },
+   {
+    "fn": "coverCellOf",
+    "at": "layerCells.ts:158",
+    "selfMs": 5.5,
+    "totalMs": 87.1
+   },
+   {
+    "fn": "updateMatrixWorld",
+    "at": "../../three/build/three.core.js:13067",
+    "selfMs": 8.5,
+    "totalMs": 74
+   },
+   {
+    "fn": "multiplyMatrices",
+    "at": "../../three/build/three.core.js:10570",
+    "selfMs": 70.1,
+    "totalMs": 70.1
+   },
+   {
+    "fn": "workOutLayout",
+    "at": "geometry.ts:651",
+    "selfMs": 29,
+    "totalMs": 69.7
+   },
+   {
+    "fn": "clearLimbs",
+    "at": "citizenBake.ts:291",
+    "selfMs": 0.7,
+    "totalMs": 69.6
+   },
+   {
+    "fn": "pose",
+    "at": "citizenWalk.ts:243",
+    "selfMs": 3.3,
+    "totalMs": 68.9
+   },
+   {
+    "fn": "updateWorldMatrix",
+    "at": "../../three/build/three.core.js:13116",
+    "selfMs": 15.6,
+    "totalMs": 31.7
+   },
+   {
+    "fn": "lotFront",
+    "at": "foundation.ts:308",
+    "selfMs": 7.5,
+    "totalMs": 28.8
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "paving.ts:55",
+    "selfMs": 2.2,
+    "totalMs": 26.8
+   },
+   {
+    "fn": "updateMatrix",
+    "at": "../../three/build/three.core.js:13035",
+    "selfMs": 24.7,
+    "totalMs": 24.7
+   },
+   {
+    "fn": "multiplyQuaternions",
+    "at": "../../three/build/three.core.js:4576",
+    "selfMs": 3.8,
+    "totalMs": 22.6
+   },
+   {
+    "fn": "pavedHeightFrom",
+    "at": "paving.ts:12",
+    "selfMs": 7.2,
+    "totalMs": 22.4
+   },
+   {
+    "fn": "onQuaternionChange",
+    "at": "../../three/build/three.core.js:12042",
+    "selfMs": 5,
+    "totalMs": 18.3
+   },
+   {
+    "fn": "update",
+    "at": "../../three/build/three.core.js:25135",
+    "selfMs": 1.5,
+    "totalMs": 18.1
+   },
+   {
+    "fn": "sampleFootprint",
+    "at": "foundation.ts:88",
+    "selfMs": 5.6,
+    "totalMs": 17.8
+   },
+   {
+    "fn": "string",
+    "at": "recordTable.ts:505",
+    "selfMs": 17,
+    "totalMs": 17
+   },
+   {
+    "fn": "spansAgainst",
+    "at": "geometry.ts:343",
+    "selfMs": 8.1,
+    "totalMs": 16.6
+   },
+   {
+    "fn": "edgeFrame",
+    "at": "footprints.ts:31",
+    "selfMs": 11.9,
+    "totalMs": 16.4
+   },
+   {
+    "fn": "gardenPack",
+    "at": "gardenPlace.ts:70",
+    "selfMs": 2.9,
+    "totalMs": 12.5
+   },
+   {
+    "fn": "shape",
+    "at": "recordTable.ts:517",
+    "selfMs": 5.4,
+    "totalMs": 11.2
+   }
+  ]
+ },
+ {
+  "file": "job-thread_32144_worker_1_WorkerThread_4.cpuprofile",
+  "wallMs": 248678,
+  "busyMs": 623,
+  "idleMs": 248056,
+  "programMs": 101,
+  "gcMs": 101,
+  "jsWithSourceMs": 421,
+  "nativeNoUrlMs": 0,
+  "samples": 441775,
+  "topSelf": [
+   {
+    "fn": "flatXY",
+    "at": "src/core/ring.ts:90 ~decl",
+    "selfMs": 89,
+    "totalMs": 89
+   },
+   {
+    "fn": "isSimple",
+    "at": "src/core/polygon.ts:8 ~decl",
+    "selfMs": 38.7,
+    "totalMs": 38.7
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "src/world/junction/legs.ts:8 ~decl",
+    "selfMs": 16.7,
+    "totalMs": 39.8
+   },
+   {
+    "fn": "rebuild",
+    "at": "src/world/networkBuild.ts:80 ~decl",
+    "selfMs": 9.8,
+    "totalMs": 324.4
+   },
+   {
+    "fn": "buildLegs",
+    "at": "src/world/junction/legs.ts:89 ~decl",
+    "selfMs": 9.3,
+    "totalMs": 49.6
+   },
+   {
+    "fn": "dist",
+    "at": "src/core/vec2.ts:20 ~decl",
+    "selfMs": 8.6,
+    "totalMs": 8.6
+   },
+   {
+    "fn": "deriveFromLegs",
+    "at": "src/world/junction/derive.ts:37 ~decl",
+    "selfMs": 7.8,
+    "totalMs": 65.6
+   },
+   {
+    "fn": "get dir",
+    "at": "src/world/junction/legs.ts:33 ~decl",
+    "selfMs": 7.2,
+    "totalMs": 7.2
+   },
+   {
+    "fn": "signedArea",
+    "at": "src/core/ring.ts:142 ~decl",
+    "selfMs": 7.1,
+    "totalMs": 44.2
+   },
+   {
+    "fn": "cornerOf",
+    "at": "src/world/junction/corners.ts:29 ~decl",
+    "selfMs": 5.6,
+    "totalMs": 5.6
+   },
+   {
+    "fn": "get bbox",
+    "at": "src/core/ring.ts:123 ~decl",
+    "selfMs": 5.4,
+    "totalMs": 26.4
+   },
+   {
+    "fn": "buildJunction",
+    "at": "src/world/junction/build.ts:136 ~decl",
+    "selfMs": 5.1,
+    "totalMs": 157.9
+   },
+   {
+    "fn": "roadProfile",
+    "at": "src/world/roadTypes.ts:248 ~decl",
+    "selfMs": 4.7,
+    "totalMs": 5.9
+   },
+   {
+    "fn": "get",
+    "at": "src/world/geometry.ts:77 ~decl",
+    "selfMs": 4.5,
+    "totalMs": 5.8
+   },
+   {
+    "fn": "get fillet",
+    "at": "src/world/junction/corners.ts:22 ~decl",
+    "selfMs": 4.5,
+    "totalMs": 4.5
+   },
+   {
+    "fn": "rebuild",
+    "at": "src/world/network.ts:50 ~decl",
+    "selfMs": 4.4,
+    "totalMs": 328.8
+   },
+   {
+    "fn": "flatten",
+    "at": "src/core/ring.ts:89 ~decl",
+    "selfMs": 4.3,
+    "totalMs": 34.1
+   },
+   {
+    "fn": "scanReference",
+    "at": "src/core/regionIndex.ts:294 ~decl",
+    "selfMs": 4,
+    "totalMs": 5.6
+   },
+   {
+    "fn": "cellsOfSegment",
+    "at": "src/core/regionIndex.ts:323 ~decl",
+    "selfMs": 3.9,
+    "totalMs": 3.9
+   },
+   {
+    "fn": "writePlate",
+    "at": "src/world/networkBuild.ts:358 ~decl",
+    "selfMs": 3.6,
+    "totalMs": 4.2
+   },
+   {
+    "fn": "forCellsOver",
+    "at": "src/world/cells.ts:26 ~decl",
+    "selfMs": 3.5,
+    "totalMs": 5.8
+   },
+   {
+    "fn": "idsMeeting",
+    "at": "src/world/cells.ts:131 ~decl",
+    "selfMs": 3.4,
+    "totalMs": 6.3
+   },
+   {
+    "fn": "reconcileSegment",
+    "at": "src/world/networkBuild.ts:262 ~decl",
+    "selfMs": 3.4,
+    "totalMs": 5.9
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "src/core/regionIndex.ts:5 ~decl",
+    "selfMs": 3.4,
+    "totalMs": 16.9
+   },
+   {
+    "fn": "ribbonParts",
+    "at": "src/world/ribbons.ts:114 ~decl",
+    "selfMs": 3.3,
+    "totalMs": 17.5
+   },
+   {
+    "fn": "segmentRecord",
+    "at": "src/world/doc.ts:1718 ~decl",
+    "selfMs": 3.3,
+    "totalMs": 5.4
+   },
+   {
+    "fn": "winding",
+    "at": "src/core/regionIndex.ts:88 ~decl",
+    "selfMs": 3,
+    "totalMs": 3
+   },
+   {
+    "fn": "rasterise",
+    "at": "src/core/regionIndex.ts:286 ~decl",
+    "selfMs": 2.9,
+    "totalMs": 6.8
+   },
+   {
+    "fn": "get nrm",
+    "at": "src/world/junction/legs.ts:34 ~decl",
+    "selfMs": 2.9,
+    "totalMs": 2.9
+   },
+   {
+    "fn": "newFrame",
+    "at": "src/core/polyline.ts:33 ~decl",
+    "selfMs": 2.8,
+    "totalMs": 2.8
+   }
+  ],
+  "topTotal": [
+   {
+    "fn": "scope.onmessage",
+    "at": "src/render/furnitureCell.worker.ts:42 ~decl",
+    "selfMs": 0.7,
+    "totalMs": 418
+   },
+   {
+    "fn": "rebuild",
+    "at": "src/world/network.ts:50 ~decl",
+    "selfMs": 4.4,
+    "totalMs": 328.8
+   },
+   {
+    "fn": "rebuild",
+    "at": "src/world/networkBuild.ts:80 ~decl",
+    "selfMs": 9.8,
+    "totalMs": 324.4
+   },
+   {
+    "fn": "solveNode",
+    "at": "src/world/networkBuild.ts:246 ~decl",
+    "selfMs": 1.6,
+    "totalMs": 265.9
+   },
+   {
+    "fn": "build",
+    "at": "src/world/networkBuild.ts:107 ~decl",
+    "selfMs": 1.1,
+    "totalMs": 159
+   },
+   {
+    "fn": "buildJunction",
+    "at": "src/world/junction/build.ts:136 ~decl",
+    "selfMs": 5.1,
+    "totalMs": 157.9
+   },
+   {
+    "fn": "flatXY",
+    "at": "src/core/ring.ts:90 ~decl",
+    "selfMs": 89,
+    "totalMs": 89
+   },
+   {
+    "fn": "buildJunctionRing",
+    "at": "src/world/junction/polygon.ts:109 ~decl",
+    "selfMs": 2.2,
+    "totalMs": 87
+   },
+   {
+    "fn": "furniturePlace",
+    "at": "src/render/furniturePlace.ts:72 ~decl",
+    "selfMs": 1.1,
+    "totalMs": 74.7
+   },
+   {
+    "fn": "onAccess",
+    "at": "src/world/streetFurniture.ts:74 ~decl",
+    "selfMs": 0.7,
+    "totalMs": 68.5
+   },
+   {
+    "fn": "nearCrossingAccess",
+    "at": "src/world/landscape.ts:286 ~decl",
+    "selfMs": 0.5,
+    "totalMs": 67.8
+   },
+   {
+    "fn": "deriveFromLegs",
+    "at": "src/world/junction/derive.ts:37 ~decl",
+    "selfMs": 7.8,
+    "totalMs": 65.6
+   },
+   {
+    "fn": "crossingAccessesAt",
+    "at": "src/world/landscape.ts:249 ~decl",
+    "selfMs": 2.1,
+    "totalMs": 59.8
+   },
+   {
+    "fn": "crossingLandingAt",
+    "at": "src/world/network.ts:270 ~decl",
+    "selfMs": 2.3,
+    "totalMs": 57.1
+   },
+   {
+    "fn": "footway",
+    "at": "src/world/walkable.ts:46 ~decl",
+    "selfMs": 0.6,
+    "totalMs": 53.6
+   },
+   {
+    "fn": "cellOf",
+    "at": "src/world/walkable.ts:47 ~decl",
+    "selfMs": 0.5,
+    "totalMs": 50.1
+   },
+   {
+    "fn": "buildLegs",
+    "at": "src/world/junction/legs.ts:89 ~decl",
+    "selfMs": 9.3,
+    "totalMs": 49.6
+   },
+   {
+    "fn": "signedArea",
+    "at": "src/core/ring.ts:142 ~decl",
+    "selfMs": 7.1,
+    "totalMs": 44.2
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "src/world/junction/legs.ts:8 ~decl",
+    "selfMs": 16.7,
+    "totalMs": 39.8
+   },
+   {
+    "fn": "isSimple",
+    "at": "src/core/polygon.ts:8 ~decl",
+    "selfMs": 38.7,
+    "totalMs": 38.7
+   },
+   {
+    "fn": "flatten",
+    "at": "src/core/ring.ts:89 ~decl",
+    "selfMs": 4.3,
+    "totalMs": 34.1
+   },
+   {
+    "fn": "ringsOf",
+    "at": "src/world/walkable.ts:80 ~decl",
+    "selfMs": 1.3,
+    "totalMs": 26.4
+   },
+   {
+    "fn": "get bbox",
+    "at": "src/core/ring.ts:123 ~decl",
+    "selfMs": 5.4,
+    "totalMs": 26.4
+   },
+   {
+    "fn": "fromRings",
+    "at": "src/core/regionIndex.ts:37 ~decl",
+    "selfMs": 1.1,
+    "totalMs": 21.4
+   },
+   {
+    "fn": "levelRingsOf",
+    "at": "src/world/surfaces.ts:77 ~decl",
+    "selfMs": 1.1,
+    "totalMs": 20.4
+   },
+   {
+    "fn": "buildRibbon",
+    "at": "src/world/networkBuild.ts:361 ~decl",
+    "selfMs": 1.8,
+    "totalMs": 18.8
+   },
+   {
+    "fn": "ribbonParts",
+    "at": "src/world/ribbons.ts:114 ~decl",
+    "selfMs": 3.3,
+    "totalMs": 17.5
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "src/core/regionIndex.ts:5 ~decl",
+    "selfMs": 3.4,
+    "totalMs": 16.9
+   },
+   {
+    "fn": "makeRibbon",
+    "at": "src/world/ribbons.ts:117 ~decl",
+    "selfMs": 0.6,
+    "totalMs": 16.5
+   },
+   {
+    "fn": "leanRibbon",
+    "at": "src/world/ribbons.ts:121 ~decl",
+    "selfMs": 0.6,
+    "totalMs": 15.9
+   }
+  ]
+ },
+ {
+  "file": "worker_job.worker.ts_349078.cpuprofile",
+  "wallMs": 246331,
+  "busyMs": 200,
+  "idleMs": 246131,
+  "programMs": 1,
+  "gcMs": 12,
+  "jsWithSourceMs": 181,
+  "nativeNoUrlMs": 6,
+  "samples": 437683,
+  "topSelf": [
+   {
+    "fn": "request.onsuccess",
+    "at": "derivedCache.ts:126",
+    "selfMs": 176.7,
+    "totalMs": 176.7
+   },
+   {
+    "fn": "postMessage",
+    "at": null,
+    "selfMs": 3.7,
+    "totalMs": 3.7
+   },
+   {
+    "fn": "postMessage",
+    "at": "job.worker.ts?worker_file&type=module:99",
+    "selfMs": 3.5,
+    "totalMs": 7.2
+   },
+   {
+    "fn": "transaction",
+    "at": null,
+    "selfMs": 1.2,
+    "totalMs": 1.2
+   },
+   {
+    "fn": "get",
+    "at": null,
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "objectStore",
+    "at": null,
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "derivedCache.ts:118",
+    "selfMs": 0.5,
+    "totalMs": 2.8
+   },
+   {
+    "fn": "host.onmessage",
+    "at": "job.worker.ts?worker_file&type=module:78",
+    "selfMs": 0.5,
+    "totalMs": 0.5
+   }
+  ],
+  "topTotal": [
+   {
+    "fn": "request.onsuccess",
+    "at": "derivedCache.ts:126",
+    "selfMs": 176.7,
+    "totalMs": 176.7
+   },
+   {
+    "fn": "postMessage",
+    "at": "job.worker.ts?worker_file&type=module:99",
+    "selfMs": 3.5,
+    "totalMs": 7.2
+   },
+   {
+    "fn": "postMessage",
+    "at": null,
+    "selfMs": 3.7,
+    "totalMs": 3.7
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "derivedCache.ts:118",
+    "selfMs": 0.5,
+    "totalMs": 2.8
+   },
+   {
+    "fn": "transaction",
+    "at": null,
+    "selfMs": 1.2,
+    "totalMs": 1.2
+   },
+   {
+    "fn": "get",
+    "at": null,
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "objectStore",
+    "at": null,
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "host.onmessage",
+    "at": "job.worker.ts?worker_file&type=module:78",
+    "selfMs": 0.5,
+    "totalMs": 0.5
+   }
+  ]
+ },
+ {
+  "file": "job-thread_38284_worker_3_WorkerThread_2.cpuprofile",
+  "wallMs": 248811,
+  "busyMs": 176,
+  "idleMs": 248635,
+  "programMs": 85,
+  "gcMs": 14,
+  "jsWithSourceMs": 76,
+  "nativeNoUrlMs": 0,
+  "samples": 442044,
+  "topSelf": [
+   {
+    "fn": "flatXY",
+    "at": "src/core/ring.ts:90 ~decl",
+    "selfMs": 11.7,
+    "totalMs": 11.7
+   },
+   {
+    "fn": "walk",
+    "at": "src/jobs/processWorker.ts:33 ~decl",
+    "selfMs": 7,
+    "totalMs": 7
+   },
+   {
+    "fn": "isSimple",
+    "at": "src/core/polygon.ts:8 ~decl",
+    "selfMs": 4.5,
+    "totalMs": 4.5
+   },
+   {
+    "fn": "postMessage",
+    "at": "src/jobs/threadSelf.ts:31 ~decl",
+    "selfMs": 4.1,
+    "totalMs": 11.1
+   },
+   {
+    "fn": "rebuild",
+    "at": "src/world/networkBuild.ts:80 ~decl",
+    "selfMs": 4,
+    "totalMs": 57.8
+   },
+   {
+    "fn": "buildLegs",
+    "at": "src/world/junction/legs.ts:89 ~decl",
+    "selfMs": 3.5,
+    "totalMs": 10.2
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "src/world/junction/legs.ts:8 ~decl",
+    "selfMs": 3.4,
+    "totalMs": 5.7
+   },
+   {
+    "fn": "deriveFromLegs",
+    "at": "src/world/junction/derive.ts:37 ~decl",
+    "selfMs": 1.9,
+    "totalMs": 9.1
+   },
+   {
+    "fn": "rebuild",
+    "at": "src/world/network.ts:50 ~decl",
+    "selfMs": 1.8,
+    "totalMs": 59.6
+   },
+   {
+    "fn": "get",
+    "at": "src/world/geometry.ts:77 ~decl",
+    "selfMs": 1.6,
+    "totalMs": 1.6
+   },
+   {
+    "fn": "word",
+    "at": "src/core/digest.ts:13 ~decl",
+    "selfMs": 1.5,
+    "totalMs": 1.5
+   },
+   {
+    "fn": "buildJunction",
+    "at": "src/world/junction/build.ts:136 ~decl",
+    "selfMs": 1.3,
+    "totalMs": 24.1
+   },
+   {
+    "fn": "get x",
+    "at": "src/world/junction/corners.ts:21 ~decl",
+    "selfMs": 1.1,
+    "totalMs": 1.1
+   },
+   {
+    "fn": "pruneSelfIntersections",
+    "at": "src/core/offset.ts:111 ~decl",
+    "selfMs": 1.1,
+    "totalMs": 1.1
+   },
+   {
+    "fn": "Ring",
+    "at": "src/core/ring.ts:173 ~decl",
+    "selfMs": 1.1,
+    "totalMs": 1.1
+   },
+   {
+    "fn": "fromJSON",
+    "at": "src/world/doc.ts:2276 ~decl",
+    "selfMs": 1.1,
+    "totalMs": 2.3
+   },
+   {
+    "fn": "keepsWidth",
+    "at": "src/world/junction/derive.ts:91 ~decl",
+    "selfMs": 1.1,
+    "totalMs": 1.1
+   },
+   {
+    "fn": "of",
+    "at": "src/world/junction/levels.ts:207 ~decl",
+    "selfMs": 0.9,
+    "totalMs": 5.8
+   },
+   {
+    "fn": "ribbonParts",
+    "at": "src/world/ribbons.ts:114 ~decl",
+    "selfMs": 0.7,
+    "totalMs": 3.5
+   },
+   {
+    "fn": "get length",
+    "at": "src/core/polyline.ts:123 ~decl",
+    "selfMs": 0.7,
+    "totalMs": 0.7
+   },
+   {
+    "fn": "RoadDoc",
+    "at": "src/world/doc.ts:434 ~decl",
+    "selfMs": 0.7,
+    "totalMs": 0.7
+   },
+   {
+    "fn": "forCellsOver",
+    "at": "src/world/cells.ts:26 ~decl",
+    "selfMs": 0.7,
+    "totalMs": 1.2
+   },
+   {
+    "fn": "newFrame",
+    "at": "src/core/polyline.ts:33 ~decl",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "buildJunctionRing",
+    "at": "src/world/junction/polygon.ts:109 ~decl",
+    "selfMs": 0.6,
+    "totalMs": 10.2
+   },
+   {
+    "fn": "solveNode",
+    "at": "src/world/networkBuild.ts:246 ~decl",
+    "selfMs": 0.6,
+    "totalMs": 43.5
+   },
+   {
+    "fn": "filletCorner",
+    "at": "src/core/fillet.ts:19 ~decl",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "src/world/junction/build.ts:28 ~decl",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "curbRadius",
+    "at": "src/core/fillet.ts:62 ~decl",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "computeTrims",
+    "at": "src/world/junction/trim.ts:7 ~decl",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "cornerOf",
+    "at": "src/world/junction/corners.ts:29 ~decl",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   }
+  ],
+  "topTotal": [
+   {
+    "fn": "rebuild",
+    "at": "src/world/network.ts:50 ~decl",
+    "selfMs": 1.8,
+    "totalMs": 59.6
+   },
+   {
+    "fn": "rebuild",
+    "at": "src/world/networkBuild.ts:80 ~decl",
+    "selfMs": 4,
+    "totalMs": 57.8
+   },
+   {
+    "fn": "solveNode",
+    "at": "src/world/networkBuild.ts:246 ~decl",
+    "selfMs": 0.6,
+    "totalMs": 43.5
+   },
+   {
+    "fn": "buildJunction",
+    "at": "src/world/junction/build.ts:136 ~decl",
+    "selfMs": 1.3,
+    "totalMs": 24.1
+   },
+   {
+    "fn": "flatXY",
+    "at": "src/core/ring.ts:90 ~decl",
+    "selfMs": 11.7,
+    "totalMs": 11.7
+   },
+   {
+    "fn": "postMessage",
+    "at": "src/jobs/threadSelf.ts:31 ~decl",
+    "selfMs": 4.1,
+    "totalMs": 11.1
+   },
+   {
+    "fn": "buildLegs",
+    "at": "src/world/junction/legs.ts:89 ~decl",
+    "selfMs": 3.5,
+    "totalMs": 10.2
+   },
+   {
+    "fn": "buildJunctionRing",
+    "at": "src/world/junction/polygon.ts:109 ~decl",
+    "selfMs": 0.6,
+    "totalMs": 10.2
+   },
+   {
+    "fn": "deriveFromLegs",
+    "at": "src/world/junction/derive.ts:37 ~decl",
+    "selfMs": 1.9,
+    "totalMs": 9.1
+   },
+   {
+    "fn": "walk",
+    "at": "src/jobs/processWorker.ts:33 ~decl",
+    "selfMs": 7,
+    "totalMs": 7
+   },
+   {
+    "fn": "of",
+    "at": "src/world/junction/levels.ts:207 ~decl",
+    "selfMs": 0.9,
+    "totalMs": 5.8
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "src/world/junction/legs.ts:8 ~decl",
+    "selfMs": 3.4,
+    "totalMs": 5.7
+   },
+   {
+    "fn": "isSimple",
+    "at": "src/core/polygon.ts:8 ~decl",
+    "selfMs": 4.5,
+    "totalMs": 4.5
+   },
+   {
+    "fn": "boundsOf$1",
+    "at": "src/world/junction/levels.ts:?",
+    "selfMs": 0.5,
+    "totalMs": 4.3
+   },
+   {
+    "fn": "get bbox",
+    "at": "src/core/ring.ts:123 ~decl",
+    "selfMs": 0.5,
+    "totalMs": 3.8
+   },
+   {
+    "fn": "ribbonParts",
+    "at": "src/world/ribbons.ts:114 ~decl",
+    "selfMs": 0.7,
+    "totalMs": 3.5
+   },
+   {
+    "fn": "flatten",
+    "at": "src/core/ring.ts:89 ~decl",
+    "selfMs": 0.5,
+    "totalMs": 3.3
+   },
+   {
+    "fn": "findChanges",
+    "at": "src/world/networkBuild.ts:216 ~decl",
+    "selfMs": 0.5,
+    "totalMs": 3.3
+   },
+   {
+    "fn": "resolveCorner",
+    "at": "src/world/junction/corners.ts:75 ~decl",
+    "selfMs": 0.5,
+    "totalMs": 2.8
+   },
+   {
+    "fn": "fromJSON",
+    "at": "src/world/doc.ts:2276 ~decl",
+    "selfMs": 1.1,
+    "totalMs": 2.3
+   },
+   {
+    "fn": "exportBake",
+    "at": "src/world/network.ts:169 ~decl",
+    "selfMs": 0.5,
+    "totalMs": 2.2
+   },
+   {
+    "fn": "file",
+    "at": "src/world/cells.ts:76 ~decl",
+    "selfMs": 0.5,
+    "totalMs": 1.8
+   },
+   {
+    "fn": "forEachTrim",
+    "at": "src/world/junction/levels.ts:284 ~decl",
+    "selfMs": 0.1,
+    "totalMs": 1.7
+   },
+   {
+    "fn": "exportBake",
+    "at": "src/world/networkBuild.ts:108 ~decl",
+    "selfMs": 0.6,
+    "totalMs": 1.7
+   },
+   {
+    "fn": "get",
+    "at": "src/world/geometry.ts:77 ~decl",
+    "selfMs": 1.6,
+    "totalMs": 1.6
+   },
+   {
+    "fn": "word",
+    "at": "src/core/digest.ts:13 ~decl",
+    "selfMs": 1.5,
+    "totalMs": 1.5
+   },
+   {
+    "fn": "forCellsOver",
+    "at": "src/world/cells.ts:26 ~decl",
+    "selfMs": 0.7,
+    "totalMs": 1.2
+   },
+   {
+    "fn": "trimSummary",
+    "at": "src/world/junction/levels.ts:?",
+    "selfMs": 0.6,
+    "totalMs": 1.2
+   },
+   {
+    "fn": "get x",
+    "at": "src/world/junction/corners.ts:21 ~decl",
+    "selfMs": 1.1,
+    "totalMs": 1.1
+   },
+   {
+    "fn": "pruneSelfIntersections",
+    "at": "src/core/offset.ts:111 ~decl",
+    "selfMs": 1.1,
+    "totalMs": 1.1
+   }
+  ]
+ },
+ {
+  "file": "job-thread_38284_worker_4_WorkerThread_1.cpuprofile",
+  "wallMs": 248788,
+  "busyMs": 114,
+  "idleMs": 248674,
+  "programMs": 114,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 441939,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_38284_worker_2_WorkerThread_3.cpuprofile",
+  "wallMs": 248849,
+  "busyMs": 97,
+  "idleMs": 248752,
+  "programMs": 97,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 442102,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_35072_worker_3_WorkerThread_1.cpuprofile",
+  "wallMs": 248127,
+  "busyMs": 94,
+  "idleMs": 248032,
+  "programMs": 94,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 440762,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_12432_worker_1_WorkerThread_3.cpuprofile",
+  "wallMs": 248006,
+  "busyMs": 91,
+  "idleMs": 247915,
+  "programMs": 91,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 440519,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_32144_worker_2_WorkerThread_3.cpuprofile",
+  "wallMs": 248658,
+  "busyMs": 88,
+  "idleMs": 248571,
+  "programMs": 87,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 441736,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_12432_worker_2_WorkerThread_2.cpuprofile",
+  "wallMs": 247977,
+  "busyMs": 85,
+  "idleMs": 247893,
+  "programMs": 84,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 440465,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_22236_worker_2_WorkerThread_2.cpuprofile",
+  "wallMs": 248400,
+  "busyMs": 84,
+  "idleMs": 248315,
+  "programMs": 84,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 441246,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_35072_worker_1_WorkerThread_3.cpuprofile",
+  "wallMs": 248201,
+  "busyMs": 84,
+  "idleMs": 248117,
+  "programMs": 84,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 440887,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_12432_worker_3_WorkerThread_1.cpuprofile",
+  "wallMs": 247916,
+  "busyMs": 81,
+  "idleMs": 247834,
+  "programMs": 81,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 440348,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_22236_worker_1_WorkerThread_3.cpuprofile",
+  "wallMs": 248435,
+  "busyMs": 80,
+  "idleMs": 248355,
+  "programMs": 80,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 441325,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_32144_worker_4_WorkerThread_1.cpuprofile",
+  "wallMs": 248547,
+  "busyMs": 80,
+  "idleMs": 248467,
+  "programMs": 80,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 441530,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_22236_worker_3_WorkerThread_1.cpuprofile",
+  "wallMs": 248353,
+  "busyMs": 79,
+  "idleMs": 248274,
+  "programMs": 79,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 441213,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_35072_worker_2_WorkerThread_2.cpuprofile",
+  "wallMs": 248163,
+  "busyMs": 77,
+  "idleMs": 248086,
+  "programMs": 77,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 440827,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-thread_32144_worker_3_WorkerThread_2.cpuprofile",
+  "wallMs": 248605,
+  "busyMs": 75,
+  "idleMs": 248530,
+  "programMs": 75,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 441658,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-process_38284.cpuprofile",
+  "wallMs": 248738,
+  "busyMs": 37,
+  "idleMs": 248701,
+  "programMs": 23,
+  "gcMs": 2,
+  "jsWithSourceMs": 11,
+  "nativeNoUrlMs": 1,
+  "samples": 442041,
+  "topSelf": [
+   {
+    "fn": "postMessage",
+    "at": "node:electron/js2c/utility_init",
+    "selfMs": 4.5,
+    "totalMs": 5.7
+   },
+   {
+    "fn": "postMessage",
+    "at": "node:internal/worker",
+    "selfMs": 3.9,
+    "totalMs": 3.9
+   },
+   {
+    "fn": "buffersIn",
+    "at": "file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/desktop/jobs.cjs",
+    "selfMs": 1.6,
+    "totalMs": 1.6
+   },
+   {
+    "fn": "postMessage",
+    "at": null,
+    "selfMs": 1.2,
+    "totalMs": 1.2
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:internal/worker",
+    "selfMs": 0.6,
+    "totalMs": 6.2
+   }
+  ],
+  "topTotal": [
+   {
+    "fn": "(anonymous)",
+    "at": "node:internal/worker",
+    "selfMs": 0.6,
+    "totalMs": 6.2
+   },
+   {
+    "fn": "postMessage",
+    "at": "node:electron/js2c/utility_init",
+    "selfMs": 4.5,
+    "totalMs": 5.7
+   },
+   {
+    "fn": "postMessage",
+    "at": "node:internal/worker",
+    "selfMs": 3.9,
+    "totalMs": 3.9
+   },
+   {
+    "fn": "buffersIn",
+    "at": "file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/desktop/jobs.cjs",
+    "selfMs": 1.6,
+    "totalMs": 1.6
+   },
+   {
+    "fn": "postMessage",
+    "at": null,
+    "selfMs": 1.2,
+    "totalMs": 1.2
+   }
+  ]
+ },
+ {
+  "file": "job-process_32144.cpuprofile",
+  "wallMs": 248476,
+  "busyMs": 25,
+  "idleMs": 248451,
+  "programMs": 18,
+  "gcMs": 1,
+  "jsWithSourceMs": 4,
+  "nativeNoUrlMs": 1,
+  "samples": 441523,
+  "topSelf": [
+   {
+    "fn": "postMessage",
+    "at": "node:internal/worker",
+    "selfMs": 2.8,
+    "totalMs": 2.8
+   },
+   {
+    "fn": "buffersIn",
+    "at": "file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/desktop/jobs.cjs",
+    "selfMs": 1.1,
+    "totalMs": 1.1
+   },
+   {
+    "fn": "postMessage",
+    "at": null,
+    "selfMs": 0.7,
+    "totalMs": 0.7
+   },
+   {
+    "fn": "postMessage",
+    "at": "node:electron/js2c/utility_init",
+    "selfMs": 0.5,
+    "totalMs": 1.2
+   }
+  ],
+  "topTotal": [
+   {
+    "fn": "postMessage",
+    "at": "node:internal/worker",
+    "selfMs": 2.8,
+    "totalMs": 2.8
+   },
+   {
+    "fn": "postMessage",
+    "at": "node:electron/js2c/utility_init",
+    "selfMs": 0.5,
+    "totalMs": 1.2
+   },
+   {
+    "fn": "buffersIn",
+    "at": "file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/desktop/jobs.cjs",
+    "selfMs": 1.1,
+    "totalMs": 1.1
+   },
+   {
+    "fn": "postMessage",
+    "at": null,
+    "selfMs": 0.7,
+    "totalMs": 0.7
+   }
+  ]
+ },
+ {
+  "file": "job-process_33080.cpuprofile",
+  "wallMs": 246584,
+  "busyMs": 18,
+  "idleMs": 246565,
+  "programMs": 6,
+  "gcMs": 0,
+  "jsWithSourceMs": 9,
+  "nativeNoUrlMs": 3,
+  "samples": 438129,
+  "topSelf": [
+   {
+    "fn": "fsync",
+    "at": null,
+    "selfMs": 1.2,
+    "totalMs": 1.2
+   },
+   {
+    "fn": "isEmpty",
+    "at": "node:internal/fixed_queue",
+    "selfMs": 1.1,
+    "totalMs": 1.1
+   },
+   {
+    "fn": "getOptions",
+    "at": "node:internal/fs/utils",
+    "selfMs": 0.8,
+    "totalMs": 0.8
+   },
+   {
+    "fn": "asyncBufferWrapper",
+    "at": "node:zlib",
+    "selfMs": 0.7,
+    "totalMs": 3.1
+   },
+   {
+    "fn": "_write",
+    "at": "node:internal/streams/writable",
+    "selfMs": 0.6,
+    "totalMs": 1.2
+   },
+   {
+    "fn": "getHighWaterMark",
+    "at": "node:internal/streams/state",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "zlibBufferOnEnd",
+    "at": "node:zlib",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "writeDurable",
+    "at": "file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/desktop/saves.cjs",
+    "selfMs": 0.6,
+    "totalMs": 3.8
+   },
+   {
+    "fn": "from",
+    "at": "node:buffer",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "writeFileHandle",
+    "at": "node:internal/fs/promises",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "write",
+    "at": null,
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "createUnsafeArrayBuffer",
+    "at": null,
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "fileOf",
+    "at": "file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/desktop/saves.cjs",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:fs",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:path",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "WritableState.onwrite",
+    "at": "node:internal/streams/writable",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "mkdir",
+    "at": null,
+    "selfMs": 0.5,
+    "totalMs": 0.5
+   },
+   {
+    "fn": "close",
+    "at": null,
+    "selfMs": 0.5,
+    "totalMs": 0.5
+   },
+   {
+    "fn": "stringToFlags",
+    "at": "node:internal/fs/utils",
+    "selfMs": 0.3,
+    "totalMs": 0.3
+   },
+   {
+    "fn": "handleErrorFromBinding",
+    "at": "node:internal/fs/promises",
+    "selfMs": 0.3,
+    "totalMs": 0.3
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:internal/fs/utils",
+    "selfMs": 0.1,
+    "totalMs": 0.1
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:internal/fs/utils",
+    "selfMs": 0,
+    "totalMs": 0.1
+   },
+   {
+    "fn": "splitPath",
+    "at": "node:electron/js2c/node_init",
+    "selfMs": 0,
+    "totalMs": 0
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:internal/fs/utils",
+    "selfMs": 0,
+    "totalMs": 0
+   }
+  ],
+  "topTotal": [
+   {
+    "fn": "writeDurable",
+    "at": "file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/desktop/saves.cjs",
+    "selfMs": 0.6,
+    "totalMs": 3.8
+   },
+   {
+    "fn": "asyncBufferWrapper",
+    "at": "node:zlib",
+    "selfMs": 0.7,
+    "totalMs": 3.1
+   },
+   {
+    "fn": "fsync",
+    "at": null,
+    "selfMs": 1.2,
+    "totalMs": 1.2
+   },
+   {
+    "fn": "_write",
+    "at": "node:internal/streams/writable",
+    "selfMs": 0.6,
+    "totalMs": 1.2
+   },
+   {
+    "fn": "isEmpty",
+    "at": "node:internal/fixed_queue",
+    "selfMs": 1.1,
+    "totalMs": 1.1
+   },
+   {
+    "fn": "getOptions",
+    "at": "node:internal/fs/utils",
+    "selfMs": 0.8,
+    "totalMs": 0.8
+   },
+   {
+    "fn": "getHighWaterMark",
+    "at": "node:internal/streams/state",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "zlibBufferOnEnd",
+    "at": "node:zlib",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "from",
+    "at": "node:buffer",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "writeFileHandle",
+    "at": "node:internal/fs/promises",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "write",
+    "at": null,
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "createUnsafeArrayBuffer",
+    "at": null,
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "fileOf",
+    "at": "file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/desktop/saves.cjs",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:fs",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:path",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "WritableState.onwrite",
+    "at": "node:internal/streams/writable",
+    "selfMs": 0.6,
+    "totalMs": 0.6
+   },
+   {
+    "fn": "mkdir",
+    "at": null,
+    "selfMs": 0.5,
+    "totalMs": 0.5
+   },
+   {
+    "fn": "close",
+    "at": null,
+    "selfMs": 0.5,
+    "totalMs": 0.5
+   },
+   {
+    "fn": "stringToFlags",
+    "at": "node:internal/fs/utils",
+    "selfMs": 0.3,
+    "totalMs": 0.3
+   },
+   {
+    "fn": "handleErrorFromBinding",
+    "at": "node:internal/fs/promises",
+    "selfMs": 0.3,
+    "totalMs": 0.3
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:internal/fs/utils",
+    "selfMs": 0.1,
+    "totalMs": 0.1
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:internal/fs/utils",
+    "selfMs": 0,
+    "totalMs": 0.1
+   },
+   {
+    "fn": "splitPath",
+    "at": "node:electron/js2c/node_init",
+    "selfMs": 0,
+    "totalMs": 0
+   },
+   {
+    "fn": "(anonymous)",
+    "at": "node:internal/fs/utils",
+    "selfMs": 0,
+    "totalMs": 0
+   }
+  ]
+ },
+ {
+  "file": "job-process_35072.cpuprofile",
+  "wallMs": 248066,
+  "busyMs": 8,
+  "idleMs": 248058,
+  "programMs": 8,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 440799,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-process_22236.cpuprofile",
+  "wallMs": 248275,
+  "busyMs": 6,
+  "idleMs": 248269,
+  "programMs": 6,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 441198,
+  "topSelf": [],
+  "topTotal": []
+ },
+ {
+  "file": "job-process_12432.cpuprofile",
+  "wallMs": 247854,
+  "busyMs": 5,
+  "idleMs": 247848,
+  "programMs": 5,
+  "gcMs": 0,
+  "jsWithSourceMs": 0,
+  "nativeNoUrlMs": 0,
+  "samples": 440410,
+  "topSelf": [],
+  "topTotal": []
+ }
+]

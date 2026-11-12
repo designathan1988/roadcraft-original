@@ -1,0 +1,55 @@
+move/small/x1/rua/panSlow: frames 826 long 0 cpu p50 14.7 p95 21 max 43.6 | gpu p50 9.73 p99 13.31 max 24.76 | draws 408 tris 3303814 | progs +1 | up 126.1 MB
+move/small/x1/rua/panFastDrag: frames 784 long 0 cpu p50 14.7 p95 21.9 max 32.9 | gpu p50 9.94 p99 14.73 max 15.95 | draws 398 tris 3236337 | progs +0 | up 76.3 MB
+move/small/x1/rua/panKeys: frames 477 long 2 cpu p50 17.9 p95 27 max 84.8 | gpu p50 9.78 p99 18 max 31.81 | draws 491 tris 3881017 | progs +0 | up 211.6 MB
+move/small/x1/rua/orbit: frames 716 long 2 cpu p50 17.7 p95 27.9 max 59 | gpu p50 10.72 p99 17.36 max 43.71 | draws 459 tris 3818113 | progs +1 | up 427.5 MB
+move/small/x1/rua/zoomIn: frames 611 long 1 cpu p50 21.8 p95 29.9 max 50.7 | gpu p50 15.24 p99 21.37 max 22.99 | draws 568 tris 7252424 | progs +0 | up 475.9 MB
+move/small/x1/rua/zoomOut: frames 103 long 103 cpu p50 285.8 p95 334.2 max 352.8 | gpu p50 36.53 p99 349.43 max 412.33 | draws 157 tris 878574 | progs +0 | up 267.6 MB
+move/small/x1/rua/tilt: frames 502 long 2 cpu p50 15.4 p95 25.6 max 57.5 | gpu p50 9.51 p99 19.28 max 27.17 | draws 683 tris 6846722 | progs +0 | up 156.0 MB
+move/small/x1/rua/turn90: frames 426 long 5 cpu p50 19.6 p95 34.6 max 77.5 | gpu p50 10.91 p99 18.25 max 35.42 | draws 421 tris 3625729 | progs +0 | up 418.9 MB
+move/small/x1/rua/homeCentreReset: frames 595 long 1 cpu p50 15.3 p95 18.4 max 143 | gpu p50 7.79 p99 14.36 max 16.92 | draws 211 tris 818879 | progs +0 | up 142.6 MB
+move/small/x1/perto/panSlow: frames 897 long 0 cpu p50 10.5 p95 15.8 max 29.6 | gpu p50 10.9 p99 20.45 max 28.27 | draws 511 tris 4464222 | progs +0 | up 363.4 MB
+move/small/x1/perto/panFastDrag: frames 849 long 0 cpu p50 10.3 p95 18.2 max 48 | gpu p50 10.95 p99 16.55 max 19.18 | draws 547 tris 4891072 | progs +0 | up 370.2 MB
+move/small/x1/perto/panKeys: frames 553 long 0 cpu p50 12 p95 23.7 max 45.3 | gpu p50 9.02 p99 17.73 max 20.52 | draws 820 tris 9014635 | progs +0 | up 441.5 MB
+move/small/x1/perto/orbit: frames 874 long 0 cpu p50 11.9 p95 21.6 max 46.2 | gpu p50 12 p99 20.6 max 20.74 | draws 611 tris 5091422 | progs +0 | up 732.9 MB
+move/small/x1/perto/zoomIn: frames 880 long 1 cpu p50 10.9 p95 16.7 max 60.9 | gpu p50 14.23 p99 20.88 max 23.04 | draws 546 tris 7518148 | progs +0 | up 750.2 MB
+move/small/x1/perto/zoomOut: frames 118 long 118 cpu p50 270.1 p95 334.3 max 350.3 | gpu p50 16.59 p99 344.76 max 355.29 | draws 157 tris 878576 | progs +0 | up 225.7 MB
+move/small/x1/perto/tilt: frames 305 long 3 cpu p50 16.8 p95 30.9 max 64.9 | gpu p50 11.04 p99 22.05 max 25.97 | draws 740 tris 6704874 | progs +0 | up 138.5 MB
+move/small/x1/perto/turn90: frames 10 long 9 cpu p50 59.1 p95 84.2 max 84.2 | gpu p50 79.43 p99 99.07 max 99.07 | draws 1071 tris 14021706 | progs +0 | up 26.8 MB
+move/small/x1/perto/homeCentreReset: frames 13 long 1 cpu p50 20 p95 306.4 max 306.4 | gpu p50 49.34 p99 151.17 max 151.17 | draws 207 tris 828039 | progs +0 | up 27.9 MB
+move/small/x1/bairro/panSlow: frames 30 long 0 cpu p50 21.3 p95 26.6 max 30 | gpu p50 11.54 p99 144.64 max 158.74 | draws 337 tris 2671870 | progs +0 | up 184.2 MB
+move/small/x1/bairro/panFastDrag: frames 575 long 0 cpu p50 8.1 p95 17.8 max 36.7 | gpu p50 9.61 p99 143.54 max 208.95 | draws 357 tris 2727676 | progs +0 | up 373.6 MB
+move/small/x1/bairro/panKeys: frames 601 long 0 cpu p50 4.9 p95 11.7 max 30.6 | gpu p50 6.23 p99 20.97 max 26.35 | draws 491 tris 5848191 | progs +0 | up 265.4 MB
+move/small/x1/bairro/orbit: frames 901 long 0 cpu p50 8.4 p95 13.1 max 31.2 | gpu p50 10.18 p99 21.4 max 24.43 | draws 352 tris 2983425 | progs +0 | up 347.7 MB
+move/small/x1/bairro/zoomIn: frames 815 long 2 cpu p50 11.5 p95 23 max 84.1 | gpu p50 13.17 p99 22.13 max 26.99 | draws 552 tris 6742423 | progs +0 | up 773.6 MB
+move/small/x1/bairro/zoomOut: frames 31 long 31 cpu p50 277.5 p95 306.2 max 310 | gpu p50 73.29 p99 347.3 max 372.12 | draws 157 tris 878576 | progs +0 | up 93.7 MB
+move/small/x1/bairro/tilt: frames 10 long 1 cpu p50 30.5 p95 206.9 max 206.9 | gpu p50 80.9 p99 180.49 max 180.49 | draws 785 tris 7392583 | progs +0 | up 110.2 MB
+move/small/x1/bairro/turn90: frames 10 long 0 cpu p50 31.6 p95 46 max 46 | gpu p50 78.66 p99 131.96 max 131.96 | draws 512 tris 6048869 | progs +0 | up 15.4 MB
+move/small/x1/bairro/homeCentreReset: frames 13 long 1 cpu p50 16.6 p95 97 max 97 | gpu p50 79.05 p99 123.15 max 123.15 | draws 211 tris 843059 | progs +0 | up 21.2 MB
+move/small/x1/longe/panSlow: frames 30 long 0 cpu p50 11.8 p95 18.2 max 19.2 | gpu p50 78.97 p99 99.13 max 105.26 | draws 196 tris 655356 | progs +0 | up 110.0 MB
+move/small/x1/longe/panFastDrag: frames 30 long 0 cpu p50 9.9 p95 18.1 max 20.7 | gpu p50 84.61 p99 99.04 max 108.34 | draws 276 tris 930792 | progs +0 | up 143.6 MB
+move/small/x1/longe/panKeys: frames 7 long 0 cpu p50 22.5 p95 37.2 max 37.2 | gpu p50 73.58 p99 90.82 max 90.82 | draws 26 tris 85132 | progs +0 | up 14.6 MB
+file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/reports/baseline-2026-10-29/driver/matrix.mjs:37
+  if (!box) throw new Error(`no button ${label}`);
+                  ^
+
+Error: no button Velocidade da simulação 1×
+    at clickLabel (file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/reports/baseline-2026-10-29/driver/matrix.mjs:37:19)
+    at async speed (file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/reports/baseline-2026-10-29/driver/matrix.mjs:53:3)
+    at async file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/reports/baseline-2026-10-29/driver/matrix.mjs:119:5
+
+Node.js v24.22.0
+move/small/x1/longe/orbit: frames 913 long 0 cpu p50 6.2 p95 9.8 max 35.1 | gpu p50 7.01 p99 9.18 max 10.14 | draws 161 tris 540338 | progs +0 | up 212.9 MB
+move/small/x1/longe/zoomIn: frames 857 long 1 cpu p50 11 p95 19.5 max 72.5 | gpu p50 12.51 p99 17.72 max 24.42 | draws 528 tris 6090666 | progs +0 | up 790.9 MB
+move/small/x1/longe/zoomOut: frames 280 long 176 cpu p50 138.7 p95 171.9 max 195.2 | gpu p50 136.48 p99 190.2 max 210.36 | draws 157 tris 878576 | progs +0 | up 35.3 MB
+move/small/x1/longe/tilt: frames 601 long 0 cpu p50 7.8 p95 11.4 max 20.2 | gpu p50 7.19 p99 9.51 max 10.57 | draws 281 tris 1014413 | progs +0 | up 218.4 MB
+move/small/x1/longe/turn90: frames 607 long 0 cpu p50 9.1 p95 11.6 max 14.7 | gpu p50 7.38 p99 8.07 max 8.34 | draws 230 tris 753236 | progs +0 | up 245.6 MB
+move/small/x1/longe/homeCentreReset: frames 623 long 0 cpu p50 7 p95 9.4 max 14 | gpu p50 7.43 p99 8.07 max 9.51 | draws 263 tris 1235078 | progs +0 | up 208.4 MB
+move/small/x1/cidade/panSlow: frames 919 long 0 cpu p50 8.4 p95 12 max 43.9 | gpu p50 9.82 p99 11.54 max 14.46 | draws 92 tris 358989 | progs +0 | up 146.4 MB
+move/small/x1/cidade/panFastDrag: frames 859 long 0 cpu p50 7.5 p95 12.9 max 49.2 | gpu p50 6.39 p99 11.44 max 16.39 | draws 112 tris 407880 | progs +0 | up 211.4 MB
+move/small/x1/cidade/panKeys: frames 592 long 1 cpu p50 7.7 p95 13 max 58.1 | gpu p50 6.31 p99 11.49 max 16.33 | draws 109 tris 424970 | progs +0 | up 107.3 MB
+move/small/x1/cidade/orbit: frames 920 long 2 cpu p50 8.1 p95 13.6 max 57.5 | gpu p50 6.59 p99 12.63 max 19.17 | draws 82 tris 356896 | progs +0 | up 113.3 MB
+move/small/x1/cidade/zoomIn: frames 867 long 2 cpu p50 11.1 p95 19.9 max 57.3 | gpu p50 12.48 p99 17.53 max 26.04 | draws 524 tris 6186633 | progs +0 | up 823.7 MB
+move/small/x1/cidade/zoomOut: frames 175 long 175 cpu p50 167.2 p95 202.1 max 222.5 | gpu p50 162.17 p99 211.11 max 217.95 | draws 157 tris 878576 | progs +0 | up 19.4 MB
+move/small/x1/cidade/tilt: frames 602 long 0 cpu p50 9.9 p95 13.8 max 19.7 | gpu p50 6.42 p99 7.92 max 22.3 | draws 137 tris 743904 | progs +0 | up 144.3 MB
+move/small/x1/cidade/turn90: frames 608 long 0 cpu p50 12.2 p95 14.5 max 23.5 | gpu p50 6.23 p99 6.97 max 7.12 | draws 106 tris 514624 | progs +0 | up 144.5 MB
+move/small/x1/cidade/homeCentreReset: frames 620 long 0 cpu p50 7.9 p95 11 max 43 | gpu p50 7.84 p99 8.26 max 10.35 | draws 211 tris 801783 | progs +0 | up 218.1 MB

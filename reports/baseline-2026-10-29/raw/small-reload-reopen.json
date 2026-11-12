@@ -1,0 +1,15 @@
+{
+  "marks": "boot:module@2032 boot:session-asked@2035 save:files-read@2221 save:parsed@2700 boot:session-read@2702 boot:restore@2702 restore:replaced@2717 restore:rebuilt@2811 restore:repaired@2811 boot:restored@2811 boot:surfaces-asked@2825 boot:surfaces-read@2825 boot:sim-asked@2827 boot:scene-asked@2827 boot:scene-made@4268 world:stations-start@4678 world:stations-read@4678 world:stations-done@4678 world:solve@4678 world:solved@4693 world:shape@5605 world:shaped@5605 boot:sim-started@9169 roads:kept-keys@9924 world:surfaces@9932 world:surfaced@10729 world:roads@10772 reveal:whole@11552 programs:compiled@11688 reveal:programs@11688 reveal:warm@11692 reveal:warm-drawn@12020 opening:shown@12037",
+  "counts": {
+    "nodes": 160,
+    "segments": 294,
+    "buildings": 1348,
+    "lots": 1348,
+    "poles": 796,
+    "landscape": 2876,
+    "barriers": 0,
+    "trees": 663,
+    "zones": 0,
+    "people": 0
+  }
+}

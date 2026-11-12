@@ -1,0 +1,45 @@
+item5/terrain-07-mesa: FAILED not on screen: Chapada (arenito) | acted 48 ms, settled +15 ms, frames 28 long 0 max 19.5 ms | heap 1617->1751 MB, total 13059->12978 MB
+item5/terrain-08-sugarloaf: FAILED not on screen: Pão de açúcar (granito) | acted 4 ms, settled +1 ms, frames 25 long 0 max 8.9 ms | heap 1772->1826 MB, total 12978->13131 MB
+item5/terrain-09-undo-redo: acted 2045 ms, settled +2 ms, frames 148 long 0 max 9.3 ms | heap 1887->1990 MB, total 13110->13275 MB
+item5/soil-01-paint-sand: FAILED not on screen: Solo | acted 2 ms, settled +1 ms, frames 25 long 0 max 7.6 ms | heap 2020->2059 MB, total 12158->12158 MB
+item5/soil-02-map-biome-cerrado: FAILED not on screen: Bioma do mapa: Cerrado | acted 4 ms, settled +1 ms, frames 25 long 0 max 7.8 ms | heap 2123->2216 MB, total 12311->12682 MB | still cpu p50 6 gpu p50 6.19 draws 73
+item5/soil-03-map-biome-back: FAILED not on screen: Bioma do mapa: Sem ecossistema | acted 3 ms, settled +1 ms, frames 24 long 0 max 13.7 ms | heap 2281->1771 MB, total 12960->12423 MB
+item5/nature-01-plant-wood: FAILED not on screen: Natureza | acted 4 ms, settled +1 ms, frames 26 long 0 max 10.3 ms | heap 1818->1849 MB, total 12423->12444 MB
+item5/nature-02-one-tree: FAILED not on screen: Uma árvore por clique | acted 2 ms, settled +1 ms, frames 25 long 0 max 8 ms | heap 1863->1900 MB, total 11617->11626 MB
+item5/nature-03-cut-trees: FAILED not on screen: Cortar árvores | acted 8 ms, settled +1 ms, frames 26 long 0 max 7.8 ms | heap 1935->1977 MB, total 11686->11686 MB
+item5/nature-04-flowers: FAILED not on screen: Flores | acted 3 ms, settled +1 ms, frames 25 long 0 max 7.1 ms | heap 2006->2050 MB, total 11677->11739 MB
+item5/nature-05-undo-redo: acted 2014 ms, settled +1 ms, frames 145 long 0 max 11.7 ms | heap 2063->1738 MB, total 11821->11897 MB
+item5/sky-01-create-cloud: FAILED not on screen: Céu e clima | acted 2 ms, settled +1 ms, frames 25 long 0 max 7.2 ms | heap 1755->1841 MB, total 11270->11343 MB | still cpu p50 6.4 gpu p50 6.08 draws 136
+item5/sky-02-scatter-clouds: FAILED not on screen: Espalhar pelo céu | acted 11 ms, settled +1 ms, frames 26 long 0 max 8 ms | heap 1875->1931 MB, total 11408->11460 MB | still cpu p50 6.2 gpu p50 5.96 draws 144
+item5/sky-03-clear-clouds: FAILED not on screen: Apagar todas as nuvens | acted 8 ms, settled +1 ms, frames 26 long 0 max 7.6 ms | heap 1958->1989 MB, total 11578->11636 MB
+item5/sky-04-fog-lay: FAILED not on screen: Neblina | acted 3 ms, settled +1 ms, frames 25 long 0 max 8.4 ms | heap 2019->2101 MB, total 11744->11776 MB | still cpu p50 6.3 gpu p50 6.12 draws 142
+item5/sky-05-fog-clear: FAILED not on screen: Apagar toda a neblina | acted 2 ms, settled +1 ms, frames 25 long 0 max 9.9 ms | heap 2124->2149 MB, total 11902->11909 MB
+item5/sky-06-weather-panel: FAILED not on screen: Clima | acted 18 ms, settled +1 ms, frames 26 long 0 max 12.3 ms | heap 2122->1802 MB, total 11997->11282 MB | still cpu p50 6.1 gpu p50 5.79 draws 144
+item5/sky-07-storm: FAILED not on screen: Tempestade | acted 2 ms, settled +1 ms, frames 25 long 0 max 8.3 ms | heap 1826->1892 MB, total 11282->11434 MB | still cpu p50 7.3 gpu p50 5.95 draws 159
+item5/sky-08-storm-off: FAILED not on screen: Tempestade | acted 11 ms, settled +6 ms, frames 26 long 0 max 9 ms | heap 1926->1946 MB, total 11522->11613 MB
+item5/sky-09-fire-smoke: FAILED not on screen: Fogo | acted 9 ms, settled +2 ms, frames 26 long 0 max 11.2 ms | heap 1991->2045 MB, total 11613->11781 MB | still cpu p50 6.9 gpu p50 5.99 draws 162
+item5/sky-10-night: acted 3285 ms, settled +1 ms, frames 222 long 0 max 11.6 ms | heap 2114->1763 MB, total 11838->11200 MB | still cpu p50 6.3 gpu p50 5.99 draws 143
+item5/sky-11-day: acted 2715 ms, settled +2 ms, frames 188 long 0 max 10.8 ms | heap 1791->1860 MB, total 11311->11439 MB
+item5/transit-01-stop: acted 1799 ms, settled +1 ms, frames 133 long 0 max 12.1 ms | heap 1888->1945 MB, total 11439->11559 MB
+item5/transit-02-terminal: acted 1628 ms, settled +1 ms, frames 122 long 0 max 10.3 ms | heap 1984->2042 MB, total 11633->11693 MB
+item5/transit-03-line: acted 2298 ms, settled +1 ms, frames 163 long 0 max 13.3 ms | heap 2059->2150 MB, total 11815->11001 MB
+item5/transit-04-more-fewer: acted 1858 ms, settled +1 ms, frames 137 long 0 max 9.7 ms | heap 2158->1766 MB, total 11101->10282 MB
+item5/transit-05-train-track: acted 2124 ms, settled +1 ms, frames 153 long 0 max 8.4 ms | heap 1806->1856 MB, total 10390->10508 MB
+item5/transit-06-train-station: acted 1947 ms, settled +1 ms, frames 142 long 0 max 13.4 ms | heap 1894->1961 MB, total 10595->10617 MB
+item5/transit-07-metro-track: acted 2133 ms, settled +1 ms, frames 153 long 0 max 8.4 ms | heap 1975->2042 MB, total 10758->10807 MB
+item5/transit-08-metro-station: acted 1933 ms, settled +1 ms, frames 141 long 0 max 9.1 ms | heap 2076->2150 MB, total 10807->10947 MB
+item5/transit-09-remove-line: acted 1285 ms, settled +2 ms, frames 102 long 0 max 9.3 ms | heap 2158->1766 MB, total 11015->11064 MB
+item5/transit-10-undo-redo: acted 2467 ms, settled +1 ms, frames 173 long 0 max 8.4 ms | heap 1781->1866 MB, total 10389->10517 MB
+item5/city-view-for-demolish: acted 6222 ms, settled +236 ms, frames 49 long 18 max 473 ms | heap 1896->2068 MB, total 10538->15455 MB
+item5/bulldoze-01-building: acted 2442 ms, settled +1 ms, frames 116 long 0 max 43.5 ms | heap 2608->2768 MB, total 17272->18002 MB
+item5/bulldoze-02-pistol: acted 2585 ms, settled +9 ms, frames 179 long 0 max 12.1 ms | heap 1924->2095 MB, total 17728->14467 MB | still cpu p50 8.8 gpu p50 7.07 draws 346
+item5/bulldoze-03-bomb: acted 4449 ms, settled +1 ms, frames 183 long 6 max 838.3 ms | heap 2131->2170 MB, total 12746->13415 MB | still cpu p50 12.6 gpu p50 10.27 draws 743
+item5/bulldoze-04-undo-redo: acted 3737 ms, settled +1 ms, frames 222 long 8 max 90.8 ms | heap 2215->2502 MB, total 13573->13624 MB
+item5/inside-01-toggle: acted 2919 ms, settled +1 ms, frames 165 long 1 max 556.1 ms | heap 2524->2099 MB, total 13748->12993 MB | still cpu p50 12.8 gpu p50 11.71 draws 784
+item5/inside-02-floor-up: acted 1797 ms, settled +1 ms, frames 130 long 0 max 26.1 ms | heap 2141->2282 MB, total 12970->13153 MB
+item5/inside-03-floor-down: acted 1810 ms, settled +1 ms, frames 133 long 0 max 23.4 ms | heap 2319->2457 MB, total 13174->13406 MB
+item5/inside-04-off: FAILED not on screen: Interior dos prédios | acted 324 ms, settled +1 ms, frames 45 long 0 max 14.9 ms | heap 2492->2520 MB, total 13406->13493 MB
+item5/distance-300m: acted 6035 ms, settled +null ms, frames 37 long 22 max 525.5 ms | heap 2555->2127 MB, total 13584->14135 MB
+item5/distance-700m: acted 6028 ms, settled +30 ms, frames 89 long 22 max 509.6 ms | heap 2128->2578 MB, total 13206->16273 MB
+item5/distance-1400m: acted 6041 ms, settled +25 ms, frames 81 long 23 max 498 ms | heap 2631->2494 MB, total 16107->16979 MB
+item5/distance-2000m: acted 6053 ms, settled +1 ms, frames 158 long 10 max 419.4 ms | heap 2526->2818 MB, total 17077->17646 MB
