@@ -1,0 +1,113 @@
+{
+ "id": "Vehicles/hatch/hatch",
+ "key": "Vehicles/hatch/hatch",
+ "metrics": {
+  "id": "Vehicles/hatch/hatch",
+  "triangles": 11682,
+  "vertices": 9577,
+  "index": "Uint16",
+  "geometryBytes": 417672,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 6,
+  "levels": [
+   {
+    "triangles": 11682,
+    "vertices": 9577
+   },
+   {
+    "triangles": 36,
+    "vertices": 72
+   }
+  ],
+  "hidden": 103,
+  "solids": "75 solids: 16 other, 44 box, 15 closed cylinder",
+  "size": [
+   3.9079999923706055,
+   1.7297876626253128,
+   2.218498706817627
+  ],
+  "pieces": [
+   {
+    "label": "shell",
+    "triangles": 7520,
+    "vertices": 4989
+   },
+   {
+    "label": "glass",
+    "triangles": 672,
+    "vertices": 460
+   },
+   {
+    "label": "trim",
+    "triangles": 460,
+    "vertices": 720
+   },
+   {
+    "label": "interior",
+    "triangles": 1426,
+    "vertices": 2402
+   },
+   {
+    "label": "roof",
+    "triangles": 1064,
+    "vertices": 585
+   },
+   {
+    "label": "steering wheel",
+    "triangles": 540,
+    "vertices": 421
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.6599894985556602,
+   0
+  ],
+  "distance": 10.046622183180025,
+  "floor": -0.2531529085814247,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.8038500942293835
+ ],
+ "distance": 5,
+ "error": {
+  "max": 0.0035463143972118295,
+  "mean": 0.000011716056798933591,
+  "forward": {
+   "max": 0.001489583604972678,
+   "mean": 0.00001572969948122127,
+   "samples": 99667,
+   "at": [
+    -0.12953051924705505,
+    0.9661364555358887,
+    0.7930507063865662
+   ]
+  },
+  "backward": {
+   "max": 0.0035463143972118295,
+   "mean": 0.000006811772894712937,
+   "samples": 81567,
+   "at": [
+    -0.8279943466186523,
+    0.31150302290916443,
+    0.8038370609283447
+   ]
+  },
+  "at": [
+   -0.8279943466186523,
+   0.31150302290916443,
+   0.8038370609283447
+  ]
+ },
+ "overlap": [
+  1,
+  0.9999277299992773,
+  1,
+  1
+ ]
+}

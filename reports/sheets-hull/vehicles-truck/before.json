@@ -1,0 +1,80 @@
+{
+ "id": "Vehicles/truck",
+ "key": "Vehicles/truck",
+ "metrics": {
+  "id": "Vehicles/truck",
+  "triangles": 2464,
+  "vertices": 4396,
+  "index": "Uint16",
+  "geometryBytes": 180528,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 6,
+  "levels": [
+   {
+    "triangles": 2464,
+    "vertices": 4396
+   },
+   {
+    "triangles": 96,
+    "vertices": 192
+   }
+  ],
+  "hidden": 202,
+  "solids": "83 solids: 23 closed cylinder, 50 box, 8 quad, 2 other",
+  "size": [
+   9.880000114440918,
+   3.741999998688698,
+   3.259999990463257
+  ],
+  "pieces": [
+   {
+    "label": "shell",
+    "triangles": 456,
+    "vertices": 936
+   },
+   {
+    "label": "glass",
+    "triangles": 28,
+    "vertices": 46
+   },
+   {
+    "label": "trim",
+    "triangles": 1072,
+    "vertices": 2002
+   },
+   {
+    "label": "interior",
+    "triangles": 552,
+    "vertices": 1098
+   },
+   {
+    "label": "accent",
+    "triangles": 40,
+    "vertices": 80
+   },
+   {
+    "label": "steering wheel",
+    "triangles": 316,
+    "vertices": 234
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0.07000017166137695,
+   1.629000000655651,
+   0
+  ],
+  "distance": 23.068125798325376,
+  "floor": -0.3525642633447607,
+  "long": "x"
+ },
+ "levelErrors": [
+  7.4130833025365614
+ ],
+ "distance": 5,
+ "error": null,
+ "overlap": null
+}

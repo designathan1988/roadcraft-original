@@ -1,0 +1,113 @@
+{
+ "id": "Vehicles/sedan/sedan",
+ "key": "Vehicles/sedan/sedan",
+ "metrics": {
+  "id": "Vehicles/sedan/sedan",
+  "triangles": 11606,
+  "vertices": 9319,
+  "index": "Uint16",
+  "geometryBytes": 407928,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 6,
+  "levels": [
+   {
+    "triangles": 11606,
+    "vertices": 9319
+   },
+   {
+    "triangles": 36,
+    "vertices": 72
+   }
+  ],
+  "hidden": 98,
+  "solids": "72 solids: 16 other, 41 box, 15 closed cylinder",
+  "size": [
+   4.708000183105469,
+   1.6999908238649368,
+   2.3387439250946045
+  ],
+  "pieces": [
+   {
+    "label": "shell",
+    "triangles": 8500,
+    "vertices": 5383
+   },
+   {
+    "label": "glass",
+    "triangles": 388,
+    "vertices": 275
+   },
+   {
+    "label": "trim",
+    "triangles": 460,
+    "vertices": 720
+   },
+   {
+    "label": "interior",
+    "triangles": 1466,
+    "vertices": 2370
+   },
+   {
+    "label": "roof",
+    "triangles": 252,
+    "vertices": 150
+   },
+   {
+    "label": "steering wheel",
+    "triangles": 540,
+    "vertices": 421
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.6449954137206078,
+   0
+  ],
+  "distance": 11.527232809165898,
+  "floor": -0.2602493942922822,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.7363622628657759
+ ],
+ "distance": 5,
+ "error": {
+  "max": 0.0013747938040872764,
+  "mean": 0.00001530484043995279,
+  "forward": {
+   "max": 0.0013747938040872764,
+   "mean": 0.000020519406929302952,
+   "samples": 102322,
+   "at": [
+    -0.2939046323299408,
+    0.9450035691261292,
+    -0.8520509600639343
+   ]
+  },
+  "backward": {
+   "max": 0.001261749641782302,
+   "mean": 0.000008702622162343314,
+   "samples": 80816,
+   "at": [
+    -0.959932267665863,
+    1.3544491529464722,
+    0.7021521925926208
+   ]
+  },
+  "at": [
+   -0.2939046323299408,
+   0.9450035691261292,
+   -0.8520509600639343
+  ]
+ },
+ "overlap": [
+  0.9998335968050587,
+  1,
+  0.9995903737839221,
+  1
+ ]
+}

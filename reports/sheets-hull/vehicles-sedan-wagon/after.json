@@ -1,0 +1,113 @@
+{
+ "id": "Vehicles/sedan/wagon",
+ "key": "Vehicles/sedan/wagon",
+ "metrics": {
+  "id": "Vehicles/sedan/wagon",
+  "triangles": 11756,
+  "vertices": 9585,
+  "index": "Uint16",
+  "geometryBytes": 418404,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 6,
+  "levels": [
+   {
+    "triangles": 11756,
+    "vertices": 9585
+   },
+   {
+    "triangles": 36,
+    "vertices": 72
+   }
+  ],
+  "hidden": 114,
+  "solids": "75 solids: 16 other, 44 box, 15 closed cylinder",
+  "size": [
+   4.708000183105469,
+   1.6998446732759476,
+   2.3389413356781006
+  ],
+  "pieces": [
+   {
+    "label": "shell",
+    "triangles": 7670,
+    "vertices": 5053
+   },
+   {
+    "label": "glass",
+    "triangles": 612,
+    "vertices": 425
+   },
+   {
+    "label": "trim",
+    "triangles": 460,
+    "vertices": 720
+   },
+   {
+    "label": "interior",
+    "triangles": 1382,
+    "vertices": 2366
+   },
+   {
+    "label": "roof",
+    "triangles": 1092,
+    "vertices": 600
+   },
+   {
+    "label": "steering wheel",
+    "triangles": 540,
+    "vertices": 421
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.6449600085616112,
+   0
+  ],
+  "distance": 11.527361708918555,
+  "floor": -0.26025001210174326,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.8047307580709457
+ ],
+ "distance": 5,
+ "error": {
+  "max": 0.00211954691784887,
+  "mean": 0.000012760455544863042,
+  "forward": {
+   "max": 0.00211954691784887,
+   "mean": 0.000017237322652231285,
+   "samples": 101151,
+   "at": [
+    -0.2146219164133072,
+    0.9444025158882141,
+    -0.8518946170806885
+   ]
+  },
+  "backward": {
+   "max": 0.002029701376450911,
+   "mean": 0.000007217539834648402,
+   "samples": 81697,
+   "at": [
+    -0.21462249755859375,
+    0.9443835020065308,
+    0.8518967032432556
+   ]
+  },
+  "at": [
+   -0.2146219164133072,
+   0.9444025158882141,
+   -0.8518946170806885
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  0.9996161965073882,
+  1
+ ]
+}

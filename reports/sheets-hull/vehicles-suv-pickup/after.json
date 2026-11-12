@@ -1,0 +1,113 @@
+{
+ "id": "Vehicles/suv/pickup",
+ "key": "Vehicles/suv/pickup",
+ "metrics": {
+  "id": "Vehicles/suv/pickup",
+  "triangles": 11290,
+  "vertices": 9202,
+  "index": "Uint16",
+  "geometryBytes": 401820,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 6,
+  "levels": [
+   {
+    "triangles": 11290,
+    "vertices": 9202
+   },
+   {
+    "triangles": 36,
+    "vertices": 72
+   }
+  ],
+  "hidden": 97,
+  "solids": "71 solids: 15 other, 41 box, 15 closed cylinder",
+  "size": [
+   4.9079999923706055,
+   2.0299998074769974,
+   2.4509999752044678
+  ],
+  "pieces": [
+   {
+    "label": "shell",
+    "triangles": 8108,
+    "vertices": 5218
+   },
+   {
+    "label": "glass",
+    "triangles": 356,
+    "vertices": 249
+   },
+   {
+    "label": "trim",
+    "triangles": 460,
+    "vertices": 720
+   },
+   {
+    "label": "interior",
+    "triangles": 1406,
+    "vertices": 2354
+   },
+   {
+    "label": "roof",
+    "triangles": 420,
+    "vertices": 240
+   },
+   {
+    "label": "steering wheel",
+    "triangles": 540,
+    "vertices": 421
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.809999905526638,
+   0
+  ],
+  "distance": 12.204415831164626,
+  "floor": -0.263495095461048,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.8937803222562664
+ ],
+ "distance": 5,
+ "error": {
+  "max": 0.0009608186959673736,
+  "mean": 0.000012560195607293258,
+  "forward": {
+   "max": 0.0009608186959673736,
+   "mean": 0.00001700829562364055,
+   "samples": 94805,
+   "at": [
+    -2.3450000286102295,
+    0.38999998569488525,
+    0.9663146138191223
+   ]
+  },
+  "backward": {
+   "max": 0.000941177966704818,
+   "mean": 0.000007180312695386582,
+   "samples": 78385,
+   "at": [
+    -0.14804291725158691,
+    1.1111966371536255,
+    0.9056981801986694
+   ]
+  },
+  "at": [
+   -2.3450000286102295,
+   0.38999998569488525,
+   0.9663146138191223
+  ]
+ },
+ "overlap": [
+  0.9998431126451208,
+  1,
+  0.9999046892870759,
+  1
+ ]
+}

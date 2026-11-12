@@ -1,0 +1,87 @@
+{
+ "id": "Vehicles/wheel/spoked (two-wheelers)",
+ "key": "Vehicles/wheel/spoked (two-wheelers)",
+ "metrics": {
+  "id": "Vehicles/wheel/spoked (two-wheelers)",
+  "triangles": 672,
+  "vertices": 603,
+  "index": "Uint16",
+  "geometryBytes": 25128,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B uv:2xFloat32=8B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 2,
+  "levels": [
+   {
+    "triangles": 672,
+    "vertices": 603
+   }
+  ],
+  "hidden": 32,
+  "solids": "11 solids: 10 other, 1 closed cylinder",
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "pieces": [
+   {
+    "label": "tyre",
+    "triangles": 256,
+    "vertices": 153
+   },
+   {
+    "label": "spoked rim",
+    "triangles": 416,
+    "vertices": 450
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   0
+  ],
+  "distance": 3.6137504321473304,
+  "floor": -0.5173205080756887,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 5,
+ "error": {
+  "max": 2.220464065170967e-16,
+  "mean": 1.0788893962527134e-17,
+  "forward": {
+   "max": 2.220464065170967e-16,
+   "mean": 1.0788893962527134e-17,
+   "samples": 21984,
+   "at": [
+    0.049931744970993064,
+    0.0001647840330140639,
+    -0.2341891125182406
+   ]
+  },
+  "backward": {
+   "max": 2.220464065170967e-16,
+   "mean": 1.0788893962527134e-17,
+   "samples": 21984,
+   "at": [
+    0.049931744970993064,
+    0.0001647840330140639,
+    -0.2341891125182406
+   ]
+  },
+  "at": [
+   0.049931744970993064,
+   0.0001647840330140639,
+   -0.2341891125182406
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}
