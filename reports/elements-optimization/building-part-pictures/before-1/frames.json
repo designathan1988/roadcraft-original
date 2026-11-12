@@ -1,0 +1,4271 @@
+{
+ "url": "http://127.0.0.1:5399/",
+ "made": "2026-10-25T18:44:36.093Z",
+ "frames": [
+  {
+   "name": "acUnit",
+   "drawCalls": 20,
+   "triangles": 812,
+   "partDraws": 19,
+   "partTriangles": 810,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "median": 0.14704639911651612,
+    "p10": 0.14602240324020385,
+    "p90": 0.27952959537506106
+   },
+   "props": [
+    {
+     "label": "acUnit",
+     "distance": 4,
+     "x": 2653,
+     "y": 2872,
+     "px": 491.0058603057161
+    },
+    {
+     "label": "acUnit",
+     "distance": 6,
+     "x": 2096,
+     "y": 2096,
+     "px": 329.2910537792871
+    },
+    {
+     "label": "acUnit",
+     "distance": 8,
+     "x": 1814,
+     "y": 1704,
+     "px": 247.70754990274207
+    },
+    {
+     "label": "acUnit",
+     "distance": 11,
+     "x": 1583,
+     "y": 1382,
+     "px": 180.59323532424028
+    },
+    {
+     "label": "acUnit",
+     "distance": 15,
+     "x": 1418,
+     "y": 1151,
+     "px": 132.66665588081355
+    },
+    {
+     "label": "acUnit",
+     "distance": 20,
+     "x": 1304,
+     "y": 993,
+     "px": 99.61977213015734
+    },
+    {
+     "label": "acUnit",
+     "distance": 27,
+     "x": 1215,
+     "y": 869,
+     "px": 73.86158080691838
+    },
+    {
+     "label": "acUnit",
+     "distance": 36,
+     "x": 1151,
+     "y": 781,
+     "px": 55.4332935634955
+    },
+    {
+     "label": "acUnit",
+     "distance": 48,
+     "x": 1103,
+     "y": 714,
+     "px": 41.59586788039033
+    },
+    {
+     "label": "acUnit",
+     "distance": 64,
+     "x": 1068,
+     "y": 664,
+     "px": 31.20866621494065
+    },
+    {
+     "label": "acUnit",
+     "distance": 85,
+     "x": 1041,
+     "y": 627,
+     "px": 23.50485994136175
+    },
+    {
+     "label": "acUnit",
+     "distance": 110,
+     "x": 1023,
+     "y": 602,
+     "px": 18.166364439417872
+    },
+    {
+     "label": "acUnit",
+     "distance": 150,
+     "x": 1006,
+     "y": 578,
+     "px": 13.324340612578697
+    },
+    {
+     "label": "acUnit",
+     "distance": 200,
+     "x": 994,
+     "y": 562,
+     "px": 9.99446239182546
+    },
+    {
+     "label": "acUnit",
+     "distance": 270,
+     "x": 986,
+     "y": 550,
+     "px": 7.404000976734783
+    },
+    {
+     "label": "acUnit",
+     "distance": 360,
+     "x": 979,
+     "y": 541,
+     "px": 5.553373382546711
+    },
+    {
+     "label": "acUnit",
+     "distance": 480,
+     "x": 974,
+     "y": 534,
+     "px": 4.16523967715081
+    },
+    {
+     "label": "acUnit",
+     "distance": 640,
+     "x": 971,
+     "y": 529,
+     "px": 3.1240476908859742
+    },
+    {
+     "label": "acUnit",
+     "distance": 850,
+     "x": 968,
+     "y": 526,
+     "px": 2.3522899620241855
+    },
+    {
+     "label": "acUnit",
+     "distance": 1100,
+     "x": 966,
+     "y": 523,
+     "px": 1.8177138361116725
+    },
+    {
+     "label": "acUnit",
+     "distance": 1500,
+     "x": 965,
+     "y": 521,
+     "px": 1.333013570779984
+    },
+    {
+     "label": "acUnit",
+     "distance": 2000,
+     "x": 963,
+     "y": 519,
+     "px": 0.9997722565968611
+    },
+    {
+     "label": "acUnit",
+     "distance": 2700,
+     "x": 963,
+     "y": 518,
+     "px": 0.7405790008864888
+    }
+   ],
+   "meshes": [
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 70
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 70
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 70
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 70
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 70
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 70
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 70
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 70
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 70
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    }
+   ]
+  },
+  {
+   "name": "foliage",
+   "drawCalls": 19,
+   "triangles": 3458,
+   "partDraws": 18,
+   "partTriangles": 3456,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "median": 0.34232320785522463,
+    "p10": 0.3401727914810181,
+    "p90": 0.6671360015869141
+   },
+   "props": [
+    {
+     "label": "foliage",
+     "distance": 4,
+     "x": 2619,
+     "y": 2897,
+     "px": 421.7637441933344
+    },
+    {
+     "label": "foliage",
+     "distance": 6,
+     "x": 2078,
+     "y": 2121,
+     "px": 284.3906295123207
+    },
+    {
+     "label": "foliage",
+     "distance": 8,
+     "x": 1804,
+     "y": 1726,
+     "px": 214.51931635859208
+    },
+    {
+     "label": "foliage",
+     "distance": 11,
+     "x": 1576,
+     "y": 1400,
+     "px": 156.75143819090113
+    },
+    {
+     "label": "foliage",
+     "distance": 15,
+     "x": 1414,
+     "y": 1166,
+     "px": 115.33871026408255
+    },
+    {
+     "label": "foliage",
+     "distance": 20,
+     "x": 1301,
+     "y": 1004,
+     "px": 86.70505776985996
+    },
+    {
+     "label": "foliage",
+     "distance": 27,
+     "x": 1213,
+     "y": 878,
+     "px": 64.34226497810495
+    },
+    {
+     "label": "foliage",
+     "distance": 36,
+     "x": 1150,
+     "y": 787,
+     "px": 48.31919394317078
+    },
+    {
+     "label": "foliage",
+     "distance": 48,
+     "x": 1103,
+     "y": 719,
+     "px": 36.27462876052703
+    },
+    {
+     "label": "foliage",
+     "distance": 64,
+     "x": 1067,
+     "y": 668,
+     "px": 27.225824047928086
+    },
+    {
+     "label": "foliage",
+     "distance": 85,
+     "x": 1041,
+     "y": 630,
+     "px": 20.510536991964422
+    },
+    {
+     "label": "foliage",
+     "distance": 110,
+     "x": 1022,
+     "y": 604,
+     "px": 15.854993975349661
+    },
+    {
+     "label": "foliage",
+     "distance": 150,
+     "x": 1006,
+     "y": 580,
+     "px": 11.630949618501939
+    },
+    {
+     "label": "foliage",
+     "distance": 200,
+     "x": 994,
+     "y": 564,
+     "px": 8.725252184276517
+    },
+    {
+     "label": "foliage",
+     "distance": 270,
+     "x": 985,
+     "y": 551,
+     "px": 6.464325546427358
+    },
+    {
+     "label": "foliage",
+     "distance": 360,
+     "x": 979,
+     "y": 542,
+     "px": 4.848874238585378
+    },
+    {
+     "label": "foliage",
+     "distance": 480,
+     "x": 974,
+     "y": 535,
+     "px": 3.637010178857828
+    },
+    {
+     "label": "foliage",
+     "distance": 640,
+     "x": 971,
+     "y": 530,
+     "px": 2.7279570743667625
+    },
+    {
+     "label": "foliage",
+     "distance": 850,
+     "x": 968,
+     "y": 526,
+     "px": 2.054102523171472
+    },
+    {
+     "label": "foliage",
+     "distance": 1100,
+     "x": 966,
+     "y": 523,
+     "px": 1.5873206239654791
+    },
+    {
+     "label": "foliage",
+     "distance": 1500,
+     "x": 965,
+     "y": 521,
+     "px": 1.1640747433729781
+    },
+    {
+     "label": "foliage",
+     "distance": 2000,
+     "x": 963,
+     "y": 519,
+     "px": 0.8730764873178398
+    },
+    {
+     "label": "foliage",
+     "distance": 2700,
+     "x": 963,
+     "y": 518,
+     "px": 0.6467350946770901
+    }
+   ],
+   "meshes": [
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    }
+   ]
+  },
+  {
+   "name": "bush",
+   "drawCalls": 17,
+   "triangles": 1986,
+   "partDraws": 16,
+   "partTriangles": 1984,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "median": 0.3394560098648071,
+    "p10": 0.33812479972839354,
+    "p90": 0.3831808090209961
+   },
+   "props": [
+    {
+     "label": "bush",
+     "distance": 4,
+     "x": 2635,
+     "y": 2948,
+     "px": 307.9525955844347
+    },
+    {
+     "label": "bush",
+     "distance": 6,
+     "x": 2086,
+     "y": 2151,
+     "px": 207.10819271952855
+    },
+    {
+     "label": "bush",
+     "distance": 8,
+     "x": 1808,
+     "y": 1747,
+     "px": 156.01754845732768
+    },
+    {
+     "label": "bush",
+     "distance": 11,
+     "x": 1579,
+     "y": 1414,
+     "px": 113.87904016970319
+    },
+    {
+     "label": "bush",
+     "distance": 15,
+     "x": 1415,
+     "y": 1176,
+     "px": 83.72734343214971
+    },
+    {
+     "label": "bush",
+     "distance": 20,
+     "x": 1302,
+     "y": 1011,
+     "px": 62.90739416274952
+    },
+    {
+     "label": "bush",
+     "distance": 27,
+     "x": 1214,
+     "y": 883,
+     "px": 46.66273562899247
+    },
+    {
+     "label": "bush",
+     "distance": 36,
+     "x": 1151,
+     "y": 791,
+     "px": 35.03177665219061
+    },
+    {
+     "label": "bush",
+     "distance": 48,
+     "x": 1103,
+     "y": 722,
+     "px": 26.293399204344265
+    },
+    {
+     "label": "bush",
+     "distance": 64,
+     "x": 1067,
+     "y": 670,
+     "px": 19.731070032665016
+    },
+    {
+     "label": "bush",
+     "distance": 85,
+     "x": 1041,
+     "y": 632,
+     "px": 14.862491268046151
+    },
+    {
+     "label": "bush",
+     "distance": 110,
+     "x": 1022,
+     "y": 605,
+     "px": 11.487949582834915
+    },
+    {
+     "label": "bush",
+     "distance": 150,
+     "x": 1006,
+     "y": 581,
+     "px": 8.426689858933377
+    },
+    {
+     "label": "bush",
+     "distance": 200,
+     "x": 994,
+     "y": 564,
+     "px": 6.321148913737116
+    },
+    {
+     "label": "bush",
+     "distance": 270,
+     "x": 985,
+     "y": 551,
+     "px": 4.682984640476883
+    },
+    {
+     "label": "bush",
+     "distance": 360,
+     "x": 979,
+     "y": 542,
+     "px": 3.512587909370035
+    },
+    {
+     "label": "bush",
+     "distance": 480,
+     "x": 974,
+     "y": 535,
+     "px": 2.6346375200706826
+    },
+    {
+     "label": "bush",
+     "distance": 640,
+     "x": 971,
+     "y": 530,
+     "px": 1.9760887352687315
+    },
+    {
+     "label": "bush",
+     "distance": 850,
+     "x": 968,
+     "y": 526,
+     "px": 1.4879403021771476
+    },
+    {
+     "label": "bush",
+     "distance": 1100,
+     "x": 966,
+     "y": 523,
+     "px": 1.1498050906199917
+    },
+    {
+     "label": "bush",
+     "distance": 1500,
+     "x": 965,
+     "y": 521,
+     "px": 0.8432123682141204
+    },
+    {
+     "label": "bush",
+     "distance": 2000,
+     "x": 963,
+     "y": 519,
+     "px": 0.6324206041283443
+    },
+    {
+     "label": "bush",
+     "distance": 2700,
+     "x": 963,
+     "y": 518,
+     "px": 0.4684662333707431
+    }
+   ],
+   "meshes": [
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    }
+   ]
+  },
+  {
+   "name": "chair",
+   "drawCalls": 19,
+   "triangles": 1406,
+   "partDraws": 18,
+   "partTriangles": 1404,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "median": 0.6347775936126709,
+    "p10": 0.6264832019805908,
+    "p90": 0.7194623947143555
+   },
+   "props": [
+    {
+     "label": "chair",
+     "distance": 4,
+     "x": 2640,
+     "y": 2846,
+     "px": 452.9708313302024
+    },
+    {
+     "label": "chair",
+     "distance": 6,
+     "x": 2088,
+     "y": 2080,
+     "px": 304.1692413334731
+    },
+    {
+     "label": "chair",
+     "distance": 8,
+     "x": 1809,
+     "y": 1693,
+     "px": 228.9566441215276
+    },
+    {
+     "label": "chair",
+     "distance": 11,
+     "x": 1579,
+     "y": 1374,
+     "px": 167.01091118910904
+    },
+    {
+     "label": "chair",
+     "distance": 15,
+     "x": 1415,
+     "y": 1146,
+     "px": 122.7351647649175
+    },
+    {
+     "label": "chair",
+     "distance": 20,
+     "x": 1302,
+     "y": 989,
+     "px": 92.18617491635226
+    },
+    {
+     "label": "chair",
+     "distance": 27,
+     "x": 1213,
+     "y": 866,
+     "px": 68.36392123808061
+    },
+    {
+     "label": "chair",
+     "distance": 36,
+     "x": 1150,
+     "y": 778,
+     "px": 51.31473632795385
+    },
+    {
+     "label": "chair",
+     "distance": 48,
+     "x": 1103,
+     "y": 713,
+     "px": 38.509595716033814
+    },
+    {
+     "label": "chair",
+     "distance": 64,
+     "x": 1067,
+     "y": 663,
+     "px": 28.895454172897637
+    },
+    {
+     "label": "chair",
+     "distance": 85,
+     "x": 1041,
+     "y": 626,
+     "px": 21.763981621685094
+    },
+    {
+     "label": "chair",
+     "distance": 110,
+     "x": 1022,
+     "y": 601,
+     "px": 16.82158742573706
+    },
+    {
+     "label": "chair",
+     "distance": 150,
+     "x": 1006,
+     "y": 578,
+     "px": 12.338468424019121
+    },
+    {
+     "label": "chair",
+     "distance": 200,
+     "x": 994,
+     "y": 562,
+     "px": 9.255211844593926
+    },
+    {
+     "label": "chair",
+     "distance": 270,
+     "x": 985,
+     "y": 550,
+     "px": 6.856496524850104
+    },
+    {
+     "label": "chair",
+     "distance": 360,
+     "x": 979,
+     "y": 541,
+     "px": 5.142792501369889
+    },
+    {
+     "label": "chair",
+     "distance": 480,
+     "x": 974,
+     "y": 534,
+     "px": 3.8573307204134824
+    },
+    {
+     "label": "chair",
+     "distance": 640,
+     "x": 971,
+     "y": 529,
+     "px": 2.893130998283706
+    },
+    {
+     "label": "chair",
+     "distance": 850,
+     "x": 968,
+     "y": 526,
+     "px": 2.178431662299382
+    },
+    {
+     "label": "chair",
+     "distance": 1100,
+     "x": 966,
+     "y": 523,
+     "px": 1.6833732755720117
+    },
+    {
+     "label": "chair",
+     "distance": 1500,
+     "x": 965,
+     "y": 521,
+     "px": 1.2345001448909512
+    },
+    {
+     "label": "chair",
+     "distance": 2000,
+     "x": 963,
+     "y": 519,
+     "px": 0.9258887265435541
+    },
+    {
+     "label": "chair",
+     "distance": 2700,
+     "x": 963,
+     "y": 518,
+     "px": 0.6858513470380196
+    }
+   ],
+   "meshes": [
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    }
+   ]
+  },
+  {
+   "name": "table",
+   "drawCalls": 19,
+   "triangles": 967,
+   "partDraws": 18,
+   "partTriangles": 965,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "median": 0.6067200183868409,
+    "p10": 0.6044672012329102,
+    "p90": 0.6654975891113282
+   },
+   "props": [
+    {
+     "label": "table",
+     "distance": 4,
+     "x": 2637,
+     "y": 2877,
+     "px": 505.1597161311332
+    },
+    {
+     "label": "table",
+     "distance": 6,
+     "x": 2086,
+     "y": 2100,
+     "px": 339.1113131587689
+    },
+    {
+     "label": "table",
+     "distance": 8,
+     "x": 1807,
+     "y": 1708,
+     "px": 255.2194614703773
+    },
+    {
+     "label": "table",
+     "distance": 11,
+     "x": 1578,
+     "y": 1385,
+     "px": 186.14469509812605
+    },
+    {
+     "label": "table",
+     "distance": 15,
+     "x": 1414,
+     "y": 1154,
+     "px": 136.78413310370172
+    },
+    {
+     "label": "table",
+     "distance": 20,
+     "x": 1301,
+     "y": 995,
+     "px": 102.73194902271833
+    },
+    {
+     "label": "table",
+     "distance": 27,
+     "x": 1213,
+     "y": 871,
+     "px": 76.18082291549868
+    },
+    {
+     "label": "table",
+     "distance": 36,
+     "x": 1150,
+     "y": 782,
+     "px": 57.18020925175875
+    },
+    {
+     "label": "table",
+     "distance": 48,
+     "x": 1102,
+     "y": 715,
+     "px": 42.91027425406004
+    },
+    {
+     "label": "table",
+     "distance": 64,
+     "x": 1067,
+     "y": 665,
+     "px": 32.19684866778028
+    },
+    {
+     "label": "table",
+     "distance": 85,
+     "x": 1041,
+     "y": 628,
+     "px": 24.2502318179785
+    },
+    {
+     "label": "table",
+     "distance": 110,
+     "x": 1022,
+     "y": 602,
+     "px": 18.743045390371602
+    },
+    {
+     "label": "table",
+     "distance": 150,
+     "x": 1006,
+     "y": 579,
+     "px": 13.74771357358136
+    },
+    {
+     "label": "table",
+     "distance": 200,
+     "x": 994,
+     "y": 563,
+     "px": 10.312236454549623
+    },
+    {
+     "label": "table",
+     "distance": 270,
+     "x": 985,
+     "y": 550,
+     "px": 7.639530004429034
+    },
+    {
+     "label": "table",
+     "distance": 360,
+     "x": 979,
+     "y": 541,
+     "px": 5.730095623702426
+    },
+    {
+     "label": "table",
+     "distance": 480,
+     "x": 974,
+     "y": 534,
+     "px": 4.297823819993194
+    },
+    {
+     "label": "table",
+     "distance": 640,
+     "x": 971,
+     "y": 529,
+     "px": 3.223509687049881
+    },
+    {
+     "label": "table",
+     "distance": 850,
+     "x": 968,
+     "y": 526,
+     "px": 2.427192327734979
+    },
+    {
+     "label": "table",
+     "distance": 1100,
+     "x": 966,
+     "y": 523,
+     "px": 1.875600073841112
+    },
+    {
+     "label": "table",
+     "distance": 1500,
+     "x": 965,
+     "y": 521,
+     "px": 1.3754682240765506
+    },
+    {
+     "label": "table",
+     "distance": 2000,
+     "x": 963,
+     "y": 519,
+     "px": 1.0316156936777252
+    },
+    {
+     "label": "table",
+     "distance": 2700,
+     "x": 963,
+     "y": 518,
+     "px": 0.7641681419742392
+    }
+   ],
+   "meshes": [
+    {
+     "name": "building-table",
+     "count": 1,
+     "triangles": 130
+    },
+    {
+     "name": "building-table",
+     "count": 1,
+     "triangles": 130
+    },
+    {
+     "name": "building-table",
+     "count": 1,
+     "triangles": 130
+    },
+    {
+     "name": "building-table",
+     "count": 1,
+     "triangles": 130
+    },
+    {
+     "name": "building-table",
+     "count": 1,
+     "triangles": 130
+    },
+    {
+     "name": "building-table",
+     "count": 1,
+     "triangles": 130
+    },
+    {
+     "name": "building-table",
+     "count": 1,
+     "triangles": 130
+    },
+    {
+     "name": "building-table",
+     "count": 1,
+     "triangles": 55
+    },
+    {
+     "name": "building-table",
+     "count": 1,
+     "triangles": 55
+    },
+    {
+     "name": "building-table",
+     "count": 1,
+     "triangles": 55
+    },
+    {
+     "name": "building-table",
+     "count": 1,
+     "triangles": 55
+    },
+    {
+     "name": "building-table",
+     "count": 1,
+     "triangles": 55
+    },
+    {
+     "name": "building-table",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-table",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-table",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-table",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-table",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-table",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-table",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-table",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-table",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-table",
+     "count": 1,
+     "triangles": 30
+    }
+   ]
+  },
+  {
+   "name": "airer",
+   "drawCalls": 21,
+   "triangles": 3362,
+   "partDraws": 20,
+   "partTriangles": 3360,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "median": 0.6098944187164307,
+    "p10": 0.5843967914581298,
+    "p90": 0.7856128215789795
+   },
+   "props": [
+    {
+     "label": "airer",
+     "distance": 4,
+     "x": 2638,
+     "y": 2837,
+     "px": 693.0601662137169
+    },
+    {
+     "label": "airer",
+     "distance": 6,
+     "x": 2086,
+     "y": 2074,
+     "px": 465.194287143297
+    },
+    {
+     "label": "airer",
+     "distance": 8,
+     "x": 1808,
+     "y": 1688,
+     "px": 350.0906849363038
+    },
+    {
+     "label": "airer",
+     "distance": 11,
+     "x": 1578,
+     "y": 1370,
+     "px": 255.3269038957884
+    },
+    {
+     "label": "airer",
+     "distance": 15,
+     "x": 1414,
+     "y": 1143,
+     "px": 187.614645511525
+    },
+    {
+     "label": "airer",
+     "distance": 20,
+     "x": 1301,
+     "y": 987,
+     "px": 140.90495429260653
+    },
+    {
+     "label": "airer",
+     "distance": 27,
+     "x": 1213,
+     "y": 865,
+     "px": 104.48606673351712
+    },
+    {
+     "label": "airer",
+     "distance": 36,
+     "x": 1150,
+     "y": 777,
+     "px": 78.42467476481511
+    },
+    {
+     "label": "airer",
+     "distance": 48,
+     "x": 1102,
+     "y": 712,
+     "px": 58.85237166129049
+    },
+    {
+     "label": "airer",
+     "distance": 64,
+     "x": 1067,
+     "y": 662,
+     "px": 44.15834734125547
+    },
+    {
+     "label": "airer",
+     "distance": 85,
+     "x": 1041,
+     "y": 626,
+     "px": 33.259287469082565
+    },
+    {
+     "label": "airer",
+     "distance": 110,
+     "x": 1022,
+     "y": 600,
+     "px": 25.706061424594246
+    },
+    {
+     "label": "airer",
+     "distance": 150,
+     "x": 1006,
+     "y": 578,
+     "px": 18.854905127942164
+    },
+    {
+     "label": "airer",
+     "distance": 200,
+     "x": 994,
+     "y": 562,
+     "px": 14.14313549067357
+    },
+    {
+     "label": "airer",
+     "distance": 270,
+     "x": 985,
+     "y": 549,
+     "px": 10.477524222102302
+    },
+    {
+     "label": "airer",
+     "distance": 360,
+     "x": 979,
+     "y": 541,
+     "px": 7.8587473292924885
+    },
+    {
+     "label": "airer",
+     "distance": 480,
+     "x": 974,
+     "y": 534,
+     "px": 5.894400384224069
+    },
+    {
+     "label": "airer",
+     "distance": 640,
+     "x": 971,
+     "y": 529,
+     "px": 4.420991494043366
+    },
+    {
+     "label": "airer",
+     "distance": 850,
+     "x": 968,
+     "y": 525,
+     "px": 3.328853249514936
+    },
+    {
+     "label": "airer",
+     "distance": 1100,
+     "x": 966,
+     "y": 523,
+     "px": 2.5723528109947895
+    },
+    {
+     "label": "airer",
+     "distance": 1500,
+     "x": 965,
+     "y": 521,
+     "px": 1.8864300402525018
+    },
+    {
+     "label": "airer",
+     "distance": 2000,
+     "x": 963,
+     "y": 519,
+     "px": 1.4148421137024956
+    },
+    {
+     "label": "airer",
+     "distance": 2700,
+     "x": 963,
+     "y": 518,
+     "px": 1.0480424782952782
+    }
+   ],
+   "meshes": [
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-airer",
+     "count": 1,
+     "triangles": 168
+    }
+   ]
+  },
+  {
+   "name": "dish",
+   "drawCalls": 20,
+   "triangles": 1224,
+   "partDraws": 19,
+   "partTriangles": 1222,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "median": 0.5367807865142822,
+    "p10": 0.531763219833374,
+    "p90": 0.5972991943359375
+   },
+   "props": [
+    {
+     "label": "dish",
+     "distance": 4,
+     "x": 2554,
+     "y": 3029,
+     "px": 565.689057512312
+    },
+    {
+     "label": "dish",
+     "distance": 6,
+     "x": 2011,
+     "y": 2171,
+     "px": 372.80001388795216
+    },
+    {
+     "label": "dish",
+     "distance": 8,
+     "x": 1744,
+     "y": 1750,
+     "px": 278.0055055383901
+    },
+    {
+     "label": "dish",
+     "distance": 11,
+     "x": 1527,
+     "y": 1409,
+     "px": 201.24681805145153
+    },
+    {
+     "label": "dish",
+     "distance": 15,
+     "x": 1375,
+     "y": 1168,
+     "px": 147.09520517578136
+    },
+    {
+     "label": "dish",
+     "distance": 20,
+     "x": 1270,
+     "y": 1004,
+     "px": 110.0723042360521
+    },
+    {
+     "label": "dish",
+     "distance": 27,
+     "x": 1189,
+     "y": 876,
+     "px": 81.3921010495205
+    },
+    {
+     "label": "dish",
+     "distance": 36,
+     "x": 1132,
+     "y": 785,
+     "px": 60.96773109850746
+    },
+    {
+     "label": "dish",
+     "distance": 48,
+     "x": 1089,
+     "y": 717,
+     "px": 45.68294833694517
+    },
+    {
+     "label": "dish",
+     "distance": 64,
+     "x": 1056,
+     "y": 666,
+     "px": 34.23814763491607
+    },
+    {
+     "label": "dish",
+     "distance": 85,
+     "x": 1033,
+     "y": 629,
+     "px": 25.7658985765846
+    },
+    {
+     "label": "dish",
+     "distance": 110,
+     "x": 1016,
+     "y": 603,
+     "px": 19.902840141468054
+    },
+    {
+     "label": "dish",
+     "distance": 150,
+     "x": 1001,
+     "y": 579,
+     "px": 14.590650532465814
+    },
+    {
+     "label": "dish",
+     "distance": 200,
+     "x": 991,
+     "y": 563,
+     "px": 10.94053200526998
+    },
+    {
+     "label": "dish",
+     "distance": 270,
+     "x": 983,
+     "y": 550,
+     "px": 8.102683427707522
+    },
+    {
+     "label": "dish",
+     "distance": 360,
+     "x": 977,
+     "y": 541,
+     "px": 6.076255107811207
+    },
+    {
+     "label": "dish",
+     "distance": 480,
+     "x": 973,
+     "y": 535,
+     "px": 4.556765350867395
+    },
+    {
+     "label": "dish",
+     "distance": 640,
+     "x": 970,
+     "y": 529,
+     "px": 3.4173344385988527
+    },
+    {
+     "label": "dish",
+     "distance": 850,
+     "x": 967,
+     "y": 526,
+     "px": 2.5729181313886116
+    },
+    {
+     "label": "dish",
+     "distance": 1100,
+     "x": 966,
+     "y": 523,
+     "px": 1.9880924677419571
+    },
+    {
+     "label": "dish",
+     "distance": 1500,
+     "x": 964,
+     "y": 521,
+     "px": 1.4578869115439774
+    },
+    {
+     "label": "dish",
+     "distance": 2000,
+     "x": 963,
+     "y": 519,
+     "px": 1.093390659408129
+    },
+    {
+     "label": "dish",
+     "distance": 2700,
+     "x": 962,
+     "y": 518,
+     "px": 0.8099048783349132
+    }
+   ],
+   "meshes": [
+    {
+     "name": "building-dish",
+     "count": 1,
+     "triangles": 142
+    },
+    {
+     "name": "building-dish",
+     "count": 1,
+     "triangles": 142
+    },
+    {
+     "name": "building-dish",
+     "count": 1,
+     "triangles": 142
+    },
+    {
+     "name": "building-dish",
+     "count": 1,
+     "triangles": 142
+    },
+    {
+     "name": "building-dish",
+     "count": 1,
+     "triangles": 142
+    },
+    {
+     "name": "building-dish",
+     "count": 1,
+     "triangles": 142
+    },
+    {
+     "name": "building-dish",
+     "count": 1,
+     "triangles": 142
+    },
+    {
+     "name": "building-dish",
+     "count": 1,
+     "triangles": 70
+    },
+    {
+     "name": "building-dish",
+     "count": 1,
+     "triangles": 70
+    },
+    {
+     "name": "building-dish",
+     "count": 1,
+     "triangles": 70
+    },
+    {
+     "name": "building-dish",
+     "count": 1,
+     "triangles": 70
+    },
+    {
+     "name": "building-dish",
+     "count": 1,
+     "triangles": 70
+    },
+    {
+     "name": "building-dish",
+     "count": 1,
+     "triangles": 70
+    },
+    {
+     "name": "building-dish",
+     "count": 1,
+     "triangles": 26
+    },
+    {
+     "name": "building-dish",
+     "count": 1,
+     "triangles": 26
+    },
+    {
+     "name": "building-dish",
+     "count": 1,
+     "triangles": 26
+    },
+    {
+     "name": "building-dish",
+     "count": 1,
+     "triangles": 26
+    },
+    {
+     "name": "building-dish",
+     "count": 1,
+     "triangles": 26
+    },
+    {
+     "name": "building-dish",
+     "count": 1,
+     "triangles": 26
+    },
+    {
+     "name": "building-dish",
+     "count": 1,
+     "triangles": 26
+    },
+    {
+     "name": "building-dish",
+     "count": 1,
+     "triangles": 26
+    },
+    {
+     "name": "building-dish",
+     "count": 1,
+     "triangles": 26
+    }
+   ]
+  },
+  {
+   "name": "lounger",
+   "drawCalls": 22,
+   "triangles": 1388,
+   "partDraws": 21,
+   "partTriangles": 1386,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "median": 0.5468160152435303,
+    "p10": 0.5370880126953125,
+    "p90": 0.7486464023590088
+   },
+   "props": [
+    {
+     "label": "lounger",
+     "distance": 4,
+     "x": 2648,
+     "y": 2877,
+     "px": 852.8630375936548
+    },
+    {
+     "label": "lounger",
+     "distance": 6,
+     "x": 2091,
+     "y": 2098,
+     "px": 571.7749412892413
+    },
+    {
+     "label": "lounger",
+     "distance": 8,
+     "x": 1811,
+     "y": 1705,
+     "px": 430.0412060716814
+    },
+    {
+     "label": "lounger",
+     "distance": 11,
+     "x": 1580,
+     "y": 1383,
+     "px": 313.4809431505652
+    },
+    {
+     "label": "lounger",
+     "distance": 15,
+     "x": 1416,
+     "y": 1152,
+     "px": 230.26491909679063
+    },
+    {
+     "label": "lounger",
+     "distance": 20,
+     "x": 1302,
+     "y": 993,
+     "px": 172.89460059604926
+    },
+    {
+     "label": "lounger",
+     "distance": 27,
+     "x": 1214,
+     "y": 869,
+     "px": 128.18317303890228
+    },
+    {
+     "label": "lounger",
+     "distance": 36,
+     "x": 1150,
+     "y": 781,
+     "px": 96.19806005562889
+    },
+    {
+     "label": "lounger",
+     "distance": 48,
+     "x": 1103,
+     "y": 714,
+     "px": 72.18271541699585
+    },
+    {
+     "label": "lounger",
+     "distance": 64,
+     "x": 1067,
+     "y": 664,
+     "px": 54.15627333511257
+    },
+    {
+     "label": "lounger",
+     "distance": 85,
+     "x": 1041,
+     "y": 627,
+     "px": 40.78723011901709
+    },
+    {
+     "label": "lounger",
+     "distance": 110,
+     "x": 1022,
+     "y": 602,
+     "px": 31.523156993618823
+    },
+    {
+     "label": "lounger",
+     "distance": 150,
+     "x": 1006,
+     "y": 578,
+     "px": 23.120807501787944
+    },
+    {
+     "label": "lounger",
+     "distance": 200,
+     "x": 994,
+     "y": 562,
+     "px": 17.3425788071973
+    },
+    {
+     "label": "lounger",
+     "distance": 270,
+     "x": 985,
+     "y": 550,
+     "px": 12.847491714003072
+    },
+    {
+     "label": "lounger",
+     "distance": 360,
+     "x": 979,
+     "y": 541,
+     "px": 9.636228007578737
+    },
+    {
+     "label": "lounger",
+     "distance": 480,
+     "x": 974,
+     "y": 534,
+     "px": 7.227513731020694
+    },
+    {
+     "label": "lounger",
+     "distance": 640,
+     "x": 971,
+     "y": 529,
+     "px": 5.420828097266648
+    },
+    {
+     "label": "lounger",
+     "distance": 850,
+     "x": 968,
+     "y": 526,
+     "px": 4.081672285515049
+    },
+    {
+     "label": "lounger",
+     "distance": 1100,
+     "x": 966,
+     "y": 523,
+     "px": 3.1540770861228737
+    },
+    {
+     "label": "lounger",
+     "distance": 1500,
+     "x": 965,
+     "y": 521,
+     "px": 2.3130281572830738
+    },
+    {
+     "label": "lounger",
+     "distance": 2000,
+     "x": 963,
+     "y": 519,
+     "px": 1.7347908639228407
+    },
+    {
+     "label": "lounger",
+     "distance": 2700,
+     "x": 963,
+     "y": 518,
+     "px": 1.2850416460762406
+    }
+   ],
+   "meshes": [
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    },
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    },
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    },
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    },
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    },
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    },
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    },
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    },
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    },
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    },
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    },
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    },
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    },
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    },
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    },
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    },
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    },
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    },
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    },
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    },
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    },
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    },
+    {
+     "name": "building-lounger",
+     "count": 1,
+     "triangles": 66
+    }
+   ]
+  },
+  {
+   "name": "bike",
+   "drawCalls": 22,
+   "triangles": 3520,
+   "partDraws": 21,
+   "partTriangles": 3518,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "median": 0.2974720001220703,
+    "p10": 0.29675519466400146,
+    "p90": 0.6009856224060058
+   },
+   "props": [
+    {
+     "label": "bike",
+     "distance": 4,
+     "x": 2638,
+     "y": 2836,
+     "px": 847.6087499722703
+    },
+    {
+     "label": "bike",
+     "distance": 6,
+     "x": 2086,
+     "y": 2072,
+     "px": 568.9270735248106
+    },
+    {
+     "label": "bike",
+     "distance": 8,
+     "x": 1808,
+     "y": 1687,
+     "px": 428.1556109365674
+    },
+    {
+     "label": "bike",
+     "distance": 11,
+     "x": 1578,
+     "y": 1369,
+     "px": 312.26026330848185
+    },
+    {
+     "label": "bike",
+     "distance": 15,
+     "x": 1414,
+     "y": 1143,
+     "px": 229.4490198113239
+    },
+    {
+     "label": "bike",
+     "distance": 20,
+     "x": 1301,
+     "y": 986,
+     "px": 172.32380235017996
+    },
+    {
+     "label": "bike",
+     "distance": 27,
+     "x": 1213,
+     "y": 864,
+     "px": 127.78416058389159
+    },
+    {
+     "label": "bike",
+     "distance": 36,
+     "x": 1150,
+     "y": 777,
+     "px": 95.91159444105213
+    },
+    {
+     "label": "bike",
+     "distance": 48,
+     "x": 1102,
+     "y": 711,
+     "px": 71.97508043793808
+    },
+    {
+     "label": "bike",
+     "distance": 64,
+     "x": 1067,
+     "y": 662,
+     "px": 54.004612617300104
+    },
+    {
+     "label": "bike",
+     "distance": 85,
+     "x": 1041,
+     "y": 626,
+     "px": 40.67531046472109
+    },
+    {
+     "label": "bike",
+     "distance": 110,
+     "x": 1022,
+     "y": 600,
+     "px": 31.43789083018132
+    },
+    {
+     "label": "bike",
+     "distance": 150,
+     "x": 1006,
+     "y": 577,
+     "px": 23.059088916903676
+    },
+    {
+     "label": "bike",
+     "distance": 200,
+     "x": 994,
+     "y": 562,
+     "px": 17.296707751446633
+    },
+    {
+     "label": "bike",
+     "distance": 270,
+     "x": 985,
+     "y": 549,
+     "px": 12.813754018415706
+    },
+    {
+     "label": "bike",
+     "distance": 360,
+     "x": 979,
+     "y": 541,
+     "px": 9.611053813965594
+    },
+    {
+     "label": "bike",
+     "distance": 480,
+     "x": 974,
+     "y": 534,
+     "px": 7.208705710146661
+    },
+    {
+     "label": "bike",
+     "distance": 640,
+     "x": 971,
+     "y": 529,
+     "px": 5.406762940360732
+    },
+    {
+     "label": "bike",
+     "distance": 850,
+     "x": 968,
+     "y": 525,
+     "px": 4.071104854603309
+    },
+    {
+     "label": "bike",
+     "distance": 1100,
+     "x": 966,
+     "y": 523,
+     "px": 3.145923550948826
+    },
+    {
+     "label": "bike",
+     "distance": 1500,
+     "x": 965,
+     "y": 521,
+     "px": 2.3070570150138434
+    },
+    {
+     "label": "bike",
+     "distance": 2000,
+     "x": 963,
+     "y": 519,
+     "px": 1.730316692736782
+    },
+    {
+     "label": "bike",
+     "distance": 2700,
+     "x": 963,
+     "y": 518,
+     "px": 1.2817298567148072
+    }
+   ],
+   "meshes": [
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 238
+    },
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 238
+    },
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 238
+    },
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 238
+    },
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 238
+    },
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 238
+    },
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 238
+    },
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 238
+    },
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 238
+    },
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 168
+    },
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 118
+    },
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 118
+    },
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 118
+    },
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 118
+    },
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 118
+    },
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 118
+    },
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 118
+    },
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 118
+    },
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 118
+    },
+    {
+     "name": "building-bike",
+     "count": 1,
+     "triangles": 118
+    }
+   ]
+  },
+  {
+   "name": "wall-left",
+   "drawCalls": 40,
+   "triangles": 2288,
+   "partDraws": 24,
+   "partTriangles": 2106,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "median": 0.5478400230407715,
+    "p10": 0.5452799797058105,
+    "p90": 1.34584321975708
+   },
+   "props": [
+    {
+     "label": "acUnit",
+     "distance": 47.28689550871156,
+     "x": 1727,
+     "y": 673,
+     "px": 46.44542666506932
+    },
+    {
+     "label": "acUnit",
+     "distance": 52.44144075264982,
+     "x": 1445,
+     "y": 575,
+     "px": 39.6334794884731
+    },
+    {
+     "label": "acUnit",
+     "distance": 58.81522313816604,
+     "x": 1234,
+     "y": 620,
+     "px": 34.465049817805884
+    },
+    {
+     "label": "acUnit",
+     "distance": 65.55367796053962,
+     "x": 1073,
+     "y": 551,
+     "px": 30.566598332777478
+    },
+    {
+     "label": "acUnit",
+     "distance": 73.00966003709864,
+     "x": 944,
+     "y": 589,
+     "px": 27.397893526324758
+    },
+    {
+     "label": "acUnit",
+     "distance": 80.57583186101522,
+     "x": 839,
+     "y": 536,
+     "px": 24.875804450528022
+    },
+    {
+     "label": "acUnit",
+     "distance": 88.59791444877908,
+     "x": 752,
+     "y": 569,
+     "px": 22.735844149549667
+    },
+    {
+     "label": "acUnit",
+     "distance": 96.62113985063026,
+     "x": 679,
+     "y": 525,
+     "px": 20.97141234908981
+    },
+    {
+     "label": "acUnit",
+     "distance": 104.96080425860708,
+     "x": 616,
+     "y": 554,
+     "px": 19.429673943063897
+    },
+    {
+     "label": "acUnit",
+     "distance": 113.25557227781557,
+     "x": 562,
+     "y": 517,
+     "px": 18.126379078245243
+    },
+    {
+     "label": "foliage",
+     "distance": 49.45945230754433,
+     "x": 1576,
+     "y": 496,
+     "px": 37.52640474376707
+    },
+    {
+     "label": "chair",
+     "distance": 49.95557320962201,
+     "x": 1539,
+     "y": 489,
+     "px": 39.14359672358649
+    },
+    {
+     "label": "bush",
+     "distance": 57.38834111102192,
+     "x": 1266,
+     "y": 494,
+     "px": 22.395073424072
+    },
+    {
+     "label": "chair",
+     "distance": 58.06512976565112,
+     "x": 1239,
+     "y": 486,
+     "px": 32.326290336565556
+    },
+    {
+     "label": "foliage",
+     "distance": 66.59955580244365,
+     "x": 1048,
+     "y": 488,
+     "px": 26.264216230663116
+    },
+    {
+     "label": "chair",
+     "distance": 67.34656112008915,
+     "x": 1028,
+     "y": 483,
+     "px": 27.53138399954669
+    },
+    {
+     "label": "bush",
+     "distance": 76.53165028954184,
+     "x": 888,
+     "y": 487,
+     "px": 16.548653809700323
+    },
+    {
+     "label": "chair",
+     "distance": 77.37932084673464,
+     "x": 872,
+     "y": 481,
+     "px": 23.97518378415155
+    },
+    {
+     "label": "foliage",
+     "distance": 87.044610652259,
+     "x": 764,
+     "y": 484,
+     "px": 20.201476262299803
+    },
+    {
+     "label": "chair",
+     "distance": 87.90653726943124,
+     "x": 751,
+     "y": 480,
+     "px": 21.23259197811606
+    },
+    {
+     "label": "bush",
+     "distance": 97.84050948664591,
+     "x": 666,
+     "y": 483,
+     "px": 13.122830178747908
+    },
+    {
+     "label": "chair",
+     "distance": 98.77023486203677,
+     "x": 655,
+     "y": 479,
+     "px": 19.053056762562274
+    },
+    {
+     "label": "foliage",
+     "distance": 108.94965651218875,
+     "x": 586,
+     "y": 481,
+     "px": 16.412802289985756
+    },
+    {
+     "label": "chair",
+     "distance": 109.87064801256933,
+     "x": 577,
+     "y": 478,
+     "px": 17.279326087240396
+    }
+   ],
+   "meshes": [
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 70
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 70
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 70
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    }
+   ]
+  },
+  {
+   "name": "wall-right",
+   "drawCalls": 35,
+   "triangles": 1964,
+   "partDraws": 21,
+   "partTriangles": 1806,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "median": 0.6383615970611572,
+    "p10": 0.6347775936126709,
+    "p90": 1.3973504066467286
+   },
+   "props": [
+    {
+     "label": "acUnit",
+     "distance": 99.432634433216,
+     "x": 1169,
+     "y": 530,
+     "px": 20.257432719052115
+    },
+    {
+     "label": "acUnit",
+     "distance": 90.69125102065495,
+     "x": 1121,
+     "y": 507,
+     "px": 22.147363430406266
+    },
+    {
+     "label": "acUnit",
+     "distance": 82.40163090782868,
+     "x": 1062,
+     "y": 562,
+     "px": 24.309301467389602
+    },
+    {
+     "label": "acUnit",
+     "distance": 73.8382217935393,
+     "x": 992,
+     "y": 537,
+     "px": 27.082640252164516
+    },
+    {
+     "label": "acUnit",
+     "distance": 65.88784988304356,
+     "x": 903,
+     "y": 610,
+     "px": 30.387343495894644
+    },
+    {
+     "label": "acUnit",
+     "distance": 57.68243219189321,
+     "x": 788,
+     "y": 585,
+     "px": 34.8481325917957
+    },
+    {
+     "label": "acUnit",
+     "distance": 50.40226927580681,
+     "x": 636,
+     "y": 689,
+     "px": 40.518050676153344
+    },
+    {
+     "label": "acUnit",
+     "distance": 43.01677544299218,
+     "x": 421,
+     "y": 671,
+     "px": 48.85707987103988
+    },
+    {
+     "label": "acUnit",
+     "distance": 37.25008367898515,
+     "x": 104,
+     "y": 848,
+     "px": 60.7818546226234
+    },
+    {
+     "label": "foliage",
+     "distance": 94.82766655647858,
+     "x": 1148,
+     "y": 457,
+     "px": 18.545497333788873
+    },
+    {
+     "label": "chair",
+     "distance": 93.75844059842126,
+     "x": 1146,
+     "y": 455,
+     "px": 19.889135393705583
+    },
+    {
+     "label": "bush",
+     "distance": 83.47630064450463,
+     "x": 1076,
+     "y": 470,
+     "px": 15.19833095107
+    },
+    {
+     "label": "chair",
+     "distance": 82.38109724595618,
+     "x": 1072,
+     "y": 466,
+     "px": 22.545043672280965
+    },
+    {
+     "label": "foliage",
+     "distance": 72.26029168960807,
+     "x": 980,
+     "y": 484,
+     "px": 24.178485511898415
+    },
+    {
+     "label": "chair",
+     "distance": 71.20846286395802,
+     "x": 974,
+     "y": 481,
+     "px": 26.01958548212481
+    },
+    {
+     "label": "bush",
+     "distance": 61.41632168941287,
+     "x": 852,
+     "y": 506,
+     "px": 20.638267398262617
+    },
+    {
+     "label": "chair",
+     "distance": 60.354330279174576,
+     "x": 842,
+     "y": 501,
+     "px": 30.76021256601504
+    },
+    {
+     "label": "foliage",
+     "distance": 51.017773036342874,
+     "x": 666,
+     "y": 533,
+     "px": 34.726173913204434
+    },
+    {
+     "label": "chair",
+     "distance": 50.02644484118064,
+     "x": 651,
+     "y": 530,
+     "px": 37.613118336476525
+    },
+    {
+     "label": "bush",
+     "distance": 41.56484536748771,
+     "x": 379,
+     "y": 582,
+     "px": 32.14332214698245
+    },
+    {
+     "label": "chair",
+     "distance": 40.62813290624723,
+     "x": 349,
+     "y": 576,
+     "px": 48.39472405632409
+    }
+   ],
+   "meshes": [
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 30
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 70
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 70
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 70
+    },
+    {
+     "name": "building-acUnit",
+     "count": 1,
+     "triangles": 70
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-bush",
+     "count": 1,
+     "triangles": 124
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    },
+    {
+     "name": "building-foliage",
+     "count": 1,
+     "triangles": 192
+    },
+    {
+     "name": "building-chair",
+     "count": 1,
+     "triangles": 78
+    }
+   ]
+  },
+  {
+   "name": "tower-ne",
+   "drawCalls": 22,
+   "triangles": 122084,
+   "partDraws": 17,
+   "partTriangles": 119124,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "median": 0.5971871852874756,
+    "p10": 0.5750527858734131,
+    "p90": 1.5030271530151367
+   },
+   "props": [
+    {
+     "label": "acUnit",
+     "distance": 92.01165824252283,
+     "x": 937,
+     "y": 541,
+     "px": 21.73171941979672
+    },
+    {
+     "label": "acUnit",
+     "distance": 93.56574289313282,
+     "x": 960,
+     "y": 487,
+     "px": 21.378991132001094
+    },
+    {
+     "label": "acUnit",
+     "distance": 92.32860617089146,
+     "x": 937,
+     "y": 484,
+     "px": 21.668487293485946
+    },
+    {
+     "label": "foliage",
+     "distance": 103.46748957507273,
+     "x": 1094,
+     "y": 498,
+     "px": 18.37183114810596
+    },
+    {
+     "label": "foliage",
+     "distance": 74.32156602552801,
+     "x": 798,
+     "y": 569,
+     "px": 22.665467975369715
+    },
+    {
+     "label": "foliage",
+     "distance": 68.49897501314989,
+     "x": 919,
+     "y": 705,
+     "px": 38.7916166176569
+    },
+    {
+     "label": "bush",
+     "distance": 67.59905729971366,
+     "x": 1071,
+     "y": 633,
+     "px": 25.913162138705435
+    },
+    {
+     "label": "bush",
+     "distance": 71.49764774559081,
+     "x": 871,
+     "y": 410,
+     "px": 31.273576303127413
+    },
+    {
+     "label": "bush",
+     "distance": 73.90069539906698,
+     "x": 804,
+     "y": 566,
+     "px": 23.0571615058842
+    }
+   ],
+   "meshes": [
+    {
+     "name": "building-frame",
+     "count": 369,
+     "triangles": 56
+    },
+    {
+     "name": "building-concrete",
+     "count": 232,
+     "triangles": 12
+    },
+    {
+     "name": "building-door",
+     "count": 2,
+     "triangles": 62
+    },
+    {
+     "name": "building-shutter",
+     "count": 42,
+     "triangles": 12
+    },
+    {
+     "name": "building-roofRailing",
+     "count": 48,
+     "triangles": 78
+    },
+    {
+     "name": "building-awning",
+     "count": 39,
+     "triangles": 24
+    },
+    {
+     "name": "building-fin",
+     "count": 1932,
+     "triangles": 12
+    },
+    {
+     "name": "building-fin",
+     "count": 552,
+     "triangles": 12
+    },
+    {
+     "name": "building-glassRail",
+     "count": 644,
+     "triangles": 4
+    },
+    {
+     "name": "building-acUnit",
+     "count": 17,
+     "triangles": 30
+    },
+    {
+     "name": "building-pot",
+     "count": 165,
+     "triangles": 45
+    },
+    {
+     "name": "building-foliage",
+     "count": 87,
+     "triangles": 192
+    },
+    {
+     "name": "building-bush",
+     "count": 78,
+     "triangles": 124
+    },
+    {
+     "name": "building-chair",
+     "count": 173,
+     "triangles": 78
+    },
+    {
+     "name": "building-table",
+     "count": 39,
+     "triangles": 55
+    },
+    {
+     "name": "building-airer",
+     "count": 16,
+     "triangles": 168
+    },
+    {
+     "name": "building-lounger",
+     "count": 81,
+     "triangles": 66
+    }
+   ]
+  },
+  {
+   "name": "tower-se",
+   "drawCalls": 21,
+   "triangles": 122640,
+   "partDraws": 16,
+   "partTriangles": 119680,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "median": 0.6137728214263916,
+    "p10": 0.5904384136199952,
+    "p90": 1.2270591735839844
+   },
+   "props": [
+    {
+     "label": "acUnit",
+     "distance": 81.82202973223347,
+     "x": 812,
+     "y": 715,
+     "px": 24.653239394605276
+    },
+    {
+     "label": "acUnit",
+     "distance": 85.34244004025466,
+     "x": 752,
+     "y": 714,
+     "px": 23.71881899190862
+    },
+    {
+     "label": "acUnit",
+     "distance": 90.18389357669517,
+     "x": 687,
+     "y": 536,
+     "px": 22.450161340157702
+    },
+    {
+     "label": "foliage",
+     "distance": 81.42481184519686,
+     "x": 853,
+     "y": 578,
+     "px": 29.560166391386684
+    },
+    {
+     "label": "foliage",
+     "distance": 61.402806055555075,
+     "x": 794,
+     "y": 543,
+     "px": 27.436451819948452
+    },
+    {
+     "label": "foliage",
+     "distance": 66.24755638721497,
+     "x": 945,
+     "y": 706,
+     "px": 40.10111945291136
+    },
+    {
+     "label": "bush",
+     "distance": 72.29666725059667,
+     "x": 971,
+     "y": 637,
+     "px": 24.182098668073774
+    },
+    {
+     "label": "bush",
+     "distance": 61.66919995690608,
+     "x": 806,
+     "y": 541,
+     "px": 27.624356639540146
+    },
+    {
+     "label": "bush",
+     "distance": 65.2926484560836,
+     "x": 892,
+     "y": 383,
+     "px": 34.271220447707016
+    }
+   ],
+   "meshes": [
+    {
+     "name": "building-frame",
+     "count": 369,
+     "triangles": 56
+    },
+    {
+     "name": "building-concrete",
+     "count": 232,
+     "triangles": 12
+    },
+    {
+     "name": "building-door",
+     "count": 2,
+     "triangles": 62
+    },
+    {
+     "name": "building-shutter",
+     "count": 42,
+     "triangles": 12
+    },
+    {
+     "name": "building-roofRailing",
+     "count": 48,
+     "triangles": 78
+    },
+    {
+     "name": "building-awning",
+     "count": 39,
+     "triangles": 24
+    },
+    {
+     "name": "building-fin",
+     "count": 1932,
+     "triangles": 12
+    },
+    {
+     "name": "building-fin",
+     "count": 552,
+     "triangles": 12
+    },
+    {
+     "name": "building-glassRail",
+     "count": 644,
+     "triangles": 4
+    },
+    {
+     "name": "building-acUnit",
+     "count": 17,
+     "triangles": 70
+    },
+    {
+     "name": "building-pot",
+     "count": 165,
+     "triangles": 45
+    },
+    {
+     "name": "building-foliage",
+     "count": 87,
+     "triangles": 192
+    },
+    {
+     "name": "building-bush",
+     "count": 78,
+     "triangles": 124
+    },
+    {
+     "name": "building-chair",
+     "count": 173,
+     "triangles": 78
+    },
+    {
+     "name": "building-table",
+     "count": 39,
+     "triangles": 55
+    },
+    {
+     "name": "building-airer",
+     "count": 16,
+     "triangles": 168
+    },
+    {
+     "name": "building-lounger",
+     "count": 81,
+     "triangles": 66
+    }
+   ]
+  },
+  {
+   "name": "tower-sw",
+   "drawCalls": 21,
+   "triangles": 132000,
+   "partDraws": 16,
+   "partTriangles": 129040,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "median": 0.6976511955261231,
+    "p10": 0.6897664070129395,
+    "p90": 1.6556032180786133
+   },
+   "props": [
+    {
+     "label": "acUnit",
+     "distance": 44.86077910365939,
+     "x": 1007,
+     "y": 381,
+     "px": 44.776870065698546
+    },
+    {
+     "label": "acUnit",
+     "distance": 45.50731552957262,
+     "x": 1007,
+     "y": 266,
+     "px": 44.509249730871844
+    },
+    {
+     "label": "acUnit",
+     "distance": 44.27531069256986,
+     "x": 959,
+     "y": 254,
+     "px": 45.78269002952098
+    },
+    {
+     "label": "foliage",
+     "distance": 67.3095708548121,
+     "x": 1002,
+     "y": 705,
+     "px": 39.47803382801834
+    },
+    {
+     "label": "foliage",
+     "distance": 68.7883565674305,
+     "x": 886,
+     "y": 712,
+     "px": 26.261545220670687
+    },
+    {
+     "label": "foliage",
+     "distance": 62.578522662980475,
+     "x": 1153,
+     "y": 545,
+     "px": 26.964587322655973
+    },
+    {
+     "label": "bush",
+     "distance": 68.5237513102765,
+     "x": 850,
+     "y": 634,
+     "px": 25.562674390420998
+    },
+    {
+     "label": "bush",
+     "distance": 66.44938277570968,
+     "x": 1056,
+     "y": 388,
+     "px": 33.69141442569871
+    },
+    {
+     "label": "bush",
+     "distance": 62.95333265653034,
+     "x": 1143,
+     "y": 544,
+     "px": 27.10618249052056
+    }
+   ],
+   "meshes": [
+    {
+     "name": "building-frame",
+     "count": 369,
+     "triangles": 56
+    },
+    {
+     "name": "building-concrete",
+     "count": 232,
+     "triangles": 12
+    },
+    {
+     "name": "building-door",
+     "count": 2,
+     "triangles": 62
+    },
+    {
+     "name": "building-shutter",
+     "count": 42,
+     "triangles": 12
+    },
+    {
+     "name": "building-roofRailing",
+     "count": 48,
+     "triangles": 78
+    },
+    {
+     "name": "building-awning",
+     "count": 39,
+     "triangles": 24
+    },
+    {
+     "name": "building-fin",
+     "count": 1932,
+     "triangles": 12
+    },
+    {
+     "name": "building-fin",
+     "count": 552,
+     "triangles": 12
+    },
+    {
+     "name": "building-glassRail",
+     "count": 644,
+     "triangles": 4
+    },
+    {
+     "name": "building-acUnit",
+     "count": 17,
+     "triangles": 70
+    },
+    {
+     "name": "building-pot",
+     "count": 165,
+     "triangles": 84
+    },
+    {
+     "name": "building-foliage",
+     "count": 87,
+     "triangles": 192
+    },
+    {
+     "name": "building-bush",
+     "count": 78,
+     "triangles": 124
+    },
+    {
+     "name": "building-chair",
+     "count": 173,
+     "triangles": 78
+    },
+    {
+     "name": "building-table",
+     "count": 39,
+     "triangles": 130
+    },
+    {
+     "name": "building-airer",
+     "count": 16,
+     "triangles": 168
+    },
+    {
+     "name": "building-lounger",
+     "count": 81,
+     "triangles": 66
+    }
+   ]
+  },
+  {
+   "name": "tower-nw",
+   "drawCalls": 21,
+   "triangles": 129075,
+   "partDraws": 16,
+   "partTriangles": 126115,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "median": 0.5956607818603515,
+    "p10": 0.5761023998260498,
+    "p90": 1.540608024597168
+   },
+   "props": [
+    {
+     "label": "acUnit",
+     "distance": 54.71387390544442,
+     "x": 1183,
+     "y": 726,
+     "px": 37.064028263636274
+    },
+    {
+     "label": "acUnit",
+     "distance": 52.06892932567569,
+     "x": 1305,
+     "y": 728,
+     "px": 39.397465711740615
+    },
+    {
+     "label": "acUnit",
+     "distance": 49.82015177569769,
+     "x": 1471,
+     "y": 400,
+     "px": 42.00703522859087
+    },
+    {
+     "label": "foliage",
+     "distance": 75.29583045343195,
+     "x": 1095,
+     "y": 570,
+     "px": 22.342476119991073
+    },
+    {
+     "label": "foliage",
+     "distance": 76.00043711259443,
+     "x": 1107,
+     "y": 566,
+     "px": 31.40904573309663
+    },
+    {
+     "label": "foliage",
+     "distance": 55.1725666776696,
+     "x": 1118,
+     "y": 524,
+     "px": 43.71768279579864
+    },
+    {
+     "label": "bush",
+     "distance": 63.547847688958704,
+     "x": 947,
+     "y": 630,
+     "px": 27.504973492942398
+    },
+    {
+     "label": "bush",
+     "distance": 74.9756270377553,
+     "x": 1086,
+     "y": 568,
+     "px": 22.69504189654513
+    },
+    {
+     "label": "bush",
+     "distance": 72.55552468293266,
+     "x": 1021,
+     "y": 415,
+     "px": 30.790048086705465
+    }
+   ],
+   "meshes": [
+    {
+     "name": "building-frame",
+     "count": 369,
+     "triangles": 56
+    },
+    {
+     "name": "building-concrete",
+     "count": 232,
+     "triangles": 12
+    },
+    {
+     "name": "building-door",
+     "count": 2,
+     "triangles": 62
+    },
+    {
+     "name": "building-shutter",
+     "count": 42,
+     "triangles": 12
+    },
+    {
+     "name": "building-roofRailing",
+     "count": 48,
+     "triangles": 78
+    },
+    {
+     "name": "building-awning",
+     "count": 39,
+     "triangles": 24
+    },
+    {
+     "name": "building-fin",
+     "count": 1932,
+     "triangles": 12
+    },
+    {
+     "name": "building-fin",
+     "count": 552,
+     "triangles": 12
+    },
+    {
+     "name": "building-glassRail",
+     "count": 644,
+     "triangles": 4
+    },
+    {
+     "name": "building-acUnit",
+     "count": 17,
+     "triangles": 70
+    },
+    {
+     "name": "building-pot",
+     "count": 165,
+     "triangles": 84
+    },
+    {
+     "name": "building-foliage",
+     "count": 87,
+     "triangles": 192
+    },
+    {
+     "name": "building-bush",
+     "count": 78,
+     "triangles": 124
+    },
+    {
+     "name": "building-chair",
+     "count": 173,
+     "triangles": 78
+    },
+    {
+     "name": "building-table",
+     "count": 39,
+     "triangles": 55
+    },
+    {
+     "name": "building-airer",
+     "count": 16,
+     "triangles": 168
+    },
+    {
+     "name": "building-lounger",
+     "count": 81,
+     "triangles": 66
+    }
+   ]
+  },
+  {
+   "name": "district-detail-250",
+   "drawCalls": 31,
+   "triangles": 470010,
+   "partDraws": 26,
+   "partTriangles": 434914,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "median": 1.2277759552001952,
+    "p10": 1.1588607788085938,
+    "p90": 1.680076789855957
+   },
+   "props": [],
+   "meshes": [
+    {
+     "name": "building-frame",
+     "count": 1095,
+     "triangles": 56
+    },
+    {
+     "name": "building-concrete",
+     "count": 3678,
+     "triangles": 2
+    },
+    {
+     "name": "building-concrete",
+     "count": 192,
+     "triangles": 12
+    },
+    {
+     "name": "building-door",
+     "count": 18,
+     "triangles": 62
+    },
+    {
+     "name": "building-shutter",
+     "count": 321,
+     "triangles": 12
+    },
+    {
+     "name": "building-railing",
+     "count": 174,
+     "triangles": 218
+    },
+    {
+     "name": "building-roofRailing",
+     "count": 310,
+     "triangles": 78
+    },
+    {
+     "name": "building-roofRailing",
+     "count": 12,
+     "triangles": 78
+    },
+    {
+     "name": "building-awning",
+     "count": 238,
+     "triangles": 24
+    },
+    {
+     "name": "building-fin",
+     "count": 1880,
+     "triangles": 2
+    },
+    {
+     "name": "building-fin",
+     "count": 1288,
+     "triangles": 12
+    },
+    {
+     "name": "building-fin",
+     "count": 2472,
+     "triangles": 2
+    },
+    {
+     "name": "building-fin",
+     "count": 1588,
+     "triangles": 12
+    },
+    {
+     "name": "building-glassRail",
+     "count": 1880,
+     "triangles": 4
+    },
+    {
+     "name": "building-brise",
+     "count": 732,
+     "triangles": 24
+    },
+    {
+     "name": "building-acUnit",
+     "count": 262,
+     "triangles": 30
+    },
+    {
+     "name": "building-pot",
+     "count": 641,
+     "triangles": 45
+    },
+    {
+     "name": "building-foliage",
+     "count": 346,
+     "triangles": 192
+    },
+    {
+     "name": "building-bush",
+     "count": 295,
+     "triangles": 124
+    },
+    {
+     "name": "building-chair",
+     "count": 623,
+     "triangles": 78
+    },
+    {
+     "name": "building-table",
+     "count": 153,
+     "triangles": 55
+    },
+    {
+     "name": "building-airer",
+     "count": 63,
+     "triangles": 168
+    },
+    {
+     "name": "building-dish",
+     "count": 23,
+     "triangles": 26
+    },
+    {
+     "name": "building-lounger",
+     "count": 193,
+     "triangles": 66
+    },
+    {
+     "name": "building-bike",
+     "count": 7,
+     "triangles": 168
+    },
+    {
+     "name": "building-lotBox",
+     "count": 8,
+     "triangles": 10
+    }
+   ]
+  },
+  {
+   "name": "district-detail-800",
+   "drawCalls": 29,
+   "triangles": 368040,
+   "partDraws": 24,
+   "partTriangles": 332944,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "median": 0.6336512088775634,
+    "p10": 0.6107071876525879,
+    "p90": 1.6304128646850586
+   },
+   "props": [],
+   "meshes": [
+    {
+     "name": "building-frame",
+     "count": 1091,
+     "triangles": 56
+    },
+    {
+     "name": "building-concrete",
+     "count": 3678,
+     "triangles": 2
+    },
+    {
+     "name": "building-concrete",
+     "count": 192,
+     "triangles": 2
+    },
+    {
+     "name": "building-door",
+     "count": 18,
+     "triangles": 12
+    },
+    {
+     "name": "building-shutter",
+     "count": 321,
+     "triangles": 12
+    },
+    {
+     "name": "building-roofRailing",
+     "count": 44,
+     "triangles": 4
+    },
+    {
+     "name": "building-roofRailing",
+     "count": 12,
+     "triangles": 78
+    },
+    {
+     "name": "building-awning",
+     "count": 238,
+     "triangles": 24
+    },
+    {
+     "name": "building-fin",
+     "count": 1880,
+     "triangles": 2
+    },
+    {
+     "name": "building-fin",
+     "count": 3760,
+     "triangles": 2
+    },
+    {
+     "name": "building-fin",
+     "count": 1588,
+     "triangles": 12
+    },
+    {
+     "name": "building-glassRail",
+     "count": 1880,
+     "triangles": 4
+    },
+    {
+     "name": "building-brise",
+     "count": 732,
+     "triangles": 24
+    },
+    {
+     "name": "building-acUnit",
+     "count": 262,
+     "triangles": 30
+    },
+    {
+     "name": "building-pot",
+     "count": 641,
+     "triangles": 14
+    },
+    {
+     "name": "building-foliage",
+     "count": 346,
+     "triangles": 192
+    },
+    {
+     "name": "building-bush",
+     "count": 295,
+     "triangles": 124
+    },
+    {
+     "name": "building-chair",
+     "count": 623,
+     "triangles": 78
+    },
+    {
+     "name": "building-table",
+     "count": 153,
+     "triangles": 30
+    },
+    {
+     "name": "building-airer",
+     "count": 63,
+     "triangles": 168
+    },
+    {
+     "name": "building-dish",
+     "count": 23,
+     "triangles": 26
+    },
+    {
+     "name": "building-lounger",
+     "count": 193,
+     "triangles": 66
+    },
+    {
+     "name": "building-bike",
+     "count": 7,
+     "triangles": 118
+    },
+    {
+     "name": "building-lotBox",
+     "count": 8,
+     "triangles": 2
+    }
+   ]
+  },
+  {
+   "name": "district-facade-800",
+   "drawCalls": 21,
+   "triangles": 275842,
+   "partDraws": 17,
+   "partTriangles": 262556,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "median": 0.6273024082183838,
+    "p10": 0.601907205581665,
+    "p90": 1.6527360916137694
+   },
+   "props": [],
+   "meshes": [
+    {
+     "name": "building-frame",
+     "count": 1086,
+     "triangles": 2
+    },
+    {
+     "name": "building-concrete",
+     "count": 3870,
+     "triangles": 2
+    },
+    {
+     "name": "building-roofRailing",
+     "count": 480,
+     "triangles": 4
+    },
+    {
+     "name": "building-awning",
+     "count": 238,
+     "triangles": 24
+    },
+    {
+     "name": "building-fin",
+     "count": 7228,
+     "triangles": 2
+    },
+    {
+     "name": "building-glassRail",
+     "count": 1880,
+     "triangles": 4
+    },
+    {
+     "name": "building-brise",
+     "count": 732,
+     "triangles": 24
+    },
+    {
+     "name": "building-acUnit",
+     "count": 262,
+     "triangles": 30
+    },
+    {
+     "name": "building-pot",
+     "count": 641,
+     "triangles": 26
+    },
+    {
+     "name": "building-foliage",
+     "count": 346,
+     "triangles": 192
+    },
+    {
+     "name": "building-bush",
+     "count": 295,
+     "triangles": 124
+    },
+    {
+     "name": "building-chair",
+     "count": 623,
+     "triangles": 78
+    },
+    {
+     "name": "building-table",
+     "count": 153,
+     "triangles": 30
+    },
+    {
+     "name": "building-airer",
+     "count": 63,
+     "triangles": 168
+    },
+    {
+     "name": "building-dish",
+     "count": 23,
+     "triangles": 26
+    },
+    {
+     "name": "building-lounger",
+     "count": 193,
+     "triangles": 66
+    },
+    {
+     "name": "building-bike",
+     "count": 7,
+     "triangles": 118
+    }
+   ]
+  }
+ ]
+}

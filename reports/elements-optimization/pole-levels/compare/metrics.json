@@ -1,0 +1,287 @@
+[
+ {
+  "name": "street",
+  "before": {
+   "triangles": 31634,
+   "drawCalls": 37,
+   "wireTriangles": 11980
+  },
+  "after": {
+   "triangles": 14834,
+   "drawCalls": 39,
+   "wireTriangles": 4160
+  },
+  "changed8": 0.00010464891975308641,
+  "changed32": 0.000005787037037037037,
+  "largest": 68,
+  "mean": 0.0029388503086419755,
+  "crops": [
+   {
+    "label": "street: a span at 25 m, 68.5 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "street: a span at 85 m, 20.1 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "street: a span at 115 m, 14.9 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "street: a span at 205 m, 8.4 px a metre",
+    "changed8": 0.005208333333333333,
+    "largest": 27
+   },
+   {
+    "label": "street: a span at 415 m, 4.1 px a metre",
+    "changed8": 0.03993055555555555,
+    "largest": 39
+   },
+   {
+    "label": "street: a span at 865 m, 2.0 px a metre",
+    "changed8": 0.03298611111111111,
+    "largest": 68
+   },
+   {
+    "label": "street: a span at 1705 m, 1.0 px a metre",
+    "changed8": 0.019097222222222224,
+    "largest": 68
+   },
+   {
+    "label": "street: a span at 2695 m, 0.6 px a metre",
+    "changed8": 0.013888888888888888,
+    "largest": 68
+   }
+  ]
+ },
+ {
+  "name": "aerial",
+  "before": {
+   "triangles": 15626,
+   "drawCalls": 37,
+   "wireTriangles": 3820
+  },
+  "after": {
+   "triangles": 9998,
+   "drawCalls": 37,
+   "wireTriangles": 3056
+  },
+  "changed8": 0.00007233796296296296,
+  "changed32": 0.000014467592592592593,
+  "largest": 60,
+  "mean": 0.002082368827160494,
+  "crops": [
+   {
+    "label": "aerial: a span at 79 m, 14.3 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "aerial: a span at 169 m, 8.3 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "aerial: a span at 409 m, 3.9 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "aerial: a span at 859 m, 2.0 px a metre",
+    "changed8": 0.017361111111111112,
+    "largest": 48
+   },
+   {
+    "label": "aerial: a span at 1729 m, 1.0 px a metre",
+    "changed8": 0.008680555555555556,
+    "largest": 29
+   },
+   {
+    "label": "aerial: a span at 2749 m, 0.6 px a metre",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ },
+ {
+  "name": "urban-close",
+  "before": {
+   "triangles": 30290,
+   "drawCalls": 31,
+   "wireTriangles": 12640
+  },
+  "after": {
+   "triangles": 16188,
+   "drawCalls": 32,
+   "wireTriangles": 6376
+  },
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "mean": 0,
+  "crops": [
+   {
+    "label": "urban-close: a span at 23 m, 78.2 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "urban-close: a span at 83 m, 26.6 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "urban-close: a span at 143 m, 16.0 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "urban-close: a span at 293 m, 8.0 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "urban-close: a span at 593 m, 4.0 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "urban-close: a span at 1193 m, 2.0 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "urban-close: a span at 2423 m, 1.0 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "urban-close: a span at 2633 m, 0.9 px a metre",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ },
+ {
+  "name": "rural-close",
+  "before": {
+   "triangles": 29474,
+   "drawCalls": 31,
+   "wireTriangles": 12640
+  },
+  "after": {
+   "triangles": 16290,
+   "drawCalls": 32,
+   "wireTriangles": 6496
+  },
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "mean": 0,
+  "crops": [
+   {
+    "label": "rural-close: a span at 53 m, 63.8 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "rural-close: a span at 113 m, 24.7 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "rural-close: a span at 173 m, 15.3 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "rural-close: a span at 323 m, 7.9 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "rural-close: a span at 623 m, 4.0 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "rural-close: a span at 1223 m, 2.0 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "rural-close: a span at 2423 m, 1.0 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "rural-close: a span at 2633 m, 0.9 px a metre",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ },
+ {
+  "name": "urban-rack",
+  "before": {
+   "triangles": 31754,
+   "drawCalls": 33,
+   "wireTriangles": 12640
+  },
+  "after": {
+   "triangles": 15154,
+   "drawCalls": 35,
+   "wireTriangles": 4504
+  },
+  "changed8": 0.000003858024691358025,
+  "changed32": 0.0000024112654320987654,
+  "largest": 51,
+  "mean": 0.0002662037037037037,
+  "crops": [
+   {
+    "label": "urban-rack: a span at 20 m, 94.8 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "urban-rack: a span at 80 m, 26.4 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "urban-rack: a span at 140 m, 15.3 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "urban-rack: a span at 260 m, 8.3 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "urban-rack: a span at 560 m, 3.9 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "urban-rack: a span at 1100 m, 2.0 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "urban-rack: a span at 2180 m, 1.0 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "urban-rack: a span at 2630 m, 0.8 px a metre",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ }
+]

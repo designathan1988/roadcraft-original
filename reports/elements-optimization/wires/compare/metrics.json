@@ -1,0 +1,110 @@
+[
+ {
+  "name": "street",
+  "before": {
+   "triangles": 59170,
+   "drawCalls": 37,
+   "wireTriangles": 41148
+  },
+  "after": {
+   "triangles": 39586,
+   "drawCalls": 37,
+   "wireTriangles": 21564
+  },
+  "changed8": 0.0036086998456790124,
+  "changed32": 0.001787229938271605,
+  "largest": 152,
+  "mean": 0.16081597222222221,
+  "crops": [
+   {
+    "label": "street: a span at 25 m, 68.5 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "street: a span at 85 m, 20.1 px a metre",
+    "changed8": 0.036458333333333336,
+    "largest": 90
+   },
+   {
+    "label": "street: a span at 115 m, 14.9 px a metre",
+    "changed8": 0.1284722222222222,
+    "largest": 117
+   },
+   {
+    "label": "street: a span at 205 m, 8.4 px a metre",
+    "changed8": 0.1892361111111111,
+    "largest": 128
+   },
+   {
+    "label": "street: a span at 415 m, 4.1 px a metre",
+    "changed8": 0.2065972222222222,
+    "largest": 83
+   },
+   {
+    "label": "street: a span at 865 m, 2.0 px a metre",
+    "changed8": 0.08680555555555555,
+    "largest": 36
+   },
+   {
+    "label": "street: a span at 1705 m, 1.0 px a metre",
+    "changed8": 0.03819444444444445,
+    "largest": 35
+   },
+   {
+    "label": "street: a span at 2695 m, 0.6 px a metre",
+    "changed8": 0.024305555555555556,
+    "largest": 30
+   }
+  ]
+ },
+ {
+  "name": "aerial",
+  "before": {
+   "triangles": 18274,
+   "drawCalls": 37,
+   "wireTriangles": 6876
+  },
+  "after": {
+   "triangles": 18274,
+   "drawCalls": 37,
+   "wireTriangles": 6876
+  },
+  "changed8": 0.0051297260802469135,
+  "changed32": 0.001476658950617284,
+  "largest": 118,
+  "mean": 0.14731915509259258,
+  "crops": [
+   {
+    "label": "aerial: a span at 79 m, 14.3 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "aerial: a span at 169 m, 8.3 px a metre",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "aerial: a span at 409 m, 3.9 px a metre",
+    "changed8": 0.3090277777777778,
+    "largest": 50
+   },
+   {
+    "label": "aerial: a span at 859 m, 2.0 px a metre",
+    "changed8": 0.18229166666666666,
+    "largest": 118
+   },
+   {
+    "label": "aerial: a span at 1729 m, 1.0 px a metre",
+    "changed8": 0.08506944444444445,
+    "largest": 35
+   },
+   {
+    "label": "aerial: a span at 2749 m, 0.6 px a metre",
+    "changed8": 0.013888888888888888,
+    "largest": 29
+   }
+  ]
+ }
+]

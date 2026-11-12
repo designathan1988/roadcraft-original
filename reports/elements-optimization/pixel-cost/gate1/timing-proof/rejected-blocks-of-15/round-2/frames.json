@@ -1,0 +1,212 @@
+{
+ "url": "http://127.0.0.1:5300/",
+ "made": "2026-10-25T20:41:19.696Z",
+ "frames": [
+  {
+   "name": "tower-sw",
+   "drawCalls": 21,
+   "triangles": 132000,
+   "partDraws": 16,
+   "partTriangles": 129040,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "passes": 3,
+    "median": 0.6857386666666666,
+    "p10": 0.6731093333333332,
+    "p90": 0.7185066666666667,
+    "window": {
+     "start": 1792960879141,
+     "end": 1792960879641
+    }
+   },
+   "gpuCheck": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "passes": 15,
+    "median": 0.9630378666666667,
+    "p10": 0.7100416,
+    "p90": 1.1539114666666668,
+    "window": {
+     "start": 1792960879141,
+     "end": 1792960879641
+    }
+   },
+   "props": [
+    {
+     "label": "acUnit",
+     "distance": 44.86077910365939,
+     "x": 1007,
+     "y": 381,
+     "px": 44.776870065698546
+    },
+    {
+     "label": "acUnit",
+     "distance": 45.50731552957262,
+     "x": 1007,
+     "y": 266,
+     "px": 44.509249730871844
+    },
+    {
+     "label": "acUnit",
+     "distance": 44.27531069256986,
+     "x": 959,
+     "y": 254,
+     "px": 45.78269002952098
+    },
+    {
+     "label": "foliage",
+     "distance": 67.3095708548121,
+     "x": 1002,
+     "y": 705,
+     "px": 39.47803382801834
+    },
+    {
+     "label": "foliage",
+     "distance": 68.7883565674305,
+     "x": 886,
+     "y": 712,
+     "px": 26.261545220670687
+    },
+    {
+     "label": "foliage",
+     "distance": 62.578522662980475,
+     "x": 1153,
+     "y": 545,
+     "px": 26.964587322655973
+    },
+    {
+     "label": "bush",
+     "distance": 68.5237513102765,
+     "x": 850,
+     "y": 634,
+     "px": 25.562674390420998
+    },
+    {
+     "label": "bush",
+     "distance": 66.44938277570968,
+     "x": 1056,
+     "y": 388,
+     "px": 33.69141442569871
+    },
+    {
+     "label": "bush",
+     "distance": 62.95333265653034,
+     "x": 1143,
+     "y": 544,
+     "px": 27.10618249052056
+    }
+   ],
+   "meshes": [
+    {
+     "name": "building-frame",
+     "count": 369,
+     "triangles": 56
+    },
+    {
+     "name": "building-concrete",
+     "count": 232,
+     "triangles": 12
+    },
+    {
+     "name": "building-door",
+     "count": 2,
+     "triangles": 62
+    },
+    {
+     "name": "building-shutter",
+     "count": 42,
+     "triangles": 12
+    },
+    {
+     "name": "building-roofRailing",
+     "count": 48,
+     "triangles": 78
+    },
+    {
+     "name": "building-awning",
+     "count": 39,
+     "triangles": 24
+    },
+    {
+     "name": "building-fin",
+     "count": 1932,
+     "triangles": 12
+    },
+    {
+     "name": "building-fin",
+     "count": 552,
+     "triangles": 12
+    },
+    {
+     "name": "building-glassRail",
+     "count": 644,
+     "triangles": 4
+    },
+    {
+     "name": "building-acUnit",
+     "count": 17,
+     "triangles": 70
+    },
+    {
+     "name": "building-pot",
+     "count": 165,
+     "triangles": 84
+    },
+    {
+     "name": "building-foliage",
+     "count": 87,
+     "triangles": 192
+    },
+    {
+     "name": "building-bush",
+     "count": 78,
+     "triangles": 124
+    },
+    {
+     "name": "building-chair",
+     "count": 173,
+     "triangles": 78
+    },
+    {
+     "name": "building-table",
+     "count": 39,
+     "triangles": 130
+    },
+    {
+     "name": "building-airer",
+     "count": 16,
+     "triangles": 168
+    },
+    {
+     "name": "building-lounger",
+     "count": 81,
+     "triangles": 66
+    }
+   ],
+   "clocks": {
+    "readings": 5,
+    "pstates": [
+     "P0"
+    ],
+    "core": {
+     "min": 1935,
+     "median": 1935,
+     "max": 1987
+    },
+    "memory": {
+     "min": 7501,
+     "median": 7501,
+     "max": 7501
+    },
+    "load": {
+     "min": 75,
+     "median": 83,
+     "max": 83
+    }
+   }
+  }
+ ]
+}

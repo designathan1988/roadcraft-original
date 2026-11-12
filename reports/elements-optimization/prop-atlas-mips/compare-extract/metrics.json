@@ -1,0 +1,1686 @@
+[
+ {
+  "name": "bench",
+  "before": {
+   "triangles": 2018,
+   "drawCalls": 5,
+   "meshes": [
+    {
+     "name": "benches",
+     "count": 12,
+     "triangles": 164
+    },
+    {
+     "name": "benches-far",
+     "count": 4,
+     "triangles": 2
+    },
+    {
+     "name": "benches-far-far-cells",
+     "count": 17,
+     "triangles": 2
+    },
+    {
+     "name": "benches-far-far-cells",
+     "count": 3,
+     "triangles": 2
+    }
+   ]
+  },
+  "after": {
+   "triangles": 2018,
+   "drawCalls": 5,
+   "meshes": [
+    {
+     "name": "benches",
+     "count": 12,
+     "triangles": 164
+    },
+    {
+     "name": "benches-far",
+     "count": 4,
+     "triangles": 2
+    },
+    {
+     "name": "benches-far-far-cells",
+     "count": 17,
+     "triangles": 2
+    },
+    {
+     "name": "benches-far-far-cells",
+     "count": 3,
+     "triangles": 2
+    }
+   ]
+  },
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "mean": 0,
+  "crops": [
+   {
+    "label": "bench at 36 m, 85.4 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "bench at 64 m, 48.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "bench at 85 m, 36.2 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "bench at 110 m, 28.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "bench at 200 m, 15.4 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "bench at 270 m, 11.4 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "bench at 360 m, 8.6 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "bench at 850 m, 3.6 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "bench at 1500 m, 2.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "bench at 2000 m, 1.5 px",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ },
+ {
+  "name": "bin",
+  "before": {
+   "triangles": 2058,
+   "drawCalls": 5,
+   "meshes": [
+    {
+     "name": "street-bins",
+     "count": 11,
+     "triangles": 182
+    },
+    {
+     "name": "street-bins-far",
+     "count": 6,
+     "triangles": 2
+    },
+    {
+     "name": "street-bins-far-far-cells",
+     "count": 18,
+     "triangles": 2
+    },
+    {
+     "name": "street-bins-far-far-cells",
+     "count": 3,
+     "triangles": 2
+    }
+   ]
+  },
+  "after": {
+   "triangles": 2058,
+   "drawCalls": 5,
+   "meshes": [
+    {
+     "name": "street-bins",
+     "count": 11,
+     "triangles": 182
+    },
+    {
+     "name": "street-bins-far",
+     "count": 6,
+     "triangles": 2
+    },
+    {
+     "name": "street-bins-far-far-cells",
+     "count": 18,
+     "triangles": 2
+    },
+    {
+     "name": "street-bins-far-far-cells",
+     "count": 3,
+     "triangles": 2
+    }
+   ]
+  },
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "mean": 0,
+  "crops": [
+   {
+    "label": "bin at 20 m, 88.2 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "bin at 36 m, 49.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "bin at 48 m, 36.9 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "bin at 85 m, 20.8 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "bin at 110 m, 16.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "bin at 150 m, 11.8 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "bin at 200 m, 8.9 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "bin at 480 m, 3.7 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "bin at 850 m, 2.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "bin at 1100 m, 1.6 px",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ },
+ {
+  "name": "hydrant",
+  "before": {
+   "triangles": 1692,
+   "drawCalls": 4,
+   "meshes": [
+    {
+     "name": "hydrants",
+     "count": 10,
+     "triangles": 164
+    },
+    {
+     "name": "hydrants-far",
+     "count": 7,
+     "triangles": 2
+    },
+    {
+     "name": "hydrants-far-far-cells",
+     "count": 18,
+     "triangles": 2
+    }
+   ]
+  },
+  "after": {
+   "triangles": 1692,
+   "drawCalls": 4,
+   "meshes": [
+    {
+     "name": "hydrants",
+     "count": 10,
+     "triangles": 164
+    },
+    {
+     "name": "hydrants-far",
+     "count": 7,
+     "triangles": 2
+    },
+    {
+     "name": "hydrants-far-far-cells",
+     "count": 18,
+     "triangles": 2
+    }
+   ]
+  },
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "mean": 0,
+  "crops": [
+   {
+    "label": "hydrant at 15 m, 88.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "hydrant at 27 m, 49.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "hydrant at 36 m, 36.8 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "hydrant at 48 m, 27.6 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "hydrant at 85 m, 15.6 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "hydrant at 110 m, 12.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "hydrant at 150 m, 8.8 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "hydrant at 360 m, 3.7 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "hydrant at 640 m, 2.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "hydrant at 850 m, 1.6 px",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ },
+ {
+  "name": "postbox",
+  "before": {
+   "triangles": 980,
+   "drawCalls": 6,
+   "meshes": [
+    {
+     "name": "post-boxes",
+     "count": 7,
+     "triangles": 92
+    },
+    {
+     "name": "post-boxes-mid",
+     "count": 4,
+     "triangles": 70
+    },
+    {
+     "name": "post-boxes-far",
+     "count": 6,
+     "triangles": 2
+    },
+    {
+     "name": "post-boxes-far-far-cells",
+     "count": 18,
+     "triangles": 2
+    },
+    {
+     "name": "post-boxes-far-far-cells",
+     "count": 3,
+     "triangles": 2
+    }
+   ]
+  },
+  "after": {
+   "triangles": 980,
+   "drawCalls": 6,
+   "meshes": [
+    {
+     "name": "post-boxes",
+     "count": 7,
+     "triangles": 92
+    },
+    {
+     "name": "post-boxes-mid",
+     "count": 4,
+     "triangles": 70
+    },
+    {
+     "name": "post-boxes-far",
+     "count": 6,
+     "triangles": 2
+    },
+    {
+     "name": "post-boxes-far-far-cells",
+     "count": 18,
+     "triangles": 2
+    },
+    {
+     "name": "post-boxes-far-far-cells",
+     "count": 3,
+     "triangles": 2
+    }
+   ]
+  },
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "mean": 0,
+  "crops": [
+   {
+    "label": "postbox at 20 m, 97.2 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "postbox at 36 m, 54.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "postbox at 48 m, 40.6 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "postbox at 85 m, 22.9 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "postbox at 110 m, 17.7 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "postbox at 150 m, 13.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "postbox at 270 m, 7.2 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "postbox at 480 m, 4.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "postbox at 1100 m, 1.8 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "postbox at 1500 m, 1.3 px",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ },
+ {
+  "name": "phone",
+  "before": {
+   "triangles": 7272,
+   "drawCalls": 6,
+   "meshes": [
+    {
+     "name": "phones",
+     "count": 10,
+     "triangles": 590
+    },
+    {
+     "name": "phones-mid",
+     "count": 3,
+     "triangles": 440
+    },
+    {
+     "name": "phones-far",
+     "count": 4,
+     "triangles": 2
+    },
+    {
+     "name": "phones-far-far-cells",
+     "count": 18,
+     "triangles": 2
+    },
+    {
+     "name": "phones-far-far-cells",
+     "count": 3,
+     "triangles": 2
+    }
+   ]
+  },
+  "after": {
+   "triangles": 7272,
+   "drawCalls": 6,
+   "meshes": [
+    {
+     "name": "phones",
+     "count": 10,
+     "triangles": 590
+    },
+    {
+     "name": "phones-mid",
+     "count": 3,
+     "triangles": 440
+    },
+    {
+     "name": "phones-far",
+     "count": 4,
+     "triangles": 2
+    },
+    {
+     "name": "phones-far-far-cells",
+     "count": 18,
+     "triangles": 2
+    },
+    {
+     "name": "phones-far-far-cells",
+     "count": 3,
+     "triangles": 2
+    }
+   ]
+  },
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "mean": 0,
+  "crops": [
+   {
+    "label": "phone at 36 m, 97.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "phone at 64 m, 54.7 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "phone at 85 m, 41.2 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "phone at 150 m, 23.4 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "phone at 200 m, 17.5 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "phone at 270 m, 13.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "phone at 480 m, 7.3 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "phone at 850 m, 4.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "phone at 2000 m, 1.8 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "phone at 2700 m, 1.3 px",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ },
+ {
+  "name": "drain",
+  "before": {
+   "triangles": 1244,
+   "drawCalls": 5,
+   "meshes": [
+    {
+     "name": "drains",
+     "count": 11,
+     "triangles": 108
+    },
+    {
+     "name": "drains-far",
+     "count": 6,
+     "triangles": 2
+    },
+    {
+     "name": "drains-far-far-cells",
+     "count": 18,
+     "triangles": 2
+    },
+    {
+     "name": "drains-far-far-cells",
+     "count": 3,
+     "triangles": 2
+    }
+   ]
+  },
+  "after": {
+   "triangles": 1244,
+   "drawCalls": 5,
+   "meshes": [
+    {
+     "name": "drains",
+     "count": 11,
+     "triangles": 108
+    },
+    {
+     "name": "drains-far",
+     "count": 6,
+     "triangles": 2
+    },
+    {
+     "name": "drains-far-far-cells",
+     "count": 18,
+     "triangles": 2
+    },
+    {
+     "name": "drains-far-far-cells",
+     "count": 3,
+     "triangles": 2
+    }
+   ]
+  },
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "mean": 0,
+  "crops": [
+   {
+    "label": "drain at 20 m, 85.3 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "drain at 36 m, 47.5 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "drain at 48 m, 35.6 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "drain at 64 m, 26.7 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "drain at 110 m, 15.6 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "drain at 150 m, 11.4 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "drain at 200 m, 8.6 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "drain at 480 m, 3.6 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "drain at 850 m, 2.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "drain at 1100 m, 1.6 px",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ },
+ {
+  "name": "lamp",
+  "before": {
+   "triangles": 4876,
+   "drawCalls": 14,
+   "meshes": [
+    {
+     "name": "street-lights",
+     "count": 14,
+     "triangles": 132
+    },
+    {
+     "name": "street-lights-mid",
+     "count": 3,
+     "triangles": 88
+    },
+    {
+     "name": "street-light-lamps",
+     "count": 17,
+     "triangles": 2
+    },
+    {
+     "name": "street-light-pools",
+     "count": 17,
+     "triangles": 28
+    },
+    {
+     "name": "street-light-beams",
+     "count": 17,
+     "triangles": 144
+    },
+    {
+     "name": "street-light-lamps-far-cells",
+     "count": 18,
+     "triangles": 2
+    },
+    {
+     "name": "street-light-pools-far-cells",
+     "count": 18,
+     "triangles": 28
+    },
+    {
+     "name": "street-light-beams-far-cells",
+     "count": 18,
+     "triangles": 144
+    },
+    {
+     "name": "street-light-lamps-far-cells",
+     "count": 3,
+     "triangles": 2
+    },
+    {
+     "name": "street-light-pools-far-cells",
+     "count": 3,
+     "triangles": 28
+    },
+    {
+     "name": "street-light-beams-far-cells",
+     "count": 3,
+     "triangles": 144
+    },
+    {
+     "name": "street-light-lamps-far-cells",
+     "count": 1,
+     "triangles": 2
+    },
+    {
+     "name": "street-light-pools-far-cells",
+     "count": 1,
+     "triangles": 28
+    },
+    {
+     "name": "street-light-beams-far-cells",
+     "count": 1,
+     "triangles": 144
+    },
+    {
+     "name": "street-lights-mid-mid-far-cells",
+     "count": 18,
+     "triangles": 88
+    },
+    {
+     "name": "street-lights-far-far-cells",
+     "count": 3,
+     "triangles": 2
+    },
+    {
+     "name": "street-lights-far-far-cells",
+     "count": 1,
+     "triangles": 2
+    }
+   ]
+  },
+  "after": {
+   "triangles": 4876,
+   "drawCalls": 14,
+   "meshes": [
+    {
+     "name": "street-lights",
+     "count": 14,
+     "triangles": 132
+    },
+    {
+     "name": "street-lights-mid",
+     "count": 3,
+     "triangles": 88
+    },
+    {
+     "name": "street-light-lamps",
+     "count": 17,
+     "triangles": 2
+    },
+    {
+     "name": "street-light-pools",
+     "count": 17,
+     "triangles": 28
+    },
+    {
+     "name": "street-light-beams",
+     "count": 17,
+     "triangles": 144
+    },
+    {
+     "name": "street-light-lamps-far-cells",
+     "count": 18,
+     "triangles": 2
+    },
+    {
+     "name": "street-light-pools-far-cells",
+     "count": 18,
+     "triangles": 28
+    },
+    {
+     "name": "street-light-beams-far-cells",
+     "count": 18,
+     "triangles": 144
+    },
+    {
+     "name": "street-light-lamps-far-cells",
+     "count": 3,
+     "triangles": 2
+    },
+    {
+     "name": "street-light-pools-far-cells",
+     "count": 3,
+     "triangles": 28
+    },
+    {
+     "name": "street-light-beams-far-cells",
+     "count": 3,
+     "triangles": 144
+    },
+    {
+     "name": "street-light-lamps-far-cells",
+     "count": 1,
+     "triangles": 2
+    },
+    {
+     "name": "street-light-pools-far-cells",
+     "count": 1,
+     "triangles": 28
+    },
+    {
+     "name": "street-light-beams-far-cells",
+     "count": 1,
+     "triangles": 144
+    },
+    {
+     "name": "street-lights-mid-mid-far-cells",
+     "count": 18,
+     "triangles": 88
+    },
+    {
+     "name": "street-lights-far-far-cells",
+     "count": 3,
+     "triangles": 2
+    },
+    {
+     "name": "street-lights-far-far-cells",
+     "count": 1,
+     "triangles": 2
+    }
+   ]
+  },
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "mean": 0,
+  "crops": [
+   {
+    "label": "lamp at 150 m, 104.5 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "lamp at 360 m, 43.5 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "lamp at 640 m, 24.5 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "lamp at 1100 m, 14.3 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "lamp at 1500 m, 10.5 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "lamp at 2000 m, 7.8 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "lamp at 2700 m, 5.8 px",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ },
+ {
+  "name": "tree",
+  "before": {
+   "triangles": 5158,
+   "drawCalls": 15,
+   "meshes": [
+    {
+     "name": "tree-pits",
+     "count": 10,
+     "triangles": 90
+    },
+    {
+     "name": "tree-pits-far",
+     "count": 8,
+     "triangles": 2
+    },
+    {
+     "name": "street-trees-broadleaf",
+     "count": 7,
+     "triangles": 202
+    },
+    {
+     "name": "street-trees-broadleaf-cards",
+     "count": 7,
+     "triangles": 80
+    },
+    {
+     "name": "street-trees-broadleaf-far",
+     "count": 1,
+     "triangles": 2
+    },
+    {
+     "name": "street-trees-broadleafTall",
+     "count": 7,
+     "triangles": 112
+    },
+    {
+     "name": "street-trees-broadleafTall-cards",
+     "count": 7,
+     "triangles": 68
+    },
+    {
+     "name": "street-trees-ipeYellow",
+     "count": 1,
+     "triangles": 132
+    },
+    {
+     "name": "street-trees-ipeYellow-cards",
+     "count": 1,
+     "triangles": 108
+    },
+    {
+     "name": "street-trees-ipePink",
+     "count": 3,
+     "triangles": 132
+    },
+    {
+     "name": "street-trees-ipePink-cards",
+     "count": 3,
+     "triangles": 108
+    },
+    {
+     "name": "street-furniture-far-cells",
+     "count": 18,
+     "triangles": 2
+    },
+    {
+     "name": "street-furniture-far-cells",
+     "count": 3,
+     "triangles": 2
+    },
+    {
+     "name": "street-furniture-far-cells",
+     "count": 1,
+     "triangles": 2
+    }
+   ]
+  },
+  "after": {
+   "triangles": 5158,
+   "drawCalls": 15,
+   "meshes": [
+    {
+     "name": "tree-pits",
+     "count": 10,
+     "triangles": 90
+    },
+    {
+     "name": "tree-pits-far",
+     "count": 8,
+     "triangles": 2
+    },
+    {
+     "name": "street-trees-broadleaf",
+     "count": 7,
+     "triangles": 202
+    },
+    {
+     "name": "street-trees-broadleaf-cards",
+     "count": 7,
+     "triangles": 80
+    },
+    {
+     "name": "street-trees-broadleaf-far",
+     "count": 1,
+     "triangles": 2
+    },
+    {
+     "name": "street-trees-broadleafTall",
+     "count": 7,
+     "triangles": 112
+    },
+    {
+     "name": "street-trees-broadleafTall-cards",
+     "count": 7,
+     "triangles": 68
+    },
+    {
+     "name": "street-trees-ipeYellow",
+     "count": 1,
+     "triangles": 132
+    },
+    {
+     "name": "street-trees-ipeYellow-cards",
+     "count": 1,
+     "triangles": 108
+    },
+    {
+     "name": "street-trees-ipePink",
+     "count": 3,
+     "triangles": 132
+    },
+    {
+     "name": "street-trees-ipePink-cards",
+     "count": 3,
+     "triangles": 108
+    },
+    {
+     "name": "street-furniture-far-cells",
+     "count": 18,
+     "triangles": 2
+    },
+    {
+     "name": "street-furniture-far-cells",
+     "count": 3,
+     "triangles": 2
+    },
+    {
+     "name": "street-furniture-far-cells",
+     "count": 1,
+     "triangles": 2
+    }
+   ]
+  },
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "mean": 0,
+  "crops": [
+   {
+    "label": "tree at 15 m, 90.8 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "tree at 27 m, 50.6 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "tree at 36 m, 38.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "tree at 64 m, 21.4 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "tree at 85 m, 16.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "tree at 110 m, 12.4 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "tree at 150 m, 9.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "tree at 360 m, 3.8 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "tree at 640 m, 2.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "tree at 850 m, 1.6 px",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ },
+ {
+  "name": "all",
+  "before": {
+   "triangles": 15952,
+   "drawCalls": 47,
+   "meshes": [
+    {
+     "name": "street-lights",
+     "count": 12,
+     "triangles": 132
+    },
+    {
+     "name": "street-lights-mid",
+     "count": 5,
+     "triangles": 88
+    },
+    {
+     "name": "street-light-lamps",
+     "count": 17,
+     "triangles": 2
+    },
+    {
+     "name": "street-light-pools",
+     "count": 17,
+     "triangles": 28
+    },
+    {
+     "name": "street-light-beams",
+     "count": 17,
+     "triangles": 144
+    },
+    {
+     "name": "street-bins",
+     "count": 2,
+     "triangles": 182
+    },
+    {
+     "name": "street-bins-far",
+     "count": 8,
+     "triangles": 2
+    },
+    {
+     "name": "benches",
+     "count": 5,
+     "triangles": 164
+    },
+    {
+     "name": "benches-far",
+     "count": 6,
+     "triangles": 2
+    },
+    {
+     "name": "hydrants",
+     "count": 6,
+     "triangles": 164
+    },
+    {
+     "name": "hydrants-far",
+     "count": 8,
+     "triangles": 2
+    },
+    {
+     "name": "post-boxes",
+     "count": 1,
+     "triangles": 92
+    },
+    {
+     "name": "post-boxes-mid",
+     "count": 4,
+     "triangles": 70
+    },
+    {
+     "name": "post-boxes-far",
+     "count": 8,
+     "triangles": 2
+    },
+    {
+     "name": "phones",
+     "count": 5,
+     "triangles": 590
+    },
+    {
+     "name": "phones-mid",
+     "count": 4,
+     "triangles": 440
+    },
+    {
+     "name": "phones-far",
+     "count": 6,
+     "triangles": 2
+    },
+    {
+     "name": "drains",
+     "count": 7,
+     "triangles": 108
+    },
+    {
+     "name": "drains-far",
+     "count": 8,
+     "triangles": 2
+    },
+    {
+     "name": "tree-pits",
+     "count": 10,
+     "triangles": 90
+    },
+    {
+     "name": "tree-pits-far",
+     "count": 9,
+     "triangles": 2
+    },
+    {
+     "name": "street-trees-broadleaf",
+     "count": 3,
+     "triangles": 202
+    },
+    {
+     "name": "street-trees-broadleaf-cards",
+     "count": 3,
+     "triangles": 80
+    },
+    {
+     "name": "street-trees-broadleafTall",
+     "count": 8,
+     "triangles": 112
+    },
+    {
+     "name": "street-trees-broadleafTall-cards",
+     "count": 8,
+     "triangles": 68
+    },
+    {
+     "name": "street-trees-broadleafTall-far",
+     "count": 1,
+     "triangles": 2
+    },
+    {
+     "name": "street-trees-ipeYellow",
+     "count": 2,
+     "triangles": 132
+    },
+    {
+     "name": "street-trees-ipeYellow-cards",
+     "count": 2,
+     "triangles": 108
+    },
+    {
+     "name": "street-trees-ipeYellow-far",
+     "count": 1,
+     "triangles": 2
+    },
+    {
+     "name": "street-trees-ipePink",
+     "count": 4,
+     "triangles": 132
+    },
+    {
+     "name": "street-trees-ipePink-cards",
+     "count": 4,
+     "triangles": 108
+    },
+    {
+     "name": "street-trees-ipePink-far",
+     "count": 1,
+     "triangles": 2
+    },
+    {
+     "name": "street-furniture-far-cells",
+     "count": 19,
+     "triangles": 2
+    },
+    {
+     "name": "street-light-lamps-far-cells",
+     "count": 16,
+     "triangles": 2
+    },
+    {
+     "name": "street-light-pools-far-cells",
+     "count": 16,
+     "triangles": 28
+    },
+    {
+     "name": "street-light-beams-far-cells",
+     "count": 16,
+     "triangles": 144
+    },
+    {
+     "name": "street-furniture-far-cells",
+     "count": 2,
+     "triangles": 2
+    },
+    {
+     "name": "street-light-lamps-far-cells",
+     "count": 2,
+     "triangles": 2
+    },
+    {
+     "name": "street-light-pools-far-cells",
+     "count": 2,
+     "triangles": 28
+    },
+    {
+     "name": "street-light-beams-far-cells",
+     "count": 2,
+     "triangles": 144
+    },
+    {
+     "name": "street-furniture-far-cells",
+     "count": 2,
+     "triangles": 2
+    },
+    {
+     "name": "street-light-lamps-far-cells",
+     "count": 2,
+     "triangles": 2
+    },
+    {
+     "name": "street-light-pools-far-cells",
+     "count": 2,
+     "triangles": 28
+    },
+    {
+     "name": "street-light-beams-far-cells",
+     "count": 2,
+     "triangles": 144
+    },
+    {
+     "name": "street-lights-far-far-cells",
+     "count": 2,
+     "triangles": 2
+    },
+    {
+     "name": "benches-far-far-cells",
+     "count": 3,
+     "triangles": 2
+    },
+    {
+     "name": "post-boxes-far-far-cells",
+     "count": 2,
+     "triangles": 2
+    },
+    {
+     "name": "phones-far-far-cells",
+     "count": 2,
+     "triangles": 2
+    },
+    {
+     "name": "street-lights-far-far-cells",
+     "count": 2,
+     "triangles": 2
+    },
+    {
+     "name": "phones-far-far-cells",
+     "count": 2,
+     "triangles": 2
+    }
+   ]
+  },
+  "after": {
+   "triangles": 15952,
+   "drawCalls": 47,
+   "meshes": [
+    {
+     "name": "street-lights",
+     "count": 12,
+     "triangles": 132
+    },
+    {
+     "name": "street-lights-mid",
+     "count": 5,
+     "triangles": 88
+    },
+    {
+     "name": "street-light-lamps",
+     "count": 17,
+     "triangles": 2
+    },
+    {
+     "name": "street-light-pools",
+     "count": 17,
+     "triangles": 28
+    },
+    {
+     "name": "street-light-beams",
+     "count": 17,
+     "triangles": 144
+    },
+    {
+     "name": "street-bins",
+     "count": 2,
+     "triangles": 182
+    },
+    {
+     "name": "street-bins-far",
+     "count": 8,
+     "triangles": 2
+    },
+    {
+     "name": "benches",
+     "count": 5,
+     "triangles": 164
+    },
+    {
+     "name": "benches-far",
+     "count": 6,
+     "triangles": 2
+    },
+    {
+     "name": "hydrants",
+     "count": 6,
+     "triangles": 164
+    },
+    {
+     "name": "hydrants-far",
+     "count": 8,
+     "triangles": 2
+    },
+    {
+     "name": "post-boxes",
+     "count": 1,
+     "triangles": 92
+    },
+    {
+     "name": "post-boxes-mid",
+     "count": 4,
+     "triangles": 70
+    },
+    {
+     "name": "post-boxes-far",
+     "count": 8,
+     "triangles": 2
+    },
+    {
+     "name": "phones",
+     "count": 5,
+     "triangles": 590
+    },
+    {
+     "name": "phones-mid",
+     "count": 4,
+     "triangles": 440
+    },
+    {
+     "name": "phones-far",
+     "count": 6,
+     "triangles": 2
+    },
+    {
+     "name": "drains",
+     "count": 7,
+     "triangles": 108
+    },
+    {
+     "name": "drains-far",
+     "count": 8,
+     "triangles": 2
+    },
+    {
+     "name": "tree-pits",
+     "count": 10,
+     "triangles": 90
+    },
+    {
+     "name": "tree-pits-far",
+     "count": 9,
+     "triangles": 2
+    },
+    {
+     "name": "street-trees-broadleaf",
+     "count": 3,
+     "triangles": 202
+    },
+    {
+     "name": "street-trees-broadleaf-cards",
+     "count": 3,
+     "triangles": 80
+    },
+    {
+     "name": "street-trees-broadleafTall",
+     "count": 8,
+     "triangles": 112
+    },
+    {
+     "name": "street-trees-broadleafTall-cards",
+     "count": 8,
+     "triangles": 68
+    },
+    {
+     "name": "street-trees-broadleafTall-far",
+     "count": 1,
+     "triangles": 2
+    },
+    {
+     "name": "street-trees-ipeYellow",
+     "count": 2,
+     "triangles": 132
+    },
+    {
+     "name": "street-trees-ipeYellow-cards",
+     "count": 2,
+     "triangles": 108
+    },
+    {
+     "name": "street-trees-ipeYellow-far",
+     "count": 1,
+     "triangles": 2
+    },
+    {
+     "name": "street-trees-ipePink",
+     "count": 4,
+     "triangles": 132
+    },
+    {
+     "name": "street-trees-ipePink-cards",
+     "count": 4,
+     "triangles": 108
+    },
+    {
+     "name": "street-trees-ipePink-far",
+     "count": 1,
+     "triangles": 2
+    },
+    {
+     "name": "street-furniture-far-cells",
+     "count": 19,
+     "triangles": 2
+    },
+    {
+     "name": "street-light-lamps-far-cells",
+     "count": 16,
+     "triangles": 2
+    },
+    {
+     "name": "street-light-pools-far-cells",
+     "count": 16,
+     "triangles": 28
+    },
+    {
+     "name": "street-light-beams-far-cells",
+     "count": 16,
+     "triangles": 144
+    },
+    {
+     "name": "street-furniture-far-cells",
+     "count": 2,
+     "triangles": 2
+    },
+    {
+     "name": "street-light-lamps-far-cells",
+     "count": 2,
+     "triangles": 2
+    },
+    {
+     "name": "street-light-pools-far-cells",
+     "count": 2,
+     "triangles": 28
+    },
+    {
+     "name": "street-light-beams-far-cells",
+     "count": 2,
+     "triangles": 144
+    },
+    {
+     "name": "street-furniture-far-cells",
+     "count": 2,
+     "triangles": 2
+    },
+    {
+     "name": "street-light-lamps-far-cells",
+     "count": 2,
+     "triangles": 2
+    },
+    {
+     "name": "street-light-pools-far-cells",
+     "count": 2,
+     "triangles": 28
+    },
+    {
+     "name": "street-light-beams-far-cells",
+     "count": 2,
+     "triangles": 144
+    },
+    {
+     "name": "street-lights-far-far-cells",
+     "count": 2,
+     "triangles": 2
+    },
+    {
+     "name": "benches-far-far-cells",
+     "count": 3,
+     "triangles": 2
+    },
+    {
+     "name": "post-boxes-far-far-cells",
+     "count": 2,
+     "triangles": 2
+    },
+    {
+     "name": "phones-far-far-cells",
+     "count": 2,
+     "triangles": 2
+    },
+    {
+     "name": "street-lights-far-far-cells",
+     "count": 2,
+     "triangles": 2
+    },
+    {
+     "name": "phones-far-far-cells",
+     "count": 2,
+     "triangles": 2
+    }
+   ]
+  },
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "mean": 0,
+  "crops": [
+   {
+    "label": "all at 8 m, 94.7 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "all at 20 m, 48.8 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "all at 27 m, 40.7 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "all at 64 m, 23.9 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "all at 110 m, 15.6 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "all at 150 m, 11.4 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "all at 200 m, 8.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "all at 480 m, 3.6 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "all at 850 m, 2.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "all at 1100 m, 1.5 px",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ }
+]

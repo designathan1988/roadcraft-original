@@ -1,0 +1,269 @@
+[
+ {
+  "label": "V0",
+  "lv": {
+   "cells": 36,
+   "chosenDetail": 0,
+   "chosenFacade": 9,
+   "chosenFar": 27,
+   "shownDetail": 0,
+   "shownFacade": 9,
+   "shownNone": 27,
+   "notLanded": 0,
+   "heldFar": 0,
+   "heldCoarse": 0,
+   "evictions": 0,
+   "massing": 0,
+   "levelsWaiting": 0,
+   "levelsWaitingInView": 0,
+   "basesWaiting": 0,
+   "scale": 1,
+   "budgetTriangles": 16000000,
+   "chosenTriangles": 801999,
+   "residentBytes": 18709122,
+   "detailBudgetBytes": 1073741824,
+   "roomBytes": 1073741824
+  },
+  "by": {
+   "mass": 18,
+   "tile": 9,
+   "detail": 9
+  },
+  "triangles": 1072146,
+  "calls": 213,
+  "camera": {
+   "x": 0,
+   "y": 0,
+   "zoom": 0.8695652173913043
+  },
+  "quality": null
+ },
+ {
+  "label": "V1",
+  "lv": {
+   "cells": 36,
+   "chosenDetail": 0,
+   "chosenFacade": 19,
+   "chosenFar": 17,
+   "shownDetail": 0,
+   "shownFacade": 19,
+   "shownNone": 17,
+   "notLanded": 0,
+   "heldFar": 0,
+   "heldCoarse": 0,
+   "evictions": 0,
+   "massing": 0,
+   "levelsWaiting": 0,
+   "levelsWaitingInView": 0,
+   "basesWaiting": 0,
+   "scale": 1,
+   "budgetTriangles": 16000000,
+   "chosenTriangles": 1784795,
+   "residentBytes": 44658936,
+   "detailBudgetBytes": 1073741824,
+   "roomBytes": 1073741824
+  },
+  "by": {
+   "detail": 19,
+   "mass": 17
+  },
+  "triangles": 2007533,
+  "calls": 278,
+  "camera": {
+   "x": -11.09364360661209,
+   "y": -16.37379935659294,
+   "zoom": 0.9902855507170624
+  },
+  "quality": null
+ },
+ {
+  "label": "V2",
+  "lv": {
+   "cells": 36,
+   "chosenDetail": 0,
+   "chosenFacade": 18,
+   "chosenFar": 18,
+   "shownDetail": 0,
+   "shownFacade": 18,
+   "shownNone": 18,
+   "notLanded": 0,
+   "heldFar": 0,
+   "heldCoarse": 0,
+   "evictions": 0,
+   "massing": 0,
+   "levelsWaiting": 0,
+   "levelsWaitingInView": 0,
+   "basesWaiting": 0,
+   "scale": 1,
+   "budgetTriangles": 16000000,
+   "chosenTriangles": 1844517,
+   "residentBytes": 44474002,
+   "detailBudgetBytes": 1073741824,
+   "roomBytes": 1073741824
+  },
+  "by": {
+   "detail": 18,
+   "mass": 18
+  },
+  "triangles": 2080416,
+  "calls": 287,
+  "camera": {
+   "x": -20.83492136983773,
+   "y": -30.75155775842518,
+   "zoom": 1.1277652927528443
+  },
+  "quality": null
+ },
+ {
+  "label": "V3",
+  "lv": {
+   "cells": 36,
+   "chosenDetail": 0,
+   "chosenFacade": 32,
+   "chosenFar": 4,
+   "shownDetail": 0,
+   "shownFacade": 32,
+   "shownNone": 4,
+   "notLanded": 0,
+   "heldFar": 0,
+   "heldCoarse": 0,
+   "evictions": 0,
+   "massing": 0,
+   "levelsWaiting": 0,
+   "levelsWaitingInView": 0,
+   "basesWaiting": 0,
+   "scale": 1,
+   "budgetTriangles": 16000000,
+   "chosenTriangles": 2831251,
+   "residentBytes": 68904080,
+   "detailBudgetBytes": 1073741824,
+   "roomBytes": 1073741824
+  },
+  "by": {
+   "detail": 32,
+   "mass": 4
+  },
+  "triangles": 3174914,
+  "calls": 366,
+  "camera": {
+   "x": -29.208414970576996,
+   "y": -43.51716867356049,
+   "zoom": 1.2843311251153404
+  },
+  "quality": null
+ },
+ {
+  "label": "V4",
+  "lv": {
+   "cells": 36,
+   "chosenDetail": 0,
+   "chosenFacade": 34,
+   "chosenFar": 2,
+   "shownDetail": 0,
+   "shownFacade": 34,
+   "shownNone": 2,
+   "notLanded": 0,
+   "heldFar": 0,
+   "heldCoarse": 0,
+   "evictions": 0,
+   "massing": 0,
+   "levelsWaiting": 0,
+   "levelsWaitingInView": 0,
+   "basesWaiting": 0,
+   "scale": 1,
+   "budgetTriangles": 16000000,
+   "chosenTriangles": 2894397,
+   "residentBytes": 69859990,
+   "detailBudgetBytes": 1073741824,
+   "roomBytes": 1073741824
+  },
+  "by": {
+   "detail": 34,
+   "mass": 2
+  },
+  "triangles": 3241510,
+  "calls": 369,
+  "camera": {
+   "x": -36.899532673197655,
+   "y": -54.46274161207134,
+   "zoom": 1.4626327388685973
+  },
+  "quality": null
+ },
+ {
+  "label": "V5",
+  "lv": {
+   "cells": 36,
+   "chosenDetail": 0,
+   "chosenFacade": 33,
+   "chosenFar": 3,
+   "shownDetail": 0,
+   "shownFacade": 33,
+   "shownNone": 3,
+   "notLanded": 0,
+   "heldFar": 0,
+   "heldCoarse": 0,
+   "evictions": 0,
+   "massing": 0,
+   "levelsWaiting": 0,
+   "levelsWaitingInView": 0,
+   "basesWaiting": 0,
+   "scale": 1,
+   "budgetTriangles": 16000000,
+   "chosenTriangles": 3027863,
+   "residentBytes": 69708342,
+   "detailBudgetBytes": 1073741824,
+   "roomBytes": 1073741824
+  },
+  "by": {
+   "detail": 33,
+   "mass": 3
+  },
+  "triangles": 3318437,
+  "calls": 363,
+  "camera": {
+   "x": -43.40061045130682,
+   "y": -64.27084633382339,
+   "zoom": 1.66568767740339
+  },
+  "quality": null
+ },
+ {
+  "label": "V1-audit",
+  "lv": {
+   "cells": 36,
+   "chosenDetail": 0,
+   "chosenFacade": 14,
+   "chosenFar": 22,
+   "shownDetail": 0,
+   "shownFacade": 14,
+   "shownNone": 22,
+   "notLanded": 0,
+   "heldFar": 0,
+   "heldCoarse": 0,
+   "evictions": 0,
+   "massing": 0,
+   "levelsWaiting": 0,
+   "levelsWaitingInView": 0,
+   "basesWaiting": 0,
+   "scale": 1,
+   "budgetTriangles": 16000000,
+   "chosenTriangles": 1569471,
+   "residentBytes": 36352940,
+   "detailBudgetBytes": 1073741824,
+   "roomBytes": 1073741824
+  },
+  "by": {
+   "detail": 14,
+   "mass": 22
+  },
+  "triangles": 1792544,
+  "calls": 263,
+  "camera": {
+   "x": -27.055269640466463,
+   "y": 3.9866371994404517,
+   "zoom": 1.127765292752844
+  },
+  "quality": null
+ }
+]

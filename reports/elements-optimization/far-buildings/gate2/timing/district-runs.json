@@ -1,0 +1,899 @@
+{
+ "method": "scripts/far-building-sheet.mjs shoot --no-towers (or the full sheet): 200 warm passes, 30 samples of 10 passes each per EXT_disjoint_timer_query, ms a pass; a run counts as quiet when its empty frame (floor and sky only, the control) is at its quiet floor (p10 <= 0.320 ms)",
+ "gpu": "ANGLE (NVIDIA GeForce RTX 3060, D3D11)",
+ "runs": [
+  {
+   "run": "sheet-before",
+   "code": "before (tile 3 m)",
+   "quiet": true,
+   "frames": {
+    "district-cell-V0": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.413,
+     "p10": 0.413,
+     "p90": 0.428,
+     "samples": 30
+    },
+    "district-tile-V0": {
+     "triangles": 18432,
+     "draws": 1,
+     "median": 0.393,
+     "p10": 0.392,
+     "p90": 0.394,
+     "samples": 30
+    },
+    "district-cell-V5": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.455,
+     "p10": 0.454,
+     "p90": 0.494,
+     "samples": 30
+    },
+    "district-L1-V5": {
+     "triangles": 982506,
+     "draws": 28,
+     "median": 1.813,
+     "p10": 1.771,
+     "p90": 2.668,
+     "samples": 30
+    },
+    "empty-V0": {
+     "triangles": 0,
+     "draws": 0,
+     "median": 0.318,
+     "p10": 0.317,
+     "p90": 0.322,
+     "samples": 30
+    }
+   }
+  },
+  {
+   "run": "sheet-a",
+   "code": "a (tile 3 m)",
+   "quiet": true,
+   "frames": {
+    "district-cell-V0": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.437,
+     "p10": 0.437,
+     "p90": 0.917,
+     "samples": 30
+    },
+    "district-tile-V0": {
+     "triangles": 18432,
+     "draws": 1,
+     "median": 0.407,
+     "p10": 0.407,
+     "p90": 0.414,
+     "samples": 30
+    },
+    "district-cell-V5": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.527,
+     "p10": 0.512,
+     "p90": 0.536,
+     "samples": 30
+    },
+    "district-L1-V5": {
+     "triangles": 982506,
+     "draws": 28,
+     "median": 1.798,
+     "p10": 1.775,
+     "p90": 1.803,
+     "samples": 30
+    },
+    "empty-V0": {
+     "triangles": 0,
+     "draws": 0,
+     "median": 0.318,
+     "p10": 0.317,
+     "p90": 0.318,
+     "samples": 30
+    }
+   }
+  },
+  {
+   "run": "sheet-b",
+   "code": "b (tile 3 m)",
+   "quiet": true,
+   "frames": {
+    "district-cell-V0": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.432,
+     "p10": 0.431,
+     "p90": 0.887,
+     "samples": 30
+    },
+    "district-tile-V0": {
+     "triangles": 18432,
+     "draws": 1,
+     "median": 0.409,
+     "p10": 0.409,
+     "p90": 0.41,
+     "samples": 30
+    },
+    "district-cell-V5": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.514,
+     "p10": 0.499,
+     "p90": 0.562,
+     "samples": 30
+    },
+    "district-L1-V5": {
+     "triangles": 982506,
+     "draws": 28,
+     "median": 1.782,
+     "p10": 1.758,
+     "p90": 1.808,
+     "samples": 30
+    },
+    "empty-V0": {
+     "triangles": 0,
+     "draws": 0,
+     "median": 0.317,
+     "p10": 0.317,
+     "p90": 0.318,
+     "samples": 30
+    }
+   }
+  },
+  {
+   "run": "sheet-b-tile2.9",
+   "code": "b + tile 2.9 m",
+   "quiet": true,
+   "frames": {
+    "district-cell-V0": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.46,
+     "p10": 0.46,
+     "p90": 0.655,
+     "samples": 30
+    },
+    "district-tile-V0": {
+     "triangles": 19872,
+     "draws": 1,
+     "median": 0.461,
+     "p10": 0.437,
+     "p90": 1.776,
+     "samples": 30
+    },
+    "district-cell-V5": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 1.354,
+     "p10": 0.489,
+     "p90": 1.806,
+     "samples": 30
+    },
+    "district-L1-V5": {
+     "triangles": 982506,
+     "draws": 28,
+     "median": 1.816,
+     "p10": 1.79,
+     "p90": 1.831,
+     "samples": 30
+    },
+    "empty-V0": {
+     "triangles": 0,
+     "draws": 0,
+     "median": 0.317,
+     "p10": 0.317,
+     "p90": 0.318,
+     "samples": 30
+    }
+   }
+  },
+  {
+   "run": "sheet-b-tile1.4",
+   "code": "b + tile 1.4 m (final)",
+   "quiet": false,
+   "frames": {
+    "district-cell-V0": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.867,
+     "p10": 0.783,
+     "p90": 1.431,
+     "samples": 30
+    },
+    "district-tile-V0": {
+     "triangles": 26760,
+     "draws": 1,
+     "median": 0.653,
+     "p10": 0.602,
+     "p90": 0.706,
+     "samples": 30
+    },
+    "district-cell-V5": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.757,
+     "p10": 0.745,
+     "p90": 0.806,
+     "samples": 30
+    },
+    "district-L1-V5": {
+     "triangles": 982506,
+     "draws": 28,
+     "median": 2.436,
+     "p10": 2.263,
+     "p90": 2.671,
+     "samples": 30
+    },
+    "empty-V0": {
+     "triangles": 0,
+     "draws": 0,
+     "median": 0.384,
+     "p10": 0.358,
+     "p90": 0.704,
+     "samples": 30
+    }
+   }
+  },
+  {
+   "run": "time-b-1",
+   "code": "b + tile 1.4 m (final)",
+   "quiet": false,
+   "frames": {
+    "district-cell-V0": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.699,
+     "p10": 0.459,
+     "p90": 1.134,
+     "samples": 30
+    },
+    "district-tile-V0": {
+     "triangles": 26760,
+     "draws": 1,
+     "median": 0.563,
+     "p10": 0.488,
+     "p90": 1.223,
+     "samples": 30
+    },
+    "district-cell-V5": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 1.16,
+     "p10": 0.633,
+     "p90": 1.603,
+     "samples": 30
+    },
+    "district-L1-V5": {
+     "triangles": 982506,
+     "draws": 28,
+     "median": 4.532,
+     "p10": 4.469,
+     "p90": 4.595,
+     "samples": 8
+    },
+    "empty-V0": {
+     "triangles": 0,
+     "draws": 0,
+     "median": 0.473,
+     "p10": 0.343,
+     "p90": 0.931,
+     "samples": 30
+    }
+   }
+  },
+  {
+   "run": "time-b-2",
+   "code": "b + tile 1.4 m (final)",
+   "quiet": false,
+   "frames": {
+    "district-cell-V0": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.737,
+     "p10": 0.709,
+     "p90": 0.949,
+     "samples": 30
+    },
+    "district-tile-V0": {
+     "triangles": 26760,
+     "draws": 1,
+     "median": 0.716,
+     "p10": 0.663,
+     "p90": 1.059,
+     "samples": 30
+    },
+    "district-cell-V5": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.783,
+     "p10": 0.725,
+     "p90": 1.032,
+     "samples": 30
+    },
+    "district-L1-V5": {
+     "triangles": 982506,
+     "draws": 28,
+     "median": 2.531,
+     "p10": 2.364,
+     "p90": 2.85,
+     "samples": 30
+    },
+    "empty-V0": {
+     "triangles": 0,
+     "draws": 0,
+     "median": 0.4,
+     "p10": 0.386,
+     "p90": 0.442,
+     "samples": 30
+    }
+   }
+  },
+  {
+   "run": "time-b-3",
+   "code": "b + tile 1.4 m (final)",
+   "quiet": false,
+   "frames": {
+    "district-cell-V0": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.531,
+     "p10": 0.499,
+     "p90": 0.697,
+     "samples": 30
+    },
+    "district-tile-V0": {
+     "triangles": 26760,
+     "draws": 1,
+     "median": 0.495,
+     "p10": 0.481,
+     "p90": 0.535,
+     "samples": 30
+    },
+    "district-cell-V5": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.596,
+     "p10": 0.564,
+     "p90": 0.638,
+     "samples": 30
+    },
+    "district-L1-V5": {
+     "triangles": 982506,
+     "draws": 28,
+     "median": 2.267,
+     "p10": 2.201,
+     "p90": 2.297,
+     "samples": 22
+    },
+    "empty-V0": {
+     "triangles": 0,
+     "draws": 0,
+     "median": 0.448,
+     "p10": 0.421,
+     "p90": 0.485,
+     "samples": 30
+    }
+   }
+  },
+  {
+   "run": "time-b-4",
+   "code": "b + tile 1.4 m (final)",
+   "quiet": false,
+   "frames": {
+    "district-cell-V0": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.979,
+     "p10": 0.746,
+     "p90": 1.705,
+     "samples": 30
+    },
+    "district-tile-V0": {
+     "triangles": 26760,
+     "draws": 1,
+     "median": 0.906,
+     "p10": 0.731,
+     "p90": 1.132,
+     "samples": 30
+    },
+    "district-cell-V5": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.884,
+     "p10": 0.693,
+     "p90": 1.055,
+     "samples": 30
+    },
+    "district-L1-V5": {
+     "triangles": 982506,
+     "draws": 28,
+     "median": 2.714,
+     "p10": 2.608,
+     "p90": 2.814,
+     "samples": 30
+    },
+    "empty-V0": {
+     "triangles": 0,
+     "draws": 0,
+     "median": 0.416,
+     "p10": 0.384,
+     "p90": 0.634,
+     "samples": 30
+    }
+   }
+  },
+  {
+   "run": "time-b-5",
+   "code": "b + tile 1.4 m (final)",
+   "quiet": false,
+   "frames": {
+    "district-cell-V0": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.852,
+     "p10": 0.648,
+     "p90": 1.526,
+     "samples": 30
+    },
+    "district-tile-V0": {
+     "triangles": 26760,
+     "draws": 1,
+     "median": 0.661,
+     "p10": 0.612,
+     "p90": 1.327,
+     "samples": 30
+    },
+    "district-cell-V5": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.736,
+     "p10": 0.693,
+     "p90": 1.035,
+     "samples": 30
+    },
+    "district-L1-V5": {
+     "triangles": 982506,
+     "draws": 28,
+     "median": 2.734,
+     "p10": 2.631,
+     "p90": 2.984,
+     "samples": 30
+    },
+    "empty-V0": {
+     "triangles": 0,
+     "draws": 0,
+     "median": 0.42,
+     "p10": 0.397,
+     "p90": 0.451,
+     "samples": 30
+    }
+   }
+  },
+  {
+   "run": "time-b-6",
+   "code": "b + tile 1.4 m (final)",
+   "quiet": false,
+   "frames": {
+    "district-cell-V0": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.684,
+     "p10": 0.651,
+     "p90": 0.714,
+     "samples": 30
+    },
+    "district-tile-V0": {
+     "triangles": 26760,
+     "draws": 1,
+     "median": 0.737,
+     "p10": 0.696,
+     "p90": 1.283,
+     "samples": 30
+    },
+    "district-cell-V5": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.961,
+     "p10": 0.731,
+     "p90": 1.149,
+     "samples": 30
+    },
+    "district-L1-V5": {
+     "triangles": 982506,
+     "draws": 28,
+     "median": 2.889,
+     "p10": 2.776,
+     "p90": 2.977,
+     "samples": 30
+    },
+    "empty-V0": {
+     "triangles": 0,
+     "draws": 0,
+     "median": 0.421,
+     "p10": 0.4,
+     "p90": 0.48,
+     "samples": 30
+    }
+   }
+  },
+  {
+   "run": "time-b-7",
+   "code": "b + tile 1.4 m (final)",
+   "quiet": false,
+   "frames": {
+    "district-cell-V0": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.953,
+     "p10": 0.722,
+     "p90": 1.315,
+     "samples": 30
+    },
+    "district-tile-V0": {
+     "triangles": 26760,
+     "draws": 1,
+     "median": 0.954,
+     "p10": 0.709,
+     "p90": 1.15,
+     "samples": 30
+    },
+    "district-cell-V5": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.771,
+     "p10": 0.733,
+     "p90": 1.621,
+     "samples": 30
+    },
+    "district-L1-V5": {
+     "triangles": 982506,
+     "draws": 28,
+     "median": 2.869,
+     "p10": 2.591,
+     "p90": 2.954,
+     "samples": 30
+    },
+    "empty-V0": {
+     "triangles": 0,
+     "draws": 0,
+     "median": 0.397,
+     "p10": 0.386,
+     "p90": 0.429,
+     "samples": 30
+    }
+   }
+  },
+  {
+   "run": "time-head-1",
+   "code": "before (tile 3 m)",
+   "quiet": false,
+   "frames": {
+    "district-cell-V0": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.561,
+     "p10": 0.541,
+     "p90": 1.433,
+     "samples": 30
+    },
+    "district-tile-V0": {
+     "triangles": 18432,
+     "draws": 1,
+     "median": 0.595,
+     "p10": 0.529,
+     "p90": 1.361,
+     "samples": 30
+    },
+    "district-cell-V5": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 1.251,
+     "p10": 0.676,
+     "p90": 1.902,
+     "samples": 30
+    },
+    "district-L1-V5": {
+     "triangles": 982506,
+     "draws": 28,
+     "median": 7.791,
+     "p10": 6.431,
+     "p90": 8.368,
+     "samples": 27
+    },
+    "empty-V0": {
+     "triangles": 0,
+     "draws": 0,
+     "median": 0.404,
+     "p10": 0.386,
+     "p90": 0.458,
+     "samples": 30
+    }
+   }
+  },
+  {
+   "run": "time-head-2",
+   "code": "before (tile 3 m)",
+   "quiet": false,
+   "frames": {
+    "district-cell-V0": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.493,
+     "p10": 0.427,
+     "p90": 1.201,
+     "samples": 30
+    },
+    "district-tile-V0": {
+     "triangles": 18432,
+     "draws": 1,
+     "median": 0.469,
+     "p10": 0.405,
+     "p90": 1.538,
+     "samples": 30
+    },
+    "district-cell-V5": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 1.163,
+     "p10": 0.534,
+     "p90": 1.523,
+     "samples": 30
+    },
+    "district-L1-V5": {
+     "triangles": 982506,
+     "draws": 28,
+     "median": 4.517,
+     "p10": 4.462,
+     "p90": 4.623,
+     "samples": 8
+    },
+    "empty-V0": {
+     "triangles": 0,
+     "draws": 0,
+     "median": 0.404,
+     "p10": 0.34,
+     "p90": 0.947,
+     "samples": 30
+    }
+   }
+  },
+  {
+   "run": "time-head-3",
+   "code": "before (tile 3 m)",
+   "quiet": false,
+   "frames": {
+    "district-cell-V0": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.765,
+     "p10": 0.704,
+     "p90": 0.93,
+     "samples": 30
+    },
+    "district-tile-V0": {
+     "triangles": 18432,
+     "draws": 1,
+     "median": 0.654,
+     "p10": 0.626,
+     "p90": 0.967,
+     "samples": 30
+    },
+    "district-cell-V5": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.741,
+     "p10": 0.702,
+     "p90": 1.066,
+     "samples": 30
+    },
+    "district-L1-V5": {
+     "triangles": 982506,
+     "draws": 28,
+     "median": 2.729,
+     "p10": 2.643,
+     "p90": 2.817,
+     "samples": 30
+    },
+    "empty-V0": {
+     "triangles": 0,
+     "draws": 0,
+     "median": 0.402,
+     "p10": 0.383,
+     "p90": 0.444,
+     "samples": 30
+    }
+   }
+  },
+  {
+   "run": "time-head-4",
+   "code": "before (tile 3 m)",
+   "quiet": false,
+   "frames": {
+    "district-cell-V0": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.787,
+     "p10": 0.743,
+     "p90": 1.127,
+     "samples": 30
+    },
+    "district-tile-V0": {
+     "triangles": 18432,
+     "draws": 1,
+     "median": 0.729,
+     "p10": 0.698,
+     "p90": 0.992,
+     "samples": 30
+    },
+    "district-cell-V5": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.829,
+     "p10": 0.731,
+     "p90": 1.131,
+     "samples": 30
+    },
+    "district-L1-V5": {
+     "triangles": 982506,
+     "draws": 28,
+     "median": 2.707,
+     "p10": 2.617,
+     "p90": 2.795,
+     "samples": 30
+    },
+    "empty-V0": {
+     "triangles": 0,
+     "draws": 0,
+     "median": 0.399,
+     "p10": 0.386,
+     "p90": 0.418,
+     "samples": 30
+    }
+   }
+  },
+  {
+   "run": "time-head-5",
+   "code": "before (tile 3 m)",
+   "quiet": false,
+   "frames": {
+    "district-cell-V0": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.781,
+     "p10": 0.708,
+     "p90": 1.189,
+     "samples": 30
+    },
+    "district-tile-V0": {
+     "triangles": 18432,
+     "draws": 1,
+     "median": 0.713,
+     "p10": 0.669,
+     "p90": 1.175,
+     "samples": 30
+    },
+    "district-cell-V5": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.747,
+     "p10": 0.696,
+     "p90": 1.05,
+     "samples": 30
+    },
+    "district-L1-V5": {
+     "triangles": 982506,
+     "draws": 28,
+     "median": 2.647,
+     "p10": 2.578,
+     "p90": 2.75,
+     "samples": 30
+    },
+    "empty-V0": {
+     "triangles": 0,
+     "draws": 0,
+     "median": 0.4,
+     "p10": 0.377,
+     "p90": 0.449,
+     "samples": 30
+    }
+   }
+  },
+  {
+   "run": "time-head-6",
+   "code": "before (tile 3 m)",
+   "quiet": false,
+   "frames": {
+    "district-cell-V0": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.725,
+     "p10": 0.672,
+     "p90": 0.93,
+     "samples": 30
+    },
+    "district-tile-V0": {
+     "triangles": 18432,
+     "draws": 1,
+     "median": 0.658,
+     "p10": 0.637,
+     "p90": 0.86,
+     "samples": 30
+    },
+    "district-cell-V5": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.731,
+     "p10": 0.684,
+     "p90": 0.985,
+     "samples": 30
+    },
+    "district-L1-V5": {
+     "triangles": 982506,
+     "draws": 28,
+     "median": 2.691,
+     "p10": 2.6,
+     "p90": 3.082,
+     "samples": 30
+    },
+    "empty-V0": {
+     "triangles": 0,
+     "draws": 0,
+     "median": 0.407,
+     "p10": 0.381,
+     "p90": 0.613,
+     "samples": 30
+    }
+   }
+  },
+  {
+   "run": "time-head-7",
+   "code": "before (tile 3 m)",
+   "quiet": false,
+   "frames": {
+    "district-cell-V0": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.593,
+     "p10": 0.538,
+     "p90": 0.936,
+     "samples": 30
+    },
+    "district-tile-V0": {
+     "triangles": 18432,
+     "draws": 1,
+     "median": 0.54,
+     "p10": 0.517,
+     "p90": 0.589,
+     "samples": 30
+    },
+    "district-cell-V5": {
+     "triangles": 31712,
+     "draws": 1,
+     "median": 0.699,
+     "p10": 0.58,
+     "p90": 0.727,
+     "samples": 30
+    },
+    "district-L1-V5": {
+     "triangles": 982506,
+     "draws": 28,
+     "median": 2.895,
+     "p10": 2.57,
+     "p90": 3.091,
+     "samples": 30
+    },
+    "empty-V0": {
+     "triangles": 0,
+     "draws": 0,
+     "median": 0.412,
+     "p10": 0.39,
+     "p90": 0.428,
+     "samples": 30
+    }
+   }
+  }
+ ]
+}

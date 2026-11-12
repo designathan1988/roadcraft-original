@@ -1,0 +1,1203 @@
+[
+ {
+  "name": "grass",
+  "before": {
+   "triangles": 36038,
+   "drawCalls": 5,
+   "meshes": [
+    {
+     "name": "element-grass",
+     "count": 84,
+     "triangles": 155
+    },
+    {
+     "name": "element-grass",
+     "count": 43,
+     "triangles": 494
+    },
+    {
+     "name": "element-grass-far",
+     "count": 506,
+     "triangles": 2
+    },
+    {
+     "name": "element-grass-far",
+     "count": 381,
+     "triangles": 2
+    }
+   ]
+  },
+  "after": {
+   "triangles": 36038,
+   "drawCalls": 5,
+   "meshes": [
+    {
+     "name": "element-grass",
+     "count": 84,
+     "triangles": 155
+    },
+    {
+     "name": "element-grass",
+     "count": 43,
+     "triangles": 494
+    },
+    {
+     "name": "element-grass-far",
+     "count": 506,
+     "triangles": 2
+    },
+    {
+     "name": "element-grass-far",
+     "count": 381,
+     "triangles": 2
+    }
+   ]
+  },
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "mean": 0,
+  "crops": [
+   {
+    "label": "grass at 23.4 m, 89.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "grass at 12.5 m, 47.5 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "grass at 46.7 m, 39.7 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "grass at 41.3 m, 24.5 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "grass at 59.3 m, 16.2 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "grass at 67.3 m, 12.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "grass at 67.5 m, 8.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "grass at 229.0 m, 4.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "grass at 710.2 m, 2.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "grass at 754.4 m, 1.5 px",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ },
+ {
+  "name": "tallGrass",
+  "before": {
+   "triangles": 54966,
+   "drawCalls": 5,
+   "meshes": [
+    {
+     "name": "element-tallGrass",
+     "count": 76,
+     "triangles": 326
+    },
+    {
+     "name": "element-tallGrass",
+     "count": 47,
+     "triangles": 622
+    },
+    {
+     "name": "element-tallGrass-far",
+     "count": 218,
+     "triangles": 2
+    },
+    {
+     "name": "element-tallGrass-far",
+     "count": 259,
+     "triangles": 2
+    }
+   ]
+  },
+  "after": {
+   "triangles": 54966,
+   "drawCalls": 5,
+   "meshes": [
+    {
+     "name": "element-tallGrass",
+     "count": 76,
+     "triangles": 326
+    },
+    {
+     "name": "element-tallGrass",
+     "count": 47,
+     "triangles": 622
+    },
+    {
+     "name": "element-tallGrass-far",
+     "count": 218,
+     "triangles": 2
+    },
+    {
+     "name": "element-tallGrass-far",
+     "count": 259,
+     "triangles": 2
+    }
+   ]
+  },
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "mean": 0,
+  "crops": [
+   {
+    "label": "tallGrass at 22.1 m, 105.6 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "tallGrass at 28.5 m, 48.4 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "tallGrass at 54.5 m, 36.2 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "tallGrass at 144.2 m, 23.3 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "tallGrass at 150.9 m, 16.2 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "tallGrass at 299.6 m, 12.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "tallGrass at 448.4 m, 7.9 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "tallGrass at 388.7 m, 4.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "tallGrass at 756.6 m, 2.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "tallGrass at 651.2 m, 1.5 px",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ },
+ {
+  "name": "fern",
+  "before": {
+   "triangles": 5392,
+   "drawCalls": 3,
+   "meshes": [
+    {
+     "name": "element-fern",
+     "count": 18,
+     "triangles": 288
+    },
+    {
+     "name": "element-fern-far",
+     "count": 103,
+     "triangles": 2
+    }
+   ]
+  },
+  "after": {
+   "triangles": 5392,
+   "drawCalls": 3,
+   "meshes": [
+    {
+     "name": "element-fern",
+     "count": 18,
+     "triangles": 288
+    },
+    {
+     "name": "element-fern-far",
+     "count": 103,
+     "triangles": 2
+    }
+   ]
+  },
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "mean": 0,
+  "crops": [
+   {
+    "label": "fern at 27.4 m, 92.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "fern at 77.3 m, 30.9 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "fern at 86.8 m, 27.9 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "fern at 160.5 m, 16.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "fern at 220.4 m, 11.8 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "fern at 270.9 m, 8.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "fern at 370.9 m, 4.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "fern at 720.2 m, 2.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "fern at 779.0 m, 1.8 px",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ },
+ {
+  "name": "clover",
+  "before": {
+   "triangles": 25704,
+   "drawCalls": 5,
+   "meshes": [
+    {
+     "name": "element-clover",
+     "count": 25,
+     "triangles": 379
+    },
+    {
+     "name": "element-clover",
+     "count": 25,
+     "triangles": 615
+    },
+    {
+     "name": "element-clover-far",
+     "count": 219,
+     "triangles": 2
+    },
+    {
+     "name": "element-clover-far",
+     "count": 207,
+     "triangles": 2
+    }
+   ]
+  },
+  "after": {
+   "triangles": 25704,
+   "drawCalls": 5,
+   "meshes": [
+    {
+     "name": "element-clover",
+     "count": 25,
+     "triangles": 379
+    },
+    {
+     "name": "element-clover",
+     "count": 25,
+     "triangles": 615
+    },
+    {
+     "name": "element-clover-far",
+     "count": 219,
+     "triangles": 2
+    },
+    {
+     "name": "element-clover-far",
+     "count": 207,
+     "triangles": 2
+    }
+   ]
+  },
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "mean": 0,
+  "crops": [
+   {
+    "label": "clover at 11.5 m, 62.8 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "clover at 9.4 m, 48.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "clover at 19.5 m, 42.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "clover at 35.9 m, 23.5 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "clover at 32.8 m, 15.5 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "clover at 38.8 m, 12.2 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "clover at 76.1 m, 8.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "clover at 195.6 m, 4.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "clover at 283.8 m, 2.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "clover at 552.0 m, 1.5 px",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ },
+ {
+  "name": "flowers",
+  "before": {
+   "triangles": 45914,
+   "drawCalls": 7,
+   "meshes": [
+    {
+     "name": "element-flowers",
+     "count": 22,
+     "triangles": 710
+    },
+    {
+     "name": "element-flowers",
+     "count": 22,
+     "triangles": 45
+    },
+    {
+     "name": "element-flowers",
+     "count": 17,
+     "triangles": 490
+    },
+    {
+     "name": "element-flowers",
+     "count": 17,
+     "triangles": 1200
+    },
+    {
+     "name": "element-flowers-far",
+     "count": 158,
+     "triangles": 2
+    },
+    {
+     "name": "element-flowers-far",
+     "count": 128,
+     "triangles": 2
+    }
+   ]
+  },
+  "after": {
+   "triangles": 45914,
+   "drawCalls": 7,
+   "meshes": [
+    {
+     "name": "element-flowers",
+     "count": 22,
+     "triangles": 710
+    },
+    {
+     "name": "element-flowers",
+     "count": 22,
+     "triangles": 45
+    },
+    {
+     "name": "element-flowers",
+     "count": 17,
+     "triangles": 490
+    },
+    {
+     "name": "element-flowers",
+     "count": 17,
+     "triangles": 1200
+    },
+    {
+     "name": "element-flowers-far",
+     "count": 158,
+     "triangles": 2
+    },
+    {
+     "name": "element-flowers-far",
+     "count": 128,
+     "triangles": 2
+    }
+   ]
+  },
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "mean": 0,
+  "crops": [
+   {
+    "label": "flowers at 10.0 m, 70.5 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "flowers at 20.9 m, 45.7 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "flowers at 41.8 m, 35.3 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "flowers at 68.4 m, 22.3 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "flowers at 91.5 m, 14.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "flowers at 114.1 m, 13.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "flowers at 120.2 m, 7.3 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "flowers at 334.1 m, 4.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "flowers at 667.6 m, 2.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "flowers at 754.8 m, 1.5 px",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ },
+ {
+  "name": "scrub",
+  "before": {
+   "triangles": 9538,
+   "drawCalls": 5,
+   "meshes": [
+    {
+     "name": "element-scrub",
+     "count": 14,
+     "triangles": 120
+    },
+    {
+     "name": "element-scrub",
+     "count": 21,
+     "triangles": 360
+    },
+    {
+     "name": "element-scrub-far",
+     "count": 71,
+     "triangles": 2
+    },
+    {
+     "name": "element-scrub-far",
+     "count": 77,
+     "triangles": 2
+    }
+   ]
+  },
+  "after": {
+   "triangles": 9538,
+   "drawCalls": 5,
+   "meshes": [
+    {
+     "name": "element-scrub",
+     "count": 14,
+     "triangles": 120
+    },
+    {
+     "name": "element-scrub",
+     "count": 21,
+     "triangles": 360
+    },
+    {
+     "name": "element-scrub-far",
+     "count": 71,
+     "triangles": 2
+    },
+    {
+     "name": "element-scrub-far",
+     "count": 77,
+     "triangles": 2
+    }
+   ]
+  },
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "mean": 0,
+  "crops": [
+   {
+    "label": "scrub at 26.0 m, 43.5 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "scrub at 86.2 m, 39.2 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "scrub at 84.5 m, 23.9 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "scrub at 140.6 m, 15.6 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "scrub at 237.0 m, 12.2 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "scrub at 456.2 m, 7.9 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "scrub at 323.6 m, 4.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "scrub at 560.6 m, 2.2 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "scrub at 717.4 m, 1.7 px",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ },
+ {
+  "name": "mushrooms",
+  "before": {
+   "triangles": 14726,
+   "drawCalls": 5,
+   "meshes": [
+    {
+     "name": "element-mushrooms",
+     "count": 2,
+     "triangles": 880
+    },
+    {
+     "name": "element-mushrooms",
+     "count": 4,
+     "triangles": 3216
+    },
+    {
+     "name": "element-mushrooms-far",
+     "count": 25,
+     "triangles": 2
+    },
+    {
+     "name": "element-mushrooms-far",
+     "count": 25,
+     "triangles": 2
+    }
+   ]
+  },
+  "after": {
+   "triangles": 14726,
+   "drawCalls": 5,
+   "meshes": [
+    {
+     "name": "element-mushrooms",
+     "count": 2,
+     "triangles": 880
+    },
+    {
+     "name": "element-mushrooms",
+     "count": 4,
+     "triangles": 3216
+    },
+    {
+     "name": "element-mushrooms-far",
+     "count": 25,
+     "triangles": 2
+    },
+    {
+     "name": "element-mushrooms-far",
+     "count": 25,
+     "triangles": 2
+    }
+   ]
+  },
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "mean": 0,
+  "crops": [
+   {
+    "label": "mushrooms at 30.6 m, 16.8 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "mushrooms at 62.8 m, 9.7 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "mushrooms at 75.1 m, 8.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "mushrooms at 115.0 m, 3.6 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "mushrooms at 247.1 m, 2.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "mushrooms at 406.5 m, 1.5 px",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ },
+ {
+  "name": "stones",
+  "before": {
+   "triangles": 5418,
+   "drawCalls": 7,
+   "meshes": [
+    {
+     "name": "element-stones",
+     "count": 2,
+     "triangles": 342
+    },
+    {
+     "name": "element-stones",
+     "count": 4,
+     "triangles": 244
+    },
+    {
+     "name": "element-stones",
+     "count": 7,
+     "triangles": 522
+    },
+    {
+     "name": "element-stones-far",
+     "count": 15,
+     "triangles": 2
+    },
+    {
+     "name": "element-stones-far",
+     "count": 16,
+     "triangles": 2
+    },
+    {
+     "name": "element-stones-far",
+     "count": 20,
+     "triangles": 2
+    }
+   ]
+  },
+  "after": {
+   "triangles": 5418,
+   "drawCalls": 7,
+   "meshes": [
+    {
+     "name": "element-stones",
+     "count": 2,
+     "triangles": 342
+    },
+    {
+     "name": "element-stones",
+     "count": 4,
+     "triangles": 244
+    },
+    {
+     "name": "element-stones",
+     "count": 7,
+     "triangles": 522
+    },
+    {
+     "name": "element-stones-far",
+     "count": 15,
+     "triangles": 2
+    },
+    {
+     "name": "element-stones-far",
+     "count": 16,
+     "triangles": 2
+    },
+    {
+     "name": "element-stones-far",
+     "count": 20,
+     "triangles": 2
+    }
+   ]
+  },
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "mean": 0,
+  "crops": [
+   {
+    "label": "stones at 12.0 m, 243.5 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "stones at 72.3 m, 30.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "stones at 142.8 m, 21.7 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "stones at 222.2 m, 13.3 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "stones at 228.1 m, 11.3 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "stones at 195.4 m, 7.6 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "stones at 736.6 m, 4.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "stones at 752.0 m, 2.5 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "stones at 779.6 m, 1.5 px",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ },
+ {
+  "name": "pebbles",
+  "before": {
+   "triangles": 6578,
+   "drawCalls": 7,
+   "meshes": [
+    {
+     "name": "element-pebbles",
+     "count": 20,
+     "triangles": 136
+    },
+    {
+     "name": "element-pebbles",
+     "count": 12,
+     "triangles": 114
+    },
+    {
+     "name": "element-pebbles",
+     "count": 14,
+     "triangles": 128
+    },
+    {
+     "name": "element-pebbles-far",
+     "count": 106,
+     "triangles": 2
+    },
+    {
+     "name": "element-pebbles-far",
+     "count": 135,
+     "triangles": 2
+    },
+    {
+     "name": "element-pebbles-far",
+     "count": 107,
+     "triangles": 2
+    }
+   ]
+  },
+  "after": {
+   "triangles": 6578,
+   "drawCalls": 7,
+   "meshes": [
+    {
+     "name": "element-pebbles",
+     "count": 20,
+     "triangles": 136
+    },
+    {
+     "name": "element-pebbles",
+     "count": 12,
+     "triangles": 114
+    },
+    {
+     "name": "element-pebbles",
+     "count": 14,
+     "triangles": 128
+    },
+    {
+     "name": "element-pebbles-far",
+     "count": 106,
+     "triangles": 2
+    },
+    {
+     "name": "element-pebbles-far",
+     "count": 135,
+     "triangles": 2
+    },
+    {
+     "name": "element-pebbles-far",
+     "count": 107,
+     "triangles": 2
+    }
+   ]
+  },
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "mean": 0,
+  "crops": [
+   {
+    "label": "pebbles at 5.5 m, 109.5 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "pebbles at 14.8 m, 49.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "pebbles at 12.9 m, 40.8 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "pebbles at 22.6 m, 25.7 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "pebbles at 38.9 m, 15.7 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "pebbles at 50.0 m, 12.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "pebbles at 69.0 m, 8.2 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "pebbles at 102.9 m, 4.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "pebbles at 288.5 m, 2.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "pebbles at 270.6 m, 1.5 px",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ },
+ {
+  "name": "gravel",
+  "before": {
+   "triangles": 5912,
+   "drawCalls": 7,
+   "meshes": [
+    {
+     "name": "element-gravel",
+     "count": 20,
+     "triangles": 104
+    },
+    {
+     "name": "element-gravel",
+     "count": 16,
+     "triangles": 78
+    },
+    {
+     "name": "element-gravel",
+     "count": 29,
+     "triangles": 52
+    },
+    {
+     "name": "element-gravel-far",
+     "count": 170,
+     "triangles": 2
+    },
+    {
+     "name": "element-gravel-far",
+     "count": 179,
+     "triangles": 2
+    },
+    {
+     "name": "element-gravel-far",
+     "count": 188,
+     "triangles": 2
+    }
+   ]
+  },
+  "after": {
+   "triangles": 5912,
+   "drawCalls": 7,
+   "meshes": [
+    {
+     "name": "element-gravel",
+     "count": 20,
+     "triangles": 104
+    },
+    {
+     "name": "element-gravel",
+     "count": 16,
+     "triangles": 78
+    },
+    {
+     "name": "element-gravel",
+     "count": 29,
+     "triangles": 52
+    },
+    {
+     "name": "element-gravel-far",
+     "count": 170,
+     "triangles": 2
+    },
+    {
+     "name": "element-gravel-far",
+     "count": 179,
+     "triangles": 2
+    },
+    {
+     "name": "element-gravel-far",
+     "count": 188,
+     "triangles": 2
+    }
+   ]
+  },
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "mean": 0,
+  "crops": [
+   {
+    "label": "gravel at 5.4 m, 44.8 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "gravel at 6.8 m, 38.7 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "gravel at 8.5 m, 21.7 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "gravel at 11.4 m, 16.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "gravel at 11.5 m, 12.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "gravel at 22.0 m, 7.9 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "gravel at 55.3 m, 3.9 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "gravel at 96.6 m, 2.0 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "gravel at 183.8 m, 1.5 px",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ },
+ {
+  "name": "leaves",
+  "before": {
+   "triangles": 368,
+   "drawCalls": 2,
+   "meshes": [
+    {
+     "name": "element-leaves",
+     "count": 183,
+     "triangles": 2
+    }
+   ]
+  },
+  "after": {
+   "triangles": 368,
+   "drawCalls": 2,
+   "meshes": [
+    {
+     "name": "element-leaves",
+     "count": 183,
+     "triangles": 2
+    }
+   ]
+  },
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "mean": 0,
+  "crops": [
+   {
+    "label": "leaves at 26.0 m, 67.5 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "leaves at 51.6 m, 41.4 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "leaves at 86.2 m, 41.2 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "leaves at 132.4 m, 22.9 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "leaves at 136.8 m, 16.1 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "leaves at 226.7 m, 11.8 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "leaves at 332.1 m, 7.9 px",
+    "changed8": 0,
+    "largest": 0
+   },
+   {
+    "label": "leaves at 610.9 m, 4.0 px",
+    "changed8": 0,
+    "largest": 0
+   }
+  ]
+ }
+]

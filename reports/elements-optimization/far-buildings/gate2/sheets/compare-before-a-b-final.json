@@ -1,0 +1,12782 @@
+[
+ {
+  "distance": 350,
+  "tower": "glass",
+  "level": "L0",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   3578,
+   3578
+  ],
+  "draws": [
+   8,
+   8
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      64,
+      80,
+      75
+     ],
+     "pixels": 20798
+    },
+    "z": {
+     "rgb": [
+      62,
+      76,
+      72
+     ],
+     "pixels": 33442
+    },
+    "roof": {
+     "rgb": [
+      133,
+      135,
+      134
+     ],
+     "pixels": 17090
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      64,
+      80,
+      75
+     ],
+     "pixels": 20798
+    },
+    "z": {
+     "rgb": [
+      62,
+      76,
+      72
+     ],
+     "pixels": 33442
+    },
+    "roof": {
+     "rgb": [
+      133,
+      135,
+      134
+     ],
+     "pixels": 17090
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "glass",
+  "level": "L0",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   3578,
+   3578
+  ],
+  "draws": [
+   8,
+   8
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      64,
+      80,
+      75
+     ],
+     "pixels": 20798
+    },
+    "z": {
+     "rgb": [
+      62,
+      76,
+      72
+     ],
+     "pixels": 33442
+    },
+    "roof": {
+     "rgb": [
+      133,
+      135,
+      134
+     ],
+     "pixels": 17090
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      64,
+      80,
+      75
+     ],
+     "pixels": 20798
+    },
+    "z": {
+     "rgb": [
+      62,
+      76,
+      72
+     ],
+     "pixels": 33442
+    },
+    "roof": {
+     "rgb": [
+      133,
+      135,
+      134
+     ],
+     "pixels": 17090
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "glass",
+  "level": "L0",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   3578,
+   3578
+  ],
+  "draws": [
+   8,
+   8
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      64,
+      80,
+      75
+     ],
+     "pixels": 20798
+    },
+    "z": {
+     "rgb": [
+      62,
+      76,
+      72
+     ],
+     "pixels": 33442
+    },
+    "roof": {
+     "rgb": [
+      133,
+      135,
+      134
+     ],
+     "pixels": 17090
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      64,
+      80,
+      75
+     ],
+     "pixels": 20798
+    },
+    "z": {
+     "rgb": [
+      62,
+      76,
+      72
+     ],
+     "pixels": 33442
+    },
+    "roof": {
+     "rgb": [
+      133,
+      135,
+      134
+     ],
+     "pixels": 17090
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "glass",
+  "level": "L1",
+  "versus": "a - before",
+  "changed8": 0.0029540939035867407,
+  "changed32": 0,
+  "largest": 10,
+  "triangles": [
+   1428,
+   1428
+  ],
+  "draws": [
+   4,
+   4
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      78,
+      86,
+      84
+     ],
+     "pixels": 20787
+    },
+    "z": {
+     "rgb": [
+      76,
+      84,
+      82
+     ],
+     "pixels": 33511
+    },
+    "roof": {
+     "rgb": [
+      135,
+      137,
+      136
+     ],
+     "pixels": 17123
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      78,
+      86,
+      84
+     ],
+     "pixels": 20787
+    },
+    "z": {
+     "rgb": [
+      76,
+      84,
+      82
+     ],
+     "pixels": 33511
+    },
+    "roof": {
+     "rgb": [
+      135,
+      137,
+      136
+     ],
+     "pixels": 17123
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "glass",
+  "level": "L1",
+  "versus": "b - before",
+  "changed8": 0.04918261354526125,
+  "changed32": 0,
+  "largest": 12,
+  "triangles": [
+   1428,
+   1428
+  ],
+  "draws": [
+   4,
+   4
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      78,
+      86,
+      84
+     ],
+     "pixels": 20787
+    },
+    "z": {
+     "rgb": [
+      76,
+      84,
+      82
+     ],
+     "pixels": 33511
+    },
+    "roof": {
+     "rgb": [
+      135,
+      137,
+      136
+     ],
+     "pixels": 17123
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      78,
+      85,
+      83
+     ],
+     "pixels": 20787
+    },
+    "z": {
+     "rgb": [
+      76,
+      83,
+      82
+     ],
+     "pixels": 33511
+    },
+    "roof": {
+     "rgb": [
+      135,
+      137,
+      136
+     ],
+     "pixels": 17123
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "glass",
+  "level": "L1",
+  "versus": "final - before",
+  "changed8": 0.04918261354526125,
+  "changed32": 0,
+  "largest": 12,
+  "triangles": [
+   1428,
+   1428
+  ],
+  "draws": [
+   4,
+   4
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      78,
+      86,
+      84
+     ],
+     "pixels": 20787
+    },
+    "z": {
+     "rgb": [
+      76,
+      84,
+      82
+     ],
+     "pixels": 33511
+    },
+    "roof": {
+     "rgb": [
+      135,
+      137,
+      136
+     ],
+     "pixels": 17123
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      78,
+      85,
+      83
+     ],
+     "pixels": 20787
+    },
+    "z": {
+     "rgb": [
+      76,
+      83,
+      82
+     ],
+     "pixels": 33511
+    },
+    "roof": {
+     "rgb": [
+      135,
+      137,
+      136
+     ],
+     "pixels": 17123
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "glass",
+  "level": "cell",
+  "versus": "a - before",
+  "changed8": 0.4480114329533968,
+  "changed32": 0.4445344905712991,
+  "largest": 82,
+  "triangles": [
+   114,
+   114
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      85,
+      91,
+      92
+     ],
+     "pixels": 20994
+    },
+    "z": {
+     "rgb": [
+      83,
+      89,
+      91
+     ],
+     "pixels": 33817
+    },
+    "roof": {
+     "rgb": [
+      127,
+      131,
+      136
+     ],
+     "pixels": 16428
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      26,
+      34,
+      30
+     ],
+     "pixels": 20994
+    },
+    "z": {
+     "rgb": [
+      22,
+      30,
+      27
+     ],
+     "pixels": 33817
+    },
+    "roof": {
+     "rgb": [
+      126,
+      131,
+      136
+     ],
+     "pixels": 16428
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "glass",
+  "level": "cell",
+  "versus": "b - before",
+  "changed8": 0.19653874307225766,
+  "changed32": 0.12472550454878176,
+  "largest": 84,
+  "triangles": [
+   114,
+   114
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      85,
+      91,
+      92
+     ],
+     "pixels": 20994
+    },
+    "z": {
+     "rgb": [
+      83,
+      89,
+      91
+     ],
+     "pixels": 33817
+    },
+    "roof": {
+     "rgb": [
+      127,
+      131,
+      136
+     ],
+     "pixels": 16428
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      72,
+      78,
+      79
+     ],
+     "pixels": 20994
+    },
+    "z": {
+     "rgb": [
+      70,
+      76,
+      77
+     ],
+     "pixels": 33817
+    },
+    "roof": {
+     "rgb": [
+      127,
+      131,
+      136
+     ],
+     "pixels": 16428
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "glass",
+  "level": "cell",
+  "versus": "final - before",
+  "changed8": 0.19653874307225766,
+  "changed32": 0.12472550454878176,
+  "largest": 84,
+  "triangles": [
+   114,
+   114
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      85,
+      91,
+      92
+     ],
+     "pixels": 20994
+    },
+    "z": {
+     "rgb": [
+      83,
+      89,
+      91
+     ],
+     "pixels": 33817
+    },
+    "roof": {
+     "rgb": [
+      127,
+      131,
+      136
+     ],
+     "pixels": 16428
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      72,
+      78,
+      79
+     ],
+     "pixels": 20994
+    },
+    "z": {
+     "rgb": [
+      70,
+      76,
+      77
+     ],
+     "pixels": 33817
+    },
+    "roof": {
+     "rgb": [
+      127,
+      131,
+      136
+     ],
+     "pixels": 16428
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "glass",
+  "level": "tile",
+  "versus": "a - before",
+  "changed8": 0.4480114329533968,
+  "changed32": 0.4445344905712991,
+  "largest": 82,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      85,
+      91,
+      93
+     ],
+     "pixels": 19724
+    },
+    "z": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 31871
+    },
+    "roof": {
+     "rgb": [
+      132,
+      136,
+      139
+     ],
+     "pixels": 18539
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      19,
+      27,
+      22
+     ],
+     "pixels": 19724
+    },
+    "z": {
+     "rgb": [
+      19,
+      26,
+      22
+     ],
+     "pixels": 31871
+    },
+    "roof": {
+     "rgb": [
+      132,
+      136,
+      139
+     ],
+     "pixels": 18539
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "glass",
+  "level": "tile",
+  "versus": "b - before",
+  "changed8": 0.19653874307225766,
+  "changed32": 0.12472550454878176,
+  "largest": 84,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      85,
+      91,
+      93
+     ],
+     "pixels": 19724
+    },
+    "z": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 31871
+    },
+    "roof": {
+     "rgb": [
+      132,
+      136,
+      139
+     ],
+     "pixels": 18539
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      72,
+      78,
+      78
+     ],
+     "pixels": 19724
+    },
+    "z": {
+     "rgb": [
+      71,
+      76,
+      77
+     ],
+     "pixels": 31871
+    },
+    "roof": {
+     "rgb": [
+      132,
+      136,
+      139
+     ],
+     "pixels": 18539
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "glass",
+  "level": "tile",
+  "versus": "final - before",
+  "changed8": 0.27088779671651153,
+  "changed32": 0.1627365889365262,
+  "largest": 135,
+  "triangles": [
+   40,
+   114
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      85,
+      91,
+      93
+     ],
+     "pixels": 19724
+    },
+    "z": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 31871
+    },
+    "roof": {
+     "rgb": [
+      132,
+      136,
+      139
+     ],
+     "pixels": 18539
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      72,
+      78,
+      79
+     ],
+     "pixels": 20994
+    },
+    "z": {
+     "rgb": [
+      70,
+      76,
+      77
+     ],
+     "pixels": 33817
+    },
+    "roof": {
+     "rgb": [
+      127,
+      131,
+      136
+     ],
+     "pixels": 16428
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "glass",
+  "level": "plate",
+  "versus": "a - before",
+  "changed8": 0.4480114329533968,
+  "changed32": 0.4445344905712991,
+  "largest": 82,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      85,
+      91,
+      93
+     ],
+     "pixels": 19724
+    },
+    "z": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 31871
+    },
+    "roof": {
+     "rgb": [
+      132,
+      136,
+      139
+     ],
+     "pixels": 18539
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      19,
+      27,
+      22
+     ],
+     "pixels": 19724
+    },
+    "z": {
+     "rgb": [
+      19,
+      26,
+      22
+     ],
+     "pixels": 31871
+    },
+    "roof": {
+     "rgb": [
+      132,
+      136,
+      139
+     ],
+     "pixels": 18539
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "glass",
+  "level": "plate",
+  "versus": "b - before",
+  "changed8": 0.19653874307225766,
+  "changed32": 0.12472550454878176,
+  "largest": 84,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      85,
+      91,
+      93
+     ],
+     "pixels": 19724
+    },
+    "z": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 31871
+    },
+    "roof": {
+     "rgb": [
+      132,
+      136,
+      139
+     ],
+     "pixels": 18539
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      72,
+      78,
+      78
+     ],
+     "pixels": 19724
+    },
+    "z": {
+     "rgb": [
+      71,
+      76,
+      77
+     ],
+     "pixels": 31871
+    },
+    "roof": {
+     "rgb": [
+      132,
+      136,
+      139
+     ],
+     "pixels": 18539
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "glass",
+  "level": "plate",
+  "versus": "final - before",
+  "changed8": 0.19653874307225766,
+  "changed32": 0.12472550454878176,
+  "largest": 84,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      85,
+      91,
+      93
+     ],
+     "pixels": 19724
+    },
+    "z": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 31871
+    },
+    "roof": {
+     "rgb": [
+      132,
+      136,
+      139
+     ],
+     "pixels": 18539
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      72,
+      78,
+      78
+     ],
+     "pixels": 19724
+    },
+    "z": {
+     "rgb": [
+      71,
+      76,
+      77
+     ],
+     "pixels": 31871
+    },
+    "roof": {
+     "rgb": [
+      132,
+      136,
+      139
+     ],
+     "pixels": 18539
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "glass",
+  "level": "base",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   20,
+   20
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      13,
+      17,
+      22
+     ],
+     "pixels": 19722
+    },
+    "z": {
+     "rgb": [
+      12,
+      16,
+      21
+     ],
+     "pixels": 31873
+    },
+    "roof": {
+     "rgb": [
+      134,
+      134,
+      142
+     ],
+     "pixels": 18540
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      13,
+      17,
+      22
+     ],
+     "pixels": 19722
+    },
+    "z": {
+     "rgb": [
+      12,
+      16,
+      21
+     ],
+     "pixels": 31873
+    },
+    "roof": {
+     "rgb": [
+      134,
+      134,
+      142
+     ],
+     "pixels": 18540
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "glass",
+  "level": "base",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   20,
+   20
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      13,
+      17,
+      22
+     ],
+     "pixels": 19722
+    },
+    "z": {
+     "rgb": [
+      12,
+      16,
+      21
+     ],
+     "pixels": 31873
+    },
+    "roof": {
+     "rgb": [
+      134,
+      134,
+      142
+     ],
+     "pixels": 18540
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      13,
+      17,
+      22
+     ],
+     "pixels": 19722
+    },
+    "z": {
+     "rgb": [
+      12,
+      16,
+      21
+     ],
+     "pixels": 31873
+    },
+    "roof": {
+     "rgb": [
+      134,
+      134,
+      142
+     ],
+     "pixels": 18540
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "glass",
+  "level": "base",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   20,
+   20
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      13,
+      17,
+      22
+     ],
+     "pixels": 19722
+    },
+    "z": {
+     "rgb": [
+      12,
+      16,
+      21
+     ],
+     "pixels": 31873
+    },
+    "roof": {
+     "rgb": [
+      134,
+      134,
+      142
+     ],
+     "pixels": 18540
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      13,
+      17,
+      22
+     ],
+     "pixels": 19722
+    },
+    "z": {
+     "rgb": [
+      12,
+      16,
+      21
+     ],
+     "pixels": 31873
+    },
+    "roof": {
+     "rgb": [
+      134,
+      134,
+      142
+     ],
+     "pixels": 18540
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "masonry",
+  "level": "L0",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   45650,
+   45650
+  ],
+  "draws": [
+   21,
+   21
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      118,
+      103,
+      87
+     ],
+     "pixels": 12557
+    },
+    "z": {
+     "rgb": [
+      112,
+      100,
+      85
+     ],
+     "pixels": 33732
+    },
+    "roof": {
+     "rgb": [
+      94,
+      91,
+      86
+     ],
+     "pixels": 15063
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      118,
+      103,
+      87
+     ],
+     "pixels": 12557
+    },
+    "z": {
+     "rgb": [
+      112,
+      100,
+      85
+     ],
+     "pixels": 33732
+    },
+    "roof": {
+     "rgb": [
+      94,
+      91,
+      86
+     ],
+     "pixels": 15063
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "masonry",
+  "level": "L0",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   45650,
+   45650
+  ],
+  "draws": [
+   21,
+   21
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      118,
+      103,
+      87
+     ],
+     "pixels": 12557
+    },
+    "z": {
+     "rgb": [
+      112,
+      100,
+      85
+     ],
+     "pixels": 33732
+    },
+    "roof": {
+     "rgb": [
+      94,
+      91,
+      86
+     ],
+     "pixels": 15063
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      118,
+      103,
+      87
+     ],
+     "pixels": 12557
+    },
+    "z": {
+     "rgb": [
+      112,
+      100,
+      85
+     ],
+     "pixels": 33732
+    },
+    "roof": {
+     "rgb": [
+      94,
+      91,
+      86
+     ],
+     "pixels": 15063
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "masonry",
+  "level": "L0",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   45650,
+   45650
+  ],
+  "draws": [
+   21,
+   21
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      118,
+      103,
+      87
+     ],
+     "pixels": 12557
+    },
+    "z": {
+     "rgb": [
+      112,
+      100,
+      85
+     ],
+     "pixels": 33732
+    },
+    "roof": {
+     "rgb": [
+      94,
+      91,
+      86
+     ],
+     "pixels": 15063
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      118,
+      103,
+      87
+     ],
+     "pixels": 12557
+    },
+    "z": {
+     "rgb": [
+      112,
+      100,
+      85
+     ],
+     "pixels": 33732
+    },
+    "roof": {
+     "rgb": [
+      94,
+      91,
+      86
+     ],
+     "pixels": 15063
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "masonry",
+  "level": "L1",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   18563,
+   18563
+  ],
+  "draws": [
+   16,
+   16
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      98
+     ],
+     "pixels": 12653
+    },
+    "z": {
+     "rgb": [
+      113,
+      104,
+      92
+     ],
+     "pixels": 34467
+    },
+    "roof": {
+     "rgb": [
+      93,
+      90,
+      85
+     ],
+     "pixels": 14692
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      98
+     ],
+     "pixels": 12653
+    },
+    "z": {
+     "rgb": [
+      113,
+      104,
+      92
+     ],
+     "pixels": 34467
+    },
+    "roof": {
+     "rgb": [
+      93,
+      90,
+      85
+     ],
+     "pixels": 14692
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "masonry",
+  "level": "L1",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   18563,
+   18563
+  ],
+  "draws": [
+   16,
+   16
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      98
+     ],
+     "pixels": 12653
+    },
+    "z": {
+     "rgb": [
+      113,
+      104,
+      92
+     ],
+     "pixels": 34467
+    },
+    "roof": {
+     "rgb": [
+      93,
+      90,
+      85
+     ],
+     "pixels": 14692
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      98
+     ],
+     "pixels": 12653
+    },
+    "z": {
+     "rgb": [
+      113,
+      104,
+      92
+     ],
+     "pixels": 34467
+    },
+    "roof": {
+     "rgb": [
+      93,
+      90,
+      85
+     ],
+     "pixels": 14692
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "masonry",
+  "level": "L1",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   18563,
+   18563
+  ],
+  "draws": [
+   16,
+   16
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      98
+     ],
+     "pixels": 12653
+    },
+    "z": {
+     "rgb": [
+      113,
+      104,
+      92
+     ],
+     "pixels": 34467
+    },
+    "roof": {
+     "rgb": [
+      93,
+      90,
+      85
+     ],
+     "pixels": 14692
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      98
+     ],
+     "pixels": 12653
+    },
+    "z": {
+     "rgb": [
+      113,
+      104,
+      92
+     ],
+     "pixels": 34467
+    },
+    "roof": {
+     "rgb": [
+      93,
+      90,
+      85
+     ],
+     "pixels": 14692
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "masonry",
+  "level": "cell",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   152,
+   152
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      96,
+      93,
+      88
+     ],
+     "pixels": 13158
+    },
+    "z": {
+     "rgb": [
+      90,
+      89,
+      83
+     ],
+     "pixels": 35571
+    },
+    "roof": {
+     "rgb": [
+      95,
+      94,
+      94
+     ],
+     "pixels": 13189
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      96,
+      93,
+      88
+     ],
+     "pixels": 13158
+    },
+    "z": {
+     "rgb": [
+      90,
+      89,
+      83
+     ],
+     "pixels": 35571
+    },
+    "roof": {
+     "rgb": [
+      95,
+      94,
+      94
+     ],
+     "pixels": 13189
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "masonry",
+  "level": "cell",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   152,
+   152
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      96,
+      93,
+      88
+     ],
+     "pixels": 13158
+    },
+    "z": {
+     "rgb": [
+      90,
+      89,
+      83
+     ],
+     "pixels": 35571
+    },
+    "roof": {
+     "rgb": [
+      95,
+      94,
+      94
+     ],
+     "pixels": 13189
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      96,
+      93,
+      88
+     ],
+     "pixels": 13158
+    },
+    "z": {
+     "rgb": [
+      90,
+      89,
+      83
+     ],
+     "pixels": 35571
+    },
+    "roof": {
+     "rgb": [
+      95,
+      94,
+      94
+     ],
+     "pixels": 13189
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "masonry",
+  "level": "cell",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   152,
+   152
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      96,
+      93,
+      88
+     ],
+     "pixels": 13158
+    },
+    "z": {
+     "rgb": [
+      90,
+      89,
+      83
+     ],
+     "pixels": 35571
+    },
+    "roof": {
+     "rgb": [
+      95,
+      94,
+      94
+     ],
+     "pixels": 13189
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      96,
+      93,
+      88
+     ],
+     "pixels": 13158
+    },
+    "z": {
+     "rgb": [
+      90,
+      89,
+      83
+     ],
+     "pixels": 35571
+    },
+    "roof": {
+     "rgb": [
+      95,
+      94,
+      94
+     ],
+     "pixels": 13189
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "masonry",
+  "level": "tile",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      96,
+      94,
+      88
+     ],
+     "pixels": 12586
+    },
+    "z": {
+     "rgb": [
+      91,
+      89,
+      85
+     ],
+     "pixels": 34034
+    },
+    "roof": {
+     "rgb": [
+      93,
+      93,
+      92
+     ],
+     "pixels": 14513
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      96,
+      94,
+      88
+     ],
+     "pixels": 12586
+    },
+    "z": {
+     "rgb": [
+      91,
+      89,
+      85
+     ],
+     "pixels": 34034
+    },
+    "roof": {
+     "rgb": [
+      93,
+      93,
+      92
+     ],
+     "pixels": 14513
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "masonry",
+  "level": "tile",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      96,
+      94,
+      88
+     ],
+     "pixels": 12586
+    },
+    "z": {
+     "rgb": [
+      91,
+      89,
+      85
+     ],
+     "pixels": 34034
+    },
+    "roof": {
+     "rgb": [
+      93,
+      93,
+      92
+     ],
+     "pixels": 14513
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      96,
+      94,
+      88
+     ],
+     "pixels": 12586
+    },
+    "z": {
+     "rgb": [
+      91,
+      89,
+      85
+     ],
+     "pixels": 34034
+    },
+    "roof": {
+     "rgb": [
+      93,
+      93,
+      92
+     ],
+     "pixels": 14513
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "masonry",
+  "level": "tile",
+  "versus": "final - before",
+  "changed8": 0.0449617261291911,
+  "changed32": 0.02151394422310757,
+  "largest": 120,
+  "triangles": [
+   94,
+   152
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      96,
+      94,
+      88
+     ],
+     "pixels": 12586
+    },
+    "z": {
+     "rgb": [
+      91,
+      89,
+      85
+     ],
+     "pixels": 34034
+    },
+    "roof": {
+     "rgb": [
+      93,
+      93,
+      92
+     ],
+     "pixels": 14513
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      96,
+      93,
+      88
+     ],
+     "pixels": 13158
+    },
+    "z": {
+     "rgb": [
+      90,
+      89,
+      83
+     ],
+     "pixels": 35571
+    },
+    "roof": {
+     "rgb": [
+      95,
+      94,
+      94
+     ],
+     "pixels": 13189
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "masonry",
+  "level": "plate",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      96,
+      94,
+      88
+     ],
+     "pixels": 12586
+    },
+    "z": {
+     "rgb": [
+      91,
+      89,
+      85
+     ],
+     "pixels": 34034
+    },
+    "roof": {
+     "rgb": [
+      93,
+      93,
+      92
+     ],
+     "pixels": 14513
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      96,
+      94,
+      88
+     ],
+     "pixels": 12586
+    },
+    "z": {
+     "rgb": [
+      91,
+      89,
+      85
+     ],
+     "pixels": 34034
+    },
+    "roof": {
+     "rgb": [
+      93,
+      93,
+      92
+     ],
+     "pixels": 14513
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "masonry",
+  "level": "plate",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      96,
+      94,
+      88
+     ],
+     "pixels": 12586
+    },
+    "z": {
+     "rgb": [
+      91,
+      89,
+      85
+     ],
+     "pixels": 34034
+    },
+    "roof": {
+     "rgb": [
+      93,
+      93,
+      92
+     ],
+     "pixels": 14513
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      96,
+      94,
+      88
+     ],
+     "pixels": 12586
+    },
+    "z": {
+     "rgb": [
+      91,
+      89,
+      85
+     ],
+     "pixels": 34034
+    },
+    "roof": {
+     "rgb": [
+      93,
+      93,
+      92
+     ],
+     "pixels": 14513
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "masonry",
+  "level": "plate",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      96,
+      94,
+      88
+     ],
+     "pixels": 12586
+    },
+    "z": {
+     "rgb": [
+      91,
+      89,
+      85
+     ],
+     "pixels": 34034
+    },
+    "roof": {
+     "rgb": [
+      93,
+      93,
+      92
+     ],
+     "pixels": 14513
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      96,
+      94,
+      88
+     ],
+     "pixels": 12586
+    },
+    "z": {
+     "rgb": [
+      91,
+      89,
+      85
+     ],
+     "pixels": 34034
+    },
+    "roof": {
+     "rgb": [
+      93,
+      93,
+      92
+     ],
+     "pixels": 14513
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "masonry",
+  "level": "base",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   54,
+   54
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 12582
+    },
+    "z": {
+     "rgb": [
+      76,
+      62,
+      49
+     ],
+     "pixels": 34029
+    },
+    "roof": {
+     "rgb": [
+      93,
+      94,
+      91
+     ],
+     "pixels": 14505
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 12582
+    },
+    "z": {
+     "rgb": [
+      76,
+      62,
+      49
+     ],
+     "pixels": 34029
+    },
+    "roof": {
+     "rgb": [
+      93,
+      94,
+      91
+     ],
+     "pixels": 14505
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "masonry",
+  "level": "base",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   54,
+   54
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 12582
+    },
+    "z": {
+     "rgb": [
+      76,
+      62,
+      49
+     ],
+     "pixels": 34029
+    },
+    "roof": {
+     "rgb": [
+      93,
+      94,
+      91
+     ],
+     "pixels": 14505
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 12582
+    },
+    "z": {
+     "rgb": [
+      76,
+      62,
+      49
+     ],
+     "pixels": 34029
+    },
+    "roof": {
+     "rgb": [
+      93,
+      94,
+      91
+     ],
+     "pixels": 14505
+    }
+   }
+  ]
+ },
+ {
+  "distance": 350,
+  "tower": "masonry",
+  "level": "base",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   54,
+   54
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 12582
+    },
+    "z": {
+     "rgb": [
+      76,
+      62,
+      49
+     ],
+     "pixels": 34029
+    },
+    "roof": {
+     "rgb": [
+      93,
+      94,
+      91
+     ],
+     "pixels": 14505
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 12582
+    },
+    "z": {
+     "rgb": [
+      76,
+      62,
+      49
+     ],
+     "pixels": 34029
+    },
+    "roof": {
+     "rgb": [
+      93,
+      94,
+      91
+     ],
+     "pixels": 14505
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "glass",
+  "level": "L0",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   3576,
+   3576
+  ],
+  "draws": [
+   7,
+   7
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      64,
+      80,
+      78
+     ],
+     "pixels": 3123
+    },
+    "z": {
+     "rgb": [
+      63,
+      77,
+      76
+     ],
+     "pixels": 5084
+    },
+    "roof": {
+     "rgb": [
+      134,
+      135,
+      133
+     ],
+     "pixels": 2383
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      64,
+      80,
+      78
+     ],
+     "pixels": 3123
+    },
+    "z": {
+     "rgb": [
+      63,
+      77,
+      76
+     ],
+     "pixels": 5084
+    },
+    "roof": {
+     "rgb": [
+      134,
+      135,
+      133
+     ],
+     "pixels": 2383
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "glass",
+  "level": "L0",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   3576,
+   3576
+  ],
+  "draws": [
+   7,
+   7
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      64,
+      80,
+      78
+     ],
+     "pixels": 3123
+    },
+    "z": {
+     "rgb": [
+      63,
+      77,
+      76
+     ],
+     "pixels": 5084
+    },
+    "roof": {
+     "rgb": [
+      134,
+      135,
+      133
+     ],
+     "pixels": 2383
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      64,
+      80,
+      78
+     ],
+     "pixels": 3123
+    },
+    "z": {
+     "rgb": [
+      63,
+      77,
+      76
+     ],
+     "pixels": 5084
+    },
+    "roof": {
+     "rgb": [
+      134,
+      135,
+      133
+     ],
+     "pixels": 2383
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "glass",
+  "level": "L0",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   3576,
+   3576
+  ],
+  "draws": [
+   7,
+   7
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      64,
+      80,
+      78
+     ],
+     "pixels": 3123
+    },
+    "z": {
+     "rgb": [
+      63,
+      77,
+      76
+     ],
+     "pixels": 5084
+    },
+    "roof": {
+     "rgb": [
+      134,
+      135,
+      133
+     ],
+     "pixels": 2383
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      64,
+      80,
+      78
+     ],
+     "pixels": 3123
+    },
+    "z": {
+     "rgb": [
+      63,
+      77,
+      76
+     ],
+     "pixels": 5084
+    },
+    "roof": {
+     "rgb": [
+      134,
+      135,
+      133
+     ],
+     "pixels": 2383
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "glass",
+  "level": "L1",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 4,
+  "triangles": [
+   1428,
+   1428
+  ],
+  "draws": [
+   4,
+   4
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      75,
+      83,
+      81
+     ],
+     "pixels": 3114
+    },
+    "z": {
+     "rgb": [
+      75,
+      82,
+      81
+     ],
+     "pixels": 5102
+    },
+    "roof": {
+     "rgb": [
+      136,
+      138,
+      136
+     ],
+     "pixels": 2386
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      75,
+      82,
+      81
+     ],
+     "pixels": 3114
+    },
+    "z": {
+     "rgb": [
+      75,
+      82,
+      81
+     ],
+     "pixels": 5102
+    },
+    "roof": {
+     "rgb": [
+      136,
+      138,
+      136
+     ],
+     "pixels": 2386
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "glass",
+  "level": "L1",
+  "versus": "b - before",
+  "changed8": 0.000053504547886570356,
+  "changed32": 0,
+  "largest": 9,
+  "triangles": [
+   1428,
+   1428
+  ],
+  "draws": [
+   4,
+   4
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      75,
+      83,
+      81
+     ],
+     "pixels": 3114
+    },
+    "z": {
+     "rgb": [
+      75,
+      82,
+      81
+     ],
+     "pixels": 5102
+    },
+    "roof": {
+     "rgb": [
+      136,
+      138,
+      136
+     ],
+     "pixels": 2386
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      74,
+      81,
+      80
+     ],
+     "pixels": 3114
+    },
+    "z": {
+     "rgb": [
+      74,
+      81,
+      80
+     ],
+     "pixels": 5102
+    },
+    "roof": {
+     "rgb": [
+      136,
+      138,
+      136
+     ],
+     "pixels": 2386
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "glass",
+  "level": "L1",
+  "versus": "final - before",
+  "changed8": 0.000053504547886570356,
+  "changed32": 0,
+  "largest": 9,
+  "triangles": [
+   1428,
+   1428
+  ],
+  "draws": [
+   4,
+   4
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      75,
+      83,
+      81
+     ],
+     "pixels": 3114
+    },
+    "z": {
+     "rgb": [
+      75,
+      82,
+      81
+     ],
+     "pixels": 5102
+    },
+    "roof": {
+     "rgb": [
+      136,
+      138,
+      136
+     ],
+     "pixels": 2386
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      74,
+      81,
+      80
+     ],
+     "pixels": 3114
+    },
+    "z": {
+     "rgb": [
+      74,
+      81,
+      80
+     ],
+     "pixels": 5102
+    },
+    "roof": {
+     "rgb": [
+      136,
+      138,
+      136
+     ],
+     "pixels": 2386
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "glass",
+  "level": "cell",
+  "versus": "a - before",
+  "changed8": 0.4252541466024612,
+  "changed32": 0.42006420545746387,
+  "largest": 80,
+  "triangles": [
+   114,
+   114
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 3170
+    },
+    "z": {
+     "rgb": [
+      83,
+      89,
+      91
+     ],
+     "pixels": 5129
+    },
+    "roof": {
+     "rgb": [
+      130,
+      134,
+      138
+     ],
+     "pixels": 2309
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      24,
+      32,
+      29
+     ],
+     "pixels": 3170
+    },
+    "z": {
+     "rgb": [
+      22,
+      30,
+      27
+     ],
+     "pixels": 5129
+    },
+    "roof": {
+     "rgb": [
+      130,
+      134,
+      138
+     ],
+     "pixels": 2309
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "glass",
+  "level": "cell",
+  "versus": "b - before",
+  "changed8": 0.264258962011771,
+  "changed32": 0.10278223649010165,
+  "largest": 71,
+  "triangles": [
+   114,
+   114
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 3170
+    },
+    "z": {
+     "rgb": [
+      83,
+      89,
+      91
+     ],
+     "pixels": 5129
+    },
+    "roof": {
+     "rgb": [
+      130,
+      134,
+      138
+     ],
+     "pixels": 2309
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      70,
+      76,
+      77
+     ],
+     "pixels": 3170
+    },
+    "z": {
+     "rgb": [
+      69,
+      75,
+      75
+     ],
+     "pixels": 5129
+    },
+    "roof": {
+     "rgb": [
+      130,
+      134,
+      138
+     ],
+     "pixels": 2309
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "glass",
+  "level": "cell",
+  "versus": "final - before",
+  "changed8": 0.264258962011771,
+  "changed32": 0.10278223649010165,
+  "largest": 71,
+  "triangles": [
+   114,
+   114
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 3170
+    },
+    "z": {
+     "rgb": [
+      83,
+      89,
+      91
+     ],
+     "pixels": 5129
+    },
+    "roof": {
+     "rgb": [
+      130,
+      134,
+      138
+     ],
+     "pixels": 2309
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      70,
+      76,
+      77
+     ],
+     "pixels": 3170
+    },
+    "z": {
+     "rgb": [
+      69,
+      75,
+      75
+     ],
+     "pixels": 5129
+    },
+    "roof": {
+     "rgb": [
+      130,
+      134,
+      138
+     ],
+     "pixels": 2309
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "glass",
+  "level": "tile",
+  "versus": "a - before",
+  "changed8": 0.4252541466024612,
+  "changed32": 0.42006420545746387,
+  "largest": 80,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 2999
+    },
+    "z": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 4892
+    },
+    "roof": {
+     "rgb": [
+      132,
+      135,
+      139
+     ],
+     "pixels": 2609
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      18,
+      26,
+      21
+     ],
+     "pixels": 2999
+    },
+    "z": {
+     "rgb": [
+      20,
+      27,
+      24
+     ],
+     "pixels": 4892
+    },
+    "roof": {
+     "rgb": [
+      131,
+      135,
+      139
+     ],
+     "pixels": 2609
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "glass",
+  "level": "tile",
+  "versus": "b - before",
+  "changed8": 0.2642054574638844,
+  "changed32": 0.10278223649010165,
+  "largest": 71,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 2999
+    },
+    "z": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 4892
+    },
+    "roof": {
+     "rgb": [
+      132,
+      135,
+      139
+     ],
+     "pixels": 2609
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      70,
+      76,
+      76
+     ],
+     "pixels": 2999
+    },
+    "z": {
+     "rgb": [
+      70,
+      75,
+      76
+     ],
+     "pixels": 4892
+    },
+    "roof": {
+     "rgb": [
+      131,
+      135,
+      139
+     ],
+     "pixels": 2609
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "glass",
+  "level": "tile",
+  "versus": "final - before",
+  "changed8": 0.3047619047619048,
+  "changed32": 0.1348314606741573,
+  "largest": 134,
+  "triangles": [
+   40,
+   114
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 2999
+    },
+    "z": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 4892
+    },
+    "roof": {
+     "rgb": [
+      132,
+      135,
+      139
+     ],
+     "pixels": 2609
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      70,
+      76,
+      77
+     ],
+     "pixels": 3170
+    },
+    "z": {
+     "rgb": [
+      69,
+      75,
+      75
+     ],
+     "pixels": 5129
+    },
+    "roof": {
+     "rgb": [
+      130,
+      134,
+      138
+     ],
+     "pixels": 2309
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "glass",
+  "level": "plate",
+  "versus": "a - before",
+  "changed8": 0.4252541466024612,
+  "changed32": 0.42006420545746387,
+  "largest": 80,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 2999
+    },
+    "z": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 4892
+    },
+    "roof": {
+     "rgb": [
+      132,
+      135,
+      139
+     ],
+     "pixels": 2609
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      18,
+      26,
+      21
+     ],
+     "pixels": 2999
+    },
+    "z": {
+     "rgb": [
+      20,
+      27,
+      24
+     ],
+     "pixels": 4892
+    },
+    "roof": {
+     "rgb": [
+      131,
+      135,
+      139
+     ],
+     "pixels": 2609
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "glass",
+  "level": "plate",
+  "versus": "b - before",
+  "changed8": 0.2642054574638844,
+  "changed32": 0.10278223649010165,
+  "largest": 71,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 2999
+    },
+    "z": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 4892
+    },
+    "roof": {
+     "rgb": [
+      132,
+      135,
+      139
+     ],
+     "pixels": 2609
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      70,
+      76,
+      76
+     ],
+     "pixels": 2999
+    },
+    "z": {
+     "rgb": [
+      70,
+      75,
+      76
+     ],
+     "pixels": 4892
+    },
+    "roof": {
+     "rgb": [
+      131,
+      135,
+      139
+     ],
+     "pixels": 2609
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "glass",
+  "level": "plate",
+  "versus": "final - before",
+  "changed8": 0.2642054574638844,
+  "changed32": 0.10278223649010165,
+  "largest": 71,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 2999
+    },
+    "z": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 4892
+    },
+    "roof": {
+     "rgb": [
+      132,
+      135,
+      139
+     ],
+     "pixels": 2609
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      70,
+      76,
+      76
+     ],
+     "pixels": 2999
+    },
+    "z": {
+     "rgb": [
+      70,
+      75,
+      76
+     ],
+     "pixels": 4892
+    },
+    "roof": {
+     "rgb": [
+      131,
+      135,
+      139
+     ],
+     "pixels": 2609
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "glass",
+  "level": "base",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   20,
+   20
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      13,
+      18,
+      23
+     ],
+     "pixels": 3000
+    },
+    "z": {
+     "rgb": [
+      15,
+      19,
+      23
+     ],
+     "pixels": 4891
+    },
+    "roof": {
+     "rgb": [
+      133,
+      133,
+      142
+     ],
+     "pixels": 2608
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      13,
+      18,
+      23
+     ],
+     "pixels": 3000
+    },
+    "z": {
+     "rgb": [
+      15,
+      19,
+      23
+     ],
+     "pixels": 4891
+    },
+    "roof": {
+     "rgb": [
+      133,
+      133,
+      142
+     ],
+     "pixels": 2608
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "glass",
+  "level": "base",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   20,
+   20
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      13,
+      18,
+      23
+     ],
+     "pixels": 3000
+    },
+    "z": {
+     "rgb": [
+      15,
+      19,
+      23
+     ],
+     "pixels": 4891
+    },
+    "roof": {
+     "rgb": [
+      133,
+      133,
+      142
+     ],
+     "pixels": 2608
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      13,
+      18,
+      23
+     ],
+     "pixels": 3000
+    },
+    "z": {
+     "rgb": [
+      15,
+      19,
+      23
+     ],
+     "pixels": 4891
+    },
+    "roof": {
+     "rgb": [
+      133,
+      133,
+      142
+     ],
+     "pixels": 2608
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "glass",
+  "level": "base",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   20,
+   20
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      13,
+      18,
+      23
+     ],
+     "pixels": 3000
+    },
+    "z": {
+     "rgb": [
+      15,
+      19,
+      23
+     ],
+     "pixels": 4891
+    },
+    "roof": {
+     "rgb": [
+      133,
+      133,
+      142
+     ],
+     "pixels": 2608
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      13,
+      18,
+      23
+     ],
+     "pixels": 3000
+    },
+    "z": {
+     "rgb": [
+      15,
+      19,
+      23
+     ],
+     "pixels": 4891
+    },
+    "roof": {
+     "rgb": [
+      133,
+      133,
+      142
+     ],
+     "pixels": 2608
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "masonry",
+  "level": "L0",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   42098,
+   42098
+  ],
+  "draws": [
+   21,
+   21
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      115,
+      101,
+      86
+     ],
+     "pixels": 1947
+    },
+    "z": {
+     "rgb": [
+      109,
+      98,
+      84
+     ],
+     "pixels": 5090
+    },
+    "roof": {
+     "rgb": [
+      90,
+      87,
+      81
+     ],
+     "pixels": 2069
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      115,
+      101,
+      86
+     ],
+     "pixels": 1947
+    },
+    "z": {
+     "rgb": [
+      109,
+      98,
+      84
+     ],
+     "pixels": 5090
+    },
+    "roof": {
+     "rgb": [
+      90,
+      87,
+      81
+     ],
+     "pixels": 2069
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "masonry",
+  "level": "L0",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   42098,
+   42098
+  ],
+  "draws": [
+   21,
+   21
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      115,
+      101,
+      86
+     ],
+     "pixels": 1947
+    },
+    "z": {
+     "rgb": [
+      109,
+      98,
+      84
+     ],
+     "pixels": 5090
+    },
+    "roof": {
+     "rgb": [
+      90,
+      87,
+      81
+     ],
+     "pixels": 2069
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      115,
+      101,
+      86
+     ],
+     "pixels": 1947
+    },
+    "z": {
+     "rgb": [
+      109,
+      98,
+      84
+     ],
+     "pixels": 5090
+    },
+    "roof": {
+     "rgb": [
+      90,
+      87,
+      81
+     ],
+     "pixels": 2069
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "masonry",
+  "level": "L0",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   42098,
+   42098
+  ],
+  "draws": [
+   21,
+   21
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      115,
+      101,
+      86
+     ],
+     "pixels": 1947
+    },
+    "z": {
+     "rgb": [
+      109,
+      98,
+      84
+     ],
+     "pixels": 5090
+    },
+    "roof": {
+     "rgb": [
+      90,
+      87,
+      81
+     ],
+     "pixels": 2069
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      115,
+      101,
+      86
+     ],
+     "pixels": 1947
+    },
+    "z": {
+     "rgb": [
+      109,
+      98,
+      84
+     ],
+     "pixels": 5090
+    },
+    "roof": {
+     "rgb": [
+      90,
+      87,
+      81
+     ],
+     "pixels": 2069
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "masonry",
+  "level": "L1",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   13448,
+   13448
+  ],
+  "draws": [
+   16,
+   16
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      124,
+      111,
+      97
+     ],
+     "pixels": 1952
+    },
+    "z": {
+     "rgb": [
+      113,
+      104,
+      93
+     ],
+     "pixels": 5222
+    },
+    "roof": {
+     "rgb": [
+      91,
+      88,
+      82
+     ],
+     "pixels": 2025
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      124,
+      111,
+      97
+     ],
+     "pixels": 1952
+    },
+    "z": {
+     "rgb": [
+      113,
+      104,
+      93
+     ],
+     "pixels": 5222
+    },
+    "roof": {
+     "rgb": [
+      91,
+      88,
+      82
+     ],
+     "pixels": 2025
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "masonry",
+  "level": "L1",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   13448,
+   13448
+  ],
+  "draws": [
+   16,
+   16
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      124,
+      111,
+      97
+     ],
+     "pixels": 1952
+    },
+    "z": {
+     "rgb": [
+      113,
+      104,
+      93
+     ],
+     "pixels": 5222
+    },
+    "roof": {
+     "rgb": [
+      91,
+      88,
+      82
+     ],
+     "pixels": 2025
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      124,
+      111,
+      97
+     ],
+     "pixels": 1952
+    },
+    "z": {
+     "rgb": [
+      113,
+      104,
+      93
+     ],
+     "pixels": 5222
+    },
+    "roof": {
+     "rgb": [
+      91,
+      88,
+      82
+     ],
+     "pixels": 2025
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "masonry",
+  "level": "L1",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   13448,
+   13448
+  ],
+  "draws": [
+   16,
+   16
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      124,
+      111,
+      97
+     ],
+     "pixels": 1952
+    },
+    "z": {
+     "rgb": [
+      113,
+      104,
+      93
+     ],
+     "pixels": 5222
+    },
+    "roof": {
+     "rgb": [
+      91,
+      88,
+      82
+     ],
+     "pixels": 2025
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      124,
+      111,
+      97
+     ],
+     "pixels": 1952
+    },
+    "z": {
+     "rgb": [
+      113,
+      104,
+      93
+     ],
+     "pixels": 5222
+    },
+    "roof": {
+     "rgb": [
+      91,
+      88,
+      82
+     ],
+     "pixels": 2025
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "masonry",
+  "level": "cell",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   152,
+   152
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      92,
+      89
+     ],
+     "pixels": 2031
+    },
+    "z": {
+     "rgb": [
+      89,
+      89,
+      86
+     ],
+     "pixels": 5346
+    },
+    "roof": {
+     "rgb": [
+      93,
+      93,
+      93
+     ],
+     "pixels": 1833
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      92,
+      89
+     ],
+     "pixels": 2031
+    },
+    "z": {
+     "rgb": [
+      89,
+      89,
+      86
+     ],
+     "pixels": 5346
+    },
+    "roof": {
+     "rgb": [
+      93,
+      93,
+      93
+     ],
+     "pixels": 1833
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "masonry",
+  "level": "cell",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   152,
+   152
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      92,
+      89
+     ],
+     "pixels": 2031
+    },
+    "z": {
+     "rgb": [
+      89,
+      89,
+      86
+     ],
+     "pixels": 5346
+    },
+    "roof": {
+     "rgb": [
+      93,
+      93,
+      93
+     ],
+     "pixels": 1833
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      92,
+      89
+     ],
+     "pixels": 2031
+    },
+    "z": {
+     "rgb": [
+      89,
+      89,
+      86
+     ],
+     "pixels": 5346
+    },
+    "roof": {
+     "rgb": [
+      93,
+      93,
+      93
+     ],
+     "pixels": 1833
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "masonry",
+  "level": "cell",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   152,
+   152
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      92,
+      89
+     ],
+     "pixels": 2031
+    },
+    "z": {
+     "rgb": [
+      89,
+      89,
+      86
+     ],
+     "pixels": 5346
+    },
+    "roof": {
+     "rgb": [
+      93,
+      93,
+      93
+     ],
+     "pixels": 1833
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      92,
+      89
+     ],
+     "pixels": 2031
+    },
+    "z": {
+     "rgb": [
+      89,
+      89,
+      86
+     ],
+     "pixels": 5346
+    },
+    "roof": {
+     "rgb": [
+      93,
+      93,
+      93
+     ],
+     "pixels": 1833
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "masonry",
+  "level": "tile",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      92,
+      90
+     ],
+     "pixels": 1948
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      87
+     ],
+     "pixels": 5164
+    },
+    "roof": {
+     "rgb": [
+      93,
+      92,
+      91
+     ],
+     "pixels": 2044
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      92,
+      90
+     ],
+     "pixels": 1948
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      87
+     ],
+     "pixels": 5164
+    },
+    "roof": {
+     "rgb": [
+      93,
+      92,
+      91
+     ],
+     "pixels": 2044
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "masonry",
+  "level": "tile",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      92,
+      90
+     ],
+     "pixels": 1948
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      87
+     ],
+     "pixels": 5164
+    },
+    "roof": {
+     "rgb": [
+      93,
+      92,
+      91
+     ],
+     "pixels": 2044
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      92,
+      90
+     ],
+     "pixels": 1948
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      87
+     ],
+     "pixels": 5164
+    },
+    "roof": {
+     "rgb": [
+      93,
+      92,
+      91
+     ],
+     "pixels": 2044
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "masonry",
+  "level": "tile",
+  "versus": "final - before",
+  "changed8": 0.029757671899786665,
+  "changed32": 0.01684809364914392,
+  "largest": 114,
+  "triangles": [
+   94,
+   152
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      92,
+      90
+     ],
+     "pixels": 1948
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      87
+     ],
+     "pixels": 5164
+    },
+    "roof": {
+     "rgb": [
+      93,
+      92,
+      91
+     ],
+     "pixels": 2044
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      92,
+      89
+     ],
+     "pixels": 2031
+    },
+    "z": {
+     "rgb": [
+      89,
+      89,
+      86
+     ],
+     "pixels": 5346
+    },
+    "roof": {
+     "rgb": [
+      93,
+      93,
+      93
+     ],
+     "pixels": 1833
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "masonry",
+  "level": "plate",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      92,
+      90
+     ],
+     "pixels": 1948
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      87
+     ],
+     "pixels": 5164
+    },
+    "roof": {
+     "rgb": [
+      93,
+      92,
+      91
+     ],
+     "pixels": 2044
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      92,
+      90
+     ],
+     "pixels": 1948
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      87
+     ],
+     "pixels": 5164
+    },
+    "roof": {
+     "rgb": [
+      93,
+      92,
+      91
+     ],
+     "pixels": 2044
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "masonry",
+  "level": "plate",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      92,
+      90
+     ],
+     "pixels": 1948
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      87
+     ],
+     "pixels": 5164
+    },
+    "roof": {
+     "rgb": [
+      93,
+      92,
+      91
+     ],
+     "pixels": 2044
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      92,
+      90
+     ],
+     "pixels": 1948
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      87
+     ],
+     "pixels": 5164
+    },
+    "roof": {
+     "rgb": [
+      93,
+      92,
+      91
+     ],
+     "pixels": 2044
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "masonry",
+  "level": "plate",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      92,
+      90
+     ],
+     "pixels": 1948
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      87
+     ],
+     "pixels": 5164
+    },
+    "roof": {
+     "rgb": [
+      93,
+      92,
+      91
+     ],
+     "pixels": 2044
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      92,
+      90
+     ],
+     "pixels": 1948
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      87
+     ],
+     "pixels": 5164
+    },
+    "roof": {
+     "rgb": [
+      93,
+      92,
+      91
+     ],
+     "pixels": 2044
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "masonry",
+  "level": "base",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   54,
+   54
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 1948
+    },
+    "z": {
+     "rgb": [
+      76,
+      63,
+      50
+     ],
+     "pixels": 5165
+    },
+    "roof": {
+     "rgb": [
+      92,
+      92,
+      89
+     ],
+     "pixels": 2044
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 1948
+    },
+    "z": {
+     "rgb": [
+      76,
+      63,
+      50
+     ],
+     "pixels": 5165
+    },
+    "roof": {
+     "rgb": [
+      92,
+      92,
+      89
+     ],
+     "pixels": 2044
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "masonry",
+  "level": "base",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   54,
+   54
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 1948
+    },
+    "z": {
+     "rgb": [
+      76,
+      63,
+      50
+     ],
+     "pixels": 5165
+    },
+    "roof": {
+     "rgb": [
+      92,
+      92,
+      89
+     ],
+     "pixels": 2044
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 1948
+    },
+    "z": {
+     "rgb": [
+      76,
+      63,
+      50
+     ],
+     "pixels": 5165
+    },
+    "roof": {
+     "rgb": [
+      92,
+      92,
+      89
+     ],
+     "pixels": 2044
+    }
+   }
+  ]
+ },
+ {
+  "distance": 900,
+  "tower": "masonry",
+  "level": "base",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   54,
+   54
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 1948
+    },
+    "z": {
+     "rgb": [
+      76,
+      63,
+      50
+     ],
+     "pixels": 5165
+    },
+    "roof": {
+     "rgb": [
+      92,
+      92,
+      89
+     ],
+     "pixels": 2044
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 1948
+    },
+    "z": {
+     "rgb": [
+      76,
+      63,
+      50
+     ],
+     "pixels": 5165
+    },
+    "roof": {
+     "rgb": [
+      92,
+      92,
+      89
+     ],
+     "pixels": 2044
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "glass",
+  "level": "L0",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   3576,
+   3576
+  ],
+  "draws": [
+   7,
+   7
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      62,
+      78,
+      75
+     ],
+     "pixels": 1306
+    },
+    "z": {
+     "rgb": [
+      62,
+      76,
+      75
+     ],
+     "pixels": 2075
+    },
+    "roof": {
+     "rgb": [
+      135,
+      136,
+      134
+     ],
+     "pixels": 941
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      62,
+      78,
+      75
+     ],
+     "pixels": 1306
+    },
+    "z": {
+     "rgb": [
+      62,
+      76,
+      75
+     ],
+     "pixels": 2075
+    },
+    "roof": {
+     "rgb": [
+      135,
+      136,
+      134
+     ],
+     "pixels": 941
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "glass",
+  "level": "L0",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   3576,
+   3576
+  ],
+  "draws": [
+   7,
+   7
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      62,
+      78,
+      75
+     ],
+     "pixels": 1306
+    },
+    "z": {
+     "rgb": [
+      62,
+      76,
+      75
+     ],
+     "pixels": 2075
+    },
+    "roof": {
+     "rgb": [
+      135,
+      136,
+      134
+     ],
+     "pixels": 941
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      62,
+      78,
+      75
+     ],
+     "pixels": 1306
+    },
+    "z": {
+     "rgb": [
+      62,
+      76,
+      75
+     ],
+     "pixels": 2075
+    },
+    "roof": {
+     "rgb": [
+      135,
+      136,
+      134
+     ],
+     "pixels": 941
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "glass",
+  "level": "L0",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   3576,
+   3576
+  ],
+  "draws": [
+   7,
+   7
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      62,
+      78,
+      75
+     ],
+     "pixels": 1306
+    },
+    "z": {
+     "rgb": [
+      62,
+      76,
+      75
+     ],
+     "pixels": 2075
+    },
+    "roof": {
+     "rgb": [
+      135,
+      136,
+      134
+     ],
+     "pixels": 941
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      62,
+      78,
+      75
+     ],
+     "pixels": 1306
+    },
+    "z": {
+     "rgb": [
+      62,
+      76,
+      75
+     ],
+     "pixels": 2075
+    },
+    "roof": {
+     "rgb": [
+      135,
+      136,
+      134
+     ],
+     "pixels": 941
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "glass",
+  "level": "L1",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 2,
+  "triangles": [
+   1428,
+   1428
+  ],
+  "draws": [
+   4,
+   4
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      74,
+      82,
+      80
+     ],
+     "pixels": 1305
+    },
+    "z": {
+     "rgb": [
+      74,
+      82,
+      80
+     ],
+     "pixels": 2079
+    },
+    "roof": {
+     "rgb": [
+      139,
+      140,
+      137
+     ],
+     "pixels": 946
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      74,
+      81,
+      80
+     ],
+     "pixels": 1305
+    },
+    "z": {
+     "rgb": [
+      74,
+      81,
+      80
+     ],
+     "pixels": 2079
+    },
+    "roof": {
+     "rgb": [
+      139,
+      140,
+      137
+     ],
+     "pixels": 946
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "glass",
+  "level": "L1",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 6,
+  "triangles": [
+   1428,
+   1428
+  ],
+  "draws": [
+   4,
+   4
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      74,
+      82,
+      80
+     ],
+     "pixels": 1305
+    },
+    "z": {
+     "rgb": [
+      74,
+      82,
+      80
+     ],
+     "pixels": 2079
+    },
+    "roof": {
+     "rgb": [
+      139,
+      140,
+      137
+     ],
+     "pixels": 946
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      73,
+      80,
+      78
+     ],
+     "pixels": 1305
+    },
+    "z": {
+     "rgb": [
+      73,
+      80,
+      79
+     ],
+     "pixels": 2079
+    },
+    "roof": {
+     "rgb": [
+      139,
+      139,
+      137
+     ],
+     "pixels": 946
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "glass",
+  "level": "L1",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 6,
+  "triangles": [
+   1428,
+   1428
+  ],
+  "draws": [
+   4,
+   4
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      74,
+      82,
+      80
+     ],
+     "pixels": 1305
+    },
+    "z": {
+     "rgb": [
+      74,
+      82,
+      80
+     ],
+     "pixels": 2079
+    },
+    "roof": {
+     "rgb": [
+      139,
+      140,
+      137
+     ],
+     "pixels": 946
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      73,
+      80,
+      78
+     ],
+     "pixels": 1305
+    },
+    "z": {
+     "rgb": [
+      73,
+      80,
+      79
+     ],
+     "pixels": 2079
+    },
+    "roof": {
+     "rgb": [
+      139,
+      139,
+      137
+     ],
+     "pixels": 946
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "glass",
+  "level": "cell",
+  "versus": "a - before",
+  "changed8": 0.3880718954248366,
+  "changed32": 0.3814192343604108,
+  "largest": 78,
+  "triangles": [
+   114,
+   114
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 1332
+    },
+    "z": {
+     "rgb": [
+      83,
+      89,
+      91
+     ],
+     "pixels": 2085
+    },
+    "roof": {
+     "rgb": [
+      130,
+      134,
+      137
+     ],
+     "pixels": 927
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      23,
+      32,
+      28
+     ],
+     "pixels": 1332
+    },
+    "z": {
+     "rgb": [
+      21,
+      29,
+      26
+     ],
+     "pixels": 2085
+    },
+    "roof": {
+     "rgb": [
+      130,
+      134,
+      137
+     ],
+     "pixels": 927
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "glass",
+  "level": "cell",
+  "versus": "b - before",
+  "changed8": 0.28583099906629317,
+  "changed32": 0.04971988795518207,
+  "largest": 57,
+  "triangles": [
+   114,
+   114
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 1332
+    },
+    "z": {
+     "rgb": [
+      83,
+      89,
+      91
+     ],
+     "pixels": 2085
+    },
+    "roof": {
+     "rgb": [
+      130,
+      134,
+      137
+     ],
+     "pixels": 927
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      69,
+      75,
+      76
+     ],
+     "pixels": 1332
+    },
+    "z": {
+     "rgb": [
+      68,
+      74,
+      75
+     ],
+     "pixels": 2085
+    },
+    "roof": {
+     "rgb": [
+      130,
+      134,
+      137
+     ],
+     "pixels": 927
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "glass",
+  "level": "cell",
+  "versus": "final - before",
+  "changed8": 0.28583099906629317,
+  "changed32": 0.04971988795518207,
+  "largest": 57,
+  "triangles": [
+   114,
+   114
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 1332
+    },
+    "z": {
+     "rgb": [
+      83,
+      89,
+      91
+     ],
+     "pixels": 2085
+    },
+    "roof": {
+     "rgb": [
+      130,
+      134,
+      137
+     ],
+     "pixels": 927
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      69,
+      75,
+      76
+     ],
+     "pixels": 1332
+    },
+    "z": {
+     "rgb": [
+      68,
+      74,
+      75
+     ],
+     "pixels": 2085
+    },
+    "roof": {
+     "rgb": [
+      130,
+      134,
+      137
+     ],
+     "pixels": 927
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "glass",
+  "level": "tile",
+  "versus": "a - before",
+  "changed8": 0.3880718954248366,
+  "changed32": 0.3814192343604108,
+  "largest": 78,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 1262
+    },
+    "z": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 2009
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 1047
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      17,
+      25,
+      21
+     ],
+     "pixels": 1262
+    },
+    "z": {
+     "rgb": [
+      22,
+      28,
+      25
+     ],
+     "pixels": 2009
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 1047
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "glass",
+  "level": "tile",
+  "versus": "b - before",
+  "changed8": 0.28583099906629317,
+  "changed32": 0.04971988795518207,
+  "largest": 57,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 1262
+    },
+    "z": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 2009
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 1047
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      69,
+      75,
+      75
+     ],
+     "pixels": 1262
+    },
+    "z": {
+     "rgb": [
+      69,
+      75,
+      76
+     ],
+     "pixels": 2009
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 1047
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "glass",
+  "level": "tile",
+  "versus": "final - before",
+  "changed8": 0.3228291316526611,
+  "changed32": 0.07878151260504201,
+  "largest": 134,
+  "triangles": [
+   40,
+   114
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 1262
+    },
+    "z": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 2009
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 1047
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      69,
+      75,
+      76
+     ],
+     "pixels": 1332
+    },
+    "z": {
+     "rgb": [
+      68,
+      74,
+      75
+     ],
+     "pixels": 2085
+    },
+    "roof": {
+     "rgb": [
+      130,
+      134,
+      137
+     ],
+     "pixels": 927
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "glass",
+  "level": "plate",
+  "versus": "a - before",
+  "changed8": 0.3880718954248366,
+  "changed32": 0.3814192343604108,
+  "largest": 78,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 1262
+    },
+    "z": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 2009
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 1047
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      17,
+      25,
+      21
+     ],
+     "pixels": 1262
+    },
+    "z": {
+     "rgb": [
+      22,
+      28,
+      25
+     ],
+     "pixels": 2009
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 1047
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "glass",
+  "level": "plate",
+  "versus": "b - before",
+  "changed8": 0.28583099906629317,
+  "changed32": 0.04971988795518207,
+  "largest": 57,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 1262
+    },
+    "z": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 2009
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 1047
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      69,
+      75,
+      75
+     ],
+     "pixels": 1262
+    },
+    "z": {
+     "rgb": [
+      69,
+      75,
+      76
+     ],
+     "pixels": 2009
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 1047
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "glass",
+  "level": "plate",
+  "versus": "final - before",
+  "changed8": 0.28583099906629317,
+  "changed32": 0.04971988795518207,
+  "largest": 57,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 1262
+    },
+    "z": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 2009
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 1047
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      69,
+      75,
+      75
+     ],
+     "pixels": 1262
+    },
+    "z": {
+     "rgb": [
+      69,
+      75,
+      76
+     ],
+     "pixels": 2009
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 1047
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "glass",
+  "level": "base",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   20,
+   20
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      13,
+      18,
+      22
+     ],
+     "pixels": 1261
+    },
+    "z": {
+     "rgb": [
+      17,
+      21,
+      25
+     ],
+     "pixels": 2009
+    },
+    "roof": {
+     "rgb": [
+      132,
+      133,
+      141
+     ],
+     "pixels": 1046
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      13,
+      18,
+      22
+     ],
+     "pixels": 1261
+    },
+    "z": {
+     "rgb": [
+      17,
+      21,
+      25
+     ],
+     "pixels": 2009
+    },
+    "roof": {
+     "rgb": [
+      132,
+      133,
+      141
+     ],
+     "pixels": 1046
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "glass",
+  "level": "base",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   20,
+   20
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      13,
+      18,
+      22
+     ],
+     "pixels": 1261
+    },
+    "z": {
+     "rgb": [
+      17,
+      21,
+      25
+     ],
+     "pixels": 2009
+    },
+    "roof": {
+     "rgb": [
+      132,
+      133,
+      141
+     ],
+     "pixels": 1046
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      13,
+      18,
+      22
+     ],
+     "pixels": 1261
+    },
+    "z": {
+     "rgb": [
+      17,
+      21,
+      25
+     ],
+     "pixels": 2009
+    },
+    "roof": {
+     "rgb": [
+      132,
+      133,
+      141
+     ],
+     "pixels": 1046
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "glass",
+  "level": "base",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   20,
+   20
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      13,
+      18,
+      22
+     ],
+     "pixels": 1261
+    },
+    "z": {
+     "rgb": [
+      17,
+      21,
+      25
+     ],
+     "pixels": 2009
+    },
+    "roof": {
+     "rgb": [
+      132,
+      133,
+      141
+     ],
+     "pixels": 1046
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      13,
+      18,
+      22
+     ],
+     "pixels": 1261
+    },
+    "z": {
+     "rgb": [
+      17,
+      21,
+      25
+     ],
+     "pixels": 2009
+    },
+    "roof": {
+     "rgb": [
+      132,
+      133,
+      141
+     ],
+     "pixels": 1046
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "masonry",
+  "level": "L0",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   42098,
+   42098
+  ],
+  "draws": [
+   21,
+   21
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      114,
+      101,
+      85
+     ],
+     "pixels": 800
+    },
+    "z": {
+     "rgb": [
+      108,
+      97,
+      84
+     ],
+     "pixels": 2117
+    },
+    "roof": {
+     "rgb": [
+      88,
+      85,
+      79
+     ],
+     "pixels": 793
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      114,
+      101,
+      85
+     ],
+     "pixels": 800
+    },
+    "z": {
+     "rgb": [
+      108,
+      97,
+      84
+     ],
+     "pixels": 2117
+    },
+    "roof": {
+     "rgb": [
+      88,
+      85,
+      79
+     ],
+     "pixels": 793
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "masonry",
+  "level": "L0",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   42098,
+   42098
+  ],
+  "draws": [
+   21,
+   21
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      114,
+      101,
+      85
+     ],
+     "pixels": 800
+    },
+    "z": {
+     "rgb": [
+      108,
+      97,
+      84
+     ],
+     "pixels": 2117
+    },
+    "roof": {
+     "rgb": [
+      88,
+      85,
+      79
+     ],
+     "pixels": 793
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      114,
+      101,
+      85
+     ],
+     "pixels": 800
+    },
+    "z": {
+     "rgb": [
+      108,
+      97,
+      84
+     ],
+     "pixels": 2117
+    },
+    "roof": {
+     "rgb": [
+      88,
+      85,
+      79
+     ],
+     "pixels": 793
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "masonry",
+  "level": "L0",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   42098,
+   42098
+  ],
+  "draws": [
+   21,
+   21
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      114,
+      101,
+      85
+     ],
+     "pixels": 800
+    },
+    "z": {
+     "rgb": [
+      108,
+      97,
+      84
+     ],
+     "pixels": 2117
+    },
+    "roof": {
+     "rgb": [
+      88,
+      85,
+      79
+     ],
+     "pixels": 793
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      114,
+      101,
+      85
+     ],
+     "pixels": 800
+    },
+    "z": {
+     "rgb": [
+      108,
+      97,
+      84
+     ],
+     "pixels": 2117
+    },
+    "roof": {
+     "rgb": [
+      88,
+      85,
+      79
+     ],
+     "pixels": 793
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "masonry",
+  "level": "L1",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   10982,
+   10982
+  ],
+  "draws": [
+   14,
+   14
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      98
+     ],
+     "pixels": 805
+    },
+    "z": {
+     "rgb": [
+      115,
+      105,
+      93
+     ],
+     "pixels": 2164
+    },
+    "roof": {
+     "rgb": [
+      91,
+      87,
+      81
+     ],
+     "pixels": 781
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      98
+     ],
+     "pixels": 805
+    },
+    "z": {
+     "rgb": [
+      115,
+      105,
+      93
+     ],
+     "pixels": 2164
+    },
+    "roof": {
+     "rgb": [
+      91,
+      87,
+      81
+     ],
+     "pixels": 781
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "masonry",
+  "level": "L1",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   10982,
+   10982
+  ],
+  "draws": [
+   14,
+   14
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      98
+     ],
+     "pixels": 805
+    },
+    "z": {
+     "rgb": [
+      115,
+      105,
+      93
+     ],
+     "pixels": 2164
+    },
+    "roof": {
+     "rgb": [
+      91,
+      87,
+      81
+     ],
+     "pixels": 781
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      98
+     ],
+     "pixels": 805
+    },
+    "z": {
+     "rgb": [
+      115,
+      105,
+      93
+     ],
+     "pixels": 2164
+    },
+    "roof": {
+     "rgb": [
+      91,
+      87,
+      81
+     ],
+     "pixels": 781
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "masonry",
+  "level": "L1",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   10982,
+   10982
+  ],
+  "draws": [
+   14,
+   14
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      98
+     ],
+     "pixels": 805
+    },
+    "z": {
+     "rgb": [
+      115,
+      105,
+      93
+     ],
+     "pixels": 2164
+    },
+    "roof": {
+     "rgb": [
+      91,
+      87,
+      81
+     ],
+     "pixels": 781
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      98
+     ],
+     "pixels": 805
+    },
+    "z": {
+     "rgb": [
+      115,
+      105,
+      93
+     ],
+     "pixels": 2164
+    },
+    "roof": {
+     "rgb": [
+      91,
+      87,
+      81
+     ],
+     "pixels": 781
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "masonry",
+  "level": "cell",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   152,
+   152
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      91,
+      92,
+      90
+     ],
+     "pixels": 838
+    },
+    "z": {
+     "rgb": [
+      89,
+      89,
+      87
+     ],
+     "pixels": 2212
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      92
+     ],
+     "pixels": 718
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      91,
+      92,
+      90
+     ],
+     "pixels": 838
+    },
+    "z": {
+     "rgb": [
+      89,
+      89,
+      87
+     ],
+     "pixels": 2212
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      92
+     ],
+     "pixels": 718
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "masonry",
+  "level": "cell",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   152,
+   152
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      91,
+      92,
+      90
+     ],
+     "pixels": 838
+    },
+    "z": {
+     "rgb": [
+      89,
+      89,
+      87
+     ],
+     "pixels": 2212
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      92
+     ],
+     "pixels": 718
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      91,
+      92,
+      90
+     ],
+     "pixels": 838
+    },
+    "z": {
+     "rgb": [
+      89,
+      89,
+      87
+     ],
+     "pixels": 2212
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      92
+     ],
+     "pixels": 718
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "masonry",
+  "level": "cell",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   152,
+   152
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      91,
+      92,
+      90
+     ],
+     "pixels": 838
+    },
+    "z": {
+     "rgb": [
+      89,
+      89,
+      87
+     ],
+     "pixels": 2212
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      92
+     ],
+     "pixels": 718
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      91,
+      92,
+      90
+     ],
+     "pixels": 838
+    },
+    "z": {
+     "rgb": [
+      89,
+      89,
+      87
+     ],
+     "pixels": 2212
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      92
+     ],
+     "pixels": 718
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "masonry",
+  "level": "tile",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      90,
+      92,
+      91
+     ],
+     "pixels": 797
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 2149
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      91
+     ],
+     "pixels": 805
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      90,
+      92,
+      91
+     ],
+     "pixels": 797
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 2149
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      91
+     ],
+     "pixels": 805
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "masonry",
+  "level": "tile",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      90,
+      92,
+      91
+     ],
+     "pixels": 797
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 2149
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      91
+     ],
+     "pixels": 805
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      90,
+      92,
+      91
+     ],
+     "pixels": 797
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 2149
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      91
+     ],
+     "pixels": 805
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "masonry",
+  "level": "tile",
+  "versus": "final - before",
+  "changed8": 0.03342245989304813,
+  "changed32": 0.014827418570734078,
+  "largest": 107,
+  "triangles": [
+   94,
+   152
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      90,
+      92,
+      91
+     ],
+     "pixels": 797
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 2149
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      91
+     ],
+     "pixels": 805
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      91,
+      92,
+      90
+     ],
+     "pixels": 838
+    },
+    "z": {
+     "rgb": [
+      89,
+      89,
+      87
+     ],
+     "pixels": 2212
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      92
+     ],
+     "pixels": 718
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "masonry",
+  "level": "plate",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      90,
+      92,
+      91
+     ],
+     "pixels": 797
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 2149
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      91
+     ],
+     "pixels": 805
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      90,
+      92,
+      91
+     ],
+     "pixels": 797
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 2149
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      91
+     ],
+     "pixels": 805
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "masonry",
+  "level": "plate",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      90,
+      92,
+      91
+     ],
+     "pixels": 797
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 2149
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      91
+     ],
+     "pixels": 805
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      90,
+      92,
+      91
+     ],
+     "pixels": 797
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 2149
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      91
+     ],
+     "pixels": 805
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "masonry",
+  "level": "plate",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      90,
+      92,
+      91
+     ],
+     "pixels": 797
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 2149
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      91
+     ],
+     "pixels": 805
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      90,
+      92,
+      91
+     ],
+     "pixels": 797
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 2149
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      91
+     ],
+     "pixels": 805
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "masonry",
+  "level": "base",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   54,
+   54
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 797
+    },
+    "z": {
+     "rgb": [
+      77,
+      64,
+      51
+     ],
+     "pixels": 2149
+    },
+    "roof": {
+     "rgb": [
+      90,
+      91,
+      88
+     ],
+     "pixels": 804
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 797
+    },
+    "z": {
+     "rgb": [
+      77,
+      64,
+      51
+     ],
+     "pixels": 2149
+    },
+    "roof": {
+     "rgb": [
+      90,
+      91,
+      88
+     ],
+     "pixels": 804
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "masonry",
+  "level": "base",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   54,
+   54
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 797
+    },
+    "z": {
+     "rgb": [
+      77,
+      64,
+      51
+     ],
+     "pixels": 2149
+    },
+    "roof": {
+     "rgb": [
+      90,
+      91,
+      88
+     ],
+     "pixels": 804
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 797
+    },
+    "z": {
+     "rgb": [
+      77,
+      64,
+      51
+     ],
+     "pixels": 2149
+    },
+    "roof": {
+     "rgb": [
+      90,
+      91,
+      88
+     ],
+     "pixels": 804
+    }
+   }
+  ]
+ },
+ {
+  "distance": 1400,
+  "tower": "masonry",
+  "level": "base",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   54,
+   54
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 797
+    },
+    "z": {
+     "rgb": [
+      77,
+      64,
+      51
+     ],
+     "pixels": 2149
+    },
+    "roof": {
+     "rgb": [
+      90,
+      91,
+      88
+     ],
+     "pixels": 804
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 797
+    },
+    "z": {
+     "rgb": [
+      77,
+      64,
+      51
+     ],
+     "pixels": 2149
+    },
+    "roof": {
+     "rgb": [
+      90,
+      91,
+      88
+     ],
+     "pixels": 804
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "glass",
+  "level": "L0",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   3576,
+   3576
+  ],
+  "draws": [
+   7,
+   7
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      62,
+      78,
+      76
+     ],
+     "pixels": 654
+    },
+    "z": {
+     "rgb": [
+      59,
+      74,
+      73
+     ],
+     "pixels": 1016
+    },
+    "roof": {
+     "rgb": [
+      134,
+      135,
+      134
+     ],
+     "pixels": 445
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      62,
+      78,
+      76
+     ],
+     "pixels": 654
+    },
+    "z": {
+     "rgb": [
+      59,
+      74,
+      73
+     ],
+     "pixels": 1016
+    },
+    "roof": {
+     "rgb": [
+      134,
+      135,
+      134
+     ],
+     "pixels": 445
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "glass",
+  "level": "L0",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   3576,
+   3576
+  ],
+  "draws": [
+   7,
+   7
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      62,
+      78,
+      76
+     ],
+     "pixels": 654
+    },
+    "z": {
+     "rgb": [
+      59,
+      74,
+      73
+     ],
+     "pixels": 1016
+    },
+    "roof": {
+     "rgb": [
+      134,
+      135,
+      134
+     ],
+     "pixels": 445
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      62,
+      78,
+      76
+     ],
+     "pixels": 654
+    },
+    "z": {
+     "rgb": [
+      59,
+      74,
+      73
+     ],
+     "pixels": 1016
+    },
+    "roof": {
+     "rgb": [
+      134,
+      135,
+      134
+     ],
+     "pixels": 445
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "glass",
+  "level": "L0",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   3576,
+   3576
+  ],
+  "draws": [
+   7,
+   7
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      62,
+      78,
+      76
+     ],
+     "pixels": 654
+    },
+    "z": {
+     "rgb": [
+      59,
+      74,
+      73
+     ],
+     "pixels": 1016
+    },
+    "roof": {
+     "rgb": [
+      134,
+      135,
+      134
+     ],
+     "pixels": 445
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      62,
+      78,
+      76
+     ],
+     "pixels": 654
+    },
+    "z": {
+     "rgb": [
+      59,
+      74,
+      73
+     ],
+     "pixels": 1016
+    },
+    "roof": {
+     "rgb": [
+      134,
+      135,
+      134
+     ],
+     "pixels": 445
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "glass",
+  "level": "L1",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 2,
+  "triangles": [
+   1428,
+   1428
+  ],
+  "draws": [
+   4,
+   4
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      74,
+      82,
+      80
+     ],
+     "pixels": 654
+    },
+    "z": {
+     "rgb": [
+      74,
+      82,
+      81
+     ],
+     "pixels": 1019
+    },
+    "roof": {
+     "rgb": [
+      139,
+      140,
+      138
+     ],
+     "pixels": 445
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      73,
+      81,
+      80
+     ],
+     "pixels": 654
+    },
+    "z": {
+     "rgb": [
+      74,
+      81,
+      80
+     ],
+     "pixels": 1019
+    },
+    "roof": {
+     "rgb": [
+      139,
+      140,
+      138
+     ],
+     "pixels": 445
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "glass",
+  "level": "L1",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 4,
+  "triangles": [
+   1428,
+   1428
+  ],
+  "draws": [
+   4,
+   4
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      74,
+      82,
+      80
+     ],
+     "pixels": 654
+    },
+    "z": {
+     "rgb": [
+      74,
+      82,
+      81
+     ],
+     "pixels": 1019
+    },
+    "roof": {
+     "rgb": [
+      139,
+      140,
+      138
+     ],
+     "pixels": 445
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      72,
+      80,
+      78
+     ],
+     "pixels": 654
+    },
+    "z": {
+     "rgb": [
+      73,
+      80,
+      79
+     ],
+     "pixels": 1019
+    },
+    "roof": {
+     "rgb": [
+      139,
+      140,
+      138
+     ],
+     "pixels": 445
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "glass",
+  "level": "L1",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 4,
+  "triangles": [
+   1428,
+   1428
+  ],
+  "draws": [
+   4,
+   4
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      74,
+      82,
+      80
+     ],
+     "pixels": 654
+    },
+    "z": {
+     "rgb": [
+      74,
+      82,
+      81
+     ],
+     "pixels": 1019
+    },
+    "roof": {
+     "rgb": [
+      139,
+      140,
+      138
+     ],
+     "pixels": 445
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      72,
+      80,
+      78
+     ],
+     "pixels": 654
+    },
+    "z": {
+     "rgb": [
+      73,
+      80,
+      79
+     ],
+     "pixels": 1019
+    },
+    "roof": {
+     "rgb": [
+      139,
+      140,
+      138
+     ],
+     "pixels": 445
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "glass",
+  "level": "cell",
+  "versus": "a - before",
+  "changed8": 0.3497232865048957,
+  "changed32": 0.3448275862068966,
+  "largest": 78,
+  "triangles": [
+   114,
+   114
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 665
+    },
+    "z": {
+     "rgb": [
+      83,
+      89,
+      91
+     ],
+     "pixels": 1016
+    },
+    "roof": {
+     "rgb": [
+      129,
+      133,
+      137
+     ],
+     "pixels": 448
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      24,
+      32,
+      29
+     ],
+     "pixels": 665
+    },
+    "z": {
+     "rgb": [
+      21,
+      29,
+      25
+     ],
+     "pixels": 1016
+    },
+    "roof": {
+     "rgb": [
+      129,
+      133,
+      136
+     ],
+     "pixels": 448
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "glass",
+  "level": "cell",
+  "versus": "b - before",
+  "changed8": 0.33673903788846316,
+  "changed32": 0.00021285653469561516,
+  "largest": 38,
+  "triangles": [
+   114,
+   114
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 665
+    },
+    "z": {
+     "rgb": [
+      83,
+      89,
+      91
+     ],
+     "pixels": 1016
+    },
+    "roof": {
+     "rgb": [
+      129,
+      133,
+      137
+     ],
+     "pixels": 448
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      69,
+      75,
+      76
+     ],
+     "pixels": 665
+    },
+    "z": {
+     "rgb": [
+      68,
+      74,
+      74
+     ],
+     "pixels": 1016
+    },
+    "roof": {
+     "rgb": [
+      129,
+      133,
+      137
+     ],
+     "pixels": 448
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "glass",
+  "level": "cell",
+  "versus": "final - before",
+  "changed8": 0.33673903788846316,
+  "changed32": 0.00021285653469561516,
+  "largest": 38,
+  "triangles": [
+   114,
+   114
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 665
+    },
+    "z": {
+     "rgb": [
+      83,
+      89,
+      91
+     ],
+     "pixels": 1016
+    },
+    "roof": {
+     "rgb": [
+      129,
+      133,
+      137
+     ],
+     "pixels": 448
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      69,
+      75,
+      76
+     ],
+     "pixels": 665
+    },
+    "z": {
+     "rgb": [
+      68,
+      74,
+      74
+     ],
+     "pixels": 1016
+    },
+    "roof": {
+     "rgb": [
+      129,
+      133,
+      137
+     ],
+     "pixels": 448
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "glass",
+  "level": "tile",
+  "versus": "a - before",
+  "changed8": 0.3497232865048957,
+  "changed32": 0.3448275862068966,
+  "largest": 78,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 631
+    },
+    "z": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 985
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 498
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      17,
+      25,
+      21
+     ],
+     "pixels": 631
+    },
+    "z": {
+     "rgb": [
+      23,
+      29,
+      26
+     ],
+     "pixels": 985
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      137
+     ],
+     "pixels": 498
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "glass",
+  "level": "tile",
+  "versus": "b - before",
+  "changed8": 0.33673903788846316,
+  "changed32": 0.00021285653469561516,
+  "largest": 38,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 631
+    },
+    "z": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 985
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 498
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      69,
+      75,
+      75
+     ],
+     "pixels": 631
+    },
+    "z": {
+     "rgb": [
+      69,
+      75,
+      75
+     ],
+     "pixels": 985
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 498
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "glass",
+  "level": "tile",
+  "versus": "final - before",
+  "changed8": 0.37292464878671777,
+  "changed32": 0.026181353767560665,
+  "largest": 134,
+  "triangles": [
+   40,
+   114
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 631
+    },
+    "z": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 985
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 498
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      69,
+      75,
+      76
+     ],
+     "pixels": 665
+    },
+    "z": {
+     "rgb": [
+      68,
+      74,
+      74
+     ],
+     "pixels": 1016
+    },
+    "roof": {
+     "rgb": [
+      129,
+      133,
+      137
+     ],
+     "pixels": 448
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "glass",
+  "level": "plate",
+  "versus": "a - before",
+  "changed8": 0.3497232865048957,
+  "changed32": 0.3448275862068966,
+  "largest": 78,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 631
+    },
+    "z": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 985
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 498
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      17,
+      25,
+      21
+     ],
+     "pixels": 631
+    },
+    "z": {
+     "rgb": [
+      23,
+      29,
+      26
+     ],
+     "pixels": 985
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      137
+     ],
+     "pixels": 498
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "glass",
+  "level": "plate",
+  "versus": "b - before",
+  "changed8": 0.33673903788846316,
+  "changed32": 0.00021285653469561516,
+  "largest": 38,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 631
+    },
+    "z": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 985
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 498
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      69,
+      75,
+      75
+     ],
+     "pixels": 631
+    },
+    "z": {
+     "rgb": [
+      69,
+      75,
+      75
+     ],
+     "pixels": 985
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 498
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "glass",
+  "level": "plate",
+  "versus": "final - before",
+  "changed8": 0.33673903788846316,
+  "changed32": 0.00021285653469561516,
+  "largest": 38,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      92
+     ],
+     "pixels": 631
+    },
+    "z": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 985
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 498
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      69,
+      75,
+      75
+     ],
+     "pixels": 631
+    },
+    "z": {
+     "rgb": [
+      69,
+      75,
+      75
+     ],
+     "pixels": 985
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 498
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "glass",
+  "level": "base",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   20,
+   20
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      13,
+      18,
+      23
+     ],
+     "pixels": 631
+    },
+    "z": {
+     "rgb": [
+      18,
+      22,
+      26
+     ],
+     "pixels": 985
+    },
+    "roof": {
+     "rgb": [
+      132,
+      132,
+      141
+     ],
+     "pixels": 497
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      13,
+      18,
+      23
+     ],
+     "pixels": 631
+    },
+    "z": {
+     "rgb": [
+      18,
+      22,
+      26
+     ],
+     "pixels": 985
+    },
+    "roof": {
+     "rgb": [
+      132,
+      132,
+      141
+     ],
+     "pixels": 497
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "glass",
+  "level": "base",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   20,
+   20
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      13,
+      18,
+      23
+     ],
+     "pixels": 631
+    },
+    "z": {
+     "rgb": [
+      18,
+      22,
+      26
+     ],
+     "pixels": 985
+    },
+    "roof": {
+     "rgb": [
+      132,
+      132,
+      141
+     ],
+     "pixels": 497
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      13,
+      18,
+      23
+     ],
+     "pixels": 631
+    },
+    "z": {
+     "rgb": [
+      18,
+      22,
+      26
+     ],
+     "pixels": 985
+    },
+    "roof": {
+     "rgb": [
+      132,
+      132,
+      141
+     ],
+     "pixels": 497
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "glass",
+  "level": "base",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   20,
+   20
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      13,
+      18,
+      23
+     ],
+     "pixels": 631
+    },
+    "z": {
+     "rgb": [
+      18,
+      22,
+      26
+     ],
+     "pixels": 985
+    },
+    "roof": {
+     "rgb": [
+      132,
+      132,
+      141
+     ],
+     "pixels": 497
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      13,
+      18,
+      23
+     ],
+     "pixels": 631
+    },
+    "z": {
+     "rgb": [
+      18,
+      22,
+      26
+     ],
+     "pixels": 985
+    },
+    "roof": {
+     "rgb": [
+      132,
+      132,
+      141
+     ],
+     "pixels": 497
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "masonry",
+  "level": "L0",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   22172,
+   22172
+  ],
+  "draws": [
+   21,
+   21
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      119,
+      105,
+      88
+     ],
+     "pixels": 408
+    },
+    "z": {
+     "rgb": [
+      109,
+      98,
+      85
+     ],
+     "pixels": 1030
+    },
+    "roof": {
+     "rgb": [
+      87,
+      84,
+      78
+     ],
+     "pixels": 371
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      119,
+      105,
+      88
+     ],
+     "pixels": 408
+    },
+    "z": {
+     "rgb": [
+      109,
+      98,
+      85
+     ],
+     "pixels": 1030
+    },
+    "roof": {
+     "rgb": [
+      87,
+      84,
+      78
+     ],
+     "pixels": 371
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "masonry",
+  "level": "L0",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   22172,
+   22172
+  ],
+  "draws": [
+   21,
+   21
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      119,
+      105,
+      88
+     ],
+     "pixels": 408
+    },
+    "z": {
+     "rgb": [
+      109,
+      98,
+      85
+     ],
+     "pixels": 1030
+    },
+    "roof": {
+     "rgb": [
+      87,
+      84,
+      78
+     ],
+     "pixels": 371
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      119,
+      105,
+      88
+     ],
+     "pixels": 408
+    },
+    "z": {
+     "rgb": [
+      109,
+      98,
+      85
+     ],
+     "pixels": 1030
+    },
+    "roof": {
+     "rgb": [
+      87,
+      84,
+      78
+     ],
+     "pixels": 371
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "masonry",
+  "level": "L0",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   22172,
+   22172
+  ],
+  "draws": [
+   21,
+   21
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      119,
+      105,
+      88
+     ],
+     "pixels": 408
+    },
+    "z": {
+     "rgb": [
+      109,
+      98,
+      85
+     ],
+     "pixels": 1030
+    },
+    "roof": {
+     "rgb": [
+      87,
+      84,
+      78
+     ],
+     "pixels": 371
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      119,
+      105,
+      88
+     ],
+     "pixels": 408
+    },
+    "z": {
+     "rgb": [
+      109,
+      98,
+      85
+     ],
+     "pixels": 1030
+    },
+    "roof": {
+     "rgb": [
+      87,
+      84,
+      78
+     ],
+     "pixels": 371
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "masonry",
+  "level": "L1",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   10270,
+   10270
+  ],
+  "draws": [
+   11,
+   11
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      99
+     ],
+     "pixels": 406
+    },
+    "z": {
+     "rgb": [
+      116,
+      106,
+      94
+     ],
+     "pixels": 1056
+    },
+    "roof": {
+     "rgb": [
+      93,
+      90,
+      83
+     ],
+     "pixels": 365
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      99
+     ],
+     "pixels": 406
+    },
+    "z": {
+     "rgb": [
+      116,
+      106,
+      94
+     ],
+     "pixels": 1056
+    },
+    "roof": {
+     "rgb": [
+      93,
+      90,
+      83
+     ],
+     "pixels": 365
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "masonry",
+  "level": "L1",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   10270,
+   10270
+  ],
+  "draws": [
+   11,
+   11
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      99
+     ],
+     "pixels": 406
+    },
+    "z": {
+     "rgb": [
+      116,
+      106,
+      94
+     ],
+     "pixels": 1056
+    },
+    "roof": {
+     "rgb": [
+      93,
+      90,
+      83
+     ],
+     "pixels": 365
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      99
+     ],
+     "pixels": 406
+    },
+    "z": {
+     "rgb": [
+      116,
+      106,
+      94
+     ],
+     "pixels": 1056
+    },
+    "roof": {
+     "rgb": [
+      93,
+      90,
+      83
+     ],
+     "pixels": 365
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "masonry",
+  "level": "L1",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   10270,
+   10270
+  ],
+  "draws": [
+   11,
+   11
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      99
+     ],
+     "pixels": 406
+    },
+    "z": {
+     "rgb": [
+      116,
+      106,
+      94
+     ],
+     "pixels": 1056
+    },
+    "roof": {
+     "rgb": [
+      93,
+      90,
+      83
+     ],
+     "pixels": 365
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      99
+     ],
+     "pixels": 406
+    },
+    "z": {
+     "rgb": [
+      116,
+      106,
+      94
+     ],
+     "pixels": 1056
+    },
+    "roof": {
+     "rgb": [
+      93,
+      90,
+      83
+     ],
+     "pixels": 365
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "masonry",
+  "level": "cell",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   152,
+   152
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 416
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 1078
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      92
+     ],
+     "pixels": 344
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 416
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 1078
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      92
+     ],
+     "pixels": 344
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "masonry",
+  "level": "cell",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   152,
+   152
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 416
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 1078
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      92
+     ],
+     "pixels": 344
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 416
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 1078
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      92
+     ],
+     "pixels": 344
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "masonry",
+  "level": "cell",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   152,
+   152
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 416
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 1078
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      92
+     ],
+     "pixels": 344
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 416
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 1078
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      92
+     ],
+     "pixels": 344
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "masonry",
+  "level": "tile",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 401
+    },
+    "z": {
+     "rgb": [
+      89,
+      91,
+      89
+     ],
+     "pixels": 1046
+    },
+    "roof": {
+     "rgb": [
+      93,
+      92,
+      91
+     ],
+     "pixels": 383
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 401
+    },
+    "z": {
+     "rgb": [
+      89,
+      91,
+      89
+     ],
+     "pixels": 1046
+    },
+    "roof": {
+     "rgb": [
+      93,
+      92,
+      91
+     ],
+     "pixels": 383
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "masonry",
+  "level": "tile",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 401
+    },
+    "z": {
+     "rgb": [
+      89,
+      91,
+      89
+     ],
+     "pixels": 1046
+    },
+    "roof": {
+     "rgb": [
+      93,
+      92,
+      91
+     ],
+     "pixels": 383
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 401
+    },
+    "z": {
+     "rgb": [
+      89,
+      91,
+      89
+     ],
+     "pixels": 1046
+    },
+    "roof": {
+     "rgb": [
+      93,
+      92,
+      91
+     ],
+     "pixels": 383
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "masonry",
+  "level": "tile",
+  "versus": "final - before",
+  "changed8": 0.02571305099394987,
+  "changed32": 0.011235955056179775,
+  "largest": 83,
+  "triangles": [
+   94,
+   152
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 401
+    },
+    "z": {
+     "rgb": [
+      89,
+      91,
+      89
+     ],
+     "pixels": 1046
+    },
+    "roof": {
+     "rgb": [
+      93,
+      92,
+      91
+     ],
+     "pixels": 383
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 416
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 1078
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      92
+     ],
+     "pixels": 344
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "masonry",
+  "level": "plate",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 401
+    },
+    "z": {
+     "rgb": [
+      89,
+      91,
+      89
+     ],
+     "pixels": 1046
+    },
+    "roof": {
+     "rgb": [
+      93,
+      92,
+      91
+     ],
+     "pixels": 383
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 401
+    },
+    "z": {
+     "rgb": [
+      89,
+      91,
+      89
+     ],
+     "pixels": 1046
+    },
+    "roof": {
+     "rgb": [
+      93,
+      92,
+      91
+     ],
+     "pixels": 383
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "masonry",
+  "level": "plate",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 401
+    },
+    "z": {
+     "rgb": [
+      89,
+      91,
+      89
+     ],
+     "pixels": 1046
+    },
+    "roof": {
+     "rgb": [
+      93,
+      92,
+      91
+     ],
+     "pixels": 383
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 401
+    },
+    "z": {
+     "rgb": [
+      89,
+      91,
+      89
+     ],
+     "pixels": 1046
+    },
+    "roof": {
+     "rgb": [
+      93,
+      92,
+      91
+     ],
+     "pixels": 383
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "masonry",
+  "level": "plate",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 401
+    },
+    "z": {
+     "rgb": [
+      89,
+      91,
+      89
+     ],
+     "pixels": 1046
+    },
+    "roof": {
+     "rgb": [
+      93,
+      92,
+      91
+     ],
+     "pixels": 383
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 401
+    },
+    "z": {
+     "rgb": [
+      89,
+      91,
+      89
+     ],
+     "pixels": 1046
+    },
+    "roof": {
+     "rgb": [
+      93,
+      92,
+      91
+     ],
+     "pixels": 383
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "masonry",
+  "level": "base",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   54,
+   54
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      57
+     ],
+     "pixels": 401
+    },
+    "z": {
+     "rgb": [
+      77,
+      65,
+      52
+     ],
+     "pixels": 1046
+    },
+    "roof": {
+     "rgb": [
+      89,
+      89,
+      86
+     ],
+     "pixels": 382
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      57
+     ],
+     "pixels": 401
+    },
+    "z": {
+     "rgb": [
+      77,
+      65,
+      52
+     ],
+     "pixels": 1046
+    },
+    "roof": {
+     "rgb": [
+      89,
+      89,
+      86
+     ],
+     "pixels": 382
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "masonry",
+  "level": "base",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   54,
+   54
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      57
+     ],
+     "pixels": 401
+    },
+    "z": {
+     "rgb": [
+      77,
+      65,
+      52
+     ],
+     "pixels": 1046
+    },
+    "roof": {
+     "rgb": [
+      89,
+      89,
+      86
+     ],
+     "pixels": 382
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      57
+     ],
+     "pixels": 401
+    },
+    "z": {
+     "rgb": [
+      77,
+      65,
+      52
+     ],
+     "pixels": 1046
+    },
+    "roof": {
+     "rgb": [
+      89,
+      89,
+      86
+     ],
+     "pixels": 382
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2000,
+  "tower": "masonry",
+  "level": "base",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   54,
+   54
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      57
+     ],
+     "pixels": 401
+    },
+    "z": {
+     "rgb": [
+      77,
+      65,
+      52
+     ],
+     "pixels": 1046
+    },
+    "roof": {
+     "rgb": [
+      89,
+      89,
+      86
+     ],
+     "pixels": 382
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      57
+     ],
+     "pixels": 401
+    },
+    "z": {
+     "rgb": [
+      77,
+      65,
+      52
+     ],
+     "pixels": 1046
+    },
+    "roof": {
+     "rgb": [
+      89,
+      89,
+      86
+     ],
+     "pixels": 382
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "glass",
+  "level": "L0",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   3576,
+   3576
+  ],
+  "draws": [
+   7,
+   7
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      61,
+      78,
+      76
+     ],
+     "pixels": 429
+    },
+    "z": {
+     "rgb": [
+      58,
+      74,
+      73
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      135,
+      137,
+      135
+     ],
+     "pixels": 299
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      61,
+      78,
+      76
+     ],
+     "pixels": 429
+    },
+    "z": {
+     "rgb": [
+      58,
+      74,
+      73
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      135,
+      137,
+      135
+     ],
+     "pixels": 299
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "glass",
+  "level": "L0",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   3576,
+   3576
+  ],
+  "draws": [
+   7,
+   7
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      61,
+      78,
+      76
+     ],
+     "pixels": 429
+    },
+    "z": {
+     "rgb": [
+      58,
+      74,
+      73
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      135,
+      137,
+      135
+     ],
+     "pixels": 299
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      61,
+      78,
+      76
+     ],
+     "pixels": 429
+    },
+    "z": {
+     "rgb": [
+      58,
+      74,
+      73
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      135,
+      137,
+      135
+     ],
+     "pixels": 299
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "glass",
+  "level": "L0",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   3576,
+   3576
+  ],
+  "draws": [
+   7,
+   7
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      61,
+      78,
+      76
+     ],
+     "pixels": 429
+    },
+    "z": {
+     "rgb": [
+      58,
+      74,
+      73
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      135,
+      137,
+      135
+     ],
+     "pixels": 299
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      61,
+      78,
+      76
+     ],
+     "pixels": 429
+    },
+    "z": {
+     "rgb": [
+      58,
+      74,
+      73
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      135,
+      137,
+      135
+     ],
+     "pixels": 299
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "glass",
+  "level": "L1",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 1,
+  "triangles": [
+   1428,
+   1428
+  ],
+  "draws": [
+   4,
+   4
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      74,
+      82,
+      81
+     ],
+     "pixels": 428
+    },
+    "z": {
+     "rgb": [
+      74,
+      82,
+      81
+     ],
+     "pixels": 725
+    },
+    "roof": {
+     "rgb": [
+      140,
+      141,
+      139
+     ],
+     "pixels": 299
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      74,
+      82,
+      80
+     ],
+     "pixels": 428
+    },
+    "z": {
+     "rgb": [
+      74,
+      81,
+      80
+     ],
+     "pixels": 725
+    },
+    "roof": {
+     "rgb": [
+      140,
+      141,
+      139
+     ],
+     "pixels": 299
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "glass",
+  "level": "L1",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 4,
+  "triangles": [
+   1428,
+   1428
+  ],
+  "draws": [
+   4,
+   4
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      74,
+      82,
+      81
+     ],
+     "pixels": 428
+    },
+    "z": {
+     "rgb": [
+      74,
+      82,
+      81
+     ],
+     "pixels": 725
+    },
+    "roof": {
+     "rgb": [
+      140,
+      141,
+      139
+     ],
+     "pixels": 299
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      73,
+      80,
+      79
+     ],
+     "pixels": 428
+    },
+    "z": {
+     "rgb": [
+      73,
+      80,
+      79
+     ],
+     "pixels": 725
+    },
+    "roof": {
+     "rgb": [
+      140,
+      141,
+      139
+     ],
+     "pixels": 299
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "glass",
+  "level": "L1",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 4,
+  "triangles": [
+   1428,
+   1428
+  ],
+  "draws": [
+   4,
+   4
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      74,
+      82,
+      81
+     ],
+     "pixels": 428
+    },
+    "z": {
+     "rgb": [
+      74,
+      82,
+      81
+     ],
+     "pixels": 725
+    },
+    "roof": {
+     "rgb": [
+      140,
+      141,
+      139
+     ],
+     "pixels": 299
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      73,
+      80,
+      79
+     ],
+     "pixels": 428
+    },
+    "z": {
+     "rgb": [
+      73,
+      80,
+      79
+     ],
+     "pixels": 725
+    },
+    "roof": {
+     "rgb": [
+      140,
+      141,
+      139
+     ],
+     "pixels": 299
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "glass",
+  "level": "cell",
+  "versus": "a - before",
+  "changed8": 0.33594202898550724,
+  "changed32": 0.3310144927536232,
+  "largest": 78,
+  "triangles": [
+   114,
+   114
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      91
+     ],
+     "pixels": 429
+    },
+    "z": {
+     "rgb": [
+      83,
+      89,
+      91
+     ],
+     "pixels": 713
+    },
+    "roof": {
+     "rgb": [
+      130,
+      133,
+      137
+     ],
+     "pixels": 296
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      22,
+      31,
+      27
+     ],
+     "pixels": 429
+    },
+    "z": {
+     "rgb": [
+      20,
+      28,
+      24
+     ],
+     "pixels": 713
+    },
+    "roof": {
+     "rgb": [
+      130,
+      133,
+      137
+     ],
+     "pixels": 296
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "glass",
+  "level": "cell",
+  "versus": "b - before",
+  "changed8": 0.32869565217391306,
+  "changed32": 0,
+  "largest": 29,
+  "triangles": [
+   114,
+   114
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      91
+     ],
+     "pixels": 429
+    },
+    "z": {
+     "rgb": [
+      83,
+      89,
+      91
+     ],
+     "pixels": 713
+    },
+    "roof": {
+     "rgb": [
+      130,
+      133,
+      137
+     ],
+     "pixels": 296
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      69,
+      75,
+      76
+     ],
+     "pixels": 429
+    },
+    "z": {
+     "rgb": [
+      68,
+      74,
+      74
+     ],
+     "pixels": 713
+    },
+    "roof": {
+     "rgb": [
+      130,
+      133,
+      137
+     ],
+     "pixels": 296
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "glass",
+  "level": "cell",
+  "versus": "final - before",
+  "changed8": 0.32869565217391306,
+  "changed32": 0,
+  "largest": 29,
+  "triangles": [
+   114,
+   114
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      84,
+      90,
+      91
+     ],
+     "pixels": 429
+    },
+    "z": {
+     "rgb": [
+      83,
+      89,
+      91
+     ],
+     "pixels": 713
+    },
+    "roof": {
+     "rgb": [
+      130,
+      133,
+      137
+     ],
+     "pixels": 296
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      69,
+      75,
+      76
+     ],
+     "pixels": 429
+    },
+    "z": {
+     "rgb": [
+      68,
+      74,
+      74
+     ],
+     "pixels": 713
+    },
+    "roof": {
+     "rgb": [
+      130,
+      133,
+      137
+     ],
+     "pixels": 296
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "glass",
+  "level": "tile",
+  "versus": "a - before",
+  "changed8": 0.33594202898550724,
+  "changed32": 0.3310144927536232,
+  "largest": 78,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 409
+    },
+    "z": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 698
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 334
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      18,
+      26,
+      21
+     ],
+     "pixels": 409
+    },
+    "z": {
+     "rgb": [
+      24,
+      30,
+      27
+     ],
+     "pixels": 698
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 334
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "glass",
+  "level": "tile",
+  "versus": "b - before",
+  "changed8": 0.32869565217391306,
+  "changed32": 0,
+  "largest": 29,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 409
+    },
+    "z": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 698
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 334
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      69,
+      75,
+      75
+     ],
+     "pixels": 409
+    },
+    "z": {
+     "rgb": [
+      69,
+      75,
+      76
+     ],
+     "pixels": 698
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 334
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "glass",
+  "level": "tile",
+  "versus": "final - before",
+  "changed8": 0.3634782608695652,
+  "changed32": 0.02318840579710145,
+  "largest": 133,
+  "triangles": [
+   40,
+   114
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 409
+    },
+    "z": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 698
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 334
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      69,
+      75,
+      76
+     ],
+     "pixels": 429
+    },
+    "z": {
+     "rgb": [
+      68,
+      74,
+      74
+     ],
+     "pixels": 713
+    },
+    "roof": {
+     "rgb": [
+      130,
+      133,
+      137
+     ],
+     "pixels": 296
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "glass",
+  "level": "plate",
+  "versus": "a - before",
+  "changed8": 0.33594202898550724,
+  "changed32": 0.3310144927536232,
+  "largest": 78,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 409
+    },
+    "z": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 698
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 334
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      18,
+      26,
+      21
+     ],
+     "pixels": 409
+    },
+    "z": {
+     "rgb": [
+      24,
+      30,
+      27
+     ],
+     "pixels": 698
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 334
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "glass",
+  "level": "plate",
+  "versus": "b - before",
+  "changed8": 0.32869565217391306,
+  "changed32": 0,
+  "largest": 29,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 409
+    },
+    "z": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 698
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 334
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      69,
+      75,
+      75
+     ],
+     "pixels": 409
+    },
+    "z": {
+     "rgb": [
+      69,
+      75,
+      76
+     ],
+     "pixels": 698
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 334
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "glass",
+  "level": "plate",
+  "versus": "final - before",
+  "changed8": 0.32869565217391306,
+  "changed32": 0,
+  "largest": 29,
+  "triangles": [
+   40,
+   40
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 409
+    },
+    "z": {
+     "rgb": [
+      85,
+      90,
+      92
+     ],
+     "pixels": 698
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 334
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      69,
+      75,
+      75
+     ],
+     "pixels": 409
+    },
+    "z": {
+     "rgb": [
+      69,
+      75,
+      76
+     ],
+     "pixels": 698
+    },
+    "roof": {
+     "rgb": [
+      131,
+      134,
+      138
+     ],
+     "pixels": 334
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "glass",
+  "level": "base",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   20,
+   20
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      14,
+      18,
+      23
+     ],
+     "pixels": 409
+    },
+    "z": {
+     "rgb": [
+      19,
+      23,
+      27
+     ],
+     "pixels": 699
+    },
+    "roof": {
+     "rgb": [
+      132,
+      132,
+      141
+     ],
+     "pixels": 334
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      14,
+      18,
+      23
+     ],
+     "pixels": 409
+    },
+    "z": {
+     "rgb": [
+      19,
+      23,
+      27
+     ],
+     "pixels": 699
+    },
+    "roof": {
+     "rgb": [
+      132,
+      132,
+      141
+     ],
+     "pixels": 334
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "glass",
+  "level": "base",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   20,
+   20
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      14,
+      18,
+      23
+     ],
+     "pixels": 409
+    },
+    "z": {
+     "rgb": [
+      19,
+      23,
+      27
+     ],
+     "pixels": 699
+    },
+    "roof": {
+     "rgb": [
+      132,
+      132,
+      141
+     ],
+     "pixels": 334
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      14,
+      18,
+      23
+     ],
+     "pixels": 409
+    },
+    "z": {
+     "rgb": [
+      19,
+      23,
+      27
+     ],
+     "pixels": 699
+    },
+    "roof": {
+     "rgb": [
+      132,
+      132,
+      141
+     ],
+     "pixels": 334
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "glass",
+  "level": "base",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   20,
+   20
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      14,
+      18,
+      23
+     ],
+     "pixels": 409
+    },
+    "z": {
+     "rgb": [
+      19,
+      23,
+      27
+     ],
+     "pixels": 699
+    },
+    "roof": {
+     "rgb": [
+      132,
+      132,
+      141
+     ],
+     "pixels": 334
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      14,
+      18,
+      23
+     ],
+     "pixels": 409
+    },
+    "z": {
+     "rgb": [
+      19,
+      23,
+      27
+     ],
+     "pixels": 699
+    },
+    "roof": {
+     "rgb": [
+      132,
+      132,
+      141
+     ],
+     "pixels": 334
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "masonry",
+  "level": "L0",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   13770,
+   13770
+  ],
+  "draws": [
+   17,
+   17
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      117,
+      105,
+      92
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      105,
+      97,
+      86
+     ],
+     "pixels": 711
+    },
+    "roof": {
+     "rgb": [
+      90,
+      87,
+      80
+     ],
+     "pixels": 247
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      117,
+      105,
+      92
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      105,
+      97,
+      86
+     ],
+     "pixels": 711
+    },
+    "roof": {
+     "rgb": [
+      90,
+      87,
+      80
+     ],
+     "pixels": 247
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "masonry",
+  "level": "L0",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   13770,
+   13770
+  ],
+  "draws": [
+   17,
+   17
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      117,
+      105,
+      92
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      105,
+      97,
+      86
+     ],
+     "pixels": 711
+    },
+    "roof": {
+     "rgb": [
+      90,
+      87,
+      80
+     ],
+     "pixels": 247
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      117,
+      105,
+      92
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      105,
+      97,
+      86
+     ],
+     "pixels": 711
+    },
+    "roof": {
+     "rgb": [
+      90,
+      87,
+      80
+     ],
+     "pixels": 247
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "masonry",
+  "level": "L0",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   13770,
+   13770
+  ],
+  "draws": [
+   17,
+   17
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      117,
+      105,
+      92
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      105,
+      97,
+      86
+     ],
+     "pixels": 711
+    },
+    "roof": {
+     "rgb": [
+      90,
+      87,
+      80
+     ],
+     "pixels": 247
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      117,
+      105,
+      92
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      105,
+      97,
+      86
+     ],
+     "pixels": 711
+    },
+    "roof": {
+     "rgb": [
+      90,
+      87,
+      80
+     ],
+     "pixels": 247
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "masonry",
+  "level": "L1",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   10158,
+   10158
+  ],
+  "draws": [
+   9,
+   9
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      98
+     ],
+     "pixels": 268
+    },
+    "z": {
+     "rgb": [
+      115,
+      106,
+      94
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      93,
+      89,
+      82
+     ],
+     "pixels": 245
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      98
+     ],
+     "pixels": 268
+    },
+    "z": {
+     "rgb": [
+      115,
+      106,
+      94
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      93,
+      89,
+      82
+     ],
+     "pixels": 245
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "masonry",
+  "level": "L1",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   10158,
+   10158
+  ],
+  "draws": [
+   9,
+   9
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      98
+     ],
+     "pixels": 268
+    },
+    "z": {
+     "rgb": [
+      115,
+      106,
+      94
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      93,
+      89,
+      82
+     ],
+     "pixels": 245
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      98
+     ],
+     "pixels": 268
+    },
+    "z": {
+     "rgb": [
+      115,
+      106,
+      94
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      93,
+      89,
+      82
+     ],
+     "pixels": 245
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "masonry",
+  "level": "L1",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   10158,
+   10158
+  ],
+  "draws": [
+   9,
+   9
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      98
+     ],
+     "pixels": 268
+    },
+    "z": {
+     "rgb": [
+      115,
+      106,
+      94
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      93,
+      89,
+      82
+     ],
+     "pixels": 245
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      125,
+      112,
+      98
+     ],
+     "pixels": 268
+    },
+    "z": {
+     "rgb": [
+      115,
+      106,
+      94
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      93,
+      89,
+      82
+     ],
+     "pixels": 245
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "masonry",
+  "level": "cell",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   152,
+   152
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      89,
+      92,
+      90
+     ],
+     "pixels": 276
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 738
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      91
+     ],
+     "pixels": 237
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      89,
+      92,
+      90
+     ],
+     "pixels": 276
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 738
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      91
+     ],
+     "pixels": 237
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "masonry",
+  "level": "cell",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   152,
+   152
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      89,
+      92,
+      90
+     ],
+     "pixels": 276
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 738
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      91
+     ],
+     "pixels": 237
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      89,
+      92,
+      90
+     ],
+     "pixels": 276
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 738
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      91
+     ],
+     "pixels": 237
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "masonry",
+  "level": "cell",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   152,
+   152
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      89,
+      92,
+      90
+     ],
+     "pixels": 276
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 738
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      91
+     ],
+     "pixels": 237
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      89,
+      92,
+      90
+     ],
+     "pixels": 276
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 738
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      91
+     ],
+     "pixels": 237
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "masonry",
+  "level": "tile",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      89
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      92,
+      91,
+      90
+     ],
+     "pixels": 262
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      89
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      92,
+      91,
+      90
+     ],
+     "pixels": 262
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "masonry",
+  "level": "tile",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      89
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      92,
+      91,
+      90
+     ],
+     "pixels": 262
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      89
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      92,
+      91,
+      90
+     ],
+     "pixels": 262
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "masonry",
+  "level": "tile",
+  "versus": "final - before",
+  "changed8": 0.02574370709382151,
+  "changed32": 0.011155606407322655,
+  "largest": 77,
+  "triangles": [
+   94,
+   152
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      89
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      92,
+      91,
+      90
+     ],
+     "pixels": 262
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      89,
+      92,
+      90
+     ],
+     "pixels": 276
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      88
+     ],
+     "pixels": 738
+    },
+    "roof": {
+     "rgb": [
+      94,
+      93,
+      91
+     ],
+     "pixels": 237
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "masonry",
+  "level": "plate",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      89
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      92,
+      91,
+      90
+     ],
+     "pixels": 262
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      89
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      92,
+      91,
+      90
+     ],
+     "pixels": 262
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "masonry",
+  "level": "plate",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      89
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      92,
+      91,
+      90
+     ],
+     "pixels": 262
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      89
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      92,
+      91,
+      90
+     ],
+     "pixels": 262
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "masonry",
+  "level": "plate",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   94,
+   94
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      89
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      92,
+      91,
+      90
+     ],
+     "pixels": 262
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      89,
+      91,
+      90
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      89,
+      90,
+      89
+     ],
+     "pixels": 724
+    },
+    "roof": {
+     "rgb": [
+      92,
+      91,
+      90
+     ],
+     "pixels": 262
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "masonry",
+  "level": "base",
+  "versus": "a - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   54,
+   54
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      78,
+      65,
+      53
+     ],
+     "pixels": 726
+    },
+    "roof": {
+     "rgb": [
+      88,
+      88,
+      85
+     ],
+     "pixels": 261
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      78,
+      65,
+      53
+     ],
+     "pixels": 726
+    },
+    "roof": {
+     "rgb": [
+      88,
+      88,
+      85
+     ],
+     "pixels": 261
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "masonry",
+  "level": "base",
+  "versus": "b - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   54,
+   54
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      78,
+      65,
+      53
+     ],
+     "pixels": 726
+    },
+    "roof": {
+     "rgb": [
+      88,
+      88,
+      85
+     ],
+     "pixels": 261
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      78,
+      65,
+      53
+     ],
+     "pixels": 726
+    },
+    "roof": {
+     "rgb": [
+      88,
+      88,
+      85
+     ],
+     "pixels": 261
+    }
+   }
+  ]
+ },
+ {
+  "distance": 2400,
+  "tower": "masonry",
+  "level": "base",
+  "versus": "final - before",
+  "changed8": 0,
+  "changed32": 0,
+  "largest": 0,
+  "triangles": [
+   54,
+   54
+  ],
+  "draws": [
+   1,
+   1
+  ],
+  "faces": [
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      78,
+      65,
+      53
+     ],
+     "pixels": 726
+    },
+    "roof": {
+     "rgb": [
+      88,
+      88,
+      85
+     ],
+     "pixels": 261
+    }
+   },
+   {
+    "x": {
+     "rgb": [
+      92,
+      75,
+      58
+     ],
+     "pixels": 265
+    },
+    "z": {
+     "rgb": [
+      78,
+      65,
+      53
+     ],
+     "pixels": 726
+    },
+    "roof": {
+     "rgb": [
+      88,
+      88,
+      85
+     ],
+     "pixels": 261
+    }
+   }
+  ]
+ }
+]

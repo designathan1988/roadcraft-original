@@ -1,0 +1,267 @@
+{
+ "url": "http://127.0.0.1:5320/",
+ "made": "2026-10-25T21:28:31.993Z",
+ "towers": [],
+ "districts": [
+  {
+   "name": "district-cell-V0",
+   "drawCalls": 1,
+   "triangles": 31712,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "passes": 60,
+    "median": 0.4482901333333333,
+    "p10": 0.4448938666666667,
+    "p90": 0.45684053333333335,
+    "window": {
+     "start": 1792963688525,
+     "end": 1792963689024
+    }
+   },
+   "gpuCheck": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "passes": 60,
+    "median": 0.44537173333333335,
+    "p10": 0.4414805333333333,
+    "p90": 0.45405866666666667,
+    "window": {
+     "start": 1792963688525,
+     "end": 1792963689024
+    }
+   },
+   "clocks": {
+    "readings": 4,
+    "pstates": [
+     "P0"
+    ],
+    "core": {
+     "min": 1837,
+     "median": 2017,
+     "max": 2017
+    },
+    "memory": {
+     "min": 7501,
+     "median": 7501,
+     "max": 7501
+    },
+    "load": {
+     "min": 32,
+     "median": 32,
+     "max": 100
+    }
+   }
+  },
+  {
+   "name": "district-tile-V0",
+   "drawCalls": 1,
+   "triangles": 26760,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "passes": 60,
+    "median": 0.43347626666666667,
+    "p10": 0.4224,
+    "p90": 0.4392106666666667,
+    "window": {
+     "start": 1792963691459,
+     "end": 1792963691958
+    }
+   },
+   "gpuCheck": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "passes": 60,
+    "median": 0.43188906666666665,
+    "p10": 0.42342399999999997,
+    "p90": 0.44265813333333337,
+    "window": {
+     "start": 1792963691459,
+     "end": 1792963691958
+    }
+   },
+   "clocks": {
+    "readings": 4,
+    "pstates": [
+     "P0"
+    ],
+    "core": {
+     "min": 2010,
+     "median": 2010,
+     "max": 2010
+    },
+    "memory": {
+     "min": 7501,
+     "median": 7501,
+     "max": 7501
+    },
+    "load": {
+     "min": 100,
+     "median": 100,
+     "max": 100
+    }
+   }
+  },
+  {
+   "name": "district-cell-V5",
+   "drawCalls": 1,
+   "triangles": 31712,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "passes": 60,
+    "median": 0.5186218666666667,
+    "p10": 0.5146453333333334,
+    "p90": 0.5261824,
+    "window": {
+     "start": 1792963694943,
+     "end": 1792963695443
+    }
+   },
+   "gpuCheck": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "passes": 60,
+    "median": 0.5182805333333333,
+    "p10": 0.5139797333333334,
+    "p90": 0.5261653333333334,
+    "window": {
+     "start": 1792963694943,
+     "end": 1792963695443
+    }
+   },
+   "clocks": {
+    "readings": 4,
+    "pstates": [
+     "P0"
+    ],
+    "core": {
+     "min": 2010,
+     "median": 2010,
+     "max": 2010
+    },
+    "memory": {
+     "min": 7501,
+     "median": 7501,
+     "max": 7501
+    },
+    "load": {
+     "min": 100,
+     "median": 100,
+     "max": 100
+    }
+   }
+  },
+  {
+   "name": "district-L1-V5",
+   "drawCalls": 28,
+   "triangles": 982506,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "passes": 33,
+    "median": 1.8053430303030304,
+    "p10": 1.7583010909090908,
+    "p90": 1.8266608484848486,
+    "window": {
+     "start": 1792963704748,
+     "end": 1792963707590
+    }
+   },
+   "gpuCheck": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "passes": 40,
+    "median": 1.8035456,
+    "p10": 1.7526528,
+    "p90": 1.8244864,
+    "window": {
+     "start": 1792963704748,
+     "end": 1792963707590
+    }
+   },
+   "clocks": {
+    "readings": 27,
+    "pstates": [
+     "P0"
+    ],
+    "core": {
+     "min": 1845,
+     "median": 1860,
+     "max": 1920
+    },
+    "memory": {
+     "min": 7501,
+     "median": 7501,
+     "max": 7501
+    },
+    "load": {
+     "min": 100,
+     "median": 100,
+     "max": 100
+    }
+   }
+  },
+  {
+   "name": "empty-V0",
+   "drawCalls": 0,
+   "triangles": 0,
+   "gpu": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "passes": 60,
+    "median": 0.33520639999999996,
+    "p10": 0.32983039999999997,
+    "p90": 0.3459072,
+    "window": {
+     "start": 1792963709881,
+     "end": 1792963710381
+    }
+   },
+   "gpuCheck": {
+    "supported": true,
+    "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": 30,
+    "passes": 60,
+    "median": 0.3356672,
+    "p10": 0.3297450666666667,
+    "p90": 0.34292053333333333,
+    "window": {
+     "start": 1792963709881,
+     "end": 1792963710381
+    }
+   },
+   "clocks": {
+    "readings": 5,
+    "pstates": [
+     "P0"
+    ],
+    "core": {
+     "min": 2010,
+     "median": 2010,
+     "max": 2010
+    },
+    "memory": {
+     "min": 7501,
+     "median": 7501,
+     "max": 7501
+    },
+    "load": {
+     "min": 100,
+     "median": 100,
+     "max": 100
+    }
+   }
+  }
+ ]
+}

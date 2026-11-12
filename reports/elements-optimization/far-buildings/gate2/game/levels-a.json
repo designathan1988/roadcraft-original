@@ -1,0 +1,99 @@
+[
+ {
+  "label": "V0",
+  "lv": {
+   "cells": 36,
+   "chosenDetail": 0,
+   "chosenFacade": 9,
+   "chosenFar": 27,
+   "shownDetail": 0,
+   "shownFacade": 9,
+   "shownNone": 27,
+   "notLanded": 0,
+   "heldFar": 0,
+   "heldCoarse": 0,
+   "evictions": 0,
+   "massing": 0,
+   "levelsWaiting": 0,
+   "levelsWaitingInView": 0,
+   "basesWaiting": 0,
+   "scale": 1,
+   "budgetTriangles": 16000000,
+   "chosenTriangles": 810179,
+   "residentBytes": 18709122,
+   "detailBudgetBytes": 1073741824,
+   "roomBytes": 1073741824
+  },
+  "by": {
+   "mass": 18,
+   "tile": 9,
+   "detail": 9
+  },
+  "triangles": 1075407,
+  "calls": 215
+ },
+ {
+  "label": "V5",
+  "lv": {
+   "cells": 36,
+   "chosenDetail": 0,
+   "chosenFacade": 33,
+   "chosenFar": 3,
+   "shownDetail": 0,
+   "shownFacade": 33,
+   "shownNone": 3,
+   "notLanded": 0,
+   "heldFar": 0,
+   "heldCoarse": 0,
+   "evictions": 0,
+   "massing": 0,
+   "levelsWaiting": 0,
+   "levelsWaitingInView": 0,
+   "basesWaiting": 0,
+   "scale": 1,
+   "budgetTriangles": 16000000,
+   "chosenTriangles": 3027863,
+   "residentBytes": 69708342,
+   "detailBudgetBytes": 1073741824,
+   "roomBytes": 1073741824
+  },
+  "by": {
+   "detail": 33,
+   "mass": 3
+  },
+  "triangles": 3312751,
+  "calls": 363
+ },
+ {
+  "label": "V1-audit",
+  "lv": {
+   "cells": 36,
+   "chosenDetail": 0,
+   "chosenFacade": 14,
+   "chosenFar": 22,
+   "shownDetail": 0,
+   "shownFacade": 14,
+   "shownNone": 22,
+   "notLanded": 0,
+   "heldFar": 0,
+   "heldCoarse": 0,
+   "evictions": 0,
+   "massing": 0,
+   "levelsWaiting": 0,
+   "levelsWaitingInView": 0,
+   "basesWaiting": 0,
+   "scale": 1,
+   "budgetTriangles": 16000000,
+   "chosenTriangles": 1569471,
+   "residentBytes": 36352940,
+   "detailBudgetBytes": 1073741824,
+   "roomBytes": 1073741824
+  },
+  "by": {
+   "detail": 14,
+   "mass": 22
+  },
+  "triangles": 1788358,
+  "calls": 263
+ }
+]

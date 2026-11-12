@@ -1,0 +1,636 @@
+{
+ "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+ "method": "scene pass alone (shadow maps kept), 200 passes back to back first, then 30 samples of 10 passes back to back in one EXT_disjoint_timer_query_webgl2 query each, ms a pass; runs in the order before-1, after-1, after-2, before-2",
+ "frames": [
+  {
+   "frame": "acUnit",
+   "order": [
+    "before-1",
+    "after-1",
+    "after-2",
+    "before-2"
+   ],
+   "runs": {
+    "before-1": {
+     "p10": 0.146,
+     "median": 0.147,
+     "p90": 0.28
+    },
+    "after-1": {
+     "p10": 0.349,
+     "median": 0.653,
+     "p90": 1.338
+    },
+    "after-2": {
+     "p10": 0.168,
+     "median": 0.17,
+     "p90": 1.611
+    },
+    "before-2": {
+     "p10": 0.146,
+     "median": 0.169,
+     "p90": 0.172
+    }
+   },
+   "lowestP10": {
+    "before": "0.146",
+    "after": "0.168"
+   }
+  },
+  {
+   "frame": "foliage",
+   "order": [
+    "before-1",
+    "after-1",
+    "after-2",
+    "before-2"
+   ],
+   "runs": {
+    "before-1": {
+     "p10": 0.34,
+     "median": 0.342,
+     "p90": 0.667
+    },
+    "after-1": {
+     "p10": 0.307,
+     "median": 0.35,
+     "p90": 0.351
+    },
+    "after-2": {
+     "p10": 0.306,
+     "median": 0.349,
+     "p90": 0.353
+    },
+    "before-2": {
+     "p10": 0.629,
+     "median": 0.635,
+     "p90": 0.709
+    }
+   },
+   "lowestP10": {
+    "before": "0.340",
+    "after": "0.306"
+   }
+  },
+  {
+   "frame": "bush",
+   "order": [
+    "before-1",
+    "after-1",
+    "after-2",
+    "before-2"
+   ],
+   "runs": {
+    "before-1": {
+     "p10": 0.338,
+     "median": 0.339,
+     "p90": 0.383
+    },
+    "after-1": {
+     "p10": 0.347,
+     "median": 0.708,
+     "p90": 0.775
+    },
+    "after-2": {
+     "p10": 0.169,
+     "median": 0.305,
+     "p90": 1.608
+    },
+    "before-2": {
+     "p10": 0.611,
+     "median": 0.627,
+     "p90": 1.244
+    }
+   },
+   "lowestP10": {
+    "before": "0.338",
+    "after": "0.169"
+   }
+  },
+  {
+   "frame": "chair",
+   "order": [
+    "before-1",
+    "after-1",
+    "after-2",
+    "before-2"
+   ],
+   "runs": {
+    "before-1": {
+     "p10": 0.626,
+     "median": 0.635,
+     "p90": 0.719
+    },
+    "after-1": {
+     "p10": 0.367,
+     "median": 0.367,
+     "p90": 0.44
+    },
+    "after-2": {
+     "p10": 0.173,
+     "median": 0.196,
+     "p90": 0.201
+    },
+    "before-2": {
+     "p10": 0.584,
+     "median": 0.586,
+     "p90": 1.379
+    }
+   },
+   "lowestP10": {
+    "before": "0.584",
+    "after": "0.173"
+   }
+  },
+  {
+   "frame": "table",
+   "order": [
+    "before-1",
+    "after-1",
+    "after-2",
+    "before-2"
+   ],
+   "runs": {
+    "before-1": {
+     "p10": 0.604,
+     "median": 0.607,
+     "p90": 0.665
+    },
+    "after-1": {
+     "p10": 0.364,
+     "median": 0.367,
+     "p90": 0.79
+    },
+    "after-2": {
+     "p10": 0.172,
+     "median": 0.174,
+     "p90": 1.695
+    },
+    "before-2": {
+     "p10": 0.582,
+     "median": 0.586,
+     "p90": 0.802
+    }
+   },
+   "lowestP10": {
+    "before": "0.582",
+    "after": "0.172"
+   }
+  },
+  {
+   "frame": "airer",
+   "order": [
+    "before-1",
+    "after-1",
+    "after-2",
+    "before-2"
+   ],
+   "runs": {
+    "before-1": {
+     "p10": 0.584,
+     "median": 0.61,
+     "p90": 0.786
+    },
+    "after-1": {
+     "p10": 0.64,
+     "median": 0.711,
+     "p90": 1.568
+    },
+    "after-2": {
+     "p10": 0.174,
+     "median": 0.199,
+     "p90": 0.243
+    },
+    "before-2": {
+     "p10": 0.577,
+     "median": 0.588,
+     "p90": 0.653
+    }
+   },
+   "lowestP10": {
+    "before": "0.577",
+    "after": "0.174"
+   }
+  },
+  {
+   "frame": "dish",
+   "order": [
+    "before-1",
+    "after-1",
+    "after-2",
+    "before-2"
+   ],
+   "runs": {
+    "before-1": {
+     "p10": 0.532,
+     "median": 0.537,
+     "p90": 0.597
+    },
+    "after-1": {
+     "p10": 0.302,
+     "median": 0.303,
+     "p90": 1.603
+    },
+    "after-2": {
+     "p10": 0.168,
+     "median": 0.169,
+     "p90": 0.194
+    },
+    "before-2": {
+     "p10": 0.536,
+     "median": 0.549,
+     "p90": 0.688
+    }
+   },
+   "lowestP10": {
+    "before": "0.532",
+    "after": "0.168"
+   }
+  },
+  {
+   "frame": "lounger",
+   "order": [
+    "before-1",
+    "after-1",
+    "after-2",
+    "before-2"
+   ],
+   "runs": {
+    "before-1": {
+     "p10": 0.537,
+     "median": 0.547,
+     "p90": 0.749
+    },
+    "after-1": {
+     "p10": 0.302,
+     "median": 0.449,
+     "p90": 0.712
+    },
+    "after-2": {
+     "p10": 0.169,
+     "median": 0.17,
+     "p90": 1.735
+    },
+    "before-2": {
+     "p10": 0.545,
+     "median": 0.553,
+     "p90": 0.627
+    }
+   },
+   "lowestP10": {
+    "before": "0.537",
+    "after": "0.169"
+   }
+  },
+  {
+   "frame": "bike",
+   "order": [
+    "before-1",
+    "after-1",
+    "after-2",
+    "before-2"
+   ],
+   "runs": {
+    "before-1": {
+     "p10": 0.297,
+     "median": 0.297,
+     "p90": 0.601
+    },
+    "after-1": {
+     "p10": 0.66,
+     "median": 0.67,
+     "p90": 0.727
+    },
+    "after-2": {
+     "p10": 0.389,
+     "median": 0.4,
+     "p90": 1.456
+    },
+    "before-2": {
+     "p10": 0.598,
+     "median": 0.615,
+     "p90": 0.692
+    }
+   },
+   "lowestP10": {
+    "before": "0.297",
+    "after": "0.389"
+   }
+  },
+  {
+   "frame": "wall-left",
+   "order": [
+    "before-1",
+    "after-1",
+    "after-2",
+    "before-2"
+   ],
+   "runs": {
+    "before-1": {
+     "p10": 0.545,
+     "median": 0.548,
+     "p90": 1.346
+    },
+    "after-1": {
+     "p10": 1.492,
+     "median": 1.673,
+     "p90": 1.815
+    },
+    "after-2": {
+     "p10": 1.5,
+     "median": 1.667,
+     "p90": 1.788
+    },
+    "before-2": {
+     "p10": 0.433,
+     "median": 0.471,
+     "p90": 1.67
+    }
+   },
+   "lowestP10": {
+    "before": "0.433",
+    "after": "1.492"
+   }
+  },
+  {
+   "frame": "wall-right",
+   "order": [
+    "before-1",
+    "after-1",
+    "after-2",
+    "before-2"
+   ],
+   "runs": {
+    "before-1": {
+     "p10": 0.635,
+     "median": 0.638,
+     "p90": 1.397
+    },
+    "after-1": {
+     "p10": 1.411,
+     "median": 1.664,
+     "p90": 1.789
+    },
+    "after-2": {
+     "p10": 0.601,
+     "median": 1.639,
+     "p90": 1.78
+    },
+    "before-2": {
+     "p10": 0.483,
+     "median": 0.52,
+     "p90": 1.338
+    }
+   },
+   "lowestP10": {
+    "before": "0.483",
+    "after": "0.601"
+   }
+  },
+  {
+   "frame": "tower-ne",
+   "order": [
+    "before-1",
+    "after-1",
+    "after-2",
+    "before-2"
+   ],
+   "runs": {
+    "before-1": {
+     "p10": 0.575,
+     "median": 0.597,
+     "p90": 1.503
+    },
+    "after-1": {
+     "p10": 0.604,
+     "median": 0.628,
+     "p90": 1.658
+    },
+    "after-2": {
+     "p10": 0.582,
+     "median": 1.21,
+     "p90": 1.796
+    },
+    "before-2": {
+     "p10": 0.573,
+     "median": 0.577,
+     "p90": 1.056
+    }
+   },
+   "lowestP10": {
+    "before": "0.573",
+    "after": "0.582"
+   }
+  },
+  {
+   "frame": "tower-se",
+   "order": [
+    "before-1",
+    "after-1",
+    "after-2",
+    "before-2"
+   ],
+   "runs": {
+    "before-1": {
+     "p10": 0.59,
+     "median": 0.614,
+     "p90": 1.227
+    },
+    "after-1": {
+     "p10": 0.625,
+     "median": 1.55,
+     "p90": 1.721
+    },
+    "after-2": {
+     "p10": 0.604,
+     "median": 0.629,
+     "p90": 1.434
+    },
+    "before-2": {
+     "p10": 0.593,
+     "median": 0.614,
+     "p90": 1.477
+    }
+   },
+   "lowestP10": {
+    "before": "0.590",
+    "after": "0.604"
+   }
+  },
+  {
+   "frame": "tower-sw",
+   "order": [
+    "before-1",
+    "after-1",
+    "after-2",
+    "before-2"
+   ],
+   "runs": {
+    "before-1": {
+     "p10": 0.69,
+     "median": 0.698,
+     "p90": 1.656
+    },
+    "after-1": {
+     "p10": 0.67,
+     "median": 0.689,
+     "p90": 1.614
+    },
+    "after-2": {
+     "p10": 0.668,
+     "median": 0.691,
+     "p90": 0.695
+    },
+    "before-2": {
+     "p10": 0.688,
+     "median": 0.691,
+     "p90": 1.625
+    }
+   },
+   "lowestP10": {
+    "before": "0.688",
+    "after": "0.668"
+   }
+  },
+  {
+   "frame": "tower-nw",
+   "order": [
+    "before-1",
+    "after-1",
+    "after-2",
+    "before-2"
+   ],
+   "runs": {
+    "before-1": {
+     "p10": 0.576,
+     "median": 0.596,
+     "p90": 1.541
+    },
+    "after-1": {
+     "p10": 0.576,
+     "median": 0.597,
+     "p90": 1.593
+    },
+    "after-2": {
+     "p10": 0.573,
+     "median": 0.597,
+     "p90": 1.127
+    },
+    "before-2": {
+     "p10": 0.595,
+     "median": 0.598,
+     "p90": 1.448
+    }
+   },
+   "lowestP10": {
+    "before": "0.576",
+    "after": "0.573"
+   }
+  },
+  {
+   "frame": "district-detail-250",
+   "order": [
+    "before-1",
+    "after-1",
+    "after-2",
+    "before-2"
+   ],
+   "runs": {
+    "before-1": {
+     "p10": 1.159,
+     "median": 1.228,
+     "p90": 1.68
+    },
+    "after-1": {
+     "p10": 1.191,
+     "median": 1.215,
+     "p90": 1.218
+    },
+    "after-2": {
+     "p10": 1.16,
+     "median": 1.214,
+     "p90": 1.818
+    },
+    "before-2": {
+     "p10": 1.153,
+     "median": 1.222,
+     "p90": 1.656
+    }
+   },
+   "lowestP10": {
+    "before": "1.153",
+    "after": "1.160"
+   }
+  },
+  {
+   "frame": "district-detail-800",
+   "order": [
+    "before-1",
+    "after-1",
+    "after-2",
+    "before-2"
+   ],
+   "runs": {
+    "before-1": {
+     "p10": 0.611,
+     "median": 0.634,
+     "p90": 1.63
+    },
+    "after-1": {
+     "p10": 0.586,
+     "median": 1.653,
+     "p90": 1.736
+    },
+    "after-2": {
+     "p10": 1.069,
+     "median": 1.66,
+     "p90": 1.99
+    },
+    "before-2": {
+     "p10": 0.612,
+     "median": 1.422,
+     "p90": 1.776
+    }
+   },
+   "lowestP10": {
+    "before": "0.611",
+    "after": "0.586"
+   }
+  },
+  {
+   "frame": "district-facade-800",
+   "order": [
+    "before-1",
+    "after-1",
+    "after-2",
+    "before-2"
+   ],
+   "runs": {
+    "before-1": {
+     "p10": 0.602,
+     "median": 0.627,
+     "p90": 1.653
+    },
+    "after-1": {
+     "p10": 0.66,
+     "median": 1.624,
+     "p90": 1.687
+    },
+    "after-2": {
+     "p10": 0.612,
+     "median": 1.132,
+     "p90": 1.675
+    },
+    "before-2": {
+     "p10": 0.628,
+     "median": 0.643,
+     "p90": 0.658
+    }
+   },
+   "lowestP10": {
+    "before": "0.602",
+    "after": "0.612"
+   }
+  }
+ ]
+}

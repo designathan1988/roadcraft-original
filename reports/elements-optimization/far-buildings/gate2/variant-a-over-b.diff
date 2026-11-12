@@ -1,0 +1,110 @@
+--- b/massingMaterial.ts	2026-10-25 16:41:03.433987200 -0300
++++ a/src/render/buildings/massingMaterial.ts	2026-10-25 16:43:11.942363900 -0300
+@@ -5,6 +5,7 @@
+ import { LOOKS } from '../bake/finishRecipes';
+ import { finishFar } from './finishes';
+ import { CURTAIN_WALL } from './massing';
++import { SHELL_UV_GLSL } from './shellParts';
+ 
+ /** The material of buildings seen from afar (`massing.ts`) */
+ 
+@@ -63,7 +64,6 @@
+   // A curtain wall's spandrels and mullions: the glass finish as the facade level draws it from afar (`finishes.ts` finishFar, `FAR_FINISH`):
+   // its tint (the vertex's, the light it scatters) over what its metal leaves (its albedo), its metal, its gloss and its sky.
+   const curtain = finishFar().glass;
+-  const curtainAlbedo = (1 / (1 - curtain.metal)).toFixed(5), curtainMetal = curtain.metal.toFixed(5), curtainRough = curtain.rough.toFixed(5);
+   const curtainSky = LOOKS.glass.envMapIntensity.toFixed(5), curtainShare = CURTAIN_WALL.toFixed(1);
+   material.onBeforeCompile = (shader) => {
+     shader.uniforms['roomsAwake'] = uniforms.roomsAwake;
+@@ -71,8 +71,8 @@
+     shader.uniforms['roomDaylight'] = uniforms.roomDaylight ?? { value: 0 };
+     shader.vertexShader = shader.vertexShader
+       // A vertex's facade (along, foot) in full floats, its grid (bay, storey, glass share) in half floats, its seed whole (`cellArrays.ts` `CellMass`).
+-      .replace('#include <common>', '#include <common>\nattribute vec2 facade;\nattribute vec4 facadeGrid;\nattribute float glazingSeed;\nvarying vec4 vFacade;\nvarying vec2 vGlazing;\nvarying vec2 vWindow;\nvarying float vHeight;')
+-      .replace('#include <begin_vertex>', '#include <begin_vertex>\nvFacade = vec4(facade.x, facadeGrid.x, facadeGrid.y, facade.y);\nvGlazing = vec2(facadeGrid.z, glazingSeed);\nvWindow = vec2(floor(facadeGrid.w / 32.0 + 0.01), mod(floor(facadeGrid.w + 0.5), 32.0)) / 31.0;\nvHeight = (modelMatrix * vec4(transformed, 1.0)).y;');
++      .replace('#include <common>', '#include <common>\nattribute vec2 facade;\nattribute vec4 facadeGrid;\nattribute float glazingSeed;\nvarying vec4 vFacade;\nvarying vec2 vGlazing;\nvarying vec2 vWindow;\nvarying float vHeight;\nvarying vec3 vMassWorld;\nvarying vec3 vMassOut;')
++      .replace('#include <begin_vertex>', '#include <begin_vertex>\nvFacade = vec4(facade.x, facadeGrid.x, facadeGrid.y, facade.y);\nvGlazing = vec2(facadeGrid.z, glazingSeed);\nvWindow = vec2(floor(facadeGrid.w / 32.0 + 0.01), mod(floor(facadeGrid.w + 0.5), 32.0)) / 31.0;\nvHeight = (modelMatrix * vec4(transformed, 1.0)).y;\nvMassWorld = (modelMatrix * vec4(transformed, 1.0)).xyz;\nvMassOut = mat3(modelMatrix) * objectNormal;');
+     if (base) {
+       // Its colour from its paint, one a triangle; an up normal for what reads one in the vertex stage (the shadow's normal bias, the lots' overlay): the face's own is taken from its slope in the fragment stage.
+       shader.vertexShader = shader.vertexShader
+@@ -91,9 +91,14 @@
+ // The windows' sill and head, shares of the storey (massing.ts windowCode): the face's own windows, as the detail cuts them.
+ varying vec2 vWindow;
+ varying float vHeight;
++varying vec3 vMassWorld;
++varying vec3 vMassOut;
++${SHELL_UV_GLSL}
+ float massGlass = 0.0;
+ // A curtain wall's pixel (1): what is not its windows is its finish, the glass's look from afar.
+ float massCurtain = 0.0;
++// VARIANT (a): the glass finish's pane under the pixel (its frame the rest).
++float massPane = 0.0;
+ float massLit = 0.0;
+ vec3 massLamp = vec3(1.0);
+ ${ROOM_LAMP_GLSL}
+@@ -111,6 +116,11 @@
+   // A window under a pixel leaves its mean: kept at full strength the glass the detail shows, not washed into the wall (the town at 1–2 km read as pastel boxes, 2026-10-20).
+   // A curtain wall's at its own share: what is round its windows is its glass finish, as dark as the detail draws it, not a wall to wash.
+   massGlass = clamp(across * up * mix(1.45, 1.0, massCurtain), 0.0, 1.0) * step(0.0, cell.y);
++  // VARIANT (a): a curtain wall is its glass finish's grid alone (finishRecipes.ts glass: 1.5 m panes, a 3-texel frame each side of 128), in phase with the detail's texture; no window.
++  vec2 pane = shellPlanarUv(vMassWorld, normalize(vMassOut)) / 1.5;
++  vec2 paneFoot = massFootprint(pane);
++  massPane = massPulse(pane.x, paneFoot.x, 3.0 / 128.0, 125.0 / 128.0) * massPulse(pane.y, paneFoot.y, 3.0 / 128.0, 125.0 / 128.0);
++  massGlass *= 1.0 - massCurtain;
+   // Which room is lit: its own lot near, the share awake once a window is under a pixel; by day (\`massingNight\` 0, a uniform: one branch for every pixel) none glows, so none is worked out.
+   if (massingNight > 0.0) {
+     vec2 room = floor(cell);
+@@ -123,12 +133,12 @@
+     massLamp = mix(roomLamp(fract(lot * 17.31), office), roomLampMean(office), sub);
+   }
+   // The panes as the detail draws them, a curtain wall's too (its mullions the rest): dark glass, the sky's reflection and the room behind it (emissive below).
+-  diffuseColor.rgb = mix(diffuseColor.rgb * mix(1.0, ${curtainAlbedo}, massCurtain), ${glass}, massGlass);
++  diffuseColor.rgb = mix(diffuseColor.rgb * mix(1.0, mix(0.69390, 0.03104, massPane) / ${curtain.diffuse[0].toFixed(5)}, massCurtain), ${glass}, massGlass);
+   // The foot of the wall in the street's shade: a block stands on the ground, not on a card (the town from afar, 2026-10-20).
+   diffuseColor.rgb *= mix(0.62, 1.0, smoothstep(0.0, ${m(1.4).toFixed(4)}, vHeight - vFacade.w));
+ }`)
+-      .replace('#include <roughnessmap_fragment>', `#include <roughnessmap_fragment>\nroughnessFactor = mix(mix(roughnessFactor, ${curtainRough}, massCurtain), 0.06, massGlass);`)
+-      .replace('#include <metalnessmap_fragment>', `#include <metalnessmap_fragment>\nmetalnessFactor = mix(metalnessFactor, ${curtainMetal}, massCurtain * (1.0 - massGlass));`)
++      .replace('#include <roughnessmap_fragment>', `#include <roughnessmap_fragment>\nroughnessFactor = mix(mix(roughnessFactor, mix(0.4, 0.07, massPane), massCurtain), 0.06, massGlass);`)
++      .replace('#include <metalnessmap_fragment>', `#include <metalnessmap_fragment>\nmetalnessFactor = mix(metalnessFactor, 1.0 - massPane, massCurtain * (1.0 - massGlass));`)
+       // The curtain wall's finish shows the sky as the detail's does (its own envMapIntensity, `finishRecipes.ts` glass); the panes theirs, as before.
+       .replace('#include <lights_fragment_maps>', `#include <lights_fragment_maps>
+ #if defined( RE_IndirectSpecular ) && defined( USE_ENVMAP )
+--- b/finishes.ts	2026-10-25 16:41:03.433987200 -0300
++++ a/src/render/buildings/finishes.ts	2026-10-25 16:41:43.608388700 -0300
+@@ -6,6 +6,7 @@
+ import { applyLotOverlay } from '../lotOverlay';
+ import { COLOUR_RANGE, FINISH_ATTRIBUTE, PAINT_ATTRIBUTE, PAINT_UNIT, SHELL_NORMAL, WEAR_STEPS } from './cellArrays';
+ import { SHELL_PART_BEGIN, SHELL_PART_PARS, SHELL_UV_GLSL, shellPartVertex } from './shellParts';
++import { PULSE_GLSL } from './massingMaterial';
+ 
+ /** The building finishes ("Materials"): their recipes in `bake/finishRecipes.ts`, baked at build time as one texture array per map, a layer per finish */
+ 
+@@ -124,7 +125,16 @@
+ /** GLSL after the map, the far program's (`createShellMaterial` far): its finish's colour from afar for its texture (`finishAlbedo`), the wear's mean for its stains; its roughness and its glass's metal the means of its maps' (`finishFar`). */
+ const FAR_FINISH = `
+ shellFar = shellTones[vShellFinish * 2 + 1];
+-diffuseColor.rgb *= shellTones[vShellFinish * 2].rgb * (1.0 - 0.3 * vDecay);`;
++if (vShellFinish == ${FINISHES.indexOf('glass')}) {
++  // VARIANT (a): the glass finish's own grid (finishRecipes.ts glass: 1.5 m panes, a 3-texel frame each side of 128), in phase with the detail's texture.
++  vec2 farPane = vShellUv / shellLook.x / 1.5;
++  vec2 farFoot = farFinishFootprint(farPane);
++  float farGlass = farFinishPulse(farPane.x, farFoot.x, 3.0 / 128.0, 125.0 / 128.0) * farFinishPulse(farPane.y, farFoot.y, 3.0 / 128.0, 125.0 / 128.0);
++  diffuseColor.rgb *= mix(0.69390, 0.03104, farGlass);
++  shellFar = vec4(mix(0.4, 0.07, farGlass), 1.0 - farGlass, 0.0, 0.0);
++} else {
++diffuseColor.rgb *= shellTones[vShellFinish * 2].rgb * (1.0 - 0.3 * vDecay);
++}`;
+ 
+ /** GLSL: a shell vertex's normal, octahedral in two normalised shorts (\`octNormal\`, Cigolle et al. 2014), unfolded. */
+ export const SHELL_NORMAL_GLSL = `attribute vec2 ${SHELL_NORMAL};
+@@ -193,7 +203,8 @@
+ }` : ''}`);
+   shader.fragmentShader = shader.fragmentShader
+     .replace('#include <common>', `#include <common>\n${FINISH_PARS}\n${maps ? MAP_PARS : ''}\n${weathered ? WEATHER_PARS : ''}\n${tones ? `uniform vec4 shellTones[${FINISHES.length * 2}];
+-vec4 shellFar = vec4(1.0);` : ''}`)
++vec4 shellFar = vec4(1.0);
++${PULSE_GLSL('farFinish')}` : ''}`)
+     .replace('#include <envmap_physical_pars_fragment>', ShaderChunk.envmap_physical_pars_fragment.replace(/\benvMapIntensity\b/g, '( envMapIntensity * shellEnvScale )'))
+     .replace('#include <map_fragment>', `#include <map_fragment>
+ shellLook = shellLooks[vShellFinish * ${LOOK_ROWS}];
