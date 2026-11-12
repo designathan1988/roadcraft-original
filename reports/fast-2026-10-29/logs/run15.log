@@ -1,0 +1,10 @@
+(node:27180) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[5 s] profiling 3 threads so far (0 failures)
+Warning: Detected unsettled top-level await at file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/reports/fast-2026-10-29/driver/run15.mjs:125
+  if (Date.now() - lastHeap > 10000 && pageT) { lastHeap = Date.now(); try { const hp = await pageT.call('HeapProfiler.getSamplingProfile'); writeFileSync(join(RAW, 'profiles', `page-open-live-${String(piece).padStart(2, '0')}.heapprofile`), JSON.stringify(hp.profile)); log(`open: live heap picture ${piece} saved (page heap ${s2.heap} MB)`); } catch (e) { log(`open: heap picture failed ${e.message}`); } }
+                                                                                        ^
+
+
+
+EXIT 13
