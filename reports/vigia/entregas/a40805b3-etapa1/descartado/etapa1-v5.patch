@@ -1,0 +1,2780 @@
+diff --git a/src/lab/catalog/engineBuildings.ts b/src/lab/catalog/engineBuildings.ts
+index e31ae604..7d37ae30 100644
+--- a/src/lab/catalog/engineBuildings.ts
++++ b/src/lab/catalog/engineBuildings.ts
+@@ -6,12 +6,11 @@ import { buildingHeight } from '@world/buildings/geometry';
+ import type { Building, BuildingId } from '@world/buildings/types';
+ import { m } from '@world/units';
+ import { createBuildingKit } from '../../render/buildings/kit';
+-import { assembleBuildingMeshes, buildBuildingMeshes, emitChunk } from '../../render/buildings/buildingMesh';
+-import { CELL_DETAIL, PLATE_DETAIL, TILE_DETAIL, emitMassing, massFloor } from '../../render/buildings/massing';
++import { assembleBuildingMeshes, buildBuildingMeshes, emitProgram } from '../../render/buildings/buildingMesh';
++import { CELL_DETAIL, PLATE_DETAIL, TILE_DETAIL, massFloor, massOf } from '../../render/buildings/massing';
+ import { cellMass } from '../../render/buildings/cellArrays';
+ import { cellMesh } from '../../render/buildings/massCells';
+-import { BASE_VERTEX, CellWriter, emitBase } from '../../render/buildings/massBase';
+-import { drawsSignature } from '../../render/buildings/signature';
++import { BASE_VERTEX, CellWriter, writeBase } from '../../render/buildings/massBase';
+ import { BufferAttribute, BufferGeometry as BufferGeometryClass, Mesh, MeshStandardMaterial, type Material } from 'three';
+ import type { BatchCache } from './capture';
+ import { piecesOf, shown } from './layout';
+@@ -42,23 +41,24 @@ export function engineBuildingFarItems(add: Add): void {
+   let id = 1;
+   const one = (group: string, name: string, variation: string, body: BlueprintBody, key?: string): void => {
+     const b = { ...instantiate(body, { x: 0, y: 0 }, 0, key), id: id++ as BuildingId } as Building;
+-    const signature = drawsSignature(b);
+     const label = `${name} (${variation})`;
+-    const facade = assembleBuildingMeshes([emitChunk(b, ground, undefined, ground, undefined, true)], kit);
+-    add({ group: 'Buildings: far facade (L1)', name: label, variation: group, origin: 'kit', source: 'src/render/buildings/buildingMesh.ts (emitChunk far, assembleBuildingMeshes)', build: 'merged',
++    // ONE walk of the building (`emitProgram`): its facade level, its masses at each level and its base all drawn from that program.
++    const program = emitProgram(b, ground, undefined, ground, { near: false, far: true }, { floor: massFloor(b, ground) ?? null });
++    const facade = assembleBuildingMeshes([program.far!], kit);
++    add({ group: 'Buildings: far facade (L1)', name: label, variation: group, origin: 'kit', source: 'src/render/buildings/buildingMesh.ts (emitProgram far, assembleBuildingMeshes)', build: 'merged',
+       pieces: piecesOf(facade.group), object: shown(facade.group, cache), countKey: `building-l1:${label}`,
+       notes: ['the bays laid as runs, their windows drawn by the facade shader (facadeLevel.ts); what is set into an opening left to the shader'] });
+     for (const [level, detail] of [['cell', CELL_DETAIL], ['tile', TILE_DETAIL], ['plate', PLATE_DETAIL]] as const) {
+-      const chunk = emitMassing(b, ground, undefined, ground, signature, undefined, detail);
++      const chunk = massOf(program.mass, detail);
+       const mass = chunk ? cellMass([chunk]) : null;
+       if (!mass) continue;
+       const mesh = cellMesh(mass, kit);
+-      add({ group: `Buildings: masses (${level} level)`, name: label, variation: group, origin: 'kit', source: 'src/render/buildings/massing.ts (emitMassing) + massCells.ts (cellMesh)', build: 'merged',
++      add({ group: `Buildings: masses (${level} level)`, name: label, variation: group, origin: 'kit', source: 'src/render/buildings/massing.ts (massOf over the program) + massCells.ts (cellMesh)', build: 'merged',
+         pieces: [{ label: 'masses', geometry: mesh.geometry, material: mesh.material as Material }], object: shown(mesh, cache), countKey: `building-mass-${level}:${label}`,
+         notes: [`left out or laid flat at this level: up to ${detail.drop} m${detail.boxes ? ', pitched roofs as boxes' : ''}; the windows drawn by the massing shader`] });
+     }
+     const writer = new CellWriter();
+-    emitBase(writer, b, massFloor(b, ground), ground, signature);
++    writeBase(writer, program.mass);
+     if (writer.index.length) {
+       const g = new BufferGeometryClass();
+       g.setAttribute('position', new BufferAttribute(new Float32Array(writer.position), 3));
+@@ -66,7 +66,7 @@ export function engineBuildingFarItems(add: Add): void {
+       g.computeVertexNormals();
+       const mesh = new Mesh(g, new MeshStandardMaterial({ color: 0xb9b2a6, roughness: 0.9 }));
+       mesh.name = 'building-base';
+-      add({ group: 'Buildings: base (farthest level)', name: label, variation: group, origin: 'kit', source: 'src/render/buildings/massBase.ts (emitBase)', build: 'merged',
++      add({ group: 'Buildings: base (farthest level)', name: label, variation: group, origin: 'kit', source: 'src/render/buildings/massBase.ts (writeBase over the program)', build: 'merged',
+         pieces: [{ label: 'base', geometry: g, material: mesh.material }], object: mesh, countKey: `building-base:${label}`,
+         notes: [`each block a prism, each paved lot a slab; on the GPU a vertex is ${BASE_VERTEX} shorts on its square's grid (massBase.ts)`] });
+     }
+diff --git a/src/render/buildingSwitches.ts b/src/render/buildingSwitches.ts
+index 6cdb6e07..2b63901f 100644
+--- a/src/render/buildingSwitches.ts
++++ b/src/render/buildingSwitches.ts
+@@ -19,7 +19,7 @@ const ROOT_SWITCH: Readonly<Record<BuildingRoot, BuildingSwitch>> = {
+ const KIND_SWITCH: Readonly<Record<string, BuildingSwitch>> = Object.freeze({
+   [SHELL_MESH]: 'bShell',
+   // The cells' walls in their multi-draw batches (`shellBatch.ts`): the switch hid none of them once the shells left their cells' meshes.
+-  ...Object.fromEntries(['detail', 'facade', 'runs'].map((set) => [`building-shell-batch-${set}`, 'bShell'])),
++  ...Object.fromEntries(['detail', 'detailRuns', 'facade', 'runs'].map((set) => [`building-shell-batch-${set}`, 'bShell'])),
+   ...Object.fromEntries(['glass', 'glassDark', 'glassRail'].map((k) => [`building-${k}`, 'bGlass'])),
+   ...Object.fromEntries(['frame', 'door', 'shutter'].map((k) => [`building-${k}`, 'bFrames'])),
+   ...Object.fromEntries(['railing', 'roofRailing', 'awning', 'column', 'water', 'lamp', 'wash', 'fin', 'louvre', 'brise'].map((k) => [`building-${k}`, 'bFacadeDetails'])),
+diff --git a/src/render/buildings/buildingMesh.ts b/src/render/buildings/buildingMesh.ts
+index 71cc3a0c..193d45ef 100644
+--- a/src/render/buildings/buildingMesh.ts
++++ b/src/render/buildings/buildingMesh.ts
+@@ -52,6 +52,7 @@ import {
+ import {
+   type FacadeBay,
+   SIDE_NORMAL,
++  bayLayout,
+   bayWidth,
+   baysOn,
+   closedBlocks,
+@@ -106,7 +107,9 @@ import { type BuildingKit, PART_KINDS, PORCH_LAMP, type PartKind } from './kit';
+ import { FACADE_FLIP, FACADE_KIND, FACADE_STREAK, STREAK_SILL } from './facadeLevel';
+ import { gpuOnlyAttributes } from '../mesh/gpuOnly';
+ import { facadeProps } from './facadeProps';
+-import { LOT_COLOURS } from './massing';
++import { GLASS_SHARE, LOT_COLOURS, SAW_GLASS_RGB, TERRACE_RGB, massColours, rgbOf, shadeOf as massShade } from './massing';
++import { recordBase } from './massBase';
++import { type BuildingProgram, MASS_FLATTENED, MASS_KEEP, MASS_PITCHED, type MassBay, MassRecorder, type MassSide, type ProgramSummary } from './program';
+ import { PARASOL_HALF, PARASOL_HIGH, PARASOL_LOW, ROOF_COLOURS, TANK_COLOURS, machineRooms, roofPlantOf, terraceDeck, terraceParasols, terraceSeed } from './roofPlan';
+ import type { FlagInstance } from './flagLayer';
+ import type { BuildingChunk, LotGround, LotGroundRecipe, PartBatch, RunChunk, ShellChunk } from './chunk';
+@@ -703,8 +706,9 @@ class Shell {
+   }
+ 
+   /** DO NOT lay only the first two triangles: a lantern's octagonal and 24-sided caps */
+-  face(points: readonly (readonly [number, number, number])[], n: readonly [number, number, number], c: Paint, shades?: readonly number[]): void {
+-    if (Shell.tap) Shell.tap(points, n, c);
++  /** `tap`: told to the catalogue (`setShellTap`); false for the second level a face is laid in (`LevelShell`). */
++  face(points: readonly (readonly [number, number, number])[], n: readonly [number, number, number], c: Paint, shades?: readonly number[], tap = true): void {
++    if (tap && Shell.tap) Shell.tap(points, n, c);
+     // A far run of bays with no opening (kind 0) draws as a wall: it needs no window grid. A detail run keeps it: its tone is the shader's.
+     const st = this.stamp && (this.stamp.kind !== FACADE_KIND.none || this.stamp.near) ? this.stamp : null;
+     const parts = st ? this.runs : this.parts;
+@@ -809,6 +813,50 @@ class Shell {
+ }
+ 
+ type V3 = [number, number, number];
++
++/** THE LEVELS ONE WALK WRITES (`emitProgram`): the detail (near) and the facade level (far), either or both, from the same walk over the
++ *  building: a face or a part goes to every level the walk is writing at that point (`LevelShell.mask`), a bay's own pieces to the level they
++ *  are for (the detail's cut opening, the facade level's flattened bay). DO NOT walk the building again for another level. */
++const NEAR = 1;
++const FAR = 2;
++const BOTH = NEAR | FAR;
++
++/** One level's sinks: its shell, its parts' rows and its furniture's. */
++interface LevelSink {
++  readonly shell: Shell;
++  readonly parts: PartSink;
++  readonly furniture: FurnitureSink;
++}
++interface Levels {
++  readonly near: LevelSink | null;
++  readonly far: LevelSink | null;
++}
++/** Each finish's colour from afar (`finishes.ts` finishAlbedo): the masses' tint times their texture's mean. */
++type Tone = Readonly<Record<Finish, readonly [number, number, number]>>;
++
++/** The shells of the levels a walk writes, laid as one: each face into every level the walk writes at that point. */
++class LevelShell {
++  /** The levels being written now (`NEAR`, `FAR`), of those the walk has. */
++  mask = BOTH;
++  constructor(readonly near: Shell | null, readonly far: Shell | null) {}
++
++  face(points: readonly (readonly [number, number, number])[], n: readonly [number, number, number], c: Paint, shades?: readonly number[]): void {
++    const near = this.near !== null && (this.mask & NEAR) !== 0;
++    if (near) this.near!.face(points, n, c, shades);
++    if (this.far && (this.mask & FAR) !== 0) this.far.face(points, n, c, shades, !near);
++  }
++
++  get ground(): number { return (this.near ?? this.far)?.ground ?? Number.NaN; }
++  set ground(z: number) { if (this.near) this.near.ground = z; if (this.far) this.far.ground = z; }
++  get decay(): number { return (this.near ?? this.far)?.decay ?? 0; }
++  get apart(): boolean { return (this.near ?? this.far)?.apart ?? true; }
++  /** The windows of the faces laid next, in the levels being written now. */
++  set stamp(st: FacadeStamp | null) {
++    if (this.near && (this.mask & NEAR) !== 0) this.near.stamp = st;
++    if (this.far && (this.mask & FAR) !== 0) this.far.stamp = st;
++  }
++}
++
+ /** Straight up and down, and the two sides of a centre (-1, 1): DO NOT write them as literals in what lays every bay (a new array each time). */
+ const UP: Readonly<V3> = Object.freeze([0, 0, 1] as V3);
+ const DOWN: Readonly<V3> = Object.freeze([0, 0, -1] as V3);
+@@ -853,18 +901,48 @@ function sideFrameInto(out: BayFace, v: Volume, side: FaceId, along: number, pus
+ class Emitter {
+   private readonly c: number;
+   private readonly s: number;
+-  readonly parts: PartSink;
+ 
+   constructor(
+     private readonly b: Building,
+-    readonly shell: Shell,
+-    parts: PartSink,
+-    /** Furniture pieces, by kind, drawn instanced from the furniture kit. */
+-    readonly furniture: FurnitureSink = {},
++    readonly shell: LevelShell,
++    /** The levels the walk writes, each its own shell, parts and furniture (`LevelShell` lays the faces). */
++    readonly levels: Levels,
++    /** The program's mass stage (`program.ts`), written by the same walk; null where none is kept. */
++    readonly mass: MassRecorder | null = null,
++    /** Each finish's colour from afar, for the masses. */
++    readonly tone?: Tone,
+   ) {
+     this.c = Math.cos(b.rotation);
+     this.s = Math.sin(b.rotation);
+-    this.parts = parts;
++  }
++
++  /** The rows of a part kind in every level the walk writes now (`LevelShell.mask`). */
++  private rowsOf(kind: PartKind): PartRows[] {
++    const out: PartRows[] = [];
++    if (this.levels.near && (this.shell.mask & NEAR) !== 0) out.push(this.levels.near.parts[kind]);
++    if (this.levels.far && (this.shell.mask & FAR) !== 0) out.push(this.levels.far.parts[kind]);
++    return out;
++  }
++
++  /** A part laid at a world point as `PartRows.add` lays it, in every level the walk writes now. */
++  addPart(kind: PartKind, x: number, y: number, z: number, angle: number, sx: number, sy: number, sz: number): void {
++    for (const rows of this.rowsOf(kind)) rows.add(x, y, z, angle, sx, sy, sz);
++  }
++
++  /** The furniture's rows of a kind in every level the walk writes now. */
++  furnitureOf(kind: FurnitureKind): PartRows[] {
++    const out: PartRows[] = [];
++    if (this.levels.near && (this.shell.mask & NEAR) !== 0) out.push(furnitureRows(this.levels.near.furniture, kind));
++    if (this.levels.far && (this.shell.mask & FAR) !== 0) out.push(furnitureRows(this.levels.far.furniture, kind));
++    return out;
++  }
++
++  /** `draw` written to the levels of `mask` alone, of those the walk writes now: a detail the facade level leaves out is `only(NEAR, ...)` (its error, `FLAT_DEPTH`). */
++  only(mask: number, draw: () => void): void {
++    const was = this.shell.mask;
++    this.shell.mask = was & mask;
++    if (this.shell.mask !== 0) draw();
++    this.shell.mask = was;
+   }
+ 
+   /** The building being emitted. */
+@@ -997,10 +1075,13 @@ class Emitter {
+     const p = this.spot;
+     this.corner(p, f, a, h, depth);
+     const nx = f.nx * this.c - f.ny * this.s, ny = f.nx * this.s + f.ny * this.c;
+-    const rows = this.parts[kind];
+-    const i = rows.add(p[0], p[1], p[2], Math.atan2(nx, -ny) + turn, sx, sy, sz);
+-    if (colour) rows.colour(i, colour.r, colour.g, colour.b);
+-    if (rows.glassy) rows.pane(i, this.slot, this.room ? this.room(a, h) : null);
++    // The room behind a pane worked out once for every level it is laid in.
++    let behind: readonly number[] | null | undefined;
++    for (const rows of this.rowsOf(kind)) {
++      const i = rows.add(p[0], p[1], p[2], Math.atan2(nx, -ny) + turn, sx, sy, sz);
++      if (colour) rows.colour(i, colour.r, colour.g, colour.b);
++      if (rows.glassy) rows.pane(i, this.slot, behind === undefined ? (behind = this.room ? this.room(a, h) : null) : behind);
++    }
+   }
+ 
+   /** A pane and its frame over it, the frame `thickness` deep and 3 cm proud of the glass as the kit's frame was put: the frame drawn by the pane's
+@@ -1009,8 +1090,7 @@ class Emitter {
+   glazed(kind: 'glass' | 'glassDark', f: BayFace, a: number, h: number, depth: number, w: number, hh: number, thickness: number, trim: Color): void {
+     if (this.flat && depth > 0) return;
+     this.put(kind, f, a, h, depth, w, hh, 1);
+-    const rows = this.parts[kind];
+-    rows.paneFrame(rows.count - 1, trim.r, trim.g, trim.b, thickness);
++    for (const rows of this.rowsOf(kind)) rows.paneFrame(rows.count - 1, trim.r, trim.g, trim.b, thickness);
+   }
+ 
+   /** A pane laid on the wall's face over the whole opening, its glass `depth` behind it: the pane's material draws the reveals, the sill, the
+@@ -1020,9 +1100,10 @@ class Emitter {
+   glazedRecessed(kind: 'glass' | 'glassDark', f: BayFace, a: number, h: number, depth: number, w: number, hh: number, thickness: number, trim: Color): void {
+     if (this.flat) return;
+     this.put(kind, f, a, h, 0, w, hh, 1);
+-    const rows = this.parts[kind];
+-    rows.paneFrame(rows.count - 1, trim.r, trim.g, trim.b, thickness);
+-    rows.paneRecess(rows.count - 1, depth);
++    for (const rows of this.rowsOf(kind)) {
++      rows.paneFrame(rows.count - 1, trim.r, trim.g, trim.b, thickness);
++      rows.paneRecess(rows.count - 1, depth);
++    }
+   }
+ 
+   /** An element being emitted (`emitElement`): its boxes are the shell's parts where the shell lets them be (`Shell.apart`). */
+@@ -1034,18 +1115,19 @@ class Emitter {
+   /** A shell's part (`shellParts.ts`) centred at plan point (lx, ly), from z0 to z1, `along` its own x turned `turn` from the building's and `across` it. */
+   shellPart(kind: ShellPartKind, lx: number, ly: number, z0: number, z1: number, along: number, across: number, turn: number, c: Paint): void {
+     const p = this.L(lx, ly, (z0 + z1) / 2);
+-    const rows = this.parts[kind];
+-    const i = rows.add(p[0], p[1], p[2], this.b.rotation + turn, along, z1 - z0, across);
+-    rows.colour(i, c.rgb[0], c.rgb[1], c.rgb[2]);
+     const ground = this.shell.ground;
+-    rows.look(i, finishId(c.finish), wearShort(this.shell.decay), Number.isFinite(ground) ? ground : NO_GROUND);
++    for (const rows of this.rowsOf(kind)) {
++      const i = rows.add(p[0], p[1], p[2], this.b.rotation + turn, along, z1 - z0, across);
++      rows.colour(i, c.rgb[0], c.rgb[1], c.rgb[2]);
++      rows.look(i, finishId(c.finish), wearShort(this.shell.decay), Number.isFinite(ground) ? ground : NO_GROUND);
++    }
+   }
+ 
+   /** An instance at a point of the building's plan (`L`), square to the building, its centre at height `z`. */
+   putAt(kind: PartKind, lx: number, ly: number, z: number, sx: number, sy: number, sz: number): void {
+     const p = this.L(lx, ly, z);
+     const n = this.N(0, 1);
+-    this.parts[kind].add(p[0], p[1], p[2], Math.atan2(n[0], -n[1]), sx, sy, sz);
++    this.addPart(kind, p[0], p[1], p[2], Math.atan2(n[0], -n[1]), sx, sy, sz);
+   }
+ }
+ 
+@@ -1087,20 +1169,35 @@ function slotOfBay(b: Building, v: Volume, bay: FacadeBay, spaces: ReturnType<ty
+ /** A bay's place as one number (its block's id under 2^20, its level from -1,024 to 1,023, its side, its index from -1 under 2^20): DO NOT key the bays by text, four numbers written out for each bay and twice more for its neighbours. */
+ const bayKey = (volume: number, level: number, side: number, index: number): number => ((volume * 2048 + level + 1024) * 4 + side) * 1_048_576 + index + 1;
+ 
++/** A building's paints, as its walk lays every face of it: its walls a shade of their own per building, its mouldings, its plinth, its awnings. */
++function buildingPaints(b: Building): { wallOf: (v: Volume, side: FaceId, storey?: number) => Paint; frameTrim: Paint; trim: Paint; plinth: Paint; awning: Color } {
++  // A small, stable shade per building, so a street of one preset is not a single flat colour.
++  const shade = 0.93 + (((b.id * 2654435761) >>> 0) % 1000) / 1000 * 0.12;
++  const wallOf = (v: Volume, side: FaceId, storey?: number): Paint => paint(wallMaterial(b, v, side, storey), shade);
++  // Mouldings - bands, cornices, copings, reveals - are smooth: a finish with a pattern
++  const trimSpec = trimMaterial(b);
++  const frameTrim = paint({ finish: trimSpec.finish === 'metal' ? 'metal' : 'plaster', colour: trimSpec.colour });
++  // Mouldings - cornices, string courses, copings, the heads of reliefs - are masonry
++  const trim = trimSpec.finish === 'metal' && b.materials?.wall
++    ? shaded(paint({ finish: 'plaster', colour: b.materials.wall.colour }), 1.1) : frameTrim;
++  return { wallOf, frameTrim, trim, plinth: paint(plinthMaterial(b)), awning: new Color().setHex(paletteOf(b).awning) };
++}
++
+ function emitBuilding(
+   b: Building,
+   groundAt: GroundAt,
+-  shell: Shell,
+-  parts: PartSink,
++  shell: LevelShell,
++  levels: Levels,
+   pavedAt?: PavedAt,
+-  furniture: FurnitureSink = {},
+   onLot?: (el: BuildingElement) => boolean,
+   designedFloor?: number,
+   slots: SlotAllocator = spaceSeed,
+   /** The neighbours' blocks a party wall stands against (`partyWalls.ts`): a bay inside them is not laid. */
+   covers: readonly Cover[] = [],
++  mass: MassRecorder | null = null,
++  tone?: Tone,
+ ): Foundation {
+-  const e = new Emitter(b, shell, parts, furniture);
++  const e = new Emitter(b, shell, levels, mass, tone);
+   // Put in the world off the layout kept for the blocks (`bayLayout`): the flights' feet and the like buildings of the job read the same one.
+   const bays = facadeBays(b);
+   const f: Foundation = foundationOf(b, groundAt, bays, pavedAt, designedFloor);
+@@ -1114,17 +1211,9 @@ function emitBuilding(
+     { a0: x.width * 0.2, a1: x.width * 0.8, h0: 0, h1: levelHeight(b, 0) * 0.7, depth: REVEAL };
+   /** Where an entrance's bay starts along its side. */
+   const entranceStart = (x: Entrance, v: Volume): number => x.index * bayWidth(b, v, x.side);
+-  // A small, stable shade per building, so a street of one preset is not a single flat colour.
+-  const shade = 0.93 + (((b.id * 2654435761) >>> 0) % 1000) / 1000 * 0.12;
+-  const wallOf = (v: Volume, side: FaceId, storey?: number): Paint => paint(wallMaterial(b, v, side, storey), shade);
+-  // Mouldings - bands, cornices, copings, reveals - are smooth: a finish with a pattern
+-  const trimSpec = trimMaterial(b);
+-  const frameTrim = paint({ finish: trimSpec.finish === 'metal' ? 'metal' : 'plaster', colour: trimSpec.colour });
+-  // Mouldings - cornices, string courses, copings, the heads of reliefs - are masonry
+-  const trim = trimSpec.finish === 'metal' && b.materials?.wall
+-    ? shaded(paint({ finish: 'plaster', colour: b.materials.wall.colour }), 1.1) : frameTrim;
+-  const plinth = paint(plinthMaterial(b));
+-  const awning = new Color().setHex(paletteOf(b).awning);
++  const { wallOf, frameTrim, trim, plinth, awning } = buildingPaints(b);
++  // The program's mass stage of every block (`recordBlock`): its walls' bays, its parapet, as the masses read them.
++  if (e.mass) for (const v of b.volumes) recordBlock(e, b, v, floor);
+ 
+   // ---- plinth: from below the lowest ground up to the floor
+   for (const v of b.volumes) {
+@@ -1213,28 +1302,28 @@ function emitBuilding(
+       }
+       e.rect(face, 0, face.W, 0, face.H, m(0.25), e.N(-face.nx, -face.ny), inner);
+     }
+-    const opening = shell.far && bay.component !== 'pillar' && recess <= 0 ? openingOf(bay.component, bay.width, bay.height, controls) : undefined;
+-    if (opening !== undefined && (opening === null || opening.depth <= FLAT_DEPTH)) {
+-      // The far level: the bay's wall is laid with its storey's run (`emitFacadeRuns`), its opening drawn by the shader;
+-      // what stands out of it (balconies, awnings, canopies, sills, shutters' leaves) is put as in the detail.
+-      const wall = wallOf(v, bay.side, bay.storey);
+-      farBays.push({ bay, wall, opening, ground: floor + volumeLift(v), streak: streakOf(bay.component, opening, wall) });
++    // THE FACADE LEVEL'S BAY: flattened where its opening is no deeper than its error (`FLAT_DEPTH`), its wall laid by its run and its opening
++    // drawn by the shader (`emitFacadeRuns`), what stands out of it put as in the detail. THE DETAIL'S BAY: its wall laid by its run where
++    // it is one face (a plain wall, or one round an opening its own pane closes, `paneClosed`), else cut round its opening. One walk, each
++    // level's pieces laid to that level alone (`LevelShell.mask`); a bay alike in both laid once for both.
++    const farOpening = levels.far && bay.component !== 'pillar' && recess <= 0 ? openingOf(bay.component, bay.width, bay.height, controls) : undefined;
++    const farFlat = farOpening !== undefined && (farOpening === null || farOpening.depth <= FLAT_DEPTH);
++    const nearOpening = levels.near && b.cutaway === undefined && bay.component !== 'pillar' ? openingOf(bay.component, bay.width, bay.height, controls) : undefined;
++    const nearRun = nearOpening !== undefined && (nearOpening === null || paneClosed(bay, nearOpening, recess));
++    const wall = wallOf(v, bay.side, bay.storey);
++    const mask = shell.mask;
++    if (farFlat) {
++      farBays.push({ bay, wall, opening: farOpening, ground: floor + volumeLift(v), streak: streakOf(bay.component, farOpening, wall) });
++      shell.mask = mask & FAR;
+       shell.ground = floor + volumeLift(v);
+       e.flat = true;
+-      emitBay(e, face, bay, wallOf(v, bay.side, bay.storey), frameTrim, awning, left, right, recess, controls);
++      emitBay(e, face, bay, wall, frameTrim, awning, left, right, recess, controls);
+       e.flat = false;
+       shell.ground = floor;
+-    } else {
+-      // The detail level: a bay whose wall is one face (a plain wall, or one round an opening its own pane closes) has its wall and streak laid by
+-      // its storey's run, as the far level's are (`emitFacadeRuns`): the facade one quad a run of alike bays, not two to four faces a bay.
+-      if (!shell.far && b.cutaway === undefined && bay.component !== 'pillar') {
+-        const found = openingOf(bay.component, bay.width, bay.height, controls);
+-        if (found === null || paneClosed(bay, found, recess)) {
+-          const wall = wallOf(v, bay.side, bay.storey);
+-          nearBays.push({ bay, wall, opening: found, ground: floor + volumeLift(v), streak: streakOf(bay.component, found, wall) });
+-          e.byRun = true;
+-        }
+-      }
++    }
++    // The bay with its panes: the detail's (by its run or cut), and the facade level's where it is not flattened.
++    const whole = (levels.far && !farFlat ? FAR : 0) | (levels.near ? NEAR : 0);
++    if ((whole & mask) !== 0) {
+       e.slot = slotOfBay(b, v, bay, spacesOf, slots);
+       if (b.id >= 0 && b.cutaway === undefined) {
+         // The levels of one type share their pieces (`interiorAt`), and so their rooms, a pane alike looked at once.
+@@ -1248,12 +1337,24 @@ function emitBuilding(
+       }
+       // The base weathered at the block's own foot (a split level stands at its own floor).
+       shell.ground = floor + volumeLift(v);
+-      emitBay(e, face, bay, wallOf(v, bay.side, bay.storey), frameTrim, awning, left, right, recess, controls);
++      if (nearRun) {
++        nearBays.push({ bay, wall, opening: nearOpening, ground: floor + volumeLift(v), streak: streakOf(bay.component, nearOpening, wall) });
++        // The detail's by its run; the facade level's, unflattened, cut as before.
++        shell.mask = mask & NEAR;
++        e.byRun = true;
++        emitBay(e, face, bay, wall, frameTrim, awning, left, right, recess, controls);
++        e.byRun = false;
++        shell.mask = mask & whole & FAR;
++        if (shell.mask !== 0) emitBay(e, face, bay, wall, frameTrim, awning, left, right, recess, controls);
++      } else {
++        shell.mask = mask & whole;
++        emitBay(e, face, bay, wall, frameTrim, awning, left, right, recess, controls);
++      }
+       shell.ground = floor;
+       e.slot = -1;
+       e.room = null;
+-      e.byRun = false;
+     }
++    shell.mask = mask;
+     const ribDepth = controls?.pierDepth ?? (grammar === 'artDecoCrown' ? m(.65) : grammar === 'artDeco' ? m(.3) : 0);
+     if (ribDepth > 0 && bay.index % (controls?.pierEvery ?? 1) === 0) {
+       // Shallow, continuous-looking stone pilasters give every mass a vertical rhythm while retaining individually editable
+@@ -1269,8 +1370,8 @@ function emitBuilding(
+       e.jamb(face, a1, foot, face.H, depth, 0, e.N(face.tx, face.ty), stone);
+     }
+   }
+-  if (farBays.length > 0) emitFacadeRuns(e, volumes, floor, farBays, frameTrim, false);
+-  if (nearBays.length > 0) emitFacadeRuns(e, volumes, floor, nearBays, frameTrim, true);
++  if (farBays.length > 0) e.only(FAR, () => emitFacadeRuns(e, volumes, floor, farBays, frameTrim, false));
++  if (nearBays.length > 0) e.only(NEAR, () => emitFacadeRuns(e, volumes, floor, nearBays, frameTrim, true));
+ 
+   // ---- reliefs: the cheeks, head and sill of every face region pushed in or out
+   for (const v of b.volumes) {
+@@ -1365,10 +1466,153 @@ function emitBuilding(
+     // The machine room clad in the building's own skin: a white box on every tower top read as a separate thing set on it.
+     const skin = best.dress ? wallOf(best, 0) : trim;
+     e.box(x0, y0, x1, y1, z, z + m(3), skin.finish === 'glass' ? MACHINE_ROOM : skin, ROOF_PLANT);
++    recordMachineRoom(e, b, best, x0, y0, x1, y1, z);
+   }
+   return f;
+ }
+ 
++/** A machine room as the masses draw it (`program.ts`): a box in the building's skin or trim, left out under its height. */
++function recordMachineRoom(e: Emitter, b: Building, best: Volume, x0: number, y0: number, x1: number, y1: number, z: number): void {
++  const rec = e.mass;
++  if (!rec) return;
++  const rgb = massColours(b, e.tone);
++  const skin = best.dress ? rgb(wallMaterial(b, best, 0)) : rgb(trimMaterial(b));
++  massBox(e, x0, y0, x1, y1, z, z + MACHINE_ROOM_H, skin, rgbOf(ROOF_COLOURS.plant), rec.group(MACHINE_ROOM_H));
++}
++
++/** A machine room over a lift core, as tall as the masses leave it out under. */
++const MACHINE_ROOM_H = m(3);
++
++/** A box of the plan from z0 to z1 into the masses: its four sides and its top. */
++function massBox(e: Emitter, x0: number, y0: number, x1: number, y1: number, z0: number, z1: number, sides: readonly [number, number, number], top: readonly [number, number, number], group: number): void {
++  const rec = e.mass!;
++  rec.face([e.L(x0, y0, z0), e.L(x1, y0, z0), e.L(x1, y0, z1), e.L(x0, y0, z1)], e.N(0, -1), sides, group);
++  rec.face([e.L(x1, y1, z0), e.L(x0, y1, z0), e.L(x0, y1, z1), e.L(x1, y1, z1)], e.N(0, 1), sides, group);
++  rec.face([e.L(x1, y0, z0), e.L(x1, y1, z0), e.L(x1, y1, z1), e.L(x1, y0, z1)], e.N(1, 0), sides, group);
++  rec.face([e.L(x0, y1, z0), e.L(x0, y0, z0), e.L(x0, y0, z1), e.L(x0, y1, z1)], e.N(-1, 0), sides, group);
++  rec.face([e.L(x0, y0, z1), e.L(x1, y0, z1), e.L(x1, y1, z1), e.L(x0, y1, z1)], e.N(0, 0, 1), top, group);
++}
++
++/** How far an arcade's wall steps back behind its columns, for the masses (`emitBay` pillar, `ARCADE`). */
++/** A closed block as the masses read it, written into the program by the walk: its sides and its bays storey by storey (`bayLayout`, the
++ *  layout the detail's bays are laid out from), its parapet where its roof really ends. Every level of the masses is drawn from these (`massing.ts` massOf). */
++function recordBlock(e: Emitter, b: Building, v: Volume, floor: number): void {
++  const rec = e.mass!;
++  const rgb = massColours(b, e.tone);
++  const rows = new Map<number, MassBay[]>();
++  const sides = new Map<number, MassSide>();
++  for (const bay of bayLayout(b)) {
++    if (bay.volume !== v.id) continue;
++    if (!sides.has(bay.side)) {
++      const f = edgeFrame(v, bay.side), st = sideStart(v, bay.side);
++      sides.set(bay.side, { x: st.x, y: st.y, tx: st.tx, ty: st.ty, nx: f.nx, ny: f.ny, bay: bayWidth(b, v, bay.side) });
++    }
++    const spec = wallMaterial(b, v, bay.side, bay.storey);
++    const share = GLASS_SHARE[bay.component] ?? 0;
++    const key = bay.level * 4096 + bay.side;
++    const one: MassBay = {
++      side: bay.side, start: bay.start, width: bay.width, z0: floor + bay.z, height: bay.height,
++      d: bay.component === 'pillar' ? -ARCADE : bay.push, share, glass: spec.finish === 'glass' ? 1 : share, rgb: rgb(spec),
++      ground: v.base === 0 && bay.storey === 0,
++    };
++    const row = rows.get(key);
++    if (row) row.push(one); else rows.set(key, [one]);
++  }
++  // Each storey's bays in order along their side, the bays alike side by side (the same offset and share) kept as one: every level of the
++  // masses joins them alike (`massing.ts` writeWalls, the first's look for the run), so the program holds the runs, not every bay.
++  const kept: MassBay[][] = [];
++  for (const row of rows.values()) {
++    row.sort((p, q) => p.start - q.start);
++    const joined: MassBay[] = [];
++    for (const one of row) {
++      const last = joined[joined.length - 1];
++      if (last && last.d === one.d && last.share === one.share && Math.abs(one.start - (last.start + last.width)) < 1e-3) {
++        joined[joined.length - 1] = { ...last, width: one.start + one.width - last.start };
++      } else joined.push(one);
++    }
++    kept.push(joined);
++  }
++  rec.blocks.push({ sides, rows: kept });
++  // The parapet only where the roof really ends: not against a neighbour as tall or taller (as `emitRoof` lays the detailed one).
++  const crown = v.roof === 'flat' ? (v.dress?.crown === 'attic' ? ATTIC_H : PARAPET_H) : 0;
++  if (crown <= 0) return;
++  const group = rec.group(crown);
++  const top = volumeTop(v);
++  const eaves = floor + volumeHeight(b, v);
++  for (const side of volumeSides(v)) {
++    const f = edgeFrame(v, side), st = sideStart(v, side);
++    const spans = [...coveredSpans(b, v, side, top - 1), ...coveredSpans(b, v, side, top)].sort((p, q) => p[0] - q[0]);
++    const spec = wallMaterial(b, v, side);
++    const wall = rgb({ ...spec, finish: spec.finish === 'glass' ? 'concrete' : spec.finish });
++    // Inside, the roof's membrane carried up the parapet.
++    const roofTint = rgb(roofMaterial(b, v));
++    const inner: readonly [number, number, number] = [roofTint[0] * 0.9, roofTint[1] * 0.9, roofTint[2] * 0.9];
++    const at = (a: number, depth: number, z: number): V3 => e.L(st.x + st.tx * a - f.nx * depth, st.y + st.ty * a - f.ny * depth, z);
++    for (const [p0, p1] of exposedParts(spans, 0, sideLength(v, side))) {
++      rec.face([at(p0, 0, eaves), at(p1, 0, eaves), at(p1, 0, eaves + crown), at(p0, 0, eaves + crown)], e.N(f.nx, f.ny), wall, group);
++      rec.face([at(p0, 0, eaves + crown), at(p1, 0, eaves + crown), at(p1, PARAPET_T, eaves + crown), at(p0, PARAPET_T, eaves + crown)], e.N(0, 0, 1), wall, group);
++      rec.face([at(p1, PARAPET_T, eaves), at(p0, PARAPET_T, eaves), at(p0, PARAPET_T, eaves + crown), at(p1, PARAPET_T, eaves + crown)], e.N(-f.nx, -f.ny), inner, group);
++    }
++  }
++}
++
++/** A roof's masses before its own faces (`emitRoof`): the slab of a flat or terrace roof (and the parasols on a used terrace), or a pitched
++ *  roof's slab at its eaves where a level of boxes lays it flat; the pitched roof's group (its own faces hang on it), -1 for a flat one. */
++function recordRoofSlab(e: Emitter, b: Building, v: Volume, floor: number): number {
++  const rec = e.mass;
++  if (!rec) return -1;
++  const rgb = massColours(b, e.tone);
++  const eaves = floor + volumeHeight(b, v);
++  const roof = v.roof === 'terrace' ? TERRACE_RGB : rgb(roofMaterial(b, v));
++  const pitched = v.roof !== 'flat' && v.roof !== 'terrace';
++  const group = pitched ? rec.group(roofRise(b, v), true) : -1;
++  const ring = localFootprint(v);
++  const tris = earcut(ring.flatMap((p) => [p.x, p.y]));
++  rec.polygon(ring.map((p) => e.L(p.x, p.y, eaves)), tris, [0, 0, 1], roof, group, pitched ? MASS_FLATTENED : MASS_KEEP);
++  const built = b.volumes.some((o) => o !== v && !o.open && o.base === volumeTop(v));
++  if (v.roof === 'terrace' && !built) {
++    const parasols = terraceParasols(b, v);
++    if (parasols.length) {
++      const g = rec.group(PARASOL_HIGH);
++      const parasol = rgbOf(ROOF_COLOURS.parasol);
++      for (const q of parasols) massBox(e, q.x - PARASOL_HALF, q.y - PARASOL_HALF, q.x + PARASOL_HALF, q.y + PARASOL_HALF, eaves + PARASOL_LOW, eaves + PARASOL_HIGH, parasol, parasol, g);
++    }
++  }
++  return group;
++}
++
++/** The plant a metre or more across on a flat roof (`roofPlan.ts`), as the masses draw it: each left out under its height. */
++const DRAWN_PLANT: ReadonlySet<string> = Object.freeze(new Set(['liftRoom', 'tankBox', 'airHandler', 'skylight', 'solar', 'tank', 'chimney']));
++function recordRoofPlant(e: Emitter, b: Building, v: Volume, z: number): void {
++  const rec = e.mass;
++  if (!rec) return;
++  const rgb = massColours(b, e.tone);
++  const plant = rgbOf(ROOF_COLOURS.plant);
++  const trimSpec = trimMaterial(b);
++  // The trim as the detailed building has it: metal frames' mouldings are the skin a shade lighter.
++  const trim = trimSpec.finish === 'metal' && b.materials?.wall ? rgbOf(b.materials.wall.colour, massShade(b) * 1.1) : rgb(trimSpec);
++  for (const it of roofPlantOf(b, v)) {
++    if (!DRAWN_PLANT.has(it.kind)) continue;
++    const g = rec.group(it.kind === 'solar' ? m(0.32) : it.h);
++    const cx = (it.x0 + it.x1) / 2, cy = (it.y0 + it.y1) / 2, half = Math.min(it.x1 - it.x0, it.y1 - it.y0) / 2;
++    switch (it.kind) {
++      case 'liftRoom': case 'tankBox': massBox(e, it.x0, it.y0, it.x1, it.y1, z, z + it.h, trim, plant, g); break;
++      case 'airHandler': { const c = rgbOf(ROOF_COLOURS.condenser); massBox(e, it.x0, it.y0, it.x1, it.y1, z + m(0.2), z + it.h, c, c, g); break; }
++      case 'skylight': massBox(e, it.x0, it.y0, it.x1, it.y1, z, z + it.h, plant, rgbOf(ROOF_COLOURS.skylight), g); break;
++      case 'solar': { const c = rgbOf(ROOF_COLOURS.solar); massBox(e, it.x0, it.y0, it.x1, it.y1, z + m(0.25), z + m(0.32), c, c, g); break; }
++      case 'tank': {
++        // A round tank as the square of its area (r * 0.84, as `emitRoofPlant` draws it).
++        const r = half * 0.84 * Math.sqrt(Math.PI) / 2;
++        const c = rgbOf(TANK_COLOURS[it.variant % TANK_COLOURS.length]!);
++        massBox(e, cx - r, cy - r, cx + r, cy + r, z, z + it.h, c, c, g);
++        break;
++      }
++      case 'chimney': { const r = half * 0.9 * Math.sqrt(Math.PI) / 2, c = rgbOf(ROOF_COLOURS.chimney); massBox(e, cx - r, cy - r, cx + r, cy + r, z, z + it.h, c, c, g); break; }
++      default: break;
++    }
++  }
++}
++
+ const FLOOR_FINISH = paint({ finish: 'stone', colour: 0xb9b2a5 });
+ /** A machine room's walls where the building's skin is glass: rendered blockwork. */
+ const MACHINE_ROOM = paint({ finish: 'concrete', colour: 0xa7a49c });
+@@ -1480,7 +1724,7 @@ function placeFurniture(e: Emitter, f: Furniture, floorZ: number): void {
+   const [w, d, h] = FURNITURE_SIZE[f.kind];
+   const p = e.L(f.x, f.y, floorZ + 0.05);
+   const front = e.N(Math.sin(f.angle), -Math.cos(f.angle));
+-  furnitureRows(e.furniture, f.kind).add(p[0], p[1], p[2], Math.atan2(front[0], -front[1]), f.w / w, f.h / h, f.d / d);
++  for (const rows of e.furnitureOf(f.kind)) rows.add(p[0], p[1], p[2], Math.atan2(front[0], -front[1]), f.w / w, f.h / h, f.d / d);
+ }
+ 
+ const PARTITION = paint({ finish: 'plaster', colour: 0xece6da });
+@@ -2000,16 +2244,21 @@ function emitRelief(e: Emitter, b: Building, v: Volume, r: Relief, floor: number
+ 
+ /** What stands on a flat roof: drains in two opposite corners */
+ function emitRoofPlant(e: Emitter, b: Building, v: Volume, z: number, trim: Paint): void {
++  // The masses' plant first: every roof that has it, as they always drew it.
++  recordRoofPlant(e, b, v, z);
+   if (v.roofDetails?.length) return;
+   // Drains in two opposite corners, where the roof's fall takes the water.
+   if (v.outline) return;
+-  // THE FAR LEVEL LEAVES OUT WHAT IS UNDER ITS ERROR (`FLAT_DEPTH`, 0.3 m): the drains and fittings a few centimetres proud, the masts and posts a few thick.
+-  const far = e.shell.far;
+-  for (const [dx, dy] of far ? [] : [[m(0.7), m(0.7)], [v.w - m(0.7), v.d - m(0.7)]] as const) {
+-    const x = v.x + dx;
+-    const y = v.y + dy;
+-    e.box(x - m(0.18), y - m(0.18), x + m(0.18), y + m(0.18), z, z + 0.02, DRAIN);
+-  }
++  // THE FAR LEVEL LEAVES OUT WHAT IS UNDER ITS ERROR (`FLAT_DEPTH`, 0.3 m): the drains and fittings a few centimetres proud, the masts and
++  // posts a few thick - laid in the detail alone (`only(NEAR, ...)`).
++  const near = (draw: () => void): void => e.only(NEAR, draw);
++  near(() => {
++    for (const [dx, dy] of [[m(0.7), m(0.7)], [v.w - m(0.7), v.d - m(0.7)]] as const) {
++      const x = v.x + dx;
++      const y = v.y + dy;
++      e.box(x - m(0.18), y - m(0.18), x + m(0.18), y + m(0.18), z, z + 0.02, DRAIN);
++    }
++  });
+   const items = roofPlantOf(b, v);
+   for (const it of items) {
+     const cx = (it.x0 + it.x1) / 2, cy = (it.y0 + it.y1) / 2, w = it.x1 - it.x0, d = it.y1 - it.y0;
+@@ -2021,31 +2270,34 @@ function emitRoofPlant(e: Emitter, b: Building, v: Volume, z: number, trim: Pain
+         e.box(it.x0, it.y0, it.x1, it.y1, z, z + m(0.3), ROOF_PLANT);
+         e.cylinder(cx, cy, r * 0.84, z + m(0.3), z + it.h - m(0.3), paint);
+         e.cylinder(cx, cy, r * 0.94, z + it.h - m(0.3), z + it.h - m(0.05), paint, shaded(paint, 0.82));
+-        if (!far) e.cylinder(cx, cy, r * 0.4, z + it.h - m(0.05), z + it.h + m(0.05), shaded(paint, 0.75));
++        near(() => e.cylinder(cx, cy, r * 0.4, z + it.h - m(0.05), z + it.h + m(0.05), shaded(paint, 0.75)));
+         break;
+       }
+       case 'tankBox':
+         // A concrete water tank on a tall block, its lid and a ladder up its side.
+         e.box(it.x0, it.y0, it.x1, it.y1, z, z + it.h, trim, ROOF_PLANT);
+-        if (far) break;
+-        e.box(it.x0 + m(0.3), it.y0 + m(0.3), it.x0 + m(1.1), it.y0 + m(1.1), z + it.h, z + it.h + m(0.12), DRAIN);
+-        e.box(it.x1 - m(0.05), cy - m(0.25), it.x1 + m(0.05), cy + m(0.25), z, z + it.h + m(0.9), DRAIN);
++        near(() => {
++          e.box(it.x0 + m(0.3), it.y0 + m(0.3), it.x0 + m(1.1), it.y0 + m(1.1), z + it.h, z + it.h + m(0.12), DRAIN);
++          e.box(it.x1 - m(0.05), cy - m(0.25), it.x1 + m(0.05), cy + m(0.25), z, z + it.h + m(0.9), DRAIN);
++        });
+         break;
+       case 'hatch':
+         e.box(it.x0, it.y0, it.x1, it.y1, z, z + it.h, ROOF_PLANT);
+         break;
+       case 'condenser':
+         e.box(it.x0, it.y0, it.x1, it.y1, z + m(0.15), z + it.h, CONDENSER);
+-        if (!far) e.box(cx - m(0.28), cy - m(0.28), cx + m(0.28), cy + m(0.28), z + it.h, z + it.h + m(0.02), DRAIN);
++        near(() => e.box(cx - m(0.28), cy - m(0.28), cx + m(0.28), cy + m(0.28), z + it.h, z + it.h + m(0.02), DRAIN));
+         break;
+       case 'airHandler': {
+         // A rooftop air handler: a long metal casing, its fans on top.
+         e.box(it.x0, it.y0, it.x1, it.y1, z + m(0.2), z + it.h, CONDENSER);
+         const along = w >= d;
+-        for (const k of far ? [] : [0.25, 0.75]) {
+-          const fx = along ? it.x0 + w * k : cx, fy = along ? cy : it.y0 + d * k;
+-          e.cylinder(fx, fy, Math.min(w, d) * 0.32, z + it.h, z + it.h + m(0.12), DRAIN);
+-        }
++        near(() => {
++          for (const k of [0.25, 0.75]) {
++            const fx = along ? it.x0 + w * k : cx, fy = along ? cy : it.y0 + d * k;
++            e.cylinder(fx, fy, Math.min(w, d) * 0.32, z + it.h, z + it.h + m(0.12), DRAIN);
++          }
++        });
+         break;
+       }
+       case 'solar': {
+@@ -2055,20 +2307,21 @@ function emitRoofPlant(e: Emitter, b: Building, v: Volume, z: number, trim: Pain
+           const py = it.y0 + r * (d / rows);
+           for (let px = it.x0; px + m(1.05) <= it.x1 + 1e-6; px += m(1.15)) {
+             e.box(px, py, px + m(1.05), py + Math.min(m(1.6), d / rows - m(0.1)), z + m(0.25), z + m(0.32), SOLAR, SOLAR);
+-            if (!far) e.box(px + m(0.45), py + m(1.2), px + m(0.6), py + m(1.35), z, z + m(0.25), DRAIN);
++            near(() => e.box(px + m(0.45), py + m(1.2), px + m(0.6), py + m(1.35), z, z + m(0.25), DRAIN));
+           }
+         }
+         break;
+       }
+       case 'mast':
+-        if (far) break;
+-        e.box(cx - m(0.04), cy - m(0.04), cx + m(0.04), cy + m(0.04), z, z + it.h, DRAIN);
+-        e.box(cx - m(0.6), cy - m(0.02), cx + m(0.6), cy + m(0.02), z + it.h - m(0.4), z + it.h - m(0.36), DRAIN);
+-        if (it.variant % 2 === 1) e.box(cx - m(0.02), cy - m(0.45), cx + m(0.02), cy + m(0.45), z + it.h - m(0.9), z + it.h - m(0.86), DRAIN);
++        near(() => {
++          e.box(cx - m(0.04), cy - m(0.04), cx + m(0.04), cy + m(0.04), z, z + it.h, DRAIN);
++          e.box(cx - m(0.6), cy - m(0.02), cx + m(0.6), cy + m(0.02), z + it.h - m(0.4), z + it.h - m(0.36), DRAIN);
++          if (it.variant % 2 === 1) e.box(cx - m(0.02), cy - m(0.45), cx + m(0.02), cy + m(0.45), z + it.h - m(0.9), z + it.h - m(0.86), DRAIN);
++        });
+         break;
+       case 'dish':
+         // Its post thinner than the dish's plate, never in the plate's sides.
+-        if (!far) e.box(cx - m(0.04), cy - m(0.04), cx + m(0.04), cy + m(0.04), z, z + m(0.7), DRAIN);
++        near(() => e.box(cx - m(0.04), cy - m(0.04), cx + m(0.04), cy + m(0.04), z, z + m(0.7), DRAIN));
+         e.box(cx - m(0.4), cy - m(0.05), cx + m(0.4), cy + m(0.05), z + m(0.5), z + it.h, it.variant % 2 ? DRAIN : CONDENSER);
+         break;
+       case 'skylight':
+@@ -2121,7 +2374,7 @@ function emitTerrace(e: Emitter, b: Building, v: Volume, z: number, trim: Paint)
+   for (const { x: tx, y: ty } of terraceParasols(b, v)) {
+     e.box(tx - m(0.4), ty - m(0.4), tx + m(0.4), ty + m(0.4), z + m(0.7), z + m(0.75), trim);
+     // Its pole, a few centimetres thick, under the far level's error (`FLAT_DEPTH`).
+-    if (!e.shell.far) e.box(tx - m(0.04), ty - m(0.04), tx + m(0.04), ty + m(0.04), z, z + PARASOL_LOW, DRAIN);
++    e.only(NEAR, () => e.box(tx - m(0.04), ty - m(0.04), tx + m(0.04), ty + m(0.04), z, z + PARASOL_LOW, DRAIN));
+     e.box(tx - PARASOL_HALF, ty - PARASOL_HALF, tx + PARASOL_HALF, ty + PARASOL_HALF, z + PARASOL_LOW, z + PARASOL_HIGH, PARASOL);
+     for (const s of [-1, 1]) e.box(tx + s * m(0.7) - m(0.2), ty - m(0.2), tx + s * m(0.7) + m(0.2), ty + m(0.2), z, z + m(0.45), trim);
+   }
+@@ -2133,10 +2386,12 @@ function emitTerrace(e: Emitter, b: Building, v: Volume, z: number, trim: Paint)
+   const bays = Math.max(1, Math.round(span / m(2.4)));
+   const pergola = rnd(9) < 0.45;
+   for (const px of pergola ? [lx - m(1.2), lx + m(1.2)] : []) {
+-    for (let k = 0; k <= bays && !e.shell.far; k++) {
+-      const py = dy0 + (span * k) / bays;
+-      e.box(px - m(0.07), py - m(0.07), px + m(0.07), py + m(0.07), z, z + m(2.4), DECK);
+-    }
++    e.only(NEAR, () => {
++      for (let k = 0; k <= bays; k++) {
++        const py = dy0 + (span * k) / bays;
++        e.box(px - m(0.07), py - m(0.07), px + m(0.07), py + m(0.07), z, z + m(2.4), DECK);
++      }
++    });
+     e.box(px - m(0.06), dy0 - m(0.1), px + m(0.06), dy1 + m(0.1), z + m(2.25), z + m(2.4), DECK);
+   }
+   if (pergola) for (let y = dy0; y <= dy1; y += m(0.6)) e.box(lx - m(1.45), y - m(0.04), lx + m(1.45), y + m(0.04), z + m(2.4), z + m(2.5), DECK);
+@@ -2179,11 +2434,11 @@ const POOL_WATER_DROP = m(0.12);
+ const LAWN_LATTICE = { cell: TERRAIN_CELL, half: TERRAIN_HALF } as const;
+ 
+ /** `entrances`: the building's ways in as its body's emission worked them out (`emitBuilding`): DO NOT work its foundation out again for the flights' feet. */
+-function emitLots(b: Building, lots: readonly Volume[], withParts: boolean, groundAt: GroundAt, shell: Shell,
+-  parts: PartSink, buildingFloor?: number, pavedAt?: PavedAt,
++function emitLots(b: Building, lots: readonly Volume[], withParts: boolean, groundAt: GroundAt, shell: LevelShell,
++  levels: Levels, buildingFloor?: number, pavedAt?: PavedAt,
+   onLot?: (el: BuildingElement) => boolean, entrances?: readonly Entrance[]): LotGround | undefined {
+   if (lots.length === 0) return lotGroundOf(b, [], buildingFloor, false);
+-  const e = new Emitter(b, shell, parts);
++  const e = new Emitter(b, shell, levels);
+   const at = (lx: number, ly: number): number => {
+     const w = e.L(lx, ly, 0);
+     return groundAt(w[0], w[1]);
+@@ -2219,7 +2474,7 @@ function emitLots(b: Building, lots: readonly Volume[], withParts: boolean, grou
+       const cx = v.x + v.w / 2, cy = v.y + v.d / 2;
+       const rim = height(cx, cy);
+       const centre = e.L(cx, cy, 0);
+-      e.parts.water.add(centre[0], centre[1], rim - POOL_WATER_DROP - m(0.01), b.rotation, v.w, m(0.02), v.d);
++      e.addPart('water', centre[0], centre[1], rim - POOL_WATER_DROP - m(0.01), b.rotation, v.w, m(0.02), v.d);
+       // The coping: a white stone band round the rim.
+       const band = m(0.3), lift = m(0.04);
+       const ring = [
+@@ -2968,7 +3223,7 @@ function emitRailLine(
+     e.shell.face([P(0, v - rail, r0), P(0, v + rail, r0), P(el.d, v + rail, r1), P(el.d, v - rail, r1)], e.N(0, 0, 1), RAIL);
+     const every = Math.max(1, Math.round(m(1.2) / tread));
+     // Its posts, 5 cm thick, under the far level's error (`FLAT_DEPTH`).
+-    for (let k = 0; k < n && !e.shell.far; k += every) postAt(e, P, k * tread + tread / 2, v, z0 + (k + 1) * riser, HANDRAIL);
++    e.only(NEAR, () => { for (let k = 0; k < n; k += every) postAt(e, P, k * tread + tread / 2, v, z0 + (k + 1) * riser, HANDRAIL); });
+   }
+ }
+ 
+@@ -3176,7 +3431,7 @@ function emitLotPart(e: Emitter, el: BuildingElement, x0: number, y0: number, x1
+     }
+     case 'bollard': {
+       e.box(x0, y0, x1, y1, zb, z1, c === ELEMENT_CONCRETE ? LAMP_POST : c);
+-      if (!e.shell.far) e.box(x0 - m(0.01), y0 - m(0.01), x1 + m(0.01), y1 + m(0.01), z1 - m(0.25), z1 - m(0.15), BOLLARD_BAND);
++      e.only(NEAR, () => e.box(x0 - m(0.01), y0 - m(0.01), x1 + m(0.01), y1 + m(0.01), z1 - m(0.25), z1 - m(0.15), BOLLARD_BAND));
+       return;
+     }
+     default: {
+@@ -3412,10 +3667,13 @@ function emitLantern(e: Emitter, detail: RoofDetail, z: number): void {
+ }
+ 
+ /** Cut a pitched roof into planar regions, then clip each region to any outline. */
++/** `pitch`: the pitched roof's group in the masses (`recordRoofSlab`): its pieces and the walls filled up to it are the masses' too. */
+ function emitPolygonRoof(
+   e: Emitter, b: Building, v: Volume, floor: number,
+-  wallOf: (side: FaceId) => Paint, trim: Paint, roofColour: Paint,
++  wallOf: (side: FaceId) => Paint, trim: Paint, roofColour: Paint, pitch: number,
+ ): void {
++  const rec = v.roof === 'flat' || v.roof === 'terrace' ? null : e.mass;
++  const mrgb = rec ? massColours(b, e.tone) : null;
+   const z = floor + volumeHeight(b, v);
+   const x0 = v.x, y0 = v.y, x1 = v.x + v.w, y1 = v.y + v.d;
+   const slope = roofSlope(v);
+@@ -3475,6 +3733,16 @@ function emitPolygonRoof(
+       if (!ring || ring.length < 4) continue;
+       const flat = ring.slice(0, -1).flat();
+       const triangles = earcut(flat);
++      if (rec && mrgb && triangles.length >= 3) {
++        // The piece as one polygon of the masses, its normal the plane's (up).
++        const pts = ring.slice(0, -1).map(([x, y]) => e.L(x!, y!, z + patch.height({ x: x!, y: y! })));
++        const [i0, i1, i2] = [triangles[0]!, triangles[1]!, triangles[2]!];
++        const ux = pts[i1]![0] - pts[i0]![0], uy = pts[i1]![1] - pts[i0]![1], uz = pts[i1]![2] - pts[i0]![2];
++        const vx = pts[i2]![0] - pts[i0]![0], vy = pts[i2]![1] - pts[i0]![1], vz = pts[i2]![2] - pts[i0]![2];
++        let n: V3 = [uy * vz - uz * vy, uz * vx - ux * vz, ux * vy - uy * vx];
++        if (n[2] < 0) n = [-n[0], -n[1], -n[2]];
++        rec.polygon(pts, triangles, n, mrgb(roofMaterial(b, v)), pitch, MASS_PITCHED);
++      }
+       for (let i = 0; i < triangles.length; i += 3) {
+         const plan = [triangles[i], triangles[i + 1], triangles[i + 2]].map((index) =>
+           ({ x: flat[2 * index!]!, y: flat[2 * index! + 1]! }));
+@@ -3499,7 +3767,10 @@ function emitPolygonRoof(
+       const p0 = { x: frame.x + frame.tx * a0, y: frame.y + frame.ty * a0 };
+       const p1 = { x: frame.x + frame.tx * a1, y: frame.y + frame.ty * a1 };
+       const h0 = Math.max(0, heightAt(p0)), h1 = Math.max(0, heightAt(p1));
+-      if (h0 + h1 > 1e-4) e.shell.face([e.L(p0.x, p0.y, z), e.L(p1.x, p1.y, z), e.L(p1.x, p1.y, z + h1), e.L(p0.x, p0.y, z + h0)], e.N(frame.nx, frame.ny), wallOf(side));
++      if (h0 + h1 > 1e-4) {
++        e.shell.face([e.L(p0.x, p0.y, z), e.L(p1.x, p1.y, z), e.L(p1.x, p1.y, z + h1), e.L(p0.x, p0.y, z + h0)], e.N(frame.nx, frame.ny), wallOf(side));
++        if (rec && mrgb) rec.face([e.L(p0.x, p0.y, z), e.L(p1.x, p1.y, z), e.L(p1.x, p1.y, z + h1), e.L(p0.x, p0.y, z + h0)], e.N(frame.nx, frame.ny), mrgb(wallMaterial(b, v, side)), pitch, MASS_PITCHED);
++      }
+     }
+     // A low continuous coping makes the plan legible at game zoom.
+     const f: BayFace = { ...sideFrame(v, side, 0), z0: z, W: frame.length, H: PARAPET_H };
+@@ -3528,9 +3799,17 @@ function emitRoof(
+   trim: Paint,
+   roofColour: Paint,
+ ): void {
+-  if (v.outline) { emitPolygonRoof(e, b, v, floor, wallOf, trim, roofColour); return; }
++  // Its masses' slab (and its pitched roof's group, every face of the pitched roof below hangs on it).
++  const pitch = recordRoofSlab(e, b, v, floor);
++  if (v.outline) { emitPolygonRoof(e, b, v, floor, wallOf, trim, roofColour, pitch); return; }
+   const top = volumeTop(v);
+   const z = floor + volumeHeight(b, v);
++  const rec = e.mass;
++  const mrgb = rec ? massColours(b, e.tone) : null;
++  /** A face of the pitched roof into the masses too, in its colour from afar (its roof's, or a wall's for a gable). */
++  const massFace = (points: readonly V3[], n: V3, rgb: readonly [number, number, number] | undefined): void => { if (rec && rgb) rec.face(points, n, rgb, pitch, MASS_PITCHED); };
++  const massRoof = mrgb ? mrgb(roofMaterial(b, v)) : undefined;
++  const massWall = (side: FaceId): readonly [number, number, number] | undefined => (mrgb ? mrgb(wallMaterial(b, v, side)) : undefined);
+   const x0 = v.x;
+   const y0 = v.y;
+   const x1 = v.x + v.w;
+@@ -3601,6 +3880,8 @@ function emitRoof(
+     // The two long slopes.
+     sh.face([Lp(a0 - o, c0 - o, eave), Lp(a1 + o, c0 - o, eave), Lp(r1, cm, ridge), Lp(r0, cm, ridge)], nNear, roofColour);
+     sh.face([Lp(a1 + o, c1 + o, eave), Lp(a0 - o, c1 + o, eave), Lp(r0, cm, ridge), Lp(r1, cm, ridge)], nFar, roofColour);
++    massFace([Lp(a0 - o, c0 - o, eave), Lp(a1 + o, c0 - o, eave), Lp(r1, cm, ridge), Lp(r0, cm, ridge)], nNear, massRoof);
++    massFace([Lp(a1 + o, c1 + o, eave), Lp(a0 - o, c1 + o, eave), Lp(r0, cm, ridge), Lp(r1, cm, ridge)], nFar, massRoof);
+     const endLow = alongX ? e.N(-slope, 0, 1) : e.N(0, -slope, 1);
+     const endHigh = alongX ? e.N(slope, 0, 1) : e.N(0, slope, 1);
+     // The roof has a body, not a sheet of paper (the player's order of 2026-10-05)
+@@ -3625,6 +3906,8 @@ function emitRoof(
+     if (v.roof === 'hip') {
+       sh.face([Lp(a0 - o, c1 + o, eave), Lp(a0 - o, c0 - o, eave), Lp(r0, cm, ridge)], endLow, roofColour);
+       sh.face([Lp(a1 + o, c0 - o, eave), Lp(a1 + o, c1 + o, eave), Lp(r1, cm, ridge)], endHigh, roofColour);
++      massFace([Lp(a0 - o, c1 + o, eave), Lp(a0 - o, c0 - o, eave), Lp(r0, cm, ridge)], endLow, massRoof);
++      massFace([Lp(a1 + o, c0 - o, eave), Lp(a1 + o, c1 + o, eave), Lp(r1, cm, ridge)], endHigh, massRoof);
+       sh.face([Lp(a0 - o, c1 + o, eave - T), Lp(a0 - o, c0 - o, eave - T), Lp(a0 - o, c0 - o, eave), Lp(a0 - o, c1 + o, eave)], outA0, fascia);
+       sh.face([Lp(a1 + o, c0 - o, eave - T), Lp(a1 + o, c1 + o, eave - T), Lp(a1 + o, c1 + o, eave), Lp(a1 + o, c0 - o, eave)], outA1, fascia);
+       sh.face([Lp(a0 - o, c1 + o, eave - T), Lp(a0 - o, c0 - o, eave - T), Lp(a0, c0, z - T), Lp(a0, c1, z - T)], down, soffit);
+@@ -3644,6 +3927,8 @@ function emitRoof(
+       const w1 = alongX ? e.N(1, 0) : e.N(0, 1);
+       sh.face([Lp(a0, c0, z), Lp(a0, c1, z), Lp(a0, cm, ridge)], w0, wallOf(alongX ? 3 : 0));
+       sh.face([Lp(a1, c1, z), Lp(a1, c0, z), Lp(a1, cm, ridge)], w1, wallOf(alongX ? 1 : 2));
++      massFace([Lp(a0, c0, z), Lp(a0, c1, z), Lp(a0, cm, ridge)], w0, massWall(alongX ? 3 : 0));
++      massFace([Lp(a1, c1, z), Lp(a1, c0, z), Lp(a1, cm, ridge)], w1, massWall(alongX ? 1 : 2));
+     }
+     return;
+   }
+@@ -3671,6 +3956,8 @@ function emitRoof(
+       e.N(nf.x * slope, nf.y * slope, 1),
+       roofColour,
+     );
++    massFace([Q(-oa, -ot, z - EAVES * slope), Q(1 + oa, -ot, z - EAVES * slope), Q(1 + oa, 1 + ot, high + EAVES * slope), Q(-oa, 1 + ot, high + EAVES * slope)],
++      e.N(nf.x * slope, nf.y * slope, 1), massRoof);
+     // The slab's body: a fascia on all four edges and the soffit under the overhang, so the roof has a thickness
+     {
+       const T = ROOF_THICK;
+@@ -3696,9 +3983,11 @@ function emitRoof(
+       const a = (lowAlongX ? end === 3 : end === 0) ? 0 : 1;
+       const n = SIDE_NORMAL[end];
+       sh.face([Q(a, 0, z), Q(a, 1, z), Q(a, 1, high)], e.N(n.x, n.y), wallOf(end));
++      massFace([Q(a, 0, z), Q(a, 1, z), Q(a, 1, high)], e.N(n.x, n.y), massWall(end));
+     }
+     const nb = SIDE_NORMAL[back];
+     sh.face([Q(0, 1, z), Q(1, 1, z), Q(1, 1, high), Q(0, 1, high)], e.N(nb.x, nb.y), wallOf(back));
++    massFace([Q(0, 1, z), Q(1, 1, z), Q(1, 1, high), Q(0, 1, high)], e.N(nb.x, nb.y), massWall(back));
+     return;
+   }
+ 
+@@ -3713,6 +4002,10 @@ function emitRoof(
+     sh.face([e.L(x1, t1, z), e.L(x0, t1, z), e.L(x0, t1, z + h), e.L(x1, t1, z + h)], e.N(0, 1), glass);
+     sh.face([e.L(x0, t0, z), e.L(x0, t1, z), e.L(x0, t1, z + h)], e.N(-1, 0), wallOf(3));
+     sh.face([e.L(x1, t1, z), e.L(x1, t0, z), e.L(x1, t1, z + h)], e.N(1, 0), wallOf(1));
++    massFace([e.L(x0, t0, z), e.L(x1, t0, z), e.L(x1, t1, z + h), e.L(x0, t1, z + h)], e.N(0, -1, 2), massRoof);
++    massFace([e.L(x1, t1, z), e.L(x0, t1, z), e.L(x0, t1, z + h), e.L(x1, t1, z + h)], e.N(0, 1), rec ? SAW_GLASS_RGB : undefined);
++    massFace([e.L(x0, t0, z), e.L(x0, t1, z), e.L(x0, t1, z + h)], e.N(-1, 0), massWall(3));
++    massFace([e.L(x1, t1, z), e.L(x1, t0, z), e.L(x1, t1, z + h)], e.N(1, 0), massWall(1));
+   }
+ }
+ 
+@@ -3740,97 +4033,195 @@ export function letGoEmitted(b: Building): void {
+   letGoLayout(closed);
+ }
+ 
+-/** DO NOT grow a new shell's arrays for each building of a job from nothing (every one doubling its way up, the half let go, its chunk holding views of arrays twice its size): one shell written again for each, the arrays grown once to the largest, each chunk an exact copy. */
+-export class ShellWriter {
+-  private readonly shell = new Shell();
+-  /** The parts' and the furniture's rows, written again the same way. */
++/** One level's shell and rows written again for each building of a job (`ShellWriter`). */
++export class LevelWriter implements LevelSink {
++  readonly shell = new Shell();
+   readonly parts = partSink();
+   readonly furniture: FurnitureSink = {};
+   constructor() { this.shell.reused = true; }
+-  /** The shell and the rows emptied for the next building. */
+-  next(): Shell {
++  /** Emptied for the next building. */
++  next(): LevelSink {
+     this.shell.clear();
+     for (const kind of PART_KINDS) this.parts[kind].clear();
+     for (const kind of FURNITURE_KINDS) this.furniture[kind]?.clear();
+-    return this.shell;
++    return this;
+   }
+ }
+ 
+-/** `far`: the building's far level (L1) - walls as runs of bays with their windows drawn by the shader, no parts (`facadeLevel.ts`). */
+-/** `apart`: the elements' boxes, pavings and rails as instances of the shell's parts (`shellParts.ts`); false lays them in the shell face by face, as the parts draw them (the specs compare). */
+-/** `party`: the job's buildings as one another's neighbours (`partyWalls.ts`): the bays inside a neighbour are not laid, and each floor is worked out once. */
+-/** `writer`: one shell written again for each building of a job (`ShellWriter`): its arrays grow once, and each chunk copies out what is its own. */
+-export function emitChunk(b: Building, groundAt: GroundAt, pavedAt?: PavedAt, naturalAt: GroundAt = groundAt, slots: SlotAllocator = spaceSeed, far = false, apart = true,
+-  party?: PartyWalls, writer?: ShellWriter): BuildingChunk {
+-  const shell = writer ? writer.next() : new Shell();
+-  shell.decay = b.decay ?? 0;
+-  shell.far = far;
+-  shell.apart = apart;
+-  const parts = writer ? writer.parts : partSink();
++/** DO NOT grow a new shell's arrays for each building of a job from nothing (every one doubling its way up, the half let go, its chunk holding views of arrays twice its size): each level's shell written again for each, the arrays grown once to the largest, each chunk an exact copy. */
++export class ShellWriter {
++  readonly near = new LevelWriter();
++  readonly far = new LevelWriter();
++}
++
++/** What a walk is asked to write besides the mass stage (which it always writes): the detail, the facade level, both or neither. */
++export interface ProgramWants {
++  readonly near: boolean;
++  readonly far: boolean;
++}
++
++export interface ProgramOptions {
++  readonly slots?: SlotAllocator;
++  /** The elements' boxes, pavings and rails as instances of the shell's parts (`shellParts.ts`); false lays them in the shell face by face (the specs compare). */
++  readonly apart?: boolean;
++  /** The job's buildings as one another's neighbours (`partyWalls.ts`): the bays inside a neighbour are not laid, and each floor is worked out once. */
++  readonly party?: PartyWalls;
++  /** Each level's shell written again for each building of a job (`ShellWriter`). */
++  readonly writer?: ShellWriter;
++  /** Each finish's colour from afar, for the masses (`finishes.ts` finishAlbedo); none, the bare tint. */
++  readonly tone?: Tone;
++  /** The floor a job stands it on (null: it has no closed block): the masses' and the base's (`massFloor`, `baseFloor`); absent, the detail's (`floorHeight`, the party's). */
++  readonly floor?: number | null;
++}
++
++/** A level's sinks for a building: a job's written again, or new. */
++function levelSink(writer: LevelWriter | undefined, b: Building, apart: boolean, far: boolean): LevelSink {
++  const sink: LevelSink = writer ? writer.next() : { shell: new Shell(), parts: partSink(), furniture: {} };
++  sink.shell.decay = b.decay ?? 0;
++  sink.shell.far = far;
++  sink.shell.apart = apart;
++  return sink;
++}
++
++/** The mass stage alone (no level asked: the masses, the base, the summary): each block's walls and parapet (`recordBlock`), its roof and what
++ *  stands on it (`emitRoof`, its faces into no level, its masses into the program), its machine room; the roofs' details for their flags. */
++function massWalk(b: Building, floor: number, shell: LevelShell, levels: Levels, rec: MassRecorder, tone?: Tone): void {
++  const e = new Emitter(b, shell, levels, rec, tone);
++  const { wallOf, trim } = buildingPaints(b);
++  for (const v of b.volumes) {
++    recordBlock(e, b, v, floor);
++    emitRoof(e, b, v, floor, (side) => wallOf(v, side), trim, paint(roofMaterial(b, v)));
++    emitRoofDetails(e, b, v, floor);
++  }
++  for (const { volume: best, x0, y0, x1, y1 } of machineRooms(b)) recordMachineRoom(e, b, best, x0, y0, x1, y1, floor + volumeHeight(b, best));
++}
++
++/** The paved lots - car parks, yards, courts - as the masses lay them (`program.ts`): each a flat polygon at its surface's heights, from the level the lots meet. */
++function recordLots(rec: MassRecorder, b: Building, buildingFloor: number | undefined, groundAt: GroundAt, pavedAt?: PavedAt): void {
++  const lots = b.volumes.filter((v) => v.open && v.open !== 'grass');
++  if (lots.length === 0) return;
++  let ground = -Infinity;
++  const f = buildingFrame(b);
++  for (const v of b.volumes) {
++    if (!v.open) continue;
++    for (const q of localFootprint(v)) ground = Math.max(ground, groundAt(frameX(f, q.x, q.y), frameY(f, q.x, q.y)));
++    ground = Math.max(ground, groundAt(frameX(f, v.x + v.w / 2, v.y + v.d / 2), frameY(f, v.x + v.w / 2, v.y + v.d / 2)));
++  }
++  const level = buildingFloor ?? ground + m(0.12);
++  for (const surface of lotSurfaces(b, level, pavedAt)) {
++    const v = surface.volume;
++    if (!v.open || v.open === 'grass') continue;
++    const flatRing = localFootprint(v).flatMap((q) => [q.x, q.y]);
++    const tris = earcut(flatRing);
++    const points: V3[] = [];
++    for (let k = 0; k < flatRing.length / 2; k++) {
++      const x = frameX(f, flatRing[2 * k]!, flatRing[2 * k + 1]!), y = frameY(f, flatRing[2 * k]!, flatRing[2 * k + 1]!);
++      points.push([x, y, surface.heightAt(x, y)]);
++    }
++    rec.polygon(points, tris, [0, 0, 1], rgbOf(LOT_COLOURS[v.open]));
++  }
++}
++
++/** The lots' ground as the walk lays it, without laying it (the mass stage alone): the level its lots meet and their surfaces (`emitLots`' own). */
++function lotGroundAlone(resolved: Building, lots: readonly Volume[], floor: number | undefined, groundAt: GroundAt, pavedAt?: PavedAt): LotGround | undefined {
++  if (lots.length === 0) return lotGroundOf(resolved, [], floor, false);
++  // The level `emitLots` lays the lots at: the building's floor, else the highest ground of the lots a little over.
++  let level = floor;
++  if (level === undefined) {
++    const f = buildingFrame(resolved);
++    let top = -Infinity;
++    for (const v of lots) {
++      for (const q of localFootprint(v)) top = Math.max(top, groundAt(frameX(f, q.x, q.y), frameY(f, q.x, q.y)));
++      top = Math.max(top, groundAt(frameX(f, v.x + v.w / 2, v.y + v.d / 2), frameY(f, v.x + v.w / 2, v.y + v.d / 2)));
++    }
++    level = top + m(0.12);
++  }
++  return lotGroundOf(resolved, lotSurfaces(resolved, level, pavedAt), level, true);
++}
++
++/** A level's chunk as its sinks hold it, with what the page keeps of the building. */
++function levelChunk(sink: LevelSink, summary: ProgramSummary): BuildingChunk {
++  const batches = {} as Record<PartKind, PartBatch>;
++  for (const kind of PART_KINDS) batches[kind] = sink.parts[kind].batch();
++  const shells = shellChunks(sink.shell);
++  let furniture: Partial<Record<FurnitureKind, PartBatch>> | undefined;
++  for (const kind of FURNITURE_KINDS) {
++    const rows = sink.furniture[kind];
++    if (!rows || rows.count === 0) continue;
++    (furniture ??= {})[kind] = rows.batch();
++  }
++  const runs = runChunks(sink.shell);
++  const laid = runs ? { shells, runs } : { shells };
++  return { ...(furniture ? { ...laid, parts: batches, furniture } : { ...laid, parts: batches }), ...summary };
++}
++
++/** THE BUILDING'S ONE WALK (`program.ts`): its mass stage always (the walls' bays, the parapets, the roofs and what stands on them, the machine
++ *  rooms, the lots, the base's shapes), the detail and the facade level where `wants` asks for them, every level's pieces laid by the same pass
++ *  over its blocks, bays and roofs. Every level drawn of the building is a filter over what this returns. */
++export function emitProgram(b: Building, groundAt: GroundAt, pavedAt?: PavedAt, naturalAt: GroundAt = groundAt, wants: ProgramWants = { near: true, far: false },
++  o: ProgramOptions = {}): BuildingProgram {
+   // The blocks as drawn: unions, cuts and intersections resolved, the stored blocks untouched (`world/buildings/blocks.ts`).
+   const resolved = resolveBlocks(b);
+   // Open blocks are lots: laid on the ground, not built.
+   const lots = resolved.volumes.filter((v) => v.open);
+   // One list for the blocks: their bays laid out and their floors furnished once (`bayLayout`, `interiorAt`) for every reader and like building.
+   const closed = closedBlocks(resolved.volumes);
+-  const furnished: FurnitureSink = writer ? writer.furniture : {};
+   const inLot = (el: BuildingElement): boolean =>
+     lots.some((v) => el.x >= v.x && el.x <= v.x + v.w && el.y >= v.y && el.y <= v.y + v.d);
+   // The terrain is graded from this natural-ground floor.
+-  const designedFloor = party ? party.floorOf(b) : closed.length > 0 ? floorHeight(resolved, naturalAt, pavedAt) : undefined;
++  const designedFloor = o.floor !== undefined ? o.floor ?? undefined
++    : o.party ? o.party.floorOf(b) : closed.length > 0 ? floorHeight(resolved, naturalAt, pavedAt) : undefined;
++  const apart = o.apart ?? true;
++  const near = wants.near ? levelSink(o.writer?.near, b, apart, false) : null;
++  const far = wants.far ? levelSink(o.writer?.far, b, apart, true) : null;
++  const shell = new LevelShell(near?.shell ?? null, far?.shell ?? null);
++  const levels: Levels = { near, far };
++  const office = b.use === 'commercial' || b.use === 'industrial' ? 2 : 0;
++  const rec = new MassRecorder(buildingFrame(b), ((b.id * 2654435761) >>> 0) / 4294967296 + office);
+   const flags: FlagInstance[] = [];
+   flagSink = flags;
+   // A signature building's body is drawn with its own parts (`signature.ts`).
+   const signature = closed.length > 0 && drawsSignature(b);
+-  const body = !signature && closed.length > 0
+-    ? emitBuilding({ ...resolved, volumes: closed }, groundAt, shell, parts, pavedAt, furnished, inLot, designedFloor, slots, party?.coversNear(b))
+-    : undefined;
+-  const floor = signature ? designedFloor : body?.floor;
+-  flagSink = null;
+-  const lotGround = emitLots(resolved, lots, closed.length === 0, groundAt, shell, parts, floor, pavedAt, inLot, body?.entrances);
+-  const batches = {} as Record<PartKind, PartBatch>;
+-  for (const kind of PART_KINDS) batches[kind] = parts[kind].batch();
+-  const shells = shellChunks(shell);
+-  let furniture: Partial<Record<FurnitureKind, PartBatch>> | undefined;
+-  for (const kind of FURNITURE_KINDS) {
+-    const rows = furnished[kind];
+-    if (!rows || rows.count === 0) continue;
+-    (furniture ??= {})[kind] = rows.batch();
++  const body = { ...resolved, volumes: closed };
++  let floor = designedFloor;
++  let entrances: readonly Entrance[] | undefined;
++  if (!signature && closed.length > 0) {
++    if (near || far) {
++      const f = emitBuilding(body, groundAt, shell, levels, pavedAt, inLot, designedFloor, o.slots ?? spaceSeed, o.party?.coversNear(b), rec, o.tone);
++      floor = f.floor;
++      entrances = f.entrances;
++    } else if (designedFloor !== undefined) massWalk(body, designedFloor, shell, levels, rec, o.tone);
+   }
+-  const runs = runChunks(shell);
+-  const laid = runs ? { shells, runs } : { shells };
+-  const out = furniture ? { ...laid, parts: batches, furniture } : { ...laid, parts: batches };
+-  const withGround = lotGround ? { ...out, lotGround } : out;
+-  const withSignature = signature && floor !== undefined ? { ...withGround, signatureFloor: floor } : withGround;
+-  return flags.length ? { ...withSignature, flags } : withSignature;
++  flagSink = null;
++  const lotGround = near || far
++    ? emitLots(resolved, lots, closed.length === 0, groundAt, shell, levels, floor, pavedAt, inLot, entrances)
++    : lotGroundAlone(resolved, lots, floor, groundAt, pavedAt);
++  recordLots(rec, resolved, floor, groundAt, pavedAt);
++  recordBase(rec, b, floor, groundAt, signature, o.tone);
++  const summary: ProgramSummary = {
++    ...(lotGround ? { lotGround } : {}),
++    ...(signature && floor !== undefined ? { signatureFloor: floor } : {}),
++    ...(flags.length ? { flags } : {}),
++  };
++  return {
++    mass: rec.done(),
++    summary,
++    ...(near ? { near: levelChunk(near, summary) } : {}),
++    ...(far ? { far: levelChunk(far, summary) } : {}),
++  };
+ }
+ 
+-/** What the page keeps of a building (`cellWork.ts` `ChunkSummary`), as `emitChunk` makes it, without laying it: its lots' ground recipe and its signature floor; a building that flies a flag is laid whole, the flags being where its roof puts them. */
+-export function chunkSummary(b: Building, groundAt: GroundAt, pavedAt?: PavedAt, naturalAt: GroundAt = groundAt, party?: PartyWalls): Pick<BuildingChunk, 'flags' | 'lotGround' | 'signatureFloor'> {
+-  const resolved = resolveBlocks(b);
+-  if (fliesFlag(resolved)) return emitChunk(b, groundAt, pavedAt, naturalAt, undefined, false, true, party);
+-  const lots = resolved.volumes.filter((v) => v.open);
+-  const closed = closedBlocks(resolved.volumes);
+-  const floor = party ? party.floorOf(b) : closed.length > 0 ? floorHeight(resolved, naturalAt, pavedAt) : undefined;
+-  const signature = closed.length > 0 && drawsSignature(b);
+-  let lotGround: LotGround | undefined;
+-  if (lots.length === 0) lotGround = lotGroundOf(resolved, [], floor, false);
+-  else {
+-    // The level `emitLots` lays the lots at: the building's floor, else the highest ground of the lots a little over.
+-    let level = floor;
+-    if (level === undefined) {
+-      const f = buildingFrame(resolved);
+-      let top = -Infinity;
+-      for (const v of lots) {
+-        for (const q of localFootprint(v)) top = Math.max(top, groundAt(frameX(f, q.x, q.y), frameY(f, q.x, q.y)));
+-        top = Math.max(top, groundAt(frameX(f, v.x + v.w / 2, v.y + v.d / 2), frameY(f, v.x + v.w / 2, v.y + v.d / 2)));
+-      }
+-      level = top + m(0.12);
+-    }
+-    lotGround = lotGroundOf(resolved, lotSurfaces(resolved, level, pavedAt), level, true);
+-  }
+-  const out = lotGround ? { lotGround } : {};
+-  return signature && floor !== undefined ? { ...out, signatureFloor: floor } : out;
++/** A building's detail (`far` false) or its facade level (`far`, L1: walls as runs of bays, their windows drawn by the shader, `facadeLevel.ts`):
++ *  that level of its program (`emitProgram`), a filter over the one walk. */
++export function emitChunk(b: Building, groundAt: GroundAt, pavedAt?: PavedAt, naturalAt: GroundAt = groundAt, slots: SlotAllocator = spaceSeed, far = false, apart = true,
++  party?: PartyWalls, writer?: ShellWriter): BuildingChunk {
++  const p = emitProgram(b, groundAt, pavedAt, naturalAt, { near: !far, far }, { slots, apart, ...(party ? { party } : {}), ...(writer ? { writer } : {}) });
++  return (far ? p.far : p.near)!;
++}
++
++/** What the page keeps of a building (`cellWork.ts` `ChunkSummary`): its program's summary, its mass stage alone walked (no level laid). */
++export function chunkSummary(b: Building, groundAt: GroundAt, pavedAt?: PavedAt, naturalAt: GroundAt = groundAt, party?: PartyWalls): ProgramSummary {
++  return emitProgram(b, groundAt, pavedAt, naturalAt, { near: false, far: false }, party ? { party } : {}).summary;
+ }
+ 
+ /** A part's arrays viewed at their length, no copy. */
+@@ -3919,39 +4310,49 @@ function nearRunsAsShells(runs: BuildingChunk['runs']): [Finish, ShellChunk][] {
+   return out;
+ }
+ 
+-/** A chunk with its shell's parts laid in its shell again (`shellPartFaces`), and its detail runs of bays as plain faces: what a ruin breaks (`destruction.ts`), and what the specs compare with the shell as it was. */
+-export function withShellParts(chunk: BuildingChunk): BuildingChunk {
+-  const laid = [...Object.entries(shellPartFaces(chunk.parts)) as [Finish, ShellChunk][], ...nearRunsAsShells(chunk.runs)];
+-  const shells: Partial<Record<Finish, ShellChunk>> = { ...chunk.shells };
++/** Fragments laid after a chunk's shells, finish by finish (`b` after `a`). */
++function joinShells(shells: Readonly<Partial<Record<Finish, ShellChunk>>>, laid: readonly (readonly [Finish, ShellChunk])[]): Partial<Record<Finish, ShellChunk>> {
++  const out: Partial<Record<Finish, ShellChunk>> = { ...shells };
++  const joined = <T extends Float32Array | Int16Array | Uint16Array>(a: T, b: T, make: (n: number) => T): T => {
++    const all = make(a.length + b.length);
++    all.set(a);
++    all.set(b, a.length);
++    return all;
++  };
+   for (const [finish, add] of laid) {
+-    const was = shells[finish];
+-    if (!was) { shells[finish] = add; continue; }
++    const was = out[finish];
++    if (!was) { out[finish] = add; continue; }
+     const base = was.position.length / 3;
+-    // `b` after `a` (a part's faces are never a run of bays: the runs stay as they were).
+-    const joined = <T extends Float32Array | Int16Array | Uint16Array>(a: T, b: T, make: (n: number) => T): T => {
+-      const out = make(a.length + b.length);
+-      out.set(a);
+-      out.set(b, a.length);
+-      return out;
+-    };
+     const index = new Uint32Array(was.index.length + add.index.length);
+     index.set(was.index);
+     for (let k = 0; k < add.index.length; k++) index[was.index.length + k] = add.index[k]! + base;
+-    shells[finish] = {
++    out[finish] = {
+       position: joined(was.position, add.position, (n) => new Float32Array(n)),
+       normal: joined(was.normal, add.normal, (n) => new Int16Array(n)),
+       paint: joined(was.paint, add.paint, (n) => new Uint16Array(n)),
+       index,
+     };
+   }
++  return out;
++}
++
++/** A chunk with its shell's parts laid in its shell again (`shellPartFaces`): what the specs compare with the shell as it was, and what a ruin breaks (`destruction.ts`, after `asPlainShells`). */
++export function withShellParts(chunk: BuildingChunk): BuildingChunk {
++  // A part's faces are never a run of bays: the runs stay as they were.
++  const shells = joinShells(chunk.shells, Object.entries(shellPartFaces(chunk.parts)) as [Finish, ShellChunk][]);
+   const none: PartBatch = { poses: new Float32Array(0), colours: new Float32Array(0), count: 0, looks: new Float32Array(0) };
+   const parts = { ...chunk.parts } as Record<PartKind, PartBatch>;
+   for (const kind of SHELL_PART_KINDS) parts[kind] = none;
+-  // The far level's runs stay runs (a ruin is broken from the detail level); the detail's are in the shells now.
++  return { ...chunk, shells, parts };
++}
++
++/** A detail chunk with its runs of bays as plain shell faces (`nearRunsAsShells`, each vertex given back its tone): what a ruin breaks, the shell its fracture reads (`fracture.ts` reads `shells` alone). The far level's runs stay runs. */
++export function asPlainShells(chunk: BuildingChunk): BuildingChunk {
++  const shells = joinShells(chunk.shells, nearRunsAsShells(chunk.runs));
+   const farRuns = Object.fromEntries(Object.entries(chunk.runs ?? {}).filter(([, run]) => !run.near)) as Partial<Record<Finish, RunChunk>>;
+   const { runs: _runs, ...rest } = chunk;
+   void _runs;
+-  return Object.keys(farRuns).length ? { ...rest, shells, parts, runs: farRuns } : { ...rest, shells, parts };
++  return Object.keys(farRuns).length ? { ...rest, shells, runs: farRuns } : { ...rest, shells };
+ }
+ 
+ /** Each part's and piece of furniture's geometry box as the kit draws them (`cellArrays.ts` works the batches' bounds from them). */
+@@ -4230,7 +4631,8 @@ let previewWriter: ShellWriter | null = null;
+ /** The furniture of every floor of a building, as it stands inside: what a blow throws out of it when it breaks */
+ export function interiorFurniture(b: Building, floor: number): Partial<Record<FurnitureKind, PartBatch>> {
+   const placed: FurnitureSink = {};
+-  const e = new Emitter(b, new Shell(), {} as PartSink, placed);
++  const near: LevelSink = { shell: new Shell(), parts: partSink(), furniture: placed };
++  const e = new Emitter(b, new LevelShell(near.shell, null), { near, far: null });
+   let top = 0;
+   for (const v of b.volumes) if (!v.open && v.mode !== 'void') top = Math.max(top, volumeTop(v));
+   for (let level = 0; level < top; level++) {
+diff --git a/src/render/buildings/cellWork.ts b/src/render/buildings/cellWork.ts
+index c07e0c4c..d78cdb55 100644
+--- a/src/render/buildings/cellWork.ts
++++ b/src/render/buildings/cellWork.ts
+@@ -2,19 +2,20 @@ import type { Finish } from '@world/buildings/materials';
+ import { eachRecord, readRecords } from '@world/buildings/recordTable';
+ import { type PavingData, pavingReader } from '@world/paving';
+ import { type GroundReaders, type SharedGroundData, sharedGroundReaders } from '../sharedGround';
+-import { ShellWriter, chunkSummary, emitChunk, letGoEmitted } from './buildingMesh';
++import { ShellWriter, emitProgram, letGoEmitted, type ProgramWants } from './buildingMesh';
+ export { ShellWriter } from './buildingMesh';
+ import { type CellArrays, type CellMass, type CellSelection, type KitBoxes, cellArrays, cellBuffers, cellMass, cellMassBuffers } from './cellArrays';
+ import type { BuildingChunk, CellJobEntry, LotGroundRecipe } from './chunk';
++import type { Building } from '@world/buildings/types';
+ import type { FlagInstance } from './flagLayer';
+ import { PART_KINDS } from './kit';
+ import { COARSE_PARTS, DETAIL_CELL, DETAIL_PARTS } from './layerCells';
+-import { CELL_DETAIL, type MassDetail, PLATE_DETAIL, TILE_DETAIL, baseFloor, emitMassing, massFloor, type MassingChunk } from './massing';
++import { CELL_DETAIL, type MassDetail, PLATE_DETAIL, TILE_DETAIL, baseFloor, massFloor, massOf, type MassingChunk } from './massing';
+ import { type PartFiling, fileParts, filingBuffers } from './partFiling';
+ import { levelCells } from './levelKeys';
+-import { type BaseMass, BaseWriter, baseBuffers, emitBase } from './massBase';
++import { type BaseMass, BaseWriter, baseBuffers, writeBase } from './massBase';
++import { type BuildingProgram, type ProgramSummary, ProgramCache } from './program';
+ import { PartyWalls } from './partyWalls';
+-import { drawsSignature } from './signature';
+ 
+ /** DO NOT send the page a chunk per building */
+ 
+@@ -112,6 +113,66 @@ export function workerReads(job: CellJob, writer?: ShellWriter): CellReads {
+   return { groundAt: shared.groundAt, naturalAt, groundMissed, ...(pavedAt ? { pavedAt } : {}), ...(writer ? { writer } : {}) };
+ }
+ 
++/** THE PROGRAMS THIS WORKER KEEPS (`program.ts`): a building walked once (`emitProgram`), every later job of it reading its program, each
++ *  level a filter over it. A few tens of MB: a worker is a heap in the page's V8 cage (`jobPool.ts`). */
++const PROGRAMS = new ProgramCache(32 * 2 ** 20);
++/** The programs this thread keeps: what it holds, the walks and the reads counted (`ProgramCache`). */
++export const keptPrograms = (): ProgramCache => PROGRAMS;
++
++/** A program's key: the building and its record (`CellEntry.sig`: an edit changes it, so only the edited building is walked again), the
++ *  ground under it and whether paving is read, the floor it stands on, the masses' tone. */
++const massKey = (entry: CellJobEntry, paved: boolean, floor: number | null, tone: string): string => `${entry.key}|${entry.sig}|${entry.digest}|${paved ? 1 : 0}|${floor ?? '-'}|${tone}`;
++const toneKeyOf = (tone: CellJob['tone']): string => (tone ? JSON.stringify(tone) : '');
++
++/** A job's buildings' programs: kept, or walked now for what the job draws and kept at once - DO NOT hold a job's every program until it is
++ *  done (a plate's thousands of buildings in the worker's heap at once, `cellJobMemory.spec.ts`); let go again if the job read past what it
++ *  was handed (`undo`: its reads were short, its programs wrong). */
++class JobPrograms {
++  private readonly made: string[] = [];
++  constructor(private readonly tone: string, private readonly paved: boolean) {}
++
++  /** Its mass stage (with its summary), on `floor`. */
++  mass(entry: CellJobEntry, floor: number | null, walk: () => BuildingProgram): BuildingProgram {
++    const key = `m|${massKey(entry, this.paved, floor, this.tone)}`;
++    const kept = PROGRAMS.get(key);
++    if (kept) { PROGRAMS.hits++; return kept; }
++    PROGRAMS.walks++;
++    const made = walk();
++    this.keep(key, made);
++    return made;
++  }
++
++  /** The levels `wants` asks for, with its neighbours' covers (`coversKey`): a level already walked read as it was, a missing one walked alone. */
++  levels(entry: CellJobEntry, floor: number | null, covers: string, wants: ProgramWants, walk: (wants: ProgramWants) => BuildingProgram): BuildingProgram {
++    const key = `l|${massKey(entry, this.paved, floor, this.tone)}|${covers}`;
++    const kept = PROGRAMS.get(key);
++    if (kept && (!wants.near || kept.near) && (!wants.far || kept.far)) { PROGRAMS.hits++; return kept; }
++    PROGRAMS.walks++;
++    const fresh = walk({ near: wants.near && !kept?.near, far: wants.far && !kept?.far });
++    const made: BuildingProgram = kept ? { ...fresh, ...(kept.near ? { near: kept.near } : {}), ...(kept.far ? { far: kept.far } : {}) } : fresh;
++    this.keep(key, made);
++    // Its mass stage on the same floor, read by the masses' jobs too.
++    this.keep(`m|${massKey(entry, this.paved, floor, this.tone)}`, { mass: made.mass, summary: made.summary });
++    return made;
++  }
++
++  private keep(key: string, program: BuildingProgram): void {
++    PROGRAMS.set(key, program);
++    this.made.push(key);
++  }
++
++  /** The programs this job walked let go: it read past what it was handed (`wider`), so they stand on reads it did not have. */
++  undo(): void {
++    for (const key of this.made) PROGRAMS.delete(key);
++    this.made.length = 0;
++  }
++}
++
++/** A party's covers of a building as a key: the neighbours' blocks its bays are hidden behind (`partyWalls.ts`). */
++function coversKey(party: PartyWalls, b: Building): string {
++  return party.coversNear(b).map((c) => `${c.bottom.toFixed(3)},${c.top.toFixed(3)}:${c.ring.map((q) => `${q.x.toFixed(3)},${q.y.toFixed(3)}`).join(';')}`).join('/');
++}
++
+ const COARSE: Omit<CellSelection, 'ghost' | 'dim'> = { parts: PART_KINDS.filter((k) => COARSE_PARTS.has(k)), shells: true, furniture: true };
+ const DETAIL: Omit<CellSelection, 'ghost' | 'dim'> = { parts: PART_KINDS.filter((k) => DETAIL_PARTS.has(k)), shells: false, furniture: false };
+ 
+@@ -141,6 +202,11 @@ export function runCellJob(job: CellJob, reads: CellReads): WorkReply {
+     return missX0 <= missX1;
+   };
+   const { groundAt, naturalAt } = reads;
++  // EVERY KIND OF JOB A FILTER OVER THE BUILDINGS' PROGRAMS (`program.ts`): each building walked once (`emitProgram`), kept by its record,
++  // and the base, the masses, the summary, the facade level and the detail each drawn from it; an edited building walked again, it alone.
++  const programs = new JobPrograms(toneKeyOf(job.tone), job.paved);
++  const tone = job.tone;
++  const stage = (floor: number | null): { floor: number | null; tone?: NonNullable<CellJob['tone']> } => (tone ? { floor, tone } : { floor });
+   if (job.kind === 'massBase') {
+     // The top level: each building's blocks' prisms, in its cell's run, on its floor as seen from afar (`baseFloor`) where no job measured it yet.
+     // DO NOT measure the exact floor here (`massFloor`, the bays laid out): every building of the map is in a base, and the curtain waits for every base (`layer.ts` coarsePending) - 70,000 floors were ~22 s of the workers behind the opening of the step-70k city (2026-10-22). Nor hand the estimate on (`floors`): the finer levels stand on the exact one.
+@@ -148,13 +214,16 @@ export function runCellJob(job: CellJob, reads: CellReads): WorkReply {
+     const floors: (number | null | undefined)[] = [];
+     let n = 0;
+     for (const b of eachRecord(job.entries.map((entry) => entry.record))) {
+-      const given = job.entries[n]!.floor;
+-      const floor = given !== undefined ? given ?? undefined : baseFloor(b, naturalAt, paved);
++      const entry = job.entries[n]!;
++      const given = entry.floor;
++      const floor = given !== undefined ? given : baseFloor(b, naturalAt, paved) ?? null;
+       floors.push(given);
+       n++;
+-      emitBase(writer.cellOf(b), b, floor, groundAt, drawsSignature(b), job.tone);
++      const program = programs.mass(entry, floor, () => emitProgram(b, groundAt, paved, naturalAt, { near: false, far: false }, stage(floor)));
++      writeBase(writer.cellOf(b), program.mass);
+     }
+-    return missed() ? wider(job, missX0, missY0, missX1, missY1) : { kind: 'done', job: job.id, result: { batch: null, parts: null, summaries: [], base: writer.done(levelCells(job.cell)), floors } };
++    if (missed()) { programs.undo(); return wider(job, missX0, missY0, missX1, missY1); }
++    return { kind: 'done', job: job.id, result: { batch: null, parts: null, summaries: [], base: writer.done(levelCells(job.cell)), floors } };
+   }
+   const detail = MASS_DETAIL[job.kind];
+   if (detail) {
+@@ -165,44 +234,55 @@ export function runCellJob(job: CellJob, reads: CellReads): WorkReply {
+     // One record at a time, let go once its masses are made: a plate's job is four tiles of buildings (`eachRecord`).
+     let n = 0;
+     for (const b of eachRecord(job.entries.map((entry) => entry.record))) {
++      const entry = job.entries[n]!;
+       // DO NOT measure a floor an earlier job of the same building on the same ground measured (`CellEntry.floor`).
+-      const given = job.entries[n]!.floor;
+-      const floor = given !== undefined ? given ?? undefined : far ? baseFloor(b, naturalAt, paved) : massFloor(b, naturalAt, paved);
+-      floors.push(far ? given : floor ?? null);
++      const given = entry.floor;
++      const floor = given !== undefined ? given : (far ? baseFloor(b, naturalAt, paved) : massFloor(b, naturalAt, paved)) ?? null;
++      floors.push(far ? given : floor);
+       n++;
+-      const mass = emitMassing(b, groundAt, paved, naturalAt, drawsSignature(b), job.tone, detail, { floor });
++      const program = programs.mass(entry, floor, () => emitProgram(b, groundAt, paved, naturalAt, { near: false, far: false }, stage(floor)));
++      const mass = massOf(program.mass, detail);
+       if (mass) masses.push(mass);
+     }
+     // On the square's grid (`cellArrays.ts` `massGrid`): a cell's, a tile's or a plate's.
+     const at = job.cell[1] === ':' ? levelCells(job.cell) : { i0: Number(job.cell.slice(0, job.cell.indexOf(','))), j0: Number(job.cell.slice(job.cell.indexOf(',') + 1)), n: 1 };
+-    return missed() ? wider(job, missX0, missY0, missX1, missY1) : { kind: 'done', job: job.id, result: { batch: null, parts: null, summaries: [], mass: cellMass(masses, at), floors } };
++    if (missed()) { programs.undo(); return wider(job, missX0, missY0, missX1, missY1); }
++    return { kind: 'done', job: job.id, result: { batch: null, parts: null, summaries: [], mass: cellMass(masses, at), floors } };
+   }
+   // DO NOT parse a text per building: each record decoded from its tile's shared table, a tile's shared members once for the job.
+   const buildings = readRecords(job.entries.map((entry) => entry.record));
+-  /** What the page keeps of a building, from its chunk or its summary alone. */
+-  const summaryOf = (chunk: Pick<BuildingChunk, 'flags' | 'lotGround' | 'signatureFloor'>, i: number): ChunkSummary => {
+-    const { flags, lotGround, signatureFloor } = chunk;
++  /** What the page keeps of a building, from its program's summary. */
++  const summaryOf = (summary: ProgramSummary, i: number): ChunkSummary => {
++    const { flags, lotGround, signatureFloor } = summary;
+     return { key: job.entries[i]!.key, ...(flags ? { flags } : {}), lot: lotGround?.recipe ?? null, ...(signatureFloor !== undefined ? { signatureFloor } : {}) };
+   };
+-  // DO NOT lay a building for its summary: its lots' recipe and its floor alone (`chunkSummary`).
+   // Each floor once for the job, those an earlier job measured not again (`CellEntry.floor`).
+   const known = job.entries.map((entry) => entry.floor);
++  // The buildings of the cell as one another's neighbours: a party wall's covered bays not laid, each floor worked out once (`partyWalls.ts`).
++  const party = new PartyWalls(buildings, naturalAt, paved, known);
+   if (job.kind === 'summary') {
+-    const floorsOf = new PartyWalls(buildings, naturalAt, paved, known);
+-    const summaries = buildings.map((b, i) => summaryOf(chunkSummary(b, groundAt, paved, naturalAt, floorsOf), i));
+-    return missed() ? wider(job, missX0, missY0, missX1, missY1) : { kind: 'done', job: job.id, result: { batch: null, parts: null, summaries, floors: floorsOf.floorsKnown() } };
++    // The summary: the mass stage alone (its lots' recipe, its flags, its floor), no level laid.
++    const summaries = buildings.map((b, i) => {
++      const floor = party.floorOf(b) ?? null;
++      const program = programs.mass(job.entries[i]!, floor, () => emitProgram(b, groundAt, paved, naturalAt, { near: false, far: false }, stage(floor)));
++      return summaryOf(program.summary, i);
++    });
++    if (missed()) { programs.undo(); return wider(job, missX0, missY0, missX1, missY1); }
++    return { kind: 'done', job: job.id, result: { batch: null, parts: null, summaries, floors: party.floorsKnown() } };
+   }
+-  // The detail and its far level: the buildings of the cell as one another's neighbours, a party wall's covered bays not laid (`partyWalls.ts`).
+-  const party = new PartyWalls(buildings, naturalAt, paved, known);
+   // One shell and one set of rows written again for each building of the job, and of every job the worker runs (`CellReads.writer`).
+   const writer = reads.writer ?? new ShellWriter();
+-  const chunks = buildings.map((b) => {
+-    const chunk = emitChunk(b, groundAt, paved, naturalAt, undefined, job.kind === 'facade', true, party, writer);
++  const wants: ProgramWants = { near: job.kind !== 'facade', far: job.kind === 'facade' };
++  const programsOf = buildings.map((b, i) => {
++    const floor = party.floorOf(b) ?? null;
++    const program = programs.levels(job.entries[i]!, floor, coversKey(party, b), wants,
++      (asked) => emitProgram(b, groundAt, paved, naturalAt, asked, { party, writer, ...stage(floor) }));
+     // Its furniture and bays let go now: the job reads them no more (`letGoEmitted`).
+     letGoEmitted(b);
+-    return chunk;
++    return program;
+   });
+-  if (missed()) return wider(job, missX0, missY0, missX1, missY1);
++  const chunks = programsOf.map((p) => (job.kind === 'facade' ? p.far : p.near)!);
++  if (missed()) { programs.undo(); return wider(job, missX0, missY0, missX1, missY1); }
+   const summaries = chunks.map(summaryOf);
+   // The far level's shells on the cell's grid (`cellArrays.ts` `ShellGrid`); the detail's in floats (its millimetre steps).
+   const comma = job.cell.indexOf(',');
+diff --git a/src/render/buildings/massBase.ts b/src/render/buildings/massBase.ts
+index 7309ecd8..22ba5ff1 100644
+--- a/src/render/buildings/massBase.ts
++++ b/src/render/buildings/massBase.ts
+@@ -9,6 +9,7 @@ import { m } from '@world/units';
+ import { CELL } from '@world/cells';
+ import { type Bounds, type MassSquare, type ShellGrid, indexArray, massGrid, shellBounds } from './cellArrays';
+ import { BURY, LOT_COLOURS, type Rgb, TERRACE_RGB, massColours, rgbOf } from './massing';
++import type { MassProgram, MassRecorder } from './program';
+ 
+ /**
+  * THE BUILDINGS' TOP LEVEL (the base, above the plates): every building of a plate's square as the prisms of its real blocks - each
+@@ -114,8 +115,10 @@ function prism(w: CellWriter, xs: readonly number[], ys: readonly number[], bott
+   }
+ }
+ 
+-/** A building's blocks and paved lots into its cell's writer; `floor` as its masses' (`massFloor`), undefined with no closed block. */
+-export function emitBase(w: CellWriter, b: Building, floor: number | undefined, groundAt: GroundAt, signature: boolean,
++/** The base's shapes of a building, written into its program by the building's walk (`buildingMesh.ts` emitProgram): each closed block's
++ *  prism (its footprint stood from its foot to its eaves, a pitched roof flat at half its rise), its paved lots flat; `floor` as its masses'
++ *  (undefined with no closed block); a signature building's body is drawn by its own meshes at every distance (`signature.ts`). */
++export function recordBase(rec: MassRecorder, b: Building, floor: number | undefined, groundAt: GroundAt, signature: boolean,
+   tone?: Readonly<Record<Finish, readonly [number, number, number]>>): void {
+   const resolved = resolveBlocks(b);
+   const f = buildingFrame(b);
+@@ -125,7 +128,6 @@ export function emitBase(w: CellWriter, b: Building, floor: number | undefined,
+     if (ringArea(xs, ys) < 0) { xs.reverse(); ys.reverse(); }
+     return { xs, ys };
+   };
+-  // A signature building's body is drawn by its own meshes at every distance (`signature.ts`), as its masses leave it out.
+   if (floor !== undefined && !signature) {
+     const rgb = massColours(b, tone);
+     for (const v of closedBlocks(resolved.volumes)) {
+@@ -138,7 +140,7 @@ export function emitBase(w: CellWriter, b: Building, floor: number | undefined,
+       const spec = wallMaterial(b, v, 0);
+       const wall = mix(rgb(spec), GLASS, spec.finish === 'glass' ? CURTAIN_GLASS : WALL_GLASS);
+       const roof = v.roof === 'terrace' ? TERRACE_RGB : rgb(roofMaterial(b, v));
+-      prism(w, xs, ys, bottom, top, paint(wall), paint(roof));
++      rec.prisms.push({ xs, ys, bottom, top, wall: paint(wall), roof: paint(roof) });
+     }
+   }
+   // The paved lots, flat at the building's floor (or over the highest ground under them), as the masses lay them.
+@@ -152,10 +154,16 @@ export function emitBase(w: CellWriter, b: Building, floor: number | undefined,
+   }
+   for (const v of lots) {
+     const { xs, ys } = ring(v);
+-    if (xs.length >= 3) slab(w, xs, ys, level, paint(rgbOf(LOT_COLOURS[v.open as keyof typeof LOT_COLOURS])));
++    if (xs.length >= 3) rec.slabs.push({ xs, ys, level, paint: paint(rgbOf(LOT_COLOURS[v.open as keyof typeof LOT_COLOURS])) });
+   }
+ }
+ 
++/** A building's base into its cell's writer: a filter over its program (`program.ts`), the shapes its walk wrote (`recordBase`). */
++export function writeBase(w: CellWriter, p: MassProgram): void {
++  for (const q of p.prisms) prism(w, q.xs, q.ys, q.bottom, q.top, q.wall, q.roof);
++  for (const q of p.slabs) slab(w, q.xs, q.ys, q.level, q.paint);
++}
++
+ /** A square's base put together from its cells' writers (each building into its own cell's, `cellOf`), on the square's grid; null with no cell. */
+ export class BaseWriter {
+   private readonly cells = new Map<string, { readonly i: number; readonly j: number; readonly w: CellWriter }>();
+diff --git a/src/render/buildings/massing.ts b/src/render/buildings/massing.ts
+index aa147bc2..ed46e86e 100644
+--- a/src/render/buildings/massing.ts
++++ b/src/render/buildings/massing.ts
+@@ -1,22 +1,15 @@
+-import earcut from 'earcut';
+-import { hypot2 } from '@core/hypot';
+-import clipping from 'polygon-clipping';
+ import { Color } from 'three';
+ import { resolveBlocks } from '@world/buildings/blocks';
+ import { floorHeight, frontFloorHeight, type GroundAt, type PavedAt } from '@world/buildings/foundation';
+-import { asPolygon, edgeFrame, localFootprint, volumeSides } from '@world/buildings/footprints';
+-import {
+-  type BuildingFrame, type LocalBay, bayLayout, bayWidth, buildingFrame, closedBlocks, frameX, frameY, coveredSpans, exposedParts, ridgeAlongX, roofHeightAt, roofRise, roofSlope,
+-  sawtoothRun, shedFall, sideLength, sideStart, volumeHeight,
+-} from '@world/buildings/geometry';
+-import { type Finish, type MaterialSpec, roofMaterial, trimMaterial, wallMaterial } from '@world/buildings/materials';
+-import { type BayComponent, type Building, type FaceId, type LotSurface, type Volume, volumeTop } from '@world/buildings/types';
+-import { lotSurfaces } from '@world/buildings/lots';
+-import type { Vec2 } from '@core/vec2';
++import { closedBlocks } from '@world/buildings/geometry';
++import type { Finish, MaterialSpec } from '@world/buildings/materials';
++import type { BayComponent, Building, LotSurface } from '@world/buildings/types';
+ import { m } from '@world/units';
+-import { PARASOL_HALF, PARASOL_HIGH, PARASOL_LOW, ROOF_COLOURS, TANK_COLOURS, machineRooms, roofPlantOf, terraceParasols } from './roofPlan';
++import { MASS_FLATTENED, type MassBay, type MassProgram } from './program';
+ 
+-/** A BUILDING FROM AFAR: its blocks as they stand, one plain mesh, with the windows drawn by the shader */
++/** A BUILDING FROM AFAR: its blocks as they stand, one plain mesh, with the windows drawn by the shader. DRAWN FROM THE BUILDING'S PROGRAM
++ *  (`program.ts`), never by a walk of its own: the cell's, the tile's and the plate's masses are each a filter over the one mass stage the
++ *  building's walk wrote (`buildingMesh.ts` emitProgram), each leaving out what its `MassDetail` drops. */
+ 
+ export interface MassingChunk {
+   readonly position: Float32Array;
+@@ -46,17 +39,10 @@ export const PLATE_DETAIL: MassDetail = { drop: m(8), boxes: true };
+ 
+ /** Where the wall of a block on the ground starts: below the lowest ground under it, as the detailed plinth does. */
+ export const BURY = m(1.5);
+-/** The parapet round a flat roof, and the attic band of the 'attic' dress (`buildingMesh.ts`). */
+-const PARAPET_H = m(0.85);
+-const ATTIC_H = m(1.5);
+-const PARAPET_T = m(0.25);
+-/** A pitched roof's overhang at the eaves (`buildingMesh.ts` EAVES). */
+-const EAVES = m(0.45);
+-/** A machine room over a lift core. */
+-const MACHINE_ROOM_H = m(3);
+ 
+ export const TERRACE_RGB = rgbOf(0xb0a595);
+-const SAW_GLASS_RGB = rgbOf(0x3c5360);
++/** A sawtooth's glazed face from afar (`buildingMesh.ts` SAW_GLASS). */
++export const SAW_GLASS_RGB = rgbOf(0x3c5360);
+ 
+ export function rgbOf(hex: number, shade = 1): [number, number, number] {
+   const c = new Color().setHex(hex);
+@@ -100,28 +86,20 @@ class MassWriter {
+   readonly index = new Grown(uints(96), uints);
+   /** The tallest thing left out so far (`leaves`). */
+   error = 0;
+-  /** The smallest thing asked about and kept so far (`leaves`; a box-less level's pitched roof too, `asks`): a coarser level whose `drop` is under it answers every question alike (`emitMassingLevels`). */
+-  kept = Infinity;
+-
+-  constructor(b: Building, private readonly seed: number, readonly detail: MassDetail = CELL_DETAIL) {
+-    this.f = buildingFrame(b);
++  constructor(frame: MassProgram['frame'], private readonly seed: number, readonly detail: MassDetail = CELL_DETAIL) {
++    this.f = frame;
+   }
+ 
+   /** Whether a thing `size` m tall or deep is left out at this level; its size kept as the level's error when it is. */
+   leaves(size: number): boolean {
+     if (!(size > 0)) return false;
+-    if (size > this.detail.drop) { this.kept = Math.min(this.kept, size); return false; }
++    if (size > this.detail.drop) return false;
+     this.error = Math.max(this.error, size);
+     return true;
+   }
+ 
+-  /** A question only a level of boxes asks (`MassDetail.boxes`), kept as one this level was asked: a size another level would answer. */
+-  asks(size: number): void {
+-    if (size > 0) this.kept = Math.min(this.kept, size);
+-  }
+-
+   /** The building's frame, once: DO NOT turn its rotation into a cosine and a sine and a point object for each point (`localToWorld`, the same arithmetic). */
+-  private readonly f: BuildingFrame;
++  private readonly f: MassProgram['frame'];
+ 
+   /** A point of the building's plan at height z, in three's axes. */
+   P(lx: number, ly: number, z: number): [number, number, number] {
+@@ -159,7 +137,7 @@ class MassWriter {
+   }
+ 
+   /** A flat polygon's triangles (`earcut`'s, of `points`) with its points written once and shared, as `face` would lay each triangle: DO NOT write a slab's every triangle's corners again. */
+-  polygon(points: readonly (readonly [number, number, number])[], tris: readonly number[], n: readonly [number, number, number], rgb: Rgb): void {
++  polygon(points: readonly (readonly [number, number, number])[], tris: ArrayLike<number>, n: readonly [number, number, number], rgb: Rgb): void {
+     const base = this.position.length / 3;
+     for (const p of points) {
+       this.position.push3(p[0], p[1], p[2]);
+@@ -192,7 +170,7 @@ class MassWriter {
+ }
+ 
+ /** The building's own shade, as the detailed one has it (`buildingMesh.ts` `emitBuilding`). */
+-const shadeOf = (b: Building): number => 0.93 + (((b.id * 2654435761) >>> 0) % 1000) / 1000 * 0.12;
++export const shadeOf = (b: Building): number => 0.93 + (((b.id * 2654435761) >>> 0) % 1000) / 1000 * 0.12;
+ 
+ /** A building's colours from afar: a material's tint in its own shade, times its finish's tone (`finishes.ts` `finishAlbedo`) when given. */
+ export function massColours(b: Building, tone?: Readonly<Record<Finish, readonly [number, number, number]>>): (spec: MaterialSpec) => Rgb {
+@@ -215,90 +193,12 @@ export function baseFloor(b: Building, naturalAt: GroundAt, pavedAt?: PavedAt):
+   return closedBlocks(resolved.volumes).length > 0 ? frontFloorHeight(resolved, naturalAt, pavedAt) : undefined;
+ }
+ 
+-/** A building's mass from afar, on the ground it stands on (the floor worked out as the detailed building's, `floorHeight`) */
+-export function emitMassing(
+-  b: Building, groundAt: GroundAt, pavedAt?: PavedAt, naturalAt: GroundAt = groundAt, signature = false,
+-  /** Each finish's colour from afar (`finishes.ts` `finishAlbedo`): the detailed walls' tint times their texture's mean; none, the bare tint. */
+-  tone?: Readonly<Record<Finish, readonly [number, number, number]>>,
+-  /** What the level leaves out (a tile's, a plate's); the cell's keeps all. */
+-  detail: MassDetail = CELL_DETAIL,
+-  /** Its floor already worked out (`massFloor`): a tile's bake reads it once for its two levels and its boxes. */
+-  known?: { readonly floor: number | undefined },
+-): MassingChunk | null {
+-  const w = massWriter(b, groundAt, pavedAt, naturalAt, signature, tone, detail, known);
+-  return w.position.length ? w.chunk() : null;
+-}
+-
+-/** A building's masses at two levels, `coarse` leaving out at least what `fine` does: DO NOT walk the building again for the coarser where the finer's walk was asked nothing between their `drop`s (and no pitched roof a level of boxes lays flat): the same walk, the same chunk. */
+-export function emitMassingLevels(
+-  b: Building, groundAt: GroundAt, pavedAt: PavedAt | undefined, naturalAt: GroundAt,
+-  tone: Readonly<Record<Finish, readonly [number, number, number]>> | undefined,
+-  fine: MassDetail, coarse: MassDetail, known?: { readonly floor: number | undefined },
+-): readonly [MassingChunk | null, MassingChunk | null] {
+-  const w = massWriter(b, groundAt, pavedAt, naturalAt, false, tone, fine, known);
+-  const chunk = w.position.length ? w.chunk() : null;
+-  if (w.kept > coarse.drop) return [chunk, chunk];
+-  return [chunk, emitMassing(b, groundAt, pavedAt, naturalAt, false, tone, coarse, known)];
+-}
+-
+-/** A building's mass written out (`emitMassing`). */
+-function massWriter(
+-  b: Building, groundAt: GroundAt, pavedAt: PavedAt | undefined, naturalAt: GroundAt, signature: boolean,
+-  tone: Readonly<Record<Finish, readonly [number, number, number]>> | undefined, detail: MassDetail, known: { readonly floor: number | undefined } | undefined,
+-): MassWriter {
+-  const resolved = resolveBlocks(b);
+-  // One list for the blocks (`closedBlocks`, as `buildingMesh.ts` `emitChunk`): every block of the body reads one layout of its bays (`bayLayout`).
+-  const closed = closedBlocks(resolved.volumes);
+-  const office = b.use === 'commercial' || b.use === 'industrial' ? 2 : 0;
+-  const w = new MassWriter(b, ((b.id * 2654435761) >>> 0) / 4294967296 + office, detail);
+-  // The floor as the detailed building's (`buildingMesh.ts` `emitChunk`)
+-  const floor = known ? known.floor : massFloor(b, naturalAt, pavedAt);
+-  if (floor !== undefined && !signature) {
+-    const rgb = massColours(b, tone);
+-    // The body as the detailed building draws it: its closed blocks alone (`buildingMesh.ts` `emitChunk`).
+-    const body = { ...resolved, volumes: closed };
+-    for (const v of closed) emitVolume(w, body, v, floor, rgb);
+-    emitMachineRooms(w, body, floor, rgb);
+-  }
+-  emitLotPlates(w, resolved, floor, groundAt, pavedAt);
+-  return w;
+-}
+-
+ /** The colours of a lot's surface (`buildingMesh.ts` draws them in their finishes) */
+ export const LOT_COLOURS: Readonly<Record<LotSurface, number>> = {
+   grass: 0x6f9a4c, paving: 0xc4beb2, gravel: 0xa9a294, sand: 0xe2cf9c, water: 0x4f8fb3,
+   asphalt: 0x515457, concrete: 0xb9b6ae, pavers: 0x9a958c, tiles: 0xb4785a,
+ };
+ 
+-/** The paved lots - car parks, yards, courts - as the detailed lots lay them */
+-function emitLotPlates(w: MassWriter, b: Building, buildingFloor: number | undefined, groundAt: GroundAt, pavedAt?: PavedAt): void {
+-  const lots = b.volumes.filter((v) => v.open && v.open !== 'grass');
+-  if (lots.length === 0) return;
+-  let ground = -Infinity;
+-  // The building's frame once (`localToWorld` point by point turns the rotation each time; the same arithmetic).
+-  const f = buildingFrame(b);
+-  for (const v of b.volumes) {
+-    if (!v.open) continue;
+-    for (const p of localFootprint(v)) ground = Math.max(ground, groundAt(frameX(f, p.x, p.y), frameY(f, p.x, p.y)));
+-    ground = Math.max(ground, groundAt(frameX(f, v.x + v.w / 2, v.y + v.d / 2), frameY(f, v.x + v.w / 2, v.y + v.d / 2)));
+-  }
+-  const level = buildingFloor ?? ground + m(0.12);
+-  const up = w.N(0, 0, 1);
+-  for (const surface of lotSurfaces(b, level, pavedAt)) {
+-    const v = surface.volume;
+-    if (!v.open || v.open === 'grass') continue;
+-    const colour = rgbOf(LOT_COLOURS[v.open]);
+-    const ring = localFootprint(v);
+-    const flatRing = ring.flatMap((p) => [p.x, p.y]);
+-    const tris = earcut(flatRing);
+-    const point = (k: number): [number, number, number] => {
+-      const x = frameX(f, flatRing[2 * k]!, flatRing[2 * k + 1]!), y = frameY(f, flatRing[2 * k]!, flatRing[2 * k + 1]!);
+-      return [x, surface.heightAt(x, y), -y];
+-    };
+-    w.polygon(Array.from({ length: flatRing.length / 2 }, (_, k) => point(k)), tris, up, colour);
+-  }
+-}
+-
+ /** The share of a bay its window takes across, by what the bay holds (a curtain wall is all glass). */
+ export const GLASS_SHARE: Partial<Record<BayComponent, number>> = {
+   window: 0.5, sashWindow: 0.5, shutteredWindow: 0.5, brise: 0.5,
+@@ -306,56 +206,31 @@ export const GLASS_SHARE: Partial<Record<BayComponent, number>> = {
+   frenchWindow: 0.6, balcony: 0.6, gourmet: 0.7, loggia: 0.7,
+   door: 0.35, doubleDoor: 0.5, shopfront: 0.85, pillar: 0.7,
+ };
+-/** How far an arcade's wall steps back behind its columns (`buildingMesh.ts` ARCADE). */
+-const ARCADE = m(1.8);
+-
+-/** Bays in the order they stand along their side. */
+-const byStart = (p: LocalBay, q: LocalBay): number => p.start - q.start;
+ 
+-/** A block's walls from its bays as the detailed building lays them (`facadeBays`), off the layout every block of the body reads (`bayLayout`, worked out once) */
+-function emitVolume(w: MassWriter, b: Building, v: Volume, floor: number, rgb: (spec: MaterialSpec) => Rgb): void {
+-  const eaves = floor + volumeHeight(b, v);
+-  // Each storey of each side, by a number (no text a bay): a side's index is under 4096.
+-  const rows = new Map<number, LocalBay[]>();
+-  for (const bay of bayLayout(b)) {
+-    if (bay.volume !== v.id) continue;
+-    const key = bay.level * 4096 + bay.side;
+-    const list = rows.get(key);
+-    if (list) list.push(bay); else rows.set(key, [bay]);
+-  }
+-  /** One run of a storey (bays side by side with the same relief and glass), before the storeys alike are stacked into one. */
++/** A block's walls at a level, from its bays (`MassBay`, the layout the building's walk read): a storey's bays side by side with the same
++ *  offset and glass one run, the runs alike one above the other one wall whose windows the shader counts up from the lowest (`massingMaterial.ts`);
++ *  a relief or an arcade the level leaves out laid flat, its wall run on with its neighbours (one quad where they were coplanar). */
++function writeWalls(w: MassWriter, block: MassProgram['blocks'][number]): void {
++  /** One run of a storey, before the storeys alike are stacked into one. */
+   interface Run { side: number; a0: number; a1: number; d: number; z0: number; z1: number; zb: number; height: number; glass: number; colour: Rgb }
+   const runs: Run[] = [];
+-  // The run's outward offset: a relief's push, an arcade's wall set back.
+-  // Laid flat where the level leaves it out: the wall then runs on with its neighbours (one quad where they were coplanar).
+-  // DO NOT make these again for each row: one pair for the block.
+-  const offsetOf = (bay: LocalBay): number => {
+-    const d = bay.component === 'pillar' ? -ARCADE : bay.push;
+-    return w.leaves(Math.abs(d)) ? 0 : d;
+-  };
+-  const shareOf = (bay: LocalBay): number => GLASS_SHARE[bay.component] ?? 0;
+-  for (const row of rows.values()) {
+-    row.sort(byStart);
+-    const side = row[0]!.side;
++  const offsetOf = (bay: MassBay): number => (w.leaves(Math.abs(bay.d)) ? 0 : bay.d);
++  for (const row of block.rows) {
+     let i = 0;
+     while (i < row.length) {
+       const first = row[i]!;
+       let j = i + 1;
+-      while (j < row.length && Math.abs(offsetOf(row[j]!) - offsetOf(first)) < 1e-3 && shareOf(row[j]!) === shareOf(first)
++      while (j < row.length && Math.abs(offsetOf(row[j]!) - offsetOf(first)) < 1e-3 && row[j]!.share === first.share
+         && Math.abs(row[j]!.start - (row[j - 1]!.start + row[j - 1]!.width)) < 1e-3) j++;
+       const last = row[j - 1]!;
+-      const z0 = floor + first.z;
+-      const spec = wallMaterial(b, v, side, first.storey);
+       runs.push({
+-        side, a0: first.start, a1: last.start + last.width, d: offsetOf(first), z0, z1: z0 + first.height,
+-        // A storey on the ground runs down past the lowest ground under it, as the plinth does.
+-        zb: v.base === 0 && first.storey === 0 ? z0 - BURY : z0,
+-        height: first.height, glass: spec.finish === 'glass' ? 1 : shareOf(first), colour: rgb(spec),
++        side: first.side, a0: first.start, a1: last.start + last.width, d: offsetOf(first), z0: first.z0, z1: first.z0 + first.height,
++        zb: first.ground ? first.z0 - BURY : first.z0, height: first.height, glass: first.glass, colour: first.rgb,
+       });
+       i = j;
+     }
+   }
+-  // DO NOT draw a quad a storey: the storeys alike, one above the other, are one wall whose windows the shader counts up from the lowest (`massingMaterial.ts`, `(height - z0) / storey`).
++  // DO NOT draw a quad a storey: the storeys alike, one above the other, are one wall.
+   const alike = (p: Run, q: Run): boolean => p.side === q.side && Math.abs(p.a0 - q.a0) < 1e-3 && Math.abs(p.a1 - q.a1) < 1e-3 && Math.abs(p.d - q.d) < 1e-3
+     && Math.abs(p.height - q.height) < 1e-3 && p.glass === q.glass && p.colour[0] === q.colour[0] && p.colour[1] === q.colour[1] && p.colour[2] === q.colour[2];
+   runs.sort((p, q) => p.side - q.side || p.a0 - q.a0 || p.d - q.d || p.z0 - q.z0);
+@@ -365,243 +240,37 @@ function emitVolume(w: MassWriter, b: Building, v: Volume, floor: number, rgb: (
+     while (j < runs.length && alike(runs[j]!, first) && Math.abs(runs[j]!.z0 - z1) < 1e-3) z1 = runs[j++]!.z1;
+     i = j;
+     const { side, a0, a1, d, z0, zb, colour } = first;
+-    const f = edgeFrame(v, side), s = sideStart(v, side);
+-    const t = { x: s.tx, y: s.ty };
+-    const at = (a: number, out: number, z: number): [number, number, number] => w.P(s.x + t.x * a + f.nx * out, s.y + t.y * a + f.ny * out, z);
+-    const facade = { bay: bayWidth(b, v, side), storey: first.height, z0, share: first.glass };
+-    w.face([at(a0, d, zb), at(a1, d, zb), at(a1, d, z1), at(a0, d, z1)], w.N(f.nx, f.ny), colour, facade, [a0, a1, a1, a0]);
++    const s = block.sides.get(side)!;
++    const at = (a: number, out: number, z: number): [number, number, number] => w.P(s.x + s.tx * a + s.nx * out, s.y + s.ty * a + s.ny * out, z);
++    const facade = { bay: s.bay, storey: first.height, z0, share: first.glass };
++    w.face([at(a0, d, zb), at(a1, d, zb), at(a1, d, z1), at(a0, d, z1)], w.N(s.nx, s.ny), colour, facade, [a0, a1, a1, a0]);
+     if (Math.abs(d) > 1e-3) {
+       // Its cheeks at both ends and its head: a box standing out, or a recess.
+       const sign = d > 0 ? 1 : -1;
+-      w.face([at(a0, 0, zb), at(a0, d, zb), at(a0, d, z1), at(a0, 0, z1)], w.N(-t.x * sign, -t.y * sign), colour);
+-      w.face([at(a1, d, zb), at(a1, 0, zb), at(a1, 0, z1), at(a1, d, z1)], w.N(t.x * sign, t.y * sign), colour);
++      w.face([at(a0, 0, zb), at(a0, d, zb), at(a0, d, z1), at(a0, 0, z1)], w.N(-s.tx * sign, -s.ty * sign), colour);
++      w.face([at(a1, d, zb), at(a1, 0, zb), at(a1, 0, z1), at(a1, d, z1)], w.N(s.tx * sign, s.ty * sign), colour);
+       w.face([at(a0, 0, z1), at(a1, 0, z1), at(a1, d, z1), at(a0, d, z1)], w.N(0, 0, sign), colour);
+     }
+   }
+-  const flat = v.roof === 'flat';
+-  const crown = flat ? (v.dress?.crown === 'attic' ? ATTIC_H : PARAPET_H) : 0;
+-  if (crown > 0 && !w.leaves(crown)) {
+-    // The parapet only where the roof really ends: not against a neighbour as tall or taller (`buildingMesh.ts` `emitRoof`).
+-    const top = volumeTop(v);
+-    for (const side of volumeSides(v)) {
+-      const f = edgeFrame(v, side), s = sideStart(v, side);
+-      const spans = [...coveredSpans(b, v, side, top - 1), ...coveredSpans(b, v, side, top)].sort((p, q) => p[0] - q[0]);
+-      const spec = wallMaterial(b, v, side);
+-      const wall = rgb({ ...spec, finish: spec.finish === 'glass' ? 'concrete' : spec.finish });
+-      // Inside, the roof's membrane carried up the parapet, as the detailed building has it (`buildingMesh.ts` `emitRoof`).
+-      const roofTint = rgb(roofMaterial(b, v));
+-      const inner: Rgb = [roofTint[0] * 0.9, roofTint[1] * 0.9, roofTint[2] * 0.9];
+-      const at = (a: number, depth: number, z: number): [number, number, number] => w.P(s.x + s.tx * a - f.nx * depth, s.y + s.ty * a - f.ny * depth, z);
+-      for (const [p0, p1] of exposedParts(spans, 0, sideLength(v, side))) {
+-        w.face([at(p0, 0, eaves), at(p1, 0, eaves), at(p1, 0, eaves + crown), at(p0, 0, eaves + crown)], w.N(f.nx, f.ny), wall);
+-        w.face([at(p0, 0, eaves + crown), at(p1, 0, eaves + crown), at(p1, PARAPET_T, eaves + crown), at(p0, PARAPET_T, eaves + crown)], w.N(0, 0, 1), wall);
+-        w.face([at(p1, PARAPET_T, eaves), at(p0, PARAPET_T, eaves), at(p0, PARAPET_T, eaves + crown), at(p1, PARAPET_T, eaves + crown)], w.N(-f.nx, -f.ny), inner);
+-      }
+-    }
+-  }
+-  emitRoof(w, b, v, floor, eaves, rgb);
+ }
+ 
+-function emitRoof(w: MassWriter, b: Building, v: Volume, floor: number, eaves: number, rgb: (spec: MaterialSpec) => Rgb): void {
+-  const roof = v.roof === 'terrace' ? TERRACE_RGB : rgb(roofMaterial(b, v));
+-  const up = w.N(0, 0, 1);
+-  // A plate's box: a pitched roof whose rise the level leaves out, laid flat at its eaves (its gables gone with it).
+-  const pitched = v.roof !== 'flat' && v.roof !== 'terrace';
+-  if (pitched && !w.detail.boxes) w.asks(roofRise(b, v));
+-  const flatten = pitched && w.detail.boxes && w.leaves(roofRise(b, v));
+-  if (v.roof === 'flat' || v.roof === 'terrace' || flatten) {
+-    // The slab at the roof's own level (its parapet is the walls'), and what stands on it - as the detailed roof has them.
+-    const ring = localFootprint(v);
+-    const flatRing = ring.flatMap((p) => [p.x, p.y]);
+-    const tris = earcut(flatRing);
+-    w.polygon(ring.map((p) => w.P(p.x, p.y, eaves)), tris, up, roof);
+-    if (flatten) return;
+-    const built = b.volumes.some((o) => o !== v && !o.open && o.base === volumeTop(v));
+-    if (v.roof === 'flat') emitRoofPlant(w, b, v, eaves, rgb);
+-    else if (!built) {
+-      const parasols = terraceParasols(b, v);
+-      const parasol = rgbOf(ROOF_COLOURS.parasol);
+-      if (parasols.length && !w.leaves(PARASOL_HIGH)) for (const p of parasols) box(w, p.x - PARASOL_HALF, p.y - PARASOL_HALF, p.x + PARASOL_HALF, p.y + PARASOL_HALF, eaves + PARASOL_LOW, eaves + PARASOL_HIGH, parasol, parasol);
+-    }
+-    return;
+-  }
+-  if (v.outline) { emitPolygonRoof(w, b, v, eaves, roof, rgb); return; }
+-  const x0 = v.x, y0 = v.y, x1 = v.x + v.w, y1 = v.y + v.d;
+-  const slope = roofSlope(v);
+-  const wallOf = (side: FaceId): Rgb => rgb(wallMaterial(b, v, side));
+-  if (v.roof === 'gable' || v.roof === 'hip') {
+-    const alongX = ridgeAlongX(v);
+-    const eave = eaves - EAVES * slope;
+-    const ridge = eaves + roofRise(b, v);
+-    const span = alongX ? y1 - y0 : x1 - x0;
+-    const hip = v.roof === 'hip' ? Math.min(span / 2, (alongX ? x1 - x0 : y1 - y0) / 2) : 0;
+-    const L = (along: number, across: number, z: number): [number, number, number] => (alongX ? w.P(along, across, z) : w.P(across, along, z));
+-    const a0 = alongX ? x0 : y0, a1 = alongX ? x1 : y1, c0 = alongX ? y0 : x0, c1 = alongX ? y1 : x1, cm = (c0 + c1) / 2;
+-    const o = EAVES, r0 = a0 + hip, r1 = a1 - hip;
+-    w.face([L(a0 - o, c0 - o, eave), L(a1 + o, c0 - o, eave), L(r1, cm, ridge), L(r0, cm, ridge)], alongX ? w.N(0, -slope, 1) : w.N(-slope, 0, 1), roof);
+-    w.face([L(a1 + o, c1 + o, eave), L(a0 - o, c1 + o, eave), L(r0, cm, ridge), L(r1, cm, ridge)], alongX ? w.N(0, slope, 1) : w.N(slope, 0, 1), roof);
+-    if (v.roof === 'hip') {
+-      w.face([L(a0 - o, c1 + o, eave), L(a0 - o, c0 - o, eave), L(r0, cm, ridge)], alongX ? w.N(-slope, 0, 1) : w.N(0, -slope, 1), roof);
+-      w.face([L(a1 + o, c0 - o, eave), L(a1 + o, c1 + o, eave), L(r1, cm, ridge)], alongX ? w.N(slope, 0, 1) : w.N(0, slope, 1), roof);
+-    } else {
+-      w.face([L(a0, c0, eaves), L(a0, c1, eaves), L(a0, cm, ridge)], alongX ? w.N(-1, 0) : w.N(0, -1), wallOf(alongX ? 3 : 0));
+-      w.face([L(a1, c1, eaves), L(a1, c0, eaves), L(a1, cm, ridge)], alongX ? w.N(1, 0) : w.N(0, 1), wallOf(alongX ? 1 : 2));
++/** A building's masses at a level (`detail`): a filter over its program's mass stage (`program.ts`), its walls joined by what the level
++ *  leaves out, every other face kept or left out by its group (`MassGroup`: a parapet, a box on the roof, a machine room; a pitched roof laid
++ *  flat at its eaves by a level of boxes, its slab drawn instead). Null when nothing is drawn. */
++export function massOf(p: MassProgram, detail: MassDetail = CELL_DETAIL): MassingChunk | null {
++  const w = new MassWriter(p.frame, p.seed, detail);
++  for (const block of p.blocks) writeWalls(w, block);
++  // Each group asked once (`leaves` keeps the largest left out as the level's error); a pitched roof only by a level of boxes.
++  const dropped = p.groups.map((g) => (g.boxesOnly ? detail.boxes && w.leaves(g.size) : w.leaves(g.size)));
++  for (const f of p.faces) {
++    if (f.group >= 0) {
++      const out = dropped[f.group]!;
++      if (f.mode === MASS_FLATTENED ? !out : out) continue;
+     }
+-    return;
+-  }
+-  if (v.roof === 'shed') {
+-    const fall = shedFall(v);
+-    const lowAlongX = fall === 0 || fall === 2;
+-    const eaveLength = lowAlongX ? x1 - x0 : y1 - y0, run = lowAlongX ? y1 - y0 : x1 - x0;
+-    const Q = (a: number, t: number, z: number): [number, number, number] => {
+-      switch (fall) {
+-        case 0: return w.P(x0 + a * (x1 - x0), y0 + t * (y1 - y0), z);
+-        case 2: return w.P(x0 + a * (x1 - x0), y1 - t * (y1 - y0), z);
+-        case 3: return w.P(x0 + t * (x1 - x0), y0 + a * (y1 - y0), z);
+-        default: return w.P(x1 - t * (x1 - x0), y0 + a * (y1 - y0), z);
+-      }
+-    };
+-    const high = eaves + run * slope;
+-    const oa = EAVES / eaveLength, ot = EAVES / run;
+-    const nf = fall === 0 ? [0, -1] : fall === 2 ? [0, 1] : fall === 3 ? [-1, 0] : [1, 0];
+-    w.face([Q(-oa, -ot, eaves - EAVES * slope), Q(1 + oa, -ot, eaves - EAVES * slope), Q(1 + oa, 1 + ot, high + EAVES * slope), Q(-oa, 1 + ot, high + EAVES * slope)],
+-      w.N(nf[0]! * slope, nf[1]! * slope, 1), roof);
+-    const back = ((fall + 2) % 4) as FaceId;
+-    for (const end of [0, 1, 2, 3].filter((s) => s !== fall && s !== back) as FaceId[]) {
+-      const a = (lowAlongX ? end === 3 : end === 0) ? 0 : 1;
+-      const ne = end === 0 ? [0, -1] : end === 2 ? [0, 1] : end === 3 ? [-1, 0] : [1, 0];
+-      w.face([Q(a, 0, eaves), Q(a, 1, eaves), Q(a, 1, high)], w.N(ne[0]!, ne[1]!), wallOf(end));
+-    }
+-    const nb = back === 0 ? [0, -1] : back === 2 ? [0, 1] : back === 3 ? [-1, 0] : [1, 0];
+-    w.face([Q(0, 1, eaves), Q(1, 1, eaves), Q(1, 1, high), Q(0, 1, high)], w.N(nb[0]!, nb[1]!), wallOf(back));
+-    return;
+-  }
+-  // Sawtooth: its teeth, the steep face glazed.
+-  const tooth = sawtoothRun(b, v);
+-  const toothRise = tooth * 0.5 * slope;
+-  for (let t0 = y0; t0 < y1 - 1e-6; t0 += tooth) {
+-    const t1 = Math.min(y1, t0 + tooth);
+-    const h = toothRise * ((t1 - t0) / tooth);
+-    w.face([w.P(x0, t0, eaves), w.P(x1, t0, eaves), w.P(x1, t1, eaves + h), w.P(x0, t1, eaves + h)], w.N(0, -1, 2), roof);
+-    w.face([w.P(x1, t1, eaves), w.P(x0, t1, eaves), w.P(x0, t1, eaves + h), w.P(x1, t1, eaves + h)], w.N(0, 1), SAW_GLASS_RGB);
+-    w.face([w.P(x0, t0, eaves), w.P(x0, t1, eaves), w.P(x0, t1, eaves + h)], w.N(-1, 0), wallOf(3));
+-    w.face([w.P(x1, t1, eaves), w.P(x1, t0, eaves), w.P(x1, t1, eaves + h)], w.N(1, 0), wallOf(1));
+-  }
+-  void floor;
+-}
+-
+-/** A pitched roof over a shaped block: the roof's surface */
+-function emitPolygonRoof(w: MassWriter, b: Building, v: Volume, eaves: number, roof: Rgb, rgb: (spec: MaterialSpec) => Rgb): void {
+-  const ring = localFootprint(v);
+-  const height = (p: Vec2): number => eaves + roofHeightAt(b, v, p);
+-  const x0 = v.x, y0 = v.y, x1 = v.x + v.w, y1 = v.y + v.d;
+-  const rect = (a: number, c: number, d: number, f: number): Vec2[] => [{ x: a, y: c }, { x: d, y: c }, { x: d, y: f }, { x: a, y: f }];
+-  // The planes the roof is made of, as `buildingMesh.ts` `emitPolygonRoof` cuts them.
+-  let patches: Vec2[][];
+-  if (v.roof === 'gable') {
+-    patches = ridgeAlongX(v)
+-      ? [rect(x0, y0, x1, (y0 + y1) / 2), rect(x0, (y0 + y1) / 2, x1, y1)]
+-      : [rect(x0, y0, (x0 + x1) / 2, y1), rect((x0 + x1) / 2, y0, x1, y1)];
+-  } else if (v.roof === 'hip') {
+-    const alongX = v.w >= v.d, long = alongX ? v.w : v.d, short = alongX ? v.d : v.w, h = short / 2;
+-    const P = (u: number, a: number): Vec2 => (alongX ? { x: x0 + u, y: y0 + a } : { x: x0 + a, y: y0 + u });
+-    patches = [[P(0, 0), P(h, h), P(0, short)], [P(long, 0), P(long, short), P(long - h, h)],
+-      [P(0, 0), P(long, 0), P(long - h, h), P(h, h)], [P(h, h), P(long - h, h), P(long, short), P(0, short)]];
+-  } else if (v.roof === 'shed') {
+-    patches = [rect(x0, y0, x1, y1)];
+-  } else {
+-    patches = [];
+-    const run = sawtoothRun(b, v);
+-    for (let from = y0; from < y1 - 1e-6; from += run) {
+-      const to = Math.min(y1, from + run), mid = (from + to) / 2;
+-      patches.push(rect(x0, from, x1, mid), rect(x0, mid, x1, to));
+-    }
+-  }
+-  const footprint = asPolygon(ring);
+-  for (const patch of patches) {
+-    for (const piece of clipping.intersection(footprint, asPolygon(patch))) {
+-      const outer = piece[0];
+-      if (!outer || outer.length < 4) continue;
+-      const pts = outer.slice(0, -1).map(([x, y]) => ({ x: x!, y: y! }));
+-      const flatRing = pts.flatMap((p) => [p.x, p.y]);
+-      const tris = earcut(flatRing);
+-      // The plane's normal from three of its points.
+-      const a = pts[0]!, c = pts[Math.floor(pts.length / 2)]!, d = pts[pts.length - 1]!;
+-      const pa = w.P(a.x, a.y, height(a)), pc = w.P(c.x, c.y, height(c)), pd = w.P(d.x, d.y, height(d));
+-      const ux = pc[0] - pa[0], uy = pc[1] - pa[1], uz = pc[2] - pa[2], vx = pd[0] - pa[0], vy = pd[1] - pa[1], vz = pd[2] - pa[2];
+-      let n: [number, number, number] = [uy * vz - uz * vy, uz * vx - ux * vz, ux * vy - uy * vx];
+-      const l = Math.hypot(n[0], n[1], n[2]) || 1;
+-      n = [n[0] / l, n[1] / l, n[2] / l];
+-      if (n[1] < 0) n = [-n[0], -n[1], -n[2]];
+-      w.polygon(pts.map((p) => w.P(p.x, p.y, height(p))), tris, n, roof);
+-    }
+-  }
+-  // Each wall filled up to the roof over it (a gable where the ridge meets it).
+-  const sides = volumeSides(v);
+-  for (let i = 0; i < ring.length; i++) {
+-    const p = ring[i]!, q = ring[(i + 1) % ring.length]!;
+-    const len = hypot2(q.x - p.x, q.y - p.y);
+-    if (len < 1e-6) continue;
+-    const steps = 8;
+-    const nx = (q.y - p.y) / len, ny = -(q.x - p.x) / len;
+-    const colour = rgb(wallMaterial(b, v, (sides[i] ?? 0) as FaceId));
+-    for (let k = 0; k < steps; k++) {
+-      const s0 = { x: p.x + ((q.x - p.x) * k) / steps, y: p.y + ((q.y - p.y) * k) / steps };
+-      const s1 = { x: p.x + ((q.x - p.x) * (k + 1)) / steps, y: p.y + ((q.y - p.y) * (k + 1)) / steps };
+-      const h0 = height(s0), h1 = height(s1);
+-      if (h0 - eaves < 1e-3 && h1 - eaves < 1e-3) continue;
+-      w.face([w.P(s0.x, s0.y, eaves), w.P(s1.x, s1.y, eaves), w.P(s1.x, s1.y, h1), w.P(s0.x, s0.y, h0)], w.N(nx, ny), colour);
+-    }
+-  }
+-}
+-
+-/** A box of the plan from z0 to z1: its four sides and its top. */
+-function box(w: MassWriter, x0: number, y0: number, x1: number, y1: number, z0: number, z1: number, sides: Rgb, top: Rgb): void {
+-  w.face([w.P(x0, y0, z0), w.P(x1, y0, z0), w.P(x1, y0, z1), w.P(x0, y0, z1)], w.N(0, -1), sides);
+-  w.face([w.P(x1, y1, z0), w.P(x0, y1, z0), w.P(x0, y1, z1), w.P(x1, y1, z1)], w.N(0, 1), sides);
+-  w.face([w.P(x1, y0, z0), w.P(x1, y1, z0), w.P(x1, y1, z1), w.P(x1, y0, z1)], w.N(1, 0), sides);
+-  w.face([w.P(x0, y1, z0), w.P(x0, y0, z0), w.P(x0, y0, z1), w.P(x0, y1, z1)], w.N(-1, 0), sides);
+-  w.face([w.P(x0, y0, z1), w.P(x1, y0, z1), w.P(x1, y1, z1), w.P(x0, y1, z1)], w.N(0, 0, 1), top);
+-}
+-
+-/** The roof plant drawn from afar (`emitRoofPlant`): the rest is under a metre across. */
+-const DRAWN_PLANT: ReadonlySet<string> = new Set(['liftRoom', 'tankBox', 'airHandler', 'skylight', 'solar', 'tank', 'chimney']);
+-
+-/** The plant on a flat roof a metre or more across (`roofPlan.ts`, the plan the detailed roof draws) */
+-function emitRoofPlant(w: MassWriter, b: Building, v: Volume, z: number, rgb: (spec: MaterialSpec) => Rgb): void {
+-  const plant = rgbOf(ROOF_COLOURS.plant);
+-  const trimSpec = trimMaterial(b);
+-  // The trim as the detailed building has it: metal frames' mouldings are the skin a shade lighter.
+-  const trim = trimSpec.finish === 'metal' && b.materials?.wall ? rgbOf(b.materials.wall.colour, shadeOf(b) * 1.1) : rgb(trimSpec);
+-  for (const it of roofPlantOf(b, v)) {
+-    // Left out where the level leaves a thing that tall (a panel's 0.32 m, a tank's or a lift room's height); the kinds never drawn here count for nothing.
+-    if (DRAWN_PLANT.has(it.kind) && w.leaves(it.kind === 'solar' ? m(0.32) : it.h)) continue;
+-    const cx = (it.x0 + it.x1) / 2, cy = (it.y0 + it.y1) / 2, half = Math.min(it.x1 - it.x0, it.y1 - it.y0) / 2;
+-    switch (it.kind) {
+-      case 'liftRoom': case 'tankBox': box(w, it.x0, it.y0, it.x1, it.y1, z, z + it.h, trim, plant); break;
+-      case 'airHandler': { const c = rgbOf(ROOF_COLOURS.condenser); box(w, it.x0, it.y0, it.x1, it.y1, z + m(0.2), z + it.h, c, c); break; }
+-      case 'skylight': box(w, it.x0, it.y0, it.x1, it.y1, z, z + it.h, plant, rgbOf(ROOF_COLOURS.skylight)); break;
+-      case 'solar': { const c = rgbOf(ROOF_COLOURS.solar); box(w, it.x0, it.y0, it.x1, it.y1, z + m(0.25), z + m(0.32), c, c); break; }
+-      case 'tank': {
+-        // A round tank as the square of its area (r * 0.84, `buildingMesh.ts`).
+-        const r = half * 0.84 * Math.sqrt(Math.PI) / 2;
+-        const c = rgbOf(TANK_COLOURS[it.variant % TANK_COLOURS.length]!);
+-        box(w, cx - r, cy - r, cx + r, cy + r, z, z + it.h, c, c);
+-        break;
+-      }
+-      case 'chimney': { const r = half * 0.9 * Math.sqrt(Math.PI) / 2, c = rgbOf(ROOF_COLOURS.chimney); box(w, cx - r, cy - r, cx + r, cy + r, z, z + it.h, c, c); break; }
+-      default: break;
+-    }
+-  }
+-}
+-
+-/** The machine rooms over the lift cores, on the highest flat roof over each (`buildingMesh.ts`). */
+-function emitMachineRooms(w: MassWriter, b: Building, floor: number, rgb: (spec: MaterialSpec) => Rgb): void {
+-  const trim = rgb(trimMaterial(b));
+-  for (const { volume: best, x0, y0, x1, y1 } of machineRooms(b)) {
+-    if (w.leaves(MACHINE_ROOM_H)) continue;
+-    const z = floor + volumeHeight(b, best);
+-    const skin = best.dress ? rgb(wallMaterial(b, best, 0)) : trim;
+-    box(w, x0, y0, x1, y1, z, z + MACHINE_ROOM_H, skin, rgbOf(ROOF_COLOURS.plant));
++    const points: [number, number, number][] = [];
++    for (let k = 0; k < f.points.length; k += 3) points.push([f.points[k]!, f.points[k + 1]!, f.points[k + 2]!]);
++    if (f.tris) w.polygon(points, f.tris, f.n, f.rgb);
++    else w.face(points, f.n, f.rgb);
+   }
++  return w.position.length ? w.chunk() : null;
+ }
+diff --git a/src/render/destruction.ts b/src/render/destruction.ts
+index b67cb9c5..98a31dd4 100644
+--- a/src/render/destruction.ts
++++ b/src/render/destruction.ts
+@@ -10,7 +10,7 @@ import type { BuildingChunk } from './buildings/buildingMesh';
+ import type { BuildingKit } from './buildings/kit';
+ import { fragmentGeometry, prepareFracture, type Fragment, type StillData } from './buildings/fracture';
+ import { FINISH_ATTRIBUTE } from './buildings/cellArrays';
+-import { interiorFurniture, withShellParts } from './buildings/buildingMesh';
++import { asPlainShells, interiorFurniture, withShellParts } from './buildings/buildingMesh';
+ 
+ /** Buildings that break for real (the player's order of 2026-10-05) */
+ 
+@@ -217,7 +217,7 @@ export function createDestruction(
+       for (let level = v.base + 1; level < v.base + v.storeys.length; level++) slabs.push({ corners, y: floor + volumeElevation(b, v, level) });
+     }
+     // Its lots' boxes broken as the shell they are drawn as (`shellParts.ts`): their finish, tone and wear on every fragment.
+-    const { input, materials } = prepareFracture(withShellParts(source.chunk), source.kit, slabs, b.id * 2654435761, interiorFurniture(b, floor));
++    const { input, materials } = prepareFracture(asPlainShells(withShellParts(source.chunk)), source.kit, slabs, b.id * 2654435761, interiorFurniture(b, floor));
+     const id = nextJob++;
+     const worker = workerOf();
+     jobs.set(id, { b, floor, materials, hits: [], worker });
+diff --git a/tests/render/buildingMesh.spec.ts b/tests/render/buildingMesh.spec.ts
+index 9677703e..58d5efcb 100644
+--- a/tests/render/buildingMesh.spec.ts
++++ b/tests/render/buildingMesh.spec.ts
+@@ -9,7 +9,7 @@ import { BLUEPRINTS, generateBody } from '@world/buildings/blueprints';
+ import { foundationOf } from '@world/buildings/foundation';
+ import { type Building, asBuildingId } from '@world/buildings/types';
+ import { type BuildingChunk, assembleBuildingMeshes, emitChunk } from '@render/buildings/buildingMesh';
+-import { emitMassing } from '@render/buildings/massing';
++import { massesOf } from './support/masses';
+ import { PART_KINDS, createBuildingKit } from '@render/buildings/kit';
+ import { createBuildingLayer } from '@render/buildings/layer';
+ import { shapeBody } from '@editor/buildingPlans';
+@@ -115,12 +115,12 @@ describe('building shell', () => {
+       const other = { ...a, id: asBuildingId(a.id + 100), x: a.x + 300, y: a.y - 90, rotation: -1.1 } as Building;
+       emitChunk(other, slope);
+       emitChunk(other, slope, undefined, slope, undefined, true);
+-      emitMassing(other, slope);
++      massesOf(other, slope);
+       const key = BLUEPRINTS[i]!.key;
+       // Against the same building worked out from scratch: a deep copy has blocks of its own.
+       expect(drawn(emitChunk(a, slope)), key).toEqual(drawn(emitChunk(structuredClone(a), slope)));
+       expect(drawn(emitChunk(a, slope, undefined, slope, undefined, true)), key).toEqual(drawn(emitChunk(structuredClone(a), slope, undefined, slope, undefined, true)));
+-      expect(emitMassing(a, slope), key).toEqual(emitMassing(structuredClone(a), slope));
++      expect(massesOf(a, slope), key).toEqual(massesOf(structuredClone(a), slope));
+     }
+   });
+ 
+@@ -183,9 +183,9 @@ describe('building shell', () => {
+     const meshes = assembleBuildingMeshes([a, b], kit);
+     const glass = meshes.group.children.find((m) => m.name === 'building-glass') as unknown as { count: number };
+     expect(glass.count).toBe(a.parts.glass.count + b.parts.glass.count);
+-    // One shell for every finish and one batch per part: the draw calls do not grow with the number of buildings.
+-    expect(meshes.group.children.length).toBeLessThanOrEqual(1 + PART_KINDS.length);
+-    expect(meshes.group.children.filter((m) => m.name === 'building-shell')).toHaveLength(1);
++    // One shell for every finish (its plain faces, and its walls laid as runs of bays, `emitFacadeRuns`) and one batch per part: the draw calls do not grow with the number of buildings.
++    expect(meshes.group.children.length).toBeLessThanOrEqual(2 + PART_KINDS.length);
++    expect(meshes.group.children.filter((m) => m.name === 'building-shell')).toHaveLength(2);
+     meshes.dispose();
+     kit.dispose();
+   });
+diff --git a/tests/render/cellWork.spec.ts b/tests/render/cellWork.spec.ts
+index 686a4fd0..207fa713 100644
+--- a/tests/render/cellWork.spec.ts
++++ b/tests/render/cellWork.spec.ts
+@@ -6,7 +6,8 @@ import { type CellArrays, cellArrays } from '@render/buildings/cellArrays';
+ import { CellPool } from '@render/buildings/cellPool';
+ import { PartyWalls } from '@render/buildings/partyWalls';
+ import { fileParts } from '@render/buildings/partFiling';
+-import type { CellEntry, CellResult } from '@render/buildings/cellWork';
++import { type CellEntry, type CellResult, keptPrograms } from '@render/buildings/cellWork';
++import { Digest } from '@core/digest';
+ import { PART_KINDS, createBuildingKit } from '@render/buildings/kit';
+ import { BATCH_CELL, COARSE_PARTS, DETAIL_CELL, DETAIL_PARTS } from '@render/buildings/layerCells';
+ import { tileOf } from '@render/buildings/levelKeys';
+@@ -75,7 +76,8 @@ function chunksByCell(buildings: readonly Building[], chunkOf: (b: Building) =>
+ const cellOf = (b: Building): string => `${Math.floor(b.x / BATCH_CELL)},${Math.floor(b.y / BATCH_CELL)}`;
+ /** The test's records by key: what the pool writes into each job (`CellPool` `text`). */
+ const texts = new Map<string, RecordRef>();
+-const entryOf = (b: Building): CellEntry => { texts.set(String(b.id), refOf(b)); return { key: String(b.id), sig: b.id, digest: 0 }; };
++/** Its entry as the page makes it: its record's digest (`CellEntry.sig`), so a record changed is a building changed, as the page tells it. */
++const entryOf = (b: Building): CellEntry => { texts.set(String(b.id), refOf(b)); return { key: String(b.id), sig: new Digest().addPlain(b).value(), digest: 0 }; };
+ 
+ describe('a cell put together off the page', () => {
+   const kit = createBuildingKit();
+@@ -180,6 +182,53 @@ describe('a cell put together off the page', () => {
+     for (const e of moved) expect(pool.floorKnown(e, true) === undefined, e.key).toBe(!staying.has(e.key));
+   });
+ 
++  it("walks each building once for its masses at every level, an edited building alone walked again (`program.ts`)", () => {
++    const town = [...grownTown().buildings.all()];
++    const byCell = new Map<string, Building[]>();
++    for (const b of town) { const c = cellOf(b); byCell.set(c, [...byCell.get(c) ?? [], b]); }
++    const [cell, buildings] = [...byCell].sort((p, q) => q[1].length - p[1].length)[0]!;
++    expect(buildings.length).toBeGreaterThan(3);
++    const [ci, cj] = cell.split(',').map(Number) as [number, number];
++    const env = { groundAt, naturalAt, pavedAt };
++    const run = (pool: CellPool, kind: 'mass' | 'massTile' | 'massPlate', key: string, entries: readonly CellEntry[]): CellResult => {
++      let got: CellResult | null = null;
++      pool.run(kind, key, entries, env, (result) => { got = result; });
++      expect(got).not.toBeNull();
++      return got!;
++    };
++    const programs = keptPrograms();
++    programs.clear();
++    const pool = new CellPool(() => boxes, (e) => () => texts.get(e.key)!, false);
++    const entries = buildings.map(entryOf);
++    // The cell's masses: each building walked once.
++    programs.resetCounts();
++    run(pool, 'mass', cell, entries);
++    expect(programs.walks).toBe(buildings.length);
++    expect(programs.hits).toBe(0);
++    // Its tile's and plate's masses, on the floors handed: no building walked again, each level a filter over the programs kept.
++    programs.resetCounts();
++    const tile = run(pool, 'massTile', tileOf(ci, cj), entries);
++    expect(programs.walks).toBe(0);
++    expect(programs.hits).toBe(buildings.length);
++    // ...the same, byte for byte, as with every building walked afresh.
++    programs.clear();
++    programs.resetCounts();
++    const afresh = run(pool, 'massTile', tileOf(ci, cj), entries);
++    expect(programs.walks).toBe(buildings.length);
++    expect(difference(tile.mass as never, afresh.mass as never)).toBe('');
++    // One building edited (moved half a metre: its record, so its digest, changed): it alone walked again, the others' programs read as they were.
++    const cellMasses = run(pool, 'mass', cell, entries);
++    const edited = { ...buildings[0]!, x: buildings[0]!.x + m(0.5) };
++    const after = [entryOf(edited), ...buildings.slice(1).map(entryOf)];
++    programs.resetCounts();
++    const editedMasses = run(pool, 'mass', cell, after);
++    expect(programs.walks).toBe(1);
++    expect(programs.hits).toBe(buildings.length - 1);
++    expect(difference(editedMasses.mass as never, cellMasses.mass as never)).not.toBe('');
++    programs.clear();
++    expect(difference(run(pool, 'mass', cell, after).mass as never, editedMasses.mass as never)).toBe('');
++  });
++
+   for (const paved of [pavedAt, undefined]) {
+     it(`summarizes a cell as its buildings laid whole do, none laid (${paved ? 'with' : 'without'} paving)`, () => {
+       const town = [...grownTown().buildings.all()];
+diff --git a/tests/render/detailCap.spec.ts b/tests/render/detailCap.spec.ts
+index e256fafc..a064ace6 100644
+--- a/tests/render/detailCap.spec.ts
++++ b/tests/render/detailCap.spec.ts
+@@ -3,7 +3,7 @@ import { Frustum, Matrix4, OrthographicCamera } from 'three';
+ import { createBuildingKit } from '@render/buildings/kit';
+ import { cellMass } from '@render/buildings/cellArrays';
+ import { createMassCells } from '@render/buildings/massCells';
+-import { emitMassing } from '@render/buildings/massing';
++import { massesOf } from './support/masses';
+ import { BLUEPRINTS } from '@world/buildings/blueprints';
+ import type { Building } from '@world/buildings/types';
+ import { m } from '@world/units';
+@@ -18,7 +18,7 @@ function row(): ReturnType<typeof createMassCells> {
+   for (let i = 0; i < 5; i++) {
+     const bp = BLUEPRINTS[0]!;
+     const b = { ...JSON.parse(JSON.stringify(bp.body)), id: i + 1, x: (i + 0.5) * CELL, y: CELL / 2, rotation: 0 } as Building;
+-    cells.land(`${i},0`, cellMass([emitMassing(b, () => 0)!]));
++    cells.land(`${i},0`, cellMass([massesOf(b, () => 0)!]));
+   }
+   // From above, 10 px a metre: every cell's detail is wanted.
+   cells.choose(CELL / 2, CELL / 2, m(300), 1000, 10, false, Infinity);
+@@ -54,7 +54,7 @@ describe('the detail drawn', () => {
+     const cells = createMassCells(createBuildingKit(), CELL);
+     for (const i of [-1, 0, 1]) {
+       const b = { ...JSON.parse(JSON.stringify(BLUEPRINTS[0]!.body)), id: i + 2, x: (i + 0.5) * CELL, y: CELL / 2, rotation: 0 } as Building;
+-      cells.land(`${i},0`, cellMass([emitMassing(b, () => 0)!]));
++      cells.land(`${i},0`, cellMass([massesOf(b, () => 0)!]));
+     }
+     // A perspective eye over the middle cell: the two others the same distance off, west and east.
+     cells.choose(CELL / 2, CELL / 2, m(120), 1000, null, false, Infinity);
+@@ -107,7 +107,7 @@ describe('the detail and the view', () => {
+     const cells = createMassCells(createBuildingKit(), CELL);
+     for (let i = 0; i < 5; i++) {
+       const b = { ...JSON.parse(JSON.stringify(BLUEPRINTS[0]!.body)), id: i + 1, x: (i + 0.5) * CELL, y: CELL / 2, rotation: 0 } as Building;
+-      cells.land(`${i},0`, cellMass([emitMassing(b, () => 0)!]));
++      cells.land(`${i},0`, cellMass([massesOf(b, () => 0)!]));
+     }
+     // Straight down over the first cell, 200 m across (three's axes: map y is -z).
+     const camera = new OrthographicCamera(-100, 100, 100, -100, 1, 2000);
+@@ -125,7 +125,7 @@ describe('the detail and the view', () => {
+     const cells = createMassCells(createBuildingKit(), CELL);
+     for (let i = 0; i < 5; i++) {
+       const b = { ...JSON.parse(JSON.stringify(BLUEPRINTS[0]!.body)), id: i + 1, x: (i + 0.5) * CELL, y: CELL / 2, rotation: 0 } as Building;
+-      cells.land(`${i},0`, cellMass([emitMassing(b, () => 0)!]));
++      cells.land(`${i},0`, cellMass([massesOf(b, () => 0)!]));
+     }
+     const camera = new OrthographicCamera(-100, 100, 100, -100, 1, 2000);
+     camera.position.set(CELL / 2, 1000, -CELL / 2);
+diff --git a/tests/render/facadeLevel.spec.ts b/tests/render/facadeLevel.spec.ts
+index 123cc9b6..7eb67c06 100644
+--- a/tests/render/facadeLevel.spec.ts
++++ b/tests/render/facadeLevel.spec.ts
+@@ -7,7 +7,7 @@ import type { ShellChunk } from '@render/buildings/chunk';
+ import {
+   COLOUR_RANGE, FACADE_BYTES, FACADE_FLOATS, FACADE_GRID, FINISH_ATTRIBUTE, NORMAL_UNIT, PAINT_UNIT, WEAR_STEPS, cellArrays, cellBytes, octDecode, paintShort,
+ } from '@render/buildings/cellArrays';
+-import { FACADE_FLIP, FACADE_STREAK } from '@render/buildings/facadeLevel';
++import { FACADE_FLIP, FACADE_KIND, FACADE_STREAK } from '@render/buildings/facadeLevel';
+ import { shellUv } from '@render/buildings/shellParts';
+ import { PART_KINDS, type PartKind, createBuildingKit } from '@render/buildings/kit';
+ import { GROUND_ATTRIBUTE, LOOK_FLOATS, NO_GROUND, SHELL_PARTS, SHELL_PART_KINDS } from '@render/buildings/shellParts';
+@@ -128,7 +128,11 @@ describe('the buildings\' far level', () => {
+         for (let i = 2; i < s.grid.length; i += FACADE_GRID) expect(s.grid[i]! & (FACADE_FLIP - 1)).toBeGreaterThan(0);
+       }
+       for (const s of [...Object.values(l1.shells), ...Object.values(detail.shells)]) expect('facade' in s).toBe(false);
+-      expect(detail.runs).toBeUndefined();
++      // The detail's walls laid as runs too (`emitFacadeRuns` near): every opening of them closed by its own pane (`covered`), or a plain wall.
++      for (const s of Object.values(detail.runs ?? {})) {
++        expect(s.near).toBe(true);
++        for (let i = 2; i < s.grid.length; i += FACADE_GRID) expect([FACADE_KIND.none, FACADE_KIND.covered]).toContain(s.grid[i]! & (FACADE_FLIP - 1));
++      }
+       near += triangles(detail);
+       far += triangles(l1);
+     }
+@@ -436,8 +440,12 @@ describe('the shell\'s compact vertex', () => {
+         const vertices = p.length / 3;
+         // None left twice: the weld found every vertex alike in place, normal, wear, paint and finish.
+         const seen = new Set<string>();
++        // A run's vertex also by its window grid (`RunChunk`): two runs meeting at a corner are two vertices there, their grids apart.
++        const run = 'facade' in s ? s as unknown as { facade: Uint16Array; grid: Int16Array; opening: Uint8Array } : null;
+         for (let v = 0; v < vertices; v++) {
+-          seen.add([...p.subarray(v * 3, v * 3 + 3), ...nd.subarray(v * 2, v * 2 + 2), ...paint.subarray(v * 4, v * 4 + 4)].join());
++          const key = [...p.subarray(v * 3, v * 3 + 3), ...nd.subarray(v * 2, v * 2 + 2), ...paint.subarray(v * 4, v * 4 + 4)];
++          if (run) key.push(...run.facade.subarray(v * FACADE_FLOATS, (v + 1) * FACADE_FLOATS), ...run.grid.subarray(v * FACADE_GRID, (v + 1) * FACADE_GRID), ...run.opening.subarray(v * FACADE_BYTES, (v + 1) * FACADE_BYTES));
++          seen.add(key.join());
+         }
+         expect(seen.size).toBe(vertices);
+         // The walls (normal level): their triangles and the vertices they use.
+diff --git a/tests/render/frameBudget.spec.ts b/tests/render/frameBudget.spec.ts
+index da4e1785..a1de8d09 100644
+--- a/tests/render/frameBudget.spec.ts
++++ b/tests/render/frameBudget.spec.ts
+@@ -3,7 +3,7 @@ import { createBuildingKit } from '@render/buildings/kit';
+ import { cellMass } from '@render/buildings/cellArrays';
+ import { ERROR_STEP, FrameScale, LandedMeasure, MOST_ERROR_SCALE, fitErrorScale, letBackFitting, letGoPassed } from '@render/buildings/frameBudget';
+ import { createMassCells } from '@render/buildings/massCells';
+-import { emitMassing } from '@render/buildings/massing';
++import { massesOf } from './support/masses';
+ import { BLUEPRINTS } from '@world/buildings/blueprints';
+ import type { Building } from '@world/buildings/types';
+ import { m } from '@world/units';
+@@ -78,7 +78,7 @@ function row(): ReturnType<typeof createMassCells> {
+   for (let i = 0; i < 5; i++) {
+     const bp = BLUEPRINTS[0]!;
+     const b = { ...JSON.parse(JSON.stringify(bp.body)), id: i + 1, x: (i + 0.5) * CELL, y: CELL / 2, rotation: 0 } as Building;
+-    cells.land(`${i},0`, cellMass([emitMassing(b, () => 0)!]));
++    cells.land(`${i},0`, cellMass([massesOf(b, () => 0)!]));
+   }
+   return cells;
+ }
+diff --git a/tests/render/gpuLedger.spec.ts b/tests/render/gpuLedger.spec.ts
+index 9bcff90e..918131d6 100644
+--- a/tests/render/gpuLedger.spec.ts
++++ b/tests/render/gpuLedger.spec.ts
+@@ -10,7 +10,7 @@ import { CellRequests } from '@render/buildings/cellRequests';
+ import type { CellEntry, CellResult } from '@render/buildings/cellWork';
+ import { createBuildingKit } from '@render/buildings/kit';
+ import { createMassCells } from '@render/buildings/massCells';
+-import { emitMassing } from '@render/buildings/massing';
++import { massesOf } from './support/masses';
+ import { BLUEPRINTS } from '@world/buildings/blueprints';
+ import type { Building } from '@world/buildings/types';
+ import { m } from '@world/units';
+@@ -87,7 +87,7 @@ describe('the owners in the ledger', () => {
+     const kit = createBuildingKit();
+     const cells = createMassCells(kit, m(256));
+     const before = gpuLedger.bytes('cell masses');
+-    const mass = cellMass([0, 1].map((i) => emitMassing(building(i, m(20) + i * m(40), m(20)), () => 0)!))!;
++    const mass = cellMass([0, 1].map((i) => massesOf(building(i, m(20) + i * m(40), m(20)), () => 0)!))!;
+     const expected = mass.position.byteLength + mass.normal.byteLength + mass.color.byteLength + mass.facade.byteLength + mass.grid.byteLength + mass.seed.byteLength + mass.index.byteLength;
+     cells.land('0,0', mass);
+     expect(gpuLedger.bytes('cell masses') - before).toBe(expected);
+diff --git a/tests/render/gpuOnly.spec.ts b/tests/render/gpuOnly.spec.ts
+index 010956c8..e04a095a 100644
+--- a/tests/render/gpuOnly.spec.ts
++++ b/tests/render/gpuOnly.spec.ts
+@@ -5,7 +5,7 @@ import { compileCopy, shadowStandIn } from '@render/uploads';
+ import { createBuildingKit } from '@render/buildings/kit';
+ import { cellMass } from '@render/buildings/cellArrays';
+ import { createMassCells } from '@render/buildings/massCells';
+-import { emitMassing } from '@render/buildings/massing';
++import { massesOf } from './support/masses';
+ import { refillArrays } from '@render/mesh/gpuOnly';
+ import type { Tile } from '@render/mesh/surfaceMesh';
+ import { mergeTiles } from '@render/mesh/surfaceTiles';
+@@ -74,7 +74,7 @@ describe('meshes that live on the GPU', () => {
+     const masses = [0, 1, 2].map((i) => {
+       const bp = BLUEPRINTS[i]!;
+       const b = { ...JSON.parse(JSON.stringify(bp.body)), id: i + 1, x: i * m(30), y: m(10), rotation: 0 } as Building;
+-      return emitMassing(b, () => 0)!;
++      return massesOf(b, () => 0)!;
+     });
+     cells.land('0,0', cellMass(masses));
+     const mesh = cells.group.children.find((o) => o.name === 'building-massing') as Mesh;
+diff --git a/tests/render/massBase.spec.ts b/tests/render/massBase.spec.ts
+index 30a444ee..551b3d6c 100644
+--- a/tests/render/massBase.spec.ts
++++ b/tests/render/massBase.spec.ts
+@@ -4,9 +4,10 @@ import type { Mesh } from 'three';
+ import { cellMass } from '@render/buildings/cellArrays';
+ import { createBuildingKit } from '@render/buildings/kit';
+ import { createMassCells } from '@render/buildings/massCells';
+-import { BASE_CELL_STRIDE, BaseWriter, emitBase, paint } from '@render/buildings/massBase';
++import { BASE_CELL_STRIDE, BaseWriter, paint } from '@render/buildings/massBase';
++import { writeBaseOf } from './support/masses';
+ import { baseOf, levelCells } from '@render/buildings/levelKeys';
+-import { emitMassing } from '@render/buildings/massing';
++import { massesOf } from './support/masses';
+ import { BLUEPRINTS } from '@world/buildings/blueprints';
+ import type { Building } from '@world/buildings/types';
+ import { m } from '@world/units';
+@@ -24,7 +25,7 @@ function building(index: number, x: number, y: number): Building {
+ function town(): { buildings: Building[]; base: NonNullable<ReturnType<BaseWriter['done']>> } {
+   const buildings = [0, 1, 2].flatMap((i) => [building(i, m(10) + i * m(40), m(20)), building(i + 3, CELL + m(10) + i * m(40), m(20))]);
+   const writer = new BaseWriter();
+-  for (const b of buildings) emitBase(writer.cellOf(b), b, 0, flat, false);
++  for (const b of buildings) writeBaseOf(writer.cellOf(b), b, 0, flat);
+   return { buildings, base: writer.done(levelCells(baseOf(0, 0)))! };
+ }
+ 
+@@ -59,7 +60,7 @@ describe('the base', () => {
+     expect(mesh().geometry.groups).toEqual([{ start: 0, count: base.pieces[0]!.index.length, materialIndex: 0 }]);
+     expect([...far.census().values()]).toEqual(['base', 'base']);
+     // Cell 0,0's own masses come: the base draws 1,0 alone.
+-    far.land('0,0', cellMass(buildings.filter((b) => b.x < CELL).map((b) => emitMassing(b, flat)!))!);
++    far.land('0,0', cellMass(buildings.filter((b) => b.x < CELL).map((b) => massesOf(b, flat)!))!);
+     far.syncBases();
+     const cells = base.pieces[0]!.cells;
+     expect(mesh().geometry.groups).toEqual([{ start: cells[6], count: cells[7], materialIndex: 0 }]);
+diff --git a/tests/render/massLevels.spec.ts b/tests/render/massLevels.spec.ts
+index 55757301..cff51e28 100644
+--- a/tests/render/massLevels.spec.ts
++++ b/tests/render/massLevels.spec.ts
+@@ -10,7 +10,9 @@ import { createMassCells } from '@render/buildings/massCells';
+ import type { PackedEntries } from '@render/buildings/chunk';
+ import { MassLevels } from '@render/buildings/massLevels';
+ import { plateOf, tileOf } from '@render/buildings/levelKeys';
+-import { CELL_DETAIL, PLATE_DETAIL, TILE_DETAIL, emitMassing, emitMassingLevels } from '@render/buildings/massing';
++import { CELL_DETAIL, PLATE_DETAIL, TILE_DETAIL, massFloor, massOf } from '@render/buildings/massing';
++import { emitProgram } from '@render/buildings/buildingMesh';
++import { massesOf } from './support/masses';
+ import { drawsSignature } from '@render/buildings/signature';
+ import { BLUEPRINTS } from '@world/buildings/blueprints';
+ import type { Building } from '@world/buildings/types';
+@@ -27,7 +29,7 @@ function building(index: number, x: number, y: number): Building {
+ 
+ /** The masses of a few buildings in a cell, with the error a level says it left out. */
+ function masses(x: number, y: number, error = 0): CellMass {
+-  const chunks = [0, 1, 2].map((i) => emitMassing(building(i, x + i * m(40), y + m(20)), flat)!);
++  const chunks = [0, 1, 2].map((i) => massesOf(building(i, x + i * m(40), y + m(20)), flat)!);
+   return { ...cellMass(chunks)!, error };
+ }
+ 
+@@ -247,9 +249,9 @@ describe('a tile or a plate of masses drawn in place of its cells', () => {
+     let cell = 0, tile = 0, plate = 0, tileError = 0, plateError = 0;
+     for (let i = 0; i < BLUEPRINTS.length; i++) {
+       const b = building(i, 0, 0);
+-      const c = emitMassing(b, flat, undefined, flat, false, undefined, CELL_DETAIL);
+-      const t = emitMassing(b, flat, undefined, flat, false, undefined, TILE_DETAIL);
+-      const p = emitMassing(b, flat, undefined, flat, false, undefined, PLATE_DETAIL);
++      const c = massesOf(b, flat, undefined, flat, undefined, CELL_DETAIL);
++      const t = massesOf(b, flat, undefined, flat, undefined, TILE_DETAIL);
++      const p = massesOf(b, flat, undefined, flat, undefined, PLATE_DETAIL);
+       if (!c) continue;
+       expect(c.error).toBe(0);
+       expect(t!.error).toBeLessThanOrEqual(TILE_DETAIL.drop);
+@@ -265,20 +267,21 @@ describe('a tile or a plate of masses drawn in place of its cells', () => {
+     expect(plateError).toBeGreaterThanOrEqual(tileError);
+   });
+ 
+-  it("walks a building once for a tile's and a plate's masses where they answer alike, each the same as walked alone", () => {
+-    let shared = 0, apart = 0;
++  it("draws every level of the masses from one program, the same as a program of a copy of the record", () => {
+     for (let i = 0; i < BLUEPRINTS.length; i++) {
+       for (const turn of [0, 0.7]) {
+         const b = { ...building(i, 0, 0), rotation: turn };
+-        const [t, p] = emitMassingLevels(b, flat, undefined, flat, undefined, TILE_DETAIL, PLATE_DETAIL);
+-        expect(t).toEqual(emitMassing(b, flat, undefined, flat, false, undefined, TILE_DETAIL));
+-        expect(p).toEqual(emitMassing(b, flat, undefined, flat, false, undefined, PLATE_DETAIL));
+-        if (t && t === p) shared++; else apart++;
++        const floor = massFloor(b, flat) ?? null;
++        // One program (`emitProgram`), its every level a filter (`massOf`): nothing of it read from the record object or its memos again.
++        const program = emitProgram(b, flat, undefined, flat, { near: false, far: false }, { floor });
++        const copy = emitProgram(structuredClone(b), flat, undefined, flat, { near: false, far: false }, { floor });
++        for (const detail of [CELL_DETAIL, TILE_DETAIL, PLATE_DETAIL]) expect(massOf(program.mass, detail)).toEqual(massOf(copy.mass, detail));
++        // The coarser the level, never more triangles.
++        const [c, t, p] = [CELL_DETAIL, TILE_DETAIL, PLATE_DETAIL].map((d) => massOf(program.mass, d)?.index.length ?? 0);
++        expect(t).toBeLessThanOrEqual(c!);
++        expect(p).toBeLessThanOrEqual(t!);
+       }
+     }
+-    // Both ways met: some buildings' plate masses their tile's own, some walked again.
+-    expect(shared).toBeGreaterThan(0);
+-    expect(apart).toBeGreaterThan(0);
+   });
+ 
+   it("is made by the cells' job for its kind, merged, with its error", () => {
+diff --git a/tests/render/massVertex.spec.ts b/tests/render/massVertex.spec.ts
+index fdb3eca8..5b66752f 100644
+--- a/tests/render/massVertex.spec.ts
++++ b/tests/render/massVertex.spec.ts
+@@ -4,7 +4,7 @@ import { DataUtils } from 'three';
+ import { MASS_FACADE, MASS_GRID, cellMass, massPlaces } from '@render/buildings/cellArrays';
+ import { createBuildingKit } from '@render/buildings/kit';
+ import { cellMesh } from '@render/buildings/massCells';
+-import { emitMassing } from '@render/buildings/massing';
++import { massesOf } from './support/masses';
+ import { BLUEPRINTS } from '@world/buildings/blueprints';
+ import type { Building } from '@world/buildings/types';
+ 
+@@ -14,7 +14,7 @@ const building = (n: number): Building => ({ ...JSON.parse(JSON.stringify(BLUEPR
+ 
+ describe('a mass vertex', () => {
+   it('holds in 44 bytes what the masses\' shader reads, the long and the high in full floats', () => {
+-    const chunks = [0, 3, 4, 6, 8].map((n) => emitMassing(building(n), (x, y) => x * 0.01 + y * 0.02)!);
++    const chunks = [0, 3, 4, 6, 8].map((n) => massesOf(building(n), (x, y) => x * 0.01 + y * 0.02)!);
+     const mass = cellMass(chunks)!;
+     const vertices = mass.position.length / 3;
+     const bytes = mass.position.byteLength + mass.normal.byteLength + mass.color.byteLength + mass.facade.byteLength + mass.grid.byteLength + mass.seed.byteLength;
+@@ -42,7 +42,7 @@ describe('a mass vertex', () => {
+ 
+   it('is drawn from its half floats as half floats, its full ones as floats', () => {
+     const kit = createBuildingKit();
+-    const mass = cellMass([emitMassing(building(3), () => 0)!])!;
++    const mass = cellMass([massesOf(building(3), () => 0)!])!;
+     const g = cellMesh(mass, kit).geometry;
+     const flagged = (name: string): boolean => (g.getAttribute(name) as { isFloat16BufferAttribute?: boolean }).isFloat16BufferAttribute === true;
+     expect(flagged('color')).toBe(true);
+@@ -59,7 +59,7 @@ describe('a mass vertex', () => {
+ describe('a mass\'s slabs', () => {
+   it('share their corners between their triangles: a roof slab is its points once, not three a triangle', () => {
+     for (const n of [0, 3, 4, 6, 8]) {
+-      const chunk = emitMassing(building(n), () => 0)!;
++      const chunk = massesOf(building(n), () => 0)!;
+       const up = (v: number): boolean => chunk.normal[v * 3 + 1]! > 0.9999;
+       // The flat faces' triangles and the points they are drawn from: shared, fewer points than three a triangle.
+       const used = new Set<number>();
+@@ -81,7 +81,7 @@ describe('a lot\'s plate in the masses', () => {
+     const b = building(0);
+     // Its one block made a paved lot: the masses draw its plate alone (`emitLotPlates`).
+     b.volumes = [{ ...b.volumes[0]!, open: 'paving' }];
+-    const chunk = emitMassing(b, () => 0)!;
++    const chunk = massesOf(b, () => 0)!;
+     expect(chunk.index.length / 3).toBe(2);
+     expect(chunk.position.length / 3).toBe(4);
+   });
+@@ -91,7 +91,7 @@ describe('masses on their square\'s grid', () => {
+   it('put every point within half a step of its float, a point laid twice the same point, in 8 bytes for 12', () => {
+     // A row of blocks back to back: corners shared between buildings.
+     const row = Array.from({ length: 12 }, (_, i) => ({ ...JSON.parse(JSON.stringify(BLUEPRINTS[3]!.body)), id: i + 1, x: 10 + (i % 6) * 18, y: 20 + Math.floor(i / 6) * 12, rotation: 0 }) as Building);
+-    const chunks = row.map((b) => emitMassing(b, (x, y) => x * 0.01 + y * 0.02)!);
++    const chunks = row.map((b) => massesOf(b, (x, y) => x * 0.01 + y * 0.02)!);
+     for (const square of [{ i0: 0, j0: 0, n: 1 }, { i0: 0, j0: 0, n: 4 }, { i0: -4, j0: -4, n: 8 }]) {
+       const floats = cellMass(chunks)!, onGrid = cellMass(chunks, square)!;
+       expect(onGrid.place, `square ${square.n}`).toBeDefined();
+diff --git a/tests/render/massing.spec.ts b/tests/render/massing.spec.ts
+index f39cefb5..0f5d92ae 100644
+--- a/tests/render/massing.spec.ts
++++ b/tests/render/massing.spec.ts
+@@ -1,6 +1,6 @@
+ import { describe, expect, it } from 'vitest';
+ import { emitChunk } from '@render/buildings/buildingMesh';
+-import { emitMassing } from '@render/buildings/massing';
++import { massesOf } from './support/masses';
+ import { drawsSignature } from '@render/buildings/signature';
+ import { m } from '@world/units';
+ import { growCity } from '../world/cityAudit';
+@@ -84,12 +84,14 @@ describe('the far level of a building', () => {
+       // Its blocks: its lots and their parts left out
+       if (drawsSignature(whole)) continue;
+       const b = { ...whole, volumes: whole.volumes.filter((v) => !v.open), elements: [] };
+-      const mass = emitMassing(b, () => 0);
++      const mass = massesOf(b, () => 0);
+       if (!mass) continue;
+       const far: number[] = [], fineFar: number[] = [], near: number[] = [];
+       samples(mass.position, mass.index, far);
+       samples(mass.position, mass.index, fineFar, FINE);
+-      for (const shell of Object.values(emitChunk(b, () => 0).shells)) if (shell) samples(shell.position, shell.index, near);
++      // The detailed building whole: its plain faces and its walls laid as runs of bays (`emitFacadeRuns` near).
++      const detail = emitChunk(b, () => 0);
++      for (const shell of [...Object.values(detail.shells), ...Object.values(detail.runs ?? {})]) if (shell) samples(shell.position, shell.index, near);
+       // The detailed shells are many small faces, their samples dense; the far level is sampled finer to measure against.
+       const farOff = strays(far, bucket(near), FAR_ERROR + SLACK), nearOff = strays(near, bucket(fineFar), FAR_ERROR + SLACK);
+       checked++;
+diff --git a/tests/render/previewWriter.spec.ts b/tests/render/previewWriter.spec.ts
+index e542176f..67466290 100644
+--- a/tests/render/previewWriter.spec.ts
++++ b/tests/render/previewWriter.spec.ts
+@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
+ import type { InstancedMesh, Mesh } from 'three';
+ import { BLUEPRINTS } from '@world/buildings/blueprints';
+ import type { Building } from '@world/buildings/types';
+-import { ShellWriter, assembleBuildingMeshes, buildBuildingMeshes, emitChunk } from '@render/buildings/buildingMesh';
++import { LevelWriter, assembleBuildingMeshes, buildBuildingMeshes, emitChunk } from '@render/buildings/buildingMesh';
+ import { createBuildingKit } from '@render/buildings/kit';
+ 
+ /** THE PREVIEW'S MESHES (`buildBuildingMeshes`): emitted into one shell written again, the same meshes as a shell of their own */
+@@ -27,7 +27,7 @@ function arraysOf(meshes: ReturnType<typeof buildBuildingMeshes>): Record<string
+ describe('the preview meshes', () => {
+   it('are emitted into one shell written again, and come out as with a shell of their own', () => {
+     const kit = createBuildingKit();
+-    const next = vi.spyOn(ShellWriter.prototype, 'next');
++    const next = vi.spyOn(LevelWriter.prototype, 'next');
+     // One building, another, the first again: what the first left in the shell does not show in the next.
+     for (const index of [0, 1, 0, 2]) {
+       const b = placed(index);
+diff --git a/src/render/buildings/program.ts b/src/render/buildings/program.ts
+new file mode 100644
+index 00000000..2e423394
+--- /dev/null
++++ b/src/render/buildings/program.ts
+@@ -0,0 +1,226 @@
++import type { BuildingChunk, LotGround } from './chunk';
++import type { FlagInstance } from './flagLayer';
++
++/**
++ * THE BUILDING'S PROGRAM: what ONE walk over a building makes of it (`buildingMesh.ts` emitProgram), kept by the building's record, and
++ * every level of it drawn from that alone: the detail (`near`), the facade level (`far`), the masses at the cell's, the tile's and the
++ * plate's detail (`massing.ts` massOf) and the base (`massBase.ts` writeBase) are filters over it, never a walk of their own.
++ * Staged as a shape grammar derives a building (Müller et al. 2006, the mass model before the facades, https://history.siggraph.org/?p=113547)
++ * and lazily, the view asking for the stages it draws (Steinberger et al. 2014, https://hgpu.org/?p=11204): the mass stage alone for the
++ * levels drawn from afar (the whole map's plates and bases at the opening), the facades only where a cell is drawn in detail or at its facade level.
++ */
++
++/** A thing the masses leave out at a level (`MassDetail.drop`), asked once a level (`MassWriter.leaves`): a parapet, a box on the roof, a machine room, a pitched roof's rise. */
++export interface MassGroup {
++  /** Its height or depth, world units. */
++  readonly size: number;
++  /** Asked only by a level of boxes (`MassDetail.boxes`): a pitched roof, laid flat at its eaves there. */
++  readonly boxesOnly: boolean;
++}
++
++/** How a face of the masses depends on its group (`MassFace.group`): kept unless the level leaves the group out; the pitched roof's own faces (kept unless laid flat); its flat slab (only where laid flat). */
++export const MASS_KEEP = 0;
++export const MASS_PITCHED = 1;
++export const MASS_FLATTENED = 2;
++
++/** A face of the masses in three's axes: a convex polygon (fanned) or a flat polygon's triangles (`tris`), one normal and colour. */
++export interface MassFace {
++  readonly points: Float32Array;
++  readonly n: readonly [number, number, number];
++  readonly rgb: readonly [number, number, number];
++  /** Its triangles over `points`, for a flat polygon (earcut's); absent, a convex fan. */
++  readonly tris?: Uint32Array;
++  /** The group it hangs on (-1: none, always drawn) and how (`MASS_KEEP`...). */
++  readonly group: number;
++  readonly mode: number;
++}
++
++/** One bay of a block's wall as the masses read it (`bayLayout`): its side, its span along it, its storey (from its floor), its outward offset (a relief's push, an arcade's set-back), its glass. */
++export interface MassBay {
++  readonly side: number;
++  readonly start: number;
++  readonly width: number;
++  /** Its storey's foot (the floor added) and height. */
++  readonly z0: number;
++  readonly height: number;
++  /** Its plane's offset out of the side (negative: set back). */
++  readonly d: number;
++  /** The share of the bay its opening takes (`GLASS_SHARE`) as the bays alike are joined by, and the glass the shader draws (1 on a curtain wall). */
++  readonly share: number;
++  readonly glass: number;
++  readonly rgb: readonly [number, number, number];
++  /** A storey standing on the ground: its wall runs down past the lowest ground under it (`BURY`). */
++  readonly ground: boolean;
++}
++
++/** A side of a block on the plan, local: its start, its direction along it, its outward normal; its bay's width (the facade's grid). */
++export interface MassSide {
++  readonly x: number;
++  readonly y: number;
++  readonly tx: number;
++  readonly ty: number;
++  readonly nx: number;
++  readonly ny: number;
++  readonly bay: number;
++}
++
++/** A closed block's walls: its sides and its bays, storey by storey and side by side, in the order the layout gives them. */
++export interface MassBlock {
++  readonly sides: ReadonlyMap<number, MassSide>;
++  readonly rows: readonly (readonly MassBay[])[];
++}
++
++/** The base's (`massBase.ts`): a block's prism on the plan (anticlockwise), from its foot to its top, its two paints (5-6-5); a paved lot flat at `level`. */
++export interface BasePrism { readonly xs: readonly number[]; readonly ys: readonly number[]; readonly bottom: number; readonly top: number; readonly wall: number; readonly roof: number }
++export interface BaseSlab { readonly xs: readonly number[]; readonly ys: readonly number[]; readonly level: number; readonly paint: number }
++
++/** The mass stage of a program: what every level drawn from afar is drawn from. */
++export interface MassProgram {
++  /** The building's frame on the plan (its walls laid from their local sides). */
++  readonly frame: { readonly x: number; readonly y: number; readonly c: number; readonly s: number };
++  /** The shader's seed for its windows (and its use: + 2 for offices and works). */
++  readonly seed: number;
++  readonly blocks: readonly MassBlock[];
++  readonly groups: readonly MassGroup[];
++  readonly faces: readonly MassFace[];
++  readonly prisms: readonly BasePrism[];
++  readonly slabs: readonly BaseSlab[];
++}
++
++/** What the page keeps of a building (`cellWork.ts` ChunkSummary): its flags, its lots' ground, a signature building's floor. */
++export interface ProgramSummary {
++  readonly flags?: readonly FlagInstance[];
++  readonly lotGround?: LotGround;
++  readonly signatureFloor?: number;
++}
++
++/** A building's program: the mass stage always, the detail and the facade level where a walk was asked for them. */
++export interface BuildingProgram {
++  readonly mass: MassProgram;
++  readonly summary: ProgramSummary;
++  readonly near?: BuildingChunk;
++  readonly far?: BuildingChunk;
++}
++
++/** Three plan numbers (x, y north, z up) in three's axes (x, up, -north). */
++type V3 = readonly [number, number, number];
++
++/** THE MASS STAGE AS THE WALK WRITES IT (`buildingMesh.ts`): faces in three's axes from plan points, groups, bays, the base's shapes. */
++export class MassRecorder {
++  readonly blocks: MassBlock[] = [];
++  readonly groups: MassGroup[] = [];
++  readonly faces: MassFace[] = [];
++  readonly prisms: BasePrism[] = [];
++  readonly slabs: BaseSlab[] = [];
++
++  constructor(readonly frame: MassProgram['frame'], readonly seed: number) {}
++
++  /** A thing left out under `size` at a level; `boxesOnly`: a pitched roof, asked only by a level of boxes. */
++  group(size: number, boxesOnly = false): number {
++    this.groups.push({ size, boxesOnly });
++    return this.groups.length - 1;
++  }
++
++  /** A convex polygon of plan points (world), its normal (world plan, any length), its colour. */
++  face(points: readonly V3[], n: V3, rgb: readonly [number, number, number], group = -1, mode = MASS_KEEP): void {
++    this.faces.push({ points: threePoints(points), n: three(n), rgb, group, mode });
++  }
++
++  /** A flat polygon of plan points (world) and its triangles over them (earcut's). */
++  polygon(points: readonly V3[], tris: readonly number[], n: V3, rgb: readonly [number, number, number], group = -1, mode = MASS_KEEP): void {
++    this.faces.push({ points: threePoints(points), n: three(n), rgb, tris: Uint32Array.from(tris), group, mode });
++  }
++
++  done(): MassProgram {
++    return { frame: this.frame, seed: this.seed, blocks: this.blocks, groups: this.groups, faces: this.faces, prisms: this.prisms, slabs: this.slabs };
++  }
++}
++
++/** Plan points in three's axes, as the masses' vertices hold them (floats: what `MassWriter` writes them as). */
++function threePoints(points: readonly V3[]): Float32Array {
++  const out = new Float32Array(points.length * 3);
++  points.forEach((p, k) => { out[k * 3] = p[0]; out[k * 3 + 1] = p[2]; out[k * 3 + 2] = -p[1]; });
++  return out;
++}
++
++/** A plan normal (x, y north, z up) as three's, of unit length (`massing.ts` MassWriter.N). */
++function three(n: V3): [number, number, number] {
++  const l = Math.hypot(n[0], n[1], n[2]) || 1;
++  return [n[0] / l, n[2] / l, -n[1] / l];
++}
++
++/** The bytes a program holds, as near as its arrays tell: what the cache weighs it by. */
++export function programBytes(p: BuildingProgram): number {
++  let bytes = 0;
++  for (const f of p.mass.faces) bytes += 160 + f.points.byteLength + (f.tris?.byteLength ?? 0);
++  for (const b of p.mass.blocks) for (const row of b.rows) bytes += 32 + row.length * 120;
++  bytes += (p.mass.prisms.length + p.mass.slabs.length) * 128;
++  for (const chunk of [p.near, p.far]) {
++    if (!chunk) continue;
++    for (const s of Object.values(chunk.shells)) if (s) bytes += s.position.byteLength + s.normal.byteLength + s.paint.byteLength + s.index.byteLength;
++    for (const r of Object.values(chunk.runs ?? {})) {
++      if (r) bytes += r.position.byteLength + r.normal.byteLength + r.paint.byteLength + r.index.byteLength + r.facade.byteLength + r.grid.byteLength + r.opening.byteLength;
++    }
++    for (const batch of Object.values(chunk.parts)) bytes += batch.poses.byteLength + (batch.colours?.byteLength ?? 0) + (batch.looks?.byteLength ?? 0) + (batch.slots?.byteLength ?? 0) + (batch.rooms?.byteLength ?? 0);
++    for (const batch of Object.values(chunk.furniture ?? {})) if (batch) bytes += batch.poses.byteLength + (batch.colours?.byteLength ?? 0);
++  }
++  return bytes;
++}
++
++/** THE PROGRAMS A WORKER KEEPS, by record: a building's program is made once and every job of it after that reads it (`cellWork.ts`);
++ *  an edit changes the record's digest, so only the edited building is walked again, its neighbours' programs read as they were.
++ *  Least recently used first out, within a budget of bytes: each worker is a heap in the page's V8 cage (`jobPool.ts`), so a few tens of MB. */
++export class ProgramCache {
++  private readonly kept = new Map<string, { program: BuildingProgram; bytes: number }>();
++  private bytes = 0;
++  /** Since `resetCounts`: the buildings walked (`emitProgram`) and the programs read instead of a walk. */
++  walks = 0;
++  hits = 0;
++  constructor(private readonly budget: number) {}
++
++  resetCounts(): void {
++    this.walks = 0;
++    this.hits = 0;
++  }
++
++  get(key: string): BuildingProgram | undefined {
++    const hit = this.kept.get(key);
++    if (!hit) return undefined;
++    // The most recently used last: the map's order is the eviction's.
++    this.kept.delete(key);
++    this.kept.set(key, hit);
++    return hit.program;
++  }
++
++  set(key: string, program: BuildingProgram): void {
++    const was = this.kept.get(key);
++    if (was) { this.bytes -= was.bytes; this.kept.delete(key); }
++    const bytes = programBytes(program);
++    if (bytes > this.budget) return;
++    this.kept.set(key, { program, bytes });
++    this.bytes += bytes;
++    for (const [k, v] of this.kept) {
++      if (this.bytes <= this.budget) break;
++      this.kept.delete(k);
++      this.bytes -= v.bytes;
++    }
++  }
++
++  /** A program let go (a job that read past what it was handed: what it walked is not kept, `cellWork.ts`). */
++  delete(key: string): void {
++    const was = this.kept.get(key);
++    if (!was) return;
++    this.kept.delete(key);
++    this.bytes -= was.bytes;
++  }
++
++  /** How many programs and bytes it holds. */
++  get size(): { readonly programs: number; readonly bytes: number } {
++    return { programs: this.kept.size, bytes: this.bytes };
++  }
++
++  clear(): void {
++    this.kept.clear();
++    this.bytes = 0;
++  }
++}
+diff --git a/tests/render/support/masses.ts b/tests/render/support/masses.ts
+new file mode 100644
+index 00000000..7c66539e
+--- /dev/null
++++ b/tests/render/support/masses.ts
+@@ -0,0 +1,21 @@
++import type { GroundAt, PavedAt } from '@world/buildings/foundation';
++import type { Finish } from '@world/buildings/materials';
++import type { Building } from '@world/buildings/types';
++import { emitProgram } from '@render/buildings/buildingMesh';
++import { CELL_DETAIL, type MassDetail, type MassingChunk, massFloor, massOf } from '@render/buildings/massing';
++import { type CellWriter, writeBase } from '@render/buildings/massBase';
++
++/** A building's masses at a level as the cells' jobs draw them (`cellWork.ts`): its program's mass stage walked on its floor (`known`, else
++ *  `massFloor`), then that level's filter (`massOf`). */
++export function massesOf(b: Building, groundAt: GroundAt, pavedAt?: PavedAt, naturalAt: GroundAt = groundAt,
++  tone?: Readonly<Record<Finish, readonly [number, number, number]>>, detail: MassDetail = CELL_DETAIL, known?: { readonly floor: number | undefined }): MassingChunk | null {
++  const floor = known ? known.floor : massFloor(b, naturalAt, pavedAt);
++  const program = emitProgram(b, groundAt, pavedAt, naturalAt, { near: false, far: false }, { floor: floor ?? null, ...(tone ? { tone } : {}) });
++  return massOf(program.mass, detail);
++}
++
++/** A building's base into its cell's writer as the base's job draws it (`cellWork.ts`): its program on `floor`, then the base's filter (`writeBase`). */
++export function writeBaseOf(w: CellWriter, b: Building, floor: number | undefined, groundAt: GroundAt, tone?: Readonly<Record<Finish, readonly [number, number, number]>>): void {
++  const program = emitProgram(b, groundAt, undefined, groundAt, { near: false, far: false }, { floor: floor ?? null, ...(tone ? { tone } : {}) });
++  writeBase(w, program.mass);
++}

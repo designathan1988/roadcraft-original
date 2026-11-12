@@ -1,0 +1,203 @@
+{
+ "id": "Roads/boulevard raised/140 m elevated",
+ "key": "Roads/boulevard raised/140 m elevated",
+ "metrics": {
+  "id": "Roads/boulevard raised/140 m elevated",
+  "triangles": 3672,
+  "vertices": 5118,
+  "index": "Uint16",
+  "geometryBytes": 300512,
+  "bytesPerVertex": 56,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B roadSection:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [detail-road-edges-v2-footway-lots-own] (vertex colours, roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v2-carriageway-lots-own] (vertex colours, roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial (roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [detail] (roughness 1, metalness 0.02, opacity 1)",
+  "draws": 34,
+  "levels": [
+   {
+    "triangles": 3672,
+    "vertices": 5118
+   },
+   {
+    "triangles": 2088,
+    "vertices": 2124
+   }
+  ],
+  "hidden": 0,
+  "solids": "37 solids: 8 open prism, 24 other, 5 box",
+  "size": [
+   140.2002410888672,
+   7.952000260353088,
+   26
+  ],
+  "pieces": [
+   {
+    "label": "verge-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "verge-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "verge-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "verge-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "footway-elevated+curb-ramp-elevated",
+    "triangles": 176,
+    "vertices": 170
+   },
+   {
+    "label": "footway-elevated+curb-ramp-elevated",
+    "triangles": 176,
+    "vertices": 170
+   },
+   {
+    "label": "footway-elevated+curb-ramp-elevated",
+    "triangles": 176,
+    "vertices": 170
+   },
+   {
+    "label": "footway-elevated+curb-ramp-elevated",
+    "triangles": 176,
+    "vertices": 170
+   },
+   {
+    "label": "kerb-elevated+median-kerb-elevated",
+    "triangles": 118,
+    "vertices": 136
+   },
+   {
+    "label": "kerb-elevated+median-kerb-elevated",
+    "triangles": 118,
+    "vertices": 136
+   },
+   {
+    "label": "kerb-elevated+median-kerb-elevated",
+    "triangles": 118,
+    "vertices": 136
+   },
+   {
+    "label": "kerb-elevated+median-kerb-elevated",
+    "triangles": 118,
+    "vertices": 136
+   },
+   {
+    "label": "asphalt-elevated",
+    "triangles": 110,
+    "vertices": 89
+   },
+   {
+    "label": "asphalt-elevated",
+    "triangles": 110,
+    "vertices": 89
+   },
+   {
+    "label": "asphalt-elevated",
+    "triangles": 110,
+    "vertices": 89
+   },
+   {
+    "label": "asphalt-elevated",
+    "triangles": 110,
+    "vertices": 89
+   },
+   {
+    "label": "median-planting-elevated",
+    "triangles": 48,
+    "vertices": 56
+   },
+   {
+    "label": "median-planting-elevated",
+    "triangles": 48,
+    "vertices": 56
+   },
+   {
+    "label": "median-planting-elevated",
+    "triangles": 48,
+    "vertices": 56
+   },
+   {
+    "label": "median-planting-elevated",
+    "triangles": 48,
+    "vertices": 56
+   },
+   {
+    "label": "structure-piers x6",
+    "triangles": 288,
+    "vertices": 402
+   },
+   {
+    "label": "structure-pier-caps x3",
+    "triangles": 36,
+    "vertices": 72
+   },
+   {
+    "label": "structure-abutments x2",
+    "triangles": 24,
+    "vertices": 48
+   },
+   {
+    "label": "structure-parapets",
+    "triangles": 1236,
+    "vertices": 2472
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   2.8960000872612,
+   0
+  ],
+  "distance": 91.80159053051307,
+  "floor": -1.5200000429153442,
+  "long": "x"
+ },
+ "levelErrors": [
+  1.4310336899800434e-11
+ ],
+ "distance": 91.80159053051307,
+ "error": {
+  "max": 0.0609118217682995,
+  "mean": 0.0002284983862483598,
+  "forward": {
+   "max": 0.0609118217682995,
+   "mean": 0.00045444335003707155,
+   "samples": 31231,
+   "at": [
+    -64.28950753900101,
+    0.36302964234921303,
+    -4.970185782299511
+   ]
+  },
+  "backward": {
+   "max": 3.4219532087455587e-13,
+   "mean": 1.1848399368438897e-15,
+   "samples": 30882,
+   "at": [
+    54.20000076293945,
+    -0.8993126972246035,
+    -4.577321657452558
+   ]
+  },
+  "at": [
+   -64.28950753900101,
+   0.36302964234921303,
+   -4.970185782299511
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

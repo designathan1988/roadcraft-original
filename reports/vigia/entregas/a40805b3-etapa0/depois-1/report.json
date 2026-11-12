@@ -1,0 +1,124 @@
+{
+  "out": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\reports\\vigia\\entregas\\a40805b3-etapa0\\depois-1",
+  "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "console": [
+    "warning: THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision",
+    "error: Citizen mh_34 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run \"npm run cook:people\"\n    at http://127.0.0.1:5321/src/render/people/cookedLoad.ts:15:35",
+    "error: Citizen mh_55 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run \"npm run cook:people\"\n    at http://127.0.0.1:5321/src/render/people/cookedLoad.ts:15:35",
+    "error: Citizen mh_44 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run \"npm run cook:people\"\n    at http://127.0.0.1:5321/src/render/people/cookedLoad.ts:15:35",
+    "error: Citizen mh_48 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run \"npm run cook:people\"\n    at http://127.0.0.1:5321/src/render/people/cookedLoad.ts:15:35",
+    "error: Citizen mh_14 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run \"npm run cook:people\"\n    at http://127.0.0.1:5321/src/render/people/cookedLoad.ts:15:35",
+    "error: Citizen mh_64 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run \"npm run cook:people\"\n    at http://127.0.0.1:5321/src/render/people/cookedLoad.ts:15:35",
+    "error: Citizen mh_00 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run \"npm run cook:people\"\n    at http://127.0.0.1:5321/src/render/people/cookedLoad.ts:15:35",
+    "error: Citizen mh_08 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run \"npm run cook:people\"\n    at http://127.0.0.1:5321/src/render/people/cookedLoad.ts:15:35",
+    "error: Citizen mh_38 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run \"npm run cook:people\"\n    at http://127.0.0.1:5321/src/render/people/cookedLoad.ts:15:35",
+    "error: Citizen mh_59 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run \"npm run cook:people\"\n    at http://127.0.0.1:5321/src/render/people/cookedLoad.ts:15:35",
+    "error: Citizen mh_45 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run \"npm run cook:people\"\n    at http://127.0.0.1:5321/src/render/people/cookedLoad.ts:15:35",
+    "error: Citizen mh_51 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run \"npm run cook:people\"\n    at http://127.0.0.1:5321/src/render/people/cookedLoad.ts:15:35",
+    "error: Citizen mh_18 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run \"npm run cook:people\"\n    at http://127.0.0.1:5321/src/render/people/cookedLoad.ts:15:35",
+    "error: Citizen mh_67 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run \"npm run cook:people\"\n    at http://127.0.0.1:5321/src/render/people/cookedLoad.ts:15:35",
+    "error: Citizen mh_04 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run \"npm run cook:people\"\n    at http://127.0.0.1:5321/src/render/people/cookedLoad.ts:15:35",
+    "error: Citizen mh_11 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run \"npm run cook:people\"\n    at http://127.0.0.1:5321/src/render/people/cookedLoad.ts:15:35",
+    "error: [roads] surface tiles failed in their worker Error: the road field was not handed the roads at (-429.9, -552)\n    at SpatialIndex.near (http://127.0.0.1:5321/src/world/roadField.ts:160:53)\n    at Object.query [as at] (http://127.0.0.1:5321/src/world/roadField.ts:411:28)\n    at deck (http://127.0.0.1:5321/src/render/roadSurfaceReads.ts:71:111)\n    at vergeTop (http://127.0.0.1:5321/src/render/roadSurfaceReads.ts:220:19)\n    at Object.sample (http://127.0.0.1:5321/src/render/mesh/tileMesh.ts:62:13)\n    at read (http://127.0.0.1:5321/src/render/mesh/stripShape.ts:134:11)\n    at stationed (http://127.0.0.1:5321/src/render/mesh/stripShape.ts:184:14)\n    at fitStrip (http://127.0.0.1:5321/src/render/mesh/stripShape.ts:329:39)\n    at http://127.0.0.1:5321/src/render/mesh/tileShape.ts:234:6\n    at Array.map (<anonymous>)",
+    "warning: [roads] the road tile workers failed; the tiles are built on the page Error: Error: the road field was not handed the roads at (-429.9, -552)\n    at worker.onmessage (http://127.0.0.1:5321/src/render/roadTilePool.ts:153:26)\n    at worker.onmessage (http://127.0.0.1:5321/src/jobs/jobPool.ts:253:25)",
+    "error: [roads] surface tiles failed in their worker Error: the road field was not handed the roads at (-414.1, -465)\n    at SpatialIndex.near (http://127.0.0.1:5321/src/world/roadField.ts:160:53)\n    at Object.query [as at] (http://127.0.0.1:5321/src/world/roadField.ts:411:28)\n    at deck (http://127.0.0.1:5321/src/render/roadSurfaceReads.ts:71:111)\n    at Object.sample (http://127.0.0.1:5321/src/render/mesh/tileMesh.ts:62:13)\n    at read (http://127.0.0.1:5321/src/render/mesh/stripShape.ts:134:11)\n    at stationed (http://127.0.0.1:5321/src/render/mesh/stripShape.ts:180:11)\n    at fitStrip (http://127.0.0.1:5321/src/render/mesh/stripShape.ts:329:39)\n    at http://127.0.0.1:5321/src/render/mesh/tileShape.ts:234:6\n    at Array.map (<anonymous>)\n    at refineShape (http://127.0.0.1:5321/src/render/mesh/tileShape.ts:233:30)",
+    "error: [roads] surface tiles failed in their worker Error: the road field was not handed the roads at (-45.1, -552)\n    at SpatialIndex.near (http://127.0.0.1:5321/src/world/roadField.ts:160:53)\n    at Object.query [as at] (http://127.0.0.1:5321/src/world/roadField.ts:411:28)\n    at deck (http://127.0.0.1:5321/src/render/roadSurfaceReads.ts:71:111)\n    at vergeTop (http://127.0.0.1:5321/src/render/roadSurfaceReads.ts:220:19)\n    at Object.sample (http://127.0.0.1:5321/src/render/mesh/tileMesh.ts:62:13)\n    at read (http://127.0.0.1:5321/src/render/mesh/stripShape.ts:134:11)\n    at stationed (http://127.0.0.1:5321/src/render/mesh/stripShape.ts:180:11)\n    at fitStrip (http://127.0.0.1:5321/src/render/mesh/stripShape.ts:329:39)\n    at http://127.0.0.1:5321/src/render/mesh/tileShape.ts:234:6\n    at Array.map (<anonymous>)",
+    "warning: [roads] the road tile workers failed; the tiles are built on the page Error: Error: the road field was not handed the roads at (-414.1, -465)\n    at worker.onmessage (http://127.0.0.1:5321/src/render/roadTilePool.ts:153:26)\n    at worker.onmessage (http://127.0.0.1:5321/src/jobs/jobPool.ts:253:25)",
+    "warning: [roads] the road tile workers failed; the tiles are built on the page Error: Error: the road field was not handed the roads at (-45.1, -552)\n    at worker.onmessage (http://127.0.0.1:5321/src/render/roadTilePool.ts:153:26)\n    at worker.onmessage (http://127.0.0.1:5321/src/jobs/jobPool.ts:253:25)",
+    "error: [roads] surface tiles failed in their worker Error: the road field was not handed the roads at (-525.1, -552)\n    at SpatialIndex.near (http://127.0.0.1:5321/src/world/roadField.ts:160:53)\n    at Object.query [as at] (http://127.0.0.1:5321/src/world/roadField.ts:411:28)\n    at deck (http://127.0.0.1:5321/src/render/roadSurfaceReads.ts:71:111)\n    at vergeTop (http://127.0.0.1:5321/src/render/roadSurfaceReads.ts:220:19)\n    at Object.sample (http://127.0.0.1:5321/src/render/mesh/tileMesh.ts:62:13)\n    at read (http://127.0.0.1:5321/src/render/mesh/stripShape.ts:134:11)\n    at stationed (http://127.0.0.1:5321/src/render/mesh/stripShape.ts:180:11)\n    at fitStrip (http://127.0.0.1:5321/src/render/mesh/stripShape.ts:329:39)\n    at http://127.0.0.1:5321/src/render/mesh/tileShape.ts:234:6\n    at Array.map (<anonymous>)",
+    "error: [roads] surface tiles failed in their worker Error: the road field was not handed the roads at (50.09999999999999, -552)\n    at SpatialIndex.near (http://127.0.0.1:5321/src/world/roadField.ts:160:53)\n    at Object.query [as at] (http://127.0.0.1:5321/src/world/roadField.ts:411:28)\n    at deck (http://127.0.0.1:5321/src/render/roadSurfaceReads.ts:71:111)\n    at vergeTop (http://127.0.0.1:5321/src/render/roadSurfaceReads.ts:220:19)\n    at Object.sample (http://127.0.0.1:5321/src/render/mesh/tileMesh.ts:62:13)\n    at read (http://127.0.0.1:5321/src/render/mesh/stripShape.ts:134:11)\n    at stationed (http://127.0.0.1:5321/src/render/mesh/stripShape.ts:184:14)\n    at fitStrip (http://127.0.0.1:5321/src/render/mesh/stripShape.ts:329:39)\n    at http://127.0.0.1:5321/src/render/mesh/tileShape.ts:234:6\n    at Array.map (<anonymous>)",
+    "error: [roads] surface tiles failed in their worker Error: the road field was not handed the roads at (69.9, -552)\n    at SpatialIndex.near (http://127.0.0.1:5321/src/world/roadField.ts:160:53)\n    at Object.query [as at] (http://127.0.0.1:5321/src/world/roadField.ts:411:28)\n    at deck (http://127.0.0.1:5321/src/render/roadSurfaceReads.ts:71:111)\n    at vergeTop (http://127.0.0.1:5321/src/render/roadSurfaceReads.ts:220:19)\n    at Object.sample (http://127.0.0.1:5321/src/render/mesh/tileMesh.ts:62:13)\n    at read (http://127.0.0.1:5321/src/render/mesh/stripShape.ts:134:11)\n    at stationed (http://127.0.0.1:5321/src/render/mesh/stripShape.ts:180:11)\n    at fitStrip (http://127.0.0.1:5321/src/render/mesh/stripShape.ts:329:39)\n    at http://127.0.0.1:5321/src/render/mesh/tileShape.ts:234:6\n    at Array.map (<anonymous>)"
+  ],
+  "steps": [
+    {
+      "i": 0,
+      "step": "eval",
+      "value": "started"
+    },
+    {
+      "i": 1,
+      "step": "until",
+      "value": {
+        "name": "city shown",
+        "seconds": 13.184
+      }
+    },
+    {
+      "i": 2,
+      "step": "until",
+      "value": {
+        "name": "curtain gone",
+        "seconds": 8.186
+      }
+    },
+    {
+      "i": 3,
+      "step": "press"
+    },
+    {
+      "i": 4,
+      "step": "press"
+    },
+    {
+      "i": 5,
+      "step": "wait"
+    },
+    {
+      "i": 6,
+      "step": "eval",
+      "value": 1
+    },
+    {
+      "i": 7,
+      "step": "setView"
+    },
+    {
+      "i": 8,
+      "step": "wait"
+    },
+    {
+      "i": 9,
+      "step": "shot",
+      "file": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\reports\\vigia\\entregas\\a40805b3-etapa0\\depois-1\\09-distrito.png"
+    },
+    {
+      "i": 10,
+      "step": "setView"
+    },
+    {
+      "i": 11,
+      "step": "wait"
+    },
+    {
+      "i": 12,
+      "step": "shot",
+      "file": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\reports\\vigia\\entregas\\a40805b3-etapa0\\depois-1\\12-quadra.png"
+    },
+    {
+      "i": 13,
+      "step": "setView"
+    },
+    {
+      "i": 14,
+      "step": "wait"
+    },
+    {
+      "i": 15,
+      "step": "shot",
+      "file": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\reports\\vigia\\entregas\\a40805b3-etapa0\\depois-1\\15-rua.png"
+    },
+    {
+      "i": 16,
+      "step": "setView"
+    },
+    {
+      "i": 17,
+      "step": "wait"
+    },
+    {
+      "i": 18,
+      "step": "shot",
+      "file": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\reports\\vigia\\entregas\\a40805b3-etapa0\\depois-1\\18-fachada.png"
+    }
+  ]
+}

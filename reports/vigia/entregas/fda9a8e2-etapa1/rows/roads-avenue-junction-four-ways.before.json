@@ -1,0 +1,205 @@
+{
+ "id": "Roads/avenue junction/four ways",
+ "key": "Roads/avenue junction/four ways",
+ "metrics": {
+  "id": "Roads/avenue junction/four ways",
+  "triangles": 2708,
+  "vertices": 3608,
+  "index": "Uint16",
+  "geometryBytes": 333462,
+  "bytesPerVertex": 56,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B roadSection:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [terrain-splat-v34-verge-lots] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-footway-lots-own] (vertex colours, roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-carriageway-lots-own] (vertex colours, roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [paint-worn-aa] (transparent, roughness 0.72, metalness 0, opacity 1) | MeshStandardMaterial [paint-worn-aa-dashed] (transparent, roughness 0.72, metalness 0, opacity 1)",
+  "draws": 31,
+  "levels": [
+   {
+    "triangles": 2708,
+    "vertices": 3608
+   },
+   {
+    "triangles": 2041,
+    "vertices": 3133
+   }
+  ],
+  "hidden": 0,
+  "solids": "50 solids: 24 other, 26 quad",
+  "size": [
+   140.2002410888672,
+   0.6699999868869781,
+   140.2002410888672
+  ],
+  "pieces": [
+   {
+    "label": "verge",
+    "triangles": 212,
+    "vertices": 192
+   },
+   {
+    "label": "verge",
+    "triangles": 212,
+    "vertices": 192
+   },
+   {
+    "label": "verge",
+    "triangles": 212,
+    "vertices": 192
+   },
+   {
+    "label": "verge",
+    "triangles": 212,
+    "vertices": 192
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 240,
+    "vertices": 377
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 247,
+    "vertices": 386
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 240,
+    "vertices": 382
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 237,
+    "vertices": 374
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 121,
+    "vertices": 207
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 121,
+    "vertices": 207
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 121,
+    "vertices": 207
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 121,
+    "vertices": 205
+   },
+   {
+    "label": "asphalt",
+    "triangles": 90,
+    "vertices": 97
+   },
+   {
+    "label": "asphalt",
+    "triangles": 90,
+    "vertices": 100
+   },
+   {
+    "label": "asphalt",
+    "triangles": 90,
+    "vertices": 97
+   },
+   {
+    "label": "asphalt",
+    "triangles": 90,
+    "vertices": 97
+   },
+   {
+    "label": "markings-eee8d7",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "markings-eee8d7",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-eee8d7",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-ece9d9",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "markings-ece9d9",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-ece9d9",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "markings-ece9d9",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-eee8d7~dashed",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "markings-eee8d7~dashed",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "markings-eee8d7~dashed",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "markings-eee8d7~dashed",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "markings-f4f1e3~dashed",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "markings-f4f1e3~dashed",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "markings-f4f1e3~dashed",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "markings-f4f1e3~dashed",
+    "triangles": 4,
+    "vertices": 8
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   -0.05499999225139618,
+   0
+  ],
+  "distance": 91.80159053051307,
+  "floor": -0.8299999856948852,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.06996673688289402
+ ],
+ "distance": 91.80159053051307,
+ "error": null,
+ "overlap": null
+}

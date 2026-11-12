@@ -1,0 +1,488 @@
+      2 tests/render/support/surfaceMesh.ts
+      2 tests/render/surfaceMesh.spec.ts
+      1 tests/render/tessellation.spec.ts
+      2 tests/render/tileAttributes.spec.ts
+      1 tests/render/tileShapeFlip.spec.ts
+
+ RUN  v4.1.11 C:/Users/Jonathan/Documents/Projects/city/roadcraft/_wt-depois
+
+ ❯ tests/world/oldMapsIdentical.spec.ts (1 test | 1 failed) 665ms
+     × derive exactly what they derived before the road system 663ms
+ ❯ tests/arch/layers.spec.ts (6 tests | 1 failed) 187ms
+     × keeps three.js inside the render layer 51ms
+ ❯ tests/world/roadPaint.spec.ts (8 tests | 2 failed) 54ms
+     × Brazil: yellow between the directions, the dash and gap by the speed (1:2 under 60 km/h, 1:3 above) 6ms
+     × a double solid centre line, as the section says 4ms
+ ❯ tests/render/surfaceReads.spec.ts (2 tests | 2 failed) 7370ms
+     × build the grid and bends fixture byte for byte as before 1113ms
+     × build a generated city byte for byte as before 6255ms
+ ❯ tests/render/tessellation.spec.ts (3 tests | 3 failed) 69ms
+     × meshes a long thin band in triangles proportional to its area 6ms
+     × meshes a wide band without exploding either 1ms
+     × keeps a whole city grid inside the frame budget 59ms
+ ❯ tests/render/surfaceMesh.spec.ts (11 tests | 5 failed) 18ms
+     × refines until no edge exceeds the limit 7ms
+     × adds a skirt only when a bottom is supplied 1ms
+     × gives the skirt an outward normal 1ms
+     × smears a triangle that straddles two frames, when left alone 0ms
+     × keeps every triangle inside one frame when asked to 2ms
+ ❯ tests/world/laneLines.spec.ts (3 tests | 3 failed) 14ms
+     × paints a one-way street white, with no centre line 8ms
+     × keeps the yellow centre line of a two-way street 4ms
+     × separates an avenue's directions in its class colour and its lanes in white 1ms
+ ❯ tests/render/tileAttributes.spec.ts (2 tests | 1 failed) 11ms
+     × carries no colour or section without a tint or a section, and a block reading them gets white and no section 8ms
+ ❯ tests/render/tileShapeFlip.spec.ts (5 tests | 4 failed) 8ms
+     × covers a curb ramp, 6 x 1.8 at 0.75 exactly, one way round, within the edge limit 4ms
+     × covers a verge strip, 120 x 4 at 3.2 exactly, one way round, within the edge limit 1ms
+     × covers a road deck, 90 x 11 at 3.2 exactly, one way round, within the edge limit 0ms
+     × covers a plate with a hole, 40 x 30 at 3.2 exactly, one way round, within the edge limit 1ms
+ ❯ tests/render/roadTileWorkers.spec.ts (10 tests | 4 failed) 22532ms
+     × build the grid and bends fixture as the page does, byte for byte 2608ms
+     × build a generated city as the page does, byte for byte 2636ms
+     × build the fixture with a road at authored heights, a flush footway and paving as the page does, byte for byte 3514ms
+     × leaves the page nothing to keep of a tile its worker kept: the key marked, no arrays held 1652ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 26 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/arch/layers.spec.ts > determinism > keeps three.js inside the render layer
+AssertionError: expected [ …(25) ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "dev/peopleBuild/facialMorphs.ts",
++   "dev/peopleBuild/personBuild.ts",
++   "dev/peopleBuild/personMesh.ts",
++   "dev/peopleBuild/personRig.ts",
++   "dev/peopleBuild/skinAppearance.ts",
++   "dev/peopleCook/bakeAtlas.ts",
++   "dev/peopleCook/cook.ts",
++   "dev/peopleCook/impostor.ts",
++   "dev/peopleCook/main.ts",
++   "dev/peopleCook/pack.ts",
++   "dev/peopleLab/bodySculpt.ts",
++   "dev/peopleLab/build.ts",
++   "dev/peopleLab/clothStyle.ts",
++   "dev/peopleLab/direct.ts",
++   "dev/peopleLab/dress.ts",
++   "dev/peopleLab/faceRig.ts",
++   "dev/peopleLab/handDrag.ts",
++   "dev/peopleLab/main.ts",
++   "dev/peopleLab/navigation.ts",
++   "dev/peopleLab/polish.ts",
++   "dev/peopleLab/pose.ts",
++   "dev/peopleLab/posing.ts",
++   "dev/peopleLab/reshape.ts",
++   "dev/peopleLab/sculpt.ts",
++   "dev/peopleLab/thumbs.ts",
++ ]
+
+ ❯ tests/arch/layers.spec.ts:54:23
+     52|     }
+     53|
+     54|     expect(offenders).toEqual([]);
+       |                       ^
+     55|   });
+     56| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/26]⎯
+
+ FAIL  tests/render/roadTileWorkers.spec.ts > road surface tiles made off the page > build the grid and bends fixture as the page does, byte for byte
+ FAIL  tests/render/roadTileWorkers.spec.ts > road surface tiles made off the page > build the fixture with a road at authored heights, a flush footway and paving as the page does, byte for byte
+ FAIL  tests/render/roadTileWorkers.spec.ts > the road tiles kept for a later session by their workers > leaves the page nothing to keep of a tile its worker kept: the key marked, no arrays held
+Error: the road field was not handed the roads at (198.8585340280854, 630.4923406430529)
+ ❯ SpatialIndex.near src/world/roadField.ts:253:55
+    251|     const key = cellKeyOf(Math.floor(x / this.cell), Math.floor(y / th…
+    252|     // DO NOT answer a point the roads handed over do not cover: its l…
+    253|     if (this.answers && !this.answers.has(key)) throw new Error(`the r…
+       |                                                       ^
+    254|     if (this.buckets.size === 0) return this.all;
+    255|     const bucket = this.buckets.get(key);
+ ❯ Object.query [as at] src/world/roadField.ts:529:30
+ ❯ deck src/render/roadSurfaceReads.ts:152:23
+ ❯ vergeTop src/render/roadSurfaceReads.ts:284:21
+ ❯ Object.sample src/render/mesh/tileMesh.ts:66:16
+ ❯ read src/render/mesh/stripShape.ts:146:13
+ ❯ stationed src/render/mesh/stripShape.ts:185:12
+ ❯ fitStrip src/render/mesh/stripShape.ts:283:40
+ ❯ src/render/mesh/tileShape.ts:235:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/26]⎯
+
+ FAIL  tests/render/roadTileWorkers.spec.ts > road surface tiles made off the page > build a generated city as the page does, byte for byte
+Error: the road field was not handed the roads at (-188.70000000000002, -174)
+ ❯ SpatialIndex.near src/world/roadField.ts:253:55
+    251|     const key = cellKeyOf(Math.floor(x / this.cell), Math.floor(y / th…
+    252|     // DO NOT answer a point the roads handed over do not cover: its l…
+    253|     if (this.answers && !this.answers.has(key)) throw new Error(`the r…
+       |                                                       ^
+    254|     if (this.buckets.size === 0) return this.all;
+    255|     const bucket = this.buckets.get(key);
+ ❯ Object.query [as at] src/world/roadField.ts:529:30
+ ❯ deck src/render/roadSurfaceReads.ts:152:23
+ ❯ vergeTop src/render/roadSurfaceReads.ts:284:21
+ ❯ Object.sample src/render/mesh/tileMesh.ts:66:16
+ ❯ read src/render/mesh/stripShape.ts:146:13
+ ❯ stationed src/render/mesh/stripShape.ts:189:16
+ ❯ fitStrip src/render/mesh/stripShape.ts:283:40
+ ❯ src/render/mesh/tileShape.ts:235:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/26]⎯
+
+ FAIL  tests/render/surfaceMesh.spec.ts > buildSurfaceMesh > refines until no edge exceeds the limit
+AssertionError: expected 96.04686356149273 to be less than or equal to 8.001
+ ❯ tests/render/surfaceMesh.spec.ts:68:36
+     66|     const mesh = build(rect(300, 60), 8);
+     67|     expect(mesh).not.toBeNull();
+     68|     expect(longestFlatEdge(mesh!)).toBeLessThanOrEqual(8.001);
+       |                                    ^
+     69|   });
+     70|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/26]⎯
+
+ FAIL  tests/render/surfaceMesh.spec.ts > buildSurfaceMesh > adds a skirt only when a bottom is supplied
+AssertionError: expected -4.010000228881836 to be close to -4, received difference is 0.010000228881835938, but expected 5e-7
+ ❯ tests/render/surfaceMesh.spec.ts:151:20
+    149|     const position = solid.geometry.getAttribute('position');
+    150|     for (let i = 0; i < position.count; i++) lowest = Math.min(lowest,…
+    151|     expect(lowest).toBeCloseTo(-4, 6);
+       |                    ^
+    152|   });
+    153|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/26]⎯
+
+ FAIL  tests/render/surfaceMesh.spec.ts > buildSurfaceMesh > gives the skirt an outward normal
+AssertionError: expected 0 to be greater than 0
+ ❯ tests/render/surfaceMesh.spec.ts:169:21
+    167|       }
+    168|     }
+    169|     expect(checked).toBeGreaterThan(0);
+       |                     ^
+    170|   });
+    171|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/26]⎯
+
+ FAIL  tests/render/surfaceMesh.spec.ts > texture frames at a junction corner > smears a triangle that straddles two frames, when left alone
+AssertionError: expected 1.1212121221152218 to be greater than 2
+ ❯ tests/render/surfaceMesh.spec.ts:225:42
+    223|     const mesh = make(false);
+    224|     expect(mesh).not.toBeNull();
+    225|     if (mesh) expect(worstStretch(mesh)).toBeGreaterThan(2);
+       |                                          ^
+    226|   });
+    227|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/26]⎯
+
+ FAIL  tests/render/surfaceMesh.spec.ts > texture frames at a junction corner > keeps every triangle inside one frame when asked to
+AssertionError: expected 1.1212121221152218 to be less than 1.01
+ ❯ tests/render/surfaceMesh.spec.ts:231:42
+    229|     const mesh = make(true);
+    230|     expect(mesh).not.toBeNull();
+    231|     if (mesh) expect(worstStretch(mesh)).toBeLessThan(1.01);
+       |                                          ^
+    232|   });
+    233| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/26]⎯
+
+ FAIL  tests/render/surfaceReads.spec.ts > road surface reads > build the grid and bends fixture byte for byte as before
+AssertionError: expected '64 fc0708eb8584b07e7d3c98881e0ae81059…' to be '75 32e7abb668a6e0481cb12572b1a0a41b98…' // Object.is equality
+
+Expected: "75 32e7abb668a6e0481cb12572b1a0a41b9860aa6221deab6305d38b98a16dd3eb"
+Received: "64 fc0708eb8584b07e7d3c98881e0ae81059dd690b0a02203b20e59903672a8394"
+
+ ❯ tests/render/surfaceReads.spec.ts:62:32
+     60|     const elevation = buildRoadElevation(net, ground);
+     61|     const own = buildRoadSurfaces(net, elevation, materials, ground);
+     62|     expect(bytesOf(own.group)).toBe(plain);
+       |                                ^
+     63|     const terrain = buildRoadSurfaces(net, elevation, materials, groun…
+     64|     expect(bytesOf(terrain.group)).toBe(onTerrain);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/26]⎯
+
+ FAIL  tests/render/surfaceReads.spec.ts > road surface reads > build a generated city byte for byte as before
+AssertionError: expected '28 5259f722b51aa5af22f25b017dfd0d0de6…' to be '36 8de0eb395f75ee872f213b1425817ae5f7…' // Object.is equality
+
+Expected: "36 8de0eb395f75ee872f213b1425817ae5f7ea944bd41e95be4f6702d8b5c3c8ad"
+Received: "28 5259f722b51aa5af22f25b017dfd0d0de66366be0c1d663e9acee55ee57ad061"
+
+ ❯ tests/render/surfaceReads.spec.ts:62:32
+     60|     const elevation = buildRoadElevation(net, ground);
+     61|     const own = buildRoadSurfaces(net, elevation, materials, ground);
+     62|     expect(bytesOf(own.group)).toBe(plain);
+       |                                ^
+     63|     const terrain = buildRoadSurfaces(net, elevation, materials, groun…
+     64|     expect(bytesOf(terrain.group)).toBe(onTerrain);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/26]⎯
+
+ FAIL  tests/render/tessellation.spec.ts > tessellation cost > meshes a long thin band in triangles proportional to its area
+AssertionError: expected 43.775706733301284 to be less than or equal to 8.000001
+ ❯ tests/render/tessellation.spec.ts:52:32
+     50|     const strip: MultiPoly = [[[[0, 0], [1400, 0], [1400, 1.5], [0, 1.…
+     51|     const built = mesh(strip)!;
+     52|     expect(longestEdge(built)).toBeLessThanOrEqual(MAX_EDGE + 1e-6);
+       |                                ^
+     53|     // 2 100 square units at an 8-unit edge is a few hundred triangles.
+     54|     expect(triangles(built)).toBeLessThan(4_000);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/26]⎯
+
+ FAIL  tests/render/tessellation.spec.ts > tessellation cost > meshes a wide band without exploding either
+AssertionError: expected 74.25673370139572 to be less than or equal to 8.000001
+ ❯ tests/render/tessellation.spec.ts:60:32
+     58|     const slab: MultiPoly = [[[[0, 0], [1400, 0], [1400, 60], [0, 60]]…
+     59|     const built = mesh(slab)!;
+     60|     expect(longestEdge(built)).toBeLessThanOrEqual(MAX_EDGE + 1e-6);
+       |                                ^
+     61|     expect(triangles(built)).toBeLessThan(20_000);
+     62|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/26]⎯
+
+ FAIL  tests/render/tessellation.spec.ts > tessellation cost > keeps a whole city grid inside the frame budget
+AssertionError: expected 75.88210825346987 to be less than or equal to 8.000001
+ ❯ tests/render/tessellation.spec.ts:88:34
+     86|       if (!built) continue;
+     87|       total += triangles(built);
+     88|       expect(longestEdge(built)).toBeLessThanOrEqual(MAX_EDGE + 1e-6);
+       |                                  ^
+     89|     }
+     90|     // The work is counted (triangles), never timed (tests/arch/testRu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/26]⎯
+
+ FAIL  tests/render/tileAttributes.spec.ts > a road strip and its attributes > carries no colour or section without a tint or a section, and a block reading them gets white and no section
+AssertionError: expected [ +0, -1, -1 ] to deeply equal [ +0, -1, +0 ]
+
+- Expected
++ Received
+
+  [
+    0,
+    -1,
+-   0,
++   -1,
+  ]
+
+ ❯ tests/render/tileAttributes.spec.ts:29:102
+     27|     expect(color.length).toBe(plain.positions.length);
+     28|     expect([...color].every((c) => c === 1)).toBe(true);
+     29|     for (let i = 0; i < section.length; i += 3) expect([section[i], se…
+       |                                                                                                      ^
+     30|     // A block whose material reads neither has neither.
+     31|     const bare = mergeTiles([plain], { name: 'kerb', material: new Mes…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/26]⎯
+
+ FAIL  tests/render/tileShapeFlip.spec.ts > the triangles of a surface > covers a curb ramp, 6 x 1.8 at 0.75 exactly, one way round, within the edge limit
+AssertionError: expected 6.26418390534633 to be less than or equal to 0.7500000007500001
+ ❯ tests/render/tileShapeFlip.spec.ts:52:25
+     50|       expect(s.windings.size).toBe(1);
+     51|       expect(s.windings.has(0)).toBe(false);
+     52|       expect(s.longest).toBeLessThanOrEqual(maxEdge * (1 + 1e-9));
+       |                         ^
+     53|     });
+     54|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/26]⎯
+
+ FAIL  tests/render/tileShapeFlip.spec.ts > the triangles of a surface > covers a verge strip, 120 x 4 at 3.2 exactly, one way round, within the edge limit
+AssertionError: expected 60.13318551349164 to be less than or equal to 3.2000000032000004
+ ❯ tests/render/tileShapeFlip.spec.ts:52:25
+     50|       expect(s.windings.size).toBe(1);
+     51|       expect(s.windings.has(0)).toBe(false);
+     52|       expect(s.longest).toBeLessThanOrEqual(maxEdge * (1 + 1e-9));
+       |                         ^
+     53|     });
+     54|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/26]⎯
+
+ FAIL  tests/render/tileShapeFlip.spec.ts > the triangles of a surface > covers a road deck, 90 x 11 at 3.2 exactly, one way round, within the edge limit
+AssertionError: expected 46.32493928760188 to be less than or equal to 3.2000000032000004
+ ❯ tests/render/tileShapeFlip.spec.ts:52:25
+     50|       expect(s.windings.size).toBe(1);
+     51|       expect(s.windings.has(0)).toBe(false);
+     52|       expect(s.longest).toBeLessThanOrEqual(maxEdge * (1 + 1e-9));
+       |                         ^
+     53|     });
+     54|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/26]⎯
+
+ FAIL  tests/render/tileShapeFlip.spec.ts > the triangles of a surface > covers a plate with a hole, 40 x 30 at 3.2 exactly, one way round, within the edge limit
+AssertionError: expected 40 to be less than or equal to 3.2000000032000004
+ ❯ tests/render/tileShapeFlip.spec.ts:52:25
+     50|       expect(s.windings.size).toBe(1);
+     51|       expect(s.windings.has(0)).toBe(false);
+     52|       expect(s.longest).toBeLessThanOrEqual(maxEdge * (1 + 1e-9));
+       |                         ^
+     53|     });
+     54|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/26]⎯
+
+ FAIL  tests/world/laneLines.spec.ts > lane lines > paints a one-way street white, with no centre line
+AssertionError: expected 0 to be greater than 0
+ ❯ tests/world/laneLines.spec.ts:25:26
+     23|     const yellow = roadType(1).line;
+     24|     const lines = paint(1, 'aToB');
+     25|     expect(lines.length).toBeGreaterThan(0);
+       |                          ^
+     26|     expect(lines.every((s) => s.color === LANE_LINE)).toBe(true);
+     27|     expect(lines.some((s) => s.color === yellow)).toBe(false);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/26]⎯
+
+ FAIL  tests/world/laneLines.spec.ts > lane lines > keeps the yellow centre line of a two-way street
+AssertionError: expected [] to deeply equal [ '#e1c45a' ]
+
+- Expected
++ Received
+
+- [
+-   "#e1c45a",
+- ]
++ []
+
+ ❯ tests/world/laneLines.spec.ts:32:39
+     30|   it('keeps the yellow centre line of a two-way street', () => {
+     31|     const lines = paint(1, 'both');
+     32|     expect(lines.map((s) => s.color)).toEqual([roadType(1).line]);
+       |                                       ^
+     33|   });
+     34|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/26]⎯
+
+ FAIL  tests/world/laneLines.spec.ts > lane lines > separates an avenue's directions in its class colour and its lanes in white
+AssertionError: expected [] to deeply equal [ '#eee8d7' ]
+
+- Expected
++ Received
+
+- [
+-   "#eee8d7",
+- ]
++ []
+
+ ❯ tests/world/laneLines.spec.ts:39:40
+     37|     const centre = lines.filter((s) => s.dash === null);
+     38|     const dividers = lines.filter((s) => s.dash !== null);
+     39|     expect(centre.map((s) => s.color)).toEqual([roadType(2).line]);
+       |                                        ^
+     40|     expect(dividers.length).toBe(2);
+     41|     expect(dividers.every((s) => s.color === LANE_LINE)).toBe(true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/26]⎯
+
+ FAIL  tests/world/oldMapsIdentical.spec.ts > old maps > derive exactly what they derived before the road system
+AssertionError: test town: derived: expected [ …(905) ] to deeply equal [ …(905) ]
+
+- Expected
++ Received
+
+@@ -741,29 +741,29 @@
+    "walk 738 footway 8696119429856746",
+    "walk 739 footway 4747008507353433",
+    "walk 740 footway 1150324821859817",
+    "walk 741 footway 969947354917462",
+    "walk 742 footway 5335651354213934",
+-   "marks 1 4389049835376074",
++   "marks 1 8580637022438695",
+    "section 1 {\"carriageway\":7,\"median\":0,\"lanes\":[{\"offset\":-1.75,\"width\":3.5,\"index\":0},{\"offset\":-5.25,\"width\":3.5,\"index\":1}],\"side\":{\"curb\":{\"inner\":7,\"outer\":7.15},\"furnishing\":{\"inner\":7.15,\"outer\":8.06},\"through\":{\"inner\":8.06,\"outer\":9},\"frontage\":{\"inner\":9,\"outer\":9}},\"walkable\":true}",
+-   "marks 2 4576985143985376",
++   "marks 2 8580637022438695",
+    "section 2 {\"carriageway\":7,\"median\":0,\"lanes\":[{\"offset\":-1.75,\"width\":3.5,\"index\":0},{\"offset\":-5.25,\"width\":3.5,\"index\":1}],\"side\":{\"curb\":{\"inner\":7,\"outer\":7.15},\"furnishing\":{\"inner\":7.15,\"outer\":8.06},\"through\":{\"inner\":8.06,\"outer\":9},\"frontage\":{\"inner\":9,\"outer\":9}},\"walkable\":true}",
+-   "marks 3 5364783082762067",
++   "marks 3 8580637022438695",
+    "section 3 {\"carriageway\":7,\"median\":0,\"lanes\":[{\"offset\":-1.75,\"width\":3.5,\"index\":0},{\"offset\":-5.25,\"width\":3.5,\"index\":1}],\"side\":{\"curb\":{\"inner\":7,\"outer\":7.15},\"furnishing\":{\"inner\":7.15,\"outer\":8.06},\"through\":{\"inner\":8.06,\"outer\":9},\"frontage\":{\"inner\":9,\"outer\":9}},\"walkable\":true}",
+-   "marks 4 8245684094558479",
++   "marks 4 8580637022438695",
+    "section 4 {\"carriageway\":7,\"median\":0,\"lanes\":[{\"offset\":-1.75,\"width\":3.5,\"index\":0},{\"offset\":-5.25,\"width\":3.5,\"index\":1}],\"side\":{\"curb\":{\"inner\":7,\"outer\":7.15},\"furnishing\":{\"inner\":7.15,\"outer\":8.06},\"through\":{\"inner\":8.06,\"outer\":9},\"frontage\":{\"inner\":9,\"outer\":9}},\"walkable\":true}",
+-   "marks 5 4928387493887700",
++   "marks 5 8580637022438695",
+    "section 5 {\"carriageway\":7,\"median\":0,\"lanes\":[{\"offset\":-1.75,\"width\":3.5,\"index\":0},{\"offset\":-5.25,\"width\":3.5,\"index\":1}],\"side\":{\"curb\":{\"inner\":7,\"outer\":7.15},\"furnishing\":{\"inner\":7.15,\"outer\":8.06},\"through\":{\"inner\":8.06,\"outer\":9},\"frontage\":{\"inner\":9,\"outer\":9}},\"walkable\":true}",
+-   "marks 6 3023326417549644",
++   "marks 6 8580637022438695",
+    "section 6 {\"carriageway\":7,\"median\":0,\"lanes\":[{\"offset\":-1.75,\"width\":3.5,\"index\":0},{\"offset\":-5.25,\"width\":3.5,\"index\":1}],\"side\":{\"curb\":{\"inner\":7,\"outer\":7.15},\"furnishing\":{\"inner\":7.15,\"outer\":8.06},\"through\":{\"inner\":8.06,\"outer\":9},\"frontage\":{\"inner\":9,\"outer\":9}},\"walkable\":true}",
+-   "marks 7 7407415698634727",
++   "marks 7 8580637022438695",
+    "section 7 {\"carriageway\":7,\"median\":0,\"lanes\":[{\"offset\":-1.75,\"width\":3.5,\"index\":0},{\"offset\":-5.25,\"width\":3.5,\"index\":1}],\"side\":{\"curb\":{\"inner\":7,\"outer\":7.15},\"furnishing\":{\"inner\":7.15,\"outer\":8.06},\"through\":{\"inner\":8.06,\"outer\":9},\"frontage\":{\"inner\":9,\"outer\":9}},\"walkable\":true}",
+-   "marks 8 274472135179737",
++   "marks 8 8580637022438695",
+    "section 8 {\"carriageway\":7,\"median\":0,\"lanes\":[{\"offset\":-1.75,\"width\":3.5,\"index\":0},{\"offset\":-5.25,\"width\":3.5,\"index\":1}],\"side\":{\"curb\":{\"inner\":7,\"outer\":7.15},\"furnishing\":{\"inner\":7.15,\"outer\":8.06},\"through\":{\"inner\":8.06,\"outer\":9},\"frontage\":{\"inner\":9,\"outer\":9}},\"walkable\":true}",
+-   "marks 9 6088778741201966",
++   "marks 9 8580637022438695",
+    "section 9 {\"carriageway\":7,\"median\":0,\"lanes\":[{\"offset\":-1.75,\"width\":3.5,\"index\":0},{\"offset\":-5.25,\"width\":3.5,\"index\":1}],\"side\":{\"curb\":{\"inner\":7,\"outer\":7.15},\"furnishing\":{\"inner\":7.15,\"outer\":8.06},\"through\":{\"inner\":8.06,\"outer\":9},\"frontage\":{\"inner\":9,\"outer\":9}},\"walkable\":true}",
+-   "marks 10 6073075210689227",
++   "marks 10 8580637022438695",
+    "section 10 {\"carriageway\":7,\"median\":0,\"lanes\":[{\"offset\":-1.75,\"width\":3.5,\"index\":0},{\"offset\":-5.25,\"width\":3.5,\"index\":1}],\"side\":{\"curb\":{\"inner\":7,\"outer\":7.15},\"furnishing\":{\"inner\":7.15,\"outer\":8.06},\"through\":{\"inner\":8.06,\"outer\":9},\"frontage\":{\"inner\":9,\"outer\":9}},\"walkable\":true}",
+    "marks 11 8580637022438695",
+    "section 11 {\"carriageway\":5,\"median\":0,\"lanes\":[{\"offset\":-1.5,\"width\":3,\"index\":0}],\"side\":{\"curb\":{\"inner\":5,\"outer\":5.15},\"furnishing\":{\"inner\":5.15,\"outer\":6.0600000000000005},\"through\":{\"inner\":6.0600000000000005,\"outer\":7},\"frontage\":{\"inner\":7,\"outer\":7}},\"walkable\":true}",
+    "marks 12 8580637022438695",
+    "section 12 {\"carriageway\":5,\"median\":0,\"lanes\":[{\"offset\":-1.5,\"width\":3,\"index\":0}],\"side\":{\"curb\":{\"inner\":5,\"outer\":5.15},\"furnishing\":{\"inner\":5.15,\"outer\":6.0600000000000005},\"through\":{\"inner\":6.0600000000000005,\"outer\":7},\"frontage\":{\"inner\":7,\"outer\":7}},\"walkable\":true}",
+
+ ❯ tests/world/oldMapsIdentical.spec.ts:57:55
+     55|     for (const name of Object.keys(before.lines)) {
+     56|       for (const part of Object.keys(before.lines[name]!)) {
+     57|         expect(now[name]?.[part], `${name}: ${part}`).toEqual(before.l…
+       |                                                       ^
+     58|       }
+     59|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/26]⎯
+
+ FAIL  tests/world/roadPaint.spec.ts > the map paint standard > Brazil: yellow between the directions, the dash and gap by the speed (1:2 under 60 km/h, 1:3 above)
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/world/roadPaint.spec.ts:65:27
+     63|     const specs = segmentMarkings(ribbon, 0, 0, 0, 'br');
+     64|     const centre = centreStrokes(specs, br.centre!);
+     65|     expect(centre.length).toBe(1);
+       |                           ^
+     66|     expect(centre[0]!.dash).toEqual([m(3), m(6)]);
+     67|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/26]⎯
+
+ FAIL  tests/world/roadPaint.spec.ts > the map paint standard > a double solid centre line, as the section says
+AssertionError: expected +0 to be 2 // Object.is equality
+
+- Expected
++ Received
+
+- 2
++ 0
+
+ ❯ tests/world/roadPaint.spec.ts:76:27
+     74|     const specs = segmentMarkings(net.ribbons.get(seg.id)!, 0, 0, 0, '…
+     75|     const centre = specs.filter((s) => s.color === markingStyle('br').…
+     76|     expect(centre.length).toBe(2);
+       |                           ^
+     77|   });
+     78| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/26]⎯
+
+
+ Test Files  10 failed | 400 passed (410)
+      Tests  26 failed | 1905 passed (1931)
+   Start at  18:05:05
+   Duration  98.66s (transform 11.80s, setup 0ms, import 59.08s, tests 287.01s, environment 263ms)
+

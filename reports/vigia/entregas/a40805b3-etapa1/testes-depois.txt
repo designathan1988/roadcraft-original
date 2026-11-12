@@ -1,0 +1,9 @@
+
+ RUN  v4.1.11 C:/Users/Jonathan/Documents/Projects/city/roadcraft/_wt-depois
+
+
+ Test Files  55 passed (55)
+      Tests  231 passed (231)
+   Start at  17:05:53
+   Duration  22.28s (transform 6.69s, setup 0ms, import 19.34s, tests 60.60s, environment 4ms)
+

@@ -1,0 +1,2098 @@
+diff --git a/src/jobs/jobPool.ts b/src/jobs/jobPool.ts
+index b85d4f11..bb31f438 100644
+--- a/src/jobs/jobPool.ts
++++ b/src/jobs/jobPool.ts
+@@ -49,6 +49,9 @@ interface JobSpec {
+   readonly write: (to: JobTaker) => { readonly data: unknown; readonly transfer: Transferable[] };
+   /** Fit for a worker in a desktop job process (`processWorker.ts`): its message holds only what the job reads (`cellPool.ts` the ground's plates around it), copied there. Without it the job waits for the page's own workers. */
+   readonly crosses?: boolean;
++  /** What the job's worker keeps for the next job of the same affinity (`cellWork.ts` the buildings' programs, a worker's own heap): the job goes
++   *  to the worker that ran the last one (`owners`) while it is free, the jobs after it in the queue run first while it is busy (`AFFINITY_LOOK`). */
++  readonly affinity?: string;
+   readonly done: (answer: unknown) => void;
+   /** Its worker failed, or none can run it: the asker does it another way. */
+   readonly failed: (message: string) => void;
+@@ -65,6 +68,11 @@ export interface JobTicket {
+   readonly pending: boolean;
+ }
+ 
++/** How many of the queue's first jobs (its heap's first entries: its nearest few levels) are looked through for one whose worker is free, while
++ *  the first waits for its affinity's busy worker (`dispatch`). Past them the first goes to any free worker: DO NOT hold a free worker idle for
++ *  an affinity (the pool's work waits for no one worker), the affinity then moving with it. */
++const AFFINITY_LOOK = 32;
++
+ /** A job in the queue: waiting, running on a worker, or over (answered, cancelled or replaced by a newer one of its key). */
+ interface Queued { readonly seq: number; readonly spec: JobSpec; state: 'waiting' | 'running' | 'over'; rank: number }
+ 
+@@ -124,6 +132,23 @@ class JobQueue {
+     return this.heap[0] ?? null;
+   }
+ 
++  /** Of the first `look` entries of the heap (its top levels), the first in rank of the waiting jobs `fits` takes; null when none. */
++  near(look: number, fits: (job: Queued) => boolean): Queued | null {
++    let best: Queued | null = null;
++    for (let i = 0; i < this.heap.length && i < look; i++) {
++      const job = this.heap[i]!;
++      if (job.state === 'waiting' && (best === null || this.less(job, best)) && fits(job)) best = job;
++    }
++    return best;
++  }
++
++  /** A waiting job marked running out of its turn (`near`): left in the heap, skipped when popped (as one replaced). */
++  takeThis(job: Queued): void {
++    if (job.state !== 'waiting') return;
++    this.count--;
++    job.state = 'running';
++  }
++
+   /** The waiting job to run next, marked running; null when none waits. */
+   take(): Queued | null {
+     for (let job = this.pop(); job; job = this.pop()) {
+@@ -245,6 +270,8 @@ class JobSystem {
+   makeWorker: ((long: boolean) => Worker | null) | null = null;
+   /** Tiles of the map waiting for the long side's lanes (`tilesWaiting`): its workers take no queued job meanwhile. */
+   tilesWaiting = false;
++  /** The worker that ran the last job of each affinity (`JobSpec.affinity`), while it lives. */
++  readonly owners = new Map<string, Host>();
+ }
+ const system = new JobSystem();
+ 
+@@ -350,6 +377,12 @@ function retire(host: Host): void {
+   const at = system.workers.indexOf(host);
+   if (at >= 0) system.workers.splice(at, 1);
+   host.worker.terminate();
++  forgetOwner(host);
++}
++
++/** A worker gone (let go, or failed): the affinities it held go to whichever worker runs their next job. */
++function forgetOwner(host: Host): void {
++  for (const [key, owner] of system.owners) if (owner === host) system.owners.delete(key);
+ }
+ 
+ /** How long a worker of the page stands with nothing on it before it may be let go: a burst of jobs keeps its workers. */
+@@ -379,6 +412,7 @@ function retireIdle(): void {
+     if (left > 0) { waiting = Math.min(waiting, left); continue; }
+     system.workers.splice(i--, 1);
+     host.worker.terminate();
++    forgetOwner(host);
+     over--;
+   }
+   // The others idle not long enough yet: looked at again when they will have been.
+@@ -389,7 +423,7 @@ function retireIdle(): void {
+ 
+ /** A worker's queued job failed with it; a worker that failed whole (`dead`) is given no queued job again. */
+ function failHost(host: Host, message: string, dead: boolean): void {
+-  if (dead) host.failed = true;
++  if (dead) { host.failed = true; forgetOwner(host); }
+   const job = host.job;
+   host.job = null;
+   if (job) system.queue.fail(job, message);
+@@ -451,12 +485,42 @@ function growSpareLong(): Host | null {
+   return grow(true);
+ }
+ 
+-/** Each waiting job, nearest first, to a worker free for it (Cidade's `pump`): one queued job at a time on a worker. */
++/** Whether `host` may take a queued job now, as `hostFor` would give it one, free with nothing in flight: its affinity's worker (`JobSpec.affinity`). */
++function freeFor(host: Host, crosses: boolean): boolean {
++  if (host.job || host.failed || host.laneWork > 0 || host.firstWork > 0) return false;
++  if (keptClear(host) && system.workers.length > 1) return false;
++  if (host.long && system.workers.length > 1) return host.inPage || crosses;
++  return true;
++}
++
++/** A job's affinity's worker (`owners`), if it lives; null with none. */
++const ownerOf = (job: Queued): Host | null => (job.spec.affinity !== undefined ? system.owners.get(job.spec.affinity) ?? null : null);
++
++/** Each waiting job, nearest first, to a worker free for it (Cidade's `pump`): one queued job at a time on a worker. A job of an affinity to the
++ *  worker that ran its last (`JobSpec.affinity`: what it keeps read there, not made again); while that worker is busy the next jobs near the top
++ *  whose own worker is free (or that have none) go first (`AFFINITY_LOOK`); with none, the job to any free worker, its affinity with it. */
+ function dispatch(): void {
+-  for (let job = system.queue.peek(); job; job = system.queue.peek()) {
+-    let host: Host | null;
++  for (let top = system.queue.peek(); top; top = system.queue.peek()) {
++    let job = top;
++    let host: Host | null = null;
+     try {
+-      host = hostFor(job.spec.service, job.spec.crosses === true);
++      const owner = ownerOf(top);
++      if (owner && freeFor(owner, top.spec.crosses === true)) host = owner;
++      else if (owner) {
++        // Its worker busy: a job near the top with a free worker of its own, or none of its own and a free worker for it, goes first.
++        const other = system.queue.near(AFFINITY_LOOK, (q) => {
++          if (q === top) return false;
++          const own = ownerOf(q);
++          return own ? freeFor(own, q.spec.crosses === true) : true;
++        });
++        const own = other ? ownerOf(other) : null;
++        if (other && own) { job = other; host = own; }
++        else if (other) {
++          host = hostFor(other.spec.service, other.spec.crosses === true);
++          if (host) job = other;
++        }
++      }
++      host ??= hostFor(job.spec.service, job.spec.crosses === true);
+     } catch (error) {
+       system.queue.failAll(`no job workers: ${String(error)}`);
+       return;
+@@ -466,7 +530,8 @@ function dispatch(): void {
+       retireIdle();
+       return;
+     }
+-    system.queue.take();
++    if (job === top) system.queue.take(); else system.queue.takeThis(job);
++    if (job.spec.affinity !== undefined) system.owners.set(job.spec.affinity, host);
+     try {
+       const { data, transfer } = job.spec.write({ sharesMemory: host.inPage });
+       const message: ToJob = { port: queuePort(host, job.spec.service), service: job.spec.service, data, seq: job.seq };
+diff --git a/src/lab/catalog/engineBuildings.ts b/src/lab/catalog/engineBuildings.ts
+index 7d37ae30..27d92fbb 100644
+--- a/src/lab/catalog/engineBuildings.ts
++++ b/src/lab/catalog/engineBuildings.ts
+@@ -31,9 +31,10 @@ const DENSITIES = ['low', 'medium', 'high'] as const;
+ /** A building's floors: its height over its storey. */
+ const floorsOf = (b: Building): number => Math.max(1, Math.round(buildingHeight(b) / Math.max(0.5, b.storeyHeight)));
+ 
+-/** The far levels of every building the generators make, each built alone by the code the building layer's cells run: its facade from afar (L1, the bays
+- *  laid as runs, `emitChunk` far), its masses at the cell's, the tile's and the plate's detail (`massing.ts` emitMassing, packed as the GPU takes them by
+- *  `cellArrays.ts` cellMass, drawn by `massCells.ts` cellMesh), and its base (`massBase.ts` emitBase). */
++/** The far levels of every building the generators make, each drawn from ONE walk of the building (`buildingMesh.ts` emitProgram), as the
++ *  building layer's cells draw them: its facade from afar (L1, the bays laid as runs, the program's `far`), its masses at the cell's, the tile's
++ *  and the plate's detail (`massing.ts` massOf over the program, packed as the GPU takes them by `cellArrays.ts` cellMass, drawn by `massCells.ts`
++ *  cellMesh), and its base (`massBase.ts` writeBase over the program). */
+ export function engineBuildingFarItems(add: Add): void {
+   const kit = createBuildingKit(16);
+   const cache: BatchCache = new Map();
+@@ -49,7 +50,7 @@ export function engineBuildingFarItems(add: Add): void {
+       pieces: piecesOf(facade.group), object: shown(facade.group, cache), countKey: `building-l1:${label}`,
+       notes: ['the bays laid as runs, their windows drawn by the facade shader (facadeLevel.ts); what is set into an opening left to the shader'] });
+     for (const [level, detail] of [['cell', CELL_DETAIL], ['tile', TILE_DETAIL], ['plate', PLATE_DETAIL]] as const) {
+-      const chunk = massOf(program.mass, detail);
++      const chunk = massOf(program, detail);
+       const mass = chunk ? cellMass([chunk]) : null;
+       if (!mass) continue;
+       const mesh = cellMesh(mass, kit);
+@@ -58,7 +59,7 @@ export function engineBuildingFarItems(add: Add): void {
+         notes: [`left out or laid flat at this level: up to ${detail.drop} m${detail.boxes ? ', pitched roofs as boxes' : ''}; the windows drawn by the massing shader`] });
+     }
+     const writer = new CellWriter();
+-    writeBase(writer, program.mass);
++    writeBase(writer, program);
+     if (writer.index.length) {
+       const g = new BufferGeometryClass();
+       g.setAttribute('position', new BufferAttribute(new Float32Array(writer.position), 3));
+diff --git a/src/render/buildings/buildingMesh.ts b/src/render/buildings/buildingMesh.ts
+index 551c0c90..5ff64d86 100644
+--- a/src/render/buildings/buildingMesh.ts
++++ b/src/render/buildings/buildingMesh.ts
+@@ -108,8 +108,8 @@ import { FACADE_FLIP, FACADE_KIND, FACADE_STREAK, STREAK_SILL } from './facadeLe
+ import { gpuOnlyAttributes } from '../mesh/gpuOnly';
+ import { facadeProps } from './facadeProps';
+ import { GLASS_SHARE, LOT_COLOURS, SAW_GLASS_RGB, TERRACE_RGB, massColours, rgbOf, shadeOf as massShade } from './massing';
+-import { recordBase } from './massBase';
+-import { type BuildingProgram, MASS_FLATTENED, MASS_KEEP, MASS_PITCHED, type MassBay, MassRecorder, type MassSide, type ProgramSummary } from './program';
++import { recordBase, recordBaseLots } from './massBase';
++import { type BuildingProgram, type LotsProgram, MASS_FLATTENED, MASS_KEEP, MASS_PITCHED, type MassBay, MassRecorder, type MassSide, type ProgramSummary, summaryOf } from './program';
+ import { PARASOL_HALF, PARASOL_HIGH, PARASOL_LOW, ROOF_COLOURS, TANK_COLOURS, machineRooms, roofPlantOf, terraceDeck, terraceParasols, terraceSeed } from './roofPlan';
+ import type { FlagInstance } from './flagLayer';
+ import type { BuildingChunk, LotGround, LotGroundRecipe, PartBatch, RunChunk, ShellChunk } from './chunk';
+@@ -3261,14 +3261,18 @@ function emitFence(e: Emitter, el: BuildingElement, z0: number, z1: number, c: P
+   }
+   // Posts every couple of metres on a fence, closer together on a railing, at both ends
+   const spacing = light ? m(0.45) : m(2);
+-  // A fence's posts, 12 cm thick two metres apart, under the far level's error (`FLAT_DEPTH`); a railing's close ones read together and stay.
+-  const posts = light || !e.shell.far ? Math.max(2, Math.round(el.w / spacing) + 1) : 0;
++  // A fence's posts, 12 cm thick two metres apart, under the far level's error (`FLAT_DEPTH`): the detail's alone (`only(NEAR, ...)`, DO NOT ask
++  // whether the walk has a far level: a walk writing both left them out of the detail too); a railing's close ones read together and stay.
++  const posts = Math.max(2, Math.round(el.w / spacing) + 1);
+   const reach = Math.max(0, half - t - PART_INSET);
+-  for (let k = 0; k < posts; k++) {
+-    const u = -reach + (2 * reach * k) / (posts - 1);
+-    const p = at(u, 0);
+-    e.box(p.x - t, p.y - t, p.x + t, p.y + t, z0, z1 + m(0.05), c);
+-  }
++  const lay = (): void => {
++    for (let k = 0; k < posts; k++) {
++      const u = -reach + (2 * reach * k) / (posts - 1);
++      const p = at(u, 0);
++      e.box(p.x - t, p.y - t, p.x + t, p.y + t, z0, z1 + m(0.05), c);
++    }
++  };
++  if (light) lay(); else e.only(NEAR, lay);
+ }
+ /** A fence rail's height off the whole centimetre: 5 mm. */
+ const RAIL_OFF = m(0.005);
+@@ -3435,10 +3439,11 @@ function emitLotPart(e: Emitter, el: BuildingElement, x0: number, y0: number, x1
+       return;
+     }
+     default: {
+-      // The drain: a frame and its slots, a hair over the paving (under the far level's error, `FLAT_DEPTH`).
+-      if (e.shell.far) return;
+-      e.box(x0, y0, x1, y1, z0, z0 + m(0.02), DRAIN_GRATE);
+-      for (let k = 1; k < 5; k++) part(k / 5 - 0.03, k / 5 + 0.03, 0.1, 0.9, z0 + m(0.02), z0 + m(0.025), LAMP_POST);
++      // The drain: a frame and its slots, a hair over the paving (under the far level's error, `FLAT_DEPTH`): the detail's alone.
++      e.only(NEAR, () => {
++        e.box(x0, y0, x1, y1, z0, z0 + m(0.02), DRAIN_GRATE);
++        for (let k = 1; k < 5; k++) part(k / 5 - 0.03, k / 5 + 0.03, 0.1, 0.9, z0 + m(0.02), z0 + m(0.025), LAMP_POST);
++      });
+     }
+   }
+ }
+@@ -4196,21 +4201,38 @@ export function emitProgram(b: Building, groundAt: GroundAt, pavedAt?: PavedAt,
+   const lotGround = near || far
+     ? emitLots(resolved, lots, closed.length === 0, groundAt, shell, levels, floor, pavedAt, inLot, entrances)
+     : lotGroundAlone(resolved, lots, floor, groundAt, pavedAt);
+-  recordLots(rec, resolved, floor, groundAt, pavedAt);
+-  recordBase(rec, b, floor, groundAt, signature, o.tone);
+-  const summary: ProgramSummary = {
+-    ...(lotGround ? { lotGround } : {}),
+-    ...(signature && floor !== undefined ? { signatureFloor: floor } : {}),
+-    ...(flags.length ? { flags } : {}),
++  recordBase(rec, b, floor, signature, o.tone);
++  // The body kept over the floor it was laid on, the lots apart on it (`program.ts`): a building's floor measured anew walks its lots alone (`emitLotsAt`).
++  const lotRec = new MassRecorder(rec.frame, rec.seed);
++  recordLots(lotRec, resolved, floor, groundAt, pavedAt);
++  recordBaseLots(lotRec, b, floor, groundAt);
++  const up = floor ?? 0;
++  const program: BuildingProgram = {
++    mass: rec.done(up),
++    flags: flags.map((q) => ({ ...q, y: q.y - up })),
++    lots: lotRec.lots(floor ?? null, lotGround, signature && floor !== undefined ? floor : undefined),
+   };
++  const summary = summaryOf(program);
+   return {
+-    mass: rec.done(),
+-    summary,
++    ...program,
+     ...(near ? { near: levelChunk(near, summary) } : {}),
+     ...(far ? { far: levelChunk(far, summary) } : {}),
+   };
+ }
+ 
++/** A building's lots part alone on `floor` (`program.ts` LotsProgram: null, no closed block): what a walk of it on that floor lays of its paved
++ *  lots for the masses and the base, its lots' ground, a signature building's floor. Its body read from its program as it was (kept over its floor). */
++export function emitLotsAt(b: Building, floor: number | null, groundAt: GroundAt, pavedAt?: PavedAt): LotsProgram {
++  const resolved = resolveBlocks(b);
++  const lots = resolved.volumes.filter((v) => v.open);
++  const signature = closedBlocks(resolved.volumes).length > 0 && drawsSignature(b);
++  const at = floor ?? undefined;
++  const rec = new MassRecorder(buildingFrame(b), 0);
++  recordLots(rec, resolved, at, groundAt, pavedAt);
++  recordBaseLots(rec, b, at, groundAt);
++  return rec.lots(floor, lotGroundAlone(resolved, lots, at, groundAt, pavedAt), signature && at !== undefined ? at : undefined);
++}
++
+ /** A building's detail (`far` false) or its facade level (`far`, L1: walls as runs of bays, their windows drawn by the shader, `facadeLevel.ts`):
+  *  that level of its program (`emitProgram`), a filter over the one walk. */
+ export function emitChunk(b: Building, groundAt: GroundAt, pavedAt?: PavedAt, naturalAt: GroundAt = groundAt, slots: SlotAllocator = spaceSeed, far = false, apart = true,
+@@ -4221,7 +4243,7 @@ export function emitChunk(b: Building, groundAt: GroundAt, pavedAt?: PavedAt, na
+ 
+ /** What the page keeps of a building (`cellWork.ts` `ChunkSummary`): its program's summary, its mass stage alone walked (no level laid). */
+ export function chunkSummary(b: Building, groundAt: GroundAt, pavedAt?: PavedAt, naturalAt: GroundAt = groundAt, party?: PartyWalls): ProgramSummary {
+-  return emitProgram(b, groundAt, pavedAt, naturalAt, { near: false, far: false }, party ? { party } : {}).summary;
++  return summaryOf(emitProgram(b, groundAt, pavedAt, naturalAt, { near: false, far: false }, party ? { party } : {}));
+ }
+ 
+ /** A part's arrays viewed at their length, no copy. */
+diff --git a/src/render/buildings/cellArrays.ts b/src/render/buildings/cellArrays.ts
+index 8d6dd4a2..aa99cbff 100644
+--- a/src/render/buildings/cellArrays.ts
++++ b/src/render/buildings/cellArrays.ts
+@@ -295,6 +295,31 @@ export function cellMass(masses: readonly MassingChunk[], square?: MassSquare):
+   return merged && square ? massOnGrid(merged, square) : merged;
+ }
+ 
++/** A square's masses joined from its cells' (`cellWork.ts` slices: each cell's masses merged in floats, `cellMass` with no square), in the cells'
++ *  order, put on the square's grid: the same arrays as its buildings' chunks merged at once (`cellMass`), each vertex's numbers made once, in its
++ *  cell's slice. */
++export function joinMass(slices: readonly CellMass[], square: MassSquare): CellMass | null {
++  let vertices = 0, indices = 0, error = 0, top = -Infinity;
++  for (const s of slices) { vertices += s.position.length / 3; indices += s.index.length; error = Math.max(error, s.error); top = Math.max(top, s.top); }
++  if (indices === 0) return null;
++  const position = new Float32Array(vertices * 3), normal = new Int8Array(vertices * 4), color = new Uint16Array(vertices * 4);
++  const facade = new Float32Array(vertices * MASS_FACADE), grid = new Uint16Array(vertices * MASS_GRID), seed = new Float32Array(vertices), index = indexArray(vertices, indices);
++  let v = 0, n = 0;
++  for (const s of slices) {
++    if (s.place) throw new Error('[buildings] a cell\'s slice of masses on a grid: slices are kept in floats');
++    position.set(s.position, v * 3);
++    normal.set(s.normal, v * 4);
++    color.set(s.color, v * 4);
++    facade.set(s.facade, v * MASS_FACADE);
++    grid.set(s.grid, v * MASS_GRID);
++    seed.set(s.seed, v);
++    for (let i = 0; i < s.index.length; i++) index[n + i] = s.index[i]! + v;
++    v += s.position.length / 3;
++    n += s.index.length;
++  }
++  return massOnGrid({ position, normal, color, facade, grid, seed, index, bounds: shellBounds(position), top, error }, square);
++}
++
+ /** The masses merged, their places in floats. */
+ function mergedMass(masses: readonly MassingChunk[]): CellMass | null {
+   let vertices = 0, indices = 0, error = 0;
+diff --git a/src/render/buildings/cellPool.ts b/src/render/buildings/cellPool.ts
+index ccf5e060..08a9eee3 100644
+--- a/src/render/buildings/cellPool.ts
++++ b/src/render/buildings/cellPool.ts
+@@ -7,12 +7,12 @@ import { m } from '@world/units';
+ import type { SharedGroundAt } from '../sharedGround';
+ import { BATCH_CELL } from './layerCells';
+ import type { KitBoxes } from './cellArrays';
+-import { type CellEntry, type CellJob, type CellResult, type JobKind, type WorkReply, runCellJob } from './cellWork';
+-import { levelCells } from './levelKeys';
++import { type CellEntry, type CellJob, type CellResult, type CellSlice, type CellSpan, type JobKind, type KeptSlice, type WorkReply, runCellJob } from './cellWork';
++import { levelCells, squareKeyOf } from './levelKeys';
+ import { groundAround } from '../sharedGround';
+ import { Digest } from '../../core/digest';
+ import { IdSlots, grown } from '../../core/idSlots';
+-import { forgetOtherDerived, keepDerivedNow, readDerived, readDerivedKeys } from '../derivedCache';
++import { forgetDerivedKeys, forgetOtherDerived, keepDerivedNow, readDerived, readDerivedKeys, readDerivedSome } from '../derivedCache';
+ 
+ declare const __CELL_WORK_HASH__: string | undefined;
+ /** The cells' jobs kept from one session to the next, by this build's fingerprint of their code (`cook-plugin.ts` DERIVED). */
+@@ -28,6 +28,38 @@ const keptCellKeys = (): Promise<Set<string>> => (keptKeys ??= CELL_PREFIX
+   ? readDerivedKeys(CELL_PREFIX).then((keys) => new Set([...keys].map((k) => CELL_PREFIX + k)), () => new Set<string>())
+   : Promise.resolve(new Set<string>()));
+ 
++/** WHERE A CELL'S SLICES OF ITS SQUARE'S LEVELS ARE KEPT (`cellWork.ts` CellSlice): read when a tile's, a plate's or a base's job is asked, its
++ *  cells kept handed to it as they are (their buildings not sent, not walked), written when a job hands back the slices it made. */
++export interface SliceStore {
++  /** The slices kept of these keys, by key. */
++  read(keys: readonly string[]): Promise<Map<string, CellSlice>>;
++  /** A slice kept under `key`, cloned now (its arrays may be let go after); `was`, the key of the cell's slice it replaces, forgotten. */
++  keep(key: string, slice: CellSlice, was: string | null): void;
++}
++
++/** The slices in the derived cache (IndexedDB, `core/derivedCache.ts`) under this build's fingerprint of the cells' code, beside the jobs' results
++ *  kept (`CELL_PREFIX`): never in the page's memory between jobs. None without a fingerprint: every building of a level walked, as before slices. */
++function derivedSlices(prefix: string | null): SliceStore | null {
++  if (prefix === null) return null;
++  return {
++    read: async (keys) => {
++      // Only the keys kept (`keptCellKeys`, read once at the start): a level none of whose cells is kept asks the store nothing.
++      const kept = await keptCellKeys();
++      const some = keys.filter((key) => kept.has(prefix + key));
++      return some.length ? readDerivedSome<CellSlice>(prefix, some) : new Map<string, CellSlice>();
++    },
++    keep: (key, slice, was) => {
++      if (keepDerivedNow(prefix + key, slice)) void keptCellKeys().then((keys) => keys.add(prefix + key));
++      if (was === null || was === key) return;
++      forgetDerivedKeys(prefix, [was]);
++      void keptCellKeys().then((keys) => keys.delete(prefix + was));
++    },
++  };
++}
++
++/** The kinds joined from their cells' slices (`CellJob.spans`). */
++const SLICED_KINDS: ReadonlySet<JobKind> = Object.freeze(new Set<JobKind>(['massTile', 'massPlate', 'massBase']));
++
+ /** THE PAGE'S SIDE OF THE CELLS PUT TOGETHER IN WORKERS (`cellWork.ts`, `cell.worker.ts`), through the job system's one queue (`jobPool.ts` `submitJob`) */
+ 
+ /** What a job reads on the page: the ground as drawn and as it was, and the paving (with `pack`: read by the worker itself). */
+@@ -58,6 +90,14 @@ export function cellPriority(kind: JobKind, away: number, cutOpen: boolean, coar
+   return (TIER[kind] + later) * TIER_SPAN + away;
+ }
+ 
++/** The worker a job goes to, as the job system keeps it (`jobPool.ts` JobSpec.affinity): the buildings' programs a worker keeps (`cellWork.ts`)
++ *  read there by the next job of the same buildings. The masses (a cell's, its tile's, its plate's, its base's) and the summaries by the base's
++ *  square they stand in: every level of a building's masses one walk on one worker. A cell's detail and facade level by the cell: the pair walked
++ *  together (`CellJob.pair`), the other level read there as the eye steps between them. */
++export function affinityOf(kind: JobKind, cell: string): string {
++  return kind === 'cell' || kind === 'facade' ? `cell:${cell}` : `square:${squareKeyOf(cell)}`;
++}
++
+ /** Times a job is asked again over wider roads (`wider`) before the page puts it together. */
+ const MOST_WIDER = 2;
+ 
+@@ -81,9 +121,16 @@ interface Asked {
+   readonly id: number;
+   readonly kind: JobKind;
+   readonly cell: string;
+-  readonly entries: readonly CellEntry[];
++  /** Its buildings; a level joined from its cells' slices, those of its cells not kept only (`send`). */
++  entries: readonly CellEntry[];
+   /** Where each record is read, taken when the job is sent (its tile's shared table: posted as a handle, never copied). */
+-  readonly writers: readonly (() => RecordRef)[];
++  writers: readonly (() => RecordRef)[];
++  /** A tile's, a plate's or a base's cells, the entries of each in order (`MassLevels`), till their slices are looked up (`send`); then null. */
++  cells: readonly CellSpan[] | null;
++  /** The cells whose slice is not kept (made by the job) and the slices kept of the others (`CellJob.spans`, `slices`), with each cell's key. */
++  spans: readonly CellSpan[] | null;
++  slices: readonly KeptSlice[] | null;
++  sliceKeys: ReadonlyMap<string, string> | null;
+   readonly env: CellEnv;
+   readonly done: (result: CellResult) => void;
+   readonly key: string | null;
+@@ -100,6 +147,8 @@ interface Asked {
+   rect: [number, number, number, number] | null;
+   widened: number;
+   ticket: JobTicket | null;
++  /** A cell's detail or facade level asked with the other (`CellJob.pair`). */
++  readonly pair: boolean;
+ }
+ 
+ /** A building's ground floor as a job measured it, and what it was measured on: its record, its ground (`CellEntry`) and whether the paving was read. */
+@@ -182,10 +231,13 @@ export class CellPool {
+   }
+   private coarse = false;
+ 
++  /** Each cell's slice kept now, by level and cell: forgotten in the store once another replaces it (`SliceStore.keep`). */
++  private readonly cellSlices = new Map<string, string>();
++
+   /** `workers`: false does every job on the page (tests). `tone`: each finish's colour from afar, for the masses (`kit.ts`). */
+-  /** `text`: where an entry's record is read (`recordTable.ts`), taken when the job is sent. */
++  /** `text`: where an entry's record is read (`recordTable.ts`), taken when the job is sent. `slices`: where the cells' slices of their levels are kept (`SliceStore`). */
+   constructor(private readonly boxes: () => KitBoxes, private readonly text: (entry: CellEntry) => () => RecordRef, private readonly workers = true,
+-    private readonly tone?: Readonly<Record<Finish, readonly [number, number, number]>>) {
++    private readonly tone?: Readonly<Record<Finish, readonly [number, number, number]>>, private readonly slices: SliceStore | null = derivedSlices(CELL_PREFIX)) {
+     // The kept keys read now, at the start, before the town's writes come (`keptCellKeys`).
+     if (workers && canQueueJobs()) void keptCellKeys();
+   }
+@@ -197,7 +249,10 @@ export class CellPool {
+ 
+   /** A cell's job: its batches ('cell'), its far level ('facade'), its masses ('mass') or its buildings' summaries; `key`, what a newer job replaces */
+   /** `hole`: nothing stands where it draws (a plate of the map with no masses yet): in the far levels' band (`FAR_TIER`), before the view's detail - a hole on the screen comes before any refinement of what is drawn. */
+-  run(kind: JobKind, cell: string, entries: readonly CellEntry[], env: CellEnv, done: (result: CellResult) => void, key: string | null = null, edited = false, hole = false): number {
++  /** `pair`: a cell's detail or facade level walked with the other, both kept by the worker (`CellJob.pair`). `cells`: a tile's, a plate's or a
++   *  base's cells, the entries of each in order (`MassLevels`): joined from their slices kept, those not kept made by the job (`SliceStore`). */
++  run(kind: JobKind, cell: string, entries: readonly CellEntry[], env: CellEnv, done: (result: CellResult) => void, key: string | null = null, edited = false, hole = false, pair = false,
++    cells: readonly CellSpan[] | null = null): number {
+     if (key !== null) { const older = this.byKey.get(key); if (older) this.cancel(older.id); }
+     const at = squareOf(cell);
+     // Its band; its distance to the view is the queue's, as the view moves (`JobSpec.at`). A building the player cut open goes first: what the click asked for (`layer.ts` `entryFor`).
+@@ -208,26 +263,80 @@ export class CellPool {
+     const offPage = this.offPage(env);
+     const asked: Asked = {
+       id: this.nextId++, kind, cell, entries, writers: entries.map((e) => this.text(e)), env, done, key, priority, first, sent: false, place,
+-      stored: offPage && !first ? this.storedKey(kind, cell, entries, env) : null, rect: pavingRect(cell), widened: 0, ticket: null,
++      stored: offPage && !first ? this.storedKey(kind, cell, entries, env) : null, rect: pavingRect(cell), widened: 0, ticket: null, pair,
++      cells: offPage && this.slices !== null && SLICED_KINDS.has(kind) ? cells : null, spans: null, slices: null, sliceKeys: null,
+     };
+     if (!offPage) { this.onPage(asked); return asked.id; }
+     this.asked.set(asked.id, asked);
+     if (key !== null) this.byKey.set(key, asked);
+-    if (asked.stored === null) { this.submit(asked); return asked.id; }
++    if (asked.stored === null) { this.send(asked); return asked.id; }
+     // Kept by an earlier session: taken as its job would answer it, the job never asked.
+     const stored = asked.stored;
+     void keptCellKeys().then((keys) => {
+       if (this.asked.get(asked.id) !== asked) return undefined;
+-      if (!keys.has(stored)) { this.submit(asked); return undefined; }
++      if (!keys.has(stored)) { this.send(asked); return undefined; }
+       return readDerived<CellResult>(stored).catch(() => undefined).then((kept) => {
+         if (this.asked.get(asked.id) !== asked) return;
+         if (kept && typeof kept === 'object' && 'summaries' in kept) { this.forget(asked); this.learn(asked, kept); asked.done(kept); return; }
+-        this.submit(asked);
++        this.send(asked);
+       });
+-    }, () => this.submit(asked));
++    }, () => this.send(asked));
+     return asked.id;
+   }
+ 
++  /** A job into the queue; a tile's, a plate's or a base's after its cells' slices are looked up (`SliceStore`): those kept handed with it, their
++   *  buildings not sent; the others' buildings sent, their slices made by the job (`CellJob.spans`). Its priority is the one `run` gave it. */
++  private send(asked: Asked): void {
++    const cells = asked.cells, store = this.slices;
++    if (!cells || !store) { this.submit(asked); return; }
++    asked.cells = null;
++    const keys = new Map<string, string>();
++    let from = 0;
++    for (const { cell, count } of cells) {
++      keys.set(cell, this.sliceKey(asked.kind, cell, asked.entries.slice(from, from + count), asked.env));
++      from += count;
++    }
++    void store.read([...keys.values()]).catch((error: unknown) => {
++      // Every cell of the level made by its job, as with no slice kept.
++      console.error("[buildings] the cells' slices could not be read; the level made of all its buildings", error);
++      return new Map<string, CellSlice>();
++    }).then((kept) => {
++      if (this.asked.get(asked.id) !== asked) return;
++      const spans: CellSpan[] = [], slices: KeptSlice[] = [], entries: CellEntry[] = [], writers: (() => RecordRef)[] = [];
++      let at = 0;
++      for (const { cell, count } of cells) {
++        const key = keys.get(cell)!;
++        const slice = kept.get(key);
++        if (slice) {
++          slices.push({ cell, slice });
++          this.cellSlices.set(`${asked.kind}|${cell}`, key);
++        } else {
++          spans.push({ cell, count });
++          for (let k = at; k < at + count; k++) { entries.push(asked.entries[k]!); writers.push(asked.writers[k]!); }
++        }
++        at += count;
++      }
++      asked.entries = entries;
++      asked.writers = writers;
++      asked.spans = spans;
++      asked.slices = slices;
++      asked.sliceKeys = keys;
++      this.submit(asked);
++    });
++  }
++
++  /** Where a cell's slice of a level is kept: the level's kind, the cell and all its slice is made of - its buildings' records, the ground under
++   *  them and the floors they are handed (`floorKnown`: a floor measured since is another slice), whether paving is read, the kit's boxes and tones. */
++  private sliceKey(kind: JobKind, cell: string, entries: readonly CellEntry[], env: CellEnv): string {
++    const paved = env.pavedAt !== undefined;
++    const d = new Digest().add(this.kitDigest()).add(paved ? 1 : 0).add(env.naturalAt === env.groundAt ? 1 : 0);
++    for (const e of entries) {
++      const floor = this.floorKnown(e, paved);
++      d.addText(e.key).add(e.sig).add(e.digest).add(floor === undefined ? 0 : floor === null ? 1 : 2).add(floor ?? 0);
++    }
++    return `slice|${kind}|${cell}|${d.value()}`;
++  }
++
+   /** The job system's workers made now, ahead of the first job. */
+   warm(): void {
+     if (this.workers && canQueueJobs()) warmJobWorkers();
+@@ -271,6 +380,7 @@ export class CellPool {
+       ...(asked.place ? { at: asked.place } : {}),
+       // Fit for a job process: its ground cut to the plates around it there (`write`).
+       crosses: true,
++      affinity: affinityOf(asked.kind, asked.cell),
+       write: (to) => { asked.sent = true; return this.write(asked, to.sharesMemory); },
+       done: (answer) => this.answer(asked, answer as WorkReply),
+       failed: (message) => this.failed(asked, message),
+@@ -303,6 +413,8 @@ export class CellPool {
+         return { ...e, ...(floor !== undefined ? { floor } : {}), record: asked.writers[i]!() };
+       }),
+       ...(this.tone ? { tone: this.tone } : {}),
++      ...(asked.pair && (asked.kind === 'cell' || asked.kind === 'facade') ? { pair: true } : {}),
++      ...(asked.spans && asked.slices ? { spans: asked.spans, slices: asked.slices } : {}),
+     };
+   }
+ 
+@@ -320,6 +432,14 @@ export class CellPool {
+       // Kept before it is handed on: the store clones it now, its arrays are the layer's after (`keepDerivedNow`).
+       const stored = asked.stored;
+       if (stored !== null && keepDerivedNow(stored, reply.result)) void keptCellKeys().then((keys) => keys.add(stored));
++      // The slices it made of its cells, kept; each cell's slice before them forgotten.
++      for (const { cell, slice } of reply.result.slices ?? []) {
++        const key = asked.sliceKeys?.get(cell);
++        if (key === undefined || !this.slices) continue;
++        const was = `${asked.kind}|${cell}`;
++        this.slices.keep(key, slice, this.cellSlices.get(was) ?? null);
++        this.cellSlices.set(was, key);
++      }
+       this.learn(asked, reply.result);
+       asked.done(reply.result);
+       return;
+diff --git a/src/render/buildings/cellRequests.ts b/src/render/buildings/cellRequests.ts
+index c5cbddb6..27bd0dd4 100644
+--- a/src/render/buildings/cellRequests.ts
++++ b/src/render/buildings/cellRequests.ts
+@@ -52,7 +52,8 @@ export class CellRequests {
+   }
+ 
+   /** `cell`'s batches made of `entries`, once landed and (with `upload`) on the GPU; null while they are made */
+-  want(kind: BatchKind, cell: string, entries: readonly CellEntry[], env: CellEnv, upload: boolean, edited = false, hole = false): LandedCell | null {
++  /** `pair`: the cell steps between its levels as the eye moves (`massCells.ts` PAIR_REACH): its job walks each building for both, kept together (`cellWork.ts` CellJob.pair). */
++  want(kind: BatchKind, cell: string, entries: readonly CellEntry[], env: CellEnv, upload: boolean, edited = false, hole = false, pair = false): LandedCell | null {
+     const key = `${kind}|${cell}`;
+     const got = this.landed.get(key);
+     if (got && sameEntries(got.entries, entries)) return got.uploads > 0 ? null : got;
+@@ -77,7 +78,7 @@ export class CellRequests {
+       this.onSummaries(result.summaries, entries, env);
+       const landing = this.land(kind, cell, entries, result, upload);
+       if (landing) this.landed.set(key, landing);
+-    }, key, edited);
++    }, key, edited, false, pair);
+     // Where no worker runs the job is done by now.
+     const now = this.landed.get(key);
+     return now && now.entries === entries && now.uploads === 0 ? now : null;
+diff --git a/src/render/buildings/cellWork.ts b/src/render/buildings/cellWork.ts
+index d78cdb55..5e006cc8 100644
+--- a/src/render/buildings/cellWork.ts
++++ b/src/render/buildings/cellWork.ts
+@@ -2,9 +2,9 @@ import type { Finish } from '@world/buildings/materials';
+ import { eachRecord, readRecords } from '@world/buildings/recordTable';
+ import { type PavingData, pavingReader } from '@world/paving';
+ import { type GroundReaders, type SharedGroundData, sharedGroundReaders } from '../sharedGround';
+-import { ShellWriter, emitProgram, letGoEmitted, type ProgramWants } from './buildingMesh';
++import { ShellWriter, emitLotsAt, emitProgram, letGoEmitted, type ProgramWants } from './buildingMesh';
+ export { ShellWriter } from './buildingMesh';
+-import { type CellArrays, type CellMass, type CellSelection, type KitBoxes, cellArrays, cellBuffers, cellMass, cellMassBuffers } from './cellArrays';
++import { type CellArrays, type CellMass, type CellSelection, type KitBoxes, cellArrays, cellBuffers, cellMass, cellMassBuffers, joinMass } from './cellArrays';
+ import type { BuildingChunk, CellJobEntry, LotGroundRecipe } from './chunk';
+ import type { Building } from '@world/buildings/types';
+ import type { FlagInstance } from './flagLayer';
+@@ -13,8 +13,8 @@ import { COARSE_PARTS, DETAIL_CELL, DETAIL_PARTS } from './layerCells';
+ import { CELL_DETAIL, type MassDetail, PLATE_DETAIL, TILE_DETAIL, baseFloor, massFloor, massOf, type MassingChunk } from './massing';
+ import { type PartFiling, fileParts, filingBuffers } from './partFiling';
+ import { levelCells } from './levelKeys';
+-import { type BaseMass, BaseWriter, baseBuffers, writeBase } from './massBase';
+-import { type BuildingProgram, type ProgramSummary, ProgramCache } from './program';
++import { type BaseMass, type BaseSlice, BaseWriter, baseBuffers, writeBase } from './massBase';
++import { type BuildingProgram, type LotsProgram, type ProgramSummary, ProgramCache, summaryOf } from './program';
+ import { PartyWalls } from './partyWalls';
+ 
+ /** DO NOT send the page a chunk per building */
+@@ -28,6 +28,25 @@ export type JobKind = 'cell' | 'mass' | 'summary' | 'facade' | 'massTile' | 'mas
+ /** What each kind of masses leaves out (`massing.ts` `MassDetail`). */
+ const MASS_DETAIL: Partial<Readonly<Record<JobKind, MassDetail>>> = { mass: CELL_DETAIL, massTile: TILE_DETAIL, massPlate: PLATE_DETAIL };
+ 
++/** A cell of a tile's, a plate's or a base's job whose slice is not kept (`CellJob.spans`): how many of the job's entries are its buildings, in order. */
++export interface CellSpan {
++  readonly cell: string;
++  readonly count: number;
++}
++
++/** A CELL'S SLICE OF A SQUARE'S LEVEL, kept between jobs (`cellPool.ts` SliceStore, the derived cache): its buildings' masses at the tile's or the
++ *  plate's detail merged in floats (`cellMass` with no square; null: none), or its base (`BaseWriter.sliceOf`). A tile, a plate and a base are
++ *  joined from their cells' slices (`joinMass`, `BaseWriter.put`): an edit makes its cell's slices again, its buildings alone walked, every other
++ *  cell's read as kept. */
++export interface CellSlice {
++  readonly mass?: CellMass | null;
++  readonly base?: BaseSlice | null;
++}
++export interface KeptSlice {
++  readonly cell: string;
++  readonly slice: CellSlice;
++}
++
+ export interface CellJob {
+   readonly id: number;
+   readonly kind: JobKind;
+@@ -47,6 +66,14 @@ export interface CellJob {
+   /** The kit's part boxes and each finish's colour from afar (`kit.ts` `finishTone`): the job carries all it reads. */
+   readonly boxes: KitBoxes;
+   readonly tone?: Readonly<Record<Finish, readonly [number, number, number]>>;
++  /** A cell's detail or facade level within twice the detail's reach (`massCells.ts` PAIR_REACH): each building walked once for both, kept
++   *  together (`JobPrograms.levels`), so the cell stepping to the other level as the eye moves reads it, no walk. */
++  readonly pair?: boolean;
++  /** A tile's, a plate's or a base's job joined from its cells' slices: the cells its entries are the buildings of, in order (`CellSpan`, those
++   *  whose slice is not kept: made here and handed back, `CellResult.slices`), and the slices kept of its other cells (their buildings not sent).
++   *  Absent: every building walked, nothing kept (a job on the page, no store). */
++  readonly spans?: readonly CellSpan[];
++  readonly slices?: readonly KeptSlice[];
+ }
+ 
+ /** What the page keeps of a building emitted: its flags, how its lots' ground is made again, its signature floor. */
+@@ -70,6 +97,8 @@ export interface CellResult {
+   readonly base?: BaseMass | null;
+   /** Each entry's ground floor as the job stood it (`CellEntry.floor`): null with no closed block, undefined where it read none; kept by the page for the next jobs of the same buildings (`cellPool.ts`). */
+   readonly floors?: readonly (number | null | undefined)[];
++  /** The slices a tile's, a plate's or a base's job made of its cells not kept (`CellJob.spans`), for the page to keep. */
++  readonly slices?: readonly KeptSlice[];
+ }
+ 
+ export type WorkReply =
+@@ -85,6 +114,10 @@ export function replyBuffers(reply: WorkReply): ArrayBuffer[] {
+   if (reply.result.parts) out.push(...filingBuffers(reply.result.parts));
+   if (reply.result.mass) out.push(...cellMassBuffers(reply.result.mass));
+   if (reply.result.base) out.push(...baseBuffers(reply.result.base));
++  for (const { slice } of reply.result.slices ?? []) {
++    if (slice.mass) out.push(...cellMassBuffers(slice.mass));
++    if (slice.base) out.push(slice.base.position.buffer as ArrayBuffer, slice.base.paint.buffer as ArrayBuffer, slice.base.index.buffer as ArrayBuffer);
++  }
+   return out;
+ }
+ 
+@@ -119,9 +152,11 @@ const PROGRAMS = new ProgramCache(32 * 2 ** 20);
+ /** The programs this thread keeps: what it holds, the walks and the reads counted (`ProgramCache`). */
+ export const keptPrograms = (): ProgramCache => PROGRAMS;
+ 
+-/** A program's key: the building and its record (`CellEntry.sig`: an edit changes it, so only the edited building is walked again), the
+- *  ground under it and whether paving is read, the floor it stands on, the masses' tone. */
+-const massKey = (entry: CellJobEntry, paved: boolean, floor: number | null, tone: string): string => `${entry.key}|${entry.sig}|${entry.digest}|${paved ? 1 : 0}|${floor ?? '-'}|${tone}`;
++/** A building body's key: the building and its record (`CellEntry.sig`: an edit changes it, so only the edited building is walked again), the
++ *  ground under it and whether paving is read, the masses' tone. NOT its floor: the body is kept over its floor (`program.ts`), whatever floor
++ *  a job stands it on; its lots are kept by floor beside it, and its levels (laid on the floor) by floor and covers. */
++const bodyKey = (entry: CellJobEntry, paved: boolean, tone: string): string => `${entry.key}|${entry.sig}|${entry.digest}|${paved ? 1 : 0}|${tone}`;
++const floorKey = (floor: number | null): string => `${floor ?? '-'}`;
+ const toneKeyOf = (tone: CellJob['tone']): string => (tone ? JSON.stringify(tone) : '');
+ 
+ /** A job's buildings' programs: kept, or walked now for what the job draws and kept at once - DO NOT hold a job's every program until it is
+@@ -129,33 +164,59 @@ const toneKeyOf = (tone: CellJob['tone']): string => (tone ? JSON.stringify(tone
+  *  was handed (`undo`: its reads were short, its programs wrong). */
+ class JobPrograms {
+   private readonly made: string[] = [];
++  private readonly madeLots: string[] = [];
+   constructor(private readonly tone: string, private readonly paved: boolean) {}
+ 
+-  /** Its mass stage (with its summary), on `floor`. */
+-  mass(entry: CellJobEntry, floor: number | null, walk: () => BuildingProgram): BuildingProgram {
+-    const key = `m|${massKey(entry, this.paved, floor, this.tone)}`;
+-    const kept = PROGRAMS.get(key);
+-    if (kept) { PROGRAMS.hits++; return kept; }
+-    PROGRAMS.walks++;
+-    const made = walk();
+-    this.keep(key, made);
+-    return made;
++  /** Its body and its lots on `floor`: the body walked (`walk`) only where none is kept, the lots alone (`lotsAt`) where the body is kept
++   *  on another floor - the bases' estimate (`baseFloor`) and then the cell's measured floor (`massFloor`) walk the building once. */
++  mass(entry: CellJobEntry, floor: number | null, walk: () => BuildingProgram, lotsAt: () => LotsProgram): BuildingProgram {
++    const body = bodyKey(entry, this.paved, this.tone);
++    const kept = PROGRAMS.get(`m|${body}`);
++    if (!kept) {
++      PROGRAMS.walks++;
++      const made = walk();
++      this.keepBody(body, made);
++      return made;
++    }
++    PROGRAMS.hits++;
++    const lots = this.lotsOn(body, kept, floor, lotsAt);
++    return lots === kept.lots ? kept : { mass: kept.mass, flags: kept.flags, lots };
+   }
+ 
+-  /** The levels `wants` asks for, with its neighbours' covers (`coversKey`): a level already walked read as it was, a missing one walked alone. */
++  /** The levels `wants` asks for, with its neighbours' covers (`coversKey`), on `floor`: a level already walked read as it was, a missing one walked alone. */
+   levels(entry: CellJobEntry, floor: number | null, covers: string, wants: ProgramWants, walk: (wants: ProgramWants) => BuildingProgram): BuildingProgram {
+-    const key = `l|${massKey(entry, this.paved, floor, this.tone)}|${covers}`;
++    const body = bodyKey(entry, this.paved, this.tone);
++    const key = `l|${body}|${floorKey(floor)}|${covers}`;
+     const kept = PROGRAMS.get(key);
+     if (kept && (!wants.near || kept.near) && (!wants.far || kept.far)) { PROGRAMS.hits++; return kept; }
+     PROGRAMS.walks++;
+     const fresh = walk({ near: wants.near && !kept?.near, far: wants.far && !kept?.far });
+     const made: BuildingProgram = kept ? { ...fresh, ...(kept.near ? { near: kept.near } : {}), ...(kept.far ? { far: kept.far } : {}) } : fresh;
+     this.keep(key, made);
+-    // Its mass stage on the same floor, read by the masses' jobs too.
+-    this.keep(`m|${massKey(entry, this.paved, floor, this.tone)}`, { mass: made.mass, summary: made.summary });
++    // Its body and its lots on the same floor, read by the masses' jobs too.
++    this.keepBody(body, made);
+     return made;
+   }
+ 
++  /** A body kept on another floor than `floor`: its lots on `floor`, kept, or walked alone now. */
++  private lotsOn(body: string, kept: BuildingProgram, floor: number | null, lotsAt: () => LotsProgram): LotsProgram {
++    if (kept.lots.floor === floor) return kept.lots;
++    const key = `L|${body}|${floorKey(floor)}`;
++    const was = PROGRAMS.getLots(key);
++    if (was) return was;
++    PROGRAMS.lotWalks++;
++    const lots = lotsAt();
++    PROGRAMS.setLots(key, lots);
++    this.madeLots.push(key);
++    return lots;
++  }
++
++  private keepBody(body: string, made: BuildingProgram): void {
++    this.keep(`m|${body}`, { mass: made.mass, flags: made.flags, lots: made.lots });
++    PROGRAMS.setLots(`L|${body}|${floorKey(made.lots.floor)}`, made.lots);
++    this.madeLots.push(`L|${body}|${floorKey(made.lots.floor)}`);
++  }
++
+   private keep(key: string, program: BuildingProgram): void {
+     PROGRAMS.set(key, program);
+     this.made.push(key);
+@@ -164,7 +225,9 @@ class JobPrograms {
+   /** The programs this job walked let go: it read past what it was handed (`wider`), so they stand on reads it did not have. */
+   undo(): void {
+     for (const key of this.made) PROGRAMS.delete(key);
++    for (const key of this.madeLots) PROGRAMS.deleteLots(key);
+     this.made.length = 0;
++    this.madeLots.length = 0;
+   }
+ }
+ 
+@@ -219,16 +282,24 @@ export function runCellJob(job: CellJob, reads: CellReads): WorkReply {
+       const floor = given !== undefined ? given : baseFloor(b, naturalAt, paved) ?? null;
+       floors.push(given);
+       n++;
+-      const program = programs.mass(entry, floor, () => emitProgram(b, groundAt, paved, naturalAt, { near: false, far: false }, stage(floor)));
+-      writeBase(writer.cellOf(b), program.mass);
++      const program = programs.mass(entry, floor, () => emitProgram(b, groundAt, paved, naturalAt, { near: false, far: false }, stage(floor)),
++        () => emitLotsAt(b, floor, groundAt, paved));
++      writeBase(writer.cellOf(b), program);
+     }
+     if (missed()) { programs.undo(); return wider(job, missX0, missY0, missX1, missY1); }
+-    return { kind: 'done', job: job.id, result: { batch: null, parts: null, summaries: [], base: writer.done(levelCells(job.cell)), floors } };
++    // Joined from its cells' slices: those kept put as they were, those walked here handed back to keep.
++    for (const { cell, slice } of job.slices ?? []) if (slice.base) writer.put(cell, slice.base);
++    const made: KeptSlice[] | undefined = job.spans && job.slices ? job.spans.map(({ cell }) => ({ cell, slice: { base: writer.sliceOf(cell) } })) : undefined;
++    return { kind: 'done', job: job.id, result: { batch: null, parts: null, summaries: [], base: writer.done(levelCells(job.cell)), floors, ...(made ? { slices: made } : {}) } };
+   }
+   const detail = MASS_DETAIL[job.kind];
+   if (detail) {
+     const masses: MassingChunk[] = [];
+     const floors: (number | null | undefined)[] = [];
++    // Joined from its cells' slices (`CellJob.spans`): each cell's buildings' masses apart, merged into its slice.
++    const spans = job.spans;
++    const sliced: MassingChunk[][] = spans ? spans.map(() => []) : [];
++    let span = 0, inSpan = 0;
+     // A tile's and a plate's masses are drawn from afar, as the base is: on the floor seen from afar where none was measured (`baseFloor`), never handed on. DO NOT lay every building's bays out for them: with the bases' estimate (no floor handed on) the plates of the step-70k city took ~3 s of a worker each after the curtain, the map standing in cells' masses (2026-10-22).
+     const far = job.kind !== 'mass';
+     // One record at a time, let go once its masses are made: a plate's job is four tiles of buildings (`eachRecord`).
+@@ -240,19 +311,31 @@ export function runCellJob(job: CellJob, reads: CellReads): WorkReply {
+       const floor = given !== undefined ? given : (far ? baseFloor(b, naturalAt, paved) : massFloor(b, naturalAt, paved)) ?? null;
+       floors.push(far ? given : floor);
+       n++;
+-      const program = programs.mass(entry, floor, () => emitProgram(b, groundAt, paved, naturalAt, { near: false, far: false }, stage(floor)));
+-      const mass = massOf(program.mass, detail);
+-      if (mass) masses.push(mass);
++      const program = programs.mass(entry, floor, () => emitProgram(b, groundAt, paved, naturalAt, { near: false, far: false }, stage(floor)),
++        () => emitLotsAt(b, floor, groundAt, paved));
++      const mass = massOf(program, detail);
++      if (spans) {
++        while (inSpan >= spans[span]!.count) { span++; inSpan = 0; }
++        inSpan++;
++        if (mass) sliced[span]!.push(mass);
++      } else if (mass) masses.push(mass);
+     }
+     // On the square's grid (`cellArrays.ts` `massGrid`): a cell's, a tile's or a plate's.
+     const at = job.cell[1] === ':' ? levelCells(job.cell) : { i0: Number(job.cell.slice(0, job.cell.indexOf(','))), j0: Number(job.cell.slice(job.cell.indexOf(',') + 1)), n: 1 };
+     if (missed()) { programs.undo(); return wider(job, missX0, missY0, missX1, missY1); }
++    if (spans) {
++      // Each cell's slice in floats; the level its cells' slices joined in the cells' order (`MassLevels` lists them column by column), as its buildings' chunks merged at once.
++      const made: KeptSlice[] = spans.map(({ cell }, k) => ({ cell, slice: { mass: cellMass(sliced[k]!) } }));
++      const all = [...made, ...(job.slices ?? [])].sort((p, q) => cellOrder(p.cell, q.cell));
++      const mass = joinMass(all.flatMap(({ slice }) => (slice.mass ? [slice.mass] : [])), at);
++      return { kind: 'done', job: job.id, result: { batch: null, parts: null, summaries: [], mass, floors, ...(job.slices ? { slices: made } : {}) } };
++    }
+     return { kind: 'done', job: job.id, result: { batch: null, parts: null, summaries: [], mass: cellMass(masses, at), floors } };
+   }
+   // DO NOT parse a text per building: each record decoded from its tile's shared table, a tile's shared members once for the job.
+   const buildings = readRecords(job.entries.map((entry) => entry.record));
+   /** What the page keeps of a building, from its program's summary. */
+-  const summaryOf = (summary: ProgramSummary, i: number): ChunkSummary => {
++  const keptOf = (summary: ProgramSummary, i: number): ChunkSummary => {
+     const { flags, lotGround, signatureFloor } = summary;
+     return { key: job.entries[i]!.key, ...(flags ? { flags } : {}), lot: lotGround?.recipe ?? null, ...(signatureFloor !== undefined ? { signatureFloor } : {}) };
+   };
+@@ -264,15 +347,16 @@ export function runCellJob(job: CellJob, reads: CellReads): WorkReply {
+     // The summary: the mass stage alone (its lots' recipe, its flags, its floor), no level laid.
+     const summaries = buildings.map((b, i) => {
+       const floor = party.floorOf(b) ?? null;
+-      const program = programs.mass(job.entries[i]!, floor, () => emitProgram(b, groundAt, paved, naturalAt, { near: false, far: false }, stage(floor)));
+-      return summaryOf(program.summary, i);
++      const program = programs.mass(job.entries[i]!, floor, () => emitProgram(b, groundAt, paved, naturalAt, { near: false, far: false }, stage(floor)),
++        () => emitLotsAt(b, floor, groundAt, paved));
++      return keptOf(summaryOf(program), i);
+     });
+     if (missed()) { programs.undo(); return wider(job, missX0, missY0, missX1, missY1); }
+     return { kind: 'done', job: job.id, result: { batch: null, parts: null, summaries, floors: party.floorsKnown() } };
+   }
+   // One shell and one set of rows written again for each building of the job, and of every job the worker runs (`CellReads.writer`).
+   const writer = reads.writer ?? new ShellWriter();
+-  const wants: ProgramWants = { near: job.kind !== 'facade', far: job.kind === 'facade' };
++  const wants: ProgramWants = job.pair ? { near: true, far: true } : { near: job.kind !== 'facade', far: job.kind === 'facade' };
+   const programsOf = buildings.map((b, i) => {
+     const floor = party.floorOf(b) ?? null;
+     const program = programs.levels(job.entries[i]!, floor, coversKey(party, b), wants,
+@@ -283,7 +367,7 @@ export function runCellJob(job: CellJob, reads: CellReads): WorkReply {
+   });
+   const chunks = programsOf.map((p) => (job.kind === 'facade' ? p.far : p.near)!);
+   if (missed()) { programs.undo(); return wider(job, missX0, missY0, missX1, missY1); }
+-  const summaries = chunks.map(summaryOf);
++  const summaries = chunks.map(keptOf);
+   // The far level's shells on the cell's grid (`cellArrays.ts` `ShellGrid`); the detail's in floats (its millimetre steps).
+   const comma = job.cell.indexOf(',');
+   const grid = job.kind === 'facade' ? [Number(job.cell.slice(0, comma)), Number(job.cell.slice(comma + 1))] as const : undefined;
+@@ -306,6 +390,12 @@ export function runCellJob(job: CellJob, reads: CellReads): WorkReply {
+   return { kind: 'done', job: job.id, result: { batch, parts, summaries, floors: party.floorsKnown() } };
+ }
+ 
++/** Two cells' keys ("i,j") in a level's order: column by column, row by row in a column (`massLevels.ts` listOf). */
++function cellOrder(a: string, b: string): number {
++  const ca = a.indexOf(','), cb = b.indexOf(',');
++  return Number(a.slice(0, ca)) - Number(b.slice(0, cb)) || Number(a.slice(ca + 1)) - Number(b.slice(cb + 1));
++}
++
+ /** The roads and the ground to hand the job again: those it was handed and every point it read past them, a metre round. */
+ function wider(job: CellJob, x0: number, y0: number, x1: number, y1: number): WorkReply {
+   const rect: [number, number, number, number] = [x0 - 1, y0 - 1, x1 + 1, y1 + 1];
+diff --git a/src/render/buildings/layer.ts b/src/render/buildings/layer.ts
+index 521d6fec..afd7ca62 100644
+--- a/src/render/buildings/layer.ts
++++ b/src/render/buildings/layer.ts
+@@ -215,6 +215,8 @@ export function createBuildingLayer(anisotropy = 4): BuildingLayer {
+   const cellNear = (key: string): boolean => eye === null || forcedNear.has(key) || massCells.near(key);
+   /** Whether a cell near is wanted at full detail (L0) rather than its facade level (L1). */
+   const cellFine = (key: string): boolean => eye === null || forcedNear.has(key) || massCells.fine(key);
++  /** Whether a cell near steps between its two levels as the eye moves (`massCells.ts` PAIR_REACH): both made by one walk. Not one held near (always its detail). */
++  const cellPair = (key: string): boolean => eye !== null && !forcedNear.has(key) && massCells.pair(key);
+   /** The level a cell shows: its detail where fine (or with no facade level yet), its facade level where not (or with no detail yet), none far (its masses). */
+   const levelShown = (key: string): BatchKind | null => {
+     if (!cellNear(key)) return null;
+@@ -656,7 +658,7 @@ export function createBuildingLayer(anisotropy = 4): BuildingLayer {
+             // A hole: wanted in detail and no level of it landed (its masses at the camera). DO NOT hold it behind `STREAM_AHEAD` cells asked before it (the district's, waiting behind a reopening's re-bake): it is asked past them, `MOST_HOLES` at once (conferencia 109, picture 51).
+             const hole = kind === 'cell' && !cells.has(cell) && !facades.has(cell);
+             if (requests.isAsked(kind, cell) || requests.asking < STREAM_AHEAD || (hole && requests.holeRoom())) {
+-              const got = requests.want(kind, cell, entries, env, true, editedCells.has(cell), hole);
++              const got = requests.want(kind, cell, entries, env, true, editedCells.has(cell), hole, cellPair(cell));
+               // DO NOT hold ready cells back a few a frame (`STREAM_CELLS_PER_FRAME`): the swap is a group put in a group.
+               if (got) {
+                 requests.take(kind, cell);
+diff --git a/src/render/buildings/levelKeys.ts b/src/render/buildings/levelKeys.ts
+index bff645ad..0a77fb15 100644
+--- a/src/render/buildings/levelKeys.ts
++++ b/src/render/buildings/levelKeys.ts
+@@ -14,6 +14,15 @@ export const plateOf = (i: number, j: number): string => `p:${Math.floor((i + PL
+ /** The base (the top level, never let go: `massBase.ts`) a cell lies under: its plate's square. */
+ export const baseOf = (i: number, j: number): string => `b:${Math.floor((i + PLATE_SHIFT) / PLATE_CELLS)},${Math.floor((j + PLATE_SHIFT) / PLATE_CELLS)}`;
+ 
++/** The square of the base a job's key stands in (`baseOf`), as "x,y": a cell's ("i,j"), a tile's, a plate's or a base's. The masses' jobs of
++ *  a square go to the worker that ran its last (`cellPool.ts` affinityOf): each building's program walked there once for its every level. */
++export function squareKeyOf(key: string): string {
++  if (key[1] !== ':') { const [i, j] = cellIndex(key); return baseOf(i, j).slice(2); }
++  if (key[0] !== 't') return key.slice(2);
++  const { i0, j0 } = levelCells(key);
++  return baseOf(i0, j0).slice(2);
++}
++
+ /** A cell's column and row from its key ("i,j", `layer.ts` `cellOf`). */
+ export function cellIndex(key: string): readonly [number, number] {
+   const comma = key.indexOf(',');
+diff --git a/src/render/buildings/massBase.ts b/src/render/buildings/massBase.ts
+index ac8da144..0b062a56 100644
+--- a/src/render/buildings/massBase.ts
++++ b/src/render/buildings/massBase.ts
+@@ -9,7 +9,7 @@ import { m } from '@world/units';
+ import { CELL } from '@world/cells';
+ import { type Bounds, type MassSquare, type ShellGrid, indexArray, massGrid, shellBounds } from './cellArrays';
+ import { BURY, LOT_COLOURS, type Rgb, TERRACE_RGB, massColours, rgbOf } from './massing';
+-import type { MassProgram, MassRecorder } from './program';
++import type { MassRecorder, ProgramStage } from './program';
+ 
+ /**
+  * THE BUILDINGS' TOP LEVEL (the base, above the plates): every building of a plate's square as the prisms of its real blocks - each
+@@ -115,23 +115,25 @@ function prism(w: CellWriter, xs: ArrayLike<number>, ys: ArrayLike<number>, bott
+   }
+ }
+ 
+-/** The base's shapes of a building, written into its program by the building's walk (`buildingMesh.ts` emitProgram): each closed block's
+- *  prism (its footprint stood from its foot to its eaves, a pitched roof flat at half its rise), its paved lots flat; `floor` as its masses'
+- *  (undefined with no closed block); a signature building's body is drawn by its own meshes at every distance (`signature.ts`). */
+-export function recordBase(rec: MassRecorder, b: Building, floor: number | undefined, groundAt: GroundAt, signature: boolean,
++/** A block's ring on the plan, anticlockwise. */
++function ringOf(b: Building, v: Volume): { xs: number[]; ys: number[] } {
++  const f = buildingFrame(b);
++  const xs: number[] = [], ys: number[] = [];
++  for (const p of localFootprint(v)) { xs.push(frameX(f, p.x, p.y)); ys.push(frameY(f, p.x, p.y)); }
++  if (ringArea(xs, ys) < 0) { xs.reverse(); ys.reverse(); }
++  return { xs, ys };
++}
++
++/** The base's shapes of a building's body, written into its program by the building's walk (`buildingMesh.ts` emitProgram): each closed
++ *  block's prism (its footprint stood from its foot to its eaves, a pitched roof flat at half its rise) on `floor`, the floor the walk stood
++ *  it on (the program keeps them over it); a signature building's body is drawn by its own meshes at every distance (`signature.ts`). */
++export function recordBase(rec: MassRecorder, b: Building, floor: number | undefined, signature: boolean,
+   tone?: Readonly<Record<Finish, readonly [number, number, number]>>): void {
+   const resolved = resolveBlocks(b);
+-  const f = buildingFrame(b);
+-  const ring = (v: Volume): { xs: number[]; ys: number[] } => {
+-    const xs: number[] = [], ys: number[] = [];
+-    for (const p of localFootprint(v)) { xs.push(frameX(f, p.x, p.y)); ys.push(frameY(f, p.x, p.y)); }
+-    if (ringArea(xs, ys) < 0) { xs.reverse(); ys.reverse(); }
+-    return { xs, ys };
+-  };
+   if (floor !== undefined && !signature) {
+     const rgb = massColours(b, tone);
+     for (const v of closedBlocks(resolved.volumes)) {
+-      const { xs, ys } = ring(v);
++      const { xs, ys } = ringOf(b, v);
+       if (xs.length < 3) continue;
+       const pitched = v.roof !== 'flat' && v.roof !== 'terrace';
+       const eaves = floor + volumeHeight(b, v);
+@@ -143,7 +145,13 @@ export function recordBase(rec: MassRecorder, b: Building, floor: number | undef
+       rec.prisms.push({ xs: Float64Array.from(xs), ys: Float64Array.from(ys), bottom, top, wall: paint(wall), roof: paint(roof) });
+     }
+   }
+-  // The paved lots, flat at the building's floor (or over the highest ground under them), as the masses lay them.
++}
++
++/** The base's paved lots of a building (its lots part, `LotsProgram`): flat at the building's floor, or over the highest ground under them
++ *  with no closed block (`floor` undefined), as the masses lay them. */
++export function recordBaseLots(rec: MassRecorder, b: Building, floor: number | undefined, groundAt: GroundAt): void {
++  const resolved = resolveBlocks(b);
++  const f = buildingFrame(b);
+   const lots = resolved.volumes.filter((v) => v.open && v.open !== 'grass' && v.w * v.d >= LOT_AREA);
+   if (!lots.length) return;
+   let level = floor;
+@@ -153,20 +161,36 @@ export function recordBase(rec: MassRecorder, b: Building, floor: number | undef
+     level = ground + LOT_LIFT;
+   }
+   for (const v of lots) {
+-    const { xs, ys } = ring(v);
++    const { xs, ys } = ringOf(b, v);
+     if (xs.length >= 3) rec.slabs.push({ xs: Float64Array.from(xs), ys: Float64Array.from(ys), level, paint: paint(rgbOf(LOT_COLOURS[v.open as keyof typeof LOT_COLOURS])) });
+   }
+ }
+ 
+-/** A building's base into its cell's writer: a filter over its program (`program.ts`), the shapes its walk wrote (`recordBase`). */
+-export function writeBase(w: CellWriter, p: MassProgram): void {
+-  for (const q of p.prisms) prism(w, q.xs, q.ys, q.bottom, q.top, q.wall, q.roof);
+-  for (const q of p.slabs) slab(w, q.xs, q.ys, q.level, q.paint);
++/** A building's base into its cell's writer: a filter over its program (`program.ts`), the shapes its walk wrote (`recordBase`,
++ *  `recordBaseLots`), its body put on its lots' floor. */
++export function writeBase(w: CellWriter, p: ProgramStage): void {
++  const floor = p.lots.floor ?? 0;
++  for (const q of p.mass.prisms) prism(w, q.xs, q.ys, q.bottom + floor, q.top + floor, q.wall, q.roof);
++  for (const q of p.lots.slabs) slab(w, q.xs, q.ys, q.level, q.paint);
+ }
+ 
+-/** A square's base put together from its cells' writers (each building into its own cell's, `cellOf`), on the square's grid; null with no cell. */
++/** A cell's base as it is kept between jobs (`cellPool.ts` slices): its writer's arrays, its buildings' prisms and lots in their order. */
++export interface BaseSlice {
++  readonly position: Float64Array;
++  readonly paint: Uint16Array;
++  readonly index: Uint32Array;
++}
++
++/** A cell's arrays as a square's base reads them: a writer's, or a slice's. */
++interface BaseCell {
++  readonly position: ArrayLike<number>;
++  readonly paint: ArrayLike<number>;
++  readonly index: ArrayLike<number>;
++}
++
++/** A square's base put together from its cells' writers (each building into its own cell's, `cellOf`), or their slices kept (`put`), on the square's grid; null with no cell. */
+ export class BaseWriter {
+-  private readonly cells = new Map<string, { readonly i: number; readonly j: number; readonly w: CellWriter }>();
++  private readonly cells = new Map<string, { readonly i: number; readonly j: number; readonly w: BaseCell }>();
+ 
+   /** The writer of the cell a building stands in (its position, as `layer.ts` cellOf files it). */
+   cellOf(b: Building): CellWriter {
+@@ -174,9 +198,23 @@ export class BaseWriter {
+     const key = `${i},${j}`;
+     let cell = this.cells.get(key);
+     if (!cell) this.cells.set(key, cell = { i, j, w: new CellWriter() });
++    if (!(cell.w instanceof CellWriter)) throw new Error(`[buildings] a building walked into cell ${key}, whose base was put from its slice`);
+     return cell.w;
+   }
+ 
++  /** A cell's base as kept (`sliceOf`), its buildings not walked. */
++  put(cell: string, slice: BaseSlice): void {
++    const comma = cell.indexOf(',');
++    this.cells.set(cell, { i: Number(cell.slice(0, comma)), j: Number(cell.slice(comma + 1)), w: slice });
++  }
++
++  /** A cell's base as its buildings wrote it, to keep (`put` reads it back the same); null where none of its buildings was written. */
++  sliceOf(cell: string): BaseSlice | null {
++    const w = this.cells.get(cell)?.w;
++    if (!w) return null;
++    return { position: Float64Array.from(w.position), paint: Uint16Array.from(w.paint), index: Uint32Array.from(w.index) };
++  }
++
+   done(square: MassSquare): BaseMass | null {
+     if (!this.cells.size) return null;
+     const list = [...this.cells.values()].sort((p, q) => p.i - q.i || p.j - q.j);
+@@ -201,22 +239,22 @@ export class BaseWriter {
+     let at = 0;
+     while (at < list.length) {
+       let end = at, vertices = 0, indices = 0;
+-      do { vertices += list[end]!.w.vertices; indices += list[end]!.w.index.length; end++; }
+-      while (end < list.length && vertices + list[end]!.w.vertices <= PIECE_VERTICES);
++      do { vertices += list[end]!.w.paint.length; indices += list[end]!.w.index.length; end++; }
++      while (end < list.length && vertices + list[end]!.w.paint.length <= PIECE_VERTICES);
+       const out = new Uint16Array(vertices * BASE_VERTEX), floats = new Float32Array(vertices * 3), index = indexArray(vertices, indices);
+       const cells = new Int32Array((end - at) * BASE_CELL_STRIDE);
+       let v = 0, n = 0;
+       for (let k = at; k < end; k++) {
+         const { i, j, w } = list[k]!;
+         const p = w.position;
+-        for (let t = 0; t < w.vertices; t++) {
++        for (let t = 0; t < w.paint.length; t++) {
+           const o = (v + t) * BASE_VERTEX;
+           out[o] = q(p[t * 3]!, place.x); out[o + 1] = q(p[t * 3 + 1]!, place.y); out[o + 2] = q(p[t * 3 + 2]!, place.z); out[o + 3] = w.paint[t]!;
+           floats[(v + t) * 3] = p[t * 3]!; floats[(v + t) * 3 + 1] = p[t * 3 + 1]!; floats[(v + t) * 3 + 2] = p[t * 3 + 2]!;
+         }
+         for (let t = 0; t < w.index.length; t++) index[n + t] = w.index[t]! + v;
+         cells.set([i, j, n, w.index.length], (k - at) * BASE_CELL_STRIDE);
+-        v += w.vertices;
++        v += w.paint.length;
+         n += w.index.length;
+       }
+       pieces.push({ vertices: out, index, cells, bounds: vertices ? shellBounds(floats) : Float64Array.of(place.x, lowest, place.z, place.x, lowest, place.z, place.x, lowest, place.z, 0) });
+diff --git a/src/render/buildings/massCells.ts b/src/render/buildings/massCells.ts
+index 78394ce9..3324dbbc 100644
+--- a/src/render/buildings/massCells.ts
++++ b/src/render/buildings/massCells.ts
+@@ -23,6 +23,10 @@ const FACADE_ERROR = FLAT_DEPTH;
+ const NEAR_PIXELS = 2;
+ /** The full detail (L0) while what the facade level lays flat, 0.3 m, spans this many pixels at the frame's own scale (~280 m at 1080 p). DO NOT take it to half a pixel: twice the cells in detail cost 26 ms of GPU a frame in a district view against 19 (measured 2026-10-20); the facade level past it draws the same glass and windows (`facadeLevel.ts`), and the frame's budget steps it down under load. */
+ const FINE_PIXELS = 1;
++/** Within this many times the detail's reach (`FINE_PIXELS`: what the facade level lays flat spanning half its pixels) a cell's detail and
++ *  facade level are made by one walk of each building and kept together (`cellWork.ts` CellJob.pair): the cell steps between them as the eye
++ *  comes and goes, and reads the other kept. Past it the facade level alone (the detail of a cell that far is not asked soon). */
++const PAIR_REACH = 2;
+ /** A cell drawn near stays near down to this share of `NEAR_PIXELS`. */
+ export const HYSTERESIS = 0.85;
+ const DETAIL_REACH = m(1_400); // cells within 1.4 km draw the detail level itself, whatever their pixels: the player asks for no LOD there (2026-10-20)
+@@ -56,6 +60,8 @@ interface Cell {
+   near: boolean;
+   /** Drawn near and at full detail (L0); near and not fine: its facade level (L1). */
+   fine: boolean;
++  /** Near and within `PAIR_REACH` times the detail's reach: its two levels made together. */
++  pair: boolean;
+   /** Its tile or its plate is drawn in its place: far, its mass hidden. */
+   covered: boolean;
+ }
+@@ -196,6 +202,8 @@ export interface MassCells {
+   near(key: string): boolean;
+   /** Whether a cell is drawn at full detail (L0) rather than its facade level (L1); a cell not near is not. */
+   fine(key: string): boolean;
++  /** Whether a cell near is within `PAIR_REACH` times the detail's reach: its detail and its facade level made by one walk (`cellWork.ts` CellJob.pair). */
++  pair(key: string): boolean;
+   /** The cells drawn near now (what the streaming of the detail reads, `layer.ts` `landCells`). */
+   nearKeys(): Iterable<string>;
+   /** Whether a cell's detail is shown (`layer.ts` streaming): a near cell keeps its mass shown until its detail lands */
+@@ -554,7 +562,7 @@ export function createMassCells(kit: BuildingKit, cellSize: number, released: (k
+       const [i, j] = cellIndex(key);
+       // Near until the eye says otherwise (`choose`), as a cell made before the eye is known; far under a tile or plate drawn.
+       const covered = coveredAt(i, j);
+-      const cell: Cell = { mesh: null, massless: false, landed: false, i, j, ...square(i, j), top, bottom, near: !covered, fine: !covered, covered };
++      const cell: Cell = { mesh: null, massless: false, landed: false, i, j, ...square(i, j), top, bottom, near: !covered, fine: !covered, pair: false, covered };
+       cells.set(key, cell);
+       setNear(key, cell, !covered);
+     },
+@@ -568,7 +576,7 @@ export function createMassCells(kit: BuildingKit, cellSize: number, released: (k
+       const tile = tiles.get(tileOf(i, j));
+       const refused = mass !== null && tile !== undefined && !tile.exposed;
+       const cell: Cell = { mesh: null, massless: mass === null, landed: !refused, i, j, ...square(i, j), top: known?.top ?? 0, bottom: known?.bottom ?? 0,
+-        near: known?.near ?? !covered, fine: known?.fine ?? !covered, covered };
++        near: known?.near ?? !covered, fine: known?.fine ?? !covered, pair: known?.pair ?? false, covered };
+       if (known) lowered(known.top);
+       if (refused) released(key);
+       else if (mass) {
+@@ -857,7 +865,7 @@ export function createMassCells(kit: BuildingKit, cellSize: number, released: (k
+         setCoarse(plate, plateDrawn || plateStays);
+       }
+       const decide = (key: string, cell: Cell): void => {
+-        let near: boolean, fine = true;
++        let near: boolean, fine = true, pair = false;
+         const forced = allNear === true || (allNear !== false && allNear.has(key));
+         if (forced) near = true;
+         else if (heldFar.has(key)) near = false;
+@@ -875,7 +883,9 @@ export function createMassCells(kit: BuildingKit, cellSize: number, released: (k
+           // The full detail (L0) while a detail it draws, 0.3 m, spans a pixel: the building shows its own windows, frames and balconies at any zoom close enough to tell them apart (the player, 2026-10-20: no LOD within 1.4 km). The frame's own budget still trims it under load.
+           // DO NOT cap what is allowed (a `Math.min(1, …)` here left the budget no way to step the detail down: every cell within reach stayed at its heaviest level whatever the scale).
+           fine = !heldCoarse.has(key) && (FACADE_ERROR * perMetre >= (allowed / NEAR_PIXELS) * FINE_PIXELS * (cell.fine ? HYSTERESIS : 1));
++          pair = near && FACADE_ERROR * perMetre * PAIR_REACH >= (allowed / NEAR_PIXELS) * FINE_PIXELS;
+         }
++        cell.pair = pair;
+         if (near !== cell.near || (near && fine) !== cell.fine) setNear(key, cell, near, fine);
+       };
+       // Those near now may go far; those named stay near.
+@@ -1005,6 +1015,9 @@ export function createMassCells(kit: BuildingKit, cellSize: number, released: (k
+     fine(key) {
+       return cells.get(key)?.fine ?? true;
+     },
++    pair(key) {
++      return cells.get(key)?.pair ?? false;
++    },
+     nearKeys() {
+       return nearKeys;
+     },
+diff --git a/src/render/buildings/massLevels.ts b/src/render/buildings/massLevels.ts
+index 5a87271d..2d5a10ba 100644
+--- a/src/render/buildings/massLevels.ts
++++ b/src/render/buildings/massLevels.ts
+@@ -1,6 +1,7 @@
+ import type { CellMass } from './cellArrays';
+ import type { CellEnv, CellPool } from './cellPool';
+ import { type CellEntry, type PackedEntries, samePacked, unpack } from './chunk';
++import type { CellSpan } from './cellWork';
+ import type { JobKind } from './cellWork';
+ import { type MassLevel, baseOf, cellIndex, levelCells, plateOf, tileOf } from './levelKeys';
+ import type { BaseMass } from './massBase';
+@@ -69,9 +70,9 @@ export class MassLevels {
+       }
+       this.plan(key);
+       // THE BASE AT ONCE, whatever the view and the upload queue: it is what stands where no finer level is (`massBase.ts`).
+-      if (key[0] === 'b') { this.ask(key, this.listOf(key), env); continue; }
++      if (key[0] === 'b') { this.ask(key, env); continue; }
+       // The upload queue full (`uploads.ts` warmFull): left stale, asked by `pump` once it drains. A plate not edited waits its turn (`pump`).
+-      if ((key[0] === 'p' || this.wanted(key)) && (this.edited.has(key) || (key[0] !== 'p' && !warmFull() && !this.deferred(key)))) this.ask(key, this.listOf(key), env);
++      if ((key[0] === 'p' || this.wanted(key)) && (this.edited.has(key) || (key[0] !== 'p' && !warmFull() && !this.deferred(key)))) this.ask(key, env);
+       else {
+         // Its old masses, if any, are no longer its buildings': asked again once a view wants it.
+         const was = this.asked.get(key);
+@@ -92,8 +93,7 @@ export class MassLevels {
+       if (key[0] === 'p' && !this.edited.has(key)) { if (!this.deferred(key)) plates.push(key); continue; }
+       if (key[0] !== 'p' && (!this.wanted(key) || (this.deferred(key) && !this.edited.has(key)))) continue;
+       this.stale.delete(key);
+-      const list = this.listOf(key);
+-      if (list.length) this.ask(key, list, env);
++      if (this.hasAny(key)) this.ask(key, env);
+     }
+     if (!plates.length) return;
+     let flying = 0;
+@@ -104,9 +104,8 @@ export class MassLevels {
+     for (const key of plates) {
+       if (flying >= PLATES_IN_FLIGHT) break;
+       this.stale.delete(key);
+-      const list = this.listOf(key);
+-      if (!list.length) continue;
+-      this.ask(key, list, env);
++      if (!this.hasAny(key)) continue;
++      this.ask(key, env);
+       if (this.asked.has(key)) flying++;
+     }
+   }
+@@ -120,14 +119,18 @@ export class MassLevels {
+     this.changed();
+   }
+ 
+-  /** A level's buildings, its cells' in order: entries made now, for the job asked. */
+-  private listOf(key: string): CellEntry[] {
++  /** A level's buildings, its cells' in order (column by column): entries made now, for the job asked; `cells`, each cell's count of them (the
++   *  job joins its cells' slices, `cellPool.ts` SliceStore). */
++  private listOf(key: string, cells?: CellSpan[]): CellEntry[] {
+     const { i0, j0, n } = levelCells(key);
+     const list: CellEntry[] = [];
+     for (let i = i0; i < i0 + n; i++) {
+       for (let j = j0; j < j0 + n; j++) {
+         const some = this.entries.get(`${i},${j}`);
+-        if (some) unpack(some, list);
++        if (!some) continue;
++        const from = list.length;
++        unpack(some, list);
++        cells?.push({ cell: `${i},${j}`, count: list.length - from });
+       }
+     }
+     return list;
+@@ -140,8 +143,10 @@ export class MassLevels {
+     return false;
+   }
+ 
+-  /** A level asked of the workers, the older ask of it cancelled. */
+-  private ask(key: string, list: readonly CellEntry[], env: CellEnv): void {
++  /** A level asked of the workers, made of its cells' buildings (`listOf`), the older ask of it cancelled. */
++  private ask(key: string, env: CellEnv): void {
++    const cells: CellSpan[] = [];
++    const list = this.listOf(key, cells);
+     const was = this.asked.get(key);
+     if (was !== undefined) { this.pool.cancel(was); this.asked.delete(key); }
+     const kind = KIND[levelCells(key).level];
+@@ -153,7 +158,7 @@ export class MassLevels {
+       this.changed();
+       if (key[0] === 'b') this.landBase(key, result.base ?? null);
+       else this.land(key, result.mass ?? null);
+-    }, `${kind}|${key}`, edited, key[0] === 'b' || this.hole(key));
++    }, `${kind}|${key}`, edited, key[0] === 'b' || this.hole(key), false, cells);
+     if (this.pool.isRunning(id)) this.asked.set(key, id);
+   }
+ 
+diff --git a/src/render/buildings/massing.ts b/src/render/buildings/massing.ts
+index 4dc8214f..fb4c196c 100644
+--- a/src/render/buildings/massing.ts
++++ b/src/render/buildings/massing.ts
+@@ -5,7 +5,7 @@ import { closedBlocks } from '@world/buildings/geometry';
+ import type { Finish, MaterialSpec } from '@world/buildings/materials';
+ import type { BayComponent, Building, LotSurface } from '@world/buildings/types';
+ import { m } from '@world/units';
+-import { BAY_FLOATS, FACE_FLOATS, GROUP_FLOATS, MASS_FLATTENED, type MassProgram, SIDE_FLOATS } from './program';
++import { BAY_FLOATS, FACE_FLOATS, GROUP_FLOATS, MASS_FLATTENED, type MassProgram, type ProgramStage, SIDE_FLOATS } from './program';
+ 
+ /** A BUILDING FROM AFAR: its blocks as they stand, one plain mesh, with the windows drawn by the shader. DRAWN FROM THE BUILDING'S PROGRAM
+  *  (`program.ts`), never by a walk of its own: the cell's, the tile's and the plate's masses are each a filter over the one mass stage the
+@@ -210,7 +210,7 @@ export const GLASS_SHARE: Partial<Record<BayComponent, number>> = {
+ /** A block's walls at a level, from its bays (`MassProgram.bays`, the layout the building's walk read): a storey's bays side by side with
+  *  the same offset and glass one run, the runs alike one above the other one wall whose windows the shader counts up from the lowest
+  *  (`massingMaterial.ts`); a relief or an arcade the level leaves out laid flat, its wall run on with its neighbours (one quad where they were coplanar). */
+-function writeWalls(w: MassWriter, p: MassProgram, block: number): void {
++function writeWalls(w: MassWriter, p: MassProgram, block: number, floor: number): void {
+   /** One run of a storey, before the storeys alike are stacked into one. */
+   interface Run { side: number; a0: number; a1: number; d: number; z0: number; z1: number; zb: number; height: number; glass: number; colour: Rgb }
+   const runs: Run[] = [];
+@@ -225,7 +225,7 @@ function writeWalls(w: MassWriter, p: MassProgram, block: number): void {
+       while (j < end && Math.abs(offsetOf(j) - offsetOf(i)) < 1e-3 && bays[j * BAY_FLOATS + 6] === bays[f + 6]
+         && Math.abs(bays[j * BAY_FLOATS + 1]! - (bays[(j - 1) * BAY_FLOATS + 1]! + bays[(j - 1) * BAY_FLOATS + 2]!)) < 1e-3) j++;
+       const l = (j - 1) * BAY_FLOATS;
+-      const z0 = bays[f + 3]!, height = bays[f + 4]!;
++      const z0 = bays[f + 3]! + floor, height = bays[f + 4]!;
+       runs.push({
+         side: bays[f]!, a0: bays[f + 1]!, a1: bays[l + 1]! + bays[l + 2]!, d: offsetOf(i), z0, z1: z0 + height,
+         zb: bays[f + 11] ? z0 - BURY : z0, height, glass: bays[f + 7]!, colour: [bays[f + 8]!, bays[f + 9]!, bays[f + 10]!],
+@@ -259,16 +259,10 @@ function writeWalls(w: MassWriter, p: MassProgram, block: number): void {
+   }
+ }
+ 
+-/** A building's masses at a level (`detail`): a filter over its program's mass stage (`program.ts`), its walls joined by what the level
+- *  leaves out, every other face kept or left out by its group (a parapet, a box on the roof, a machine room; a pitched roof laid flat at its
+- *  eaves by a level of boxes, its slab drawn instead). Null when nothing is drawn. */
+-export function massOf(p: MassProgram, detail: MassDetail = CELL_DETAIL): MassingChunk | null {
+-  const w = new MassWriter(p.frame, p.seed, detail);
+-  for (let block = 0; block + 1 < p.blockRows.length; block++) writeWalls(w, p, block);
+-  // Each group asked once (`leaves` keeps the largest left out as the level's error); a pitched roof only by a level of boxes.
+-  const dropped: boolean[] = [];
+-  for (let g = 0; g < p.groups.length; g += GROUP_FLOATS) dropped.push(p.groups[g + 1] ? detail.boxes && w.leaves(p.groups[g]!) : w.leaves(p.groups[g]!));
+-  const f = p.faces;
++/** A program's faces into the writer, `up` added to each height (the body's floor; 0 for the lots, laid where they lie), each kept or left
++ *  out by its group (`dropped`; none for the lots). */
++function writeFaces(w: MassWriter, src: { readonly faces: Float64Array; readonly points: Float64Array; readonly tris: Uint32Array }, up: number, dropped: readonly boolean[]): void {
++  const f = src.faces;
+   for (let o = 0; o < f.length; o += FACE_FLOATS) {
+     const group = f[o]!, mode = f[o + 1]!;
+     if (group >= 0) {
+@@ -277,10 +271,25 @@ export function massOf(p: MassProgram, detail: MassDetail = CELL_DETAIL): Massin
+     }
+     const first = f[o + 8]!, count = f[o + 9]!;
+     const points: [number, number, number][] = [];
+-    for (let k = first; k < first + count; k++) points.push([p.points[k * 3]!, p.points[k * 3 + 1]!, p.points[k * 3 + 2]!]);
++    for (let k = first; k < first + count; k++) points.push([src.points[k * 3]!, src.points[k * 3 + 1]! + up, src.points[k * 3 + 2]!]);
+     const n: [number, number, number] = [f[o + 2]!, f[o + 3]!, f[o + 4]!], rgb: Rgb = [f[o + 5]!, f[o + 6]!, f[o + 7]!];
+-    if (f[o + 11]! > 0) w.polygon(points, p.tris.subarray(f[o + 10]!, f[o + 10]! + f[o + 11]!), n, rgb);
++    if (f[o + 11]! > 0) w.polygon(points, src.tris.subarray(f[o + 10]!, f[o + 10]! + f[o + 11]!), n, rgb);
+     else w.face(points, n, rgb);
+   }
++}
++
++/** A building's masses at a level (`detail`): a filter over its program's mass stage (`program.ts`), its body put on its lots' floor (the
++ *  floor the level stands it on), its walls joined by what the level leaves out, every other face kept or left out by its group (a parapet,
++ *  a box on the roof, a machine room; a pitched roof laid flat at its eaves by a level of boxes, its slab drawn instead), its paved lots as
++ *  they lie. Null when nothing is drawn. */
++export function massOf(stage: ProgramStage, detail: MassDetail = CELL_DETAIL): MassingChunk | null {
++  const p = stage.mass, floor = stage.lots.floor ?? 0;
++  const w = new MassWriter(p.frame, p.seed, detail);
++  for (let block = 0; block + 1 < p.blockRows.length; block++) writeWalls(w, p, block, floor);
++  // Each group asked once (`leaves` keeps the largest left out as the level's error); a pitched roof only by a level of boxes.
++  const dropped: boolean[] = [];
++  for (let g = 0; g < p.groups.length; g += GROUP_FLOATS) dropped.push(p.groups[g + 1] ? detail.boxes && w.leaves(p.groups[g]!) : w.leaves(p.groups[g]!));
++  writeFaces(w, p, floor, dropped);
++  writeFaces(w, stage.lots, 0, []);
+   return w.position.length ? w.chunk() : null;
+ }
+diff --git a/src/render/buildings/program.ts b/src/render/buildings/program.ts
+index 3432df45..6db7688b 100644
+--- a/src/render/buildings/program.ts
++++ b/src/render/buildings/program.ts
+@@ -8,6 +8,9 @@ import type { FlagInstance } from './flagLayer';
+  * Staged as a shape grammar derives a building (Müller et al. 2006, the mass model before the facades, https://history.siggraph.org/?p=113547)
+  * and lazily, the view asking for the stages it draws (Steinberger et al. 2014, https://hgpu.org/?p=11204): the mass stage alone for the
+  * levels drawn from afar (the whole map's plates and bases at the opening), the facades only where a cell is drawn in detail or at its facade level.
++ * ONE PROGRAM A BUILDING, WHATEVER FLOOR IT IS STOOD ON: its body is kept over its floor (each height from it), the floor added by the level's
++ * filter; only its paved lots stand on a floor (`LotsProgram`: their surfaces fall from the level they meet to the street), made again alone
++ * when a building's floor is measured anew.
+  */
+ 
+ /** A thing the masses leave out at a level (`MassDetail.drop`), asked once a level (`MassWriter.leaves`): a parapet, a box on the roof, a
+@@ -21,7 +24,7 @@ export const MASS_PITCHED = 1;
+ export const MASS_FLATTENED = 2;
+ 
+ /** A face of the masses, `FACE_FLOATS` numbers (`MassProgram.faces`): its group (-1: none, always drawn) and mode, its normal (three's axes),
+- *  its colour, its first point and points (`MassProgram.points`, three floats each), its first triangle corner and corners (`MassProgram.tris`;
++ *  its colour, its first point and points (`MassProgram.points`, three doubles each), its first triangle corner and corners (`MassProgram.tris`;
+  *  none: a convex fan). */
+ export const FACE_FLOATS = 12;
+ 
+@@ -55,12 +58,13 @@ export interface MassSide {
+ }
+ export const SIDE_FLOATS = 8;
+ 
+-/** The base's (`massBase.ts`): a block's prism on the plan (anticlockwise), from its foot to its top, its two paints (5-6-5); a paved lot flat at `level`. */
++/** The base's (`massBase.ts`): a block's prism on the plan (anticlockwise), from its foot to its top over its floor, its two paints (5-6-5); a paved lot flat at `level` (absolute: a lot's, `LotsProgram`). */
+ export interface BasePrism { readonly xs: Float64Array; readonly ys: Float64Array; readonly bottom: number; readonly top: number; readonly wall: number; readonly roof: number }
+ export interface BaseSlab { readonly xs: Float64Array; readonly ys: Float64Array; readonly level: number; readonly paint: number }
+ 
+ /** The mass stage of a program: what every level drawn from afar is drawn from, in a few flat arrays (a few KB a building: the programs
+- *  kept by a worker are a plate's thousands, `cellJobMemory.spec.ts`). */
++ *  kept by a worker are a plate's thousands, `cellJobMemory.spec.ts`); every height over the building's floor (its bays' feet, its faces'
++ *  points, its prisms), the floor added where a level is drawn (`massing.ts` massOf, `massBase.ts` writeBase). */
+ export interface MassProgram {
+   /** The building's frame on the plan (its walls laid from their local sides). */
+   readonly frame: { readonly x: number; readonly y: number; readonly c: number; readonly s: number };
+@@ -75,10 +79,28 @@ export interface MassProgram {
+   readonly blockSides: Uint32Array;
+   readonly groups: Float64Array;
+   readonly faces: Float64Array;
+-  readonly points: Float32Array;
++  readonly points: Float64Array;
+   readonly tris: Uint32Array;
+   readonly prisms: readonly BasePrism[];
++}
++
++/** The part of a program that stands on a floor: its paved lots as the masses lay them (faces, absolute) and as the base lays them (slabs),
++ *  and its lots' ground as the page keeps it; `floor`: the floor they stand on (null: no closed block, the lots on the highest ground). */
++export interface LotsProgram {
++  readonly floor: number | null;
++  readonly faces: Float64Array;
++  readonly points: Float64Array;
++  readonly tris: Uint32Array;
+   readonly slabs: readonly BaseSlab[];
++  readonly lotGround?: LotGround;
++  readonly signatureFloor?: number;
++}
++
++/** What a level drawn from afar is drawn from (`massing.ts` massOf, `massBase.ts` writeBase): a building's body, and its lots on the floor the
++ *  level stands it on (the body put on the lots' floor). */
++export interface ProgramStage {
++  readonly mass: MassProgram;
++  readonly lots: LotsProgram;
+ }
+ 
+ /** What the page keeps of a building (`cellWork.ts` ChunkSummary): its flags, its lots' ground, a signature building's floor. */
+@@ -88,14 +110,25 @@ export interface ProgramSummary {
+   readonly signatureFloor?: number;
+ }
+ 
+-/** A building's program: the mass stage always, the detail and the facade level where a walk was asked for them. */
+-export interface BuildingProgram {
+-  readonly mass: MassProgram;
+-  readonly summary: ProgramSummary;
++/** A building's program: its body's mass stage always, its flags over its floor, its lots on the floor it was walked on, the detail and the
++ *  facade level (absolute: drawn on the building's measured floor) where a walk was asked for them. */
++export interface BuildingProgram extends ProgramStage {
++  /** Its flags, each one's height over the floor (three's y). */
++  readonly flags: readonly FlagInstance[];
+   readonly near?: BuildingChunk;
+   readonly far?: BuildingChunk;
+ }
+ 
++/** What the page keeps of a building on the floor its lots stand on (`lots`): its flags put on that floor, its lots' ground, a signature building's floor. */
++export function summaryOf(p: BuildingProgram, lots: LotsProgram = p.lots): ProgramSummary {
++  const floor = lots.floor ?? 0;
++  return {
++    ...(lots.lotGround ? { lotGround: lots.lotGround } : {}),
++    ...(lots.signatureFloor !== undefined ? { signatureFloor: lots.signatureFloor } : {}),
++    ...(p.flags.length ? { flags: p.flags.map((f) => ({ ...f, y: f.y + floor })) } : {}),
++  };
++}
++
+ /** Three plan numbers (x, y north, z up). */
+ type V3 = readonly [number, number, number];
+ 
+@@ -113,6 +146,7 @@ export class MassRecorder {
+   readonly prisms: BasePrism[] = [];
+   readonly slabs: BaseSlab[] = [];
+ 
++  /** Every height written absolute, as the walk lays the building on its floor; taken over the floor when packed (`done`). */
+   constructor(readonly frame: MassProgram['frame'], readonly seed: number) {}
+ 
+   /** A thing left out under `size` at a level; `boxesOnly`: a pitched roof, asked only by a level of boxes. */
+@@ -150,15 +184,30 @@ export class MassRecorder {
+     if (tris) for (let k = 0; k < tris.length; k++) this.tris.push(tris[k]!);
+   }
+ 
+-  done(): MassProgram {
++  /** The mass stage packed, every height taken over `floor` (the floor the walk stood the building on). */
++  done(floor = 0): MassProgram {
++    const bays = Float64Array.from(this.bays);
++    for (let i = 3; i < bays.length; i += BAY_FLOATS) bays[i]! -= floor;
++    // DO NOT keep them in single floats: a point taken over its floor, rounded to a float and put back on its floor fell a float's step off the
++    // same point of a wall beside it (a parapet's foot off the wall's head), the masses' faces no longer closed (the catalogue's solids, stage 1b).
++    const points = new Float64Array(this.points.length);
++    for (let i = 0; i < points.length; i += 3) { points[i] = this.points[i]!; points[i + 1] = this.points[i + 1]! - floor; points[i + 2] = this.points[i + 2]!; }
+     return {
+       frame: this.frame, seed: this.seed,
+-      bays: Float64Array.from(this.bays), rows: Uint32Array.from([...this.rows, this.bays.length / BAY_FLOATS]),
++      bays, rows: Uint32Array.from([...this.rows, this.bays.length / BAY_FLOATS]),
+       blockRows: Uint32Array.from([...this.blockRows, this.rows.length]),
+       sides: Float64Array.from(this.sides), blockSides: Uint32Array.from([...this.blockSides, this.sides.length / SIDE_FLOATS]),
+       groups: Float64Array.from(this.groupList), faces: Float64Array.from(this.faceList),
+-      points: Float32Array.from(this.points), tris: Uint32Array.from(this.tris),
+-      prisms: this.prisms, slabs: this.slabs,
++      points, tris: Uint32Array.from(this.tris),
++      prisms: this.prisms.map((q) => ({ ...q, bottom: q.bottom - floor, top: q.top - floor })),
++    };
++  }
++
++  /** What it recorded as a lots part (`LotsProgram`): its faces and its slabs as laid (absolute), on `floor`. */
++  lots(floor: number | null, lotGround?: LotGround, signatureFloor?: number): LotsProgram {
++    return {
++      floor, faces: Float64Array.from(this.faceList), points: Float64Array.from(this.points), tris: Uint32Array.from(this.tris), slabs: this.slabs,
++      ...(lotGround ? { lotGround } : {}), ...(signatureFloor !== undefined ? { signatureFloor } : {}),
+     };
+   }
+ }
+@@ -168,7 +217,8 @@ export function programBytes(p: BuildingProgram): number {
+   const q = p.mass;
+   let bytes = 512 + q.bays.byteLength + q.rows.byteLength + q.blockRows.byteLength + q.sides.byteLength + q.blockSides.byteLength
+     + q.groups.byteLength + q.faces.byteLength + q.points.byteLength + q.tris.byteLength;
+-  for (const s of [...q.prisms, ...q.slabs]) bytes += 160 + s.xs.byteLength + s.ys.byteLength;
++  for (const s of q.prisms) bytes += 160 + s.xs.byteLength + s.ys.byteLength;
++  bytes += lotsBytes(p.lots) + p.flags.length * 96;
+   for (const chunk of [p.near, p.far]) {
+     if (!chunk) continue;
+     for (const s of Object.values(chunk.shells)) if (s) bytes += s.position.byteLength + s.normal.byteLength + s.paint.byteLength + s.index.byteLength;
+@@ -181,20 +231,69 @@ export function programBytes(p: BuildingProgram): number {
+   return bytes;
+ }
+ 
++/** The bytes a lots part holds (its lots' ground's surfaces counted a few hundred bytes a lot). */
++export function lotsBytes(l: LotsProgram): number {
++  let bytes = 256 + l.faces.byteLength + l.points.byteLength + l.tris.byteLength;
++  for (const s of l.slabs) bytes += 160 + s.xs.byteLength + s.ys.byteLength;
++  return bytes + (l.lotGround ? 512 : 0);
++}
++
+ /** THE PROGRAMS A WORKER KEEPS, by record: a building's program is made once and every job of it after that reads it (`cellWork.ts`);
+  *  an edit changes the record's digest, so only the edited building is walked again, its neighbours' programs read as they were.
+  *  Least recently used first out, within a budget of bytes: each worker is a heap in the page's V8 cage (`jobPool.ts`), so a few tens of MB. */
+ export class ProgramCache {
+   private readonly kept = new Map<string, { program: BuildingProgram; bytes: number }>();
++  private readonly keptLots = new Map<string, { lots: LotsProgram; bytes: number }>();
+   private bytes = 0;
+-  /** Since `resetCounts`: the buildings walked (`emitProgram`) and the programs read instead of a walk. */
++  /** Since `resetCounts`: the buildings' bodies walked (`emitProgram`), the programs read instead of a walk, and the lots alone walked on a floor anew (`emitLotsAt`). */
+   walks = 0;
+   hits = 0;
++  lotWalks = 0;
+   constructor(private readonly budget: number) {}
+ 
+   resetCounts(): void {
+     this.walks = 0;
+     this.hits = 0;
++    this.lotWalks = 0;
++  }
++
++  /** A building's lots on a floor (`LotsProgram`), kept beside its program. */
++  getLots(key: string): LotsProgram | undefined {
++    const hit = this.keptLots.get(key);
++    if (!hit) return undefined;
++    this.keptLots.delete(key);
++    this.keptLots.set(key, hit);
++    return hit.lots;
++  }
++
++  setLots(key: string, lots: LotsProgram): void {
++    const was = this.keptLots.get(key);
++    if (was) { this.bytes -= was.bytes; this.keptLots.delete(key); }
++    const bytes = lotsBytes(lots);
++    this.keptLots.set(key, { lots, bytes });
++    this.bytes += bytes;
++    this.trim();
++  }
++
++  deleteLots(key: string): void {
++    const was = this.keptLots.get(key);
++    if (!was) return;
++    this.keptLots.delete(key);
++    this.bytes -= was.bytes;
++  }
++
++  /** Least recently used out, lots first, till the budget holds. */
++  private trim(): void {
++    for (const [k, v] of this.keptLots) {
++      if (this.bytes <= this.budget) return;
++      this.keptLots.delete(k);
++      this.bytes -= v.bytes;
++    }
++    for (const [k, v] of this.kept) {
++      if (this.bytes <= this.budget) return;
++      this.kept.delete(k);
++      this.bytes -= v.bytes;
++    }
+   }
+ 
+   get(key: string): BuildingProgram | undefined {
+@@ -213,11 +312,7 @@ export class ProgramCache {
+     if (bytes > this.budget) return;
+     this.kept.set(key, { program, bytes });
+     this.bytes += bytes;
+-    for (const [k, v] of this.kept) {
+-      if (this.bytes <= this.budget) break;
+-      this.kept.delete(k);
+-      this.bytes -= v.bytes;
+-    }
++    this.trim();
+   }
+ 
+   /** A program let go (a job that read past what it was handed: what it walked is not kept, `cellWork.ts`). */
+@@ -229,12 +324,13 @@ export class ProgramCache {
+   }
+ 
+   /** How many programs and bytes it holds. */
+-  get size(): { readonly programs: number; readonly bytes: number } {
+-    return { programs: this.kept.size, bytes: this.bytes };
++  get size(): { readonly programs: number; readonly lots: number; readonly bytes: number } {
++    return { programs: this.kept.size, lots: this.keptLots.size, bytes: this.bytes };
+   }
+ 
+   clear(): void {
+     this.kept.clear();
++    this.keptLots.clear();
+     this.bytes = 0;
+   }
+ }
+diff --git a/tests/render/cellAffinity.spec.ts b/tests/render/cellAffinity.spec.ts
+new file mode 100644
+index 00000000..c40f0917
+--- /dev/null
++++ b/tests/render/cellAffinity.spec.ts
+@@ -0,0 +1,100 @@
++import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
++
++import type { KitBoxes } from '@render/buildings/cellArrays';
++import type { CellEntry, CellJob, CellResult } from '@render/buildings/cellWork';
++import { GroundShare } from '@render/sharedGround';
++import { Digest } from '@core/digest';
++import { BLUEPRINTS, instantiate } from '@world/buildings/blueprints';
++import { type RecordRef, refOf } from '@world/buildings/recordTable';
++import type { Building, BuildingId } from '@world/buildings/types';
++import { m } from '@world/units';
++import { CellWorker } from './support/cellWorkers';
++
++/** A CELL'S JOBS GO TO THE WORKER THAT RAN ITS LAST (`jobPool.ts` JobSpec.affinity, `cellPool.ts` affinityOf): the buildings' programs a
++ *  worker keeps (`cellWork.ts`) read there, not walked again on another worker. */
++
++const boxes = { parts: {}, furniture: {}, bandings: {} } as unknown as KitBoxes;
++/** The ground as the atlas hands it: shared, flat (no plate made, no relief). */
++const env = { groundAt: Object.assign(() => 0, { share: new GroundShare(3, 1, 1, 0) }), naturalAt: () => 0 };
++const texts = new Map<string, RecordRef>();
++const entryOf = (b: Building): CellEntry => { texts.set(String(b.id), refOf(b)); return { key: String(b.id), sig: new Digest().addPlain(b).value(), digest: 0 }; };
++/** Every preset stood in a row from `x`: the buildings of a cell. */
++function row(x: number, first: number): Building[] {
++  return BLUEPRINTS.slice(0, 6).map((bp, k) => ({ ...instantiate(bp.body, { x: x + k * m(36), y: m(120) }, 0, bp.key), id: (first + k) as BuildingId }) as Building);
++}
++
++describe("a cell's jobs on the worker of its last", () => {
++  beforeEach(() => {
++    CellWorker.made = [];
++    vi.resetModules();
++    vi.stubGlobal('Worker', CellWorker);
++    // Two workers in the pool (four threads less the page's and the simulation's).
++    vi.stubGlobal('navigator', { hardwareConcurrency: 4 });
++    vi.stubGlobal('document', {});
++  });
++  afterEach(() => {
++    vi.unstubAllGlobals();
++  });
++
++  it("runs a square's masses at every level on one worker, each building walked once (`JobSpec.affinity`)", async () => {
++    const { CellPool, affinityOf } = await import('@render/buildings/cellPool');
++    const { tileOf } = await import('@render/buildings/levelKeys');
++    // Two cells in two squares of the base (`levelKeys.ts` baseOf): cell 0,0 in square 0,0, cell 8,0 in square 1,0.
++    expect(affinityOf('mass', '0,0')).not.toBe(affinityOf('mass', '8,0'));
++    expect(affinityOf('massTile', tileOf(0, 0))).toBe(affinityOf('mass', '0,0'));
++    expect(affinityOf('massTile', tileOf(8, 0))).toBe(affinityOf('mass', '8,0'));
++    expect(affinityOf('massBase', 'b:0,0')).toBe(affinityOf('mass', '0,0'));
++    expect(affinityOf('cell', '0,0')).toBe('cell:0,0');
++    const a = row(m(16), 1).map(entryOf), b = row(8 * m(256) + m(16), 101).map(entryOf);
++    const pool = new CellPool(() => boxes, (e) => () => texts.get(e.key)!);
++    const results: CellResult[] = [];
++    const run = (kind: 'mass' | 'massTile', cell: string, entries: readonly CellEntry[]): void => { pool.run(kind, cell, entries, env, (r) => results.push(r)); };
++    const drain = async (): Promise<void> => { for (const w of CellWorker.made) await w.drain(); };
++    // The cells' masses: one worker each.
++    run('mass', '0,0', a);
++    run('mass', '8,0', b);
++    expect(CellWorker.made).toHaveLength(2);
++    await drain();
++    const [w0, w1] = CellWorker.made as [CellWorker, CellWorker];
++    expect(w0.ran).toEqual(['mass 0,0']);
++    expect(w1.ran).toEqual(['mass 8,0']);
++    const walks = (w: CellWorker): number => w.work!.keptPrograms().walks;
++    expect([walks(w0), walks(w1)]).toEqual([a.length, b.length]);
++    // Their tiles, the second square's asked first: by the queue's order alone it would go to the first worker (the first warm one, `hostFor`), and every building be walked again there.
++    w0.work!.keptPrograms().resetCounts();
++    w1.work!.keptPrograms().resetCounts();
++    run('massTile', tileOf(8, 0), b);
++    run('massTile', tileOf(0, 0), a);
++    await drain();
++    expect(w0.ran).toEqual(['mass 0,0', `massTile ${tileOf(0, 0)}`]);
++    expect(w1.ran).toEqual(['mass 8,0', `massTile ${tileOf(8, 0)}`]);
++    // No building walked again: each tile a filter over the programs its worker kept.
++    expect([walks(w0), walks(w1)]).toEqual([0, 0]);
++    expect(w0.work!.keptPrograms().hits).toBe(a.length);
++    expect(w1.work!.keptPrograms().hits).toBe(b.length);
++    expect(results.every((r) => r.mass)).toBe(true);
++  });
++
++  it("gives a job whose worker is busy to a free one when nothing else waits: its buildings walked again there (the affinity moves)", async () => {
++    const { CellPool } = await import('@render/buildings/cellPool');
++    const { tileOf } = await import('@render/buildings/levelKeys');
++    const a = row(m(16), 1).map(entryOf);
++    const pool = new CellPool(() => boxes, (e) => () => texts.get(e.key)!);
++    pool.run('mass', '0,0', a, env, () => {});
++    await CellWorker.made[0]!.drain();
++    const w0 = CellWorker.made[0]!;
++    // Its worker busy with another cell's detail; the square's tile asked meanwhile, nothing else waiting: DO NOT hold the free worker idle for it.
++    pool.run('mass', '1,0', row(m(256) + m(16), 201).map(entryOf), env, () => {});
++    expect(w0.waiting).toHaveLength(1);
++    pool.run('massTile', tileOf(0, 0), a, env, () => {});
++    expect(CellWorker.made).toHaveLength(2);
++    const w1 = CellWorker.made[1]!;
++    expect(w1.waiting.map((q) => (q.data as CellJob).kind)).toEqual(['massTile']);
++    await w1.drain();
++    expect(w1.work!.keptPrograms().walks).toBe(a.length);
++    // The square's next job goes to the worker that ran its last: the second.
++    await w0.drain();
++    pool.run('mass', '0,0', a, env, () => {});
++    expect(w1.waiting.map((q) => (q.data as CellJob).cell)).toEqual(['0,0']);
++  });
++});
+diff --git a/tests/render/cellSlices.spec.ts b/tests/render/cellSlices.spec.ts
+new file mode 100644
+index 00000000..44303ad2
+--- /dev/null
++++ b/tests/render/cellSlices.spec.ts
+@@ -0,0 +1,167 @@
++import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
++
++import type { CellMass, KitBoxes } from '@render/buildings/cellArrays';
++import type { CellEntry, CellResult, CellSlice, JobKind } from '@render/buildings/cellWork';
++import type { CellPool, SliceStore } from '@render/buildings/cellPool';
++import type { PackedEntries } from '@render/buildings/chunk';
++import type { BaseMass } from '@render/buildings/massBase';
++import { GroundShare } from '@render/sharedGround';
++import { Digest } from '@core/digest';
++import { BLUEPRINTS, instantiate } from '@world/buildings/blueprints';
++import { type RecordRef, refOf } from '@world/buildings/recordTable';
++import type { Building, BuildingId } from '@world/buildings/types';
++import { m } from '@world/units';
++import { CellWorker } from './support/cellWorkers';
++
++/** A TILE, A PLATE AND A BASE JOINED FROM THEIR CELLS' SLICES (`cellWork.ts` CellSlice, `cellPool.ts` SliceStore, `massLevels.ts`): an edit
++ *  makes its cell's slices again, its buildings alone sent and walked, every other cell's slice read as kept. */
++
++const boxes = { parts: {}, furniture: {}, bandings: {} } as unknown as KitBoxes;
++/** The ground as the atlas hands it: shared, flat (no plate made, no relief). */
++const env = { groundAt: Object.assign(() => 0, { share: new GroundShare(3, 1, 1, 0) }), naturalAt: () => 0 };
++const texts = new Map<string, RecordRef>();
++const sigOf = (b: Building): number => new Digest().addPlain(b).value();
++
++/** The slices kept, in memory: the derived cache's stand-in where there is no IndexedDB (Node). Cloned in and out, as the store clones. */
++class MemorySlices implements SliceStore {
++  readonly kept = new Map<string, CellSlice>();
++  readonly forgotten: string[] = [];
++  read(keys: readonly string[]): Promise<Map<string, CellSlice>> {
++    const out = new Map<string, CellSlice>();
++    for (const key of keys) { const slice = this.kept.get(key); if (slice) out.set(key, structuredClone(slice)); }
++    return Promise.resolve(out);
++  }
++  keep(key: string, slice: CellSlice, was: string | null): void {
++    this.kept.set(key, structuredClone(slice));
++    if (was !== null && was !== key) { this.kept.delete(was); this.forgotten.push(was); }
++  }
++}
++
++/** Every array of a value by its path, as bytes, and its other values. */
++function leavesOf(o: unknown, path = '', out = new Map<string, unknown>()): Map<string, unknown> {
++  if (ArrayBuffer.isView(o)) out.set(path, `${o.constructor.name}:${Buffer.from(o.buffer, o.byteOffset, o.byteLength).toString('base64')}`);
++  else if (o && typeof o === 'object') for (const [k, v] of Object.entries(o)) leavesOf(v, `${path}.${k}`, out);
++  else out.set(path, o);
++  return out;
++}
++/** Where two values differ, '' when they are the same to the byte. */
++function difference(a: unknown, b: unknown): string {
++  const x = leavesOf(a), y = leavesOf(b);
++  for (const path of new Set([...x.keys(), ...y.keys()])) if (!Object.is(x.get(path), y.get(path))) return path || '(root)';
++  return '';
++}
++
++/** Three cells of one tile (t:0,0), one plate (p:0,0) and one base (b:0,0), a few presets each. */
++const CELLS = ['0,0', '1,0', '0,1'] as const;
++function town(): Map<string, Building[]> {
++  const byCell = new Map<string, Building[]>();
++  let id = 1;
++  for (const cell of CELLS) {
++    const [i, j] = cell.split(',').map(Number) as [number, number];
++    byCell.set(cell, BLUEPRINTS.slice(0, 4).map((bp, k) => ({ ...instantiate(bp.body, { x: i * m(256) + m(30) + k * m(52), y: j * m(256) + m(110) }, 0, bp.key), id: (id++) as BuildingId }) as Building));
++  }
++  return byCell;
++}
++const packed = (list: readonly Building[]): PackedEntries => {
++  for (const b of list) texts.set(String(b.id), refOf(b));
++  return { ids: Float64Array.from(list.map((b) => b.id)), sigs: Float64Array.from(list.map(sigOf)), digest: 0 };
++};
++
++describe('a square level joined from its cells\' slices', () => {
++  beforeEach(() => {
++    CellWorker.made = [];
++    vi.resetModules();
++    vi.stubGlobal('Worker', CellWorker);
++    vi.stubGlobal('navigator', { hardwareConcurrency: 4 });
++    vi.stubGlobal('document', {});
++  });
++  afterEach(() => {
++    vi.unstubAllGlobals();
++  });
++
++  it('re-joins the tile, the plate and the base of an edited building from its cell alone, every other cell read as kept', async () => {
++    const { CellPool } = await import('@render/buildings/cellPool');
++    const { MassLevels } = await import('@render/buildings/massLevels');
++    const store = new MemorySlices();
++    const pool = new CellPool(() => boxes, (e) => () => texts.get(e.key)!, true, undefined, store);
++    const masses = new Map<string, CellMass | null>(), bases = new Map<string, BaseMass | null>();
++    const levels = new MassLevels(pool, (key, mass) => masses.set(key, mass), () => {}, () => {}, () => true);
++    levels.landBase = (key, base) => bases.set(key, base);
++    const byCell = town();
++    for (const [cell, list] of byCell) levels.touch(cell, packed(list));
++    levels.flush(env);
++    await CellWorker.drainAll();
++    expect([...masses.keys()].sort()).toEqual(['p:0,0', 't:0,0']);
++    expect([...bases.keys()]).toEqual(['b:0,0']);
++    // Each cell's slice of each level kept: three cells, three levels.
++    expect(store.kept.size).toBe(CELLS.length * 3);
++
++    /** A level as every building of it walked at once on the page, no slice (the join's reference). */
++    const reference = (kind: JobKind, key: string, cells: Map<string, Building[]>): CellResult => {
++      const page = new CellPool(() => boxes, (e) => () => texts.get(e.key)!, false, undefined, null);
++      const { i0, j0, n } = { i0: kind === 'massTile' ? 0 : -4, j0: kind === 'massTile' ? 0 : -4, n: kind === 'massTile' ? 4 : 8 };
++      const list: CellEntry[] = [];
++      for (let i = i0; i < i0 + n; i++) for (let j = j0; j < j0 + n; j++) for (const b of cells.get(`${i},${j}`) ?? []) list.push({ key: String(b.id), sig: sigOf(b), digest: 0 });
++      let got: CellResult | null = null;
++      page.run(kind, key, list, env, (r) => { got = r; });
++      return got!;
++    };
++    // The levels joined from slices are the levels made whole, byte for byte.
++    expect(difference(masses.get('t:0,0'), reference('massTile', 't:0,0', byCell).mass)).toBe('');
++    expect(difference(masses.get('p:0,0'), reference('massPlate', 'p:0,0', byCell).mass)).toBe('');
++    expect(difference(bases.get('b:0,0'), reference('massBase', 'b:0,0', byCell).base)).toBe('');
++
++    // One building of cell 1,0 edited (moved two metres): its cell filed again, its levels asked again.
++    const edited = [...byCell.get('1,0')!];
++    edited[1] = { ...edited[1]!, x: edited[1]!.x + m(2) };
++    byCell.set('1,0', edited);
++    const reads = (): number => CellWorker.made.reduce((n, w) => n + (w.work ? w.work.keptPrograms().walks + w.work.keptPrograms().hits : 0), 0);
++    const walks = (): number => CellWorker.made.reduce((n, w) => n + (w.work ? w.work.keptPrograms().walks : 0), 0);
++    for (const w of CellWorker.made) w.work?.keptPrograms().resetCounts();
++    const ranBefore = CellWorker.made.map((w) => w.jobs.length);
++    levels.touch('1,0', packed(edited), true);
++    levels.flush(env);
++    await CellWorker.drainAll();
++    const jobs = CellWorker.made.flatMap((w, k) => w.jobs.slice(ranBefore[k]));
++    expect(jobs.map((j) => j.kind).sort()).toEqual(['massBase', 'massPlate', 'massTile']);
++    const editedKeys = edited.map((b) => String(b.id)).sort();
++    for (const job of jobs) {
++      // Only the edited cell's buildings sent; the two other cells handed as their kept slices.
++      expect(job.entries.map((e) => e.key).sort()).toEqual(editedKeys);
++      expect(job.spans).toEqual([{ cell: '1,0', count: edited.length }]);
++      expect(job.slices!.map((s) => s.cell).sort()).toEqual(['0,0', '0,1']);
++    }
++    // No building of another cell walked or read: each of the three levels read the edited cell's buildings, no more; the moved one walked.
++    expect(reads()).toBe(3 * edited.length);
++    expect(walks()).toBeGreaterThanOrEqual(1);
++    expect(walks()).toBeLessThanOrEqual(3);
++    // The edited cell's new slices kept, its old ones forgotten.
++    expect(store.forgotten).toHaveLength(3);
++    expect(store.kept.size).toBe(CELLS.length * 3);
++    // And the levels re-joined are the levels made whole with the edit.
++    expect(difference(masses.get('t:0,0'), reference('massTile', 't:0,0', byCell).mass)).toBe('');
++    expect(difference(masses.get('p:0,0'), reference('massPlate', 'p:0,0', byCell).mass)).toBe('');
++    expect(difference(bases.get('b:0,0'), reference('massBase', 'b:0,0', byCell).base)).toBe('');
++    // ...and differ from before the edit (the edit is in them).
++    const before = town();
++    expect(difference(masses.get('t:0,0'), reference('massTile', 't:0,0', before).mass)).not.toBe('');
++  });
++
++  it('asks the base at once in the far levels\' band, as before slices: its job joins its cells\' slices, those not kept made in it', async () => {
++    const { CellPool, FAR_TIER, TIER_SPAN } = await import('@render/buildings/cellPool');
++    const { MassLevels } = await import('@render/buildings/massLevels');
++    const jobPool = await import('@/jobs/jobPool');
++    const asked: { key: string | null; priority: number }[] = [];
++    const real = jobPool.submitJob;
++    vi.spyOn(jobPool, 'submitJob').mockImplementation((spec) => { asked.push({ key: spec.key, priority: spec.priority }); return real(spec); });
++    const pool: CellPool = new CellPool(() => boxes, (e) => () => texts.get(e.key)!, true, undefined, new MemorySlices());
++    const levels = new MassLevels(pool, () => {}, () => {}, () => {}, () => false);
++    for (const [cell, list] of town()) levels.touch(cell, packed(list));
++    levels.flush(env);
++    await CellWorker.drainAll();
++    const base = asked.find((a) => a.key === 'cells:massBase|b:0,0');
++    expect(base?.priority).toBe(FAR_TIER * TIER_SPAN);
++    // The base the first job asked (the plate waits its turn, no tile is wanted).
++    expect(asked[0]?.key).toBe('cells:massBase|b:0,0');
++  });
++});
+diff --git a/tests/render/cellWork.spec.ts b/tests/render/cellWork.spec.ts
+index 207fa713..08ef25a7 100644
+--- a/tests/render/cellWork.spec.ts
++++ b/tests/render/cellWork.spec.ts
+@@ -10,7 +10,9 @@ import { type CellEntry, type CellResult, keptPrograms } from '@render/buildings
+ import { Digest } from '@core/digest';
+ import { PART_KINDS, createBuildingKit } from '@render/buildings/kit';
+ import { BATCH_CELL, COARSE_PARTS, DETAIL_CELL, DETAIL_PARTS } from '@render/buildings/layerCells';
+-import { tileOf } from '@render/buildings/levelKeys';
++import { baseOf, tileOf } from '@render/buildings/levelKeys';
++import { baseFloor, massFloor } from '@render/buildings/massing';
++import { resolveBlocks } from '@world/buildings/blocks';
+ import { growOnLot } from '@world/growth/zoning';
+ import type { Building } from '@world/buildings/types';
+ import { RoadDoc } from '@world/doc';
+@@ -229,6 +231,96 @@ describe('a cell put together off the page', () => {
+     expect(difference(run(pool, 'mass', cell, after).mass as never, editedMasses.mass as never)).toBe('');
+   });
+ 
++  it("stands a building walked on its estimated floor on its measured one with its lots alone walked again (`program.ts` LotsProgram)", () => {
++    const town = [...grownTown().buildings.all()];
++    const byCell = new Map<string, Building[]>();
++    for (const b of town) { const c = cellOf(b); byCell.set(c, [...byCell.get(c) ?? [], b]); }
++    const [cell, buildings] = [...byCell].sort((p, q) => q[1].length - p[1].length)[0]!;
++    const [ci, cj] = cell.split(',').map(Number) as [number, number];
++    const env = { groundAt, naturalAt, pavedAt };
++    const run = (pool: CellPool, kind: 'mass' | 'massBase', key: string, entries: readonly CellEntry[]): CellResult => {
++      let got: CellResult | null = null;
++      pool.run(kind, key, entries, env, (result) => { got = result; });
++      expect(got).not.toBeNull();
++      return got!;
++    };
++    // The buildings whose floor seen from afar (`baseFloor`, the base's) is not the one measured (`massFloor`, the cell's): each a lots walk, no other.
++    const moved = buildings.filter((b) => baseFloor(b, naturalAt, pavedAt) !== massFloor(b, naturalAt, pavedAt)).length;
++    expect(moved).toBeGreaterThan(0);
++    // Some of them with paved lots, so the lots walked again are really laid on the new floor.
++    expect(buildings.some((b) => resolveBlocks(b).volumes.some((v) => v.open && v.open !== 'grass'))).toBe(true);
++    const programs = keptPrograms();
++    programs.clear();
++    const pool = new CellPool(() => boxes, (e) => () => texts.get(e.key)!, false);
++    const entries = buildings.map(entryOf);
++    // The base first (the opening), on the floors seen from afar: every building's body walked once.
++    programs.resetCounts();
++    run(pool, 'massBase', baseOf(ci, cj), entries);
++    expect(programs.walks).toBe(buildings.length);
++    expect(programs.lotWalks).toBe(0);
++    // Then the cell's masses on the floors measured: no body walked again, the lots of each building whose floor moved walked alone.
++    programs.resetCounts();
++    const cellMasses = run(pool, 'mass', cell, entries);
++    expect(programs.walks).toBe(0);
++    expect(programs.hits).toBe(buildings.length);
++    expect(programs.lotWalks).toBe(moved);
++    expect(cellMasses.mass).toBeTruthy();
++    // ...the same, byte for byte, as every building walked afresh on its measured floor.
++    programs.clear();
++    const fresh = new CellPool(() => boxes, (e) => () => texts.get(e.key)!, false);
++    programs.resetCounts();
++    const afresh = run(fresh, 'mass', cell, entries);
++    expect(programs.walks).toBe(buildings.length);
++    expect(difference(cellMasses.mass as never, afresh.mass as never)).toBe('');
++  });
++
++  it("walks a cell's buildings once for its detail and its facade level within twice the detail's reach, both kept together (`CellJob.pair`)", () => {
++    const town = [...grownTown().buildings.all()];
++    const byCell = new Map<string, Building[]>();
++    for (const b of town) { const c = cellOf(b); byCell.set(c, [...byCell.get(c) ?? [], b]); }
++    const [cell, buildings] = [...byCell].sort((p, q) => q[1].length - p[1].length)[0]!;
++    const env = { groundAt, naturalAt, pavedAt };
++    const run = (pool: CellPool, kind: 'cell' | 'facade', pair: boolean): CellResult => {
++      let got: CellResult | null = null;
++      pool.run(kind, cell, buildings.map(entryOf), env, (result) => { got = result; }, null, false, false, pair);
++      expect(got).not.toBeNull();
++      return got!;
++    };
++    const programs = keptPrograms();
++    programs.clear();
++    // The detail asked in the pair's reach: each building walked once, for both levels.
++    const pool = new CellPool(() => boxes, (e) => () => texts.get(e.key)!, false);
++    programs.resetCounts();
++    const detail = run(pool, 'cell', true);
++    expect(programs.walks).toBe(buildings.length);
++    // The eye steps back: the facade level read from the programs kept, no building walked.
++    programs.resetCounts();
++    const facade = run(pool, 'facade', true);
++    expect(programs.walks).toBe(0);
++    expect(programs.hits).toBe(buildings.length);
++    // Each level the same, byte for byte, as that level walked alone (no pair, nothing kept).
++    programs.clear();
++    const alone = new CellPool(() => boxes, (e) => () => texts.get(e.key)!, false);
++    const detailAlone = run(alone, 'cell', false);
++    programs.clear();
++    programs.resetCounts();
++    const facadeAlone = run(alone, 'facade', false);
++    expect(programs.walks).toBe(buildings.length);
++    expect(detail.batch).toBeTruthy();
++    expect(facade.batch).toBeTruthy();
++    expect(difference(detail.batch, detailAlone.batch)).toBe('');
++    expect(difference(facade.batch, facadeAlone.batch)).toBe('');
++    expect(difference(detail.parts as never, detailAlone.parts as never)).toBe('');
++    expect(difference(facade.parts as never, facadeAlone.parts as never)).toBe('');
++    // Past the pair's reach the facade level alone: its detail not walked, so asking the detail after it walks every building.
++    programs.clear();
++    const far = new CellPool(() => boxes, (e) => () => texts.get(e.key)!, false);
++    run(far, 'facade', false);
++    programs.resetCounts();
++    run(far, 'cell', false);
++    expect(programs.walks).toBe(buildings.length);
++  });
++
+   for (const paved of [pavedAt, undefined]) {
+     it(`summarizes a cell as its buildings laid whole do, none laid (${paved ? 'with' : 'without'} paving)`, () => {
+       const town = [...grownTown().buildings.all()];
+diff --git a/tests/render/cheapAudit.spec.ts b/tests/render/cheapAudit.spec.ts
+index 6fcdb58d..0f395da4 100644
+--- a/tests/render/cheapAudit.spec.ts
++++ b/tests/render/cheapAudit.spec.ts
+@@ -15,7 +15,8 @@ describe('a cell\'s index array', () => {
+   it('is what the cells\' masses and shells make', () => {
+     const source = readFileSync('src/render/buildings/cellArrays.ts', 'utf8');
+     expect(source).not.toMatch(/new Uint32Array\(indices\)[;,]/);
+-    expect(source.match(/indexArray\(vertices, indices\)/g)).toHaveLength(2);
++    // The masses merged (`mergedMass`), a square's masses joined from its cells' slices (`joinMass`) and a shell's piece.
++    expect(source.match(/indexArray\(vertices, indices\)/g)).toHaveLength(3);
+   });
+ });
+ 
+diff --git a/tests/render/massLevels.spec.ts b/tests/render/massLevels.spec.ts
+index cff51e28..12c5ce41 100644
+--- a/tests/render/massLevels.spec.ts
++++ b/tests/render/massLevels.spec.ts
+@@ -275,9 +275,9 @@ describe('a tile or a plate of masses drawn in place of its cells', () => {
+         // One program (`emitProgram`), its every level a filter (`massOf`): nothing of it read from the record object or its memos again.
+         const program = emitProgram(b, flat, undefined, flat, { near: false, far: false }, { floor });
+         const copy = emitProgram(structuredClone(b), flat, undefined, flat, { near: false, far: false }, { floor });
+-        for (const detail of [CELL_DETAIL, TILE_DETAIL, PLATE_DETAIL]) expect(massOf(program.mass, detail)).toEqual(massOf(copy.mass, detail));
++        for (const detail of [CELL_DETAIL, TILE_DETAIL, PLATE_DETAIL]) expect(massOf(program, detail)).toEqual(massOf(copy, detail));
+         // The coarser the level, never more triangles.
+-        const [c, t, p] = [CELL_DETAIL, TILE_DETAIL, PLATE_DETAIL].map((d) => massOf(program.mass, d)?.index.length ?? 0);
++        const [c, t, p] = [CELL_DETAIL, TILE_DETAIL, PLATE_DETAIL].map((d) => massOf(program, d)?.index.length ?? 0);
+         expect(t).toBeLessThanOrEqual(c!);
+         expect(p).toBeLessThanOrEqual(t!);
+       }
+diff --git a/tests/render/support/cellWorkers.ts b/tests/render/support/cellWorkers.ts
+new file mode 100644
+index 00000000..23a50443
+--- /dev/null
++++ b/tests/render/support/cellWorkers.ts
+@@ -0,0 +1,54 @@
++import { vi } from 'vitest';
++
++import type { CellJob } from '@render/buildings/cellWork';
++import type { ToJob } from '@/jobs/jobScope';
++
++type CellWorkModule = typeof import('@render/buildings/cellWork');
++
++/** A stand-in for a module worker that runs the cells' jobs as `cell.worker.ts` does, with a `cellWork.ts` of its own (its own heap: its own
++ *  programs kept, `keptPrograms`). Stubbed as the global `Worker` (`vi.stubGlobal`); its jobs run when the test drains it. */
++export class CellWorker {
++  static made: CellWorker[] = [];
++  readonly waiting: ToJob[] = [];
++  /** The jobs it ran: their kind and cell. */
++  readonly ran: string[] = [];
++  /** The jobs it ran as sent. */
++  readonly jobs: CellJob[] = [];
++  work: CellWorkModule | null = null;
++  onmessage: ((event: { data: unknown }) => void) | null = null;
++  onerror: ((event: { message: string }) => void) | null = null;
++  onmessageerror: (() => void) | null = null;
++  constructor() { CellWorker.made.push(this); }
++  postMessage(message: ToJob): void { this.waiting.push(message); }
++  terminate(): void {}
++  /** Its jobs run through and answered, one at a time as a worker does. */
++  async drain(): Promise<void> {
++    if (!this.work) {
++      // A module graph of its own: its programs are this worker's alone.
++      vi.resetModules();
++      this.work = await import('@render/buildings/cellWork');
++    }
++    while (this.waiting.length) {
++      const message = this.waiting.shift()!;
++      // Its message as a worker gets it: a copy (structured clone), nothing shared with the page's objects.
++      const job = structuredClone(message.data) as CellJob;
++      this.ran.push(`${job.kind} ${job.cell}`);
++      this.jobs.push(job);
++      const reply = this.work.runCellJob(job, this.work.workerReads(job));
++      this.onmessage!({ data: { port: message.port, data: reply, seq: message.seq } });
++    }
++  }
++
++  /** Every worker's jobs run, the page's promises let run between (a level asked looks its slices up first, `cellPool.ts` send), till none waits. */
++  static async drainAll(): Promise<void> {
++    for (let round = 0; round < 50; round++) {
++      await new Promise((go) => setTimeout(go, 0));
++      if (!CellWorker.made.some((w) => w.waiting.length)) {
++        await new Promise((go) => setTimeout(go, 0));
++        if (!CellWorker.made.some((w) => w.waiting.length)) return;
++      }
++      for (const w of CellWorker.made) await w.drain();
++    }
++    throw new Error('the cell workers never ran dry');
++  }
++}
+diff --git a/tests/render/support/masses.ts b/tests/render/support/masses.ts
+index 7c66539e..9229fd2d 100644
+--- a/tests/render/support/masses.ts
++++ b/tests/render/support/masses.ts
+@@ -11,11 +11,11 @@ export function massesOf(b: Building, groundAt: GroundAt, pavedAt?: PavedAt, nat
+   tone?: Readonly<Record<Finish, readonly [number, number, number]>>, detail: MassDetail = CELL_DETAIL, known?: { readonly floor: number | undefined }): MassingChunk | null {
+   const floor = known ? known.floor : massFloor(b, naturalAt, pavedAt);
+   const program = emitProgram(b, groundAt, pavedAt, naturalAt, { near: false, far: false }, { floor: floor ?? null, ...(tone ? { tone } : {}) });
+-  return massOf(program.mass, detail);
++  return massOf(program, detail);
+ }
+ 
+ /** A building's base into its cell's writer as the base's job draws it (`cellWork.ts`): its program on `floor`, then the base's filter (`writeBase`). */
+ export function writeBaseOf(w: CellWriter, b: Building, floor: number | undefined, groundAt: GroundAt, tone?: Readonly<Record<Finish, readonly [number, number, number]>>): void {
+   const program = emitProgram(b, groundAt, undefined, groundAt, { near: false, far: false }, { floor: floor ?? null, ...(tone ? { tone } : {}) });
+-  writeBase(w, program.mass);
++  writeBase(w, program);
+ }

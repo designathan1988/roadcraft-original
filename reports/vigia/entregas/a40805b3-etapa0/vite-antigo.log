@@ -1,0 +1,157 @@
+[33m(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - import "./vite.config" without a file extension (vite.photos.config.ts:3:18). Add the file extension
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.[39m
+
+  [32m[1mVITE[22m v8.2.2[39m  [2mready in [0m[1m831[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m5320[22m/[39m
+[2m16:02:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mTHREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision
+(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision
+(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision
+(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision
+(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision
+[2m16:02:57[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_34 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:02:57[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_55 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:02:57[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_44 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:02:57[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_48 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:02:57[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_14 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:02:58[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_64 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:02:58[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_00 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:02:58[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_08 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:02:58[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_38 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:02:58[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_59 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:02:59[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_45 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:02:59[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_51 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:02:59[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_18 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:02:59[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_67 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:02:59[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_04 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:02:59[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_11 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:03:05[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: Error: the road field was not handed the roads at (-525.1, -552)
+    at worker.onmessage (http://127.0.0.1:5320/src/render/roadTilePool.ts:153:26)
+    at worker.onmessage (http://127.0.0.1:5320/src/jobs/jobPool.ts:253:25)
+[2m16:03:05[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: Error: the road field was not handed the roads at (-414.1, -465)
+    at worker.onmessage (http://127.0.0.1:5320/src/render/roadTilePool.ts:153:26)
+    at worker.onmessage (http://127.0.0.1:5320/src/jobs/jobPool.ts:253:25)
+[2m16:03:05[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: Error: the road field was not handed the roads at (-45.1, -552)
+    at worker.onmessage (http://127.0.0.1:5320/src/render/roadTilePool.ts:153:26)
+    at worker.onmessage (http://127.0.0.1:5320/src/jobs/jobPool.ts:253:25)
+[33m(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - import "./vite.config" without a file extension (vite.photos.config.ts:3:18). Add the file extension
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.[39m
+[2m16:03:37[22m [36m[1m[vite][22m[39m server restarted.
+[2m16:03:55[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mroad shader warm-up skipped ReferenceError: paintBase is not defined
+    at roadSurfaceSteps (http://127.0.0.1:5320/src/render/roadSurfaces.ts:288:51)
+    at roadSurfaceSteps.next (<anonymous>)
+    at buildRoadSurfaces (http://127.0.0.1:5320/src/render/roadSurfaces.ts:137:34)
+    at warmRoadShaders (http://127.0.0.1:5320/src/render/renderer.ts:2737:5)
+    at Object.draw (http://127.0.0.1:5320/src/render/renderer.ts:4599:4)
+    at FrameClock.frame (http://127.0.0.1:5320/src/main.ts:3187:8)
+    at shown (http://127.0.0.1:5320/src/frameLoop.ts:50:8)
+[2m16:03:55[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_34 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:03:55[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_55 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:03:55[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_44 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:03:55[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_48 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:03:55[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_14 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:03:55[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_64 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:03:55[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_00 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:03:55[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_08 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:03:55[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_38 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:03:55[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_59 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:03:56[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mReferenceError[22m: paintBase is not defined
+[39m > roadSurfaceSteps src/render/roadSurfaces.ts:428:53
+    426 |        // A paint colour's constants in the keys of the tiles that hold lines of that colour alone.
+    427 |        // The roads' slots in the paint's table (`roadPaint.ts`): a tile's carriageway carries them, so it is of this ...
+    428 |        const digest = new Digest().add(saltValue).add(paintBase).add(key).add(read);
+        |                                                       ^
+    429 |        for (const color of colours) digest.add(paintSalt.get(color) ?? 0);
+    430 |        if (reuse) {
+ > worldSteps src/render/renderer.ts:2431:30
+ > pumpWorld src/render/renderer.ts:1228:23
+ > Object.draw src/render/renderer.ts:3338:6
+ > FrameClock.frame src/main.ts:2705:8
+ > channel.port1.onmessage src/frameLoop.ts:24:15
+
+[2m16:03:56[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_45 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:03:56[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_51 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:03:56[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_18 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:03:56[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_67 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:03:56[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_04 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:03:56[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_11 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[33m(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - import "./vite.config" without a file extension (vite.photos.config.ts:3:18). Add the file extension
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.[39m
+[2m16:03:58[22m [36m[1m[vite][22m[39m server restarted.
+[2m16:04:20[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_34 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:04:20[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_55 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:04:20[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_44 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:04:20[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_48 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:04:20[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_14 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:04:20[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_64 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:04:20[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_00 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:04:20[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_08 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:04:20[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_38 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:04:20[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_59 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:04:20[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_45 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:04:20[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_51 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:04:20[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_18 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:04:20[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_67 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:04:20[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_04 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:04:20[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_11 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is c20e4c2f976a25dd. Run "npm run cook:people"
+    at http://127.0.0.1:5320/src/render/people/cookedLoad.ts:15:35
+[2m16:04:20[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: Error: the road field was not handed the roads at (-525.1, -552)
+    at worker.onmessage (http://127.0.0.1:5320/src/render/roadTilePool.ts:153:26)
+    at worker.onmessage (http://127.0.0.1:5320/src/jobs/jobPool.ts:253:25)
+[2m16:04:20[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: Error: the road field was not handed the roads at (50.09999999999999, -552)
+    at worker.onmessage (http://127.0.0.1:5320/src/render/roadTilePool.ts:153:26)
+    at worker.onmessage (http://127.0.0.1:5320/src/jobs/jobPool.ts:253:25)
+[2m16:04:20[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: Error: the road field was not handed the roads at (69.9, -552)
+    at worker.onmessage (http://127.0.0.1:5320/src/render/roadTilePool.ts:153:26)
+    at worker.onmessage (http://127.0.0.1:5320/src/jobs/jobPool.ts:253:25)
+[2m16:04:59[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[uploads] a program was not built in 10000 ms: drawn as it is: Group [MeshStandardMaterial, MeshStandardMaterial, MeshStandardMaterial, MeshStandardMaterial] (1 compiles in flight)

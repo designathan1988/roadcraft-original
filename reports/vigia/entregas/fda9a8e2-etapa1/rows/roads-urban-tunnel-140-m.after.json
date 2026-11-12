@@ -1,0 +1,178 @@
+{
+ "id": "Roads/urban tunnel/140 m",
+ "key": "Roads/urban tunnel/140 m",
+ "metrics": {
+  "id": "Roads/urban tunnel/140 m",
+  "triangles": 2982,
+  "vertices": 2921,
+  "index": "Uint16",
+  "geometryBytes": 229638,
+  "bytesPerVertex": 56,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B roadSection:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [terrain-splat-v34-verge-lots] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v2-footway-lots-own] (vertex colours, roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v2-carriageway-lots-own] (vertex colours, roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial (roughness 1, metalness 0.02, opacity 1)",
+  "draws": 34,
+  "levels": [
+   {
+    "triangles": 2982,
+    "vertices": 2921
+   },
+   {
+    "triangles": 1743,
+    "vertices": 1903
+   }
+  ],
+  "hidden": 0,
+  "solids": "24 solids: 16 other, 8 box",
+  "size": [
+   140.2002410888672,
+   11.609865367412567,
+   14.399999618530273
+  ],
+  "pieces": [
+   {
+    "label": "verge-tunnel",
+    "triangles": 138,
+    "vertices": 152
+   },
+   {
+    "label": "verge-tunnel",
+    "triangles": 138,
+    "vertices": 152
+   },
+   {
+    "label": "verge-tunnel",
+    "triangles": 138,
+    "vertices": 152
+   },
+   {
+    "label": "verge-tunnel",
+    "triangles": 138,
+    "vertices": 152
+   },
+   {
+    "label": "footway-tunnel+curb-ramp-tunnel+median-paved-tunnel",
+    "triangles": 277,
+    "vertices": 258
+   },
+   {
+    "label": "footway-tunnel+curb-ramp-tunnel+median-paved-tunnel",
+    "triangles": 277,
+    "vertices": 258
+   },
+   {
+    "label": "footway-tunnel+curb-ramp-tunnel+median-paved-tunnel",
+    "triangles": 277,
+    "vertices": 258
+   },
+   {
+    "label": "footway-tunnel+curb-ramp-tunnel+median-paved-tunnel",
+    "triangles": 279,
+    "vertices": 259
+   },
+   {
+    "label": "kerb-tunnel+median-kerb-tunnel",
+    "triangles": 138,
+    "vertices": 152
+   },
+   {
+    "label": "kerb-tunnel+median-kerb-tunnel",
+    "triangles": 138,
+    "vertices": 152
+   },
+   {
+    "label": "kerb-tunnel+median-kerb-tunnel",
+    "triangles": 138,
+    "vertices": 152
+   },
+   {
+    "label": "kerb-tunnel+median-kerb-tunnel",
+    "triangles": 138,
+    "vertices": 152
+   },
+   {
+    "label": "asphalt-tunnel",
+    "triangles": 168,
+    "vertices": 120
+   },
+   {
+    "label": "asphalt-tunnel",
+    "triangles": 168,
+    "vertices": 120
+   },
+   {
+    "label": "asphalt-tunnel",
+    "triangles": 168,
+    "vertices": 120
+   },
+   {
+    "label": "asphalt-tunnel",
+    "triangles": 168,
+    "vertices": 120
+   },
+   {
+    "label": "tunnel-jambs x4",
+    "triangles": 48,
+    "vertices": 96
+   },
+   {
+    "label": "tunnel-lintels x2",
+    "triangles": 24,
+    "vertices": 48
+   },
+   {
+    "label": "tunnel-headwalls x2",
+    "triangles": 24,
+    "vertices": 48
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   -0.47751179337501526,
+   0
+  ],
+  "distance": 91.80159053051307,
+  "floor": -6.722444477081299,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.2180546746438137
+ ],
+ "distance": 91.80159053051307,
+ "error": {
+  "max": 0.043082885898845305,
+  "mean": 0.00015450114354224252,
+  "forward": {
+   "max": 0.043082885898845305,
+   "mean": 0.00030770712512898936,
+   "samples": 29107,
+   "at": [
+    -2.5822186053605765,
+    -5.7028578534647245,
+    0.036752817260969774
+   ]
+  },
+  "backward": {
+   "max": 5.632234827419746e-13,
+   "mean": 4.956318254556647e-16,
+   "samples": 28863,
+   "at": [
+    53.91999816894531,
+    4.999944287049736,
+    4.707501455487435
+   ]
+  },
+  "at": [
+   -2.5822186053605765,
+   -5.7028578534647245,
+   0.036752817260969774
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

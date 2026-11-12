@@ -1,0 +1,188 @@
+diff --git a/src/render/buildingSwitches.ts b/src/render/buildingSwitches.ts
+index 6cdb6e07..9ec98d03 100644
+--- a/src/render/buildingSwitches.ts
++++ b/src/render/buildingSwitches.ts
+@@ -19,10 +19,10 @@ const ROOT_SWITCH: Readonly<Record<BuildingRoot, BuildingSwitch>> = {
+ const KIND_SWITCH: Readonly<Record<string, BuildingSwitch>> = Object.freeze({
+   [SHELL_MESH]: 'bShell',
+   // The cells' walls in their multi-draw batches (`shellBatch.ts`): the switch hid none of them once the shells left their cells' meshes.
+-  ...Object.fromEntries(['detail', 'facade', 'runs'].map((set) => [`building-shell-batch-${set}`, 'bShell'])),
++  ...Object.fromEntries(['detail', 'detailRuns', 'facade', 'runs'].map((set) => [`building-shell-batch-${set}`, 'bShell'])),
+   ...Object.fromEntries(['glass', 'glassDark', 'glassRail'].map((k) => [`building-${k}`, 'bGlass'])),
+   ...Object.fromEntries(['frame', 'door', 'shutter'].map((k) => [`building-${k}`, 'bFrames'])),
+-  ...Object.fromEntries(['railing', 'roofRailing', 'awning', 'column', 'water', 'lamp', 'wash', 'fin', 'louvre', 'brise'].map((k) => [`building-${k}`, 'bFacadeDetails'])),
++  ...Object.fromEntries(['railing', 'roofRailing', 'awning', 'column', 'water', 'lamp', 'wash', 'fin', 'finBox', 'louvre', 'brise'].map((k) => [`building-${k}`, 'bFacadeDetails'])),
+   ...Object.fromEntries(['lotBox', 'lotRail', 'lotSlab', 'lotSides'].map((k) => [`building-${k}`, 'bLots'])),
+   ...Object.fromEntries(FACADE_PROP_KINDS.map((k) => [`building-${k}`, 'bProps'])),
+ }) as Readonly<Record<string, BuildingSwitch>>;
+diff --git a/src/render/buildings/buildingMesh.ts b/src/render/buildings/buildingMesh.ts
+index 71cc3a0c..0324935f 100644
+--- a/src/render/buildings/buildingMesh.ts
++++ b/src/render/buildings/buildingMesh.ts
+@@ -1755,7 +1755,7 @@ function emitBay(
+         // A canopy over the door: a slab with a fascia at its edge (a drip), and two brackets under it into the wall.
+         const cz = canopyAt(o.h1, H, m(0.06), m(0.3));
+         e.put('concrete', f, am, cz, -m(0.45), w + m(0.7), m(0.12), m(0.9));
+-        e.put('concrete', f, am, cz - m(0.04), -m(0.88), w + m(0.7), m(0.2), m(0.05));
++        e.put('concreteBox', f, am, cz - m(0.04), -m(0.88), w + m(0.7), m(0.2), m(0.05));
+         // The brackets up to the slab's soffit, not into it
+         for (const side of EITHER_SIDE) e.put('frame', f, am + side * (w / 2 + m(0.2)), cz - m(0.06) - m(0.15), -m(0.25), m(0.06), m(0.3), m(0.5), tc);
+         emitPorchLight(e, f, W, am, w, o.h1);
+@@ -1786,7 +1786,7 @@ function emitBay(
+       if (bay.level === 0) {
+         const cz = canopyAt(o.h1, H, m(0.07), m(0.3));
+         e.put('concrete', f, am, cz, -m(0.55), w + m(1), m(0.14), m(1.1));
+-        e.put('concrete', f, am, cz - m(0.05), -m(1.08), w + m(1), m(0.24), m(0.05));
++        e.put('concreteBox', f, am, cz - m(0.05), -m(1.08), w + m(1), m(0.24), m(0.05));
+         emitPorchLight(e, f, W, am, w, o.h1);
+       }
+       break;
+@@ -1795,7 +1795,7 @@ function emitBay(
+       // The glazed wall at the back of the loggia, and a glass parapet on the facade line.
+       e.glazed(bayHash(bay) % 4 === 0 ? 'glassDark' : 'glass', f, am, hm, o.depth - m(0.02), w, h, m(0.06), tc);
+       e.put('glassRail', f, am, o.h0, -m(0.02), w, m(1.05), 1);
+-      e.put('fin', f, am, o.h0 + m(1.06), -m(0.02), w, m(0.05), m(0.06), tc);
++      e.put('finBox', f, am, o.h0 + m(1.06), -m(0.02), w, m(0.05), m(0.06), tc);
+       break;
+     }
+     case 'brise': {
+@@ -1825,10 +1825,10 @@ function emitBay(
+       const r0 = closedLeft ? CHEEK_IN + GOURMET_CHEEK / 2 : 0, r1 = closedRight ? W - CHEEK_IN - GOURMET_CHEEK / 2 : W;
+       e.put('fin', f, W / 2, -m(0.12), -GOURMET_OUT / 2, W, m(0.24), GOURMET_OUT, slab);
+       // The slab's edge beam, a drip under its front: the slab reads as a floor of the building carried out, not a tray.
+-      e.put('fin', f, W / 2, -m(0.2), -GOURMET_OUT + m(0.06), W, m(0.18), m(0.16), slab);
++      e.put('finBox', f, W / 2, -m(0.2), -GOURMET_OUT + m(0.06), W, m(0.18), m(0.16), slab);
+       e.put('glassRail', f, (r0 + r1) / 2, 0, -GOURMET_OUT + m(0.04), r1 - r0, m(1.05), 1);
+       // The rail's metal cap along the top of the glass, in the frames' colour.
+-      e.put('fin', f, (r0 + r1) / 2, m(1.06), -GOURMET_OUT + m(0.04), r1 - r0, m(0.05), m(0.06), tc);
++      e.put('finBox', f, (r0 + r1) / 2, m(1.06), -GOURMET_OUT + m(0.04), r1 - r0, m(0.05), m(0.06), tc);
+       for (const [u, closed] of [[CHEEK_IN + GOURMET_CHEEK / 2, closedLeft], [W - CHEEK_IN - GOURMET_CHEEK / 2, closedRight]] as const) {
+         // A storey high from under the slab, so the cheeks of the storeys stack into one wall
+         if (closed) e.put('fin', f, u, H / 2 - CHEEK_FOOT, (CHEEK_BURY - GOURMET_OUT - m(0.05)) / 2, GOURMET_CHEEK, H, GOURMET_OUT + m(0.05) + CHEEK_BURY, slab);
+diff --git a/src/render/buildings/cellArrays.ts b/src/render/buildings/cellArrays.ts
+index 8d6dd4a2..22dc2259 100644
+--- a/src/render/buildings/cellArrays.ts
++++ b/src/render/buildings/cellArrays.ts
+@@ -13,7 +13,7 @@ import { POSE_FLOATS, poseMatrixInto } from './partPose';
+ /** A BATCH OF BUILDINGS AS ARRAYS: what `buildingMesh.ts` `meshesOf` wraps in meshes */
+ 
+ /** Parts drawn with a colour per instance: awnings, the window frames and balcony railings in their building's trim (the materials are white), the shell's parts in their paint. */
+-export const COLOURED_PARTS: ReadonlySet<PartKind> = Object.freeze(new Set<PartKind>(['awning', 'frame', 'railing', 'fin', 'louvre', 'brise', ...FACADE_PROP_KINDS, ...SHELL_PART_KINDS]));
++export const COLOURED_PARTS: ReadonlySet<PartKind> = Object.freeze(new Set<PartKind>(['awning', 'frame', 'railing', 'fin', 'finBox', 'louvre', 'brise', ...FACADE_PROP_KINDS, ...SHELL_PART_KINDS]));
+ 
+ /** What filing a kind reads of its screen (`kit.ts` `PartScreen`), sent with each job (`kitBoxes`): its first coarser level's error, its box (the kit's `Axes`), its finest level's triangles. Here, not in `partFiling.ts`: the batches' boxes carry it, and the filing reads the batches. */
+ export interface PartBanding {
+diff --git a/src/render/buildings/chunk.ts b/src/render/buildings/chunk.ts
+index ed8ac09b..d651c9b4 100644
+--- a/src/render/buildings/chunk.ts
++++ b/src/render/buildings/chunk.ts
+@@ -9,6 +9,7 @@ export type PartKind =
+   | 'glass'
+   | 'frame'
+   | 'concrete'
++  | 'concreteBox'
+   | 'door'
+   | 'shutter'
+   | 'railing'
+@@ -20,6 +21,7 @@ export type PartKind =
+   | 'lamp'
+   | 'wash'
+   | 'fin'
++  | 'finBox'
+   | 'louvre'
+   | 'glassRail'
+   | 'brise'
+diff --git a/src/render/buildings/kit.ts b/src/render/buildings/kit.ts
+index f1138f63..b80aa333 100644
+--- a/src/render/buildings/kit.ts
++++ b/src/render/buildings/kit.ts
+@@ -65,6 +65,7 @@ export const PART_KINDS: readonly PartKind[] = [
+   'glass',
+   'frame',
+   'concrete',
++  'concreteBox',
+   'door',
+   'shutter',
+   'railing',
+@@ -76,6 +77,7 @@ export const PART_KINDS: readonly PartKind[] = [
+   'lamp',
+   'wash',
+   'fin',
++  'finBox',
+   'louvre',
+   'glassRail',
+   'brise',
+@@ -475,11 +477,15 @@ diffuseColor.rgb *= (vAcFront > 0.5 ? acFrontTone(vAcLocal) : 1.0) * acLidTone(v
+ /** `anisotropy`: the tier's taps for the facades' maps (`quality.ts`), as the ground's: at 4 a wall seen along the street blurred into its mean. */
+ export function createBuildingKit(anisotropy = 4): BuildingKit {
+   const unitBox = new BoxGeometry(1, 1, 1);
++  // A plate or band put out of a wall from its face (`Emitter.put`: the model's +Z out of the wall, its back face on the wall or in it): the five faces anyone sees.
++  const wallBox = boxWithout(1, 1, 1, 0, 0, 0, ['-z']);
+   const glassPlane = new PlaneGeometry(1, 1);
+   const geometry: Record<PartKind, BufferGeometry> = {
+     glass: glassPlane,
+     frame: frameGeometry(),
+-    concrete: unitBox,
++    // Its back in the wall it stands out of (a sill, a balcony's slab, a door's canopy): left out, 10 triangles where 12 drew the same.
++    concrete: wallBox,
++    concreteBox: unitBox,
+     door: doorGeometry(),
+     shutter: unitBox,
+     railing: railingGeometry(),
+@@ -492,7 +498,9 @@ export function createBuildingKit(anisotropy = 4): BuildingKit {
+     lamp: unitBox,
+     // Placed at the lantern's centre (the same lot), the plane drawn back on the wall.
+     wash: new PlaneGeometry(1, 1).translate(0, 0, -(PORCH_LAMP.d / 2 - WASH_OUT)),
+-    fin: unitBox,
++    // Its back in the wall, or buried in it (a surround's band, a gourmet balcony's slab and cheeks): left out as the concrete's.
++    fin: wallBox,
++    finBox: unitBox,
+     louvre: louvreGeometry(),
+     glassRail: glassRailGeometry(),
+     brise: briseGeometry(),
+@@ -502,6 +510,7 @@ export function createBuildingKit(anisotropy = 4): BuildingKit {
+ 
+   const concrete = new MeshStandardMaterial({ color: 0xcfc9bd, roughness: 0.82, metalness: 0 });
+   const metal = new MeshStandardMaterial({ color: 0x33373a, roughness: 0.45, metalness: 0.55 });
++  const finMaterial = new MeshStandardMaterial({ color: 0xffffff, roughness: 0.7, metalness: 0 });
+   const own: Record<Exclude<PartKind, ShellPartKind>, Material> = {
+     // Its front in the shadow pass (three draws a front-sided material's BACK faces for shadows): a pane is one-sided and faces out, so the sun reaches its front first;
+     // DO NOT cast both sides again: a pane whose back faces the sun is behind its own building's walls (the shell casts both sides), every pane facing away drawn for nothing.
+@@ -509,6 +518,8 @@ export function createBuildingKit(anisotropy = 4): BuildingKit {
+     // White: each frame takes its building's trim as an instance colour (`buildingMesh.ts` COLOURED_PARTS)
+     frame: new MeshStandardMaterial({ color: 0xffffff, roughness: 0.55, metalness: 0.05 }),
+     concrete,
++    // A plate standing free in the air (a canopy's drip), every face seen: the concrete's material on the closed box.
++    concreteBox: concrete,
+     door: new MeshStandardMaterial({ color: 0x6b4a33, roughness: 0.55, metalness: 0 }),
+     shutter: new MeshStandardMaterial({ color: 0x9aa1a4, roughness: 0.5, metalness: 0.45 }),
+     // Its own material, white, coloured per instance like the frames
+@@ -527,7 +538,9 @@ export function createBuildingKit(anisotropy = 4): BuildingKit {
+     // The lantern beside a front door: frosted glass by day, a lamp after dark.
+     lamp: new MeshStandardMaterial({ color: 0xf1ebdd, roughness: 0.35, metalness: 0, emissive: PORCH_LIGHT, emissiveIntensity: 0 }),
+     // The light the lantern throws on the wall round it: laid on the wall additively, as a decal
+-    fin: new MeshStandardMaterial({ color: 0xffffff, roughness: 0.7, metalness: 0 }),
++    fin: finMaterial,
++    // A band standing free (a rail's cap, a balcony's edge beam), every face seen: the fin's material on the closed box.
++    finBox: finMaterial,
+     // Brise-soleil racks, concrete or painted metal in the trim's colour per instance.
+     brise: new MeshStandardMaterial({ color: 0xffffff, roughness: 0.75, metalness: 0 }),
+     // Louvred shutters, painted wood, coloured per instance.
+@@ -642,7 +655,7 @@ objectNormal = shellUnfold(${SHELL_NORMAL});
+   // Its top alone draws it (2 triangles, not 12); the error is half its height. A fin standing on edge (a storey tall) keeps
+   // its box: that error is metres, well over a pixel.
+   const topFace = topFaceGeometry();
+-  for (const kind of ['concrete', 'fin', 'water'] as const) coarser(kind, topFace, [0, 0.5, 0]);
++  for (const kind of ['concrete', 'concreteBox', 'fin', 'finBox', 'water'] as const) coarser(kind, topFace, [0, 0.5, 0]);
+   const extentOf = (g: BufferGeometry): Axes => {
+     if (!g.boundingBox) g.computeBoundingBox();
+     const b = g.boundingBox!;
+@@ -690,7 +703,7 @@ objectNormal = shellUnfold(${SHELL_NORMAL});
+     finishTone: finishAlbedo(),
+     // Glass, doors and shutters close the openings for the sun
+     // And the shell's parts, as the shell they were laid in casts.
+-    castsShadow: new Set<PartKind>(['glass', 'glassDark', 'frame', 'door', 'shutter', 'concrete', 'railing', 'awning', 'column', 'roofRailing', 'fin', 'louvre', 'brise', ...SHADOWED_PROPS, ...SHELL_PART_KINDS]),
++    castsShadow: new Set<PartKind>(['glass', 'glassDark', 'frame', 'door', 'shutter', 'concrete', 'concreteBox', 'railing', 'awning', 'column', 'roofRailing', 'fin', 'finBox', 'louvre', 'brise', ...SHADOWED_PROPS, ...SHELL_PART_KINDS]),
+     furniture() {
+       if (!furniture) {
+         furniture = { geometry: furnitureGeometry, material: posePart(createFurnitureMaterial()) };

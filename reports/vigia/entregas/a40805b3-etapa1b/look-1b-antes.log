@@ -1,0 +1,10 @@
+GPU: ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)
+until "city shown": 11.25 s
+until "curtain gone": 10.59 s
+no control says "Continuar": skipped (optional)
+shot: C:\Users\Jonathan\Documents\Projects\city\roadcraft\_wt-antes\jogo-1b-antes\09-distrito.png
+shot: C:\Users\Jonathan\Documents\Projects\city\roadcraft\_wt-antes\jogo-1b-antes\12-quadra.png
+shot: C:\Users\Jonathan\Documents\Projects\city\roadcraft\_wt-antes\jogo-1b-antes\15-fachada.png
+shot: C:\Users\Jonathan\Documents\Projects\city\roadcraft\_wt-antes\jogo-1b-antes\18-perto-a.png
+shot: C:\Users\Jonathan\Documents\Projects\city\roadcraft\_wt-antes\jogo-1b-antes\21-perto-b.png
+report: C:\Users\Jonathan\Documents\Projects\city\roadcraft\_wt-antes\jogo-1b-antes\report.json (26 errors/warnings in the console)

@@ -1,0 +1,218 @@
+{
+ "id": "Roads/boulevard junction/three ways",
+ "key": "Roads/boulevard junction/three ways",
+ "metrics": {
+  "id": "Roads/boulevard junction/three ways",
+  "triangles": 2080,
+  "vertices": 2676,
+  "index": "Uint16",
+  "geometryBytes": 248232,
+  "bytesPerVertex": 56,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B roadSection:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [terrain-splat-v34-verge-lots] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v2-footway-lots-own] (vertex colours, roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v2-carriageway-lots-own] (vertex colours, roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [paint-worn-aa] (transparent, roughness 0.72, metalness 0, opacity 1) | MeshStandardMaterial [paint-worn-aa-dashed] (transparent, roughness 0.72, metalness 0, opacity 1)",
+  "draws": 27,
+  "levels": [
+   {
+    "triangles": 2080,
+    "vertices": 2676
+   },
+   {
+    "triangles": 1720,
+    "vertices": 2424
+   }
+  ],
+  "hidden": 0,
+  "solids": "43 solids: 32 other, 2 open prism, 9 quad",
+  "size": [
+   140.2002410888672,
+   0.679999977350235,
+   83.1001205444336
+  ],
+  "pieces": [
+   {
+    "label": "verge",
+    "triangles": 136,
+    "vertices": 86
+   },
+   {
+    "label": "verge",
+    "triangles": 212,
+    "vertices": 194
+   },
+   {
+    "label": "verge",
+    "triangles": 114,
+    "vertices": 76
+   },
+   {
+    "label": "verge",
+    "triangles": 214,
+    "vertices": 195
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 78,
+    "vertices": 123
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 266,
+    "vertices": 411
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 80,
+    "vertices": 123
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 266,
+    "vertices": 412
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 35,
+    "vertices": 61
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 154,
+    "vertices": 266
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 35,
+    "vertices": 61
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 154,
+    "vertices": 266
+   },
+   {
+    "label": "asphalt",
+    "triangles": 28,
+    "vertices": 28
+   },
+   {
+    "label": "asphalt",
+    "triangles": 102,
+    "vertices": 102
+   },
+   {
+    "label": "asphalt",
+    "triangles": 30,
+    "vertices": 29
+   },
+   {
+    "label": "asphalt",
+    "triangles": 104,
+    "vertices": 105
+   },
+   {
+    "label": "median-planting",
+    "triangles": 9,
+    "vertices": 17
+   },
+   {
+    "label": "median-planting",
+    "triangles": 18,
+    "vertices": 34
+   },
+   {
+    "label": "median-planting",
+    "triangles": 9,
+    "vertices": 17
+   },
+   {
+    "label": "median-planting",
+    "triangles": 18,
+    "vertices": 34
+   },
+   {
+    "label": "markings-ece9d9",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-ece9d9",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-ece9d9",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-f4f1e3~dashed",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-f4f1e3~dashed",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "markings-f4f1e3~dashed",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-f4f1e3~dashed",
+    "triangles": 4,
+    "vertices": 8
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   -0.04999999701976776,
+   -28.550060272216797
+  ],
+  "distance": 91.80159053051307,
+  "floor": -0.8299999856948852,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.1455988927368152
+ ],
+ "distance": 91.80159053051307,
+ "error": {
+  "max": 0.028000004589557648,
+  "mean": 0.00007222287182373412,
+  "forward": {
+   "max": 0.028000004589557648,
+   "mean": 0.00014438505133892968,
+   "samples": 26180,
+   "at": [
+    -70,
+    0.14800000190734863,
+    5.064000129699707
+   ]
+  },
+  "backward": {
+   "max": 2.389171630921212e-9,
+   "mean": 8.203003837827634e-13,
+   "samples": 26158,
+   "at": [
+    -56.82173960135849,
+    0.28597897420187934,
+    1
+   ]
+  },
+  "at": [
+   -70,
+   0.14800000190734863,
+   5.064000129699707
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

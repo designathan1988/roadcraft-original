@@ -1,0 +1,183 @@
+{
+ "id": "Roads/avenue bridge/140 m",
+ "key": "Roads/avenue bridge/140 m",
+ "metrics": {
+  "id": "Roads/avenue bridge/140 m",
+  "triangles": 3132,
+  "vertices": 4492,
+  "index": "Uint16",
+  "geometryBytes": 264416,
+  "bytesPerVertex": 56,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B roadSection:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [detail-road-edges-v2-footway-lots-own] (vertex colours, roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v2-carriageway-lots-own] (vertex colours, roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial (roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [detail] (roughness 1, metalness 0.02, opacity 1)",
+  "draws": 30,
+  "levels": [
+   {
+    "triangles": 3132,
+    "vertices": 4492
+   },
+   {
+    "triangles": 1656,
+    "vertices": 1656
+   }
+  ],
+  "hidden": 0,
+  "solids": "26 solids: 8 open prism, 14 other, 4 box",
+  "size": [
+   140.2002410888672,
+   5.271999835968018,
+   20
+  ],
+  "pieces": [
+   {
+    "label": "verge-bridge",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "verge-bridge",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "verge-bridge",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "verge-bridge",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "footway-bridge+curb-ramp-bridge",
+    "triangles": 164,
+    "vertices": 164
+   },
+   {
+    "label": "footway-bridge+curb-ramp-bridge",
+    "triangles": 164,
+    "vertices": 164
+   },
+   {
+    "label": "footway-bridge+curb-ramp-bridge",
+    "triangles": 164,
+    "vertices": 164
+   },
+   {
+    "label": "footway-bridge+curb-ramp-bridge",
+    "triangles": 164,
+    "vertices": 164
+   },
+   {
+    "label": "kerb-bridge+median-kerb-bridge",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "kerb-bridge+median-kerb-bridge",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "kerb-bridge+median-kerb-bridge",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "kerb-bridge+median-kerb-bridge",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "asphalt-bridge",
+    "triangles": 110,
+    "vertices": 90
+   },
+   {
+    "label": "asphalt-bridge",
+    "triangles": 110,
+    "vertices": 90
+   },
+   {
+    "label": "asphalt-bridge",
+    "triangles": 110,
+    "vertices": 90
+   },
+   {
+    "label": "asphalt-bridge",
+    "triangles": 110,
+    "vertices": 90
+   },
+   {
+    "label": "structure-piers x4",
+    "triangles": 192,
+    "vertices": 268
+   },
+   {
+    "label": "structure-pier-caps x2",
+    "triangles": 24,
+    "vertices": 48
+   },
+   {
+    "label": "structure-abutments x2",
+    "triangles": 24,
+    "vertices": 48
+   },
+   {
+    "label": "structure-parapets",
+    "triangles": 1236,
+    "vertices": 2472
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   1.6359999179840088,
+   0
+  ],
+  "distance": 91.80159053051307,
+  "floor": -1.44,
+  "long": "x"
+ },
+ "levelErrors": [
+  4.2361199285582224e-13
+ ],
+ "distance": 91.80159053051307,
+ "error": {
+  "max": 0.1273235506167339,
+  "mean": 0.0003745447671903275,
+  "forward": {
+   "max": 0.1273235506167339,
+   "mean": 0.0007447941228773513,
+   "samples": 29734,
+   "at": [
+    -43.69435119628906,
+    3.193443775177002,
+    -0.07999999821186066
+   ]
+  },
+  "backward": {
+   "max": 2.1233084281260777e-13,
+   "mean": 9.298293487212842e-16,
+   "samples": 29393,
+   "at": [
+    2.427669154551011,
+    3.4024141975682727,
+    7.150000095367432
+   ]
+  },
+  "at": [
+   -43.69435119628906,
+   3.193443775177002,
+   -0.07999999821186066
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}
