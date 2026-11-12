@@ -1,0 +1,32 @@
+{
+  "protectAll": [
+    "ACCEPTANCE.json", "CLAUDE.md", ".claude/**",
+    "tsconfig.json", "vitest.config.ts", "vitest.scale.config.ts", "eslint.config.js", "eslint-rules/**",
+    "scripts/baselines/**", "scripts/check.mjs", "scripts/check-code.mjs", "scripts/check-code/**", "scripts/check-refs.mjs",
+    "scripts/verify.mjs", "scripts/knip-check.mjs", "scripts/run-limited.mjs",
+    "scripts/model-catalog.mjs", "scripts/model-catalog-report.mjs", "scripts/model-catalog-advice.mjs",
+    "scripts/optimization-sheet.mjs", "scripts/people-sheet.mjs", "scripts/model-sheet.mjs", "scripts/road-bands.mjs",
+    "src/lab/catalog/measure.ts", "src/lab/optimization/surfaceError.ts", "src/lab/optimization/sheet.ts"
+  ],
+  "protectExisting": ["tests/**", "src/**/*.spec.ts", "src/**/*.test.ts"],
+  "sourceGlobs": ["src/**", "desktop/**", "index.html", "vite.config.ts", "vite.photos.config.ts"],
+  "visualGlobs": [
+    "src/render/**", "src/ui/**", "src/view/**", "src/people/**", "src/world/buildings/**", "src/lab/catalog/**",
+    "src/**/*.glsl", "src/**/*.css", "index.html"
+  ],
+  "researchNotesGlobs": ["research_notes/**"],
+  "verifyPatterns": [
+    "\\bnpm (run )?(test|verify|check|typecheck|lint|budgets|test:scale)\\b",
+    "\\bnpx (vitest|tsc|tsgo|eslint)\\b", "\\bvitest\\b", "\\btsgo\\b", "\\btsc --noEmit\\b",
+    "\\bnode scripts/(verify|check|look|optimization-sheet|model-catalog|people-sheet|model-sheet)"
+  ],
+  "testPatterns": [
+    "\\bnpm (run )?(test|verify|check|budgets|test:scale)\\b", "\\bnpx vitest\\b", "\\bvitest\\b",
+    "bench", "\\bbudgets\\b", "scripts/(frames|gpuSteady|probe|measure)"
+  ],
+  "gamePatterns": [
+    "\\bnpm run (dev|desktop|preview)", "\\belectron\\b", "\\bvite( |$)(?!build)", "citybench",
+    "scripts/(diagnose|look|frames|gpuSteady|probe|layers|material)"
+  ],
+  "stopBlockCap": 3
+}

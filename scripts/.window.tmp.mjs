@@ -1,0 +1,11 @@
+import { chromium } from 'playwright';
+const browser = await chromium.connectOverCDP('http://127.0.0.1:9333');
+const page = browser.contexts().flatMap((c) => c.pages()).find((p) => p.url().startsWith('http'));
+const s = await browser.newBrowserCDPSession();
+const t = await (await page.context().newCDPSession(page)).send('Target.getTargetInfo');
+const { windowId, bounds } = await s.send('Browser.getWindowForTarget', { targetId: t.targetInfo.targetId });
+console.log(JSON.stringify(bounds));
+await s.send('Browser.setWindowBounds', { windowId, bounds: { windowState: 'normal' } });
+await s.send('Browser.setWindowBounds', { windowId, bounds: { windowState: 'maximized' } });
+await page.bringToFront();
+process.exit(0);

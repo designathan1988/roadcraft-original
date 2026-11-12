@@ -1,0 +1,45 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(/.claude/**)",
+      "Edit(/ACCEPTANCE.json)",
+      "Edit(/scripts/baselines/**)",
+      "Edit(/scripts/model-catalog.mjs)",
+      "Edit(/scripts/optimization-sheet.mjs)",
+      "Edit(/src/lab/catalog/measure.ts)",
+      "Edit(/src/lab/optimization/surfaceError.ts)",
+      "Bash(git push *)",
+      "PowerShell(git push *)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      { "hooks": [{ "type": "command", "command": "node", "args": ["${CLAUDE_PROJECT_DIR}/.claude/hooks/session.cjs"], "timeout": 60 }] }
+    ],
+    "SubagentStart": [
+      { "hooks": [{ "type": "command", "command": "node", "args": ["${CLAUDE_PROJECT_DIR}/.claude/hooks/session.cjs"], "timeout": 30 }] }
+    ],
+    "UserPromptSubmit": [
+      { "hooks": [{ "type": "command", "command": "node", "args": ["${CLAUDE_PROJECT_DIR}/.claude/hooks/guard.cjs"], "timeout": 15, "onFailure": "block" }] }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit|NotebookEdit|Bash|PowerShell",
+        "hooks": [
+          { "type": "command", "command": "node", "args": ["${CLAUDE_PROJECT_DIR}/.claude/hooks/guard.cjs"], "timeout": 15, "onFailure": "block" },
+          { "type": "command", "command": "node", "args": ["${CLAUDE_PROJECT_DIR}/.claude/hooks/research-gate.cjs"], "timeout": 120, "onFailure": "block" }
+        ]
+      },
+      {
+        "matcher": "Agent|Task",
+        "hooks": [{ "type": "command", "command": "node", "args": ["${CLAUDE_PROJECT_DIR}/.claude/hooks/delegate.cjs"], "timeout": 15, "onFailure": "block" }]
+      }
+    ],
+    "Stop": [
+      { "hooks": [{ "type": "command", "command": "node", "args": ["${CLAUDE_PROJECT_DIR}/.claude/hooks/claim-gate.cjs"], "timeout": 1200 }] }
+    ],
+    "SubagentStop": [
+      { "hooks": [{ "type": "command", "command": "node", "args": ["${CLAUDE_PROJECT_DIR}/.claude/hooks/claim-gate.cjs"], "timeout": 600 }] }
+    ]
+  }
+}

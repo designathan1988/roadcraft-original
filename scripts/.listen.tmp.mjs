@@ -1,0 +1,10 @@
+import { chromium } from 'playwright';
+const [ms] = process.argv.slice(2);
+const browser = await chromium.connectOverCDP('http://127.0.0.1:9333');
+const page = browser.contexts().flatMap((c) => c.pages()).find((p) => p.url().startsWith('http://'));
+const lines = [];
+page.on('console', (m) => { if (m.type() === 'error' || m.type() === 'warning') lines.push(`${m.type()}: ${m.text().slice(0, 900)}`); });
+page.on('pageerror', (e) => lines.push('pageerror: ' + e.message));
+await new Promise((w) => setTimeout(w, Number(ms ?? 30000)));
+console.log(lines.filter((l) => !l.includes('Electron Security')).join('\n') || '(none)');
+process.exit(0);

@@ -1,0 +1,23 @@
+import { chromium } from 'playwright';
+const browser = await chromium.connectOverCDP('http://127.0.0.1:9333');
+const page = browser.contexts().flatMap((c) => c.pages())[0];
+await page.bringToFront();
+const button = page.getByText('Continuar', { exact: true });
+if (await button.count()) { await button.first().click(); console.log('continued'); }
+const fps = (ms) => page.evaluate((ms) => new Promise((r) => { let n = 0; const t0 = performance.now(); const gaps = []; let last = t0; const f = (t) => { n++; gaps.push(t - last); last = t; if (t - t0 < ms) requestAnimationFrame(f); else { gaps.sort((a, b) => a - b); r({ fps: +(n / ((t - t0) / 1000)).toFixed(1), p50: +gaps[Math.floor(gaps.length / 2)].toFixed(1), p95: +gaps[Math.floor(gaps.length * 0.95)].toFixed(1), worst: +gaps[gaps.length - 1].toFixed(1), hidden: document.hidden }); } }; requestAnimationFrame(f); }), ms);
+console.log('still', JSON.stringify(await fps(5000)));
+await page.mouse.move(1280, 500);
+await page.keyboard.down('KeyW');
+const moving = fps(6000);
+await new Promise((r) => setTimeout(r, 6000));
+await page.keyboard.up('KeyW');
+console.log('moving', JSON.stringify(await moving));
+await page.keyboard.down('KeyD');
+const turning = fps(4000);
+await new Promise((r) => setTimeout(r, 4000));
+await page.keyboard.up('KeyD');
+console.log('sideways', JSON.stringify(await turning));
+await page.screenshot({ path: process.argv[2] ?? 'reports/measure-2026-10-27/04-playing.png' });
+const pv = await page.evaluate(() => (window.__roadcraft?.profiler?.() ?? null));
+console.log('profiler', JSON.stringify(pv)?.slice(0, 1500));
+process.exit(0);
