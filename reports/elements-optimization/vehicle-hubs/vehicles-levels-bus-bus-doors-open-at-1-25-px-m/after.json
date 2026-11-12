@@ -1,0 +1,132 @@
+{
+ "id": "Vehicles: levels/bus/bus doors open at 1.25 px/m",
+ "key": "Vehicles: levels/bus/bus doors open at 1.25 px/m",
+ "metrics": {
+  "id": "Vehicles: levels/bus/bus doors open at 1.25 px/m",
+  "triangles": 772,
+  "vertices": 1878,
+  "index": "Uint32 + Uint16",
+  "geometryBytes": 74880,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B",
+  "materials": "",
+  "draws": 11,
+  "levels": [
+   {
+    "triangles": 772,
+    "vertices": 1878
+   }
+  ],
+  "hidden": 138,
+  "solids": "147 solids: 41 other, 61 closed cylinder, 5 box, 40 quad",
+  "size": [
+   12.002918720245361,
+   2.9114255607128143,
+   2.553999900817871
+  ],
+  "pieces": [
+   {
+    "label": "shell in pieces",
+    "triangles": 186,
+    "vertices": 542
+   },
+   {
+    "label": "fixed glass",
+    "triangles": 76,
+    "vertices": 142
+   },
+   {
+    "label": "cabin",
+    "triangles": 254,
+    "vertices": 682
+   },
+   {
+    "label": "door 0 leaf",
+    "triangles": 60,
+    "vertices": 120
+   },
+   {
+    "label": "door 0 pane",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "door 0 leaf",
+    "triangles": 60,
+    "vertices": 120
+   },
+   {
+    "label": "door 0 pane",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "door 1 leaf",
+    "triangles": 60,
+    "vertices": 120
+   },
+   {
+    "label": "door 1 pane",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "door 1 leaf",
+    "triangles": 60,
+    "vertices": 120
+   },
+   {
+    "label": "door 1 pane",
+    "triangles": 4,
+    "vertices": 8
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   -0.006540536880493164,
+   1.7357127815485,
+   0
+  ],
+  "distance": 26.31423886450189,
+  "floor": 0.15387729423820368,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 26.31423886450189,
+ "error": {
+  "max": 0.43311227458496393,
+  "mean": 0.00398505203656469,
+  "forward": {
+   "max": 0.43311227458496393,
+   "mean": 0.00769302750800758,
+   "samples": 23990,
+   "at": [
+    5.242644309997559,
+    0.9866878390312195,
+    -0.6200000047683716
+   ]
+  },
+  "backward": {
+   "max": 1.2385558432484927e-11,
+   "mean": 1.2636967085770128e-14,
+   "samples": 22322,
+   "at": [
+    1.9217532878102421,
+    0.9885196122120896,
+    -1.215000033378601
+   ]
+  },
+  "at": [
+   5.242644309997559,
+   0.9866878390312195,
+   -0.6200000047683716
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

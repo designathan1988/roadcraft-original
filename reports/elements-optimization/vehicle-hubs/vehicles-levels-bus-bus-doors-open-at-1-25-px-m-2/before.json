@@ -1,0 +1,99 @@
+{
+ "id": "Vehicles: levels/bus/bus doors open at 1.25 px/m#2",
+ "key": "Vehicles: levels/bus/bus doors open at 1.25 px/m#2",
+ "metrics": {
+  "id": "Vehicles: levels/bus/bus doors open at 1.25 px/m#2",
+  "triangles": 8194,
+  "vertices": 17556,
+  "index": "Uint16",
+  "geometryBytes": 681180,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 11,
+  "levels": [
+   {
+    "triangles": 8194,
+    "vertices": 17556
+   }
+  ],
+  "hidden": 614,
+  "solids": "310 solids: 86 other, 47 closed cylinder, 137 box, 40 quad",
+  "size": [
+   12.007999897003174,
+   2.920000046491623,
+   2.553999900817871
+  ],
+  "pieces": [
+   {
+    "label": "shell in pieces",
+    "triangles": 1864,
+    "vertices": 3992
+   },
+   {
+    "label": "fixed glass",
+    "triangles": 76,
+    "vertices": 142
+   },
+   {
+    "label": "cabin",
+    "triangles": 5998,
+    "vertices": 12910
+   },
+   {
+    "label": "door 0 leaf",
+    "triangles": 60,
+    "vertices": 120
+   },
+   {
+    "label": "door 0 pane",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "door 0 leaf",
+    "triangles": 60,
+    "vertices": 120
+   },
+   {
+    "label": "door 0 pane",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "door 1 leaf",
+    "triangles": 60,
+    "vertices": 120
+   },
+   {
+    "label": "door 1 pane",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "door 1 leaf",
+    "triangles": 60,
+    "vertices": 120
+   },
+   {
+    "label": "door 1 pane",
+    "triangles": 4,
+    "vertices": 8
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   -0.003999948501586914,
+   1.7400000244379044,
+   0
+  ],
+  "distance": 26.328462102105178,
+  "floor": 0.15380912303867128,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 26.328462102105178,
+ "error": null,
+ "overlap": null
+}

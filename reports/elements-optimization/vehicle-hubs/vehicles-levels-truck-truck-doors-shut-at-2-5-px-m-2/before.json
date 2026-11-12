@@ -1,0 +1,69 @@
+{
+ "id": "Vehicles: levels/truck/truck doors shut at 2.5 px/m#2",
+ "key": "Vehicles: levels/truck/truck doors shut at 2.5 px/m#2",
+ "metrics": {
+  "id": "Vehicles: levels/truck/truck doors shut at 2.5 px/m#2",
+  "triangles": 2109,
+  "vertices": 4188,
+  "index": "Uint16",
+  "geometryBytes": 163422,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 5,
+  "levels": [
+   {
+    "triangles": 2109,
+    "vertices": 4188
+   }
+  ],
+  "hidden": 155,
+  "solids": "78 solids: 15 closed cylinder, 22 other, 33 box, 8 quad",
+  "size": [
+   9.880000114440918,
+   3.1399999856948853,
+   3.259999990463257
+  ],
+  "pieces": [
+   {
+    "label": "shell",
+    "triangles": 441,
+    "vertices": 936
+   },
+   {
+    "label": "glass",
+    "triangles": 28,
+    "vertices": 46
+   },
+   {
+    "label": "interior",
+    "triangles": 542,
+    "vertices": 1098
+   },
+   {
+    "label": "trim",
+    "triangles": 1060,
+    "vertices": 2028
+   },
+   {
+    "label": "accent",
+    "triangles": 38,
+    "vertices": 80
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0.07000017166137695,
+   1.9300000071525574,
+   0
+  ],
+  "distance": 22.673858070488944,
+  "floor": 0.25132545329411415,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 22.673858070488944,
+ "error": null,
+ "overlap": null
+}

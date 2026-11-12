@@ -1,0 +1,102 @@
+{
+ "id": "Vehicles: levels/truck/truck doors shut at 5 px/m",
+ "key": "Vehicles: levels/truck/truck doors shut at 5 px/m",
+ "metrics": {
+  "id": "Vehicles: levels/truck/truck doors shut at 5 px/m",
+  "triangles": 493,
+  "vertices": 1248,
+  "index": "Uint32 + Uint16",
+  "geometryBytes": 50676,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B",
+  "materials": "",
+  "draws": 5,
+  "levels": [
+   {
+    "triangles": 493,
+    "vertices": 1248
+   }
+  ],
+  "hidden": 39,
+  "solids": "75 solids: 7 box, 36 closed cylinder, 19 other, 11 quad, 2 open prism",
+  "size": [
+   9.868899822235107,
+   3.1051666140556335,
+   3.259999990463257
+  ],
+  "pieces": [
+   {
+    "label": "shell",
+    "triangles": 86,
+    "vertices": 230
+   },
+   {
+    "label": "glass",
+    "triangles": 28,
+    "vertices": 46
+   },
+   {
+    "label": "interior",
+    "triangles": 112,
+    "vertices": 280
+   },
+   {
+    "label": "trim",
+    "triangles": 251,
+    "vertices": 656
+   },
+   {
+    "label": "accent",
+    "triangles": 16,
+    "vertices": 36
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0.06445002555847168,
+   1.9474166929721832,
+   0
+  ],
+  "distance": 22.631893444847066,
+  "floor": 0.28635995908774947,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 22.631893444847066,
+ "error": {
+  "max": 0.0531539044873402,
+  "mean": 0.000011955043468990885,
+  "forward": {
+   "max": 0.0531539044873402,
+   "mean": 0.0000239000626769646,
+   "samples": 21467,
+   "at": [
+    2.7981879711151123,
+    2.013201951980591,
+    0.6274999976158142
+   ]
+  },
+  "backward": {
+   "max": 9.163325661342001e-13,
+   "mean": 1.3433663442071254e-15,
+   "samples": 21449,
+   "at": [
+    -2.5453264633586206,
+    1.0184998710681297,
+    1.2549999952316284
+   ]
+  },
+  "at": [
+   2.7981879711151123,
+   2.013201951980591,
+   0.6274999976158142
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

@@ -1,0 +1,82 @@
+{
+ "id": "Vehicles: levels/truck/truck steering wheel at 5 px/m",
+ "key": "Vehicles: levels/truck/truck steering wheel at 5 px/m",
+ "metrics": {
+  "id": "Vehicles: levels/truck/truck steering wheel at 5 px/m",
+  "triangles": 58,
+  "vertices": 54,
+  "index": "Uint32",
+  "geometryBytes": 2640,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B",
+  "materials": "",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 58,
+    "vertices": 54
+   }
+  ],
+  "hidden": 12,
+  "solids": "5 solids: 4 other, 1 closed cylinder",
+  "size": [
+   0.05000000074505806,
+   0.4620000123977661,
+   0.43938809633255005
+  ],
+  "pieces": [
+   {
+    "label": "steering wheel",
+    "triangles": 58,
+    "vertices": 54
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   0
+  ],
+  "distance": 1.3343271454624315,
+  "floor": -0.24100000619888307,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 1.3343271454624315,
+ "error": {
+  "max": 2.2383311181304495e-16,
+  "mean": 1.1023609324666881e-17,
+  "forward": {
+   "max": 2.2383311181304495e-16,
+   "mean": 1.1023609324666881e-17,
+   "samples": 20171,
+   "at": [
+    -0.011141141197353323,
+    0.10213380995645917,
+    0.18789812943072767
+   ]
+  },
+  "backward": {
+   "max": 2.2383311181304495e-16,
+   "mean": 1.1023609324666881e-17,
+   "samples": 20171,
+   "at": [
+    -0.011141141197353323,
+    0.10213380995645917,
+    0.18789812943072767
+   ]
+  },
+  "at": [
+   -0.011141141197353323,
+   0.10213380995645917,
+   0.18789812943072767
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

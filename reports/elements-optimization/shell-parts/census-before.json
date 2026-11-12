@@ -1,0 +1,4606 @@
+{
+ "url": "http://127.0.0.1:5320/",
+ "made": "2026-10-25T21:49:01.107Z",
+ "views": [
+  {
+   "scene": "towers",
+   "view": "V0",
+   "detailCells": 0,
+   "facadeCells": 25,
+   "kinds": [
+    {
+     "kind": "brise",
+     "instances": 6534,
+     "drawnTriangles": 156816,
+     "drawnInstances": 6534,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 95544,
+     "perInstanceInstances": 3981,
+     "casters": {
+      "0.05": {
+       "now": 156816,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 156816,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 156816,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 156816,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "fin",
+     "instances": 67554,
+     "drawnTriangles": 135108,
+     "drawnInstances": 67554,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 135108,
+     "perInstanceInstances": 67554,
+     "casters": {
+      "0.05": {
+       "now": 135108,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 135108,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 135108,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 135108,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "concrete",
+     "instances": 47916,
+     "drawnTriangles": 95832,
+     "drawnInstances": 47916,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 89812,
+     "perInstanceInstances": 44906,
+     "casters": {
+      "0.05": {
+       "now": 95832,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 95832,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 95832,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 95832,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "glassRail",
+     "instances": 19422,
+     "drawnTriangles": 77688,
+     "drawnInstances": 19422,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 77688,
+     "perInstanceInstances": 19422,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "awning",
+     "instances": 2142,
+     "drawnTriangles": 51408,
+     "drawnInstances": 2142,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 51408,
+     "perInstanceInstances": 2142,
+     "casters": {
+      "0.05": {
+       "now": 51408,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 51408,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 51408,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 51408,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "roofRailing",
+     "instances": 8100,
+     "drawnTriangles": 32400,
+     "drawnInstances": 8100,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 24,
+     "perInstanceInstances": 6,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "frame",
+     "instances": 9774,
+     "drawnTriangles": 19548,
+     "drawnInstances": 9774,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 19548,
+     "perInstanceInstances": 9774,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "chair",
+     "instances": 5641,
+     "drawnTriangles": 11282,
+     "drawnInstances": 5641,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 139698,
+     "perInstanceInstances": 1791,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "foliage",
+     "instances": 3019,
+     "drawnTriangles": 6038,
+     "drawnInstances": 3019,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 345216,
+     "perInstanceInstances": 1798,
+     "casters": {
+      "0.05": {
+       "now": 579648,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 579648,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 579648,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 579648,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "acUnit",
+     "instances": 2733,
+     "drawnTriangles": 5466,
+     "drawnInstances": 2733,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 36120,
+     "perInstanceInstances": 1204,
+     "casters": {
+      "0.05": {
+       "now": 81990,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 81990,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 81990,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 81990,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "lounger",
+     "instances": 1776,
+     "drawnTriangles": 3552,
+     "drawnInstances": 1776,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 117216,
+     "perInstanceInstances": 1776,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "table",
+     "instances": 1494,
+     "drawnTriangles": 2988,
+     "drawnInstances": 1494,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 159380,
+     "perInstanceInstances": 1226,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "airer",
+     "instances": 506,
+     "drawnTriangles": 1012,
+     "drawnInstances": 506,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 85008,
+     "perInstanceInstances": 506,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "dish",
+     "instances": 470,
+     "drawnTriangles": 940,
+     "drawnInstances": 470,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 53960,
+     "perInstanceInstances": 380,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "lotBox",
+     "instances": 324,
+     "drawnTriangles": 648,
+     "drawnInstances": 324,
+     "drawnDraws": 25,
+     "perInstanceTriangles": 624,
+     "perInstanceInstances": 312,
+     "casters": {
+      "0.05": {
+       "now": 3240,
+       "perInstance": 3240
+      },
+      "0.10": {
+       "now": 3240,
+       "perInstance": 2592
+      },
+      "0.20": {
+       "now": 648,
+       "perInstance": 648
+      },
+      "0.40": {
+       "now": 648,
+       "perInstance": 162
+      }
+     }
+    },
+    {
+     "kind": "bike",
+     "instances": 44,
+     "drawnTriangles": 88,
+     "drawnInstances": 44,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 10472,
+     "perInstanceInstances": 44,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "pot",
+     "instances": 5954,
+     "drawnTriangles": 0,
+     "drawnInstances": 0,
+     "drawnDraws": 0,
+     "perInstanceTriangles": 4032,
+     "perInstanceInstances": 48,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "bush",
+     "instances": 2935,
+     "drawnTriangles": 0,
+     "drawnInstances": 0,
+     "drawnDraws": 0,
+     "perInstanceTriangles": 69384,
+     "perInstanceInstances": 413,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "railing",
+     "instances": 1566,
+     "drawnTriangles": 0,
+     "drawnInstances": 0,
+     "drawnDraws": 0,
+     "perInstanceTriangles": 0,
+     "perInstanceInstances": 0,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "scene": "towers",
+   "view": "V5",
+   "detailCells": 17,
+   "facadeCells": 8,
+   "kinds": [
+    {
+     "kind": "frame",
+     "instances": 10583,
+     "drawnTriangles": 342292,
+     "drawnInstances": 8309,
+     "drawnDraws": 12,
+     "perInstanceTriangles": 293452,
+     "perInstanceInstances": 6920,
+     "casters": {
+      "0.05": {
+       "now": 454272,
+       "perInstance": 465080
+      },
+      "0.10": {
+       "now": 454272,
+       "perInstance": 424928
+      },
+      "0.20": {
+       "now": 454272,
+       "perInstance": 419776
+      },
+      "0.40": {
+       "now": 454272,
+       "perInstance": 419776
+      }
+     }
+    },
+    {
+     "kind": "fin",
+     "instances": 67554,
+     "drawnTriangles": 223376,
+     "drawnInstances": 56148,
+     "drawnDraws": 25,
+     "perInstanceTriangles": 171194,
+     "perInstanceInstances": 47457,
+     "casters": {
+      "0.05": {
+       "now": 621588,
+       "perInstance": 485032
+      },
+      "0.10": {
+       "now": 263412,
+       "perInstance": 190592
+      },
+      "0.20": {
+       "now": 263412,
+       "perInstance": 164128
+      },
+      "0.40": {
+       "now": 263412,
+       "perInstance": 164128
+      }
+     }
+    },
+    {
+     "kind": "brise",
+     "instances": 6534,
+     "drawnTriangles": 150768,
+     "drawnInstances": 6282,
+     "drawnDraws": 12,
+     "perInstanceTriangles": 118776,
+     "perInstanceInstances": 4949,
+     "casters": {
+      "0.05": {
+       "now": 312624,
+       "perInstance": 259680
+      },
+      "0.10": {
+       "now": 156816,
+       "perInstance": 103872
+      },
+      "0.20": {
+       "now": 156816,
+       "perInstance": 103872
+      },
+      "0.40": {
+       "now": 156816,
+       "perInstance": 103872
+      }
+     }
+    },
+    {
+     "kind": "concrete",
+     "instances": 47916,
+     "drawnTriangles": 94584,
+     "drawnInstances": 47292,
+     "drawnDraws": 27,
+     "perInstanceTriangles": 74640,
+     "perInstanceInstances": 37320,
+     "casters": {
+      "0.05": {
+       "now": 149302,
+       "perInstance": 81588
+      },
+      "0.10": {
+       "now": 95832,
+       "perInstance": 68358
+      },
+      "0.20": {
+       "now": 95832,
+       "perInstance": 48726
+      },
+      "0.40": {
+       "now": 38168,
+       "perInstance": 2646
+      }
+     }
+    },
+    {
+     "kind": "glassRail",
+     "instances": 19422,
+     "drawnTriangles": 65152,
+     "drawnInstances": 16288,
+     "drawnDraws": 14,
+     "perInstanceTriangles": 55288,
+     "perInstanceInstances": 13822,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "pot",
+     "instances": 5954,
+     "drawnTriangles": 57134,
+     "drawnInstances": 4081,
+     "drawnDraws": 14,
+     "perInstanceTriangles": 76118,
+     "perInstanceInstances": 3167,
+     "casters": {
+      "0.05": {
+       "now": 208395,
+       "perInstance": 123712
+      },
+      "0.10": {
+       "now": 120406,
+       "perInstance": 75466
+      },
+      "0.20": {
+       "now": 64834,
+       "perInstance": 64834
+      },
+      "0.40": {
+       "now": 64834,
+       "perInstance": 40992
+      }
+     }
+    },
+    {
+     "kind": "awning",
+     "instances": 2142,
+     "drawnTriangles": 49536,
+     "drawnInstances": 2064,
+     "drawnDraws": 15,
+     "perInstanceTriangles": 39192,
+     "perInstanceInstances": 1633,
+     "casters": {
+      "0.05": {
+       "now": 51408,
+       "perInstance": 37128
+      },
+      "0.10": {
+       "now": 51408,
+       "perInstance": 37128
+      },
+      "0.20": {
+       "now": 51408,
+       "perInstance": 37128
+      },
+      "0.40": {
+       "now": 51408,
+       "perInstance": 37128
+      }
+     }
+    },
+    {
+     "kind": "shutter",
+     "instances": 2999,
+     "drawnTriangles": 32796,
+     "drawnInstances": 2733,
+     "drawnDraws": 14,
+     "perInstanceTriangles": 26436,
+     "perInstanceInstances": 2203,
+     "casters": {
+      "0.05": {
+       "now": 35988,
+       "perInstance": 35988
+      },
+      "0.10": {
+       "now": 35988,
+       "perInstance": 35988
+      },
+      "0.20": {
+       "now": 35988,
+       "perInstance": 35988
+      },
+      "0.40": {
+       "now": 35988,
+       "perInstance": 32664
+      }
+     }
+    },
+    {
+     "kind": "chair",
+     "instances": 5641,
+     "drawnTriangles": 10162,
+     "drawnInstances": 5081,
+     "drawnDraws": 15,
+     "perInstanceTriangles": 81384,
+     "perInstanceInstances": 4060,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "roofRailing",
+     "instances": 8100,
+     "drawnTriangles": 9040,
+     "drawnInstances": 2260,
+     "drawnDraws": 9,
+     "perInstanceTriangles": 120,
+     "perInstanceInstances": 30,
+     "casters": {
+      "0.05": {
+       "now": 37440,
+       "perInstance": 467688
+      },
+      "0.10": {
+       "now": 37440,
+       "perInstance": 14664
+      },
+      "0.20": {
+       "now": 37440,
+       "perInstance": 4992
+      },
+      "0.40": {
+       "now": 37440,
+       "perInstance": 2496
+      }
+     }
+    },
+    {
+     "kind": "foliage",
+     "instances": 3019,
+     "drawnTriangles": 5500,
+     "drawnInstances": 2750,
+     "drawnDraws": 18,
+     "perInstanceTriangles": 104530,
+     "perInstanceInstances": 2200,
+     "casters": {
+      "0.05": {
+       "now": 579648,
+       "perInstance": 449664
+      },
+      "0.10": {
+       "now": 579648,
+       "perInstance": 449664
+      },
+      "0.20": {
+       "now": 579648,
+       "perInstance": 449664
+      },
+      "0.40": {
+       "now": 579648,
+       "perInstance": 449280
+      }
+     }
+    },
+    {
+     "kind": "acUnit",
+     "instances": 2733,
+     "drawnTriangles": 5308,
+     "drawnInstances": 2654,
+     "drawnDraws": 15,
+     "perInstanceTriangles": 22804,
+     "perInstanceInstances": 2134,
+     "casters": {
+      "0.05": {
+       "now": 81990,
+       "perInstance": 56880
+      },
+      "0.10": {
+       "now": 81990,
+       "perInstance": 56880
+      },
+      "0.20": {
+       "now": 81990,
+       "perInstance": 56880
+      },
+      "0.40": {
+       "now": 81990,
+       "perInstance": 56880
+      }
+     }
+    },
+    {
+     "kind": "bush",
+     "instances": 2935,
+     "drawnTriangles": 5308,
+     "drawnInstances": 2654,
+     "drawnDraws": 15,
+     "perInstanceTriangles": 64482,
+     "perInstanceInstances": 1863,
+     "casters": {
+      "0.05": {
+       "now": 363940,
+       "perInstance": 283836
+      },
+      "0.10": {
+       "now": 363940,
+       "perInstance": 283836
+      },
+      "0.20": {
+       "now": 363940,
+       "perInstance": 283836
+      },
+      "0.40": {
+       "now": 363940,
+       "perInstance": 242420
+      }
+     }
+    },
+    {
+     "kind": "lounger",
+     "instances": 1776,
+     "drawnTriangles": 3122,
+     "drawnInstances": 1561,
+     "drawnDraws": 15,
+     "perInstanceTriangles": 21688,
+     "perInstanceInstances": 1212,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "table",
+     "instances": 1494,
+     "drawnTriangles": 2678,
+     "drawnInstances": 1339,
+     "drawnDraws": 15,
+     "perInstanceTriangles": 32444,
+     "perInstanceInstances": 1054,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "door",
+     "instances": 210,
+     "drawnTriangles": 2184,
+     "drawnInstances": 182,
+     "drawnDraws": 14,
+     "perInstanceTriangles": 1824,
+     "perInstanceInstances": 152,
+     "casters": {
+      "0.05": {
+       "now": 13020,
+       "perInstance": 13020
+      },
+      "0.10": {
+       "now": 2520,
+       "perInstance": 2520
+      },
+      "0.20": {
+       "now": 2520,
+       "perInstance": 2520
+      },
+      "0.40": {
+       "now": 2520,
+       "perInstance": 2520
+      }
+     }
+    },
+    {
+     "kind": "airer",
+     "instances": 506,
+     "drawnTriangles": 904,
+     "drawnInstances": 452,
+     "drawnDraws": 15,
+     "perInstanceTriangles": 15160,
+     "perInstanceInstances": 359,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "dish",
+     "instances": 470,
+     "drawnTriangles": 838,
+     "drawnInstances": 419,
+     "drawnDraws": 10,
+     "perInstanceTriangles": 15028,
+     "perInstanceInstances": 374,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "lotBox",
+     "instances": 324,
+     "drawnTriangles": 560,
+     "drawnInstances": 280,
+     "drawnDraws": 20,
+     "perInstanceTriangles": 480,
+     "perInstanceInstances": 240,
+     "casters": {
+      "0.05": {
+       "now": 3240,
+       "perInstance": 3240
+      },
+      "0.10": {
+       "now": 3240,
+       "perInstance": 2592
+      },
+      "0.20": {
+       "now": 648,
+       "perInstance": 648
+      },
+      "0.40": {
+       "now": 648,
+       "perInstance": 162
+      }
+     }
+    },
+    {
+     "kind": "bike",
+     "instances": 44,
+     "drawnTriangles": 82,
+     "drawnInstances": 41,
+     "drawnDraws": 7,
+     "perInstanceTriangles": 2436,
+     "perInstanceInstances": 38,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "railing",
+     "instances": 1566,
+     "drawnTriangles": 0,
+     "drawnInstances": 0,
+     "drawnDraws": 0,
+     "perInstanceTriangles": 0,
+     "perInstanceInstances": 0,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 265524
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 265524
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "scene": "towers",
+   "view": "view-250",
+   "detailCells": 25,
+   "facadeCells": 0,
+   "kinds": [
+    {
+     "kind": "frame",
+     "instances": 10710,
+     "drawnTriangles": 148568,
+     "drawnInstances": 2653,
+     "drawnDraws": 4,
+     "perInstanceTriangles": 1870,
+     "perInstanceInstances": 125,
+     "casters": {
+      "0.05": {
+       "now": 593880,
+       "perInstance": 599760
+      },
+      "0.10": {
+       "now": 593880,
+       "perInstance": 554400
+      },
+      "0.20": {
+       "now": 588448,
+       "perInstance": 547344
+      },
+      "0.40": {
+       "now": 588448,
+       "perInstance": 547344
+      }
+     }
+    },
+    {
+     "kind": "fin",
+     "instances": 67554,
+     "drawnTriangles": 108936,
+     "drawnInstances": 14808,
+     "drawnDraws": 7,
+     "perInstanceTriangles": 942,
+     "perInstanceInstances": 281,
+     "casters": {
+      "0.05": {
+       "now": 750508,
+       "perInstance": 616428
+      },
+      "0.10": {
+       "now": 299960,
+       "perInstance": 239184
+      },
+      "0.20": {
+       "now": 299960,
+       "perInstance": 205344
+      },
+      "0.40": {
+       "now": 299960,
+       "perInstance": 205344
+      }
+     }
+    },
+    {
+     "kind": "brise",
+     "instances": 6534,
+     "drawnTriangles": 54624,
+     "drawnInstances": 1898,
+     "drawnDraws": 5,
+     "perInstanceTriangles": 10200,
+     "perInstanceInstances": 425,
+     "casters": {
+      "0.05": {
+       "now": 392040,
+       "perInstance": 392040
+      },
+      "0.10": {
+       "now": 156816,
+       "perInstance": 156816
+      },
+      "0.20": {
+       "now": 156816,
+       "perInstance": 156816
+      },
+      "0.40": {
+       "now": 156816,
+       "perInstance": 156816
+      }
+     }
+    },
+    {
+     "kind": "concrete",
+     "instances": 47916,
+     "drawnTriangles": 47582,
+     "drawnInstances": 13246,
+     "drawnDraws": 10,
+     "perInstanceTriangles": 4430,
+     "perInstanceInstances": 2215,
+     "casters": {
+      "0.05": {
+       "now": 172842,
+       "perInstance": 112932
+      },
+      "0.10": {
+       "now": 95832,
+       "perInstance": 95832
+      },
+      "0.20": {
+       "now": 95832,
+       "perInstance": 67896
+      },
+      "0.40": {
+       "now": 15402,
+       "perInstance": 3420
+      }
+     }
+    },
+    {
+     "kind": "pot",
+     "instances": 5954,
+     "drawnTriangles": 26380,
+     "drawnInstances": 1262,
+     "drawnDraws": 3,
+     "perInstanceTriangles": 714,
+     "perInstanceInstances": 51,
+     "casters": {
+      "0.05": {
+       "now": 267930,
+       "perInstance": 158965
+      },
+      "0.10": {
+       "now": 154804,
+       "perInstance": 97084
+      },
+      "0.20": {
+       "now": 83356,
+       "perInstance": 83356
+      },
+      "0.40": {
+       "now": 83356,
+       "perInstance": 52808
+      }
+     }
+    },
+    {
+     "kind": "roofRailing",
+     "instances": 8100,
+     "drawnTriangles": 22548,
+     "drawnInstances": 938,
+     "drawnDraws": 5,
+     "perInstanceTriangles": 324,
+     "perInstanceInstances": 81,
+     "casters": {
+      "0.05": {
+       "now": 436020,
+       "perInstance": 631800
+      },
+      "0.10": {
+       "now": 403104,
+       "perInstance": 19656
+      },
+      "0.20": {
+       "now": 48204,
+       "perInstance": 5616
+      },
+      "0.40": {
+       "now": 48204,
+       "perInstance": 2808
+      }
+     }
+    },
+    {
+     "kind": "glassRail",
+     "instances": 19422,
+     "drawnTriangles": 16448,
+     "drawnInstances": 4112,
+     "drawnDraws": 3,
+     "perInstanceTriangles": 512,
+     "perInstanceInstances": 128,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "awning",
+     "instances": 2142,
+     "drawnTriangles": 10440,
+     "drawnInstances": 435,
+     "drawnDraws": 4,
+     "perInstanceTriangles": 2784,
+     "perInstanceInstances": 116,
+     "casters": {
+      "0.05": {
+       "now": 51408,
+       "perInstance": 51408
+      },
+      "0.10": {
+       "now": 51408,
+       "perInstance": 51408
+      },
+      "0.20": {
+       "now": 51408,
+       "perInstance": 51408
+      },
+      "0.40": {
+       "now": 51408,
+       "perInstance": 51408
+      }
+     }
+    },
+    {
+     "kind": "shutter",
+     "instances": 4007,
+     "drawnTriangles": 8772,
+     "drawnInstances": 731,
+     "drawnDraws": 3,
+     "perInstanceTriangles": 1284,
+     "perInstanceInstances": 107,
+     "casters": {
+      "0.05": {
+       "now": 48084,
+       "perInstance": 48084
+      },
+      "0.10": {
+       "now": 48084,
+       "perInstance": 48084
+      },
+      "0.20": {
+       "now": 48084,
+       "perInstance": 48084
+      },
+      "0.40": {
+       "now": 48084,
+       "perInstance": 43332
+      }
+     }
+    },
+    {
+     "kind": "chair",
+     "instances": 5641,
+     "drawnTriangles": 2506,
+     "drawnInstances": 1253,
+     "drawnDraws": 3,
+     "perInstanceTriangles": 130,
+     "perInstanceInstances": 65,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "railing",
+     "instances": 1566,
+     "drawnTriangles": 2088,
+     "drawnInstances": 174,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 1968,
+     "perInstanceInstances": 164,
+     "casters": {
+      "0.05": {
+       "now": 265524,
+       "perInstance": 341388
+      },
+      "0.10": {
+       "now": 265524,
+       "perInstance": 341388
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "acUnit",
+     "instances": 2733,
+     "drawnTriangles": 1600,
+     "drawnInstances": 800,
+     "drawnDraws": 6,
+     "perInstanceTriangles": 182,
+     "perInstanceInstances": 91,
+     "casters": {
+      "0.05": {
+       "now": 81990,
+       "perInstance": 81990
+      },
+      "0.10": {
+       "now": 81990,
+       "perInstance": 81990
+      },
+      "0.20": {
+       "now": 81990,
+       "perInstance": 81990
+      },
+      "0.40": {
+       "now": 81990,
+       "perInstance": 81990
+      }
+     }
+    },
+    {
+     "kind": "foliage",
+     "instances": 3019,
+     "drawnTriangles": 1298,
+     "drawnInstances": 649,
+     "drawnDraws": 5,
+     "perInstanceTriangles": 42,
+     "perInstanceInstances": 21,
+     "casters": {
+      "0.05": {
+       "now": 579648,
+       "perInstance": 579648
+      },
+      "0.10": {
+       "now": 579648,
+       "perInstance": 579648
+      },
+      "0.20": {
+       "now": 579648,
+       "perInstance": 579648
+      },
+      "0.40": {
+       "now": 579648,
+       "perInstance": 579264
+      }
+     }
+    },
+    {
+     "kind": "bush",
+     "instances": 2935,
+     "drawnTriangles": 1226,
+     "drawnInstances": 613,
+     "drawnDraws": 3,
+     "perInstanceTriangles": 54,
+     "perInstanceInstances": 27,
+     "casters": {
+      "0.05": {
+       "now": 363940,
+       "perInstance": 363940
+      },
+      "0.10": {
+       "now": 363940,
+       "perInstance": 363940
+      },
+      "0.20": {
+       "now": 363940,
+       "perInstance": 363940
+      },
+      "0.40": {
+       "now": 363940,
+       "perInstance": 311240
+      }
+     }
+    },
+    {
+     "kind": "door",
+     "instances": 288,
+     "drawnTriangles": 936,
+     "drawnInstances": 78,
+     "drawnDraws": 5,
+     "perInstanceTriangles": 240,
+     "perInstanceInstances": 20,
+     "casters": {
+      "0.05": {
+       "now": 17856,
+       "perInstance": 17856
+      },
+      "0.10": {
+       "now": 3456,
+       "perInstance": 3456
+      },
+      "0.20": {
+       "now": 3456,
+       "perInstance": 3456
+      },
+      "0.40": {
+       "now": 3456,
+       "perInstance": 3456
+      }
+     }
+    },
+    {
+     "kind": "lounger",
+     "instances": 1776,
+     "drawnTriangles": 724,
+     "drawnInstances": 362,
+     "drawnDraws": 3,
+     "perInstanceTriangles": 20,
+     "perInstanceInstances": 10,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "table",
+     "instances": 1494,
+     "drawnTriangles": 662,
+     "drawnInstances": 331,
+     "drawnDraws": 3,
+     "perInstanceTriangles": 28,
+     "perInstanceInstances": 14,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "lotBox",
+     "instances": 324,
+     "drawnTriangles": 472,
+     "drawnInstances": 92,
+     "drawnDraws": 5,
+     "perInstanceTriangles": 48,
+     "perInstanceInstances": 24,
+     "casters": {
+      "0.05": {
+       "now": 3240,
+       "perInstance": 3240
+      },
+      "0.10": {
+       "now": 3240,
+       "perInstance": 2592
+      },
+      "0.20": {
+       "now": 648,
+       "perInstance": 648
+      },
+      "0.40": {
+       "now": 648,
+       "perInstance": 162
+      }
+     }
+    },
+    {
+     "kind": "airer",
+     "instances": 506,
+     "drawnTriangles": 142,
+     "drawnInstances": 71,
+     "drawnDraws": 2,
+     "perInstanceTriangles": 24,
+     "perInstanceInstances": 12,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "dish",
+     "instances": 470,
+     "drawnTriangles": 90,
+     "drawnInstances": 45,
+     "drawnDraws": 2,
+     "perInstanceTriangles": 46,
+     "perInstanceInstances": 23,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "bike",
+     "instances": 44,
+     "drawnTriangles": 10,
+     "drawnInstances": 5,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 10,
+     "perInstanceInstances": 5,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "scene": "towers",
+   "view": "street",
+   "detailCells": 25,
+   "facadeCells": 0,
+   "kinds": [
+    {
+     "kind": "frame",
+     "instances": 10710,
+     "drawnTriangles": 399560,
+     "drawnInstances": 7135,
+     "drawnDraws": 13,
+     "perInstanceTriangles": 291726,
+     "perInstanceInstances": 5301,
+     "casters": {
+      "0.05": {
+       "now": 588896,
+       "perInstance": 599760
+      },
+      "0.10": {
+       "now": 588896,
+       "perInstance": 554400
+      },
+      "0.20": {
+       "now": 588448,
+       "perInstance": 547344
+      },
+      "0.40": {
+       "now": 588448,
+       "perInstance": 547344
+      }
+     }
+    },
+    {
+     "kind": "fin",
+     "instances": 67554,
+     "drawnTriangles": 283604,
+     "drawnInstances": 48732,
+     "drawnDraws": 27,
+     "perInstanceTriangles": 145458,
+     "perInstanceInstances": 35489,
+     "casters": {
+      "0.05": {
+       "now": 750508,
+       "perInstance": 616428
+      },
+      "0.10": {
+       "now": 299960,
+       "perInstance": 239184
+      },
+      "0.20": {
+       "now": 299960,
+       "perInstance": 205344
+      },
+      "0.40": {
+       "now": 299960,
+       "perInstance": 205344
+      }
+     }
+    },
+    {
+     "kind": "brise",
+     "instances": 6534,
+     "drawnTriangles": 148104,
+     "drawnInstances": 5082,
+     "drawnDraws": 13,
+     "perInstanceTriangles": 82272,
+     "perInstanceInstances": 3419,
+     "casters": {
+      "0.05": {
+       "now": 392040,
+       "perInstance": 392040
+      },
+      "0.10": {
+       "now": 156816,
+       "perInstance": 156816
+      },
+      "0.20": {
+       "now": 156816,
+       "perInstance": 156816
+      },
+      "0.40": {
+       "now": 156816,
+       "perInstance": 156816
+      }
+     }
+    },
+    {
+     "kind": "pot",
+     "instances": 5954,
+     "drawnTriangles": 97594,
+     "drawnInstances": 4257,
+     "drawnDraws": 14,
+     "perInstanceTriangles": 42846,
+     "perInstanceInstances": 3056,
+     "casters": {
+      "0.05": {
+       "now": 267930,
+       "perInstance": 158965
+      },
+      "0.10": {
+       "now": 154804,
+       "perInstance": 97084
+      },
+      "0.20": {
+       "now": 83356,
+       "perInstance": 83356
+      },
+      "0.40": {
+       "now": 83356,
+       "perInstance": 52808
+      }
+     }
+    },
+    {
+     "kind": "concrete",
+     "instances": 47916,
+     "drawnTriangles": 86664,
+     "drawnInstances": 37262,
+     "drawnDraws": 28,
+     "perInstanceTriangles": 51714,
+     "perInstanceInstances": 25797,
+     "casters": {
+      "0.05": {
+       "now": 172842,
+       "perInstance": 112932
+      },
+      "0.10": {
+       "now": 95832,
+       "perInstance": 95832
+      },
+      "0.20": {
+       "now": 95832,
+       "perInstance": 67896
+      },
+      "0.40": {
+       "now": 15402,
+       "perInstance": 3420
+      }
+     }
+    },
+    {
+     "kind": "glassRail",
+     "instances": 19422,
+     "drawnTriangles": 67856,
+     "drawnInstances": 13720,
+     "drawnDraws": 14,
+     "perInstanceTriangles": 41156,
+     "perInstanceInstances": 10287,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "foliage",
+     "instances": 3019,
+     "drawnTriangles": 49756,
+     "drawnInstances": 2173,
+     "drawnDraws": 17,
+     "perInstanceTriangles": 3412,
+     "perInstanceInstances": 1611,
+     "casters": {
+      "0.05": {
+       "now": 579648,
+       "perInstance": 579648
+      },
+      "0.10": {
+       "now": 579648,
+       "perInstance": 579648
+      },
+      "0.20": {
+       "now": 579648,
+       "perInstance": 579648
+      },
+      "0.40": {
+       "now": 579648,
+       "perInstance": 579264
+      }
+     }
+    },
+    {
+     "kind": "chair",
+     "instances": 5641,
+     "drawnTriangles": 41912,
+     "drawnInstances": 4046,
+     "drawnDraws": 14,
+     "perInstanceTriangles": 6370,
+     "perInstanceInstances": 3033,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "awning",
+     "instances": 2142,
+     "drawnTriangles": 39000,
+     "drawnInstances": 1625,
+     "drawnDraws": 16,
+     "perInstanceTriangles": 28200,
+     "perInstanceInstances": 1175,
+     "casters": {
+      "0.05": {
+       "now": 51408,
+       "perInstance": 51408
+      },
+      "0.10": {
+       "now": 51408,
+       "perInstance": 51408
+      },
+      "0.20": {
+       "now": 51408,
+       "perInstance": 51408
+      },
+      "0.40": {
+       "now": 51408,
+       "perInstance": 51408
+      }
+     }
+    },
+    {
+     "kind": "shutter",
+     "instances": 4007,
+     "drawnTriangles": 34380,
+     "drawnInstances": 2865,
+     "drawnDraws": 15,
+     "perInstanceTriangles": 25968,
+     "perInstanceInstances": 2164,
+     "casters": {
+      "0.05": {
+       "now": 48084,
+       "perInstance": 48084
+      },
+      "0.10": {
+       "now": 48084,
+       "perInstance": 48084
+      },
+      "0.20": {
+       "now": 48084,
+       "perInstance": 48084
+      },
+      "0.40": {
+       "now": 48084,
+       "perInstance": 43332
+      }
+     }
+    },
+    {
+     "kind": "bush",
+     "instances": 2935,
+     "drawnTriangles": 30398,
+     "drawnInstances": 2084,
+     "drawnDraws": 14,
+     "perInstanceTriangles": 3232,
+     "perInstanceInstances": 1555,
+     "casters": {
+      "0.05": {
+       "now": 363940,
+       "perInstance": 363940
+      },
+      "0.10": {
+       "now": 363940,
+       "perInstance": 363940
+      },
+      "0.20": {
+       "now": 363940,
+       "perInstance": 363940
+      },
+      "0.40": {
+       "now": 363940,
+       "perInstance": 311240
+      }
+     }
+    },
+    {
+     "kind": "roofRailing",
+     "instances": 8100,
+     "drawnTriangles": 30228,
+     "drawnInstances": 1008,
+     "drawnDraws": 13,
+     "perInstanceTriangles": 2154,
+     "perInstanceInstances": 187,
+     "casters": {
+      "0.05": {
+       "now": 253188,
+       "perInstance": 631800
+      },
+      "0.10": {
+       "now": 246480,
+       "perInstance": 19656
+      },
+      "0.20": {
+       "now": 48204,
+       "perInstance": 5616
+      },
+      "0.40": {
+       "now": 48204,
+       "perInstance": 2808
+      }
+     }
+    },
+    {
+     "kind": "table",
+     "instances": 1494,
+     "drawnTriangles": 17776,
+     "drawnInstances": 1080,
+     "drawnDraws": 14,
+     "perInstanceTriangles": 1810,
+     "perInstanceInstances": 804,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "lounger",
+     "instances": 1776,
+     "drawnTriangles": 13306,
+     "drawnInstances": 1309,
+     "drawnDraws": 14,
+     "perInstanceTriangles": 1996,
+     "perInstanceInstances": 934,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "acUnit",
+     "instances": 2733,
+     "drawnTriangles": 8864,
+     "drawnInstances": 2120,
+     "drawnDraws": 16,
+     "perInstanceTriangles": 2796,
+     "perInstanceInstances": 1398,
+     "casters": {
+      "0.05": {
+       "now": 81990,
+       "perInstance": 81990
+      },
+      "0.10": {
+       "now": 81990,
+       "perInstance": 81990
+      },
+      "0.20": {
+       "now": 81990,
+       "perInstance": 81990
+      },
+      "0.40": {
+       "now": 81990,
+       "perInstance": 81990
+      }
+     }
+    },
+    {
+     "kind": "airer",
+     "instances": 506,
+     "drawnTriangles": 6826,
+     "drawnInstances": 342,
+     "drawnDraws": 14,
+     "perInstanceTriangles": 528,
+     "perInstanceInstances": 264,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "railing",
+     "instances": 1566,
+     "drawnTriangles": 6264,
+     "drawnInstances": 522,
+     "drawnDraws": 3,
+     "perInstanceTriangles": 1632,
+     "perInstanceInstances": 136,
+     "casters": {
+      "0.05": {
+       "now": 189660,
+       "perInstance": 341388
+      },
+      "0.10": {
+       "now": 189660,
+       "perInstance": 341388
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "door",
+     "instances": 288,
+     "drawnTriangles": 3816,
+     "drawnInstances": 218,
+     "drawnDraws": 16,
+     "perInstanceTriangles": 2060,
+     "perInstanceInstances": 155,
+     "casters": {
+      "0.05": {
+       "now": 17856,
+       "perInstance": 17856
+      },
+      "0.10": {
+       "now": 3456,
+       "perInstance": 3456
+      },
+      "0.20": {
+       "now": 3456,
+       "perInstance": 3456
+      },
+      "0.40": {
+       "now": 3456,
+       "perInstance": 3456
+      }
+     }
+    },
+    {
+     "kind": "lotBox",
+     "instances": 324,
+     "drawnTriangles": 800,
+     "drawnInstances": 240,
+     "drawnDraws": 15,
+     "perInstanceTriangles": 366,
+     "perInstanceInstances": 175,
+     "casters": {
+      "0.05": {
+       "now": 3240,
+       "perInstance": 3240
+      },
+      "0.10": {
+       "now": 3240,
+       "perInstance": 2592
+      },
+      "0.20": {
+       "now": 648,
+       "perInstance": 648
+      },
+      "0.40": {
+       "now": 648,
+       "perInstance": 162
+      }
+     }
+    },
+    {
+     "kind": "dish",
+     "instances": 470,
+     "drawnTriangles": 634,
+     "drawnInstances": 317,
+     "drawnDraws": 10,
+     "perInstanceTriangles": 542,
+     "perInstanceInstances": 271,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "bike",
+     "instances": 44,
+     "drawnTriangles": 56,
+     "drawnInstances": 28,
+     "drawnDraws": 6,
+     "perInstanceTriangles": 48,
+     "perInstanceInstances": 24,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "scene": "houses",
+   "view": "V0",
+   "detailCells": 0,
+   "facadeCells": 12,
+   "kinds": [
+    {
+     "kind": "louvre",
+     "instances": 6132,
+     "drawnTriangles": 73584,
+     "drawnInstances": 6132,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 73584,
+     "perInstanceInstances": 6132,
+     "casters": {
+      "0.05": {
+       "now": 73584,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 73584,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 73584,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 73584,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "concrete",
+     "instances": 15225,
+     "drawnTriangles": 30450,
+     "drawnInstances": 15225,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 28188,
+     "perInstanceInstances": 14094,
+     "casters": {
+      "0.05": {
+       "now": 30450,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 30450,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 30450,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 30450,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "lotBox",
+     "instances": 2477,
+     "drawnTriangles": 24770,
+     "drawnInstances": 2477,
+     "drawnDraws": 12,
+     "perInstanceTriangles": 4280,
+     "perInstanceInstances": 2140,
+     "casters": {
+      "0.05": {
+       "now": 24770,
+       "perInstance": 24770
+      },
+      "0.10": {
+       "now": 24770,
+       "perInstance": 15634
+      },
+      "0.20": {
+       "now": 24770,
+       "perInstance": 4954
+      },
+      "0.40": {
+       "now": 24770,
+       "perInstance": 1146
+      }
+     }
+    },
+    {
+     "kind": "fin",
+     "instances": 9250,
+     "drawnTriangles": 18500,
+     "drawnInstances": 9250,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 15970,
+     "perInstanceInstances": 7985,
+     "casters": {
+      "0.05": {
+       "now": 18500,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 18500,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 18500,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 18500,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "lamp",
+     "instances": 388,
+     "drawnTriangles": 4656,
+     "drawnInstances": 388,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 0,
+     "perInstanceInstances": 0,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "lotSlab",
+     "instances": 626,
+     "drawnTriangles": 1252,
+     "drawnInstances": 626,
+     "drawnDraws": 12,
+     "perInstanceTriangles": 1252,
+     "perInstanceInstances": 626,
+     "casters": {
+      "0.05": {
+       "now": 6260,
+       "perInstance": 6260
+      },
+      "0.10": {
+       "now": 6260,
+       "perInstance": 6260
+      },
+      "0.20": {
+       "now": 1252,
+       "perInstance": 1252
+      },
+      "0.40": {
+       "now": 1252,
+       "perInstance": 1252
+      }
+     }
+    },
+    {
+     "kind": "wash",
+     "instances": 388,
+     "drawnTriangles": 776,
+     "drawnInstances": 388,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 776,
+     "perInstanceInstances": 388,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "acUnit",
+     "instances": 288,
+     "drawnTriangles": 576,
+     "drawnInstances": 288,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 5130,
+     "perInstanceInstances": 171,
+     "casters": {
+      "0.05": {
+       "now": 8640,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 8640,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 8640,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 8640,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "dish",
+     "instances": 146,
+     "drawnTriangles": 292,
+     "drawnInstances": 146,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 19312,
+     "perInstanceInstances": 136,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "glassRail",
+     "instances": 52,
+     "drawnTriangles": 208,
+     "drawnInstances": 52,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 208,
+     "perInstanceInstances": 52,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "chair",
+     "instances": 89,
+     "drawnTriangles": 178,
+     "drawnInstances": 89,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 624,
+     "perInstanceInstances": 8,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "foliage",
+     "instances": 56,
+     "drawnTriangles": 112,
+     "drawnInstances": 56,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 6528,
+     "perInstanceInstances": 34,
+     "casters": {
+      "0.05": {
+       "now": 10752,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 10752,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 10752,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 10752,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "table",
+     "instances": 19,
+     "drawnTriangles": 38,
+     "drawnInstances": 19,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 0,
+     "perInstanceInstances": 0,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "airer",
+     "instances": 19,
+     "drawnTriangles": 38,
+     "drawnInstances": 19,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 3192,
+     "perInstanceInstances": 19,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "lounger",
+     "instances": 14,
+     "drawnTriangles": 28,
+     "drawnInstances": 14,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 924,
+     "perInstanceInstances": 14,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "bike",
+     "instances": 8,
+     "drawnTriangles": 16,
+     "drawnInstances": 8,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 1904,
+     "perInstanceInstances": 8,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "frame",
+     "instances": 816,
+     "drawnTriangles": 0,
+     "drawnInstances": 0,
+     "drawnDraws": 0,
+     "perInstanceTriangles": 0,
+     "perInstanceInstances": 0,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "railing",
+     "instances": 258,
+     "drawnTriangles": 0,
+     "drawnInstances": 0,
+     "drawnDraws": 0,
+     "perInstanceTriangles": 0,
+     "perInstanceInstances": 0,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "pot",
+     "instances": 108,
+     "drawnTriangles": 0,
+     "drawnInstances": 0,
+     "drawnDraws": 0,
+     "perInstanceTriangles": 0,
+     "perInstanceInstances": 0,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "bush",
+     "instances": 52,
+     "drawnTriangles": 0,
+     "drawnInstances": 0,
+     "drawnDraws": 0,
+     "perInstanceTriangles": 1344,
+     "perInstanceInstances": 8,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "scene": "houses",
+   "view": "V5",
+   "detailCells": 11,
+   "facadeCells": 1,
+   "kinds": [
+    {
+     "kind": "fin",
+     "instances": 9250,
+     "drawnTriangles": 103360,
+     "drawnInstances": 9250,
+     "drawnDraws": 12,
+     "perInstanceTriangles": 33808,
+     "perInstanceInstances": 8784,
+     "casters": {
+      "0.05": {
+       "now": 103360,
+       "perInstance": 73212
+      },
+      "0.10": {
+       "now": 103360,
+       "perInstance": 73112
+      },
+      "0.20": {
+       "now": 103360,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 103360,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "louvre",
+     "instances": 6132,
+     "drawnTriangles": 73584,
+     "drawnInstances": 6132,
+     "drawnDraws": 12,
+     "perInstanceTriangles": 69900,
+     "perInstanceInstances": 5825,
+     "casters": {
+      "0.05": {
+       "now": 298544,
+       "perInstance": 292448
+      },
+      "0.10": {
+       "now": 298544,
+       "perInstance": 292448
+      },
+      "0.20": {
+       "now": 73584,
+       "perInstance": 67488
+      },
+      "0.40": {
+       "now": 73584,
+       "perInstance": 56712
+      }
+     }
+    },
+    {
+     "kind": "concrete",
+     "instances": 15225,
+     "drawnTriangles": 30450,
+     "drawnInstances": 15225,
+     "drawnDraws": 16,
+     "perInstanceTriangles": 29698,
+     "perInstanceInstances": 14849,
+     "casters": {
+      "0.05": {
+       "now": 80500,
+       "perInstance": 36556
+      },
+      "0.10": {
+       "now": 30450,
+       "perInstance": 28596
+      },
+      "0.20": {
+       "now": 30450,
+       "perInstance": 28596
+      },
+      "0.40": {
+       "now": 11864,
+       "perInstance": 1592
+      }
+     }
+    },
+    {
+     "kind": "lotBox",
+     "instances": 2477,
+     "drawnTriangles": 24380,
+     "drawnInstances": 2438,
+     "drawnDraws": 11,
+     "perInstanceTriangles": 4802,
+     "perInstanceInstances": 2401,
+     "casters": {
+      "0.05": {
+       "now": 24770,
+       "perInstance": 24770
+      },
+      "0.10": {
+       "now": 24770,
+       "perInstance": 15634
+      },
+      "0.20": {
+       "now": 24770,
+       "perInstance": 4954
+      },
+      "0.40": {
+       "now": 24770,
+       "perInstance": 1146
+      }
+     }
+    },
+    {
+     "kind": "shutter",
+     "instances": 1959,
+     "drawnTriangles": 23280,
+     "drawnInstances": 1940,
+     "drawnDraws": 10,
+     "perInstanceTriangles": 23076,
+     "perInstanceInstances": 1923,
+     "casters": {
+      "0.05": {
+       "now": 23508,
+       "perInstance": 23508
+      },
+      "0.10": {
+       "now": 23508,
+       "perInstance": 23508
+      },
+      "0.20": {
+       "now": 23508,
+       "perInstance": 23508
+      },
+      "0.40": {
+       "now": 23508,
+       "perInstance": 22224
+      }
+     }
+    },
+    {
+     "kind": "door",
+     "instances": 723,
+     "drawnTriangles": 8556,
+     "drawnInstances": 713,
+     "drawnDraws": 10,
+     "perInstanceTriangles": 8388,
+     "perInstanceInstances": 699,
+     "casters": {
+      "0.05": {
+       "now": 44826,
+       "perInstance": 44826
+      },
+      "0.10": {
+       "now": 8676,
+       "perInstance": 8676
+      },
+      "0.20": {
+       "now": 8676,
+       "perInstance": 8676
+      },
+      "0.40": {
+       "now": 8676,
+       "perInstance": 8676
+      }
+     }
+    },
+    {
+     "kind": "frame",
+     "instances": 1405,
+     "drawnTriangles": 2670,
+     "drawnInstances": 1335,
+     "drawnDraws": 10,
+     "perInstanceTriangles": 674,
+     "perInstanceInstances": 337,
+     "casters": {
+      "0.05": {
+       "now": 76104,
+       "perInstance": 76104
+      },
+      "0.10": {
+       "now": 76104,
+       "perInstance": 43120
+      },
+      "0.20": {
+       "now": 76104,
+       "perInstance": 43120
+      },
+      "0.40": {
+       "now": 76104,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "pot",
+     "instances": 108,
+     "drawnTriangles": 1414,
+     "drawnInstances": 101,
+     "drawnDraws": 9,
+     "perInstanceTriangles": 1554,
+     "perInstanceInstances": 91,
+     "casters": {
+      "0.05": {
+       "now": 3728,
+       "perInstance": 2702
+      },
+      "0.10": {
+       "now": 2506,
+       "perInstance": 1618
+      },
+      "0.20": {
+       "now": 1414,
+       "perInstance": 1414
+      },
+      "0.40": {
+       "now": 1400,
+       "perInstance": 826
+      }
+     }
+    },
+    {
+     "kind": "lotSlab",
+     "instances": 626,
+     "drawnTriangles": 1232,
+     "drawnInstances": 616,
+     "drawnDraws": 11,
+     "perInstanceTriangles": 1220,
+     "perInstanceInstances": 610,
+     "casters": {
+      "0.05": {
+       "now": 6260,
+       "perInstance": 6260
+      },
+      "0.10": {
+       "now": 6260,
+       "perInstance": 6260
+      },
+      "0.20": {
+       "now": 1252,
+       "perInstance": 1252
+      },
+      "0.40": {
+       "now": 1252,
+       "perInstance": 1252
+      }
+     }
+    },
+    {
+     "kind": "wash",
+     "instances": 388,
+     "drawnTriangles": 770,
+     "drawnInstances": 385,
+     "drawnDraws": 11,
+     "perInstanceTriangles": 758,
+     "perInstanceInstances": 379,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "acUnit",
+     "instances": 288,
+     "drawnTriangles": 576,
+     "drawnInstances": 288,
+     "drawnDraws": 11,
+     "perInstanceTriangles": 982,
+     "perInstanceInstances": 281,
+     "casters": {
+      "0.05": {
+       "now": 8640,
+       "perInstance": 8190
+      },
+      "0.10": {
+       "now": 8640,
+       "perInstance": 8190
+      },
+      "0.20": {
+       "now": 8640,
+       "perInstance": 8190
+      },
+      "0.40": {
+       "now": 8640,
+       "perInstance": 8190
+      }
+     }
+    },
+    {
+     "kind": "dish",
+     "instances": 146,
+     "drawnTriangles": 288,
+     "drawnInstances": 144,
+     "drawnDraws": 11,
+     "perInstanceTriangles": 1406,
+     "perInstanceInstances": 143,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "lamp",
+     "instances": 388,
+     "drawnTriangles": 276,
+     "drawnInstances": 23,
+     "drawnDraws": 1,
+     "perInstanceTriangles": 0,
+     "perInstanceInstances": 0,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "glassRail",
+     "instances": 52,
+     "drawnTriangles": 208,
+     "drawnInstances": 52,
+     "drawnDraws": 8,
+     "perInstanceTriangles": 208,
+     "perInstanceInstances": 52,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "chair",
+     "instances": 89,
+     "drawnTriangles": 178,
+     "drawnInstances": 89,
+     "drawnDraws": 10,
+     "perInstanceTriangles": 482,
+     "perInstanceInstances": 89,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "foliage",
+     "instances": 56,
+     "drawnTriangles": 112,
+     "drawnInstances": 56,
+     "drawnDraws": 10,
+     "perInstanceTriangles": 872,
+     "perInstanceInstances": 56,
+     "casters": {
+      "0.05": {
+       "now": 10752,
+       "perInstance": 9984
+      },
+      "0.10": {
+       "now": 10752,
+       "perInstance": 9984
+      },
+      "0.20": {
+       "now": 10752,
+       "perInstance": 9984
+      },
+      "0.40": {
+       "now": 10752,
+       "perInstance": 9984
+      }
+     }
+    },
+    {
+     "kind": "bush",
+     "instances": 52,
+     "drawnTriangles": 104,
+     "drawnInstances": 52,
+     "drawnDraws": 9,
+     "perInstanceTriangles": 596,
+     "perInstanceInstances": 49,
+     "casters": {
+      "0.05": {
+       "now": 6448,
+       "perInstance": 6076
+      },
+      "0.10": {
+       "now": 6448,
+       "perInstance": 6076
+      },
+      "0.20": {
+       "now": 6448,
+       "perInstance": 6076
+      },
+      "0.40": {
+       "now": 6448,
+       "perInstance": 5208
+      }
+     }
+    },
+    {
+     "kind": "airer",
+     "instances": 19,
+     "drawnTriangles": 38,
+     "drawnInstances": 19,
+     "drawnDraws": 7,
+     "perInstanceTriangles": 370,
+     "perInstanceInstances": 19,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "table",
+     "instances": 19,
+     "drawnTriangles": 38,
+     "drawnInstances": 19,
+     "drawnDraws": 5,
+     "perInstanceTriangles": 166,
+     "perInstanceInstances": 19,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "lounger",
+     "instances": 14,
+     "drawnTriangles": 28,
+     "drawnInstances": 14,
+     "drawnDraws": 7,
+     "perInstanceTriangles": 156,
+     "perInstanceInstances": 14,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "bike",
+     "instances": 8,
+     "drawnTriangles": 16,
+     "drawnInstances": 8,
+     "drawnDraws": 7,
+     "perInstanceTriangles": 252,
+     "perInstanceInstances": 8,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "railing",
+     "instances": 258,
+     "drawnTriangles": 0,
+     "drawnInstances": 0,
+     "drawnDraws": 0,
+     "perInstanceTriangles": 0,
+     "perInstanceInstances": 0,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 52756
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 50140
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 436
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "scene": "houses",
+   "view": "view-250",
+   "detailCells": 12,
+   "facadeCells": 0,
+   "kinds": [
+    {
+     "kind": "louvre",
+     "instances": 6132,
+     "drawnTriangles": 147648,
+     "drawnInstances": 4784,
+     "drawnDraws": 7,
+     "perInstanceTriangles": 19056,
+     "perInstanceInstances": 1248,
+     "casters": {
+      "0.05": {
+       "now": 318864,
+       "perInstance": 318864
+      },
+      "0.10": {
+       "now": 318864,
+       "perInstance": 318864
+      },
+      "0.20": {
+       "now": 73584,
+       "perInstance": 73584
+      },
+      "0.40": {
+       "now": 73584,
+       "perInstance": 62088
+      }
+     }
+    },
+    {
+     "kind": "fin",
+     "instances": 9250,
+     "drawnTriangles": 86592,
+     "drawnInstances": 7216,
+     "drawnDraws": 6,
+     "perInstanceTriangles": 16152,
+     "perInstanceInstances": 1861,
+     "casters": {
+      "0.05": {
+       "now": 111000,
+       "perInstance": 79820
+      },
+      "0.10": {
+       "now": 111000,
+       "perInstance": 79716
+      },
+      "0.20": {
+       "now": 111000,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 111000,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "frame",
+     "instances": 1445,
+     "drawnTriangles": 63728,
+     "drawnInstances": 1138,
+     "drawnDraws": 6,
+     "perInstanceTriangles": 7932,
+     "perInstanceInstances": 159,
+     "casters": {
+      "0.05": {
+       "now": 80920,
+       "perInstance": 80920
+      },
+      "0.10": {
+       "now": 80920,
+       "perInstance": 45696
+      },
+      "0.20": {
+       "now": 80920,
+       "perInstance": 45696
+      },
+      "0.40": {
+       "now": 80920,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "concrete",
+     "instances": 15225,
+     "drawnTriangles": 24022,
+     "drawnInstances": 12011,
+     "drawnDraws": 10,
+     "perInstanceTriangles": 6136,
+     "perInstanceInstances": 3068,
+     "casters": {
+      "0.05": {
+       "now": 89770,
+       "perInstance": 38910
+      },
+      "0.10": {
+       "now": 30450,
+       "perInstance": 30450
+      },
+      "0.20": {
+       "now": 30450,
+       "perInstance": 30450
+      },
+      "0.40": {
+       "now": 11864,
+       "perInstance": 1692
+      }
+     }
+    },
+    {
+     "kind": "shutter",
+     "instances": 2074,
+     "drawnTriangles": 19800,
+     "drawnInstances": 1650,
+     "drawnDraws": 6,
+     "perInstanceTriangles": 4536,
+     "perInstanceInstances": 378,
+     "casters": {
+      "0.05": {
+       "now": 24888,
+       "perInstance": 24888
+      },
+      "0.10": {
+       "now": 24888,
+       "perInstance": 24888
+      },
+      "0.20": {
+       "now": 24888,
+       "perInstance": 24888
+      },
+      "0.40": {
+       "now": 24888,
+       "perInstance": 23580
+      }
+     }
+    },
+    {
+     "kind": "lotBox",
+     "instances": 2477,
+     "drawnTriangles": 19270,
+     "drawnInstances": 1927,
+     "drawnDraws": 6,
+     "perInstanceTriangles": 900,
+     "perInstanceInstances": 450,
+     "casters": {
+      "0.05": {
+       "now": 24770,
+       "perInstance": 24770
+      },
+      "0.10": {
+       "now": 24770,
+       "perInstance": 15634
+      },
+      "0.20": {
+       "now": 24770,
+       "perInstance": 4954
+      },
+      "0.40": {
+       "now": 24770,
+       "perInstance": 1146
+      }
+     }
+    },
+    {
+     "kind": "railing",
+     "instances": 258,
+     "drawnTriangles": 9820,
+     "drawnInstances": 166,
+     "drawnDraws": 4,
+     "perInstanceTriangles": 768,
+     "perInstanceInstances": 64,
+     "casters": {
+      "0.05": {
+       "now": 54936,
+       "perInstance": 56244
+      },
+      "0.10": {
+       "now": 54936,
+       "perInstance": 53628
+      },
+      "0.20": {
+       "now": 16568,
+       "perInstance": 436
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "door",
+     "instances": 768,
+     "drawnTriangles": 7392,
+     "drawnInstances": 616,
+     "drawnDraws": 6,
+     "perInstanceTriangles": 1836,
+     "perInstanceInstances": 153,
+     "casters": {
+      "0.05": {
+       "now": 47616,
+       "perInstance": 47616
+      },
+      "0.10": {
+       "now": 9216,
+       "perInstance": 9216
+      },
+      "0.20": {
+       "now": 9216,
+       "perInstance": 9216
+      },
+      "0.40": {
+       "now": 9216,
+       "perInstance": 9216
+      }
+     }
+    },
+    {
+     "kind": "lotSlab",
+     "instances": 626,
+     "drawnTriangles": 4192,
+     "drawnInstances": 472,
+     "drawnDraws": 6,
+     "perInstanceTriangles": 596,
+     "perInstanceInstances": 114,
+     "casters": {
+      "0.05": {
+       "now": 6260,
+       "perInstance": 6260
+      },
+      "0.10": {
+       "now": 6260,
+       "perInstance": 6260
+      },
+      "0.20": {
+       "now": 1252,
+       "perInstance": 1252
+      },
+      "0.40": {
+       "now": 1252,
+       "perInstance": 1252
+      }
+     }
+    },
+    {
+     "kind": "lamp",
+     "instances": 388,
+     "drawnTriangles": 3720,
+     "drawnInstances": 310,
+     "drawnDraws": 6,
+     "perInstanceTriangles": 792,
+     "perInstanceInstances": 66,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "pot",
+     "instances": 108,
+     "drawnTriangles": 1102,
+     "drawnInstances": 65,
+     "drawnDraws": 4,
+     "perInstanceTriangles": 378,
+     "perInstanceInstances": 27,
+     "casters": {
+      "0.05": {
+       "now": 4043,
+       "perInstance": 2903
+      },
+      "0.10": {
+       "now": 2688,
+       "perInstance": 1740
+      },
+      "0.20": {
+       "now": 1512,
+       "perInstance": 1512
+      },
+      "0.40": {
+       "now": 1498,
+       "perInstance": 882
+      }
+     }
+    },
+    {
+     "kind": "wash",
+     "instances": 388,
+     "drawnTriangles": 620,
+     "drawnInstances": 310,
+     "drawnDraws": 6,
+     "perInstanceTriangles": 136,
+     "perInstanceInstances": 68,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "acUnit",
+     "instances": 288,
+     "drawnTriangles": 470,
+     "drawnInstances": 235,
+     "drawnDraws": 6,
+     "perInstanceTriangles": 126,
+     "perInstanceInstances": 63,
+     "casters": {
+      "0.05": {
+       "now": 8640,
+       "perInstance": 8640
+      },
+      "0.10": {
+       "now": 8640,
+       "perInstance": 8640
+      },
+      "0.20": {
+       "now": 8640,
+       "perInstance": 8640
+      },
+      "0.40": {
+       "now": 8640,
+       "perInstance": 8640
+      }
+     }
+    },
+    {
+     "kind": "dish",
+     "instances": 146,
+     "drawnTriangles": 202,
+     "drawnInstances": 101,
+     "drawnDraws": 4,
+     "perInstanceTriangles": 56,
+     "perInstanceInstances": 28,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "glassRail",
+     "instances": 52,
+     "drawnTriangles": 136,
+     "drawnInstances": 34,
+     "drawnDraws": 3,
+     "perInstanceTriangles": 36,
+     "perInstanceInstances": 9,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "chair",
+     "instances": 89,
+     "drawnTriangles": 124,
+     "drawnInstances": 62,
+     "drawnDraws": 4,
+     "perInstanceTriangles": 50,
+     "perInstanceInstances": 25,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "bush",
+     "instances": 52,
+     "drawnTriangles": 74,
+     "drawnInstances": 37,
+     "drawnDraws": 4,
+     "perInstanceTriangles": 36,
+     "perInstanceInstances": 18,
+     "casters": {
+      "0.05": {
+       "now": 6448,
+       "perInstance": 6448
+      },
+      "0.10": {
+       "now": 6448,
+       "perInstance": 6448
+      },
+      "0.20": {
+       "now": 6448,
+       "perInstance": 6448
+      },
+      "0.40": {
+       "now": 6448,
+       "perInstance": 5580
+      }
+     }
+    },
+    {
+     "kind": "foliage",
+     "instances": 56,
+     "drawnTriangles": 56,
+     "drawnInstances": 28,
+     "drawnDraws": 4,
+     "perInstanceTriangles": 18,
+     "perInstanceInstances": 9,
+     "casters": {
+      "0.05": {
+       "now": 10752,
+       "perInstance": 10752
+      },
+      "0.10": {
+       "now": 10752,
+       "perInstance": 10752
+      },
+      "0.20": {
+       "now": 10752,
+       "perInstance": 10752
+      },
+      "0.40": {
+       "now": 10752,
+       "perInstance": 10752
+      }
+     }
+    },
+    {
+     "kind": "table",
+     "instances": 19,
+     "drawnTriangles": 30,
+     "drawnInstances": 15,
+     "drawnDraws": 3,
+     "perInstanceTriangles": 12,
+     "perInstanceInstances": 6,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "airer",
+     "instances": 19,
+     "drawnTriangles": 20,
+     "drawnInstances": 10,
+     "drawnDraws": 3,
+     "perInstanceTriangles": 12,
+     "perInstanceInstances": 6,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "lounger",
+     "instances": 14,
+     "drawnTriangles": 12,
+     "drawnInstances": 6,
+     "drawnDraws": 2,
+     "perInstanceTriangles": 6,
+     "perInstanceInstances": 3,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "bike",
+     "instances": 8,
+     "drawnTriangles": 4,
+     "drawnInstances": 2,
+     "drawnDraws": 2,
+     "perInstanceTriangles": 4,
+     "perInstanceInstances": 2,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "scene": "houses",
+   "view": "street",
+   "detailCells": 12,
+   "facadeCells": 0,
+   "kinds": [
+    {
+     "kind": "louvre",
+     "instances": 6132,
+     "drawnTriangles": 112720,
+     "drawnInstances": 4520,
+     "drawnDraws": 9,
+     "perInstanceTriangles": 31960,
+     "perInstanceInstances": 2380,
+     "casters": {
+      "0.05": {
+       "now": 318864,
+       "perInstance": 318864
+      },
+      "0.10": {
+       "now": 318864,
+       "perInstance": 318864
+      },
+      "0.20": {
+       "now": 73584,
+       "perInstance": 73584
+      },
+      "0.40": {
+       "now": 73584,
+       "perInstance": 62088
+      }
+     }
+    },
+    {
+     "kind": "fin",
+     "instances": 9250,
+     "drawnTriangles": 81912,
+     "drawnInstances": 6826,
+     "drawnDraws": 9,
+     "perInstanceTriangles": 31012,
+     "perInstanceInstances": 3601,
+     "casters": {
+      "0.05": {
+       "now": 111000,
+       "perInstance": 79820
+      },
+      "0.10": {
+       "now": 111000,
+       "perInstance": 79716
+      },
+      "0.20": {
+       "now": 111000,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 111000,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "frame",
+     "instances": 1445,
+     "drawnTriangles": 61768,
+     "drawnInstances": 1103,
+     "drawnDraws": 10,
+     "perInstanceTriangles": 17388,
+     "perInstanceInstances": 432,
+     "casters": {
+      "0.05": {
+       "now": 80920,
+       "perInstance": 80920
+      },
+      "0.10": {
+       "now": 80920,
+       "perInstance": 45696
+      },
+      "0.20": {
+       "now": 80920,
+       "perInstance": 45696
+      },
+      "0.40": {
+       "now": 80920,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "concrete",
+     "instances": 15225,
+     "drawnTriangles": 42478,
+     "drawnInstances": 11514,
+     "drawnDraws": 13,
+     "perInstanceTriangles": 12510,
+     "perInstanceInstances": 6170,
+     "casters": {
+      "0.05": {
+       "now": 89770,
+       "perInstance": 38910
+      },
+      "0.10": {
+       "now": 30450,
+       "perInstance": 30450
+      },
+      "0.20": {
+       "now": 30450,
+       "perInstance": 30450
+      },
+      "0.40": {
+       "now": 11864,
+       "perInstance": 1692
+      }
+     }
+    },
+    {
+     "kind": "lotBox",
+     "instances": 2477,
+     "drawnTriangles": 19100,
+     "drawnInstances": 1910,
+     "drawnDraws": 10,
+     "perInstanceTriangles": 2734,
+     "perInstanceInstances": 1119,
+     "casters": {
+      "0.05": {
+       "now": 24770,
+       "perInstance": 24770
+      },
+      "0.10": {
+       "now": 24770,
+       "perInstance": 15634
+      },
+      "0.20": {
+       "now": 24770,
+       "perInstance": 4954
+      },
+      "0.40": {
+       "now": 24770,
+       "perInstance": 1146
+      }
+     }
+    },
+    {
+     "kind": "shutter",
+     "instances": 2074,
+     "drawnTriangles": 18852,
+     "drawnInstances": 1571,
+     "drawnDraws": 10,
+     "perInstanceTriangles": 9996,
+     "perInstanceInstances": 833,
+     "casters": {
+      "0.05": {
+       "now": 24888,
+       "perInstance": 24888
+      },
+      "0.10": {
+       "now": 24888,
+       "perInstance": 24888
+      },
+      "0.20": {
+       "now": 24888,
+       "perInstance": 24888
+      },
+      "0.40": {
+       "now": 24888,
+       "perInstance": 23580
+      }
+     }
+    },
+    {
+     "kind": "door",
+     "instances": 768,
+     "drawnTriangles": 17634,
+     "drawnInstances": 582,
+     "drawnDraws": 10,
+     "perInstanceTriangles": 4560,
+     "perInstanceInstances": 330,
+     "casters": {
+      "0.05": {
+       "now": 47616,
+       "perInstance": 47616
+      },
+      "0.10": {
+       "now": 9216,
+       "perInstance": 9216
+      },
+      "0.20": {
+       "now": 9216,
+       "perInstance": 9216
+      },
+      "0.40": {
+       "now": 9216,
+       "perInstance": 9216
+      }
+     }
+    },
+    {
+     "kind": "railing",
+     "instances": 258,
+     "drawnTriangles": 9196,
+     "drawnInstances": 114,
+     "drawnDraws": 4,
+     "perInstanceTriangles": 1084,
+     "perInstanceInstances": 56,
+     "casters": {
+      "0.05": {
+       "now": 43600,
+       "perInstance": 56244
+      },
+      "0.10": {
+       "now": 43600,
+       "perInstance": 53628
+      },
+      "0.20": {
+       "now": 16568,
+       "perInstance": 436
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "lamp",
+     "instances": 388,
+     "drawnTriangles": 3300,
+     "drawnInstances": 275,
+     "drawnDraws": 10,
+     "perInstanceTriangles": 1668,
+     "perInstanceInstances": 139,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "lotSlab",
+     "instances": 626,
+     "drawnTriangles": 2212,
+     "drawnInstances": 474,
+     "drawnDraws": 9,
+     "perInstanceTriangles": 1012,
+     "perInstanceInstances": 298,
+     "casters": {
+      "0.05": {
+       "now": 6260,
+       "perInstance": 6260
+      },
+      "0.10": {
+       "now": 6260,
+       "perInstance": 6260
+      },
+      "0.20": {
+       "now": 1252,
+       "perInstance": 1252
+      },
+      "0.40": {
+       "now": 1252,
+       "perInstance": 1252
+      }
+     }
+    },
+    {
+     "kind": "pot",
+     "instances": 108,
+     "drawnTriangles": 1650,
+     "drawnInstances": 93,
+     "drawnDraws": 7,
+     "perInstanceTriangles": 738,
+     "perInstanceInstances": 51,
+     "casters": {
+      "0.05": {
+       "now": 4043,
+       "perInstance": 2903
+      },
+      "0.10": {
+       "now": 2688,
+       "perInstance": 1740
+      },
+      "0.20": {
+       "now": 1512,
+       "perInstance": 1512
+      },
+      "0.40": {
+       "now": 1498,
+       "perInstance": 882
+      }
+     }
+    },
+    {
+     "kind": "acUnit",
+     "instances": 288,
+     "drawnTriangles": 620,
+     "drawnInstances": 208,
+     "drawnDraws": 8,
+     "perInstanceTriangles": 240,
+     "perInstanceInstances": 120,
+     "casters": {
+      "0.05": {
+       "now": 8640,
+       "perInstance": 8640
+      },
+      "0.10": {
+       "now": 8640,
+       "perInstance": 8640
+      },
+      "0.20": {
+       "now": 8640,
+       "perInstance": 8640
+      },
+      "0.40": {
+       "now": 8640,
+       "perInstance": 8640
+      }
+     }
+    },
+    {
+     "kind": "wash",
+     "instances": 388,
+     "drawnTriangles": 596,
+     "drawnInstances": 298,
+     "drawnDraws": 10,
+     "perInstanceTriangles": 360,
+     "perInstanceInstances": 180,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "dish",
+     "instances": 146,
+     "drawnTriangles": 424,
+     "drawnInstances": 110,
+     "drawnDraws": 9,
+     "perInstanceTriangles": 130,
+     "perInstanceInstances": 65,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "glassRail",
+     "instances": 52,
+     "drawnTriangles": 140,
+     "drawnInstances": 35,
+     "drawnDraws": 5,
+     "perInstanceTriangles": 116,
+     "perInstanceInstances": 29,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "chair",
+     "instances": 89,
+     "drawnTriangles": 130,
+     "drawnInstances": 65,
+     "drawnDraws": 7,
+     "perInstanceTriangles": 88,
+     "perInstanceInstances": 44,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "foliage",
+     "instances": 56,
+     "drawnTriangles": 94,
+     "drawnInstances": 47,
+     "drawnDraws": 7,
+     "perInstanceTriangles": 64,
+     "perInstanceInstances": 32,
+     "casters": {
+      "0.05": {
+       "now": 10752,
+       "perInstance": 10752
+      },
+      "0.10": {
+       "now": 10752,
+       "perInstance": 10752
+      },
+      "0.20": {
+       "now": 10752,
+       "perInstance": 10752
+      },
+      "0.40": {
+       "now": 10752,
+       "perInstance": 10752
+      }
+     }
+    },
+    {
+     "kind": "bush",
+     "instances": 52,
+     "drawnTriangles": 92,
+     "drawnInstances": 46,
+     "drawnDraws": 7,
+     "perInstanceTriangles": 38,
+     "perInstanceInstances": 19,
+     "casters": {
+      "0.05": {
+       "now": 6448,
+       "perInstance": 6448
+      },
+      "0.10": {
+       "now": 6448,
+       "perInstance": 6448
+      },
+      "0.20": {
+       "now": 6448,
+       "perInstance": 6448
+      },
+      "0.40": {
+       "now": 6448,
+       "perInstance": 5580
+      }
+     }
+    },
+    {
+     "kind": "airer",
+     "instances": 19,
+     "drawnTriangles": 22,
+     "drawnInstances": 11,
+     "drawnDraws": 3,
+     "perInstanceTriangles": 12,
+     "perInstanceInstances": 6,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "table",
+     "instances": 19,
+     "drawnTriangles": 16,
+     "drawnInstances": 8,
+     "drawnDraws": 2,
+     "perInstanceTriangles": 14,
+     "perInstanceInstances": 7,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "lounger",
+     "instances": 14,
+     "drawnTriangles": 12,
+     "drawnInstances": 6,
+     "drawnDraws": 3,
+     "perInstanceTriangles": 10,
+     "perInstanceInstances": 5,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    },
+    {
+     "kind": "bike",
+     "instances": 8,
+     "drawnTriangles": 6,
+     "drawnInstances": 3,
+     "drawnDraws": 2,
+     "perInstanceTriangles": 6,
+     "perInstanceInstances": 3,
+     "casters": {
+      "0.05": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.10": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.20": {
+       "now": 0,
+       "perInstance": 0
+      },
+      "0.40": {
+       "now": 0,
+       "perInstance": 0
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

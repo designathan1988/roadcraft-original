@@ -1,0 +1,64 @@
+{
+ "id": "Vehicles: levels/bicycle/bicycle at 1.25 px/m",
+ "key": "Vehicles: levels/bicycle/bicycle at 1.25 px/m",
+ "metrics": {
+  "id": "Vehicles: levels/bicycle/bicycle at 1.25 px/m",
+  "triangles": 158,
+  "vertices": 376,
+  "index": "Uint32",
+  "geometryBytes": 15432,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B",
+  "materials": "",
+  "draws": 4,
+  "levels": [
+   {
+    "triangles": 158,
+    "vertices": 376
+   }
+  ],
+  "hidden": 7,
+  "solids": "26 solids: 19 closed cylinder, 2 other, 5 box",
+  "size": [
+   1.4652140140533447,
+   0.8825999945402145,
+   0.6800000071525574
+  ],
+  "pieces": [
+   {
+    "label": "body",
+    "triangles": 30,
+    "vertices": 90
+   },
+   {
+    "label": "trim",
+    "triangles": 20,
+    "vertices": 56
+   },
+   {
+    "label": "steering",
+    "triangles": 84,
+    "vertices": 164
+   },
+   {
+    "label": "cranks",
+    "triangles": 24,
+    "vertices": 66
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   -0.053393006324768066,
+   0.6512999907135963,
+   0
+  ],
+  "distance": 3.840469168379666,
+  "floor": 0.19159283487116135,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 3.840469168379666,
+ "error": null,
+ "overlap": null
+}

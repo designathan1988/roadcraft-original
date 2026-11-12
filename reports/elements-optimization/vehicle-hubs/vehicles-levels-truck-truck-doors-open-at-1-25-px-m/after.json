@@ -1,0 +1,122 @@
+{
+ "id": "Vehicles: levels/truck/truck doors open at 1.25 px/m",
+ "key": "Vehicles: levels/truck/truck doors open at 1.25 px/m",
+ "metrics": {
+  "id": "Vehicles: levels/truck/truck doors open at 1.25 px/m",
+  "triangles": 236,
+  "vertices": 550,
+  "index": "Uint32 + Uint16",
+  "geometryBytes": 22248,
+  "bytesPerVertex": 44,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "",
+  "draws": 19,
+  "levels": [
+   {
+    "triangles": 236,
+    "vertices": 550
+   }
+  ],
+  "hidden": 16,
+  "solids": "35 solids: 4 box, 15 closed cylinder, 8 quad, 8 other",
+  "size": [
+   2.3431224822998047,
+   2.865712821483612,
+   2.5360000133514404
+  ],
+  "pieces": [
+   {
+    "label": "shell in pieces",
+    "triangles": 76,
+    "vertices": 200
+   },
+   {
+    "label": "fixed glass",
+    "triangles": 20,
+    "vertices": 30
+   },
+   {
+    "label": "cabin",
+    "triangles": 32,
+    "vertices": 96
+   },
+   {
+    "label": "door 0 leaf",
+    "triangles": 38,
+    "vertices": 80
+   },
+   {
+    "label": "door 0 pane",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "door 0 card",
+    "triangles": 12,
+    "vertices": 24
+   },
+   {
+    "label": "door 1 leaf",
+    "triangles": 38,
+    "vertices": 80
+   },
+   {
+    "label": "door 1 pane",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "door 1 card",
+    "triangles": 12,
+    "vertices": 24
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   3.7195611000061035,
+   1.982856422662735,
+   0
+  ],
+  "distance": 9.361829281332408,
+  "floor": 0.5051292764578313,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 9.361829281332408,
+ "error": {
+  "max": 0.2668276870243548,
+  "mean": 0.004752790188057472,
+  "forward": {
+   "max": 0.2668276870243548,
+   "mean": 0.006154463204385731,
+   "samples": 20995,
+   "at": [
+    3.4552759211275363,
+    1.4204294004128524,
+    0.8981722748286726
+   ]
+  },
+  "backward": {
+   "max": 0.21800614988005118,
+   "mean": 0.003330798162069949,
+   "samples": 20695,
+   "at": [
+    4.550708293898241,
+    1.7362363707446475,
+    0.7362253493573004
+   ]
+  },
+  "at": [
+   3.4552759211275363,
+   1.4204294004128524,
+   0.8981722748286726
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

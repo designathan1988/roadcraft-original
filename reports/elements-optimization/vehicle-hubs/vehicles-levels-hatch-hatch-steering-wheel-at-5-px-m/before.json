@@ -1,0 +1,49 @@
+{
+ "id": "Vehicles: levels/hatch/hatch steering wheel at 5 px/m",
+ "key": "Vehicles: levels/hatch/hatch steering wheel at 5 px/m",
+ "metrics": {
+  "id": "Vehicles: levels/hatch/hatch steering wheel at 5 px/m",
+  "triangles": 54,
+  "vertices": 47,
+  "index": "Uint32",
+  "geometryBytes": 2340,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B",
+  "materials": "",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 54,
+    "vertices": 47
+   }
+  ],
+  "hidden": 4,
+  "solids": "5 solids: 5 other",
+  "size": [
+   0.044999999925494194,
+   0.4048602133989334,
+   0.4048602133989334
+  ],
+  "pieces": [
+   {
+    "label": "steering wheel",
+    "triangles": 54,
+    "vertices": 47
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   -0.002500000409781933,
+   -0.0025698915123939514,
+   0.0025698915123939514
+  ],
+  "distance": 1.1982704286975496,
+  "floor": -0.21499999821186067,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 1.1982704286975496,
+ "error": null,
+ "overlap": null
+}

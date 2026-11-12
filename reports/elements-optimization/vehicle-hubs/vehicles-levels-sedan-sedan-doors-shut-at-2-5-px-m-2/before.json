@@ -1,0 +1,69 @@
+{
+ "id": "Vehicles: levels/sedan/sedan doors shut at 2.5 px/m#2",
+ "key": "Vehicles: levels/sedan/sedan doors shut at 2.5 px/m#2",
+ "metrics": {
+  "id": "Vehicles: levels/sedan/sedan doors shut at 2.5 px/m#2",
+  "triangles": 13477,
+  "vertices": 12049,
+  "index": "Uint16 + none",
+  "geometryBytes": 511266,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 5,
+  "levels": [
+   {
+    "triangles": 13477,
+    "vertices": 12049
+   }
+  ],
+  "hidden": 73,
+  "solids": "67 solids: 31 other, 25 box, 11 closed cylinder",
+  "size": [
+   4.708000183105469,
+   1.3549908250570297,
+   2.3387439250946045
+  ],
+  "pieces": [
+   {
+    "label": "shell",
+    "triangles": 10159,
+    "vertices": 6690
+   },
+   {
+    "label": "glass",
+    "triangles": 576,
+    "vertices": 405
+   },
+   {
+    "label": "interior",
+    "triangles": 1722,
+    "vertices": 2554
+   },
+   {
+    "label": "trim",
+    "triangles": 460,
+    "vertices": 720
+   },
+   {
+    "label": "roof",
+    "triangles": 560,
+    "vertices": 1680
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.8174954131245613,
+   0
+  ],
+  "distance": 11.32647796614866,
+  "floor": 0.0857128114928365,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 11.32647796614866,
+ "error": null,
+ "overlap": null
+}

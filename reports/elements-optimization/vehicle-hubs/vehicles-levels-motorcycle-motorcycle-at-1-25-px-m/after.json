@@ -1,0 +1,92 @@
+{
+ "id": "Vehicles: levels/motorcycle/motorcycle at 1.25 px/m",
+ "key": "Vehicles: levels/motorcycle/motorcycle at 1.25 px/m",
+ "metrics": {
+  "id": "Vehicles: levels/motorcycle/motorcycle at 1.25 px/m",
+  "triangles": 44,
+  "vertices": 122,
+  "index": "Uint32",
+  "geometryBytes": 4920,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B",
+  "materials": "",
+  "draws": 3,
+  "levels": [
+   {
+    "triangles": 44,
+    "vertices": 122
+   }
+  ],
+  "hidden": 8,
+  "solids": "13 solids: 7 closed cylinder, 6 other",
+  "size": [
+   1.5824555158615112,
+   0.7571727335453033,
+   0.3799999952316284
+  ],
+  "pieces": [
+   {
+    "label": "body",
+    "triangles": 12,
+    "vertices": 32
+   },
+   {
+    "label": "trim",
+    "triangles": 28,
+    "vertices": 78
+   },
+   {
+    "label": "steering",
+    "triangles": 4,
+    "vertices": 12
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0.034999996423721313,
+   0.7081598937511444,
+   0
+  ],
+  "distance": 4.499099259140438,
+  "floor": 0.21495581737606054,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 4.499099259140438,
+ "error": {
+  "max": 0.36715975533311945,
+  "mean": 0.021809622103385197,
+  "forward": {
+   "max": 0.36715975533311945,
+   "mean": 0.03541835922831399,
+   "samples": 20606,
+   "at": [
+    0.2800000011920929,
+    1.179800033569336,
+    -0.3799999952316284
+   ]
+  },
+  "backward": {
+   "max": 0.10621270765725982,
+   "mean": 0.007879088710624005,
+   "samples": 20130,
+   "at": [
+    0.04897727710384271,
+    0.41993773785626065,
+    -0.018126052078764818
+   ]
+  },
+  "at": [
+   0.2800000011920929,
+   1.179800033569336,
+   -0.3799999952316284
+  ]
+ },
+ "overlap": [
+  0.6001873912461518,
+  0.582246960597627,
+  0.6179396092362345,
+  0.7231043710972346
+ ]
+}

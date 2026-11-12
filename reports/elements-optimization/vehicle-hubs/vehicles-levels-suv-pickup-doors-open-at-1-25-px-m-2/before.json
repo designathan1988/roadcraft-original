@@ -1,0 +1,119 @@
+{
+ "id": "Vehicles: levels/suv/pickup doors open at 1.25 px/m#2",
+ "key": "Vehicles: levels/suv/pickup doors open at 1.25 px/m#2",
+ "metrics": {
+  "id": "Vehicles: levels/suv/pickup doors open at 1.25 px/m#2",
+  "triangles": 11123,
+  "vertices": 11359,
+  "index": "Uint16 + none",
+  "geometryBytes": 471126,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 15,
+  "levels": [
+   {
+    "triangles": 11123,
+    "vertices": 11359
+   }
+  ],
+  "hidden": 48,
+  "solids": "64 solids: 33 other, 25 box, 6 closed cylinder",
+  "size": [
+   4.9079999923706055,
+   1.5426999628543854,
+   2.4509999752044678
+  ],
+  "pieces": [
+   {
+    "label": "shell in pieces",
+    "triangles": 8172,
+    "vertices": 5197
+   },
+   {
+    "label": "fixed glass",
+    "triangles": 96,
+    "vertices": 288
+   },
+   {
+    "label": "cabin",
+    "triangles": 1016,
+    "vertices": 2106
+   },
+   {
+    "label": "door 0 leaf",
+    "triangles": 307,
+    "vertices": 348
+   },
+   {
+    "label": "door 0 pane",
+    "triangles": 108,
+    "vertices": 384
+   },
+   {
+    "label": "door 0 card",
+    "triangles": 132,
+    "vertices": 396
+   },
+   {
+    "label": "door 1 leaf",
+    "triangles": 174,
+    "vertices": 162
+   },
+   {
+    "label": "door 1 pane",
+    "triangles": 96,
+    "vertices": 288
+   },
+   {
+    "label": "door 1 card",
+    "triangles": 102,
+    "vertices": 306
+   },
+   {
+    "label": "door 2 leaf",
+    "triangles": 308,
+    "vertices": 348
+   },
+   {
+    "label": "door 2 pane",
+    "triangles": 108,
+    "vertices": 384
+   },
+   {
+    "label": "door 2 card",
+    "triangles": 132,
+    "vertices": 396
+   },
+   {
+    "label": "door 3 leaf",
+    "triangles": 174,
+    "vertices": 162
+   },
+   {
+    "label": "door 3 pane",
+    "triangles": 96,
+    "vertices": 288
+   },
+   {
+    "label": "door 3 card",
+    "triangles": 102,
+    "vertices": 306
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.9913499802350998,
+   0
+  ],
+  "distance": 11.889877439849183,
+  "floor": 0.1630124668566521,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 11.889877439849183,
+ "error": null,
+ "overlap": null
+}

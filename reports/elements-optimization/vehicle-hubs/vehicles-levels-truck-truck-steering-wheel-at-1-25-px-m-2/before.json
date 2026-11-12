@@ -1,0 +1,49 @@
+{
+ "id": "Vehicles: levels/truck/truck steering wheel at 1.25 px/m#2",
+ "key": "Vehicles: levels/truck/truck steering wheel at 1.25 px/m#2",
+ "metrics": {
+  "id": "Vehicles: levels/truck/truck steering wheel at 1.25 px/m#2",
+  "triangles": 310,
+  "vertices": 283,
+  "index": "Uint16",
+  "geometryBytes": 12048,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 310,
+    "vertices": 283
+   }
+  ],
+  "hidden": 8,
+  "solids": "5 solids: 4 other, 1 closed cylinder",
+  "size": [
+   0.05000000074505806,
+   0.48399999737739563,
+   0.48399999737739563
+  ],
+  "pieces": [
+   {
+    "label": "steering wheel",
+    "triangles": 310,
+    "vertices": 283
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   0
+  ],
+  "distance": 1.4319027160281026,
+  "floor": -0.2519999986886978,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 1.4319027160281026,
+ "error": null,
+ "overlap": null
+}

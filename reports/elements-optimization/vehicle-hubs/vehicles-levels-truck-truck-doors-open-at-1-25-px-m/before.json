@@ -1,0 +1,89 @@
+{
+ "id": "Vehicles: levels/truck/truck doors open at 1.25 px/m",
+ "key": "Vehicles: levels/truck/truck doors open at 1.25 px/m",
+ "metrics": {
+  "id": "Vehicles: levels/truck/truck doors open at 1.25 px/m",
+  "triangles": 328,
+  "vertices": 762,
+  "index": "Uint32 + Uint16",
+  "geometryBytes": 30984,
+  "bytesPerVertex": 44,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "",
+  "draws": 19,
+  "levels": [
+   {
+    "triangles": 328,
+    "vertices": 762
+   }
+  ],
+  "hidden": 18,
+  "solids": "47 solids: 7 box, 22 closed cylinder, 8 quad, 10 other",
+  "size": [
+   2.3431224822998047,
+   2.865712821483612,
+   2.5360000133514404
+  ],
+  "pieces": [
+   {
+    "label": "shell in pieces",
+    "triangles": 76,
+    "vertices": 200
+   },
+   {
+    "label": "fixed glass",
+    "triangles": 20,
+    "vertices": 30
+   },
+   {
+    "label": "cabin",
+    "triangles": 124,
+    "vertices": 308
+   },
+   {
+    "label": "door 0 leaf",
+    "triangles": 38,
+    "vertices": 80
+   },
+   {
+    "label": "door 0 pane",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "door 0 card",
+    "triangles": 12,
+    "vertices": 24
+   },
+   {
+    "label": "door 1 leaf",
+    "triangles": 38,
+    "vertices": 80
+   },
+   {
+    "label": "door 1 pane",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "door 1 card",
+    "triangles": 12,
+    "vertices": 24
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   3.7195611000061035,
+   1.982856422662735,
+   0
+  ],
+  "distance": 9.361829281332408,
+  "floor": 0.5051292764578313,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 9.361829281332408,
+ "error": null,
+ "overlap": null
+}

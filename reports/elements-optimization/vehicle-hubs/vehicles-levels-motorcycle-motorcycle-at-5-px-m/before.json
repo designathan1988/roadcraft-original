@@ -1,0 +1,59 @@
+{
+ "id": "Vehicles: levels/motorcycle/motorcycle at 5 px/m",
+ "key": "Vehicles: levels/motorcycle/motorcycle at 5 px/m",
+ "metrics": {
+  "id": "Vehicles: levels/motorcycle/motorcycle at 5 px/m",
+  "triangles": 268,
+  "vertices": 630,
+  "index": "Uint32",
+  "geometryBytes": 25896,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B",
+  "materials": "",
+  "draws": 3,
+  "levels": [
+   {
+    "triangles": 268,
+    "vertices": 630
+   }
+  ],
+  "hidden": 5,
+  "solids": "29 solids: 14 closed cylinder, 7 box, 4 open prism, 4 other",
+  "size": [
+   1.7839999794960022,
+   0.9432802796363831,
+   0.7599999904632568
+  ],
+  "pieces": [
+   {
+    "label": "body",
+    "triangles": 80,
+    "vertices": 194
+   },
+   {
+    "label": "trim",
+    "triangles": 108,
+    "vertices": 262
+   },
+   {
+    "label": "steering",
+    "triangles": 80,
+    "vertices": 174
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0.034999996423721313,
+   0.7081598937511444,
+   0
+  ],
+  "distance": 4.499099259140438,
+  "floor": 0.21495581737606054,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 4.499099259140438,
+ "error": null,
+ "overlap": null
+}

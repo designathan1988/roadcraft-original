@@ -1,0 +1,82 @@
+{
+ "id": "Vehicles: levels/hatch/hatch steering wheel at 1.25 px/m",
+ "key": "Vehicles: levels/hatch/hatch steering wheel at 1.25 px/m",
+ "metrics": {
+  "id": "Vehicles: levels/hatch/hatch steering wheel at 1.25 px/m",
+  "triangles": 46,
+  "vertices": 23,
+  "index": "Uint32",
+  "geometryBytes": 1380,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B",
+  "materials": "",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 46,
+    "vertices": 23
+   }
+  ],
+  "hidden": 0,
+  "solids": "1 solids: 1 other",
+  "size": [
+   0.03999999910593033,
+   0.4048602133989334,
+   0.4048602133989334
+  ],
+  "pieces": [
+   {
+    "label": "steering wheel",
+    "triangles": 46,
+    "vertices": 23
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   -0.002500000409781933,
+   -0.0025698915123939514,
+   0.0025698915123939514
+  ],
+  "distance": 1.1982704286975496,
+  "floor": -0.21499999821186067,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 1.1982704286975496,
+ "error": {
+  "max": 0.15834371529227814,
+  "mean": 0.012391985536020143,
+  "forward": {
+   "max": 0.15834371529227814,
+   "mean": 0.024763080180121157,
+   "samples": 20168,
+   "at": [
+    -0.02500000037252903,
+    -0.006503671818499018,
+    0.00481711412067265
+   ]
+  },
+  "backward": {
+   "max": 2.320383136634458e-16,
+   "mean": 1.4398270354846097e-17,
+   "samples": 20134,
+   "at": [
+    -0.013821933347128064,
+    -0.15419336264337136,
+    -0.07679953246096896
+   ]
+  },
+  "at": [
+   -0.02500000037252903,
+   -0.006503671818499018,
+   0.00481711412067265
+  ]
+ },
+ "overlap": [
+  0.8153815180189249,
+  0.8153900458877515,
+  0.7371638141809291,
+  1
+ ]
+}

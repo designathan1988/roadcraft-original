@@ -1,0 +1,64 @@
+{
+ "id": "Vehicles: levels/bus/bus doors shut at 1.25 px/m#2",
+ "key": "Vehicles: levels/bus/bus doors shut at 1.25 px/m#2",
+ "metrics": {
+  "id": "Vehicles: levels/bus/bus doors shut at 1.25 px/m#2",
+  "triangles": 8282,
+  "vertices": 17724,
+  "index": "Uint16",
+  "geometryBytes": 687756,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 4,
+  "levels": [
+   {
+    "triangles": 8282,
+    "vertices": 17724
+   }
+  ],
+  "hidden": 646,
+  "solids": "314 solids: 90 other, 48 closed cylinder, 136 box, 40 quad",
+  "size": [
+   12.014999866485596,
+   3.110000103712082,
+   2.5799999237060547
+  ],
+  "pieces": [
+   {
+    "label": "shell",
+    "triangles": 2096,
+    "vertices": 4472
+   },
+   {
+    "label": "glass",
+    "triangles": 92,
+    "vertices": 174
+   },
+   {
+    "label": "interior",
+    "triangles": 5998,
+    "vertices": 12910
+   },
+   {
+    "label": "trim",
+    "triangles": 96,
+    "vertices": 168
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   -0.0074999332427978516,
+   1.8350000530481339,
+   0
+  ],
+  "distance": 26.447841142256888,
+  "floor": 0.15323694583168385,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 26.447841142256888,
+ "error": null,
+ "overlap": null
+}

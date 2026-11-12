@@ -1,0 +1,49 @@
+{
+ "id": "Vehicles: levels/van/van steering wheel at 1.25 px/m",
+ "key": "Vehicles: levels/van/van steering wheel at 1.25 px/m",
+ "metrics": {
+  "id": "Vehicles: levels/van/van steering wheel at 1.25 px/m",
+  "triangles": 44,
+  "vertices": 49,
+  "index": "Uint32",
+  "geometryBytes": 2292,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B",
+  "materials": "",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 44,
+    "vertices": 49
+   }
+  ],
+  "hidden": 5,
+  "solids": "5 solids: 4 other, 1 closed cylinder",
+  "size": [
+   0.05000000074505806,
+   0.4565434157848358,
+   0.46241384744644165
+  ],
+  "pieces": [
+   {
+    "label": "steering wheel",
+    "triangles": 44,
+    "vertices": 49
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   -0.0029352158308029175
+  ],
+  "distance": 1.3597796783516949,
+  "floor": -0.23827170789241792,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 1.3597796783516949,
+ "error": null,
+ "overlap": null
+}

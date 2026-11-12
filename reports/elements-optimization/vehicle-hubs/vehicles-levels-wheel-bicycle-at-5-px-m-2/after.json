@@ -1,0 +1,87 @@
+{
+ "id": "Vehicles: levels/wheel/bicycle at 5 px/m#2",
+ "key": "Vehicles: levels/wheel/bicycle at 5 px/m#2",
+ "metrics": {
+  "id": "Vehicles: levels/wheel/bicycle at 5 px/m#2",
+  "triangles": 640,
+  "vertices": 714,
+  "index": "Uint16",
+  "geometryBytes": 28932,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B uv:2xFloat32=8B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 2,
+  "levels": [
+   {
+    "triangles": 640,
+    "vertices": 714
+   }
+  ],
+  "hidden": 0,
+  "solids": "11 solids: 2 other, 9 closed cylinder",
+  "size": [
+   0.6800000071525574,
+   0.6800000071525574,
+   0.08399999886751175
+  ],
+  "pieces": [
+   {
+    "label": "tyre",
+    "triangles": 256,
+    "vertices": 153
+   },
+   {
+    "label": "spoked rim",
+    "triangles": 384,
+    "vertices": 561
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   0
+  ],
+  "distance": 2.014057831436674,
+  "floor": -0.3500000035762787,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 2.014057831436674,
+ "error": {
+  "max": 9.729837130561787e-17,
+  "mean": 7.952133438140475e-18,
+  "forward": {
+   "max": 9.729837130561787e-17,
+   "mean": 7.952133438140475e-18,
+   "samples": 21824,
+   "at": [
+    -0.3015313162978111,
+    -0.02363023557859105,
+    0.0005877188452014104
+   ]
+  },
+  "backward": {
+   "max": 9.729837130561787e-17,
+   "mean": 7.952133438140475e-18,
+   "samples": 21824,
+   "at": [
+    -0.3015313162978111,
+    -0.02363023557859105,
+    0.0005877188452014104
+   ]
+  },
+  "at": [
+   -0.3015313162978111,
+   -0.02363023557859105,
+   0.0005877188452014104
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

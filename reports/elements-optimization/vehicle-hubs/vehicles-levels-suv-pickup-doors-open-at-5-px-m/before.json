@@ -1,0 +1,119 @@
+{
+ "id": "Vehicles: levels/suv/pickup doors open at 5 px/m",
+ "key": "Vehicles: levels/suv/pickup doors open at 5 px/m",
+ "metrics": {
+  "id": "Vehicles: levels/suv/pickup doors open at 5 px/m",
+  "triangles": 697,
+  "vertices": 1179,
+  "index": "Uint32",
+  "geometryBytes": 50808,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B",
+  "materials": "",
+  "draws": 15,
+  "levels": [
+   {
+    "triangles": 697,
+    "vertices": 1179
+   }
+  ],
+  "hidden": 13,
+  "solids": "69 solids: 29 other, 29 closed cylinder, 4 open prism, 3 quad, 4 box",
+  "size": [
+   4.900000095367432,
+   1.5426999628543854,
+   2.440999984741211
+  ],
+  "pieces": [
+   {
+    "label": "shell in pieces",
+    "triangles": 284,
+    "vertices": 264
+   },
+   {
+    "label": "fixed glass",
+    "triangles": 17,
+    "vertices": 16
+   },
+   {
+    "label": "cabin",
+    "triangles": 208,
+    "vertices": 572
+   },
+   {
+    "label": "door 0 leaf",
+    "triangles": 38,
+    "vertices": 74
+   },
+   {
+    "label": "door 0 pane",
+    "triangles": 8,
+    "vertices": 17
+   },
+   {
+    "label": "door 0 card",
+    "triangles": 9,
+    "vertices": 11
+   },
+   {
+    "label": "door 1 leaf",
+    "triangles": 28,
+    "vertices": 44
+   },
+   {
+    "label": "door 1 pane",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "door 1 card",
+    "triangles": 9,
+    "vertices": 11
+   },
+   {
+    "label": "door 2 leaf",
+    "triangles": 41,
+    "vertices": 81
+   },
+   {
+    "label": "door 2 pane",
+    "triangles": 7,
+    "vertices": 16
+   },
+   {
+    "label": "door 2 card",
+    "triangles": 8,
+    "vertices": 10
+   },
+   {
+    "label": "door 3 leaf",
+    "triangles": 28,
+    "vertices": 45
+   },
+   {
+    "label": "door 3 pane",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "door 3 card",
+    "triangles": 8,
+    "vertices": 10
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.9913499802350998,
+   0
+  ],
+  "distance": 11.866536117223788,
+  "floor": 0.1631243405387509,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 11.866536117223788,
+ "error": null,
+ "overlap": null
+}

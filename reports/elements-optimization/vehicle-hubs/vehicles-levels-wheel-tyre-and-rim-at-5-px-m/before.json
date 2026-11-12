@@ -1,0 +1,54 @@
+{
+ "id": "Vehicles: levels/wheel/tyre and rim at 5 px/m",
+ "key": "Vehicles: levels/wheel/tyre and rim at 5 px/m",
+ "metrics": {
+  "id": "Vehicles: levels/wheel/tyre and rim at 5 px/m",
+  "triangles": 112,
+  "vertices": 132,
+  "index": "Uint32",
+  "geometryBytes": 6096,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B",
+  "materials": "",
+  "draws": 2,
+  "levels": [
+   {
+    "triangles": 112,
+    "vertices": 132
+   }
+  ],
+  "hidden": 17,
+  "solids": "8 solids: 1 other, 7 closed cylinder",
+  "size": [
+   0.6423153877258301,
+   0.6423153877258301,
+   0.25760000944137573
+  ],
+  "pieces": [
+   {
+    "label": "tyre",
+    "triangles": 64,
+    "vertices": 40
+   },
+   {
+    "label": "rim",
+    "triangles": 48,
+    "vertices": 92
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   0
+  ],
+  "distance": 1.9699590539786145,
+  "floor": -0.33115769386291505,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 1.9699590539786145,
+ "error": null,
+ "overlap": null
+}

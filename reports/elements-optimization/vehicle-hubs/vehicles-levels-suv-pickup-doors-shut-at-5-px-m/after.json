@@ -1,0 +1,102 @@
+{
+ "id": "Vehicles: levels/suv/pickup doors shut at 5 px/m",
+ "key": "Vehicles: levels/suv/pickup doors shut at 5 px/m",
+ "metrics": {
+  "id": "Vehicles: levels/suv/pickup doors shut at 5 px/m",
+  "triangles": 693,
+  "vertices": 1158,
+  "index": "Uint32",
+  "geometryBytes": 50004,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B",
+  "materials": "",
+  "draws": 5,
+  "levels": [
+   {
+    "triangles": 693,
+    "vertices": 1158
+   }
+  ],
+  "hidden": 4,
+  "solids": "45 solids: 25 other, 12 closed cylinder, 7 quad, 1 open prism",
+  "size": [
+   4.901344537734985,
+   1.6040656864643097,
+   2.440999984741211
+  ],
+  "pieces": [
+   {
+    "label": "shell",
+    "triangles": 338,
+    "vertices": 322
+   },
+   {
+    "label": "glass",
+    "triangles": 70,
+    "vertices": 79
+   },
+   {
+    "label": "interior",
+    "triangles": 154,
+    "vertices": 414
+   },
+   {
+    "label": "trim",
+    "triangles": 126,
+    "vertices": 337
+   },
+   {
+    "label": "roof",
+    "triangles": 5,
+    "vertices": 6
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0.0006722211837768555,
+   1.022032842040062,
+   0
+  ],
+  "distance": 11.904311545321917,
+  "floor": 0.1629432849789602,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 11.904311545321917,
+ "error": {
+  "max": 0.10000002384185791,
+  "mean": 0.000107097231213828,
+  "forward": {
+   "max": 0.10000002384185791,
+   "mean": 0.00021347659444194512,
+   "samples": 22229,
+   "at": [
+    0.4424999952316284,
+    0.6600000262260437,
+    0.019999999552965164
+   ]
+  },
+  "backward": {
+   "max": 2.0168181411271794e-13,
+   "mean": 1.5882166413747044e-16,
+   "samples": 22080,
+   "at": [
+    0.3076571265558755,
+    1.1211564054571053,
+    0.9508445012464602
+   ]
+  },
+  "at": [
+   0.4424999952316284,
+   0.6600000262260437,
+   0.019999999552965164
+  ]
+ },
+ "overlap": [
+  1,
+  0.9996978167258442,
+  1,
+  0.9975906839780485
+ ]
+}

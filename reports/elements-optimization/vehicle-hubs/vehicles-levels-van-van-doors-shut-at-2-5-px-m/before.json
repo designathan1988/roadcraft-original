@@ -1,0 +1,69 @@
+{
+ "id": "Vehicles: levels/van/van doors shut at 2.5 px/m",
+ "key": "Vehicles: levels/van/van doors shut at 2.5 px/m",
+ "metrics": {
+  "id": "Vehicles: levels/van/van doors shut at 2.5 px/m",
+  "triangles": 445,
+  "vertices": 859,
+  "index": "Uint32",
+  "geometryBytes": 36264,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B",
+  "materials": "",
+  "draws": 5,
+  "levels": [
+   {
+    "triangles": 445,
+    "vertices": 859
+   }
+  ],
+  "hidden": 3,
+  "solids": "50 solids: 30 other, 16 closed cylinder, 2 open prism, 2 quad",
+  "size": [
+   5.601344347000122,
+   2.1642676293849945,
+   2.490000009536743
+  ],
+  "pieces": [
+   {
+    "label": "shell",
+    "triangles": 211,
+    "vertices": 266
+   },
+   {
+    "label": "glass",
+    "triangles": 28,
+    "vertices": 36
+   },
+   {
+    "label": "interior",
+    "triangles": 92,
+    "vertices": 254
+   },
+   {
+    "label": "trim",
+    "triangles": 108,
+    "vertices": 296
+   },
+   {
+    "label": "roof",
+    "triangles": 6,
+    "vertices": 7
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0.0006722211837768555,
+   1.2421338111162186,
+   0
+  ],
+  "distance": 13.563077121980433,
+  "floor": 0.09499290995403945,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 13.563077121980433,
+ "error": null,
+ "overlap": null
+}

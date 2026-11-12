@@ -1,0 +1,54 @@
+{
+ "id": "Vehicles: levels/wheel/bicycle at 5 px/m",
+ "key": "Vehicles: levels/wheel/bicycle at 5 px/m",
+ "metrics": {
+  "id": "Vehicles: levels/wheel/bicycle at 5 px/m",
+  "triangles": 184,
+  "vertices": 178,
+  "index": "Uint32",
+  "geometryBytes": 8616,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B",
+  "materials": "",
+  "draws": 2,
+  "levels": [
+   {
+    "triangles": 184,
+    "vertices": 178
+   }
+  ],
+  "hidden": 6,
+  "solids": "11 solids: 2 other, 1 box, 8 closed cylinder",
+  "size": [
+   0.6256000101566315,
+   0.6193248629570007,
+   0.08399999886751175
+  ],
+  "pieces": [
+   {
+    "label": "tyre",
+    "triangles": 48,
+    "vertices": 32
+   },
+   {
+    "label": "spoked rim",
+    "triangles": 136,
+    "vertices": 146
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   -0.003399983048439026,
+   -0.0065375566482543945,
+   0
+  ],
+  "distance": 1.8450129658331262,
+  "floor": -0.32619998812675477,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 1.8450129658331262,
+ "error": null,
+ "overlap": null
+}

@@ -1,0 +1,102 @@
+{
+ "id": "Vehicles: levels/sedan/wagon doors shut at 2.5 px/m",
+ "key": "Vehicles: levels/sedan/wagon doors shut at 2.5 px/m",
+ "metrics": {
+  "id": "Vehicles: levels/sedan/wagon doors shut at 2.5 px/m",
+  "triangles": 588,
+  "vertices": 848,
+  "index": "Uint32",
+  "geometryBytes": 37584,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B",
+  "materials": "",
+  "draws": 5,
+  "levels": [
+   {
+    "triangles": 588,
+    "vertices": 848
+   }
+  ],
+  "hidden": 22,
+  "solids": "37 solids: 21 other, 8 quad, 8 closed cylinder",
+  "size": [
+   4.699999809265137,
+   1.2853617519140244,
+   1.8600000143051147
+  ],
+  "pieces": [
+   {
+    "label": "shell",
+    "triangles": 381,
+    "vertices": 313
+   },
+   {
+    "label": "glass",
+    "triangles": 31,
+    "vertices": 49
+   },
+   {
+    "label": "interior",
+    "triangles": 94,
+    "vertices": 258
+   },
+   {
+    "label": "trim",
+    "triangles": 80,
+    "vertices": 224
+   },
+   {
+    "label": "roof",
+    "triangles": 2,
+    "vertices": 4
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.7826808765530586,
+   0
+  ],
+  "distance": 11.267741229313112,
+  "floor": 0.08599433345839604,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 11.267741229313112,
+ "error": {
+  "max": 0.29949153068978046,
+  "mean": 0.0011229958910694557,
+  "forward": {
+   "max": 0.29949153068978046,
+   "mean": 0.002232831674040242,
+   "samples": 22016,
+   "at": [
+    0.8765000104904175,
+    1.0736926794052124,
+    1.1494706869125366
+   ]
+  },
+  "backward": {
+   "max": 1.6778392157209991e-13,
+   "mean": 2.017823106828638e-16,
+   "samples": 21758,
+   "at": [
+    -2.3499999046325684,
+    0.4990953588438154,
+    -0.251652381003504
+   ]
+  },
+  "at": [
+   0.8765000104904175,
+   1.0736926794052124,
+   1.1494706869125366
+  ]
+ },
+ "overlap": [
+  0.9995305531648541,
+  0.997738409347908,
+  0.9993389990557129,
+  0.9935192458758837
+ ]
+}

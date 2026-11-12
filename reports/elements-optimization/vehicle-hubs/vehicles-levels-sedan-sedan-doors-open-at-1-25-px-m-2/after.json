@@ -1,0 +1,152 @@
+{
+ "id": "Vehicles: levels/sedan/sedan doors open at 1.25 px/m#2",
+ "key": "Vehicles: levels/sedan/sedan doors open at 1.25 px/m#2",
+ "metrics": {
+  "id": "Vehicles: levels/sedan/sedan doors open at 1.25 px/m#2",
+  "triangles": 12457,
+  "vertices": 12768,
+  "index": "Uint16 + none",
+  "geometryBytes": 528054,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 15,
+  "levels": [
+   {
+    "triangles": 12457,
+    "vertices": 12768
+   }
+  ],
+  "hidden": 72,
+  "solids": "65 solids: 34 other, 25 box, 6 closed cylinder",
+  "size": [
+   4.708000183105469,
+   1.3477500528097153,
+   2.3387439250946045
+  ],
+  "pieces": [
+   {
+    "label": "shell in pieces",
+    "triangles": 8968,
+    "vertices": 5554
+   },
+   {
+    "label": "fixed glass",
+    "triangles": 248,
+    "vertices": 744
+   },
+   {
+    "label": "cabin",
+    "triangles": 1026,
+    "vertices": 2094
+   },
+   {
+    "label": "door 0 leaf",
+    "triangles": 327,
+    "vertices": 365
+   },
+   {
+    "label": "door 0 pane",
+    "triangles": 108,
+    "vertices": 408
+   },
+   {
+    "label": "door 0 card",
+    "triangles": 144,
+    "vertices": 432
+   },
+   {
+    "label": "door 1 leaf",
+    "triangles": 268,
+    "vertices": 203
+   },
+   {
+    "label": "door 1 pane",
+    "triangles": 56,
+    "vertices": 168
+   },
+   {
+    "label": "door 1 card",
+    "triangles": 204,
+    "vertices": 612
+   },
+   {
+    "label": "door 2 leaf",
+    "triangles": 328,
+    "vertices": 365
+   },
+   {
+    "label": "door 2 pane",
+    "triangles": 108,
+    "vertices": 408
+   },
+   {
+    "label": "door 2 card",
+    "triangles": 144,
+    "vertices": 432
+   },
+   {
+    "label": "door 3 leaf",
+    "triangles": 268,
+    "vertices": 203
+   },
+   {
+    "label": "door 3 pane",
+    "triangles": 56,
+    "vertices": 168
+   },
+   {
+    "label": "door 3 card",
+    "triangles": 204,
+    "vertices": 612
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.8138750270009041,
+   0
+  ],
+  "distance": 11.322716721428217,
+  "floor": 0.08573083893296506,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 11.322716721428217,
+ "error": {
+  "max": 4.3165781822461723e-13,
+  "mean": 2.0200235142278558e-16,
+  "forward": {
+   "max": 4.3165781822461723e-13,
+   "mean": 2.0200235142278558e-16,
+   "samples": 86869,
+   "at": [
+    0.23407372044865749,
+    0.21643254812703397,
+    -0.8199999928474426
+   ]
+  },
+  "backward": {
+   "max": 4.3165781822461723e-13,
+   "mean": 2.0200235142278558e-16,
+   "samples": 86869,
+   "at": [
+    0.23407372044865749,
+    0.21643254812703397,
+    -0.8199999928474426
+   ]
+  },
+  "at": [
+   0.23407372044865749,
+   0.21643254812703397,
+   -0.8199999928474426
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

@@ -1,0 +1,122 @@
+{
+ "id": "Vehicles: levels/truck/truck doors open at 1.25 px/m#2",
+ "key": "Vehicles: levels/truck/truck doors open at 1.25 px/m#2",
+ "metrics": {
+  "id": "Vehicles: levels/truck/truck doors open at 1.25 px/m#2",
+  "triangles": 1015,
+  "vertices": 2080,
+  "index": "Uint16",
+  "geometryBytes": 81354,
+  "bytesPerVertex": 44,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "",
+  "draws": 19,
+  "levels": [
+   {
+    "triangles": 1015,
+    "vertices": 2080
+   }
+  ],
+  "hidden": 65,
+  "solids": "47 solids: 13 closed cylinder, 12 other, 14 box, 8 quad",
+  "size": [
+   2.3520002365112305,
+   2.8700000643730164,
+   2.5360000133514404
+  ],
+  "pieces": [
+   {
+    "label": "shell in pieces",
+    "triangles": 369,
+    "vertices": 776
+   },
+   {
+    "label": "fixed glass",
+    "triangles": 20,
+    "vertices": 30
+   },
+   {
+    "label": "cabin",
+    "triangles": 518,
+    "vertices": 1050
+   },
+   {
+    "label": "door 0 leaf",
+    "triangles": 38,
+    "vertices": 80
+   },
+   {
+    "label": "door 0 pane",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "door 0 card",
+    "triangles": 12,
+    "vertices": 24
+   },
+   {
+    "label": "door 1 leaf",
+    "triangles": 38,
+    "vertices": 80
+   },
+   {
+    "label": "door 1 pane",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "door 1 card",
+    "triangles": 12,
+    "vertices": 24
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   3.7239999771118164,
+   1.9850000441074371,
+   0
+  ],
+  "distance": 9.377224328339608,
+  "floor": 0.5050554888399478,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 9.377224328339608,
+ "error": {
+  "max": 2.0408214341394017e-12,
+  "mean": 4.705754806946027e-16,
+  "forward": {
+   "max": 2.0408214341394017e-12,
+   "mean": 4.705754806946027e-16,
+   "samples": 23072,
+   "at": [
+    4.897886996109423,
+    1.899999976158142,
+    0.3314622018300346
+   ]
+  },
+  "backward": {
+   "max": 2.0408214341394017e-12,
+   "mean": 4.705754806946027e-16,
+   "samples": 23072,
+   "at": [
+    4.897886996109423,
+    1.899999976158142,
+    0.3314622018300346
+   ]
+  },
+  "at": [
+   4.897886996109423,
+   1.899999976158142,
+   0.3314622018300346
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

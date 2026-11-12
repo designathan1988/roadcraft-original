@@ -1,0 +1,102 @@
+{
+ "id": "Vehicles: levels/truck/truck doors shut at 1.25 px/m",
+ "key": "Vehicles: levels/truck/truck doors shut at 1.25 px/m",
+ "metrics": {
+  "id": "Vehicles: levels/truck/truck doors shut at 1.25 px/m",
+  "triangles": 268,
+  "vertices": 715,
+  "index": "Uint32 + Uint16",
+  "geometryBytes": 28788,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B",
+  "materials": "",
+  "draws": 5,
+  "levels": [
+   {
+    "triangles": 268,
+    "vertices": 715
+   }
+  ],
+  "hidden": 19,
+  "solids": "55 solids: 31 closed cylinder, 12 quad, 11 other, 1 box",
+  "size": [
+   9.868899822235107,
+   3.1051666140556335,
+   2.5199999809265137
+  ],
+  "pieces": [
+   {
+    "label": "shell",
+    "triangles": 68,
+    "vertices": 190
+   },
+   {
+    "label": "glass",
+    "triangles": 28,
+    "vertices": 46
+   },
+   {
+    "label": "interior",
+    "triangles": 40,
+    "vertices": 108
+   },
+   {
+    "label": "trim",
+    "triangles": 116,
+    "vertices": 335
+   },
+   {
+    "label": "accent",
+    "triangles": 16,
+    "vertices": 36
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0.06445002555847168,
+   1.9474166929721832,
+   0
+  ],
+  "distance": 22.631893444847066,
+  "floor": 0.28635995908774947,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 22.631893444847066,
+ "error": {
+  "max": 0.4979784526227828,
+  "mean": 0.0017420206147670538,
+  "forward": {
+   "max": 0.4979784526227828,
+   "mean": 0.0034641016917442012,
+   "samples": 21055,
+   "at": [
+    2.5260000228881836,
+    0.4300000071525574,
+    1.2450000047683716
+   ]
+  },
+  "backward": {
+   "max": 1.1353863911131503e-13,
+   "mean": 3.6617463325562e-16,
+   "samples": 20814,
+   "at": [
+    4.456193052935264,
+    1.157932104818479,
+    -0.0008610412983628413
+   ]
+  },
+  "at": [
+   2.5260000228881836,
+   0.4300000071525574,
+   1.2450000047683716
+  ]
+ },
+ "overlap": [
+  0.9937517954610744,
+  0.992069013496591,
+  0.9937311178247734,
+  0.9983035032657562
+ ]
+}

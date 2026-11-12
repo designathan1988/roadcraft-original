@@ -1,0 +1,82 @@
+{
+ "id": "Vehicles: levels/sedan/wagon steering wheel at 2.5 px/m#2",
+ "key": "Vehicles: levels/sedan/wagon steering wheel at 2.5 px/m#2",
+ "metrics": {
+  "id": "Vehicles: levels/sedan/wagon steering wheel at 2.5 px/m#2",
+  "triangles": 534,
+  "vertices": 421,
+  "index": "Uint16",
+  "geometryBytes": 18360,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 534,
+    "vertices": 421
+   }
+  ],
+  "hidden": 24,
+  "solids": "5 solids: 4 other, 1 closed cylinder",
+  "size": [
+   0.05000000074505806,
+   0.4099999964237213,
+   0.4099999964237213
+  ],
+  "pieces": [
+   {
+    "label": "steering wheel",
+    "triangles": 534,
+    "vertices": 421
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   0
+  ],
+  "distance": 1.214241645050559,
+  "floor": -0.21499999821186067,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 1.214241645050559,
+ "error": {
+  "max": 4.3885418357208765e-17,
+  "mean": 4.989829332850987e-18,
+  "forward": {
+   "max": 4.3885418357208765e-17,
+   "mean": 4.989829332850987e-18,
+   "samples": 21526,
+   "at": [
+    -0.008999999612569809,
+    -0.032180150203700957,
+    -0.06834600408243383
+   ]
+  },
+  "backward": {
+   "max": 4.3885418357208765e-17,
+   "mean": 4.989829332850987e-18,
+   "samples": 21526,
+   "at": [
+    -0.008999999612569809,
+    -0.032180150203700957,
+    -0.06834600408243383
+   ]
+  },
+  "at": [
+   -0.008999999612569809,
+   -0.032180150203700957,
+   -0.06834600408243383
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

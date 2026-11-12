@@ -1,0 +1,152 @@
+{
+ "id": "Vehicles: levels/sedan/sedan doors open at 1.25 px/m",
+ "key": "Vehicles: levels/sedan/sedan doors open at 1.25 px/m",
+ "metrics": {
+  "id": "Vehicles: levels/sedan/sedan doors open at 1.25 px/m",
+  "triangles": 458,
+  "vertices": 947,
+  "index": "Uint32 + none",
+  "geometryBytes": 38244,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B",
+  "materials": "",
+  "draws": 15,
+  "levels": [
+   {
+    "triangles": 458,
+    "vertices": 947
+   }
+  ],
+  "hidden": 0,
+  "solids": "40 solids: 15 other, 19 closed cylinder, 3 quad, 3 box",
+  "size": [
+   4.699999809265137,
+   1.3477500528097153,
+   2.3287439346313477
+  ],
+  "pieces": [
+   {
+    "label": "shell in pieces",
+    "triangles": 103,
+    "vertices": 101
+   },
+   {
+    "label": "fixed glass",
+    "triangles": 8,
+    "vertices": 12
+   },
+   {
+    "label": "cabin",
+    "triangles": 82,
+    "vertices": 228
+   },
+   {
+    "label": "door 0 leaf",
+    "triangles": 17,
+    "vertices": 29
+   },
+   {
+    "label": "door 0 pane",
+    "triangles": 9,
+    "vertices": 19
+   },
+   {
+    "label": "door 0 card",
+    "triangles": 7,
+    "vertices": 9
+   },
+   {
+    "label": "door 1 leaf",
+    "triangles": 25,
+    "vertices": 41
+   },
+   {
+    "label": "door 1 pane",
+    "triangles": 56,
+    "vertices": 168
+   },
+   {
+    "label": "door 1 card",
+    "triangles": 7,
+    "vertices": 9
+   },
+   {
+    "label": "door 2 leaf",
+    "triangles": 39,
+    "vertices": 79
+   },
+   {
+    "label": "door 2 pane",
+    "triangles": 10,
+    "vertices": 24
+   },
+   {
+    "label": "door 2 card",
+    "triangles": 7,
+    "vertices": 9
+   },
+   {
+    "label": "door 3 leaf",
+    "triangles": 25,
+    "vertices": 42
+   },
+   {
+    "label": "door 3 pane",
+    "triangles": 56,
+    "vertices": 168
+   },
+   {
+    "label": "door 3 card",
+    "triangles": 7,
+    "vertices": 9
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.8138750270009041,
+   0
+  ],
+  "distance": 11.299251793258207,
+  "floor": 0.08584330504967544,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 11.299251793258207,
+ "error": {
+  "max": 0.24779083878335673,
+  "mean": 0.004366208173802958,
+  "forward": {
+   "max": 0.24779083878335673,
+   "mean": 0.006727566767365081,
+   "samples": 21802,
+   "at": [
+    -0.33386704325675964,
+    1.1761151552200317,
+    0.347777783870697
+   ]
+  },
+  "backward": {
+   "max": 0.08972225023424807,
+   "mean": 0.001956775868994543,
+   "samples": 21367,
+   "at": [
+    0.8499496832188189,
+    0.7582723549604894,
+    -0.6627978040392813
+   ]
+  },
+  "at": [
+   -0.33386704325675964,
+   1.1761151552200317,
+   0.347777783870697
+  ]
+ },
+ "overlap": [
+  0.9972104818258665,
+  0.9996611605252012,
+  0.9998956703182055,
+  0.9993853718500307
+ ]
+}
