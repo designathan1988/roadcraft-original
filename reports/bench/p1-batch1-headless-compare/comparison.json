@@ -1,0 +1,50 @@
+[
+  {
+    "name": "district.png",
+    "changed": 452,
+    "share": 0.00021797839506172839,
+    "box": [
+      0,
+      66,
+      1918,
+      1079
+    ],
+    "diff": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\reports\\bench\\p1-batch1-headless-compare\\district-diff.png"
+  },
+  {
+    "name": "street-night.png",
+    "changed": 10,
+    "share": 0.000004822530864197531,
+    "box": [
+      79,
+      106,
+      901,
+      961
+    ],
+    "diff": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\reports\\bench\\p1-batch1-headless-compare\\street-night-diff.png"
+  },
+  {
+    "name": "street.png",
+    "changed": 14688,
+    "share": 0.007083333333333333,
+    "box": [
+      76,
+      2,
+      1919,
+      1079
+    ],
+    "diff": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\reports\\bench\\p1-batch1-headless-compare\\street-diff.png"
+  },
+  {
+    "name": "whole-city.png",
+    "changed": 622,
+    "share": 0.0002999614197530864,
+    "box": [
+      0,
+      0,
+      1919,
+      1079
+    ],
+    "diff": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\reports\\bench\\p1-batch1-headless-compare\\whole-city-diff.png"
+  }
+]

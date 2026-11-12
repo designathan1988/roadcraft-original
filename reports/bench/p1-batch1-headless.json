@@ -1,0 +1,826 @@
+{
+  "city": "10 km city (large, seed 7, radius 8850 m)",
+  "viewport": "1920x1080",
+  "at": "2026-10-27T22:48:01.576Z",
+  "openedS": 77.4,
+  "settled": {
+    "seconds": 11,
+    "scene": "1349848|0|0|0|0|219"
+  },
+  "gpuLabel": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "quality": "ultra",
+  "segments": [
+    {
+      "name": "district-pan",
+      "seconds": 8,
+      "frames": 351,
+      "fps": 43.9,
+      "intervalP50": 18.59,
+      "intervalsS": 8.05,
+      "consistent": true,
+      "cpu": {
+        "p50": 16.81,
+        "p95": 47.23,
+        "p99": 81.9,
+        "max": 218.5,
+        "n": 351,
+        "over33": 26,
+        "over50": 15
+      },
+      "interval": {
+        "p50": 18.59,
+        "p95": 56.33,
+        "p99": 84.91,
+        "max": 220.7,
+        "n": 350,
+        "over33": 33,
+        "over50": 19
+      },
+      "gpu": {
+        "p50": 9.96,
+        "p95": 24.64,
+        "p99": 28.52,
+        "max": 31.34,
+        "n": 350,
+        "supported": true
+      },
+      "longTasks": {
+        "count": 15,
+        "ms": 1208,
+        "max": 219
+      },
+      "draws": {
+        "mean": 243,
+        "max": 451
+      },
+      "triangles": {
+        "mean": 2077992,
+        "max": 6610941
+      },
+      "uploadBytes": {
+        "perFrame": {
+          "p50": 438100,
+          "p95": 5106784,
+          "p99": 9316824,
+          "max": 13531616,
+          "n": 350
+        },
+        "total": 378554908
+      },
+      "programsLinked": 0,
+      "gpuClocks": {
+        "readings": 74,
+        "pstates": [
+          "P0"
+        ],
+        "core": {
+          "min": 2025,
+          "median": 2025,
+          "max": 2025
+        },
+        "memory": {
+          "min": 7501,
+          "median": 7501,
+          "max": 7501
+        },
+        "load": {
+          "min": 35,
+          "median": 61,
+          "max": 91
+        }
+      },
+      "slowFrames": {
+        "hitches": [
+          "hitch:draw/Render 440 ms",
+          "hitch:network/rebuild 28 ms",
+          "hitch:road-edit/elevation 10 ms",
+          "hitch:elevation/incremental 10 ms",
+          "hitch:cover/sweep 2 ms",
+          "hitch:furniture 1 ms",
+          "hitch:cover 0 ms",
+          "hitch:elements 0 ms"
+        ],
+        "loafScripts": [
+          "FrameRequestCallback src/lab/hiddenWork.ts 1331 ms",
+          "Worker.onmessage src/lab/hiddenWork.ts 17 ms"
+        ],
+        "loafs": 18
+      }
+    },
+    {
+      "name": "street-pan",
+      "seconds": 8,
+      "frames": 425,
+      "fps": 53.1,
+      "intervalP50": 16.39,
+      "intervalsS": 8.01,
+      "consistent": true,
+      "cpu": {
+        "p50": 8.15,
+        "p95": 13.3,
+        "p99": 22.02,
+        "max": 85.75,
+        "n": 425,
+        "over33": 3,
+        "over50": 2
+      },
+      "interval": {
+        "p50": 16.39,
+        "p95": 41.28,
+        "p99": 47.86,
+        "max": 96.67,
+        "n": 424,
+        "over33": 47,
+        "over50": 3
+      },
+      "gpu": {
+        "p50": 14.7,
+        "p95": 45.88,
+        "p99": 49.69,
+        "max": 56.26,
+        "n": 423,
+        "supported": true
+      },
+      "longTasks": {
+        "count": 2,
+        "ms": 164,
+        "max": 86
+      },
+      "draws": {
+        "mean": 296,
+        "max": 519
+      },
+      "triangles": {
+        "mean": 6583477,
+        "max": 11117268
+      },
+      "uploadBytes": {
+        "perFrame": {
+          "p50": 498488,
+          "p95": 744264,
+          "p99": 5130260,
+          "max": 18690688,
+          "n": 424
+        },
+        "total": 268429462
+      },
+      "programsLinked": 0,
+      "gpuClocks": {
+        "readings": 74,
+        "pstates": [
+          "P0"
+        ],
+        "core": {
+          "min": 2025,
+          "median": 2025,
+          "max": 2025
+        },
+        "memory": {
+          "min": 7501,
+          "median": 7501,
+          "max": 7501
+        },
+        "load": {
+          "min": 27,
+          "median": 100,
+          "max": 100
+        }
+      },
+      "slowFrames": {
+        "hitches": [
+          "hitch:draw/Render 8 ms",
+          "hitch:cover/sweep 0 ms",
+          "hitch:furniture 0 ms",
+          "hitch:cover 0 ms",
+          "hitch:elements 0 ms",
+          "hitch:draw/Rebuild 0 ms",
+          "hitch:nature 0 ms",
+          "hitch:draw/Pump 0 ms"
+        ],
+        "loafScripts": [
+          "FrameRequestCallback src/lab/hiddenWork.ts 186 ms"
+        ],
+        "loafs": 3
+      }
+    },
+    {
+      "name": "zoom-in",
+      "seconds": 3,
+      "frames": 180,
+      "fps": 60,
+      "intervalP50": 16.59,
+      "intervalsS": 3,
+      "consistent": true,
+      "cpu": {
+        "p50": 12.53,
+        "p95": 15.72,
+        "p99": 25.28,
+        "max": 27.27,
+        "n": 180,
+        "over33": 0,
+        "over50": 0
+      },
+      "interval": {
+        "p50": 16.59,
+        "p95": 19.44,
+        "p99": 27.86,
+        "max": 37.38,
+        "n": 179,
+        "over33": 1,
+        "over50": 0
+      },
+      "gpu": {
+        "p50": 10.95,
+        "p95": 37.45,
+        "p99": 48.73,
+        "max": 48.83,
+        "n": 181,
+        "supported": true
+      },
+      "longTasks": {
+        "count": 0,
+        "ms": 0,
+        "max": 0
+      },
+      "draws": {
+        "mean": 211,
+        "max": 437
+      },
+      "triangles": {
+        "mean": 2478318,
+        "max": 5759702
+      },
+      "uploadBytes": {
+        "perFrame": {
+          "p50": 1340244,
+          "p95": 1722328,
+          "p99": 1774688,
+          "max": 1783820,
+          "n": 179
+        },
+        "total": 204125124
+      },
+      "programsLinked": 0,
+      "gpuClocks": {
+        "readings": 28,
+        "pstates": [
+          "P0"
+        ],
+        "core": {
+          "min": 2025,
+          "median": 2025,
+          "max": 2025
+        },
+        "memory": {
+          "min": 7501,
+          "median": 7501,
+          "max": 7501
+        },
+        "load": {
+          "min": 75,
+          "median": 91,
+          "max": 100
+        }
+      },
+      "slowFrames": {
+        "hitches": [],
+        "loafScripts": [],
+        "loafs": 0
+      }
+    },
+    {
+      "name": "zoom-in-settle",
+      "seconds": 4,
+      "frames": 241,
+      "fps": 60.2,
+      "intervalP50": 16.66,
+      "intervalsS": 4,
+      "consistent": true,
+      "cpu": {
+        "p50": 4.01,
+        "p95": 5.03,
+        "p99": 6.91,
+        "max": 9.34,
+        "n": 241,
+        "over33": 0,
+        "over50": 0
+      },
+      "interval": {
+        "p50": 16.66,
+        "p95": 17.51,
+        "p99": 18.17,
+        "max": 21.9,
+        "n": 240,
+        "over33": 0,
+        "over50": 0
+      },
+      "gpu": {
+        "p50": 6.53,
+        "p95": 11.88,
+        "p99": 15.56,
+        "max": 30.22,
+        "n": 242,
+        "supported": true
+      },
+      "longTasks": {
+        "count": 0,
+        "ms": 0,
+        "max": 0
+      },
+      "draws": {
+        "mean": 192,
+        "max": 192
+      },
+      "triangles": {
+        "mean": 2627531,
+        "max": 2627531
+      },
+      "uploadBytes": {
+        "perFrame": {
+          "p50": 0,
+          "p95": 0,
+          "p99": 0,
+          "max": 0,
+          "n": 240
+        },
+        "total": 0
+      },
+      "programsLinked": 0,
+      "gpuClocks": {
+        "readings": 37,
+        "pstates": [
+          "P0"
+        ],
+        "core": {
+          "min": 2025,
+          "median": 2025,
+          "max": 2025
+        },
+        "memory": {
+          "min": 7501,
+          "median": 7501,
+          "max": 7501
+        },
+        "load": {
+          "min": 61,
+          "median": 73,
+          "max": 99
+        }
+      },
+      "landedS": 0,
+      "slowFrames": {
+        "hitches": [],
+        "loafScripts": [],
+        "loafs": 0
+      }
+    },
+    {
+      "name": "zoom-out",
+      "seconds": 3,
+      "frames": 181,
+      "fps": 60.3,
+      "intervalP50": 16.66,
+      "intervalsS": 3.01,
+      "consistent": true,
+      "cpu": {
+        "p50": 12.08,
+        "p95": 15.25,
+        "p99": 20.43,
+        "max": 20.91,
+        "n": 181,
+        "over33": 0,
+        "over50": 0
+      },
+      "interval": {
+        "p50": 16.66,
+        "p95": 18.88,
+        "p99": 22.91,
+        "max": 31.98,
+        "n": 180,
+        "over33": 0,
+        "over50": 0
+      },
+      "gpu": {
+        "p50": 9.86,
+        "p95": 24.08,
+        "p99": 28.41,
+        "max": 28.64,
+        "n": 180,
+        "supported": true
+      },
+      "longTasks": {
+        "count": 0,
+        "ms": 0,
+        "max": 0
+      },
+      "draws": {
+        "mean": 227,
+        "max": 506
+      },
+      "triangles": {
+        "mean": 2797243,
+        "max": 7902426
+      },
+      "uploadBytes": {
+        "perFrame": {
+          "p50": 1077504,
+          "p95": 1693736,
+          "p99": 1771452,
+          "max": 1783552,
+          "n": 180
+        },
+        "total": 195921732
+      },
+      "programsLinked": 0,
+      "gpuClocks": {
+        "readings": 28,
+        "pstates": [
+          "P0"
+        ],
+        "core": {
+          "min": 2025,
+          "median": 2025,
+          "max": 2025
+        },
+        "memory": {
+          "min": 7501,
+          "median": 7501,
+          "max": 7501
+        },
+        "load": {
+          "min": 63,
+          "median": 67,
+          "max": 75
+        }
+      },
+      "slowFrames": {
+        "hitches": [],
+        "loafScripts": [],
+        "loafs": 0
+      }
+    },
+    {
+      "name": "zoom-out-settle",
+      "seconds": 4,
+      "frames": 241,
+      "fps": 60.2,
+      "intervalP50": 16.67,
+      "intervalsS": 4,
+      "consistent": true,
+      "cpu": {
+        "p50": 4,
+        "p95": 5.1,
+        "p99": 7.72,
+        "max": 8.16,
+        "n": 241,
+        "over33": 0,
+        "over50": 0
+      },
+      "interval": {
+        "p50": 16.67,
+        "p95": 17.71,
+        "p99": 18.42,
+        "max": 18.95,
+        "n": 240,
+        "over33": 0,
+        "over50": 0
+      },
+      "gpu": {
+        "p50": 6.69,
+        "p95": 10.19,
+        "p99": 10.66,
+        "max": 13.33,
+        "n": 241,
+        "supported": true
+      },
+      "longTasks": {
+        "count": 0,
+        "ms": 0,
+        "max": 0
+      },
+      "draws": {
+        "mean": 207,
+        "max": 207
+      },
+      "triangles": {
+        "mean": 1747307,
+        "max": 1747307
+      },
+      "uploadBytes": {
+        "perFrame": {
+          "p50": 0,
+          "p95": 0,
+          "p99": 0,
+          "max": 0,
+          "n": 240
+        },
+        "total": 0
+      },
+      "programsLinked": 0,
+      "gpuClocks": {
+        "readings": 37,
+        "pstates": [
+          "P0"
+        ],
+        "core": {
+          "min": 2025,
+          "median": 2025,
+          "max": 2025
+        },
+        "memory": {
+          "min": 7501,
+          "median": 7501,
+          "max": 7501
+        },
+        "load": {
+          "min": 60,
+          "median": 69,
+          "max": 75
+        }
+      },
+      "landedS": 0,
+      "slowFrames": {
+        "hitches": [],
+        "loafScripts": [],
+        "loafs": 0
+      }
+    },
+    {
+      "name": "orbit",
+      "seconds": 8,
+      "frames": 481,
+      "fps": 60.1,
+      "intervalP50": 16.66,
+      "intervalsS": 8.01,
+      "consistent": true,
+      "cpu": {
+        "p50": 10.33,
+        "p95": 12.05,
+        "p99": 14.84,
+        "max": 31.56,
+        "n": 481,
+        "over33": 0,
+        "over50": 0
+      },
+      "interval": {
+        "p50": 16.66,
+        "p95": 18.07,
+        "p99": 19.96,
+        "max": 38.14,
+        "n": 480,
+        "over33": 1,
+        "over50": 0
+      },
+      "gpu": {
+        "p50": 9.65,
+        "p95": 20.51,
+        "p99": 22.54,
+        "max": 27.1,
+        "n": 481,
+        "supported": true
+      },
+      "longTasks": {
+        "count": 0,
+        "ms": 0,
+        "max": 0
+      },
+      "draws": {
+        "mean": 228,
+        "max": 450
+      },
+      "triangles": {
+        "mean": 1825047,
+        "max": 5277184
+      },
+      "uploadBytes": {
+        "perFrame": {
+          "p50": 214064,
+          "p95": 360848,
+          "p99": 4533920,
+          "max": 5218264,
+          "n": 480
+        },
+        "total": 132509900
+      },
+      "programsLinked": 0,
+      "gpuClocks": {
+        "readings": 73,
+        "pstates": [
+          "P0"
+        ],
+        "core": {
+          "min": 2025,
+          "median": 2025,
+          "max": 2025
+        },
+        "memory": {
+          "min": 7501,
+          "median": 7501,
+          "max": 7501
+        },
+        "load": {
+          "min": 56,
+          "median": 64,
+          "max": 77
+        }
+      },
+      "slowFrames": {
+        "hitches": [],
+        "loafScripts": [],
+        "loafs": 0
+      }
+    },
+    {
+      "name": "whole-map",
+      "seconds": 3.02,
+      "frames": 129,
+      "fps": 42.8,
+      "intervalP50": 17.14,
+      "intervalsS": 3.13,
+      "consistent": true,
+      "cpu": {
+        "p50": 12.77,
+        "p95": 64.31,
+        "p99": 72,
+        "max": 73.92,
+        "n": 129,
+        "over33": 19,
+        "over50": 15
+      },
+      "interval": {
+        "p50": 17.14,
+        "p95": 64.97,
+        "p99": 82.29,
+        "max": 109.68,
+        "n": 128,
+        "over33": 20,
+        "over50": 17
+      },
+      "gpu": {
+        "p50": 12.9,
+        "p95": 46.22,
+        "p99": 51.7,
+        "max": 53.32,
+        "n": 128,
+        "supported": true
+      },
+      "longTasks": {
+        "count": 15,
+        "ms": 942,
+        "max": 74
+      },
+      "draws": {
+        "mean": 292,
+        "max": 923
+      },
+      "triangles": {
+        "mean": 4560720,
+        "max": 20652472
+      },
+      "uploadBytes": {
+        "perFrame": {
+          "p50": 437736,
+          "p95": 2349388,
+          "p99": 15065060,
+          "max": 26747500,
+          "n": 128
+        },
+        "total": 134444574
+      },
+      "programsLinked": 0,
+      "gpuClocks": {
+        "readings": 28,
+        "pstates": [
+          "P0"
+        ],
+        "core": {
+          "min": 2010,
+          "median": 2010,
+          "max": 2025
+        },
+        "memory": {
+          "min": 7501,
+          "median": 7501,
+          "max": 7501
+        },
+        "load": {
+          "min": 58,
+          "median": 74,
+          "max": 95
+        }
+      },
+      "slowFrames": {
+        "hitches": [
+          "hitch:draw/Render 132 ms",
+          "hitch:cover/sweep 0 ms",
+          "hitch:furniture 0 ms",
+          "hitch:elements 0 ms",
+          "hitch:cover 0 ms",
+          "hitch:draw/Rebuild 0 ms",
+          "hitch:nature 0 ms",
+          "hitch:draw/Pump 0 ms"
+        ],
+        "loafScripts": [
+          "FrameRequestCallback src/lab/hiddenWork.ts 947 ms",
+          "Worker.onmessage src/lab/hiddenWork.ts 16 ms"
+        ],
+        "loafs": 16
+      }
+    },
+    {
+      "name": "whole-map-settle",
+      "seconds": 4,
+      "frames": 191,
+      "fps": 47.7,
+      "intervalP50": 16.66,
+      "intervalsS": 4.02,
+      "consistent": true,
+      "cpu": {
+        "p50": 7.19,
+        "p95": 8.18,
+        "p99": 8.94,
+        "max": 13.78,
+        "n": 191,
+        "over33": 0,
+        "over50": 0
+      },
+      "interval": {
+        "p50": 16.66,
+        "p95": 47.78,
+        "p99": 62.57,
+        "max": 63.1,
+        "n": 190,
+        "over33": 31,
+        "over50": 7
+      },
+      "gpu": {
+        "p50": 17.08,
+        "p95": 46.43,
+        "p99": 56.66,
+        "max": 57.64,
+        "n": 188,
+        "supported": true
+      },
+      "longTasks": {
+        "count": 0,
+        "ms": 0,
+        "max": 0
+      },
+      "draws": {
+        "mean": 125,
+        "max": 125
+      },
+      "triangles": {
+        "mean": 7738634,
+        "max": 7738634
+      },
+      "uploadBytes": {
+        "perFrame": {
+          "p50": 0,
+          "p95": 0,
+          "p99": 0,
+          "max": 0,
+          "n": 190
+        },
+        "total": 0
+      },
+      "programsLinked": 0,
+      "gpuClocks": {
+        "readings": 37,
+        "pstates": [
+          "P0"
+        ],
+        "core": {
+          "min": 2010,
+          "median": 2010,
+          "max": 2010
+        },
+        "memory": {
+          "min": 7501,
+          "median": 7501,
+          "max": 7501
+        },
+        "load": {
+          "min": 93,
+          "median": 100,
+          "max": 100
+        }
+      },
+      "landedS": 0,
+      "slowFrames": {
+        "hitches": [],
+        "loafScripts": [
+          "FrameRequestCallback src/lab/hiddenWork.ts 51 ms"
+        ],
+        "loafs": 7
+      }
+    }
+  ],
+  "laps": [],
+  "end": {
+    "heapMB": 3019.9,
+    "geometries": 453,
+    "textures": 429,
+    "programs": 219
+  }
+}

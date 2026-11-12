@@ -1,0 +1,16 @@
+10 km city (large, seed 7, radius 8850 m): opened in 77 s; settled in 11 s
+shot reports/bench/p1-batch1-headless-shots/street.png
+shot reports/bench/p1-batch1-headless-shots/district.png
+shot reports/bench/p1-batch1-headless-shots/whole-city.png
+shot reports/bench/p1-batch1-headless-shots/street-night.png
+district-pan: 351 frames in 8 s (43.9 fps, median interval 18.59 ms); GPU load 35-91 %; CPU p50 16.81 p99 81.9 max 218.5, >50 ms 15; GPU p95 24.64; draws 243, tris 2077992; 378.6 MB up, 0 programs
+street-pan: 425 frames in 8 s (53.1 fps, median interval 16.39 ms); GPU load 27-100 %; CPU p50 8.15 p99 22.02 max 85.75, >50 ms 2; GPU p95 45.88; draws 296, tris 6583477; 268.4 MB up, 0 programs
+zoom-in: 180 frames in 3 s (60 fps, median interval 16.59 ms); GPU load 75-100 %; CPU p50 12.53 p99 25.28 max 27.27, >50 ms 0; GPU p95 37.45; draws 211, tris 2478318; 204.1 MB up, 0 programs
+zoom-in-settle: 241 frames in 4 s (60.2 fps, median interval 16.66 ms); GPU load 61-99 %; CPU p50 4.01 p99 6.91 max 9.34, >50 ms 0; GPU p95 11.88; draws 192, tris 2627531; 0.0 MB up, 0 programs; landed 0 s
+zoom-out: 181 frames in 3 s (60.3 fps, median interval 16.66 ms); GPU load 63-75 %; CPU p50 12.08 p99 20.43 max 20.91, >50 ms 0; GPU p95 24.08; draws 227, tris 2797243; 195.9 MB up, 0 programs
+zoom-out-settle: 241 frames in 4 s (60.2 fps, median interval 16.67 ms); GPU load 60-75 %; CPU p50 4 p99 7.72 max 8.16, >50 ms 0; GPU p95 10.19; draws 207, tris 1747307; 0.0 MB up, 0 programs; landed 0 s
+orbit: 481 frames in 8 s (60.1 fps, median interval 16.66 ms); GPU load 56-77 %; CPU p50 10.33 p99 14.84 max 31.56, >50 ms 0; GPU p95 20.51; draws 228, tris 1825047; 132.5 MB up, 0 programs
+whole-map: 129 frames in 3.02 s (42.8 fps, median interval 17.14 ms); GPU load 58-95 %; CPU p50 12.77 p99 72 max 73.92, >50 ms 15; GPU p95 46.22; draws 292, tris 4560720; 134.4 MB up, 0 programs
+whole-map-settle: 191 frames in 4 s (47.7 fps, median interval 16.66 ms); GPU load 93-100 %; CPU p50 7.19 p99 8.94 max 13.78, >50 ms 0; GPU p95 46.43; draws 125, tris 7738634; 0.0 MB up, 0 programs; landed 0 s
+written reports/bench/p1-batch1-headless.json
+done
