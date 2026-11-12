@@ -1,0 +1,451 @@
+{
+ "label": "smoke-small",
+ "stalls": [
+  {
+   "run": 1,
+   "segment": "district-pan",
+   "frame": 28932,
+   "interval": 36.75500002503395,
+   "cpu": 3.6400000154972076,
+   "gpu": 8.46848,
+   "bytes": 0,
+   "alloc": 0,
+   "copied": 0,
+   "received": 0,
+   "signature": "limited by outside the frame (collector, compositor, GPU process: see the trace) + step hitch:draw/Render",
+   "allocs": [],
+   "copies": [],
+   "lost": 20.088333358367283,
+   "uploads": [],
+   "compiles": [],
+   "waits": [],
+   "hitches": [
+    [
+     "hitch:draw/Render",
+     13.88
+    ],
+    [
+     "hitch:furniture",
+     0.09000000000000001
+    ],
+    [
+     "hitch:draw/Rebuild",
+     0.02
+    ],
+    [
+     "hitch:cover",
+     0.02
+    ],
+    [
+     "hitch:elements",
+     0.01
+    ],
+    [
+     "hitch:draw/Pump",
+     0
+    ]
+   ],
+   "calls": {
+    "getParameter": 1,
+    "drawArraysInstanced": 9,
+    "drawElements": 8,
+    "drawElementsInstanced": 200,
+    "multiDrawElementsWEBGL": 3,
+    "drawArrays": 12
+   }
+  },
+  {
+   "run": 1,
+   "segment": "street-pan",
+   "frame": 29432,
+   "interval": 61.33500000834465,
+   "cpu": 48.06999999284744,
+   "gpu": 22.801408,
+   "bytes": 2088410,
+   "alloc": 0,
+   "copied": 0,
+   "received": 0,
+   "signature": "limited by cpu + wait getProgramInfoLog at src/render/postprocess.ts:174 + step hitch:draw/Render",
+   "allocs": [],
+   "copies": [],
+   "lost": 44.66833334167798,
+   "uploads": [
+    [
+     "src/render/canyonLight.ts:260 (pass.render)",
+     1000000
+    ]
+   ],
+   "compiles": [],
+   "waits": [
+    [
+     "getProgramInfoLog src/render/postprocess.ts:174 (scenePass.render)",
+     3.0100000202655792
+    ]
+   ],
+   "hitches": [
+    [
+     "hitch:draw/Render",
+     13.75
+    ],
+    [
+     "hitch:furniture",
+     0.08
+    ],
+    [
+     "hitch:draw/Rebuild",
+     0.01
+    ],
+    [
+     "hitch:cover/sweep",
+     0.01
+    ],
+    [
+     "hitch:elements",
+     0.01
+    ],
+    [
+     "hitch:draw/Pump",
+     0
+    ]
+   ],
+   "calls": {
+    "getParameter": 1,
+    "drawElements": 31,
+    "bufferData": 157,
+    "bufferSubData": 188,
+    "drawElementsInstanced": 463,
+    "getProgramInfoLog": 4,
+    "getShaderInfoLog": 8,
+    "getProgramParameter": 12,
+    "drawArrays": 16,
+    "texSubImage2D": 6,
+    "multiDrawElementsWEBGL": 5,
+    "drawArraysInstanced": 22
+   }
+  },
+  {
+   "run": 1,
+   "segment": "street-pan",
+   "frame": 29535,
+   "interval": 37.099999994039536,
+   "cpu": 26.044999986886978,
+   "gpu": 21.293056,
+   "bytes": 4458110,
+   "alloc": 5606432,
+   "copied": 1310136,
+   "received": 2,
+   "signature": "limited by cpu + upload from src/render/buildings/gpuBatchedMesh.ts + buffers allocated by src/render/buildings/gpuBatchedMesh.ts + compile at src/render/postprocess.ts:174 + wait getProgramInfoLog at src/render/postprocess.ts:174 + step hitch:draw/Render",
+   "allocs": [
+    [
+     "src/render/buildings/gpuBatchedMesh.ts:183 (GpuBatchedMesh.buffer)",
+     4005724
+    ]
+   ],
+   "copies": [
+    [
+     "src/render/buildings/gpuBatchedMesh.ts:325 (copy)",
+     381396
+    ]
+   ],
+   "lost": 20.433333327372868,
+   "uploads": [
+    [
+     "src/render/buildings/gpuBatchedMesh.ts:272 (GpuBatchedMesh.setGeometryAt)",
+     1083476
+    ],
+    [
+     "src/render/buildings/gpuBatchedMesh.ts:286 (GpuBatchedMesh.setGeometryAt)",
+     327936
+    ]
+   ],
+   "compiles": [
+    [
+     "compileShader src/render/postprocess.ts:174 (scenePass.render)",
+     0
+    ],
+    [
+     "linkProgram src/render/postprocess.ts:174 (scenePass.render)",
+     0.010000020265579224
+    ]
+   ],
+   "waits": [
+    [
+     "getProgramInfoLog src/render/postprocess.ts:174 (scenePass.render)",
+     9.969999998807907
+    ]
+   ],
+   "hitches": [
+    [
+     "hitch:draw/Render",
+     18.41
+    ],
+    [
+     "hitch:furniture",
+     0.04
+    ],
+    [
+     "hitch:cover/sweep",
+     0.02
+    ],
+    [
+     "hitch:cover",
+     0.01
+    ],
+    [
+     "hitch:nature",
+     0.01
+    ],
+    [
+     "hitch:elements",
+     0.01
+    ]
+   ],
+   "calls": {
+    "getParameter": 22,
+    "bufferData": 107,
+    "bufferSubData": 55,
+    "copyBufferSubData": 8,
+    "drawElements": 21,
+    "drawArraysInstanced": 7,
+    "drawElementsInstanced": 270,
+    "multiDrawElementsWEBGL": 5,
+    "drawArrays": 12,
+    "texSubImage2D": 6,
+    "compileShader": 2,
+    "linkProgram": 1,
+    "getProgramInfoLog": 1,
+    "getShaderInfoLog": 2,
+    "getProgramParameter": 3,
+    "texStorage2D": 2
+   }
+  },
+  {
+   "run": 1,
+   "segment": "whole-map",
+   "frame": 31471,
+   "interval": 39.50499999523163,
+   "cpu": 30.28499999642372,
+   "gpu": 12.142592,
+   "bytes": 20426184,
+   "alloc": 76976264,
+   "copied": 46374816,
+   "received": 1,
+   "signature": "limited by cpu + upload from src/render/buildings/gpuBatchedMesh.ts + buffers allocated by src/render/buildings/gpuBatchedMesh.ts + GPU copies by src/render/buildings/gpuBatchedMesh.ts + step hitch:draw/Render",
+   "allocs": [
+    [
+     "src/render/buildings/gpuBatchedMesh.ts:183 (GpuBatchedMesh.buffer)",
+     76976264
+    ]
+   ],
+   "copies": [
+    [
+     "src/render/buildings/gpuBatchedMesh.ts:386 (flush)",
+     44270148
+    ]
+   ],
+   "lost": 22.83833332856496,
+   "uploads": [
+    [
+     "src/render/buildings/gpuBatchedMesh.ts:411 (GpuBatchedMesh.compact)",
+     14666388
+    ],
+    [
+     "src/render/buildings/gpuBatchedMesh.ts:272 (GpuBatchedMesh.setGeometryAt)",
+     1594836
+    ],
+    [
+     "src/render/buildings/gpuBatchedMesh.ts:286 (GpuBatchedMesh.setGeometryAt)",
+     489504
+    ]
+   ],
+   "compiles": [],
+   "waits": [],
+   "hitches": [
+    [
+     "hitch:draw/Render",
+     19.54
+    ],
+    [
+     "hitch:furniture",
+     0.1
+    ],
+    [
+     "hitch:cover/sweep",
+     0.02
+    ],
+    [
+     "hitch:draw/Rebuild",
+     0
+    ],
+    [
+     "hitch:draw/Pump",
+     0
+    ],
+    [
+     "hitch:cover",
+     0
+    ]
+   ],
+   "calls": {
+    "bufferSubData": 120,
+    "getParameter": 14,
+    "bufferData": 14,
+    "copyBufferSubData": 22,
+    "drawElementsInstanced": 347,
+    "drawArraysInstanced": 28,
+    "drawArrays": 14,
+    "drawElements": 27,
+    "texSubImage2D": 3,
+    "multiDrawElementsWEBGL": 3
+   }
+  },
+  {
+   "run": 1,
+   "segment": "whole-map",
+   "frame": 31490,
+   "interval": 43.43000000715256,
+   "cpu": 34.08500000834465,
+   "gpu": 10.86464,
+   "bytes": 2001632,
+   "alloc": 718896,
+   "copied": 385152,
+   "received": 1,
+   "signature": "limited by cpu + step hitch:draw/Render",
+   "allocs": [
+    [
+     "src/render/buildings/gpuBatchedMesh.ts:183 (GpuBatchedMesh.buffer)",
+     270528
+    ]
+   ],
+   "copies": [],
+   "lost": 26.76333334048589,
+   "uploads": [
+    [
+     "src/render/postprocess.ts:174 (scenePass.render)",
+     318880
+    ]
+   ],
+   "compiles": [],
+   "waits": [],
+   "hitches": [
+    [
+     "hitch:draw/Render",
+     23.91
+    ],
+    [
+     "hitch:furniture",
+     0.060000000000000005
+    ],
+    [
+     "hitch:draw/Rebuild",
+     0.01
+    ],
+    [
+     "hitch:cover/sweep",
+     0.01
+    ],
+    [
+     "hitch:draw/Pump",
+     0
+    ],
+    [
+     "hitch:cover",
+     0
+    ]
+   ],
+   "calls": {
+    "getParameter": 1,
+    "bufferData": 19,
+    "bufferSubData": 54,
+    "drawArraysInstanced": 14,
+    "drawElements": 9,
+    "drawElementsInstanced": 408,
+    "multiDrawElementsWEBGL": 3,
+    "drawArrays": 12,
+    "texSubImage2D": 1
+   }
+  },
+  {
+   "run": 1,
+   "segment": "whole-map",
+   "frame": 31562,
+   "interval": 39.87999999523163,
+   "cpu": 29.064999997615814,
+   "gpu": 13.599744,
+   "bytes": 1968326,
+   "alloc": 0,
+   "copied": 0,
+   "received": 6,
+   "signature": "limited by cpu + step hitch:draw/Render",
+   "allocs": [],
+   "copies": [],
+   "lost": 23.21333332856496,
+   "uploads": [],
+   "compiles": [],
+   "waits": [],
+   "hitches": [
+    [
+     "hitch:draw/Render",
+     23.33
+    ],
+    [
+     "hitch:furniture",
+     0.1
+    ],
+    [
+     "hitch:cover/sweep",
+     0.04
+    ],
+    [
+     "hitch:cover",
+     0.02
+    ],
+    [
+     "hitch:draw/Rebuild",
+     0
+    ],
+    [
+     "hitch:draw/Pump",
+     0
+    ]
+   ],
+   "calls": {
+    "getParameter": 1,
+    "drawElements": 132,
+    "bufferSubData": 34,
+    "drawElementsInstanced": 223,
+    "drawArrays": 14,
+    "texSubImage2D": 4,
+    "multiDrawElementsWEBGL": 4,
+    "drawArraysInstanced": 2
+   }
+  }
+ ],
+ "ranked": [
+  {
+   "signature": "limited by cpu + step hitch:draw/Render",
+   "count": 2,
+   "lost": 49.97666666905085
+  },
+  {
+   "signature": "limited by cpu + wait getProgramInfoLog at src/render/postprocess.ts:174 + step hitch:draw/Render",
+   "count": 1,
+   "lost": 44.66833334167798
+  },
+  {
+   "signature": "limited by cpu + upload from src/render/buildings/gpuBatchedMesh.ts + buffers allocated by src/render/buildings/gpuBatchedMesh.ts + GPU copies by src/render/buildings/gpuBatchedMesh.ts + step hitch:draw/Render",
+   "count": 1,
+   "lost": 22.83833332856496
+  },
+  {
+   "signature": "limited by cpu + upload from src/render/buildings/gpuBatchedMesh.ts + buffers allocated by src/render/buildings/gpuBatchedMesh.ts + compile at src/render/postprocess.ts:174 + wait getProgramInfoLog at src/render/postprocess.ts:174 + step hitch:draw/Render",
+   "count": 1,
+   "lost": 20.433333327372868
+  },
+  {
+   "signature": "limited by outside the frame (collector, compositor, GPU process: see the trace) + step hitch:draw/Render",
+   "count": 1,
+   "lost": 20.088333358367283
+  }
+ ]
+}

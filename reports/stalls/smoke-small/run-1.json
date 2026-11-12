@@ -1,0 +1,2567 @@
+{
+ "i": 1,
+ "valid": true,
+ "why": null,
+ "gate": {
+  "max": 0,
+  "processes": [],
+  "nvidiaSmi": {
+   "median": 0,
+   "max": 6
+  }
+ },
+ "city": "small city (seed 7)",
+ "openedS": 12.894,
+ "segments": [
+  {
+   "name": "district-pan",
+   "start": 33422.805,
+   "end": 41425.205,
+   "frames": 492,
+   "over33": 0,
+   "over50": 0,
+   "cpuP50": 4.41,
+   "cpuP99": 9.24,
+   "cpuMax": 14.07,
+   "gpuP95": 8.55,
+   "slow": [
+    {
+     "n": 28927,
+     "end": 33259.37000000477,
+     "cpu": 3.2750000059604645,
+     "interval": 16.46000000834465,
+     "gpu": 7.491584,
+     "calls": {
+      "getParameter": 1,
+      "drawArraysInstanced": 9,
+      "drawElements": 8,
+      "drawElementsInstanced": 200,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12
+     },
+     "bytes": {},
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.01
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0.01
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0.01
+      ],
+      [
+       "hitch:draw/Render",
+       2.37
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 28928,
+     "end": 33275.784999996424,
+     "cpu": 2.9950000047683716,
+     "interval": 16.41499999165535,
+     "gpu": 8.46848,
+     "calls": {
+      "getParameter": 1,
+      "drawArraysInstanced": 9,
+      "drawElements": 8,
+      "drawElementsInstanced": 200,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12
+     },
+     "bytes": {},
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0.01
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.01
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       2.19
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 28929,
+     "end": 33293.37999999523,
+     "cpu": 3.919999986886978,
+     "interval": 17.594999998807907,
+     "gpu": 7.902208,
+     "calls": {
+      "getParameter": 1,
+      "drawArraysInstanced": 9,
+      "drawElements": 8,
+      "drawElementsInstanced": 200,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12
+     },
+     "bytes": {},
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.01
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       2.07
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 28930,
+     "end": 33309.639999985695,
+     "cpu": 3.5,
+     "interval": 16.259999990463257,
+     "gpu": 7.225344,
+     "calls": {
+      "getParameter": 1,
+      "drawArraysInstanced": 9,
+      "drawElements": 8,
+      "drawElementsInstanced": 200,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12
+     },
+     "bytes": {},
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.02
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       2.59
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 28931,
+     "end": 33326.264999985695,
+     "cpu": 3.5049999952316284,
+     "interval": 16.625,
+     "gpu": 7.4752,
+     "calls": {
+      "getParameter": 1,
+      "drawArraysInstanced": 9,
+      "drawElements": 8,
+      "drawElementsInstanced": 200,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12
+     },
+     "bytes": {},
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.02
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       2.31
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 28932,
+     "end": 33363.02000001073,
+     "cpu": 3.6400000154972076,
+     "interval": 36.75500002503395,
+     "gpu": 7.588864,
+     "calls": {
+      "getParameter": 1,
+      "drawArraysInstanced": 9,
+      "drawElements": 8,
+      "drawElementsInstanced": 200,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12
+     },
+     "bytes": {},
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0.01
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.02
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0.01
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       2.35
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    }
+   ]
+  },
+  {
+   "name": "street-pan",
+   "start": 41658.715,
+   "end": 49661.25,
+   "frames": 493,
+   "over33": 2,
+   "over50": 1,
+   "cpuP50": 4.96,
+   "cpuP99": 14.12,
+   "cpuMax": 48.07,
+   "gpuP95": 11.17,
+   "slow": [
+    {
+     "n": 29427,
+     "end": 41595.09999999404,
+     "cpu": 3,
+     "interval": 16.544999986886978,
+     "gpu": 7.332864,
+     "calls": {
+      "getParameter": 1,
+      "drawArraysInstanced": 7,
+      "drawElements": 8,
+      "drawElementsInstanced": 174,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12
+     },
+     "bytes": {},
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.01
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       2.12
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 29428,
+     "end": 41611.889999985695,
+     "cpu": 3.1749999821186066,
+     "interval": 16.78999999165535,
+     "gpu": 7.329792,
+     "calls": {
+      "getParameter": 1,
+      "drawArraysInstanced": 7,
+      "drawElements": 8,
+      "drawElementsInstanced": 174,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12
+     },
+     "bytes": {},
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.01
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       2.06
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 29429,
+     "end": 41629.30500000715,
+     "cpu": 3.7600000202655792,
+     "interval": 17.415000021457672,
+     "gpu": 7.688192,
+     "calls": {
+      "getParameter": 1,
+      "drawArraysInstanced": 7,
+      "drawElements": 8,
+      "drawElementsInstanced": 174,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12
+     },
+     "bytes": {},
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0.01
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       2.19
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 29430,
+     "end": 41646.10499998927,
+     "cpu": 3.939999997615814,
+     "interval": 16.799999982118607,
+     "gpu": 7.469056,
+     "calls": {
+      "getParameter": 1,
+      "drawArraysInstanced": 7,
+      "drawElements": 8,
+      "drawElementsInstanced": 174,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12
+     },
+     "bytes": {},
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.02
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       2.58
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 29431,
+     "end": 41662.09499999881,
+     "cpu": 3.2750000059604645,
+     "interval": 15.990000009536743,
+     "gpu": 7.929856,
+     "calls": {
+      "getParameter": 1,
+      "drawArraysInstanced": 7,
+      "drawElements": 8,
+      "drawElementsInstanced": 174,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12
+     },
+     "bytes": {},
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.02
+      ],
+      [
+       "hitch:cover/sweep",
+       0.01
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       2.57
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 29432,
+     "end": 41723.43000000715,
+     "cpu": 48.06999999284744,
+     "interval": 61.33500000834465,
+     "gpu": 22.801408,
+     "calls": {
+      "getParameter": 1,
+      "drawElements": 31,
+      "bufferData": 157,
+      "bufferSubData": 188,
+      "drawElementsInstanced": 463,
+      "getProgramInfoLog": 4,
+      "getShaderInfoLog": 8,
+      "getProgramParameter": 12,
+      "drawArrays": 16,
+      "texSubImage2D": 6,
+      "multiDrawElementsWEBGL": 5,
+      "drawArraysInstanced": 22
+     },
+     "bytes": {
+      "bufferData": 811362,
+      "bufferSubData": 275768,
+      "texSubImage2D": 1001280
+     },
+     "stacks": [
+      {
+       "kind": "wait",
+       "name": "getProgramInfoLog",
+       "ms": 2.080000013113022,
+       "stack": "    at onFirstUse (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:3929:30)\n    at WebGLProgram.getUniforms (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:3967:34)\n    at setProgram (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10400:31)\n    at WebGLRenderer.renderBufferDirect (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:9795:20)\n    at renderObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10230:17)\n    at renderObjects (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10213:44)\n    at renderScene (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10136:34)\n    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10063:6)\n    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=eadac9ed:125:12)\n    at scenePass.render (http://127.0.0.1:5300/src/render/postprocess.ts:125:4)\n    at pass.render (http://127.0.0.1:5300/src/render/postprocess.ts:427:5)\n    at EffectComposer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_EffectComposer__js.js?v=eadac9ed:317:9)\n    at Object.render (http://127.0.0.1:5300/src/render/postprocess.ts:494:13)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4824:12)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "wait",
+       "name": "getProgramInfoLog",
+       "ms": 0.9300000071525574,
+       "stack": "    at onFirstUse (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:3929:30)\n    at WebGLProgram.getUniforms (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:3967:34)\n    at setProgram (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10400:31)\n    at WebGLRenderer.renderBufferDirect (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:9795:20)\n    at renderObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10230:17)\n    at renderObjects (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10213:44)\n    at renderScene (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10136:34)\n    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10063:6)\n    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=eadac9ed:125:12)\n    at scenePass.render (http://127.0.0.1:5300/src/render/postprocess.ts:125:4)\n    at pass.render (http://127.0.0.1:5300/src/render/postprocess.ts:427:5)\n    at EffectComposer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_EffectComposer__js.js?v=eadac9ed:317:9)\n    at Object.render (http://127.0.0.1:5300/src/render/postprocess.ts:494:13)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4824:12)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "upload",
+       "name": "texSubImage2D",
+       "bytes": 1000000,
+       "ms": 0.18000000715255737,
+       "stack": "    at WebGL2RenderingContext.textureUploadCountedCall [as texSubImage2D] (http://127.0.0.1:5300/src/render/profilerHooks.ts:64:4)\n    at Object.texSubImage2D (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:5938:7)\n    at updateTexture (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:6515:40)\n    at uploadTexture (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:6603:21)\n    at WebGLTextures.setTexture2D (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:6401:5)\n    at SingleUniform.setValueT1 [as setValue] (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:3137:11)\n    at WebGLUniforms.upload (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:3423:35)\n    at setProgram (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10477:19)\n    at WebGLRenderer.renderBufferDirect (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:9795:20)\n    at renderObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10230:17)\n    at renderObjects (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10213:44)\n    at renderScene (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10136:34)\n    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10063:6)\n    at FullScreenQuad.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_Pass__js.js?v=eadac9ed:146:12)\n    at ShaderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_ShaderPass__js.js?v=eadac9ed:83:17)\n    at pass.render (http://127.0.0.1:5300/src/render/canyonLight.ts:228:3)\n    at pass.render (http://127.0.0.1:5300/src/render/postprocess.ts:198:4)\n    at pass.render (http://127.0.0.1:5300/src/render/postprocess.ts:427:5)\n    at EffectComposer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_EffectComposer__js.js?v=eadac9ed:317:9)\n    at Object.render (http://127.0.0.1:5300/src/render/postprocess.ts:494:13)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4824:12)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      }
+     ],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.02
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0.01
+      ],
+      [
+       "hitch:draw/Render",
+       2.23
+      ]
+     ],
+     "posted": 3,
+     "received": 0
+    },
+    {
+     "n": 29530,
+     "end": 43347.40000000596,
+     "cpu": 4.715000003576279,
+     "interval": 16.16499999165535,
+     "gpu": 10.100736,
+     "calls": {
+      "getParameter": 1,
+      "drawElements": 21,
+      "bufferSubData": 11,
+      "bufferData": 2,
+      "drawArraysInstanced": 7,
+      "drawElementsInstanced": 271,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12
+     },
+     "bytes": {
+      "bufferSubData": 86360,
+      "bufferData": 10496
+     },
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.01
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0.01
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       3.09
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 29531,
+     "end": 43364.50499999523,
+     "cpu": 5.090000003576279,
+     "interval": 17.104999989271164,
+     "gpu": 9.64608,
+     "calls": {
+      "getParameter": 1,
+      "drawElements": 21,
+      "bufferSubData": 13,
+      "drawArraysInstanced": 7,
+      "drawElementsInstanced": 271,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12,
+      "texSubImage2D": 1
+     },
+     "bytes": {
+      "bufferSubData": 94872,
+      "texSubImage2D": 256
+     },
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0
+      ],
+      [
+       "hitch:cover/sweep",
+       0.01
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       2.83
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 29532,
+     "end": 43381.33000001311,
+     "cpu": 5.135000020265579,
+     "interval": 16.825000017881393,
+     "gpu": 9.0368,
+     "calls": {
+      "getParameter": 1,
+      "drawElements": 21,
+      "bufferSubData": 10,
+      "drawArraysInstanced": 7,
+      "drawElementsInstanced": 271,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12
+     },
+     "bytes": {
+      "bufferSubData": 100192
+     },
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0.01
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       3
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 29533,
+     "end": 43398.25,
+     "cpu": 5.409999996423721,
+     "interval": 16.919999986886978,
+     "gpu": 9.746432,
+     "calls": {
+      "getParameter": 1,
+      "drawElements": 21,
+      "bufferSubData": 5,
+      "drawArraysInstanced": 7,
+      "drawElementsInstanced": 271,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12
+     },
+     "bytes": {
+      "bufferSubData": 34176
+     },
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.01
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       3.16
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 29534,
+     "end": 43415.00499999523,
+     "cpu": 5.594999998807907,
+     "interval": 16.75499999523163,
+     "gpu": 9.50272,
+     "calls": {
+      "getParameter": 1,
+      "drawElements": 21,
+      "bufferSubData": 2,
+      "drawArraysInstanced": 7,
+      "drawElementsInstanced": 274,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12,
+      "bufferData": 10
+     },
+     "bytes": {
+      "bufferSubData": 13696,
+      "bufferData": 9596
+     },
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.01
+      ],
+      [
+       "hitch:cover/sweep",
+       0.01
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0.01
+      ],
+      [
+       "hitch:draw/Render",
+       3.14
+      ]
+     ],
+     "posted": 1,
+     "received": 1
+    },
+    {
+     "n": 29535,
+     "end": 43452.10499998927,
+     "cpu": 26.044999986886978,
+     "interval": 37.099999994039536,
+     "gpu": 21.293056,
+     "calls": {
+      "getParameter": 22,
+      "bufferData": 107,
+      "bufferSubData": 55,
+      "copyBufferSubData": 8,
+      "drawElements": 21,
+      "drawArraysInstanced": 7,
+      "drawElementsInstanced": 270,
+      "multiDrawElementsWEBGL": 5,
+      "drawArrays": 12,
+      "texSubImage2D": 6,
+      "compileShader": 2,
+      "linkProgram": 1,
+      "getProgramInfoLog": 1,
+      "getShaderInfoLog": 2,
+      "getProgramParameter": 3,
+      "texStorage2D": 2
+     },
+     "bytes": {
+      "bufferSubData": 3085336,
+      "bufferData": 1013914,
+      "texSubImage2D": 9216
+     },
+     "stacks": [
+      {
+       "kind": "alloc",
+       "name": "bufferData",
+       "bytes": 476748,
+       "ms": 0,
+       "stack": "    at WebGL2RenderingContext.bufferDataCounted [as bufferData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:34:3)\n    at GpuBatchedMesh.buffer (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:147:6)\n    at GpuBatchedMesh.storage (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:159:49)\n    at GpuBatchedMesh.setGeometrySize (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:284:22)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:227:14)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "alloc",
+       "name": "bufferData",
+       "bytes": 317832,
+       "ms": 0,
+       "stack": "    at WebGL2RenderingContext.bufferDataCounted [as bufferData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:34:3)\n    at GpuBatchedMesh.buffer (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:147:6)\n    at GpuBatchedMesh.storage (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:159:49)\n    at GpuBatchedMesh.setGeometrySize (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:284:22)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:227:14)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "alloc",
+       "name": "bufferData",
+       "bytes": 313112,
+       "ms": 0,
+       "stack": "    at WebGL2RenderingContext.bufferDataCounted [as bufferData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:34:3)\n    at GpuBatchedMesh.buffer (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:147:6)\n    at GpuBatchedMesh.storage (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:166:44)\n    at GpuBatchedMesh.setGeometrySize (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:284:22)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:227:14)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "upload",
+       "name": "bufferSubData",
+       "bytes": 269136,
+       "ms": 0.014999985694885254,
+       "stack": "    at WebGL2RenderingContext.bufferSubDataCounted [as bufferSubData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:40:4)\n    at GpuBatchedMesh.setGeometryAt (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:239:7)\n    at GpuBatchedMesh.addGeometry (http://127.0.0.1:5300/node_modules/.vite/deps/three.core-Bj1_PBiF.js?v=eadac9ed:19439:8)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:70:35)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "alloc",
+       "name": "bufferData",
+       "bytes": 1087500,
+       "ms": 0,
+       "stack": "    at WebGL2RenderingContext.bufferDataCounted [as bufferData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:34:3)\n    at GpuBatchedMesh.buffer (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:147:6)\n    at GpuBatchedMesh.storage (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:159:49)\n    at GpuBatchedMesh.setGeometrySize (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:284:22)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:227:14)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "alloc",
+       "name": "bufferData",
+       "bytes": 362500,
+       "ms": 0,
+       "stack": "    at WebGL2RenderingContext.bufferDataCounted [as bufferData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:34:3)\n    at GpuBatchedMesh.buffer (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:147:6)\n    at GpuBatchedMesh.storage (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:159:49)\n    at GpuBatchedMesh.setGeometrySize (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:284:22)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:227:14)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "alloc",
+       "name": "bufferData",
+       "bytes": 725000,
+       "ms": 0,
+       "stack": "    at WebGL2RenderingContext.bufferDataCounted [as bufferData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:34:3)\n    at GpuBatchedMesh.buffer (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:147:6)\n    at GpuBatchedMesh.storage (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:159:49)\n    at GpuBatchedMesh.setGeometrySize (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:284:22)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:227:14)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "alloc",
+       "name": "bufferData",
+       "bytes": 723032,
+       "ms": 0,
+       "stack": "    at WebGL2RenderingContext.bufferDataCounted [as bufferData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:34:3)\n    at GpuBatchedMesh.buffer (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:147:6)\n    at GpuBatchedMesh.storage (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:166:44)\n    at GpuBatchedMesh.setGeometrySize (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:284:22)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:227:14)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "copy",
+       "name": "copyBufferSubData",
+       "bytes": 381396,
+       "ms": 0,
+       "stack": "    at copy (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:290:7)\n    at GpuBatchedMesh.setGeometrySize (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:294:4)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:227:14)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "upload",
+       "name": "bufferSubData",
+       "bytes": 488604,
+       "ms": 0.034999996423721313,
+       "stack": "    at WebGL2RenderingContext.bufferSubDataCounted [as bufferSubData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:40:4)\n    at GpuBatchedMesh.setGeometryAt (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:239:7)\n    at GpuBatchedMesh.addGeometry (http://127.0.0.1:5300/node_modules/.vite/deps/three.core-Bj1_PBiF.js?v=eadac9ed:19439:8)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:70:35)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "upload",
+       "name": "bufferSubData",
+       "bytes": 325736,
+       "ms": 0.03999999165534973,
+       "stack": "    at WebGL2RenderingContext.bufferSubDataCounted [as bufferSubData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:40:4)\n    at GpuBatchedMesh.setGeometryAt (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:239:7)\n    at GpuBatchedMesh.addGeometry (http://127.0.0.1:5300/node_modules/.vite/deps/three.core-Bj1_PBiF.js?v=eadac9ed:19439:8)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:70:35)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "upload",
+       "name": "bufferSubData",
+       "bytes": 327936,
+       "ms": 0.025000005960464478,
+       "stack": "    at WebGL2RenderingContext.bufferSubDataCounted [as bufferSubData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:40:4)\n    at GpuBatchedMesh.setGeometryAt (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:253:6)\n    at GpuBatchedMesh.addGeometry (http://127.0.0.1:5300/node_modules/.vite/deps/three.core-Bj1_PBiF.js?v=eadac9ed:19439:8)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:70:35)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "compile",
+       "name": "compileShader",
+       "bytes": 0,
+       "ms": 0,
+       "stack": "    at WebGLShader (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:3438:5)\n    at WebGLProgram (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:3920:25)\n    at Object.acquireProgram (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:4449:14)\n    at getProgram (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10262:28)\n    at setProgram (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10394:15)\n    at WebGLRenderer.renderBufferDirect (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:9795:20)\n    at renderObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10230:17)\n    at renderObjects (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10213:44)\n    at renderScene (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10136:34)\n    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10063:6)\n    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=eadac9ed:125:12)\n    at scenePass.render (http://127.0.0.1:5300/src/render/postprocess.ts:125:4)\n    at pass.render (http://127.0.0.1:5300/src/render/postprocess.ts:427:5)\n    at EffectComposer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_EffectComposer__js.js?v=eadac9ed:317:9)\n    at Object.render (http://127.0.0.1:5300/src/render/postprocess.ts:494:13)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4824:12)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "compile",
+       "name": "compileShader",
+       "bytes": 0,
+       "ms": 0,
+       "stack": "    at WebGLShader (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:3438:5)\n    at WebGLProgram (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:3921:27)\n    at Object.acquireProgram (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:4449:14)\n    at getProgram (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10262:28)\n    at setProgram (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10394:15)\n    at WebGLRenderer.renderBufferDirect (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:9795:20)\n    at renderObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10230:17)\n    at renderObjects (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10213:44)\n    at renderScene (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10136:34)\n    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10063:6)\n    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=eadac9ed:125:12)\n    at scenePass.render (http://127.0.0.1:5300/src/render/postprocess.ts:125:4)\n    at pass.render (http://127.0.0.1:5300/src/render/postprocess.ts:427:5)\n    at EffectComposer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_EffectComposer__js.js?v=eadac9ed:317:9)\n    at Object.render (http://127.0.0.1:5300/src/render/postprocess.ts:494:13)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4824:12)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "compile",
+       "name": "linkProgram",
+       "bytes": 0,
+       "ms": 0.010000020265579224,
+       "stack": "    at WebGLProgram (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:3926:5)\n    at Object.acquireProgram (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:4449:14)\n    at getProgram (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10262:28)\n    at setProgram (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10394:15)\n    at WebGLRenderer.renderBufferDirect (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:9795:20)\n    at renderObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10230:17)\n    at renderObjects (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10213:44)\n    at renderScene (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10136:34)\n    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10063:6)\n    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=eadac9ed:125:12)\n    at scenePass.render (http://127.0.0.1:5300/src/render/postprocess.ts:125:4)\n    at pass.render (http://127.0.0.1:5300/src/render/postprocess.ts:427:5)\n    at EffectComposer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_EffectComposer__js.js?v=eadac9ed:317:9)\n    at Object.render (http://127.0.0.1:5300/src/render/postprocess.ts:494:13)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4824:12)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "wait",
+       "name": "getProgramInfoLog",
+       "ms": 9.969999998807907,
+       "stack": "    at onFirstUse (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:3929:30)\n    at WebGLProgram.getUniforms (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:3967:34)\n    at setProgram (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10400:31)\n    at WebGLRenderer.renderBufferDirect (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:9795:20)\n    at renderObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10230:17)\n    at renderObjects (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10213:44)\n    at renderScene (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10136:34)\n    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10063:6)\n    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=eadac9ed:125:12)\n    at scenePass.render (http://127.0.0.1:5300/src/render/postprocess.ts:125:4)\n    at pass.render (http://127.0.0.1:5300/src/render/postprocess.ts:427:5)\n    at EffectComposer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_EffectComposer__js.js?v=eadac9ed:317:9)\n    at Object.render (http://127.0.0.1:5300/src/render/postprocess.ts:494:13)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4824:12)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      }
+     ],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.01
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       3.19
+      ]
+     ],
+     "posted": 1,
+     "received": 1,
+     "alloc": 5606432,
+     "copied": 1310136
+    }
+   ]
+  },
+  {
+   "name": "zoom-in",
+   "start": 49928.005,
+   "end": 52928.87,
+   "frames": 246,
+   "over33": 0,
+   "over50": 0,
+   "cpuP50": 4.6,
+   "cpuP99": 6.66,
+   "cpuMax": 9.09,
+   "gpuP95": 9.2,
+   "slow": []
+  },
+  {
+   "name": "zoom-in-settle",
+   "start": 54029.31,
+   "end": 58030.605,
+   "frames": 248,
+   "over33": 0,
+   "over50": 0,
+   "cpuP50": 2.81,
+   "cpuP99": 4.07,
+   "cpuMax": 4.24,
+   "gpuP95": 8.07,
+   "slow": []
+  },
+  {
+   "name": "zoom-out",
+   "start": 58163.84,
+   "end": 61164.8,
+   "frames": 249,
+   "over33": 0,
+   "over50": 0,
+   "cpuP50": 4.43,
+   "cpuP99": 6.36,
+   "cpuMax": 6.63,
+   "gpuP95": 9.79,
+   "slow": []
+  },
+  {
+   "name": "zoom-out-settle",
+   "start": 62315.31,
+   "end": 66316.555,
+   "frames": 248,
+   "over33": 0,
+   "over50": 0,
+   "cpuP50": 2.82,
+   "cpuP99": 4.57,
+   "cpuMax": 4.65,
+   "gpuP95": 8.43,
+   "slow": []
+  },
+  {
+   "name": "orbit",
+   "start": 66466.615,
+   "end": 74469.185,
+   "frames": 496,
+   "over33": 0,
+   "over50": 0,
+   "cpuP50": 4.63,
+   "cpuP99": 10.23,
+   "cpuMax": 17.33,
+   "gpuP95": 9.06,
+   "slow": []
+  },
+  {
+   "name": "whole-map",
+   "start": 74735.805,
+   "end": 77736.775,
+   "frames": 248,
+   "over33": 3,
+   "over50": 0,
+   "cpuP50": 5.16,
+   "cpuP99": 30.28,
+   "cpuMax": 34.09,
+   "gpuP95": 13.93,
+   "slow": [
+    {
+     "n": 31466,
+     "end": 75625.05000001192,
+     "cpu": 5.380000025033951,
+     "interval": 15.814999997615814,
+     "gpu": 9.27744,
+     "calls": {
+      "getParameter": 1,
+      "bufferSubData": 64,
+      "drawArraysInstanced": 13,
+      "drawElementsInstanced": 303,
+      "drawElements": 9,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12
+     },
+     "bytes": {
+      "bufferSubData": 173724
+     },
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.01
+      ],
+      [
+       "hitch:cover/sweep",
+       0.01
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       3.45
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 31467,
+     "end": 75642.16999998689,
+     "cpu": 5.809999972581863,
+     "interval": 17.11999997496605,
+     "gpu": 9.842688,
+     "calls": {
+      "getParameter": 1,
+      "bufferSubData": 60,
+      "bufferData": 4,
+      "drawArraysInstanced": 17,
+      "drawElementsInstanced": 309,
+      "drawElements": 9,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12,
+      "texSubImage2D": 1
+     },
+     "bytes": {
+      "bufferSubData": 197008,
+      "texSubImage2D": 256
+     },
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.01
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       2.85
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 31468,
+     "end": 75658.625,
+     "cpu": 5.5999999940395355,
+     "interval": 16.455000013113022,
+     "gpu": 9.6,
+     "calls": {
+      "getParameter": 1,
+      "bufferSubData": 70,
+      "bufferData": 9,
+      "drawArraysInstanced": 16,
+      "drawElements": 9,
+      "drawElementsInstanced": 312,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12
+     },
+     "bytes": {
+      "bufferSubData": 190924,
+      "bufferData": 5696
+     },
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.01
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       3.26
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 31469,
+     "end": 75676.09000000358,
+     "cpu": 6.4000000059604645,
+     "interval": 17.46500000357628,
+     "gpu": 10.258432,
+     "calls": {
+      "getParameter": 1,
+      "bufferSubData": 58,
+      "bufferData": 6,
+      "drawArraysInstanced": 18,
+      "drawElementsInstanced": 316,
+      "drawElements": 9,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12,
+      "texSubImage2D": 1
+     },
+     "bytes": {
+      "bufferSubData": 152596,
+      "bufferData": 15488,
+      "texSubImage2D": 256
+     },
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.01
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       3.01
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 31470,
+     "end": 75693.81999999285,
+     "cpu": 7.409999996423721,
+     "interval": 17.729999989271164,
+     "gpu": 9.89696,
+     "calls": {
+      "getParameter": 1,
+      "bufferSubData": 61,
+      "bufferData": 81,
+      "drawArraysInstanced": 17,
+      "drawElementsInstanced": 343,
+      "drawElements": 9,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12
+     },
+     "bytes": {
+      "bufferSubData": 179100,
+      "bufferData": 626752
+     },
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.04
+      ],
+      [
+       "hitch:cover/sweep",
+       0.01
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       3.28
+      ]
+     ],
+     "posted": 1,
+     "received": 1
+    },
+    {
+     "n": 31471,
+     "end": 75733.32499998808,
+     "cpu": 30.28499999642372,
+     "interval": 39.50499999523163,
+     "gpu": 12.142592,
+     "calls": {
+      "bufferSubData": 120,
+      "getParameter": 14,
+      "bufferData": 14,
+      "copyBufferSubData": 22,
+      "drawElementsInstanced": 347,
+      "drawArraysInstanced": 28,
+      "drawArrays": 14,
+      "drawElements": 27,
+      "texSubImage2D": 3,
+      "multiDrawElementsWEBGL": 3
+     },
+     "bytes": {
+      "bufferSubData": 18875936,
+      "texSubImage2D": 8448
+     },
+     "stacks": [
+      {
+       "kind": "upload",
+       "name": "bufferSubData",
+       "bytes": 778608,
+       "ms": 0.06499999761581421,
+       "stack": "    at WebGL2RenderingContext.bufferSubDataCounted [as bufferSubData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:40:4)\n    at GpuBatchedMesh.setGeometryAt (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:239:7)\n    at GpuBatchedMesh.addGeometry (http://127.0.0.1:5300/node_modules/.vite/deps/three.core-Bj1_PBiF.js?v=eadac9ed:19439:8)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:70:35)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "upload",
+       "name": "bufferSubData",
+       "bytes": 519072,
+       "ms": 0.06000000238418579,
+       "stack": "    at WebGL2RenderingContext.bufferSubDataCounted [as bufferSubData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:40:4)\n    at GpuBatchedMesh.setGeometryAt (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:239:7)\n    at GpuBatchedMesh.addGeometry (http://127.0.0.1:5300/node_modules/.vite/deps/three.core-Bj1_PBiF.js?v=eadac9ed:19439:8)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:70:35)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "upload",
+       "name": "bufferSubData",
+       "bytes": 489504,
+       "ms": 0.030000001192092896,
+       "stack": "    at WebGL2RenderingContext.bufferSubDataCounted [as bufferSubData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:40:4)\n    at GpuBatchedMesh.setGeometryAt (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:253:6)\n    at GpuBatchedMesh.addGeometry (http://127.0.0.1:5300/node_modules/.vite/deps/three.core-Bj1_PBiF.js?v=eadac9ed:19439:8)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:70:35)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "upload",
+       "name": "bufferSubData",
+       "bytes": 297156,
+       "ms": 0.025000005960464478,
+       "stack": "    at WebGL2RenderingContext.bufferSubDataCounted [as bufferSubData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:40:4)\n    at GpuBatchedMesh.setGeometryAt (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:239:7)\n    at GpuBatchedMesh.addGeometry (http://127.0.0.1:5300/node_modules/.vite/deps/three.core-Bj1_PBiF.js?v=eadac9ed:19439:8)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:70:35)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "alloc",
+       "name": "bufferData",
+       "bytes": 27419424,
+       "ms": 0,
+       "stack": "    at WebGL2RenderingContext.bufferDataCounted [as bufferData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:34:3)\n    at GpuBatchedMesh.buffer (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:147:6)\n    at GpuBatchedMesh.storage (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:159:49)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:347:22)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "alloc",
+       "name": "bufferData",
+       "bytes": 9139808,
+       "ms": 0,
+       "stack": "    at WebGL2RenderingContext.bufferDataCounted [as bufferData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:34:3)\n    at GpuBatchedMesh.buffer (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:147:6)\n    at GpuBatchedMesh.storage (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:159:49)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:347:22)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "alloc",
+       "name": "bufferData",
+       "bytes": 18279616,
+       "ms": 0,
+       "stack": "    at WebGL2RenderingContext.bufferDataCounted [as bufferData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:34:3)\n    at GpuBatchedMesh.buffer (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:147:6)\n    at GpuBatchedMesh.storage (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:159:49)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:347:22)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "alloc",
+       "name": "bufferData",
+       "bytes": 17989248,
+       "ms": 0,
+       "stack": "    at WebGL2RenderingContext.bufferDataCounted [as bufferData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:34:3)\n    at GpuBatchedMesh.buffer (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:147:6)\n    at GpuBatchedMesh.storage (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:166:44)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:347:22)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "copy",
+       "name": "copyBufferSubData",
+       "bytes": 10326084,
+       "ms": 0,
+       "stack": "    at flush (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:358:8)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:364:5)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "copy",
+       "name": "copyBufferSubData",
+       "bytes": 3442028,
+       "ms": 0,
+       "stack": "    at flush (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:358:8)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:364:5)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "copy",
+       "name": "copyBufferSubData",
+       "bytes": 6884056,
+       "ms": 0,
+       "stack": "    at flush (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:358:8)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:364:5)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "copy",
+       "name": "copyBufferSubData",
+       "bytes": 11458212,
+       "ms": 0,
+       "stack": "    at flush (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:358:8)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:384:3)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "copy",
+       "name": "copyBufferSubData",
+       "bytes": 3819404,
+       "ms": 0,
+       "stack": "    at flush (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:358:8)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:384:3)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "copy",
+       "name": "copyBufferSubData",
+       "bytes": 7638808,
+       "ms": 0,
+       "stack": "    at flush (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:358:8)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:384:3)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "upload",
+       "name": "bufferSubData",
+       "bytes": 14297004,
+       "ms": 14.559999972581863,
+       "stack": "    at WebGL2RenderingContext.bufferSubDataCounted [as bufferSubData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:40:4)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:387:7)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "alloc",
+       "name": "bufferData",
+       "bytes": 916464,
+       "ms": 0,
+       "stack": "    at WebGL2RenderingContext.bufferDataCounted [as bufferData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:34:3)\n    at GpuBatchedMesh.buffer (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:147:6)\n    at GpuBatchedMesh.storage (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:159:49)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:347:22)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "alloc",
+       "name": "bufferData",
+       "bytes": 305488,
+       "ms": 0,
+       "stack": "    at WebGL2RenderingContext.bufferDataCounted [as bufferData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:34:3)\n    at GpuBatchedMesh.buffer (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:147:6)\n    at GpuBatchedMesh.storage (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:159:49)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:347:22)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "alloc",
+       "name": "bufferData",
+       "bytes": 610976,
+       "ms": 0,
+       "stack": "    at WebGL2RenderingContext.bufferDataCounted [as bufferData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:34:3)\n    at GpuBatchedMesh.buffer (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:147:6)\n    at GpuBatchedMesh.storage (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:159:49)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:347:22)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "alloc",
+       "name": "bufferData",
+       "bytes": 305488,
+       "ms": 0,
+       "stack": "    at WebGL2RenderingContext.bufferDataCounted [as bufferData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:34:3)\n    at GpuBatchedMesh.buffer (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:147:6)\n    at GpuBatchedMesh.storage (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:159:49)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:347:22)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "alloc",
+       "name": "bufferData",
+       "bytes": 610976,
+       "ms": 0,
+       "stack": "    at WebGL2RenderingContext.bufferDataCounted [as bufferData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:34:3)\n    at GpuBatchedMesh.buffer (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:147:6)\n    at GpuBatchedMesh.storage (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:159:49)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:347:22)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "alloc",
+       "name": "bufferData",
+       "bytes": 305488,
+       "ms": 0,
+       "stack": "    at WebGL2RenderingContext.bufferDataCounted [as bufferData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:34:3)\n    at GpuBatchedMesh.buffer (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:147:6)\n    at GpuBatchedMesh.storage (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:159:49)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:347:22)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "alloc",
+       "name": "bufferData",
+       "bytes": 305488,
+       "ms": 0,
+       "stack": "    at WebGL2RenderingContext.bufferDataCounted [as bufferData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:34:3)\n    at GpuBatchedMesh.buffer (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:147:6)\n    at GpuBatchedMesh.storage (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:159:49)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:347:22)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "alloc",
+       "name": "bufferData",
+       "bytes": 305488,
+       "ms": 0,
+       "stack": "    at WebGL2RenderingContext.bufferDataCounted [as bufferData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:34:3)\n    at GpuBatchedMesh.buffer (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:147:6)\n    at GpuBatchedMesh.storage (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:159:49)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:347:22)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "alloc",
+       "name": "bufferData",
+       "bytes": 482312,
+       "ms": 0,
+       "stack": "    at WebGL2RenderingContext.bufferDataCounted [as bufferData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:34:3)\n    at GpuBatchedMesh.buffer (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:147:6)\n    at GpuBatchedMesh.storage (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:166:44)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:347:22)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "copy",
+       "name": "copyBufferSubData",
+       "bytes": 358764,
+       "ms": 0,
+       "stack": "    at flush (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:358:8)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:364:5)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "copy",
+       "name": "copyBufferSubData",
+       "bytes": 342792,
+       "ms": 0,
+       "stack": "    at flush (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:358:8)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:384:3)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      },
+      {
+       "kind": "upload",
+       "name": "bufferSubData",
+       "bytes": 369384,
+       "ms": 0.04500001668930054,
+       "stack": "    at WebGL2RenderingContext.bufferSubDataCounted [as bufferSubData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:40:4)\n    at GpuBatchedMesh.compact (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:387:7)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:226:19)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      }
+     ],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.02
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       3.69
+      ]
+     ],
+     "posted": 0,
+     "received": 0,
+     "alloc": 76976264,
+     "copied": 46374816
+    },
+    {
+     "n": 31485,
+     "end": 75944.34999999404,
+     "cpu": 8.009999990463257,
+     "interval": 15.909999996423721,
+     "gpu": 9.0624,
+     "calls": {
+      "getParameter": 1,
+      "bufferSubData": 65,
+      "bufferData": 26,
+      "drawArraysInstanced": 14,
+      "drawElements": 9,
+      "drawElementsInstanced": 374,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12
+     },
+     "bytes": {
+      "bufferSubData": 112388,
+      "bufferData": 143710
+     },
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.01
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       4.24
+      ]
+     ],
+     "posted": 1,
+     "received": 1
+    },
+    {
+     "n": 31486,
+     "end": 75962.53999999166,
+     "cpu": 9.449999988079071,
+     "interval": 18.189999997615814,
+     "gpu": 10.416128,
+     "calls": {
+      "getParameter": 5,
+      "bufferData": 9,
+      "copyBufferSubData": 4,
+      "bufferSubData": 118,
+      "drawElementsInstanced": 651,
+      "drawArrays": 14,
+      "drawElements": 13,
+      "texSubImage2D": 6,
+      "multiDrawElementsWEBGL": 5,
+      "drawArraysInstanced": 14
+     },
+     "bytes": {
+      "bufferSubData": 541974,
+      "texSubImage2D": 9216
+     },
+     "stacks": [
+      {
+       "kind": "alloc",
+       "name": "bufferData",
+       "bytes": 270528,
+       "ms": 0,
+       "stack": "    at WebGL2RenderingContext.bufferDataCounted [as bufferData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:34:3)\n    at GpuBatchedMesh.buffer (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:147:6)\n    at GpuBatchedMesh.storage (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:159:49)\n    at GpuBatchedMesh.setGeometrySize (http://127.0.0.1:5300/src/render/buildings/gpuBatchedMesh.ts?t=1793141157156:284:22)\n    at ShellBatch.ensure (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:227:14)\n    at ShellBatch.add (http://127.0.0.1:5300/src/render/buildings/shellBatch.ts?t=1793141157156:69:9)\n    at show (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:676:33)\n    at landCells (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:755:9)\n    at Object.update (http://127.0.0.1:5300/src/render/buildings/layer.ts?t=1793141157191:1053:18)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4038:15)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      }
+     ],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.01
+      ],
+      [
+       "hitch:cover/sweep",
+       0.01
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       3.83
+      ]
+     ],
+     "posted": 0,
+     "received": 0,
+     "alloc": 718896,
+     "copied": 385152
+    },
+    {
+     "n": 31487,
+     "end": 75976.82499998808,
+     "cpu": 7.125,
+     "interval": 14.284999996423721,
+     "gpu": 9.271296,
+     "calls": {
+      "getParameter": 1,
+      "bufferSubData": 70,
+      "bufferData": 9,
+      "drawArraysInstanced": 14,
+      "drawElementsInstanced": 382,
+      "drawElements": 9,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12,
+      "texSubImage2D": 2
+     },
+     "bytes": {
+      "bufferSubData": 143236,
+      "texSubImage2D": 512
+     },
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.01
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       4.83
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 31488,
+     "end": 75994.56999999285,
+     "cpu": 8.16499999165535,
+     "interval": 17.74500000476837,
+     "gpu": 10.86464,
+     "calls": {
+      "getParameter": 1,
+      "bufferSubData": 58,
+      "bufferData": 26,
+      "drawElementsInstanced": 426,
+      "drawArraysInstanced": 26,
+      "drawArrays": 14,
+      "drawElements": 53,
+      "multiDrawElementsWEBGL": 3,
+      "texSubImage2D": 2
+     },
+     "bytes": {
+      "bufferSubData": 107304,
+      "bufferData": 140650,
+      "texSubImage2D": 512
+     },
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0.01
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.01
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       3.36
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 31489,
+     "end": 76010.40500000119,
+     "cpu": 7.390000015497208,
+     "interval": 15.83500000834465,
+     "gpu": 9.125888,
+     "calls": {
+      "getParameter": 1,
+      "bufferSubData": 53,
+      "bufferData": 9,
+      "drawArraysInstanced": 14,
+      "drawElementsInstanced": 392,
+      "drawElements": 9,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12,
+      "texSubImage2D": 2
+     },
+     "bytes": {
+      "bufferSubData": 133120,
+      "bufferData": 8150,
+      "texSubImage2D": 512
+     },
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.01
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       4.04
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 31490,
+     "end": 76053.83500000834,
+     "cpu": 34.08500000834465,
+     "interval": 43.43000000715256,
+     "gpu": 8.91392,
+     "calls": {
+      "getParameter": 1,
+      "bufferData": 19,
+      "bufferSubData": 54,
+      "drawArraysInstanced": 14,
+      "drawElements": 9,
+      "drawElementsInstanced": 408,
+      "multiDrawElementsWEBGL": 3,
+      "drawArrays": 12,
+      "texSubImage2D": 1
+     },
+     "bytes": {
+      "bufferData": 64,
+      "bufferSubData": 660028,
+      "texSubImage2D": 256
+     },
+     "stacks": [
+      {
+       "kind": "upload",
+       "name": "bufferSubData",
+       "bytes": 318880,
+       "ms": 0.025000005960464478,
+       "stack": "    at WebGL2RenderingContext.bufferSubDataCounted [as bufferSubData] (http://127.0.0.1:5300/src/render/profilerHooks.ts:40:4)\n    at updateBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:88:8)\n    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:122:4)\n    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:2386:53)\n    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:2609:15)\n    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10105:32)\n    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10129:53)\n    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10129:53)\n    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10129:53)\n    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=eadac9ed:10033:4)\n    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=eadac9ed:125:12)\n    at scenePass.render (http://127.0.0.1:5300/src/render/postprocess.ts:125:4)\n    at pass.render (http://127.0.0.1:5300/src/render/postprocess.ts:427:5)\n    at EffectComposer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_EffectComposer__js.js?v=eadac9ed:317:9)\n    at Object.render (http://127.0.0.1:5300/src/render/postprocess.ts:494:13)\n    at Object.draw (http://127.0.0.1:5300/src/render/renderer.ts?t=1793143307245:4824:12)\n    at FrameClock.frame (http://127.0.0.1:5300/src/main.ts?t=1793143412636:3237:8)\n    at shown (http://127.0.0.1:5300/src/frameLoop.ts:50:8)\n    at http://127.0.0.1:5300/src/lab/hiddenWork.ts:133:14"
+      }
+     ],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.01
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       3.61
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 31557,
+     "end": 77192.94499999285,
+     "cpu": 6.055000007152557,
+     "interval": 12.370000004768372,
+     "gpu": 11.067392,
+     "calls": {
+      "drawElements": 60,
+      "bufferSubData": 37,
+      "bufferData": 1,
+      "drawArraysInstanced": 4,
+      "drawElementsInstanced": 205,
+      "drawArrays": 12,
+      "texSubImage2D": 1,
+      "multiDrawElementsWEBGL": 2
+     },
+     "bytes": {
+      "bufferSubData": 125708,
+      "texSubImage2D": 576
+     },
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.02
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       3.93
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 31558,
+     "end": 77213.44499999285,
+     "cpu": 9.9549999833107,
+     "interval": 20.5,
+     "gpu": 11.10016,
+     "calls": {
+      "getParameter": 1,
+      "drawElements": 76,
+      "bufferSubData": 40,
+      "drawElementsInstanced": 241,
+      "drawArrays": 14,
+      "texSubImage2D": 4,
+      "multiDrawElementsWEBGL": 4,
+      "drawArraysInstanced": 4
+     },
+     "bytes": {
+      "bufferSubData": 102398,
+      "texSubImage2D": 2304
+     },
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.01
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0.01
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       3.19
+      ]
+     ],
+     "posted": 3,
+     "received": 0
+    },
+    {
+     "n": 31559,
+     "end": 77229.54499998689,
+     "cpu": 9.054999977350235,
+     "interval": 16.099999994039536,
+     "gpu": 13.599744,
+     "calls": {
+      "bufferSubData": 89,
+      "getParameter": 1,
+      "drawElements": 64,
+      "drawElementsInstanced": 254,
+      "drawArrays": 14,
+      "texSubImage2D": 4,
+      "multiDrawElementsWEBGL": 4,
+      "bufferData": 12,
+      "drawArraysInstanced": 4
+     },
+     "bytes": {
+      "bufferSubData": 1078932,
+      "texSubImage2D": 19584,
+      "bufferData": 38500
+     },
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.01
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       4.79
+      ]
+     ],
+     "posted": 3,
+     "received": 4
+    },
+    {
+     "n": 31560,
+     "end": 77245.16499999166,
+     "cpu": 8.3299999833107,
+     "interval": 15.620000004768372,
+     "gpu": 11.400192,
+     "calls": {
+      "drawElements": 94,
+      "bufferSubData": 32,
+      "drawElementsInstanced": 310,
+      "drawArrays": 14,
+      "texSubImage2D": 4,
+      "multiDrawElementsWEBGL": 4,
+      "drawArraysInstanced": 4
+     },
+     "bytes": {
+      "bufferSubData": 133886,
+      "texSubImage2D": 2304
+     },
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.02
+      ],
+      [
+       "hitch:cover/sweep",
+       0.04
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       4.66
+      ]
+     ],
+     "posted": 0,
+     "received": 2
+    },
+    {
+     "n": 31561,
+     "end": 77259.28000000119,
+     "cpu": 5.805000007152557,
+     "interval": 14.115000009536743,
+     "gpu": 11.459584,
+     "calls": {
+      "getParameter": 1,
+      "drawElements": 72,
+      "bufferSubData": 41,
+      "drawElementsInstanced": 186,
+      "drawArrays": 12,
+      "multiDrawElementsWEBGL": 2,
+      "drawArraysInstanced": 2
+     },
+     "bytes": {
+      "bufferSubData": 126436
+     },
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.02
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0.01
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       3.97
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    },
+    {
+     "n": 31562,
+     "end": 77299.15999999642,
+     "cpu": 29.064999997615814,
+     "interval": 39.87999999523163,
+     "gpu": 10.8032,
+     "calls": {
+      "getParameter": 1,
+      "drawElements": 132,
+      "bufferSubData": 34,
+      "drawElementsInstanced": 223,
+      "drawArrays": 14,
+      "texSubImage2D": 4,
+      "multiDrawElementsWEBGL": 4,
+      "drawArraysInstanced": 2
+     },
+     "bytes": {
+      "bufferSubData": 335394,
+      "texSubImage2D": 2304
+     },
+     "stacks": [],
+     "hitches": [
+      [
+       "hitch:draw/Rebuild",
+       0
+      ],
+      [
+       "hitch:draw/Pump",
+       0
+      ],
+      [
+       "hitch:furniture",
+       0.02
+      ],
+      [
+       "hitch:cover/sweep",
+       0
+      ],
+      [
+       "hitch:cover",
+       0
+      ],
+      [
+       "hitch:nature",
+       0
+      ],
+      [
+       "hitch:elements",
+       0
+      ],
+      [
+       "hitch:draw/Render",
+       2.79
+      ]
+     ],
+     "posted": 0,
+     "received": 0
+    }
+   ]
+  },
+  {
+   "name": "whole-map-settle",
+   "start": 78920.49,
+   "end": 82921.745,
+   "frames": 249,
+   "over33": 0,
+   "over50": 0,
+   "cpuP50": 1.79,
+   "cpuP99": 3.15,
+   "cpuMax": 3.48,
+   "gpuP95": 6.8,
+   "slow": []
+  }
+ ],
+ "intruders": [],
+ "settled": {
+  "seconds": 8,
+  "signature": {
+   "chosenDetail": 8,
+   "chosenFacade": 0,
+   "chosenFar": 28,
+   "shownDetail": 8,
+   "shownFacade": 0,
+   "shownNone": 28,
+   "notLanded": 0,
+   "levelsWaiting": 0,
+   "basesWaiting": 0,
+   "programs": 218,
+   "geometries": 716,
+   "textures": 130
+  }
+ },
+ "signature": {
+  "chosenDetail": 8,
+  "chosenFacade": 0,
+  "chosenFar": 28,
+  "shownDetail": 8,
+  "shownFacade": 0,
+  "shownNone": 28,
+  "notLanded": 0,
+  "levelsWaiting": 0,
+  "basesWaiting": 0,
+  "programs": 218,
+  "geometries": 716,
+  "textures": 130
+ }
+}

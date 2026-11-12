@@ -1,0 +1,8 @@
+run 1: VALID; frames > 33 ms 101, > 50 ms 50; gate GPU 0 %
+run 2: DISCARDED - GPU busy with another process (5.9 %); frames > 33 ms null, > 50 ms null; gate GPU 5.9 %
+series stopped: the GPU is busy with another process
+aa-1: 1 of 2 runs valid, 1 scene signature(s); ALL frames > 33 ms {"median":101,"min":101,"max":101}, > 50 ms {"median":50,"min":50,"max":50}
+run 1: DISCARDED - GPU busy with another process (18.6 %); frames > 33 ms null, > 50 ms null; gate GPU 18.6 %
+series stopped: the GPU is busy with another process
+aa-2: 0 of 1 runs valid, 0 scene signature(s); ALL frames > 33 ms {"median":null,"min":null,"max":null}, > 50 ms {"median":null,"min":null,"max":null}
+exit 0
