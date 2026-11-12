@@ -1,0 +1,214 @@
+[buildings.all()] src/actionsWiring.ts:244:      // DO NOT walk `buildings.all()`: every blow outlined every building of the city.
+[buildings.all()] src/actionsWiring.ts:447:  /** DO NOT walk `buildings.all()`: a blow on open ground ray-marched every building of the city. */
+[buildings.all()] src/editor/buildings.ts:575:/** DO NOT walk `buildings.all()` for an edit */
+[buildings.all()] src/editor/buildings.ts:810:  // DO NOT walk `buildings.all()` here: the ghost of a placement asks this on every pointer move
+[buildings.all()] src/editor/buildingSnap.ts:150:  // DO NOT walk `doc.buildings.all()` here: this runs on every pointer move.
+[buildings.all()] src/editor/buildingSnap.ts:179:  // DO NOT walk `doc.buildings.all()` here: this runs on every pointer move.
+[buildings.all()] src/editor/buildingTool.ts:2690:/** DO NOT copy `buildings.all()` here: every move of the pointer over the map copied and tested the whole city (audit A9). */
+[buildings.all()] src/editor/bulldozer.ts:130:    // DO NOT walk `doc.segments`, `doc.buildings.all()`, `doc.landscape` or `doc.barriers` here
+[buildings.all()] src/editor/lotTool.ts:410:    // DO NOT walk `buildings.all()`: this runs for each of up to 400 steps of a pointer move.
+[buildings.all()] src/editor/transitTools.ts:53:  /** DO NOT walk `buildings.all()`: the metro's way down asked it of every footway point of the map against every building. */
+[buildings.all()] src/render/buildings/layer.ts:824:          // DO NOT hold the whole town's records while it is filed (`[...doc.buildings.all()]` held every one decoded): each record read once, its numbers put in its columns, let go.
+[buildings.all()] src/render/buildings/layer.ts:827:          for (const b of doc.buildings.all()) {
+[buildings.all()] src/render/gardenLists.ts:73:    for (const b of buildings.all()) { seen.add(b.id); take(b.id, b); }
+[buildings.all()] src/render/renderer.ts:1998:    // DO NOT walk `buildings.all()` for them, nor every building for a platform not known yet (`ensure`, a building a step)
+[buildings.all()] src/render/roomLamps.ts:17:    // DO NOT walk `buildings.all()`: this runs every frame the cutaway is open, the whole town each time.
+[buildings.all()] src/world/buildings/decayWatch.ts:41:      for (const b of doc.buildings.all()) file(b, b.id, now);
+[buildings.all()] src/world/buildings/siteGrading.ts:120:    for (const b of buildings.all()) { const slot = grade(b); gradedMark[slot] = 1; }
+[buildings.all()] src/world/buildings/siteGrading.ts:169:      } else padsCache = buildings.size > 0 ? buildingPads(buildings.all(), groundAt, pavedAt, apron, padsKnown, floorOf, resolvePad) : null;
+[.lotsb] src/editor/cityGenerator.ts:49:    for (const id of square.lots) deleteLot(doc, id);
+[.lotsb] src/editor/cityGenerator.ts:80:  for (const lot of doc.lots as readonly Lot[]) {
+[.lotsb] src/editor/cityInTiles.ts:50:  const city = await job<CityGrowthAsk, CityGrowthReply>('cityGrowth', { id: UNNUMBERED, op: 'assemble', lots: layout.lots ?? null, grown }, priority, null);
+[.lotsb] src/editor/cityInTiles.ts:54:  return { id: ask.id, data: layout.data, buildings: city.buildings, landscape: layout.landscape ?? null, lots: city.lots, poles: layout.poles ?? null, spans: layout.spans ?? null };
+[.lotsb] src/editor/cityTiles.ts:146:    lots: tile.lots, markingStyle: tile.markingStyle,
+[.lotsb] src/editor/growthFeed.ts:151:      const lot = asked.lots.get(g.lot)!;
+[.lotsb] src/editor/growthReplica.ts:259:    const open = [...ask.region.lots];
+[.lotsb] src/editor/lotTool.ts:272:    if (!filing || filing.lots !== prop.lots) {
+[.lotsb] src/editor/lotTool.ts:274:      prop.lots.forEach((corners, k) => cells.file(k, corners, lotBox({ corners })));
+[.lotsb] src/editor/lotTool.ts:275:      filing = { lots: prop.lots, cells };
+[.lotsb] src/editor/lotTool.ts:279:    for (const k of filing.cells.idsMeeting([p.x, p.y, p.x, p.y])) if (insideLot(p, { corners: prop.lots[k]! })) return k;
+[.lotsb] src/editor/lotTool.ts:294:    const fresh = [...stroke.fresh].map((k) => this.proposal?.lots[k]).filter((c): c is Vec2[] => !!c);
+[.lotsb] src/editor/lotTool.ts:305:      this.proposal = { key: this.proposalKey(), lots: before.lots.filter((_, k) => !laid.has(k)), keys: before.keys, keyRects: before.keyRects };
+[.lotsb] src/editor/lotTool.ts:327:    return prop && prop.key === this.proposalKey() ? prop.lots.length : -1;
+[.lotsb] src/editor/lotTool.ts:335:  /** DO NOT walk `doc.lots`: this runs for each of up to 400 steps of a pointer move. */
+[.lotsb] src/editor/lotTool.ts:407:      this.erase.lots.add(lot.id);
+[.lotsb] src/editor/lotTool.ts:422:    if (!prop || prop.key !== this.proposalKey() || !prop.lots.length) return;
+[.lotsb] src/editor/lotTool.ts:423:    const add = prop.lots.map((corners) => ({ key: '', corners: [...corners] }));
+[.lotsb] src/editor/lotTool.ts:606:      if (commit && (stroke.lots.size || stroke.buildings.size)) {
+[.lotsb] src/editor/lotTool.ts:608:          for (const id of stroke.lots) deleteLot(doc, id);
+[.lotsb] src/editor/lotTool.ts:747:    const lots: readonly (readonly Vec2[])[] = d.editing && prop ? prop.lots : NO_PROPOSAL;
+[.lotsb] src/editor/lotTool.ts:758:    if (lots !== shown.lots || look !== shown.look) {
+[.lotsb] src/editor/preparedCity.ts:50:  for (const lot of data.lots ?? []) {
+[.lotsb] src/editor/preparedCity.ts:63:      ...(data.landscape ? { landscape: [] } : {}), ...(data.lots ? { lots: [] } : {}),
+[.lotsb] src/main.ts:272:      ? { buildings: saved.buildings ?? null, landscape: saved.landscape ?? null, lots: saved.lots ?? null, poles: saved.poles ?? null, spans: saved.spans ?? null }
+[.lotsb] src/main.ts:2647:  // DO NOT read `doc.lots` here nor design the building on the page: the growth's worker answers (`growthAnswered`).
+[.lotsb] src/render/buildings/buildingMesh.ts:2665:  const surfaces = recipe.lots && recipe.level !== undefined ? lotSurfaces(resolved, recipe.level, pavedAt) : [];
+[.lotsb] src/render/buildings/buildingMesh.ts:2666:  return lotGroundOf(resolved, surfaces, recipe.level, recipe.lots);
+[.lotsb] src/render/buildings/buildingMesh.ts:4258:    lots: lotRec.lots(floor ?? null, lotGround, signature && floor !== undefined ? floor : undefined),
+[.lotsb] src/render/buildings/buildingMesh.ts:4278:  return rec.lots(floor, lotGroundAlone(resolved, lots, at, groundAt, pavedAt), signature && at !== undefined ? at : undefined);
+[.lotsb] src/render/buildings/cellWork.ts:183:    return lots === kept.lots ? kept : { mass: kept.mass, flags: kept.flags, lots };
+[.lotsb] src/render/buildings/cellWork.ts:203:    if (kept.lots.floor === floor) return kept.lots;
+[.lotsb] src/render/buildings/cellWork.ts:215:    this.keep(`m|${body}`, { mass: made.mass, flags: made.flags, lots: made.lots });
+[.lotsb] src/render/buildings/cellWork.ts:216:    PROGRAMS.setLots(`L|${body}|${floorKey(made.lots.floor)}`, made.lots);
+[.lotsb] src/render/buildings/cellWork.ts:217:    this.madeLots.push(`L|${body}|${floorKey(made.lots.floor)}`);
+[.lotsb] src/render/buildings/massBase.ts:172:  const floor = p.lots.floor ?? 0;
+[.lotsb] src/render/buildings/massBase.ts:174:  for (const q of p.lots.slabs) slab(w, q.xs, q.ys, q.level, q.paint);
+[.lotsb] src/render/buildings/massing.ts:307:  const p = stage.mass, floor = stage.lots.floor ?? 0;
+[.lotsb] src/render/buildings/massing.ts:314:  writeFaces(w, stage.lots, 0, []);
+[.lotsb] src/render/buildings/program.ts:126:export function summaryOf(p: BuildingProgram, lots: LotsProgram = p.lots): ProgramSummary {
+[.lotsb] src/render/buildings/program.ts:224:  bytes += lotsBytes(p.lots) + p.flags.length * 96;
+[.lotsb] src/render/buildings/program.ts:269:    return hit.lots;
+[.lotsb] src/ui/i18n/en.ts:17:  'zone.lots': 'Lots',
+[.lotsb] src/ui/i18n/en.ts:18:  'zone.lots.help': 'Create lots against the footways (rectangle or polygon) and paint the zone over them: the building grows to the size and shape of the lot, facing the front marked in blue.',
+[.lotsb] src/ui/i18n/en.ts:1271:  'builder.city.lots': 'Lots',
+[.lotsb] src/ui/i18n/pt-BR.ts:17:  'zone.lots': 'Lotes',
+[.lotsb] src/ui/i18n/pt-BR.ts:18:  'zone.lots.help': 'Crie lotes encostando nas calçadas (retângulo ou polígono) e pinte a zona sobre eles: o prédio cresce do tamanho e formato do lote, virado para a frente marcada em azul.',
+[.lotsb] src/ui/i18n/pt-BR.ts:1261:  'builder.city.lots': 'Lotes',
+[.lotsb] src/ui/v2/shell.ts:1355:      tab(t('zone.lots'), !painting, () => { deps.setZone({ mode: lastLotMode }); render(); }, false, svg('lotEdit', 18)),
+[.lotsb] src/ui/v2/shell.ts:1371:    const lots = section(t('zone.lots')).items;
+[.lotsb] src/ui/v2/shell.ts:1388:    note(t('zone.lots.help'));
+[.lotsb] src/world/buildings/pads.ts:125:  const rings: (readonly Vec2[])[] = [...built, ...lots.map((l) => l.ring)];
+[.lotsb] src/world/buildings/pads.ts:126:  const water = [...built.map(() => false), ...lots.map((l) => l.volume.open === 'water')];
+[.lotsb] src/world/buildings/pads.ts:130:  const levels: PadLevel[] = [...built.map((_, i): PadLevel => ({ slope: { kind: 'level', level: flat + (lifts[i] ?? 0) }, under: 0 })), ...lots.map((l): PadLevel => {
+[.lotsb] src/world/buildings/pads.ts:150:  const paved = [...built.map(() => false), ...lots.map((l) => (l.volume.open ?? 'grass') !== 'grass' && l.volume.open !== 'water')];
+[.lotsb] src/world/cityGen/squares.ts:101:  const lots = doc.lots as readonly Lot[];
+[.lotsb] src/world/doc.ts:1765:    for (const lot of records.lots) {
+[.lotsb] src/world/doc.ts:1888:      lots: t.lots.map((lot) => lot.id), buildings: t.buildings.map((b) => b.id),
+[.lotsb] src/world/doc.ts:1904:      lots: t.lots.map((lot) => ({ ...lot, corners: lot.corners.map((q) => ({ x: q.x, y: q.y })) })),
+[.lotsb] src/world/doc.ts:1923:      put('buildings', t.buildings.map((b) => b.id)); put('lots', t.lots.map((l) => l.id));
+[.lotsb] src/world/doc.ts:1969:    this.lotStore.restore(t.lots.map((lot) => ({ id: lot.id, value: undefined })), TILE_UNLOADED);
+[.lotsb] src/world/doc.ts:3046:    // The ids already read by a set, NOT `doc.lots.some(...)` per record
+[.lotsb] src/world/doc.ts:3064:    for (const lot of data.lots ?? []) {
+[.lotsb] src/world/doc.ts:3071:    if (sections.lots) doc.lotStore.loadSections(sections.lots, lotKeys, lots); else doc.lotStore.load(lots, lotKeys);
+[.lotsb] src/world/doc.ts:3204:  above('building', records.buildings); above('lot', records.lots); above('landscape', records.landscape); above('barrier', records.barriers);
+[.lotsb] src/world/lotStore.ts:61:  /** The lots as an array, for the readers that still take one (`RoadDoc.lots`); null when a write made it stale. */
+[.lotsb] src/world/openLots.ts:95:    if (slot === undefined || this.records[slot] !== lot || this.host.lots.get(lot.id) !== lot) throw new Error(`lot ${lot.id} missing from the open lots' index`);
+[.lotsb] src/world/openLots.ts:97:    this.host.lots.apply({ put: [fresh], ...(rects ? { also: rects } : {}) }, cause);
+[.lotsb] src/world/openLots.ts:113:    const lots = host.lots.changedFor(this.cursor);
+[.lotsb] src/world/openLots.ts:121:        const lot = host.lots.get(id);
+[.lotsb] src/world/openLots.ts:125:          if (lot && host.lots.orderOf(id) === this.slotOrder[slot]) { if (this.records[slot] !== lot) this.place(slot, lot); continue; }
+[.lotsb] src/world/openLots.ts:134:      last.sort((a, b) => host.lots.orderOf(a.id)! - host.lots.orderOf(b.id)!);
+[.lotsb] src/world/openLots.ts:138:        this.slotOrder.push(host.lots.orderOf(lot.id)!);
+[.lotsb] src/world/openLots.ts:242:    this.records = [...host.lots.all()];
+[.lotsb] src/world/openLots.ts:245:    this.slotOrder = this.records.map((lot) => host.lots.orderOf(lot!.id)!);
+[.lotsb] src/world/openLots.ts:277:    host.lots.changedFor(this.cursor);
+[.lotsb] src/world/rescale.ts:118:  out.lots = list(data.lots, (lot) => (isRecord(lot) && Array.isArray(lot.corners) ? { ...lot, corners: lot.corners.map(at) } : lot));
+[lotStore.all()] src/editor/cityTiles.ts:77:  for (const lot of doc.lotStore.all()) {
+[lotStore.all()] src/editor/cityTiles.ts:175:  for (const lot of doc.lotStore.all()) if (lot.building !== undefined && !theirs.has(lot.building)) pairs.push(lot.id, lot.building);
+[lotStore.all()] src/editor/lotTool.ts:692:    for (const lot of this.doc.lotStore.all()) this.drawLot(lot.id, d);
+[lotStore.all()] src/world/lots.ts:490:    for (const lot of doc.lotStore.all()) if (coveredBy(paved, lot)) this.dropped.add(lot.id);
+[lotStore.all()] src/world/lots.ts:1076:  const lots = rects === null ? [...doc.lotStore.all()] : rects.flatMap((r) => doc.lotsIn(r));
+[lotStore.list()] src/world/doc.ts:309:    return this.lotStore.list();
+[segments.values()] src/editor/cityGenerator.ts:35:  for (const s of [...doc.segments.values()]) {
+[segments.values()] src/editor/cityTiles.ts:86:  for (const segment of doc.segments.values()) {
+[segments.values()] src/world/cityGen/squares.ts:68:  for (const s of doc.segments.values()) {
+[segments.values()] src/world/doc.ts:2731:      segments: inIdOrder(this.segments.values()).map(savedSegment),
+[segments.values()] src/world/doc.ts:2826:      segments: withRecords ? inIdOrder(this.segments.values()).map(savedSegment) : [],
+[segments.values()] src/world/economy.ts:100:  for (const segment of doc.segments.values()) {
+[segments.values()] src/world/walkways.ts:371:    for (const unit of this.segments.values()) {
+[segments.keys()] src/editor/cityGenerator.ts:55:  const power = layPowerLines(doc, net, doc.segments.keys()) > 0;
+[segments.keys()] src/editor/cityGenerator.ts:56:  const pieces = furnitureFor(net, doc.segments.keys(), 'complete', doc.landscape.values(), power, false);
+[segments.keys()] src/editor/cityGenerator.ts:60:  doc.addLandscapeMany(nameFor(net, doc.segments.keys()).map((name) => ({ kind: 'streetname' as const, at: name.at, extra: { text: name.text } })));
+[segments.keys()] src/render/roadSurfaceInputs.ts:164:    const ids = [...net.scope ?? net.doc.segments.keys()].filter((id) => net.doc.segment(id)).sort((p, q) => p - q);
+[segments.keys()] src/world/doc.ts:3584:  for (const id of b.segments.keys()) {
+[segments.keys()] src/world/docLength.ts:35:    for (const id of doc.segments.keys()) this.put(doc, id);
+[segments.keys()] src/world/lanelets.ts:545:    const ids = [...this.scope ?? doc.segments.keys()].filter((id) => doc.segment(id)).sort((a, b) => a - b);
+[segments.keys()] src/world/lanelets.ts:819:    for (const segId of [...doc.segments.keys()].sort((a, b) => a - b)) graph.buildSegmentLinks(doc, net, segId, next, next);
+[segments.keys()] src/world/lots.ts:494:    for (const id of [...doc.segments.keys()].sort((a, b) => a - b)) {
+[segments.keys()] src/world/networkBuild.ts:432:      for (const id of [...new Set([...this.net.scope ?? doc.segments.keys(), ...this.segmentSource.keys()])].sort((p, q) => p - q)) candSegs.add(id);
+[segments.keys()] src/world/tileIndex.ts:149:    for (const id of this.doc.segments.keys()) this.fileSegment(id);
+[segments.keys()] src/world/walkways.ts:349:    for (const seg of this.segments.keys()) if (!next.has(seg)) segments.add(seg);
+[segments.keys()] src/world/walkways.ts:465:    const rawSegs = new Set<SegmentId>([...this.segments.keys(), ...(this.scope ?? doc.segments.keys())]);
+[segments.keys()] src/world/zoneGrid.ts:209:  const ids = [...doc.segments.keys()].sort((a, b) => a - b);
+[nodes.values()] src/editor/repair.ts:76:  for (const node of doc.nodes.values()) {
+[nodes.values()] src/editor/roadTop.ts:78:  for (const node of doc.nodes.values()) out.add(cellAt(node.x, node.y));
+[nodes.values()] src/main.ts:382:  for (const n of doc.nodes.values()) {
+[nodes.values()] src/world/doc.ts:2730:      nodes: inIdOrder(this.nodes.values()).map(savedNode),
+[nodes.values()] src/world/doc.ts:2825:      nodes: withRecords ? inIdOrder(this.nodes.values()).map(savedNode) : [],
+[nodes.keys()] src/render/roadSurfaceInputs.ts:166:    const nodes = net.scope === null ? [...net.doc.nodes.keys()].sort((p, q) => p - q) : this.completeEnds(net, ids);
+[nodes.keys()] src/world/doc.ts:3599:  for (const id of b.nodes.keys()) if (!a.nodes.has(id)) { traffic = true; nodes.push(id); add(b.nodeRect(id)); }
+[nodes.keys()] src/world/landscape.ts:248:  if (net.scope === null) return crossingAccessesAt(net, net.doc.nodes.keys());
+[nodes.keys()] src/world/markings.ts:216:  for (const node of net.doc.nodes.keys()) approachLegendsAt(net, node, styleId, out);
+[nodes.keys()] src/world/markings.ts:408:  for (const node of net.doc.nodes.keys()) midBlockDetailAt(net, node, stops, zebras);
+[nodes.keys()] src/world/networkBuild.ts:433:      for (const id of [...new Set([...this.net.scope ? [] : doc.nodes.keys(), ...this.nodeSource.keys()])].sort((p, q) => p - q)) candNodes.add(id);
+[nodes.keys()] src/world/tileIndex.ts:148:    for (const id of this.doc.nodes.keys()) this.fileNode(id);
+[nodes.keys()] src/world/walkways.ts:467:    if (this.scope === null) for (const id of doc.nodes.keys()) nodes.add(id);
+[landscape.values()] src/editor/cityGenerator.ts:56:  const pieces = furnitureFor(net, doc.segments.keys(), 'complete', doc.landscape.values(), power, false);
+[landscape.values()] src/editor/streetscapeTool.ts:143:/** DO NOT hand it `doc.landscape.values()` */
+[landscape.values()] src/render/streetFurnitureLayer.ts:284:    for (const item of source.net.doc.landscape.values()) if (this.wanted(item)) out.push(item.id);
+[landscape.values()] src/world/doc.ts:2841:      ...(withRecords && this.landscape.size > 0 ? { landscape: tablesApart ? [] : inIdOrder(this.landscape.values()).map(savedLandscape) } : {}),
+[landscape.values()] src/world/landscape.ts:401:/** DO NOT hand `doc.landscape.values()` to `landscapeNear` for one point: every item of the map, every move. */
+[landscape.values()] src/world/streetFurniture.ts:118:  for (const placed of net.doc.landscape.values()) {
+[poles.values()] src/render/poleLayer.ts:111:    for (const pole of source.poles.values()) this.place(net, groundAt, source, pole, undefined);
+[poles.values()] src/world/doc.ts:523:      for (const pole of source.poles.values()) this.putPoleRecord({ ...pole });
+[poles.values()] src/world/doc.ts:555:    } else for (const pole of poles.values()) index.putPole(pole);
+[poles.values()] src/world/doc.ts:2839:      poles: withRecords && !tablesApart ? inIdOrder(this.poles.values()).map(savedPole) : [],
+[poles.values()] src/world/utilities.ts:167:  for (const pole of poles.values()) out.set(pole.id, poleArmsAt(pole, reaching.get(pole.id) ?? [], poles, idle));
+[poleSpans.values()] src/world/doc.ts:524:      for (const span of source.poleSpans.values()) this.putSpanRecord({ ...span });
+[poleSpans.values()] src/world/doc.ts:2840:      poleSpans: withRecords && !tablesApart ? inIdOrder(this.poleSpans.values()).map(savedSpan) : [],
+[barriers.values()] src/world/doc.ts:2180:    for (const barrier of this.barriers.values()) copy.putBarrierRecord({ ...barrier, points: barrier.points.map((q) => ({ ...q })) });
+[barriers.values()] src/world/doc.ts:2601:      for (const barrier of source.barriers.values()) this.putBarrierRecord({ ...barrier, points: barrier.points.map((p) => ({ ...p })) });
+[barriers.values()] src/world/doc.ts:2843:      ...(withRecords && this.barriers.size > 0 ? { barriers: inIdOrder(this.barriers.values()).map(savedBarrier) } : {}),
+[ribbons.keys()] src/render/networkFarInput.ts:111:    for (const id of net.ribbons.keys()) {
+[ribbons.keys()] src/render/networkFarTile.ts:114:  for (const id of [...net.ribbons.keys()].sort((p, q) => p - q)) {
+[ribbons.keys()] src/world/elevation.ts:189:  return [...net.ribbons.keys()];
+[ribbons.keys()] src/world/elevation.ts:265:  } else for (const id of named ?? net.ribbons.keys()) touched.add(id);
+[ribbons.keys()] src/world/elevation.ts:340:    for (const id of named ?? net.ribbons.keys()) touched.add(id);
+[ribbons.values()] src/render/renderer.ts:1772:    if (!walk || walk.net !== net) roadsWalk = walk = { net, at: net.ribbons.values() };
+[ribbons.values()] src/render/renderer.ts:1774:    if (step.done) { roadsWalk = walk = { net, at: net.ribbons.values() }; step = walk.at.next(); }
+[ribbons.values()] src/render/structures.ts:73:  const asked = candidates ?? (within === undefined ? [...net.ribbons.values()] : near());
+[ribbons.values()] src/world/parkingLayout.ts:80:  for (const ribbon of net.ribbons.values()) parkingOf(net, ribbon, entrances, bays, lines);
+[ribbons.values()] src/world/surfaces.ts:75:  const ribbons = [...net.ribbons.values()].sort((p, q) => p.id - q.id);
+[junctions.keys()] src/render/networkFarInput.ts:117:    for (const id of net.junctions.keys()) {
+[junctions.keys()] src/world/junction/bulb.ts:106:  const candidates = (): Iterable<NodeId> => delta === null ? net.junctions.keys() : delta.nodes;
+[junctions.keys()] src/world/markings.ts:407:  for (const node of [...net.junctions.keys()].sort((p, q) => p - q)) junctionDetailAt(net, node, stops, zebras);
+[junctions.keys()] src/world/network.ts:142:    return [...this.junctions.keys()];
+[junctions.keys()] src/world/signalPosts.ts:63:  } else nodes = [...graph.junctions.keys()].sort((a, b) => a - b);
+[junctions.values()] src/world/conflictPoints.ts:149:    const junctions = (only ? [...only].map((node) => graph.junctions.get(node)).filter((j): j is JunctionTopology => j !== undefined) : [...graph.junctions.values()])
+[junctions.values()] src/world/conflictPoints.ts:318:    for (const junction of graph.junctions.values()) if (this.inWindow(junction.node)) this.buildJunction(graph, junction, previous, next, previousSweeps, nextSweeps);
+[toJSON()] src/core/health.ts:106:  toJSON(): HealthEntry[] {
+[toJSON()] src/editor/nodeMover.ts:25:/** DO NOT keep the whole document (`toJSON` at the press, `replaceFromJSON` at the release) */
+[toJSON()] src/editor/persistence.ts:128:      const text = this.documentText?.(doc) ?? JSON.stringify(doc.toJSON());
+[toJSON()] src/editor/persistence.ts:498:    const document = RoadDoc.fromBinary(map.slice().buffer).toJSON();
+[toJSON()] src/editor/smallCityMap.ts:32:  return growCity(city, null, null).toJSON();
+[toJSON()] src/editor/smallCityMap.ts:66:  const data = doc.toJSONTablesApart();
+[toJSON()] src/main.ts:351:function isUntouchedStarter(saved: ReturnType<RoadDoc['toJSON']>): boolean {
+[toJSON()] src/main.ts:949:function applySnapshot(data: ReturnType<RoadDoc['toJSON']> | null, source: 'snapshot' | 'import' = 'snapshot', tables: OpenedTables | null = null): void {
+[toJSON()] src/main.ts:2061:    applySnapshot({ ...new RoadDoc().toJSON(), relief: NEW_RELIEF, markingStyle: 'br' }, 'import');
+[toJSON()] src/main.ts:4133:  loadDoc: (data: ReturnType<RoadDoc['toJSON']>) => {
+[toJSON()] src/ui/healthWatch.ts:84:    try { localStorage.setItem(KEPT_KEY, JSON.stringify(log.toJSON())); } catch { /* storage full or blocked: kept in memory */ }
+[toJSON()] src/world/buildings/store.ts:309:  toJSON(): SerializedBuilding[] {
+[toJSON()] src/world/buildings/types.ts:372:/** What `JSON.parse(JSON.stringify(value))` makes, without the text: DO NOT go back to the round trip, every tile's buildings copied through a string of themselves (wprof4: `cloneBuilding` under the tile's `toJSON`, garbage for the collector). Plain objects and arrays copied by the same rules (members undefined, functions or symbols left out, in arrays null; -0 as 0, a number not finite as null); anything else (a class, a `toJSON`) through JSON itself. */
+[toJSON()] src/world/buildings/types.ts:387:  if ((proto !== Object.prototype && proto !== null) || typeof (value as { toJSON?: unknown }).toJSON === 'function') return JSON.parse(JSON.stringify(value)) as unknown;
+[toJSON()] src/world/doc.ts:2721:  toJSON(): SerializedDoc {
+[toJSON()] src/world/doc.ts:2740:  /** `toJSON` with the buildings' list empty in its place, as a city's data goes with its buildings' table apart (`editor/preparedCity.ts`): DO NOT read every record to throw the list away (a city grown off the page holds its buildings in a table, `editor/smallCityMap.ts` buildCityTable). */
+[toJSON()] src/world/doc.ts:2741:  toJSONBuildingsApart(): SerializedDoc {
+[toJSON()] src/world/doc.ts:2745:  /** `toJSON` with every kind kept in a table left apart (`DOC_TABLES`: the buildings, the landscaping, the lots, the poles and the wires; their lists written empty, in their places): their tables go beside it (`editor/smallCityMap.ts` buildCityTable: `tableOf`). */
+[toJSON()] src/world/doc.ts:2746:  toJSONTablesApart(): SerializedDoc {
+[toJSON()] src/world/doc.ts:2770:  /** `JSON.stringify(this.toJSON())`, the same text, with the buildings' text kept per record */
+[toJSON()] src/world/doc.ts:2773:    // The keys in `toJSON`'s order: those before the buildings, the buildings, those after.
+[toJSON()] src/world/doc.ts:2803:  /** The map's parts no tile holds (CLAUDE.md, "Streaming world"): its terrain stamps, fog, gullies, clouds, clearings, zones, people, transit, economy, weather and the like, as `toJSON` writes them - the streamed world's values (`editor/tileStore.ts` WorldMeta). */
+[toJSON()] src/world/doc.ts:2820:  /** `toJSON`, the buildings left out when `withBuildings` is false (`clone` shares them); 'apart': their list written empty, in its place (their table goes apart, `toJSONBuildingsApart`). `tablesApart`: the landscaping's and the lots' lists written empty too, their tables going apart (`toJSONTablesApart`, `image`). */
+[toJSON()] src/world/doc.ts:2845:      ...(withBuildings && this.buildings.size > 0 ? { buildings: withBuildings === 'apart' ? [] : this.buildings.toJSON() } : {}),
+[toJSON()] src/world/doc.ts:2848:        lots: tablesApart ? [] : this.lotStore.toJSON(),
+[toJSON()] src/world/doc.ts:2857:  /** One of the map's parts no tile holds, as `toJSON` writes it (`WorldPart`): the streamed world writes each apart, only when its kind changed (`worldStreamer.ts`). */
+[toJSON()] src/world/doc.ts:3708:/** `toJSON`'s keys written after the buildings (`RoadDoc.toText`). */
+[toJSON()] src/world/doc.ts:3773:  toJSON(): unknown {
+[toJSON()] src/world/doc.ts:3831:/** A node as the file holds it (`toJSON`, a map saved by tiles): copied, never aliased. */
+[toJSON()] src/world/docBinary.ts:5:/** A part of the map as `RoadDoc.toJSON` writes it: one key's value, or a run of a long list's items; its JSON in UTF-8. */
+[toJSON()] src/world/docBinary.ts:19:/** The map unpacked: its parts in `toJSON`'s order, and its tables (`TableSections`: their tables shared, the records written over them encoded). */
+[toJSON()] src/world/lotStore.ts:500:  toJSON(): Lot[] {
+[items.values()] src/world/buildings/sections.ts:31:  return { base: null, gone: new Float64Array(0), replaced: null, added: tableOf(items.values(), place) };
+[items.values()] src/world/buildings/store.ts:124:    return this.items.values();
+[items.values()] src/world/buildings/store.ts:148:    for (const b of this.items.values()) visit(b.x, b.y);
+[items.values()] src/world/buildings/store.ts:177:      for (const b of items.values()) grid.insert(b);
+[items.values()] src/world/buildings/store.ts:310:    return [...this.items.values()];
+[items.values()] src/world/buildings/store.ts:315:    return JSON.stringify([...this.items.values()]);
+[items.values()] src/world/lotStore.ts:105:    return this.items.values();
+[items.values()] src/world/lotStore.ts:119:    return this.listed ??= [...this.items.values()];
+[items.values()] src/world/lotStore.ts:151:    for (const lot of items.values()) { const b = lotBounds(lot); visit(b.minX, b.minY, b.maxX, b.maxY); }
+[items.values()] src/world/lotStore.ts:358:    const list = [...this.items.values()].map((lot) => lotRecord(lot, standing));
+[items.values()] src/world/lotStore.ts:366:    this.items = this.withWatch(source.items instanceof TableItems ? source.items.copy() : TableItems.over<number, Lot>(null, [], [], source.items.values()));
+[items.values()] src/world/lotStore.ts:442:    this.items = this.withWatch(source.items instanceof TableItems ? source.items.copy() : TableItems.over<number, Lot>(null, [], [], source.items.values()));
+[items.values()] src/world/lotStore.ts:501:    return [...this.items.values()].map((lot) => ({ ...lot, corners: lot.corners.map((q) => ({ x: q.x, y: q.y })) }));
+[items.values()] src/world/lotStore.ts:522:      } else for (const lot of items.values()) { const at = placeOf(lot); filing.file(lot.id, at.x, at.y); }
