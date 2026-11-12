@@ -1,0 +1,69 @@
+22:27:53 surfaces read: false
+22:28:07 saved: 10 objects
+22:28:08 saved: 20 objects
+22:28:09 saved: 30 objects
+22:28:10 saved: 40 objects
+22:28:11 saved: 50 objects
+22:28:12 saved: 60 objects
+22:28:12 saved: 70 objects
+22:28:13 saved: 80 objects
+22:28:15 saved: 90 objects
+22:28:15 saved: 100 objects
+22:28:16 saved: 110 objects
+22:28:17 saved: 120 objects
+22:28:17 saved: 130 objects
+22:28:18 saved: 140 objects
+22:28:19 saved: 150 objects
+22:28:20 saved: 160 objects
+22:28:20 saved: 170 objects
+22:28:21 saved: 180 objects
+22:28:22 saved: 190 objects
+22:28:23 saved: 200 objects
+22:28:24 saved: 210 objects
+22:28:25 saved: 220 objects
+22:28:25 saved: 230 objects
+22:28:27 saved: 240 objects
+22:28:28 saved: 250 objects
+22:28:28 saved: 260 objects
+22:28:30 saved: 270 objects
+22:28:31 saved: 280 objects
+22:28:32 saved: 290 objects
+22:28:33 saved: 300 objects
+22:28:34 saved: 310 objects
+22:28:35 saved: 320 objects
+22:28:37 saved: 330 objects
+22:28:38 saved: 340 objects
+22:28:39 saved: 350 objects
+22:28:40 saved: 360 objects
+22:28:42 saved: 370 objects
+22:28:43 saved: 380 objects
+22:28:44 saved: 390 objects
+22:28:45 saved: 400 objects
+22:28:46 saved: 410 objects
+22:28:48 saved: 420 objects
+22:28:49 saved: 430 objects
+22:28:51 saved: 440 objects
+22:28:53 saved: 450 objects
+22:28:54 saved: 460 objects
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.evaluate: Error: UNKNOWN: unknown error, open 'C:\Users\Jonathan\Documents\Projects\city\roadcraft\reports\vigia\entregas\39282f65-etapa1\catalogo-depois\groups\buildings-base-farthest-level.html'
+    at writeFileSync (node:fs:2482:20)
+    at writeReport (file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/_wtb-after/scripts/model-catalog-report.mjs:75:3)
+    at file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/_wtb-after/scripts/model-catalog.mjs:100:21
+    at binding (C:\Users\Jonathan\Documents\Projects\city\roadcraft\node_modules\playwright-core\lib\coreBundle.js:61153:48)
+    at BindingCall.call (C:\Users\Jonathan\Documents\Projects\city\roadcraft\node_modules\playwright-core\lib\coreBundle.js:61638:33)
+    at _Page._onBinding (C:\Users\Jonathan\Documents\Projects\city\roadcraft\node_modules\playwright-core\lib\coreBundle.js:61056:29)
+    at Proxy.<anonymous> (C:\Users\Jonathan\Documents\Projects\city\roadcraft\node_modules\playwright-core\lib\coreBundle.js:60971:63)
+    at Proxy._callHandler (C:\Users\Jonathan\Documents\Projects\city\roadcraft\node_modules\playwright-core\lib\coreBundle.js:10746:33)
+    at Proxy.emit (C:\Users\Jonathan\Documents\Projects\city\roadcraft\node_modules\playwright-core\lib\coreBundle.js:10736:16)
+    at Connection.dispatch (C:\Users\Jonathan\Documents\Projects\city\roadcraft\node_modules\playwright-core\lib\coreBundle.js:63525:25)
+    at call (C:\Users\Jonathan\Documents\Projects\city\roadcraft\_wtb-after\scripts\model-catalog.mjs:83:44)
+    at C:\Users\Jonathan\Documents\Projects\city\roadcraft\_wtb-after\scripts\model-catalog.mjs:112:23 {
+  log: []
+}
+
+Node.js v24.22.0
+exit 1

@@ -1,0 +1,61 @@
+{
+ "id": "Buildings: part models/brise",
+ "group": "Buildings: part models",
+ "name": "brise",
+ "variation": "",
+ "origin": "kit",
+ "source": "src/render/buildings/kit.ts",
+ "build": "instanced",
+ "triangles": 60,
+ "vertices": 120,
+ "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+ "bytesPerVertex": 32,
+ "geometryBytes": 5496,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 5496,
+ "materials": "MeshStandardMaterial \"building-part-brise\" [onBeforeCompile() {}|part-pose] (roughness 0.75, metalness 0, opacity 1)",
+ "shader": "patched built-in onBeforeCompile() {}|part-pose",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 60,
+   "vertices": 120
+  },
+  {
+   "level": 1,
+   "triangles": 24,
+   "vertices": 48
+  }
+ ],
+ "solids": "6 solids: 6 other",
+ "hiddenTriangles": 0,
+ "shadow": "casts: 1 box pieces under a shadow texel, else its model",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/1367-Buildings-part-models-brise.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "brise",
+   "triangles": 60,
+   "vertices": 120,
+   "bytes": 4200,
+   "material": "MeshStandardMaterial \"building-part-brise\" [onBeforeCompile() {}|part-pose] (roughness 0.75, metalness 0, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [],
+ "countKey": "part:brise",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

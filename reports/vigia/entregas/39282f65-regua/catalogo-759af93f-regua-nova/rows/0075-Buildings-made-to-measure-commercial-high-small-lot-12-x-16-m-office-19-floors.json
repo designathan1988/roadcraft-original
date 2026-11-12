@@ -1,0 +1,107 @@
+{
+ "id": "Buildings: made to measure/commercial high/small lot 12 x 16 m (office) (19 floors)",
+ "group": "Buildings: made to measure",
+ "name": "commercial high",
+ "variation": "small lot 12 x 16 m (office) (19 floors)",
+ "origin": "kit",
+ "source": "src/world/buildings/procedural.ts (madeToMeasure)",
+ "build": "merged",
+ "triangles": 1568,
+ "vertices": 2938,
+ "attributes": "position:3xFloat32=12B shellOctNormal:2xInt16=4B shellPaint:4xUint16=8B facadeSize:2xUint16=4B facadeCell:4xInt16=8B facadeOpening:4xUint8=4B facadeTrim:4xUint8=4B normal:3xFloat32=12B uv:2xFloat32=8B instancePoseA:4xFloat32=16B instancePoseB:4xFloat32=16B litSlot/instance:1xFloat32=4B roomA:4xUint16=8B roomB:4xUint16=8B roomC:4xUint16=8B roomD:4xUint16=8B roomE:4xUint16=8B color:3xFloat32=12B shellFinish:1xFloat32=4B aDecay:1xFloat32=4B shellGround:1xFloat32=4B",
+ "bytesPerVertex": 104,
+ "geometryBytes": 67368,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 67368,
+ "materials": "MeshStandardMaterial \"building-shell\" [building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial \"building-facade-near\" [building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial \"building-part-glass\" [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.06, metalness 0, opacity 1) | MeshStandardMaterial \"building-part-frame\" [thin-part-prefiltered-v3-cards|part-pose] (roughness 0.55, metalness 0.05, opacity 1) | MeshStandardMaterial \"building-part-column\" [onBeforeCompile() {}|part-pose] (roughness 0.82, metalness 0, opacity 1) | MeshStandardMaterial \"building-part-door\" [onBeforeCompile() {}|part-pose] (roughness 0.55, metalness 0, opacity 1) | MeshStandardMaterial \"building-part-glassDark\" [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.08, metalness 0, opacity 1)",
+ "shader": "patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose | patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8 | patched built-in room-lights-awake-interior-v15-recess|part-pose | patched built-in thin-part-prefiltered-v3-cards|part-pose | patched built-in onBeforeCompile() {}|part-pose",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 1568,
+   "vertices": 2938
+  }
+ ],
+ "solids": "404 solids: 52 other, 3 open prism, 345 quad, 4 box",
+ "hiddenTriangles": 10,
+ "shadow": "",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 19,
+ "trianglesPerFloor": 83,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/0075-Buildings-made-to-measure-commercial-high-small-lot-12-x-16-m-office-19-floors.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "building-shell",
+   "triangles": 618,
+   "vertices": 1006,
+   "bytes": 27852,
+   "material": "MeshStandardMaterial \"building-shell\" [building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose] (vertex colours, roughness 1, metalness 1, opacity 1)"
+  },
+  {
+   "label": "building-shell",
+   "triangles": 18,
+   "vertices": 36,
+   "bytes": 1692,
+   "material": "MeshStandardMaterial \"building-facade-near\" [building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8] (vertex colours, roughness 1, metalness 1, opacity 1)"
+  },
+  {
+   "label": "building-glass x342",
+   "triangles": 684,
+   "vertices": 1368,
+   "bytes": 26132,
+   "material": "MeshStandardMaterial \"building-part-glass\" [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.06, metalness 0, opacity 1)"
+  },
+  {
+   "label": "building-frame",
+   "triangles": 56,
+   "vertices": 144,
+   "bytes": 4976,
+   "material": "MeshStandardMaterial \"building-part-frame\" [thin-part-prefiltered-v3-cards|part-pose] (roughness 0.55, metalness 0.05, opacity 1)"
+  },
+  {
+   "label": "building-concrete x2",
+   "triangles": 24,
+   "vertices": 48,
+   "bytes": 904,
+   "material": "MeshStandardMaterial \"building-part-column\" [onBeforeCompile() {}|part-pose] (roughness 0.82, metalness 0, opacity 1)"
+  },
+  {
+   "label": "building-door x2",
+   "triangles": 124,
+   "vertices": 248,
+   "bytes": 4404,
+   "material": "MeshStandardMaterial \"building-part-door\" [onBeforeCompile() {}|part-pose] (roughness 0.55, metalness 0, opacity 1)"
+  },
+  {
+   "label": "building-glassDark x2",
+   "triangles": 4,
+   "vertices": 8,
+   "bytes": 292,
+   "material": "MeshStandardMaterial \"building-part-glassDark\" [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.08, metalness 0, opacity 1)"
+  },
+  {
+   "label": "building-lotBox x4",
+   "triangles": 40,
+   "vertices": 80,
+   "bytes": 1116,
+   "material": "MeshStandardMaterial \"building-shell\" [building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose] (vertex colours, roughness 1, metalness 1, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [
+  "built alone at its detail level (L0) by buildBuildingMeshes, every part with it; its far levels (facade L1, masses) are the building layer's cells"
+ ],
+ "countKey": "building:Buildings: made to measure:commercial high:small lot 12 x 16 m (office)",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

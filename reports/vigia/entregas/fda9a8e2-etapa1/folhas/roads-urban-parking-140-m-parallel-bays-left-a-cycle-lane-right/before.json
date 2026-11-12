@@ -1,0 +1,180 @@
+{
+ "id": "Roads/urban parking/140 m, parallel bays left, a cycle lane right",
+ "key": "Roads/urban parking/140 m, parallel bays left, a cycle lane right",
+ "metrics": {
+  "id": "Roads/urban parking/140 m, parallel bays left, a cycle lane right",
+  "triangles": 476,
+  "vertices": 624,
+  "index": "Uint16",
+  "geometryBytes": 57936,
+  "bytesPerVertex": 56,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B roadSection:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [terrain-splat-v34-verge-lots] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v2-footway-lots-own] (vertex colours, roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v2-carriageway-lots-own] (vertex colours, roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [paint-worn-aa] (transparent, roughness 0.72, metalness 0, opacity 1) | MeshStandardMaterial [paint-worn-aa-dashed] (transparent, roughness 0.72, metalness 0, opacity 1)",
+  "draws": 26,
+  "levels": [
+   {
+    "triangles": 476,
+    "vertices": 624
+   },
+   {
+    "triangles": 476,
+    "vertices": 624
+   }
+  ],
+  "hidden": 0,
+  "solids": "48 solids: 15 other, 33 quad",
+  "size": [
+   140.2002410888672,
+   0.6699999868869781,
+   18
+  ],
+  "pieces": [
+   {
+    "label": "verge",
+    "triangles": 52,
+    "vertices": 40
+   },
+   {
+    "label": "verge",
+    "triangles": 52,
+    "vertices": 40
+   },
+   {
+    "label": "verge",
+    "triangles": 52,
+    "vertices": 40
+   },
+   {
+    "label": "verge",
+    "triangles": 52,
+    "vertices": 40
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 35,
+    "vertices": 58
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 35,
+    "vertices": 58
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 35,
+    "vertices": 58
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 35,
+    "vertices": 58
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 13,
+    "vertices": 21
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 13,
+    "vertices": 21
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 13,
+    "vertices": 21
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 13,
+    "vertices": 21
+   },
+   {
+    "label": "asphalt",
+    "triangles": 4,
+    "vertices": 6
+   },
+   {
+    "label": "asphalt",
+    "triangles": 3,
+    "vertices": 5
+   },
+   {
+    "label": "asphalt",
+    "triangles": 3,
+    "vertices": 5
+   },
+   {
+    "label": "asphalt",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-e1c45a",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-e1c45a",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-efece0",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-efece0",
+    "triangles": 24,
+    "vertices": 48
+   },
+   {
+    "label": "markings-efece0",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-efece0",
+    "triangles": 24,
+    "vertices": 48
+   },
+   {
+    "label": "markings-a8473e",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-a8473e",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-efece0~dashed",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-efece0~dashed",
+    "triangles": 2,
+    "vertices": 4
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   -0.05499999225139618,
+   0
+  ],
+  "distance": 91.80159053051307,
+  "floor": -0.8299999856948852,
+  "long": "x"
+ },
+ "levelErrors": [
+  2.6598033925276674e-9
+ ],
+ "distance": 91.80159053051307,
+ "error": null,
+ "overlap": null
+}

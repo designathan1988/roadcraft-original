@@ -1,0 +1,59 @@
+{
+ "id": "Buildings: shell pieces/roof/emitRoof, 4 triangles, 24.00 x 60.37 x 26.00 m, from commercial high medium lot",
+ "group": "Buildings: shell pieces",
+ "name": "roof",
+ "variation": "emitRoof, 4 triangles, 24.00 x 60.37 x 26.00 m, from commercial high medium lot",
+ "origin": "kit",
+ "source": "src/render/buildings/buildingMesh.ts (emitRoof)",
+ "build": "merged",
+ "triangles": 4,
+ "vertices": 12,
+ "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+ "bytesPerVertex": 36,
+ "geometryBytes": 432,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 432,
+ "materials": "MeshStandardMaterial (vertex colours, roughness 0.85, metalness 0, opacity 1)",
+ "shader": "three MeshStandardMaterial",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 4,
+   "vertices": 12
+  }
+ ],
+ "solids": "2 solids: 2 quad",
+ "hiddenTriangles": 0,
+ "shadow": "",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/1215-Buildings-shell-pieces-roof-emitRoof-4-triangles-24-00-x-60-37-x-26-00-m-from-co.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "emitRoof",
+   "triangles": 4,
+   "vertices": 12,
+   "bytes": 432,
+   "material": "MeshStandardMaterial (vertex colours, roughness 0.85, metalness 0, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [
+  "finishes: stone, roofing",
+  "faces exactly as the shell lays them (Shell.face), not welded: the engine welds equal vertices, so its vertex count is lower"
+ ],
+ "countKey": "",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

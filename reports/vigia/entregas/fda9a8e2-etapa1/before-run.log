@@ -1,0 +1,691 @@
+[2m17:36:29[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m Re-optimizing dependencies because vite config has changed
+[2m17:36:30[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [optimizer] scanning dependencies...
+[2m17:36:36[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [optimizer] bundling dependencies...
+[2m17:36:41[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mdependency optimized: [33mthree/examples/jsm/exporters/GLTFExporter.js[32m[39m
+[2m17:36:41[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mTHREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision
+(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision
+(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision
+(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision
+(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision
+[2m17:36:44[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_34 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run "npm run cook:people"
+    at http://127.0.0.1:5377/src/render/people/cookedLoad.ts:15:35
+[2m17:36:44[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_55 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run "npm run cook:people"
+    at http://127.0.0.1:5377/src/render/people/cookedLoad.ts:15:35
+[2m17:36:44[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_44 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run "npm run cook:people"
+    at http://127.0.0.1:5377/src/render/people/cookedLoad.ts:15:35
+[2m17:36:44[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_48 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run "npm run cook:people"
+    at http://127.0.0.1:5377/src/render/people/cookedLoad.ts:15:35
+[2m17:36:44[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_14 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run "npm run cook:people"
+    at http://127.0.0.1:5377/src/render/people/cookedLoad.ts:15:35
+[2m17:36:47[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_64 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run "npm run cook:people"
+    at http://127.0.0.1:5377/src/render/people/cookedLoad.ts:15:35
+[2m17:36:47[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_00 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run "npm run cook:people"
+    at http://127.0.0.1:5377/src/render/people/cookedLoad.ts:15:35
+[2m17:36:47[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_08 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run "npm run cook:people"
+    at http://127.0.0.1:5377/src/render/people/cookedLoad.ts:15:35
+[2m17:36:47[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_38 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run "npm run cook:people"
+    at http://127.0.0.1:5377/src/render/people/cookedLoad.ts:15:35
+[2m17:36:47[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_59 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run "npm run cook:people"
+    at http://127.0.0.1:5377/src/render/people/cookedLoad.ts:15:35
+[2m17:36:47[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_45 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run "npm run cook:people"
+    at http://127.0.0.1:5377/src/render/people/cookedLoad.ts:15:35
+[2m17:36:47[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_51 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run "npm run cook:people"
+    at http://127.0.0.1:5377/src/render/people/cookedLoad.ts:15:35
+[2m17:36:47[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_18 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run "npm run cook:people"
+    at http://127.0.0.1:5377/src/render/people/cookedLoad.ts:15:35
+[2m17:36:47[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_67 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run "npm run cook:people"
+    at http://127.0.0.1:5377/src/render/people/cookedLoad.ts:15:35
+[2m17:36:47[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_04 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run "npm run cook:people"
+    at http://127.0.0.1:5377/src/render/people/cookedLoad.ts:15:35
+[2m17:36:47[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at http://127.0.0.1:5377/src/lab/catalog/run.ts:108:65
+[2m17:36:47[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mCitizen mh_11 failed to load; asked again in 5000 ms Error: The cooked people are stale: cooked as 62cf9d765ce349d9, this build's cast is 1428ebb74154c18c. Run "npm run cook:people"
+    at http://127.0.0.1:5377/src/render/people/cookedLoad.ts:15:35
+[2m17:36:47[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:47[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:47[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:47[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:47[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:47[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:47[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:48[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:48[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:48[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:48[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:48[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:48[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:48[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:48[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:48[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:48[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:49[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:49[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:49[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:49[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:49[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:50[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:50[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:50[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:53[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:53[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:53[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:53[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:53[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:53[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:53[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:53[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+[2m17:36:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[roads] the road tile workers failed; the tiles are built on the page Error: the tiles are built on the page
+    at Object.tiles (http://127.0.0.1:5377/src/lab/catalog/layout.ts:177:31)
+    at ask (http://127.0.0.1:5377/src/render/roadSurfaces.ts:425:13)
+    at askNext (http://127.0.0.1:5377/src/render/roadSurfaces.ts:442:15)
+    at buildAll (http://127.0.0.1:5377/src/render/roadSurfaces.ts:445:68)
+    at buildAll.next (<anonymous>)
+    at roadSurfaceSteps (http://127.0.0.1:5377/src/render/roadSurfaces.ts:478:10)
+    at roadSurfaceSteps.next (<anonymous>)
+    at surfacesOf (http://127.0.0.1:5377/src/lab/catalog/layout.ts:191:22)
+    at layoutItems (http://127.0.0.1:5377/src/lab/catalog/layout.ts:221:24)
+    at async group (http://127.0.0.1:5377/src/lab/catalog/run.ts:91:3)
+20:36:54 54 objects in "roads, structures" matching /^Roads//
+20:36:56 before: Roads/avenue bend/two roads at a right angle
+20:36:57 before: Roads/avenue bridge/140 m
+20:36:58 before: Roads/avenue junction/four ways
+20:36:59 before: Roads/avenue junction/three ways
+20:37:00 before: Roads/avenue one way/140 m
+20:37:01 before: Roads/avenue parking/140 m, parallel bays left, a cycle lane right
+20:37:01 before: Roads/avenue raised/140 m elevated
+20:37:02 before: Roads/avenue straight/140 m
+20:37:04 before: Roads/avenue tunnel/140 m
+20:37:05 before: Roads/boulevard bend/two roads at a right angle
+20:37:06 before: Roads/boulevard bridge/140 m
+20:37:07 before: Roads/boulevard junction/four ways
+20:37:08 before: Roads/boulevard junction/three ways
+20:37:08 before: Roads/boulevard one way/140 m
+20:37:09 before: Roads/boulevard parking/140 m, parallel bays left, a cycle lane right
+20:37:10 before: Roads/boulevard raised/140 m elevated
+20:37:11 before: Roads/boulevard straight/140 m
+20:37:13 before: Roads/boulevard tunnel/140 m
+20:37:13 before: Roads/highway bend/two roads at a right angle
+20:37:14 before: Roads/highway bridge/140 m
+20:37:15 before: Roads/highway junction/four ways
+20:37:16 before: Roads/highway junction/three ways
+20:37:17 before: Roads/highway one way/140 m
+20:37:17 before: Roads/highway parking/140 m, parallel bays left, a cycle lane right
+20:37:18 before: Roads/highway raised/140 m elevated
+20:37:19 before: Roads/highway straight/140 m
+20:37:21 before: Roads/highway tunnel/140 m
+20:37:21 before: Roads/local bend/two roads at a right angle
+20:37:22 before: Roads/local bridge/140 m
+20:37:23 before: Roads/local junction/four ways
+20:37:24 before: Roads/local junction/three ways
+20:37:25 before: Roads/local one way/140 m
+20:37:26 before: Roads/local parking/140 m, parallel bays left, a cycle lane right
+20:37:27 before: Roads/local raised/140 m elevated
+20:37:27 before: Roads/local straight/140 m
+20:37:28 before: Roads/local tunnel/140 m
+20:37:29 before: Roads/ramp bend/two roads at a right angle
+20:37:30 before: Roads/ramp bridge/140 m
+20:37:30 before: Roads/ramp junction/four ways
+20:37:31 before: Roads/ramp junction/three ways
+20:37:32 before: Roads/ramp one way/140 m
+20:37:32 before: Roads/ramp parking/140 m, parallel bays left, a cycle lane right
+20:37:33 before: Roads/ramp raised/140 m elevated
+20:37:33 before: Roads/ramp straight/140 m
+20:37:34 before: Roads/ramp tunnel/140 m
+20:37:35 before: Roads/urban bend/two roads at a right angle
+20:37:36 before: Roads/urban bridge/140 m
+20:37:37 before: Roads/urban junction/four ways
+20:37:38 before: Roads/urban junction/three ways
+20:37:38 before: Roads/urban one way/140 m
+20:37:39 before: Roads/urban parking/140 m, parallel bays left, a cycle lane right
+20:37:39 before: Roads/urban raised/140 m elevated
+20:37:40 before: Roads/urban straight/140 m
+20:37:41 before: Roads/urban tunnel/140 m
+20:37:42 -> C:\Users\Jonathan\Documents\Projects\city\roadcraft\reports\vigia\entregas\fda9a8e2-etapa1\folhas

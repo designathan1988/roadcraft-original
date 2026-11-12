@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buildings: presets</title><style>
+:root { --bg: #f5f6f8; --card: #fff; --ink: #18202a; --muted: #5d6875; --line: #dde1e6; --accent: #2457c5; }
+@media (prefers-color-scheme: dark) { :root { --bg: #14181d; --card: #1c2228; --ink: #e8ecf0; --muted: #9aa5b1; --line: #2c343c; --accent: #7ea6ff; } }
+* { box-sizing: border-box; } body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 system-ui, sans-serif; }
+header, main { max-width: 1400px; margin: 0 auto; padding: 16px; } h1 { margin: 8px 0; font-size: 24px; } h2 { margin: 32px 0 8px; font-size: 19px; }
+.muted { color: var(--muted); } nav { columns: 3 260px; font-size: 13px; } nav a { display: block; color: var(--accent); text-decoration: none; }
+table.sum { border-collapse: collapse; width: 100%; font-size: 13px; } table.sum td, table.sum th { padding: 4px 8px; border-bottom: 1px solid var(--line); text-align: right; } table.sum td:first-child, table.sum th:first-child { text-align: left; }
+.row { display: grid; grid-template-columns: minmax(0, 560px) minmax(0, 1fr); gap: 16px; background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 12px; margin: 10px 0; }
+.row img { width: 100%; height: auto; border-radius: 4px; display: block; } .none { display: grid; place-items: center; min-height: 120px; color: var(--muted); border: 1px dashed var(--line); }
+.row h3 { margin: 0 0 6px; font-size: 16px; } .row small { color: var(--muted); font-weight: 400; }
+dl { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 2px 10px; margin: 0; font-size: 13px; } dt { color: var(--muted); } dd { margin: 0; overflow-wrap: anywhere; }
+.file { display: inline-block; margin-top: 8px; color: var(--accent); } code { font-size: 12px; }
+@media (max-width: 800px) { .row { grid-template-columns: 1fr; } dl { grid-template-columns: 1fr; } }
+a { color: var(--accent); }
+.advice { border-left: 3px solid #d0702a; padding: 4px 10px; margin: 0 0 8px; font-size: 13px; } .advice ul { margin: 4px 0 0; padding-left: 18px; }
+</style></head><body>
+<header><p><a href="../index.html">Engine Geometry Catalogue</a></p><h1>Buildings: presets</h1><p class="muted">11 objects, 82,196 triangles one of each.</p></header>
+<main><article class="row" id="Buildings: presets/tower/preset (14 floors)">
+  <a href="../images/0011-Buildings-presets-tower-preset-14-floors.png"><img loading="lazy" src="../images/0011-Buildings-presets-tower-preset-14-floors.png" alt="Buildings: presets/tower/preset (14 floors)"></a>
+  <div class="data">
+    <h3>tower <small>preset (14 floors)</small></h3>
+    
+    <dl>
+      <dt>Triangles</dt><dd>48,592</dd><dt>Vertices</dt><dd>86,069</dd>
+      <dt>Levels</dt><dd>L0 48,592</dd>
+      <dt>Memory</dt><dd>210 KB (geometry 194 KB, textures 16 KB)</dd>
+      <dt>Per vertex</dt><dd>104 B: position:3xFloat32=12B shellOctNormal:2xInt16=4B shellPaint:4xUint16=8B facadeSize:2xUint16=4B facadeCell:4xInt16=8B facadeOpening:4xUint8=4B facadeTrim:4xUint8=4B normal:3xFloat32=12B uv:2xFloat32=8B instancePoseA:4xFloat32=16B instancePoseB:4xFloat32=16B litSlot/instance:1xFloat32=4B roomA:4xUint16=8B roomB:4xUint16=8B roomC:4xUint16=8B roomD:4xUint16=8B roomE:4xUint16=8B color:3xFloat32=12B</dd>
+      <dt>Drawn as</dt><dd>merged</dd><dt>Material</dt><dd>MeshStandardMaterial &quot;building-shell&quot; [building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial &quot;building-facade-near&quot; [building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial &quot;building-part-glass&quot; [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.06, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-frame&quot; [thin-part-prefiltered-v4-cards|part-pose] (roughness 0.55, metalness 0.05, opacity 1) | MeshStandardMaterial &quot;building-part-column&quot; [onBeforeCompile() {}|part-pose] (roughness 0.82, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-door&quot; [onBeforeCompile() {}|part-pose] (roughness 0.55, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-shutter&quot; [onBeforeCompile() {}|part-pose] (roughness 0.5, metalness 0.45, opacity 1) | MeshStandardMaterial &quot;building-part-railing&quot; [thin-part-prefiltered-v4-cards|part-pose] (roughness 0.45, metalness 0.55, opacity 1) | MeshStandardMaterial &quot;building-part-roofRailing&quot; [thin-part-prefiltered-v4-cards|part-pose] (roughness 0.45, metalness 0.55, opacity 1) | MeshStandardMaterial &quot;building-part-awning&quot; [onBeforeCompile() {}|part-pose] (roughness 0.92, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-glassDark&quot; [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.08, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-lamp&quot; [outside-lamp-lot|part-pose] (roughness 0.35, metalness 0, opacity 1) | MeshBasicMaterial &quot;building-part-wash&quot; [outside-wash-lot|part-pose] (transparent, opacity 0) | MeshStandardMaterial &quot;building-part-edge&quot; [onBeforeCompile() {}|part-pose] (roughness 0.7, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-acUnit&quot; [facade-ac-front|part-pose] (vertex colours, roughness 0.55, metalness 0.15, opacity 1) | MeshStandardMaterial &quot;building-part-pot&quot; [onBeforeCompile() {}|part-pose] (vertex colours, roughness 0.85, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-foliage&quot; [onBeforeCompile() {}|part-pose] (vertex colours, double-sided, roughness 0.75, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-bush&quot; [onBeforeCompile() {}|part-pose] (vertex colours, double-sided, roughness 0.8, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-chair&quot; [thin-part-prefiltered-v4-cards|part-pose] (vertex colours, roughness 0.6, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-table&quot; [thin-part-prefiltered-v4-cards|part-pose] (vertex colours, roughness 0.55, metalness 0.1, opacity 1) | MeshStandardMaterial &quot;building-part-airer&quot; [thin-part-prefiltered-v4-cards|part-pose] (vertex colours, roughness 0.8, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-bike&quot; [thin-part-prefiltered-v4-cards|part-pose] (vertex colours, double-sided, roughness 0.4, metalness 0.3, opacity 1)</dd><dt>Shader</dt><dd>patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose | patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8 | patched built-in room-lights-awake-interior-v15-recess|part-pose | patched built-in thin-part-prefiltered-v4-cards|part-pose | patched built-in onBeforeCompile() {}|part-pose | patched built-in outside-lamp-lot|part-pose | patched built-in outside-wash-lot|part-pose | patched built-in facade-ac-front|part-pose</dd>
+      <dt>Solids</dt><dd>4455 solids: 3487 other, 291 quad, 324 open prism, 305 box, 48 closed cylinder</dd><dt>Hidden triangles</dt><dd>102</dd>
+      <dt>Shadow</dt><dd>-</dd>
+      <dt>Floors</dt><dd>14 (3,471 triangles a floor)</dd>
+      <dt>Textures</dt><dd>map DataTexture 64x64 RGBA 8-bit, 1 levels, 16384 B</dd>
+      <dt>Source</dt><dd><code>src/world/buildings/blueprints.ts (BLUEPRINTS, instantiate)</code> (kit)</dd>
+      <dt>Notes</dt><dd>built alone at its detail level (L0) by buildBuildingMeshes, every part with it; its far levels (facade L1, masses) are the building layer's cells</dd>
+    </dl>
+    
+  </div>
+</article>
+<article class="row" id="Buildings: presets/apartments/preset (5 floors)">
+  <a href="../images/0008-Buildings-presets-apartments-preset-5-floors.png"><img loading="lazy" src="../images/0008-Buildings-presets-apartments-preset-5-floors.png" alt="Buildings: presets/apartments/preset (5 floors)"></a>
+  <div class="data">
+    <h3>apartments <small>preset (5 floors)</small></h3>
+    
+    <dl>
+      <dt>Triangles</dt><dd>11,015</dd><dt>Vertices</dt><dd>19,463</dd>
+      <dt>Levels</dt><dd>L0 11,015</dd>
+      <dt>Memory</dt><dd>134 KB (geometry 118 KB, textures 16 KB)</dd>
+      <dt>Per vertex</dt><dd>104 B: position:3xFloat32=12B shellOctNormal:2xInt16=4B shellPaint:4xUint16=8B facadeSize:2xUint16=4B facadeCell:4xInt16=8B facadeOpening:4xUint8=4B facadeTrim:4xUint8=4B normal:3xFloat32=12B uv:2xFloat32=8B instancePoseA:4xFloat32=16B instancePoseB:4xFloat32=16B litSlot/instance:1xFloat32=4B roomA:4xUint16=8B roomB:4xUint16=8B roomC:4xUint16=8B roomD:4xUint16=8B roomE:4xUint16=8B color:3xFloat32=12B</dd>
+      <dt>Drawn as</dt><dd>merged</dd><dt>Material</dt><dd>MeshStandardMaterial &quot;building-shell&quot; [building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial &quot;building-facade-near&quot; [building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial &quot;building-part-glass&quot; [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.06, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-frame&quot; [thin-part-prefiltered-v4-cards|part-pose] (roughness 0.55, metalness 0.05, opacity 1) | MeshStandardMaterial &quot;building-part-column&quot; [onBeforeCompile() {}|part-pose] (roughness 0.82, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-door&quot; [onBeforeCompile() {}|part-pose] (roughness 0.55, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-shutter&quot; [onBeforeCompile() {}|part-pose] (roughness 0.5, metalness 0.45, opacity 1) | MeshStandardMaterial &quot;building-part-railing&quot; [thin-part-prefiltered-v4-cards|part-pose] (roughness 0.45, metalness 0.55, opacity 1) | MeshStandardMaterial &quot;building-part-glassDark&quot; [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.08, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-lamp&quot; [outside-lamp-lot|part-pose] (roughness 0.35, metalness 0, opacity 1) | MeshBasicMaterial &quot;building-part-wash&quot; [outside-wash-lot|part-pose] (transparent, opacity 0) | MeshStandardMaterial &quot;building-part-edge&quot; [onBeforeCompile() {}|part-pose] (roughness 0.7, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-acUnit&quot; [facade-ac-front|part-pose] (vertex colours, roughness 0.55, metalness 0.15, opacity 1) | MeshStandardMaterial &quot;building-part-pot&quot; [onBeforeCompile() {}|part-pose] (vertex colours, roughness 0.85, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-foliage&quot; [onBeforeCompile() {}|part-pose] (vertex colours, double-sided, roughness 0.75, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-bush&quot; [onBeforeCompile() {}|part-pose] (vertex colours, double-sided, roughness 0.8, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-chair&quot; [thin-part-prefiltered-v4-cards|part-pose] (vertex colours, roughness 0.6, metalness 0, opacity 1)</dd><dt>Shader</dt><dd>patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose | patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8 | patched built-in room-lights-awake-interior-v15-recess|part-pose | patched built-in thin-part-prefiltered-v4-cards|part-pose | patched built-in onBeforeCompile() {}|part-pose | patched built-in outside-lamp-lot|part-pose | patched built-in outside-wash-lot|part-pose | patched built-in facade-ac-front|part-pose</dd>
+      <dt>Solids</dt><dd>1058 solids: 819 other, 124 quad, 71 open prism, 35 box, 9 closed cylinder</dd><dt>Hidden triangles</dt><dd>12</dd>
+      <dt>Shadow</dt><dd>-</dd>
+      <dt>Floors</dt><dd>5 (2,203 triangles a floor)</dd>
+      <dt>Textures</dt><dd>map DataTexture 64x64 RGBA 8-bit, 1 levels, 16384 B</dd>
+      <dt>Source</dt><dd><code>src/world/buildings/blueprints.ts (BLUEPRINTS, instantiate)</code> (kit)</dd>
+      <dt>Notes</dt><dd>built alone at its detail level (L0) by buildBuildingMeshes, every part with it; its far levels (facade L1, masses) are the building layer's cells</dd>
+    </dl>
+    
+  </div>
+</article>
+<article class="row" id="Buildings: presets/mixed/preset (5 floors)">
+  <a href="../images/0014-Buildings-presets-mixed-preset-5-floors.png"><img loading="lazy" src="../images/0014-Buildings-presets-mixed-preset-5-floors.png" alt="Buildings: presets/mixed/preset (5 floors)"></a>
+  <div class="data">
+    <h3>mixed <small>preset (5 floors)</small></h3>
+    
+    <dl>
+      <dt>Triangles</dt><dd>6,368</dd><dt>Vertices</dt><dd>11,922</dd>
+      <dt>Levels</dt><dd>L0 6,368</dd>
+      <dt>Memory</dt><dd>121 KB (geometry 105 KB, textures 16 KB)</dd>
+      <dt>Per vertex</dt><dd>104 B: position:3xFloat32=12B shellOctNormal:2xInt16=4B shellPaint:4xUint16=8B facadeSize:2xUint16=4B facadeCell:4xInt16=8B facadeOpening:4xUint8=4B facadeTrim:4xUint8=4B normal:3xFloat32=12B uv:2xFloat32=8B instancePoseA:4xFloat32=16B instancePoseB:4xFloat32=16B litSlot/instance:1xFloat32=4B roomA:4xUint16=8B roomB:4xUint16=8B roomC:4xUint16=8B roomD:4xUint16=8B roomE:4xUint16=8B color:3xFloat32=12B</dd>
+      <dt>Drawn as</dt><dd>merged</dd><dt>Material</dt><dd>MeshStandardMaterial &quot;building-shell&quot; [building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial &quot;building-facade-near&quot; [building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial &quot;building-part-glass&quot; [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.06, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-frame&quot; [thin-part-prefiltered-v4-cards|part-pose] (roughness 0.55, metalness 0.05, opacity 1) | MeshStandardMaterial &quot;building-part-column&quot; [onBeforeCompile() {}|part-pose] (roughness 0.82, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-door&quot; [onBeforeCompile() {}|part-pose] (roughness 0.55, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-shutter&quot; [onBeforeCompile() {}|part-pose] (roughness 0.5, metalness 0.45, opacity 1) | MeshStandardMaterial &quot;building-part-railing&quot; [thin-part-prefiltered-v4-cards|part-pose] (roughness 0.45, metalness 0.55, opacity 1) | MeshStandardMaterial &quot;building-part-awning&quot; [onBeforeCompile() {}|part-pose] (roughness 0.92, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-glassDark&quot; [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.08, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-lamp&quot; [outside-lamp-lot|part-pose] (roughness 0.35, metalness 0, opacity 1) | MeshBasicMaterial &quot;building-part-wash&quot; [outside-wash-lot|part-pose] (transparent, opacity 0) | MeshStandardMaterial &quot;building-part-edge&quot; [onBeforeCompile() {}|part-pose] (roughness 0.7, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-acUnit&quot; [facade-ac-front|part-pose] (vertex colours, roughness 0.55, metalness 0.15, opacity 1) | MeshStandardMaterial &quot;building-part-pot&quot; [onBeforeCompile() {}|part-pose] (vertex colours, roughness 0.85, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-bush&quot; [onBeforeCompile() {}|part-pose] (vertex colours, double-sided, roughness 0.8, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-chair&quot; [thin-part-prefiltered-v4-cards|part-pose] (vertex colours, roughness 0.6, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-table&quot; [thin-part-prefiltered-v4-cards|part-pose] (vertex colours, roughness 0.55, metalness 0.1, opacity 1) | MeshStandardMaterial &quot;building-part-airer&quot; [thin-part-prefiltered-v4-cards|part-pose] (vertex colours, roughness 0.8, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-bike&quot; [thin-part-prefiltered-v4-cards|part-pose] (vertex colours, double-sided, roughness 0.4, metalness 0.3, opacity 1)</dd><dt>Shader</dt><dd>patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose | patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8 | patched built-in room-lights-awake-interior-v15-recess|part-pose | patched built-in thin-part-prefiltered-v4-cards|part-pose | patched built-in onBeforeCompile() {}|part-pose | patched built-in outside-lamp-lot|part-pose | patched built-in outside-wash-lot|part-pose | patched built-in facade-ac-front|part-pose</dd>
+      <dt>Solids</dt><dd>634 solids: 464 other, 81 quad, 46 open prism, 40 box, 3 closed cylinder</dd><dt>Hidden triangles</dt><dd>24</dd>
+      <dt>Shadow</dt><dd>-</dd>
+      <dt>Floors</dt><dd>5 (1,274 triangles a floor)</dd>
+      <dt>Textures</dt><dd>map DataTexture 64x64 RGBA 8-bit, 1 levels, 16384 B</dd>
+      <dt>Source</dt><dd><code>src/world/buildings/blueprints.ts (BLUEPRINTS, instantiate)</code> (kit)</dd>
+      <dt>Notes</dt><dd>built alone at its detail level (L0) by buildBuildingMeshes, every part with it; its far levels (facade L1, masses) are the building layer's cells</dd>
+    </dl>
+    
+  </div>
+</article>
+<article class="row" id="Buildings: presets/courtyard/preset (3 floors)">
+  <a href="../images/0015-Buildings-presets-courtyard-preset-3-floors.png"><img loading="lazy" src="../images/0015-Buildings-presets-courtyard-preset-3-floors.png" alt="Buildings: presets/courtyard/preset (3 floors)"></a>
+  <div class="data">
+    <h3>courtyard <small>preset (3 floors)</small></h3>
+    
+    <dl>
+      <dt>Triangles</dt><dd>5,712</dd><dt>Vertices</dt><dd>10,351</dd>
+      <dt>Levels</dt><dd>L0 5,712</dd>
+      <dt>Memory</dt><dd>187 KB (geometry 171 KB, textures 16 KB)</dd>
+      <dt>Per vertex</dt><dd>104 B: position:3xFloat32=12B shellOctNormal:2xInt16=4B shellPaint:4xUint16=8B facadeSize:2xUint16=4B facadeCell:4xInt16=8B facadeOpening:4xUint8=4B facadeTrim:4xUint8=4B normal:3xFloat32=12B uv:2xFloat32=8B instancePoseA:4xFloat32=16B instancePoseB:4xFloat32=16B litSlot/instance:1xFloat32=4B roomA:4xUint16=8B roomB:4xUint16=8B roomC:4xUint16=8B roomD:4xUint16=8B roomE:4xUint16=8B color:3xFloat32=12B</dd>
+      <dt>Drawn as</dt><dd>merged</dd><dt>Material</dt><dd>MeshStandardMaterial &quot;building-shell&quot; [building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial &quot;building-facade-near&quot; [building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial &quot;building-part-glass&quot; [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.06, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-frame&quot; [thin-part-prefiltered-v4-cards|part-pose] (roughness 0.55, metalness 0.05, opacity 1) | MeshStandardMaterial &quot;building-part-column&quot; [onBeforeCompile() {}|part-pose] (roughness 0.82, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-door&quot; [onBeforeCompile() {}|part-pose] (roughness 0.55, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-shutter&quot; [onBeforeCompile() {}|part-pose] (roughness 0.5, metalness 0.45, opacity 1) | MeshStandardMaterial &quot;building-part-glassDark&quot; [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.08, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-lamp&quot; [outside-lamp-lot|part-pose] (roughness 0.35, metalness 0, opacity 1) | MeshBasicMaterial &quot;building-part-wash&quot; [outside-wash-lot|part-pose] (transparent, opacity 0) | MeshStandardMaterial &quot;building-part-edge&quot; [onBeforeCompile() {}|part-pose] (roughness 0.7, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-acUnit&quot; [facade-ac-front|part-pose] (vertex colours, roughness 0.55, metalness 0.15, opacity 1)</dd><dt>Shader</dt><dd>patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose | patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8 | patched built-in room-lights-awake-interior-v15-recess|part-pose | patched built-in thin-part-prefiltered-v4-cards|part-pose | patched built-in onBeforeCompile() {}|part-pose | patched built-in outside-lamp-lot|part-pose | patched built-in outside-wash-lot|part-pose | patched built-in facade-ac-front|part-pose</dd>
+      <dt>Solids</dt><dd>556 solids: 345 other, 184 quad, 25 open prism, 2 box</dd><dt>Hidden triangles</dt><dd>14</dd>
+      <dt>Shadow</dt><dd>-</dd>
+      <dt>Floors</dt><dd>3 (1,904 triangles a floor)</dd>
+      <dt>Textures</dt><dd>map DataTexture 64x64 RGBA 8-bit, 1 levels, 16384 B</dd>
+      <dt>Source</dt><dd><code>src/world/buildings/blueprints.ts (BLUEPRINTS, instantiate)</code> (kit)</dd>
+      <dt>Notes</dt><dd>built alone at its detail level (L0) by buildBuildingMeshes, every part with it; its far levels (facade L1, masses) are the building layer's cells</dd>
+    </dl>
+    
+  </div>
+</article>
+<article class="row" id="Buildings: presets/house/preset (3 floors)">
+  <a href="../images/0002-Buildings-presets-house-preset-3-floors.png"><img loading="lazy" src="../images/0002-Buildings-presets-house-preset-3-floors.png" alt="Buildings: presets/house/preset (3 floors)"></a>
+  <div class="data">
+    <h3>house <small>preset (3 floors)</small></h3>
+    
+    <dl>
+      <dt>Triangles</dt><dd>2,065</dd><dt>Vertices</dt><dd>3,697</dd>
+      <dt>Levels</dt><dd>L0 2,065</dd>
+      <dt>Memory</dt><dd>81 KB (geometry 65 KB, textures 16 KB)</dd>
+      <dt>Per vertex</dt><dd>104 B: position:3xFloat32=12B shellOctNormal:2xInt16=4B shellPaint:4xUint16=8B facadeSize:2xUint16=4B facadeCell:4xInt16=8B facadeOpening:4xUint8=4B facadeTrim:4xUint8=4B normal:3xFloat32=12B uv:2xFloat32=8B instancePoseA:4xFloat32=16B instancePoseB:4xFloat32=16B litSlot/instance:1xFloat32=4B roomA:4xUint16=8B roomB:4xUint16=8B roomC:4xUint16=8B roomD:4xUint16=8B roomE:4xUint16=8B color:3xFloat32=12B</dd>
+      <dt>Drawn as</dt><dd>merged</dd><dt>Material</dt><dd>MeshStandardMaterial &quot;building-shell&quot; [building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial &quot;building-facade-near&quot; [building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial &quot;building-part-glass&quot; [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.06, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-frame&quot; [thin-part-prefiltered-v4-cards|part-pose] (roughness 0.55, metalness 0.05, opacity 1) | MeshStandardMaterial &quot;building-part-column&quot; [onBeforeCompile() {}|part-pose] (roughness 0.82, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-door&quot; [onBeforeCompile() {}|part-pose] (roughness 0.55, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-shutter&quot; [onBeforeCompile() {}|part-pose] (roughness 0.5, metalness 0.45, opacity 1) | MeshStandardMaterial &quot;building-part-railing&quot; [thin-part-prefiltered-v4-cards|part-pose] (roughness 0.45, metalness 0.55, opacity 1) | MeshStandardMaterial &quot;building-part-glassDark&quot; [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.08, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-lamp&quot; [outside-lamp-lot|part-pose] (roughness 0.35, metalness 0, opacity 1) | MeshBasicMaterial &quot;building-part-wash&quot; [outside-wash-lot|part-pose] (transparent, opacity 0) | MeshStandardMaterial &quot;building-part-edge&quot; [onBeforeCompile() {}|part-pose] (roughness 0.7, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-pot&quot; [onBeforeCompile() {}|part-pose] (vertex colours, roughness 0.85, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-foliage&quot; [onBeforeCompile() {}|part-pose] (vertex colours, double-sided, roughness 0.75, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-chair&quot; [thin-part-prefiltered-v4-cards|part-pose] (vertex colours, roughness 0.6, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-table&quot; [thin-part-prefiltered-v4-cards|part-pose] (vertex colours, roughness 0.55, metalness 0.1, opacity 1)</dd><dt>Shader</dt><dd>patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose | patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8 | patched built-in room-lights-awake-interior-v15-recess|part-pose | patched built-in thin-part-prefiltered-v4-cards|part-pose | patched built-in onBeforeCompile() {}|part-pose | patched built-in outside-lamp-lot|part-pose | patched built-in outside-wash-lot|part-pose</dd>
+      <dt>Solids</dt><dd>185 solids: 127 other, 31 quad, 17 open prism, 8 box, 2 closed cylinder</dd><dt>Hidden triangles</dt><dd>0</dd>
+      <dt>Shadow</dt><dd>-</dd>
+      <dt>Floors</dt><dd>3 (688 triangles a floor)</dd>
+      <dt>Textures</dt><dd>map DataTexture 64x64 RGBA 8-bit, 1 levels, 16384 B</dd>
+      <dt>Source</dt><dd><code>src/world/buildings/blueprints.ts (BLUEPRINTS, instantiate)</code> (kit)</dd>
+      <dt>Notes</dt><dd>built alone at its detail level (L0) by buildBuildingMeshes, every part with it; its far levels (facade L1, masses) are the building layer's cells</dd>
+    </dl>
+    
+  </div>
+</article>
+<article class="row" id="Buildings: presets/office/preset (8 floors)">
+  <a href="../images/0013-Buildings-presets-office-preset-8-floors.png"><img loading="lazy" src="../images/0013-Buildings-presets-office-preset-8-floors.png" alt="Buildings: presets/office/preset (8 floors)"></a>
+  <div class="data">
+    <h3>office <small>preset (8 floors)</small></h3>
+    
+    <dl>
+      <dt>Triangles</dt><dd>1,824</dd><dt>Vertices</dt><dd>3,141</dd>
+      <dt>Levels</dt><dd>L0 1,824</dd>
+      <dt>Memory</dt><dd>93 KB (geometry 77 KB, textures 16 KB)</dd>
+      <dt>Per vertex</dt><dd>104 B: position:3xFloat32=12B shellOctNormal:2xInt16=4B shellPaint:4xUint16=8B facadeSize:2xUint16=4B facadeCell:4xInt16=8B facadeOpening:4xUint8=4B facadeTrim:4xUint8=4B normal:3xFloat32=12B uv:2xFloat32=8B instancePoseA:4xFloat32=16B instancePoseB:4xFloat32=16B litSlot/instance:1xFloat32=4B roomA:4xUint16=8B roomB:4xUint16=8B roomC:4xUint16=8B roomD:4xUint16=8B roomE:4xUint16=8B</dd>
+      <dt>Drawn as</dt><dd>merged</dd><dt>Material</dt><dd>MeshStandardMaterial &quot;building-shell&quot; [building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial &quot;building-facade-near&quot; [building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial &quot;building-part-glass&quot; [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.06, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-frame&quot; [thin-part-prefiltered-v4-cards|part-pose] (roughness 0.55, metalness 0.05, opacity 1) | MeshStandardMaterial &quot;building-part-column&quot; [onBeforeCompile() {}|part-pose] (roughness 0.82, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-door&quot; [onBeforeCompile() {}|part-pose] (roughness 0.55, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-lamp&quot; [outside-lamp-lot|part-pose] (roughness 0.35, metalness 0, opacity 1) | MeshBasicMaterial &quot;building-part-wash&quot; [outside-wash-lot|part-pose] (transparent, opacity 0) | MeshStandardMaterial &quot;building-part-edge&quot; [onBeforeCompile() {}|part-pose] (roughness 0.7, metalness 0, opacity 1)</dd><dt>Shader</dt><dd>patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose | patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8 | patched built-in room-lights-awake-interior-v15-recess|part-pose | patched built-in thin-part-prefiltered-v4-cards|part-pose | patched built-in onBeforeCompile() {}|part-pose | patched built-in outside-lamp-lot|part-pose | patched built-in outside-wash-lot|part-pose</dd>
+      <dt>Solids</dt><dd>254 solids: 27 open prism, 53 other, 172 quad, 2 box</dd><dt>Hidden triangles</dt><dd>0</dd>
+      <dt>Shadow</dt><dd>-</dd>
+      <dt>Floors</dt><dd>8 (228 triangles a floor)</dd>
+      <dt>Textures</dt><dd>map DataTexture 64x64 RGBA 8-bit, 1 levels, 16384 B</dd>
+      <dt>Source</dt><dd><code>src/world/buildings/blueprints.ts (BLUEPRINTS, instantiate)</code> (kit)</dd>
+      <dt>Notes</dt><dd>built alone at its detail level (L0) by buildBuildingMeshes, every part with it; its far levels (facade L1, masses) are the building layer's cells</dd>
+    </dl>
+    
+  </div>
+</article>
+<article class="row" id="Buildings: presets/factory/preset (3 floors)">
+  <a href="../images/0017-Buildings-presets-factory-preset-3-floors.png"><img loading="lazy" src="../images/0017-Buildings-presets-factory-preset-3-floors.png" alt="Buildings: presets/factory/preset (3 floors)"></a>
+  <div class="data">
+    <h3>factory <small>preset (3 floors)</small></h3>
+    
+    <dl>
+      <dt>Triangles</dt><dd>1,706</dd><dt>Vertices</dt><dd>3,086</dd>
+      <dt>Levels</dt><dd>L0 1,706</dd>
+      <dt>Memory</dt><dd>72 KB (geometry 56 KB, textures 16 KB)</dd>
+      <dt>Per vertex</dt><dd>104 B: position:3xFloat32=12B shellOctNormal:2xInt16=4B shellPaint:4xUint16=8B facadeSize:2xUint16=4B facadeCell:4xInt16=8B facadeOpening:4xUint8=4B facadeTrim:4xUint8=4B normal:3xFloat32=12B uv:2xFloat32=8B instancePoseA:4xFloat32=16B instancePoseB:4xFloat32=16B litSlot/instance:1xFloat32=4B roomA:4xUint16=8B roomB:4xUint16=8B roomC:4xUint16=8B roomD:4xUint16=8B roomE:4xUint16=8B color:3xFloat32=12B</dd>
+      <dt>Drawn as</dt><dd>merged</dd><dt>Material</dt><dd>MeshStandardMaterial &quot;building-shell&quot; [building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial &quot;building-facade-near&quot; [building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial &quot;building-part-glass&quot; [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.06, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-frame&quot; [thin-part-prefiltered-v4-cards|part-pose] (roughness 0.55, metalness 0.05, opacity 1) | MeshStandardMaterial &quot;building-part-column&quot; [onBeforeCompile() {}|part-pose] (roughness 0.82, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-door&quot; [onBeforeCompile() {}|part-pose] (roughness 0.55, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-shutter&quot; [onBeforeCompile() {}|part-pose] (roughness 0.5, metalness 0.45, opacity 1) | MeshStandardMaterial &quot;building-part-glassDark&quot; [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.08, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-lamp&quot; [outside-lamp-lot|part-pose] (roughness 0.35, metalness 0, opacity 1) | MeshBasicMaterial &quot;building-part-wash&quot; [outside-wash-lot|part-pose] (transparent, opacity 0) | MeshStandardMaterial &quot;building-part-edge&quot; [onBeforeCompile() {}|part-pose] (roughness 0.7, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-acUnit&quot; [facade-ac-front|part-pose] (vertex colours, roughness 0.55, metalness 0.15, opacity 1)</dd><dt>Shader</dt><dd>patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose | patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8 | patched built-in room-lights-awake-interior-v15-recess|part-pose | patched built-in thin-part-prefiltered-v4-cards|part-pose | patched built-in onBeforeCompile() {}|part-pose | patched built-in outside-lamp-lot|part-pose | patched built-in outside-wash-lot|part-pose | patched built-in facade-ac-front|part-pose</dd>
+      <dt>Solids</dt><dd>147 solids: 92 other, 40 quad, 11 open prism, 4 box</dd><dt>Hidden triangles</dt><dd>2</dd>
+      <dt>Shadow</dt><dd>-</dd>
+      <dt>Floors</dt><dd>3 (569 triangles a floor)</dd>
+      <dt>Textures</dt><dd>map DataTexture 64x64 RGBA 8-bit, 1 levels, 16384 B</dd>
+      <dt>Source</dt><dd><code>src/world/buildings/blueprints.ts (BLUEPRINTS, instantiate)</code> (kit)</dd>
+      <dt>Notes</dt><dd>built alone at its detail level (L0) by buildBuildingMeshes, every part with it; its far levels (facade L1, masses) are the building layer's cells</dd>
+    </dl>
+    
+  </div>
+</article>
+<article class="row" id="Buildings: presets/rowhouse/preset (4 floors)">
+  <a href="../images/0005-Buildings-presets-rowhouse-preset-4-floors.png"><img loading="lazy" src="../images/0005-Buildings-presets-rowhouse-preset-4-floors.png" alt="Buildings: presets/rowhouse/preset (4 floors)"></a>
+  <div class="data">
+    <h3>rowhouse <small>preset (4 floors)</small></h3>
+    
+    <dl>
+      <dt>Triangles</dt><dd>1,538</dd><dt>Vertices</dt><dd>2,971</dd>
+      <dt>Levels</dt><dd>L0 1,538</dd>
+      <dt>Memory</dt><dd>70 KB (geometry 54 KB, textures 16 KB)</dd>
+      <dt>Per vertex</dt><dd>104 B: position:3xFloat32=12B shellOctNormal:2xInt16=4B shellPaint:4xUint16=8B facadeSize:2xUint16=4B facadeCell:4xInt16=8B facadeOpening:4xUint8=4B facadeTrim:4xUint8=4B normal:3xFloat32=12B uv:2xFloat32=8B instancePoseA:4xFloat32=16B instancePoseB:4xFloat32=16B litSlot/instance:1xFloat32=4B roomA:4xUint16=8B roomB:4xUint16=8B roomC:4xUint16=8B roomD:4xUint16=8B roomE:4xUint16=8B color:3xFloat32=12B</dd>
+      <dt>Drawn as</dt><dd>merged</dd><dt>Material</dt><dd>MeshStandardMaterial &quot;building-shell&quot; [building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial &quot;building-facade-near&quot; [building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial &quot;building-part-glass&quot; [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.06, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-frame&quot; [thin-part-prefiltered-v4-cards|part-pose] (roughness 0.55, metalness 0.05, opacity 1) | MeshStandardMaterial &quot;building-part-column&quot; [onBeforeCompile() {}|part-pose] (roughness 0.82, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-door&quot; [onBeforeCompile() {}|part-pose] (roughness 0.55, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-shutter&quot; [onBeforeCompile() {}|part-pose] (roughness 0.5, metalness 0.45, opacity 1) | MeshStandardMaterial &quot;building-part-railing&quot; [thin-part-prefiltered-v4-cards|part-pose] (roughness 0.45, metalness 0.55, opacity 1) | MeshStandardMaterial &quot;building-part-glassDark&quot; [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.08, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-lamp&quot; [outside-lamp-lot|part-pose] (roughness 0.35, metalness 0, opacity 1) | MeshBasicMaterial &quot;building-part-wash&quot; [outside-wash-lot|part-pose] (transparent, opacity 0) | MeshStandardMaterial &quot;building-part-edge&quot; [onBeforeCompile() {}|part-pose] (roughness 0.7, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-airer&quot; [thin-part-prefiltered-v4-cards|part-pose] (vertex colours, roughness 0.8, metalness 0, opacity 1)</dd><dt>Shader</dt><dd>patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose | patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8 | patched built-in room-lights-awake-interior-v15-recess|part-pose | patched built-in thin-part-prefiltered-v4-cards|part-pose | patched built-in onBeforeCompile() {}|part-pose | patched built-in outside-lamp-lot|part-pose | patched built-in outside-wash-lot|part-pose</dd>
+      <dt>Solids</dt><dd>156 solids: 99 other, 37 quad, 6 open prism, 14 box</dd><dt>Hidden triangles</dt><dd>0</dd>
+      <dt>Shadow</dt><dd>-</dd>
+      <dt>Floors</dt><dd>4 (385 triangles a floor)</dd>
+      <dt>Textures</dt><dd>map DataTexture 64x64 RGBA 8-bit, 1 levels, 16384 B</dd>
+      <dt>Source</dt><dd><code>src/world/buildings/blueprints.ts (BLUEPRINTS, instantiate)</code> (kit)</dd>
+      <dt>Notes</dt><dd>built alone at its detail level (L0) by buildBuildingMeshes, every part with it; its far levels (facade L1, masses) are the building layer's cells</dd>
+    </dl>
+    
+  </div>
+</article>
+<article class="row" id="Buildings: presets/block/preset (2 floors)">
+  <a href="../images/0001-Buildings-presets-block-preset-2-floors.png"><img loading="lazy" src="../images/0001-Buildings-presets-block-preset-2-floors.png" alt="Buildings: presets/block/preset (2 floors)"></a>
+  <div class="data">
+    <h3>block <small>preset (2 floors)</small></h3>
+    
+    <dl>
+      <dt>Triangles</dt><dd>1,454</dd><dt>Vertices</dt><dd>2,648</dd>
+      <dt>Levels</dt><dd>L0 1,454</dd>
+      <dt>Memory</dt><dd>74 KB (geometry 58 KB, textures 16 KB)</dd>
+      <dt>Per vertex</dt><dd>104 B: position:3xFloat32=12B shellOctNormal:2xInt16=4B shellPaint:4xUint16=8B facadeSize:2xUint16=4B facadeCell:4xInt16=8B facadeOpening:4xUint8=4B facadeTrim:4xUint8=4B normal:3xFloat32=12B uv:2xFloat32=8B instancePoseA:4xFloat32=16B instancePoseB:4xFloat32=16B litSlot/instance:1xFloat32=4B roomA:4xUint16=8B roomB:4xUint16=8B roomC:4xUint16=8B roomD:4xUint16=8B roomE:4xUint16=8B color:3xFloat32=12B</dd>
+      <dt>Drawn as</dt><dd>merged</dd><dt>Material</dt><dd>MeshStandardMaterial &quot;building-shell&quot; [building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial &quot;building-facade-near&quot; [building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial &quot;building-part-glass&quot; [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.06, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-frame&quot; [thin-part-prefiltered-v4-cards|part-pose] (roughness 0.55, metalness 0.05, opacity 1) | MeshStandardMaterial &quot;building-part-column&quot; [onBeforeCompile() {}|part-pose] (roughness 0.82, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-door&quot; [onBeforeCompile() {}|part-pose] (roughness 0.55, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-shutter&quot; [onBeforeCompile() {}|part-pose] (roughness 0.5, metalness 0.45, opacity 1) | MeshStandardMaterial &quot;building-part-glassDark&quot; [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.08, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-lamp&quot; [outside-lamp-lot|part-pose] (roughness 0.35, metalness 0, opacity 1) | MeshBasicMaterial &quot;building-part-wash&quot; [outside-wash-lot|part-pose] (transparent, opacity 0) | MeshStandardMaterial &quot;building-part-edge&quot; [onBeforeCompile() {}|part-pose] (roughness 0.7, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-acUnit&quot; [facade-ac-front|part-pose] (vertex colours, roughness 0.55, metalness 0.15, opacity 1)</dd><dt>Shader</dt><dd>patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose | patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8 | patched built-in room-lights-awake-interior-v15-recess|part-pose | patched built-in thin-part-prefiltered-v4-cards|part-pose | patched built-in onBeforeCompile() {}|part-pose | patched built-in outside-lamp-lot|part-pose | patched built-in outside-wash-lot|part-pose | patched built-in facade-ac-front|part-pose</dd>
+      <dt>Solids</dt><dd>129 solids: 79 other, 34 quad, 14 open prism, 2 box</dd><dt>Hidden triangles</dt><dd>2</dd>
+      <dt>Shadow</dt><dd>-</dd>
+      <dt>Floors</dt><dd>2 (727 triangles a floor)</dd>
+      <dt>Textures</dt><dd>map DataTexture 64x64 RGBA 8-bit, 1 levels, 16384 B</dd>
+      <dt>Source</dt><dd><code>src/world/buildings/blueprints.ts (BLUEPRINTS, instantiate)</code> (kit)</dd>
+      <dt>Notes</dt><dd>built alone at its detail level (L0) by buildBuildingMeshes, every part with it; its far levels (facade L1, masses) are the building layer's cells</dd>
+    </dl>
+    
+  </div>
+</article>
+<article class="row" id="Buildings: presets/shop/preset (2 floors)">
+  <a href="../images/0012-Buildings-presets-shop-preset-2-floors.png"><img loading="lazy" src="../images/0012-Buildings-presets-shop-preset-2-floors.png" alt="Buildings: presets/shop/preset (2 floors)"></a>
+  <div class="data">
+    <h3>shop <small>preset (2 floors)</small></h3>
+    
+    <dl>
+      <dt>Triangles</dt><dd>1,246</dd><dt>Vertices</dt><dd>2,287</dd>
+      <dt>Levels</dt><dd>L0 1,246</dd>
+      <dt>Memory</dt><dd>63 KB (geometry 47 KB, textures 16 KB)</dd>
+      <dt>Per vertex</dt><dd>104 B: position:3xFloat32=12B shellOctNormal:2xInt16=4B shellPaint:4xUint16=8B facadeSize:2xUint16=4B facadeCell:4xInt16=8B facadeOpening:4xUint8=4B facadeTrim:4xUint8=4B normal:3xFloat32=12B uv:2xFloat32=8B instancePoseA:4xFloat32=16B instancePoseB:4xFloat32=16B litSlot/instance:1xFloat32=4B roomA:4xUint16=8B roomB:4xUint16=8B roomC:4xUint16=8B roomD:4xUint16=8B roomE:4xUint16=8B</dd>
+      <dt>Drawn as</dt><dd>merged</dd><dt>Material</dt><dd>MeshStandardMaterial &quot;building-shell&quot; [building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial &quot;building-facade-near&quot; [building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial &quot;building-part-glass&quot; [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.06, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-frame&quot; [thin-part-prefiltered-v4-cards|part-pose] (roughness 0.55, metalness 0.05, opacity 1) | MeshStandardMaterial &quot;building-part-column&quot; [onBeforeCompile() {}|part-pose] (roughness 0.82, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-door&quot; [onBeforeCompile() {}|part-pose] (roughness 0.55, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-shutter&quot; [onBeforeCompile() {}|part-pose] (roughness 0.5, metalness 0.45, opacity 1) | MeshStandardMaterial &quot;building-part-awning&quot; [onBeforeCompile() {}|part-pose] (roughness 0.92, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-glassDark&quot; [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.08, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-lamp&quot; [outside-lamp-lot|part-pose] (roughness 0.35, metalness 0, opacity 1) | MeshBasicMaterial &quot;building-part-wash&quot; [outside-wash-lot|part-pose] (transparent, opacity 0) | MeshStandardMaterial &quot;building-part-edge&quot; [onBeforeCompile() {}|part-pose] (roughness 0.7, metalness 0, opacity 1)</dd><dt>Shader</dt><dd>patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose | patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8 | patched built-in room-lights-awake-interior-v15-recess|part-pose | patched built-in thin-part-prefiltered-v4-cards|part-pose | patched built-in onBeforeCompile() {}|part-pose | patched built-in outside-lamp-lot|part-pose | patched built-in outside-wash-lot|part-pose</dd>
+      <dt>Solids</dt><dd>119 solids: 76 other, 31 quad, 10 open prism, 2 box</dd><dt>Hidden triangles</dt><dd>0</dd>
+      <dt>Shadow</dt><dd>-</dd>
+      <dt>Floors</dt><dd>2 (623 triangles a floor)</dd>
+      <dt>Textures</dt><dd>map DataTexture 64x64 RGBA 8-bit, 1 levels, 16384 B</dd>
+      <dt>Source</dt><dd><code>src/world/buildings/blueprints.ts (BLUEPRINTS, instantiate)</code> (kit)</dd>
+      <dt>Notes</dt><dd>built alone at its detail level (L0) by buildBuildingMeshes, every part with it; its far levels (facade L1, masses) are the building layer's cells</dd>
+    </dl>
+    
+  </div>
+</article>
+<article class="row" id="Buildings: presets/warehouse/preset (3 floors)">
+  <a href="../images/0016-Buildings-presets-warehouse-preset-3-floors.png"><img loading="lazy" src="../images/0016-Buildings-presets-warehouse-preset-3-floors.png" alt="Buildings: presets/warehouse/preset (3 floors)"></a>
+  <div class="data">
+    <h3>warehouse <small>preset (3 floors)</small></h3>
+    
+    <dl>
+      <dt>Triangles</dt><dd>676</dd><dt>Vertices</dt><dd>1,227</dd>
+      <dt>Levels</dt><dd>L0 676</dd>
+      <dt>Memory</dt><dd>40 KB (geometry 24 KB, textures 16 KB)</dd>
+      <dt>Per vertex</dt><dd>104 B: position:3xFloat32=12B shellOctNormal:2xInt16=4B shellPaint:4xUint16=8B facadeSize:2xUint16=4B facadeCell:4xInt16=8B facadeOpening:4xUint8=4B facadeTrim:4xUint8=4B normal:3xFloat32=12B uv:2xFloat32=8B instancePoseA:4xFloat32=16B instancePoseB:4xFloat32=16B litSlot/instance:1xFloat32=4B roomA:4xUint16=8B roomB:4xUint16=8B roomC:4xUint16=8B roomD:4xUint16=8B roomE:4xUint16=8B</dd>
+      <dt>Drawn as</dt><dd>merged</dd><dt>Material</dt><dd>MeshStandardMaterial &quot;building-shell&quot; [building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial &quot;building-facade-near&quot; [building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8] (vertex colours, roughness 1, metalness 1, opacity 1) | MeshStandardMaterial &quot;building-part-glass&quot; [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.06, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-frame&quot; [thin-part-prefiltered-v4-cards|part-pose] (roughness 0.55, metalness 0.05, opacity 1) | MeshStandardMaterial &quot;building-part-column&quot; [onBeforeCompile() {}|part-pose] (roughness 0.82, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-door&quot; [onBeforeCompile() {}|part-pose] (roughness 0.55, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-shutter&quot; [onBeforeCompile() {}|part-pose] (roughness 0.5, metalness 0.45, opacity 1) | MeshStandardMaterial &quot;building-part-glassDark&quot; [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.08, metalness 0, opacity 1) | MeshStandardMaterial &quot;building-part-lamp&quot; [outside-lamp-lot|part-pose] (roughness 0.35, metalness 0, opacity 1) | MeshBasicMaterial &quot;building-part-wash&quot; [outside-wash-lot|part-pose] (transparent, opacity 0) | MeshStandardMaterial &quot;building-part-edge&quot; [onBeforeCompile() {}|part-pose] (roughness 0.7, metalness 0, opacity 1)</dd><dt>Shader</dt><dd>patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose | patched built-in building-shell-v2-weathered-laid-maps-lots-own-walls-facade-level-v8 | patched built-in room-lights-awake-interior-v15-recess|part-pose | patched built-in thin-part-prefiltered-v4-cards|part-pose | patched built-in onBeforeCompile() {}|part-pose | patched built-in outside-lamp-lot|part-pose | patched built-in outside-wash-lot|part-pose</dd>
+      <dt>Solids</dt><dd>64 solids: 38 other, 23 quad, 1 open prism, 2 box</dd><dt>Hidden triangles</dt><dd>0</dd>
+      <dt>Shadow</dt><dd>-</dd>
+      <dt>Floors</dt><dd>3 (225 triangles a floor)</dd>
+      <dt>Textures</dt><dd>map DataTexture 64x64 RGBA 8-bit, 1 levels, 16384 B</dd>
+      <dt>Source</dt><dd><code>src/world/buildings/blueprints.ts (BLUEPRINTS, instantiate)</code> (kit)</dd>
+      <dt>Notes</dt><dd>built alone at its detail level (L0) by buildBuildingMeshes, every part with it; its far levels (facade L1, masses) are the building layer's cells</dd>
+    </dl>
+    
+  </div>
+</article></main></body></html>

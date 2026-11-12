@@ -1,0 +1,1462 @@
+diff --git a/src/dev/peopleCook/cook.ts b/src/dev/peopleCook/cook.ts
+index 1584cf03..1e9dd867 100644
+--- a/src/dev/peopleCook/cook.ts
++++ b/src/dev/peopleCook/cook.ts
+@@ -1,29 +1,47 @@
+-import { Color } from 'three';
++import { Color, Vector3 } from 'three';
+ import { SkinnedMesh, type BufferAttribute, type Group, type WebGLRenderer } from 'three';
+ import type { CastEntry } from '@/dev/people/cast';
++import { loadProxyItem } from '@/dev/people/body/proxy';
+ import { REALISTIC } from '@/dev/peopleBuild/cartoon';
+ import { buildPersonScene } from '@/dev/peopleBuild/personBuild';
+ import { loadSkinAppearance, releaseSkinAppearance } from '@/dev/peopleBuild/skinAppearance';
+-import { readCookedHeader, type CookedHeader } from '@render/people/cookedPerson';
+-import { ATLAS_SIZE } from './atlas';
++import { LEVEL_TRIANGLES, readCookedHeader, type CookedHeader } from '@render/people/cookedPerson';
++import { PERSON_ALPHA_TEST } from '@render/people/personMaterial';
++import { ATLAS_SIZE, CELLS } from './atlas';
+ import { atlasTexture, bakeAtlas, FACE_CARD_LIFT } from './bakeAtlas';
+ import { renderImpostorFrames } from './impostor';
+-import { buildLadder } from './lodLadder';
+-import { packPerson } from './pack';
++import { buildLadder, ERROR_SAMPLES, levelError } from './lodLadder';
++import { TriangleGrid, samplePoints } from './meshDistance';
++import { packPerson, type CookLevel } from './pack';
++import { buildShell } from './shell';
++import { cullHidden } from './visibility';
++import { weld } from './weld';
+ 
+ /**
+- * ONE PERSON COOKED: built from the MakeHuman packs as the game once built them (`src/dev/peopleBuild`), their atlas baked, their levels
+- * simplified, their impostor's frames drawn, the lot quantised and written through the development server (`cook-plugin.ts` PUT
+- * `/__cook/people/`), which encodes the atlas as KTX2. Returns what was written, counted from the arrays themselves.
++ * ONE PERSON COOKED: built from the MakeHuman packs as the game once built them (`src/dev/peopleBuild`), their atlas baked, the triangles
++ * no view shows cut (`visibility.ts`), the near levels simplified from the rest (`lodLadder.ts`), the far levels a closed shell remeshed
++ * from it (`shell.ts`), every level's error measured against the body, their impostor's frames drawn, the lot quantised and written
++ * through the development server (`cook-plugin.ts` PUT `/__cook/people/`), which encodes the atlas as KTX2.
+  */
+ 
+ export interface CookedReport {
+   readonly id: string;
+   readonly vertices: number;
+-  /** Triangles a level, near first; the full dressed mesh's count first of all. */
++  /** Triangles a level, near first. */
+   readonly triangles: readonly number[];
++  /** The dressed body's triangles as built, and after the hidden ones were cut. */
+   readonly source: number;
++  readonly visible: number;
++  readonly cut: number;
++  readonly banded: number;
++  /** Vertices welded into others, and triangles dropped as a second side or folded to nothing. */
++  readonly welded: number;
++  /** Skin triangles a garment covers, left out of the second level. */
++  readonly covered: number;
++  readonly secondSides: number;
+   readonly errors: readonly number[];
++  /** Each level's own error, before the coarser ones are raised to the finer's. */
++  readonly ownErrors: readonly number[];
+   readonly painted: number;
+   readonly plain: number;
+   readonly morphs: number;
+@@ -31,6 +49,8 @@ export interface CookedReport {
+   readonly atlasBytes: number;
+   readonly codec: CookedHeader['atlas']['codec'];
+   readonly height: number;
++  readonly shellCells: readonly number[];
++  readonly shellNet: number;
+ }
+ 
+ /** What the server says of an atlas it encoded. */
+@@ -42,18 +62,37 @@ async function put(path: string, body: BodyInit): Promise<Response> {
+   return response;
+ }
+ 
++/** Kinds of item that cover the skin under them (`personRig.ts` COVERING): only these, when not see-through, hide what is behind them. */
++const COVERING = new Set(['clothes', 'shoes', 'top', 'bottom', 'skirt', 'dress', 'suit', 'gloves']);
++/** `hairMask` of the body's own eyeballs (`personRig.ts` EYE_SLOT). */
++const EYE_SLOT = 5;
++/** The most the near levels may move the surface, a share of the body's extent (meshoptimizer's error): about 4 mm and 1.7 cm on a 1.7 m body. */
++const NEAR_CEILINGS = [0.0025, 0.01] as const;
++/** The head at the second level: under this ceiling (about 6 mm on a 1.7 m body); with the neck and collar, from this far under the
++ *  head's bone up, within this radius of it, metres. */
++const HEAD_CEILING = 0.0035;
++const HEAD_BELOW = 0.12, HEAD_RADIUS = 0.25;
++/** Skin this close under a garment, along its normal, is covered (metres): the second level leaves it out. */
++const COVER_REACH = 0.04;
++/** The far shell's cells, metres. */
++const SHELL_VOXEL = 0.01;
++
+ export async function cookPerson(renderer: WebGLRenderer, entry: CastEntry): Promise<CookedReport> {
+   const scene = await buildPersonScene(entry.person, entry.gender, REALISTIC, true) as Group;
+   let mesh: SkinnedMesh | undefined;
+   scene.traverse((o) => { if (o instanceof SkinnedMesh && !mesh) mesh = o; });
+   if (!mesh) throw new Error(`${entry.id}: the built person has no mesh`);
+-  const geometry = mesh.geometry;
+-  if (!geometry.userData['wornGroups']) throw new Error(`${entry.id}: built undressed (a garment of the look did not load); nothing cooked`);
++  const body = mesh;
++  const geometry = body.geometry;
++  const worn = geometry.userData['wornGroups'] as string[] | undefined;
++  if (!worn) throw new Error(`${entry.id}: built undressed (a garment of the look did not load); nothing cooked`);
+   const skin = await loadSkinAppearance(entry.person);
+   try {
+     const position = geometry.getAttribute('position') as BufferAttribute;
+     const normal = geometry.getAttribute('normal') as BufferAttribute;
+     const hairMask = geometry.getAttribute('hairMask') as BufferAttribute;
++    const skinIndex = geometry.getAttribute('skinIndex') as BufferAttribute;
++    const skinWeight = geometry.getAttribute('skinWeight') as BufferAttribute;
+     const n = position.count;
+     // Brows and lashes off the skin (the old vertex shader lifted them each frame).
+     for (let v = 0; v < n; v++) {
+@@ -63,21 +102,118 @@ export async function cookPerson(renderer: WebGLRenderer, entry: CastEntry): Pro
+     }
+     position.needsUpdate = true;
+     const positions = new Float32Array(n * 3), normals = new Float32Array(n * 3);
++    const joints = new Uint16Array(n * 4), weights = new Float32Array(n * 4);
+     let top = -Infinity, bottom = Infinity;
+     for (let v = 0; v < n; v++) {
+       positions[v * 3] = position.getX(v); positions[v * 3 + 1] = position.getY(v); positions[v * 3 + 2] = position.getZ(v);
+       normals[v * 3] = normal.getX(v); normals[v * 3 + 1] = normal.getY(v); normals[v * 3 + 2] = normal.getZ(v);
++      for (let k = 0; k < 4; k++) { joints[v * 4 + k] = skinIndex.getComponent(v, k); weights[v * 4 + k] = skinWeight.getComponent(v, k); }
+       if (positions[v * 3 + 1]! > top) top = positions[v * 3 + 1]!;
+       if (positions[v * 3 + 1]! < bottom) bottom = positions[v * 3 + 1]!;
+     }
+     const height = top - bottom;
+     const baked = bakeAtlas(renderer, geometry, skin, new Color(entry.person.look.eyes));
+     const index = Uint32Array.from(geometry.index!.array as ArrayLike<number>);
+-    const levels = await buildLadder(index, positions, normals, baked.atlasUv, height);
++    const triangles = index.length / 3;
++
++    // Each triangle's part (its draw group: 0 the body, k the k-th item) and whether it is opaque cover.
++    const part = new Int32Array(triangles), opaque = new Uint8Array(triangles);
++    for (const group of geometry.groups) {
++      const name = worn[group.materialIndex ?? 0]!;
++      let covers = false;
++      if (name !== 'body') {
++        const item = await loadProxyItem(name);
++        covers = COVERING.has(item.pack.kind) && !item.transparent;
++      }
++      for (let t = group.start / 3; t < (group.start + group.count) / 3; t++) {
++        part[t] = group.materialIndex ?? 0;
++        // The body's skin covers what is behind it; its eyeballs and every card, eye or see-through item never hide nor are cut.
++        const eye = Math.round(hairMask.getX(index[t * 3]!)) === EYE_SLOT;
++        opaque[t] = name === 'body' ? (eye ? 0 : 1) : covers ? 1 : 0;
++      }
++    }
++    const visibility = cullHidden({ renderer, scene, mesh: body, index, part, opaque, height });
++    const visible = visibility.index;
++    // Repeated vertices welded and second sides dropped (`weld.ts`): what the near levels are simplified from.
++    const morphArrays = (geometry.morphAttributes['position'] ?? []).map((a) => a.array as ArrayLike<number>);
++    // What the second level leaves out: what no standing posture shows, and the skin a garment covers (a ray up its normal meets the
++    // garment within `COVER_REACH`): simplified, a skirt sinks a centimetre or two and the thighs under it came through it (mh_44).
++    const coverIndex: number[] = [];
++    for (let t = 0; t < visible.length / 3; t++) if (visibility.parts[t]! > 0 && visibility.opaque[t]) coverIndex.push(visible[t * 3]!, visible[t * 3 + 1]!, visible[t * 3 + 2]!);
++    const covers = new TriangleGrid(positions, Uint32Array.from(coverIndex), 0.03);
++    const leaveOut = Uint8Array.from(visibility.unseenStanding);
++    let covered = 0;
++    for (let t = 0; t < visible.length / 3; t++) {
++      if (leaveOut[t] || visibility.parts[t] !== 0 || !visibility.opaque[t] || !coverIndex.length) continue;
++      const a = visible[t * 3]! * 3, b = visible[t * 3 + 1]! * 3, c = visible[t * 3 + 2]! * 3;
++      const ux = positions[b]! - positions[a]!, uy = positions[b + 1]! - positions[a + 1]!, uz = positions[b + 2]! - positions[a + 2]!;
++      const vx = positions[c]! - positions[a]!, vy = positions[c + 1]! - positions[a + 1]!, vz = positions[c + 2]! - positions[a + 2]!;
++      const fx = uy * vz - uz * vy, fy = uz * vx - ux * vz, fz = ux * vy - uy * vx;
++      const l = Math.hypot(fx, fy, fz);
++      if (!l) continue;
++      const d = [fx / l, fy / l, fz / l];
++      const o = [0, 1, 2].map((k) => (positions[a + k]! + positions[b + k]! + positions[c + k]!) / 3 + d[k]! * 0.001);
++      if (covers.raycast(o, d, COVER_REACH, () => true)) { leaveOut[t] = 1; covered++; }
++    }
++    const welded = weld({ positions, normals, atlasUv: baked.atlasUv, personColor: baked.personColor, joints, weights, morphs: morphArrays, index: visible, flags: leaveOut });
++
++    // Near levels from the body; far levels from its shell.
++    const [l0, l1] = LEVEL_TRIANGLES;
++    // The head: its bone's place in the bind.
++    const headBone = new Vector3();
++    scene.updateMatrixWorld(true);
++    scene.traverse((o) => { if (o.name === 'Bip01_Head') o.getWorldPosition(headBone); });
++    const near = await buildLadder({
++      index: welded.index, positions, normals: welded.normals, atlasUv: baked.atlasUv, unseenStanding: welded.flags,
++      head: { x: headBone.x, z: headBone.z, below: headBone.y - HEAD_BELOW, radius: HEAD_RADIUS },
++      budgets: [l0, l1], ceilings: NEAR_CEILINGS, headCeiling: HEAD_CEILING,
++    });
++    const shell = await buildShell({
++      positions, index: visible, atlasUv: baked.atlasUv, personColor: baked.personColor, texels: baked.texels, atlasSize: ATLAS_SIZE,
++      alphaTest: PERSON_ALPHA_TEST, joints, weights,
++    }, LEVEL_TRIANGLES.slice(2), SHELL_VOXEL);
++
++    // The body's vertices, then the shell's: one buffer, every level an index on it.
++    const shellCount = shell.positions.length / 3;
++    const all = n + shellCount;
++    const allPositions = new Float32Array(all * 3), allNormals = new Float32Array(all * 3), allUv = new Float32Array(all * 2), allColour = new Uint8Array(all * 4);
++    const allJoints = new Uint16Array(all * 4), allWeights = new Float32Array(all * 4);
++    allPositions.set(positions); allPositions.set(shell.positions, n * 3);
++    allNormals.set(welded.normals); allNormals.set(shell.normals, n * 3);
++    allUv.set(baked.atlasUv);
++    // The shell is drawn in its own colour: the atlas's white cell, as every plain vertex is (`bakeAtlas.ts`).
++    const white = [(CELLS.white.x + CELLS.white.w / 2) / ATLAS_SIZE, (CELLS.white.y + CELLS.white.h / 2) / ATLAS_SIZE];
++    for (let v = 0; v < shellCount; v++) { allUv[(n + v) * 2] = white[0]!; allUv[(n + v) * 2 + 1] = white[1]!; }
++    allColour.set(baked.personColor); allColour.set(shell.personColor, n * 4);
++    allJoints.set(joints); allJoints.set(shell.joints, n * 4);
++    allWeights.set(weights); allWeights.set(shell.weights, n * 4);
++
++    // Every level's error against the body as seen (its visible triangles, where they are not a card's hole), a share of its height.
++    const alphaByte = PERSON_ALPHA_TEST * 255;
++    const solidAt = (t: number, u: number, v: number, w: number): boolean => {
++      const a = visible[t * 3]!, b = visible[t * 3 + 1]!, c = visible[t * 3 + 2]!;
++      const tu = baked.atlasUv[a * 2]! * u + baked.atlasUv[b * 2]! * v + baked.atlasUv[c * 2]! * w, tv = baked.atlasUv[a * 2 + 1]! * u + baked.atlasUv[b * 2 + 1]! * v + baked.atlasUv[c * 2 + 1]! * w;
++      const x = Math.min(ATLAS_SIZE - 1, Math.floor(tu * ATLAS_SIZE)), y = Math.min(ATLAS_SIZE - 1, Math.floor(tv * ATLAS_SIZE));
++      return baked.texels[(y * ATLAS_SIZE + x) * 4 + 3]! >= alphaByte;
++    };
++    const sourcePoints = samplePoints(positions, visible, ERROR_SAMPLES, 0x5eed, solidAt);
++    const sourceGrid = new TriangleGrid(positions, visible, 0.03);
++    const levelIndices = [...near.map((l) => l.index), ...shell.levels.map((l) => Uint32Array.from(l, (v) => v + n))];
++    const levels: CookLevel[] = [];
++    const ownErrors: number[] = [];
++    let worst = 0;
++    levelIndices.forEach((levelIndex, k) => {
++      // Each level at least as coarse as the one before: the game picks the coarsest whose error stays under a pixel.
++      const own = levelError(sourcePoints, sourceGrid, allPositions, levelIndex, 0x1e7e1 + k) / height;
++      ownErrors.push(own);
++      worst = Math.max(worst, own);
++      levels.push({ index: levelIndex, error: worst });
++    });
++
+     const atlas = atlasTexture(baked.texels);
+     let impostor;
+     try {
+-      impostor = renderImpostorFrames(renderer, scene, mesh, atlas, baked.atlasUv, baked.personColor, height, baked.texels);
++      impostor = renderImpostorFrames(renderer, scene, body, atlas, baked.atlasUv, baked.personColor, height, baked.texels);
+     } finally {
+       atlas.dispose();
+     }
+@@ -85,19 +221,21 @@ export async function cookPerson(renderer: WebGLRenderer, entry: CastEntry): Pro
+     if (written.size !== ATLAS_SIZE) throw new Error(`${entry.id}: the server encoded a ${written.size} px atlas for a ${ATLAS_SIZE} px one`);
+     const morphs = (geometry.morphAttributes['position'] ?? []).map((a) => ({ name: a.name, deltas: a.array as ArrayLike<number> }));
+     const packed = packPerson({
+-      id: entry.id, scene, mesh, positions, normals, atlasUv: baked.atlasUv, personColor: baked.personColor, levels, morphs, height,
++      id: entry.id, scene, mesh: body, positions: allPositions, normals: allNormals, atlasUv: allUv, personColor: allColour,
++      joints: allJoints, weights: allWeights, levels, morphs, height,
+       atlas: { file: written.file, size: written.size, codec: written.codec }, impostor,
+     });
+     // Read back before it is written: a file the game could not read is not written.
+     readCookedHeader(packed.bin);
+     await put(`${entry.id}.bin`, packed.bin);
+     return {
+-      id: entry.id, vertices: packed.vertices, triangles: packed.triangles, source: index.length / 3, errors: levels.map((l) => l.error),
+-      painted: baked.painted, plain: baked.plain, morphs: morphs.length, bytes: packed.bin.byteLength, atlasBytes: written.bytes, codec: written.codec, height,
++      id: entry.id, vertices: packed.vertices, triangles: packed.triangles, source: triangles, visible: visible.length / 3, cut: visibility.cut,
++      banded: visibility.banded, welded: welded.merged, covered, secondSides: welded.duplicates, errors: levels.map((l) => l.error), ownErrors, painted: baked.painted, plain: baked.plain, morphs: morphs.length,
++      bytes: packed.bin.byteLength, atlasBytes: written.bytes, codec: written.codec, height, shellCells: shell.cells, shellNet: shell.netTriangles,
+     };
+   } finally {
+     releaseSkinAppearance(skin);
+     geometry.dispose();
+-    for (const m of Array.isArray(mesh.material) ? mesh.material : [mesh.material]) m.dispose();
++    for (const m of Array.isArray(body.material) ? body.material : [body.material]) m.dispose();
+   }
+ }
+diff --git a/src/dev/peopleCook/impostor.ts b/src/dev/peopleCook/impostor.ts
+index 39164df1..eb976c5d 100644
+--- a/src/dev/peopleCook/impostor.ts
++++ b/src/dev/peopleCook/impostor.ts
+@@ -59,12 +59,13 @@ function aim(bone: Bone, child: Bone, direction: Vector3): void {
+   bone.quaternion.copy(parentWorld.invert().multiply(delta).multiply(world));
+ }
+ 
+-/** Arms down by the sides (the rig's bind holds them out): a figure a few pixels tall stands as people stand. */
++/** Arms down by the sides (the rig's bind holds them out): a figure a few pixels tall stands as people stand. The cooked skeleton's
++ *  bones are the capture's (`Bip01_L_UpperArm`); asked by the engine's names (`upperarm_l`) they were never found and the frames kept the bind's arms out. */
+ export function hangArms(root: Object3D): void {
+   const bones = new Map<string, Bone>();
+   root.traverse((o) => { if ((o as Bone).isBone) bones.set(o.name, o as Bone); });
+-  for (const side of ['l', 'r']) {
+-    const upper = bones.get(`upperarm_${side}`), lower = bones.get(`lowerarm_${side}`), hand = bones.get(`hand_${side}`);
++  for (const side of ['L', 'R']) {
++    const upper = bones.get(`Bip01_${side}_UpperArm`), lower = bones.get(`Bip01_${side}_Forearm`), hand = bones.get(`Bip01_${side}_Hand`);
+     if (!upper || !lower) continue;
+     const shoulder = new Vector3().setFromMatrixPosition(upper.matrixWorld);
+     // A little out from the body, on the arm's own side.
+@@ -94,6 +95,9 @@ export function renderImpostorFrames(renderer: WebGLRenderer, scene: Object3D, m
+   const stage = new Scene();
+   const parent = scene.parent;
+   stage.add(scene);
++  // The posture is the frames' alone: every bone's own rotation put back after them (the file writes the bind's).
++  const rest: [Object3D, Quaternion][] = [];
++  scene.traverse((o) => { if ((o as Bone).isBone) rest.push([o, o.quaternion.clone()]); });
+   hangArms(scene);
+   const width = height * (FRAME_WIDTH / FRAME_HEIGHT);
+   const camera = new OrthographicCamera(-width / 2, width / 2, height, 0, 0.1, 20);
+@@ -132,6 +136,8 @@ export function renderImpostorFrames(renderer: WebGLRenderer, scene: Object3D, m
+     geometry.deleteAttribute('vertexColour');
+     stage.remove(scene);
+     if (parent) parent.add(scene);
++    for (const [bone, q] of rest) bone.quaternion.copy(q);
++    scene.updateMatrixWorld(true);
+   }
+   // The file counts the strip's rows from the top (`personImpostor.ts` turns them back).
+   return { frames: IMPOSTOR_FRAMES, x: strip.x, y: ATLAS_SIZE - strip.y - strip.h, width: FRAME_WIDTH, height: FRAME_HEIGHT };
+diff --git a/src/dev/peopleCook/lodLadder.ts b/src/dev/peopleCook/lodLadder.ts
+index 66116de4..458ff8cd 100644
+--- a/src/dev/peopleCook/lodLadder.ts
++++ b/src/dev/peopleCook/lodLadder.ts
+@@ -1,52 +1,102 @@
+ import { MeshoptSimplifier } from 'meshoptimizer';
+-import { LEVEL_TRIANGLES } from '@render/people/cookedPerson';
++import { TriangleGrid, distanceQuantile, samplePoints } from './meshDistance';
+ 
+ /**
+- * THE LEVELS OF A COOKED BODY: the dressed mesh simplified to each budget of `LEVEL_TRIANGLES` (meshoptimizer, with the normals and the
+- * atlas coordinates as attributes so seams and shading survive), each level from the one before, all on the same vertices. A level's
+- * error is a share of the body's height: what the game picks the level by (`riggedCitizens.ts` citizenLevelOf).
++ * THE NEAR LEVELS OF A COOKED BODY: the dressed body (its hidden triangles cut, `visibility.ts`, its vertices welded, `weld.ts`) simplified
++ * by meshoptimizer, with the normals and the atlas coordinates as attributes so seams and shading survive, all on the same vertices.
++ * - No border is locked: a hair card's or a hem's edge may slide along itself (`LockBorder` kept the old levels thousands of triangles
++ *   over their budgets). Collapses may cross the atlas's seams (`Permissive`), their cost counted in the attributes' error: a garment cut
++ *   into many islands no longer stops the simplifier. Isolated crumbs are pruned.
++ * - Each level goes down to its budget or to its ceiling of error, whichever comes first: a budget forced past its ceiling flattened
++ *   arms and faces.
++ * - The second level stands for figures up to about a hundred pixels tall, faces still read there: the head (face, glasses, brows) is
++ *   simplified on its own under a lower ceiling, the vertices it shares with the rest held in place (no crack), and the triangles no
++ *   standing or walking posture shows are left out of it (the skin under a dress came through the dress simplified over it).
++ * The far levels are the shell's (`shell.ts`).
+  */
+ 
+ export interface LadderLevel {
+   readonly index: Uint32Array;
+-  /** Geometric error against the full mesh, as a share of the body's height. */
+-  readonly error: number;
++  /** meshoptimizer's own estimate of the level's error, metres. */
++  readonly simplifierError: number;
+ }
+ 
+-/** Normal (three) and atlas uv (two) weights, in metres per unit of difference: a seam torn by 0.1 of the atlas costs 6 cm. */
++/** Normal (three) and atlas uv (two) weights: a seam torn by 0.1 of the atlas costs about as much as 6 cm of surface. */
+ const WEIGHTS = [0.1, 0.1, 0.1, 0.6, 0.6];
+-/** The most each level may move the surface, as a share of the body's extent (meshoptimizer's error): about 1 cm near, 3, 8 and 20 cm on the far
+- *  levels. A level that cannot reach its budget within it keeps more triangles: DO NOT let it run to any error (it took 20 cm off faces and hems). */
+-const MAX_ERROR = [0.005, 0.015, 0.04, 0.1];
+ 
+-export async function buildLadder(index: Uint32Array, positions: Float32Array, normals: Float32Array, atlasUv: Float32Array, height: number): Promise<LadderLevel[]> {
++export interface LadderInput {
++  readonly index: Uint32Array;
++  readonly positions: Float32Array;
++  readonly normals: Float32Array;
++  readonly atlasUv: Float32Array;
++  /** A flag a triangle of `index`: never shown standing or walking (`visibility.ts` unseenStanding). */
++  readonly unseenStanding: Uint8Array;
++  /** The head with its neck and collar, metres: everything above `below` within `radius` of the upright through (x, z). The cut runs
++   *  across the shirt under the collar: through the neck, it drew a line of shading down it and the collar pulled off the skin (mh_59). */
++  readonly head: { readonly x: number; readonly z: number; readonly below: number; readonly radius: number };
++  /** Each near level's budget and ceiling (a share of the body's extent), and the head's ceiling at the second level. */
++  readonly budgets: readonly [number, number];
++  readonly ceilings: readonly [number, number];
++  readonly headCeiling: number;
++}
++
++export async function buildLadder(input: LadderInput): Promise<LadderLevel[]> {
+   await MeshoptSimplifier.ready;
++  const { index, positions, normals, atlasUv, head } = input;
+   const n = positions.length / 3;
+   const attributes = new Float32Array(n * 5);
+   for (let v = 0; v < n; v++) {
+     attributes[v * 5] = normals[v * 3]!; attributes[v * 5 + 1] = normals[v * 3 + 1]!; attributes[v * 5 + 2] = normals[v * 3 + 2]!;
+     attributes[v * 5 + 3] = atlasUv[v * 2]!; attributes[v * 5 + 4] = atlasUv[v * 2 + 1]!;
+   }
+-  // The simplifier's errors are shares of the mesh's extent; in metres they are that times its scale.
+   const metres = MeshoptSimplifier.getScale(positions, 3);
+-  const out: LadderLevel[] = [];
+-  let current = index;
+-  let errorSoFar = 0;
+-  LEVEL_TRIANGLES.forEach((budget, k) => {
+-    const target = budget * 3;
+-    if (current.length <= target) {
+-      // Already under the budget (a small body): the level is the finer one again.
+-      out.push({ index: current, error: errorSoFar });
+-      return;
+-    }
+-    // Near levels keep every open border (a hem, a cuff) where it is; the far ones may move them and drop parts smaller than their error.
+-    const flags: ('LockBorder' | 'Prune')[] = k < 2 ? ['LockBorder'] : ['Prune'];
+-    // Only the simplifier that keeps the atlas's seams and the normals: a level over its budget keeps its triangles. DO NOT fall back to
+-    // `simplifySloppy`: it clusters by position alone, a dress's triangles took the skin under it and faces came out smeared (the player, 2026-10-24).
+-    const [kept, error] = MeshoptSimplifier.simplifyWithAttributes(current, positions, 3, attributes, 5, WEIGHTS, null, target, MAX_ERROR[Math.min(k, MAX_ERROR.length - 1)]!, flags);
+-    errorSoFar = Math.max(errorSoFar, (error * metres) / height);
+-    out.push({ index: kept, error: errorSoFar });
+-    current = kept;
+-  });
+-  return out;
++  const simplify = (from: Uint32Array, budget: number, ceiling: number, lock: Uint8Array | null, sparse: boolean): [Uint32Array, number] => {
++    if (from.length <= budget * 3) return [from, 0];
++    const [kept, error] = MeshoptSimplifier.simplifyWithAttributes(from, positions, 3, attributes, 5, WEIGHTS, lock, budget * 3,
++      sparse ? ceiling * metres : ceiling, sparse ? ['Prune', 'Permissive', 'Sparse', 'ErrorAbsolute'] : ['Prune', 'Permissive']);
++    return [kept, sparse ? error : error * metres];
++  };
++
++  // The first level: the whole body to its budget or ceiling.
++  const [l0, e0] = simplify(index, input.budgets[0], input.ceilings[0], null, false);
++
++  // The second: from the whole body less what nobody standing sees; the head and the rest apart, their shared vertices held.
++  const inHead = (t: number): boolean => {
++    let x = 0, y = 0, z = 0;
++    for (let k = 0; k < 3; k++) { const v = index[t * 3 + k]!; x += positions[v * 3]!; y += positions[v * 3 + 1]!; z += positions[v * 3 + 2]!; }
++    return y / 3 >= head.below && Math.hypot(x / 3 - head.x, z / 3 - head.z) <= head.radius;
++  };
++  const headPart: number[] = [], bodyPart: number[] = [];
++  for (let t = 0; t < index.length / 3; t++) {
++    if (input.unseenStanding[t]) continue;
++    (inHead(t) ? headPart : bodyPart).push(index[t * 3]!, index[t * 3 + 1]!, index[t * 3 + 2]!);
++  }
++  const inHeadPart = new Uint8Array(n), inBodyPart = new Uint8Array(n);
++  for (const v of headPart) inHeadPart[v] = 1;
++  for (const v of bodyPart) inBodyPart[v] = 1;
++  // meshopt_SimplifyVertex_Lock: the seam between the two parts stays where it is in both.
++  const lock = new Uint8Array(n);
++  for (let v = 0; v < n; v++) if (inHeadPart[v] && inBodyPart[v]) lock[v] = 1;
++  const [headKept, headError] = simplify(Uint32Array.from(headPart), 0, input.headCeiling, lock, true);
++  const [bodyKept, bodyError] = simplify(Uint32Array.from(bodyPart), Math.max(100, input.budgets[1] - headKept.length / 3), input.ceilings[1], lock, true);
++  const l1 = new Uint32Array(headKept.length + bodyKept.length);
++  l1.set(headKept);
++  l1.set(bodyKept, headKept.length);
++  return [{ index: l0, simplifierError: e0 }, { index: l1, simplifierError: Math.max(headError, bodyError) }];
+ }
++
++/**
++ * A level's error against the body it stands for, metres: points spread over each surface by area, the distance of each to the other
++ * surface, and of the two sides the larger `QUANTILE` (the farthest few points left out: a hair card's tip). What the game picks the level
++ * by, as a share of the body's height (`riggedCitizens.ts` citizenLevelOf).
++ */
++const SAMPLES = 6000;
++const QUANTILE = 0.99;
++export function levelError(sourcePoints: Float32Array, sourceGrid: TriangleGrid, positions: Float32Array, index: Uint32Array, seed: number): number {
++  const grid = new TriangleGrid(positions, index, 0.04);
++  const there = distanceQuantile(sourcePoints, grid, QUANTILE);
++  const back = distanceQuantile(samplePoints(positions, index, SAMPLES, seed), sourceGrid, QUANTILE);
++  return Math.max(there, back);
++}
++
++export { SAMPLES as ERROR_SAMPLES };
+diff --git a/src/dev/peopleCook/main.ts b/src/dev/peopleCook/main.ts
+index 16fa2524..a44003ef 100644
+--- a/src/dev/peopleCook/main.ts
++++ b/src/dev/peopleCook/main.ts
+@@ -18,7 +18,7 @@ export interface CookResult {
+ }
+ 
+ declare global {
+-  interface Window { __cookPeople?: () => Promise<CookResult> }
++  interface Window { __cookPeople?: (only?: readonly string[]) => Promise<CookResult> }
+ }
+ 
+ const log = (line: string): void => {
+@@ -27,7 +27,8 @@ const log = (line: string): void => {
+   console.log(line);
+ };
+ 
+-async function cookAll(): Promise<CookResult> {
++/** Every body of the cast, or only those of `only` (the others' files left as they are). */
++async function cookAll(only?: readonly string[]): Promise<CookResult> {
+   const hash = peopleCookHash();
+   if (!hash) throw new Error('No people cook fingerprint in this build (`cook-plugin.ts` defines it)');
+   const cast = makeCast();
+@@ -38,12 +39,12 @@ async function cookAll(): Promise<CookResult> {
+   const reports: CookedReport[] = [];
+   let bytes = 0;
+   try {
+-    for (const entry of cast) {
++    for (const entry of cast.filter((c) => !only || only.includes(c.id))) {
+       const started = performance.now();
+       const report = await cookPerson(renderer, entry);
+       reports.push(report);
+       bytes += report.bytes + report.atlasBytes;
+-      log(`${report.id}: ${report.source} → ${report.triangles.join(' / ')} triangles, ${report.vertices} vertices, errors ${report.errors.map((e) => `${(e * 100).toFixed(2)}%`).join(' / ')}, `
++      log(`${report.id}: ${report.source} built, ${report.cut} hidden cut (${report.banded} kept in the band), ${report.visible} visible, ${report.welded} vertices welded, ${report.covered} covered skin left out of L1, ${report.secondSides} second sides → ${report.triangles.join(' / ')} triangles, ${report.vertices} vertices, errors ${report.errors.map((e) => `${(e * 100).toFixed(2)}%`).join(' / ')} (own ${report.ownErrors.map((e) => `${(e * 100).toFixed(2)}%`).join(' / ')}), shell ${report.shellCells.join('x')} cells ${report.shellNet} net triangles, `
+         + `${report.painted} painted + ${report.plain} plain, ${report.morphs} expressions, ${(report.bytes / 1e3).toFixed(0)} kB + atlas ${(report.atlasBytes / 1e3).toFixed(0)} kB ${report.codec}, ${report.height.toFixed(2)} m, ${((performance.now() - started) / 1000).toFixed(1)} s`);
+     }
+   } finally {
+diff --git a/src/dev/peopleCook/meshDistance.ts b/src/dev/peopleCook/meshDistance.ts
+new file mode 100644
+index 00000000..3cbcf850
+--- /dev/null
++++ b/src/dev/peopleCook/meshDistance.ts
+@@ -0,0 +1,189 @@
++/**
++ * DISTANCES BETWEEN A BODY'S SURFACES: the nearest point of a triangle mesh to a point (a grid of its triangles), points spread over a
++ * mesh by area, and the two-sided distance between two meshes measured on those points. What a level's error is (`lodLadder.ts`).
++ */
++
++/** The closest point of triangle abc to p: its barycentrics (u, v, w) and squared distance (Ericson, Real-Time Collision Detection, 5.1.5),
++ *  written into `out`. Scalars only: it runs millions of times a body. */
++export function closestOnTriangle(px: number, py: number, pz: number, ax: number, ay: number, az: number, bx: number, by: number, bz: number,
++  cx: number, cy: number, cz: number, out: Float64Array): void {
++  const abx = bx - ax, aby = by - ay, abz = bz - az, acx = cx - ax, acy = cy - ay, acz = cz - az;
++  const apx = px - ax, apy = py - ay, apz = pz - az;
++  let u: number, v: number, w: number;
++  const d1 = abx * apx + aby * apy + abz * apz, d2 = acx * apx + acy * apy + acz * apz;
++  const bpx = px - bx, bpy = py - by, bpz = pz - bz;
++  const d3 = abx * bpx + aby * bpy + abz * bpz, d4 = acx * bpx + acy * bpy + acz * bpz;
++  const cpx = px - cx, cpy = py - cy, cpz = pz - cz;
++  const d5 = abx * cpx + aby * cpy + abz * cpz, d6 = acx * cpx + acy * cpy + acz * cpz;
++  const vc = d1 * d4 - d3 * d2, vb = d5 * d2 - d1 * d6, va = d3 * d6 - d5 * d4;
++  if (d1 <= 0 && d2 <= 0) { u = 1; v = 0; w = 0; }
++  else if (d3 >= 0 && d4 <= d3) { u = 0; v = 1; w = 0; }
++  else if (vc <= 0 && d1 >= 0 && d3 <= 0) { v = d1 / (d1 - d3); u = 1 - v; w = 0; }
++  else if (d6 >= 0 && d5 <= d6) { u = 0; v = 0; w = 1; }
++  else if (vb <= 0 && d2 >= 0 && d6 <= 0) { w = d2 / (d2 - d6); u = 1 - w; v = 0; }
++  else if (va <= 0 && d4 - d3 >= 0 && d5 - d6 >= 0) { w = (d4 - d3) / ((d4 - d3) + (d5 - d6)); u = 0; v = 1 - w; }
++  else { const denom = 1 / (va + vb + vc); v = vb * denom; w = vc * denom; u = 1 - v - w; }
++  const x = ax * u + bx * v + cx * w - px, y = ay * u + by * v + cy * w - py, z = az * u + bz * v + cz * w - pz;
++  out[0] = u; out[1] = v; out[2] = w; out[3] = x * x + y * y + z * z;
++}
++
++const SCRATCH = new Float64Array(4);
++
++/** A point found on a mesh: its triangle, barycentrics and distance. */
++export interface Nearest { readonly triangle: number; readonly u: number; readonly v: number; readonly w: number; readonly distance: number }
++
++/** A mesh's triangles binned by the cells their boxes cross: the nearest point to a point, searched ring by ring. */
++export class TriangleGrid {
++  private readonly cells = new Map<number, number[]>();
++  /** Which search last tested each triangle (`stamp`): a triangle in many cells is tested once a search. */
++  private readonly seen: Uint32Array;
++  private stamp = 0;
++  private readonly min: [number, number, number];
++  private readonly dims: [number, number, number];
++
++  constructor(private readonly positions: Float32Array, private readonly index: Uint32Array, private readonly cell: number) {
++    const min: [number, number, number] = [Infinity, Infinity, Infinity], max = [-Infinity, -Infinity, -Infinity];
++    for (const v of index) for (let c = 0; c < 3; c++) { min[c] = Math.min(min[c]!, positions[v * 3 + c]!); max[c] = Math.max(max[c]!, positions[v * 3 + c]!); }
++    this.min = min;
++    this.seen = new Uint32Array(index.length / 3);
++    this.dims = [0, 1, 2].map((c) => Math.max(1, Math.ceil((max[c]! - min[c]!) / cell) + 1)) as [number, number, number];
++    for (let t = 0; t < index.length / 3; t++) {
++      const lo = [Infinity, Infinity, Infinity], hi = [-Infinity, -Infinity, -Infinity];
++      for (let k = 0; k < 3; k++) for (let c = 0; c < 3; c++) {
++        const x = positions[index[t * 3 + k]! * 3 + c]!;
++        lo[c] = Math.min(lo[c]!, x); hi[c] = Math.max(hi[c]!, x);
++      }
++      const a = lo.map((x, c) => this.at(x, c)), b = hi.map((x, c) => this.at(x, c));
++      for (let x = a[0]!; x <= b[0]!; x++) for (let y = a[1]!; y <= b[1]!; y++) for (let z = a[2]!; z <= b[2]!; z++) {
++        const key = this.key(x, y, z);
++        let list = this.cells.get(key);
++        if (!list) this.cells.set(key, list = []);
++        list.push(t);
++      }
++    }
++  }
++
++  private at(x: number, c: number): number { return Math.min(this.dims[c]! - 1, Math.max(0, Math.floor((x - this.min[c]!) / this.cell))); }
++  private key(x: number, y: number, z: number): number { return (x * this.dims[1] + y) * this.dims[2] + z; }
++
++  /** The first triangle the ray from `o` along unit `d` meets within `far` that `accept` takes (a card's hole is passed through). */
++  raycast(o: readonly number[], d: readonly number[], far: number, accept: (hit: Hit) => boolean): Hit | null {
++    const tested = new Set<number>();
++    const hits: Hit[] = [];
++    const corner = (t: number, k: number): number[] => { const v = this.index[t * 3 + k]!; return [this.positions[v * 3]!, this.positions[v * 3 + 1]!, this.positions[v * 3 + 2]!]; };
++    // Cells visited by marching a quarter cell at a time: every triangle whose box a step's cell holds is tested once.
++    const step = this.cell / 4;
++    for (let along = 0; along <= far + step; along += step) {
++      const x = o[0]! + d[0]! * along, y = o[1]! + d[1]! * along, z = o[2]! + d[2]! * along;
++      for (const t of this.cells.get(this.key(this.at(x, 0), this.at(y, 1), this.at(z, 2))) ?? []) {
++        if (tested.has(t)) continue;
++        tested.add(t);
++        const hit = rayTriangle(o, d, corner(t, 0), corner(t, 1), corner(t, 2), far);
++        if (hit) hits.push({ triangle: t, u: 1 - hit[1] - hit[2], v: hit[1], w: hit[2], t: hit[0] });
++      }
++    }
++    hits.sort((p, q) => p.t - q.t);
++    return hits.find(accept) ?? null;
++  }
++
++  /** The mesh's nearest point to (x, y, z), among the triangles `accept` takes (all when none is given). */
++  nearest(x: number, y: number, z: number, accept?: (triangle: number) => boolean): Nearest {
++    const cx = this.at(x, 0), cy = this.at(y, 1), cz = this.at(z, 2);
++    // How far outside the grid the point is: rings start counting there.
++    const outside = Math.hypot(...[x, y, z].map((q, c) => Math.max(0, this.min[c]! - q, q - (this.min[c]! + this.dims[c]! * this.cell))));
++    let triangle = -1, bu = 0, bv = 0, bw = 0, best2 = Infinity;
++    const seen = this.seen;
++    this.stamp++;
++    const most = Math.max(...this.dims);
++    const p = this.positions, idx = this.index, out = SCRATCH;
++    for (let ring = 0; ring <= most; ring++) {
++      for (let dx = -ring; dx <= ring; dx++) for (let dy = -ring; dy <= ring; dy++) for (let dz = -ring; dz <= ring; dz++) {
++        if (Math.max(Math.abs(dx), Math.abs(dy), Math.abs(dz)) !== ring) continue;
++        const gx = cx + dx, gy = cy + dy, gz = cz + dz;
++        if (gx < 0 || gy < 0 || gz < 0 || gx >= this.dims[0] || gy >= this.dims[1] || gz >= this.dims[2]) continue;
++        const list = this.cells.get(this.key(gx, gy, gz));
++        if (!list) continue;
++        for (const t of list) {
++          if (seen[t] === this.stamp) continue;
++          seen[t] = this.stamp;
++          if (accept && !accept(t)) continue;
++          const a = idx[t * 3]! * 3, b = idx[t * 3 + 1]! * 3, c = idx[t * 3 + 2]! * 3;
++          closestOnTriangle(x, y, z, p[a]!, p[a + 1]!, p[a + 2]!, p[b]!, p[b + 1]!, p[b + 2]!, p[c]!, p[c + 1]!, p[c + 2]!, out);
++          if (out[3]! < best2) { best2 = out[3]!; triangle = t; bu = out[0]!; bv = out[1]!; bw = out[2]!; }
++        }
++      }
++      // Every cell within `ring` is searched: nothing nearer lies further out.
++      const reach = ring * this.cell + outside;
++      if (triangle >= 0 && best2 <= reach * reach) break;
++    }
++    return { triangle, u: bu, v: bv, w: bw, distance: Math.sqrt(best2) };
++  }
++}
++
++/** A ray's first hit on a mesh: its triangle, barycentrics and distance along the ray. */
++export interface Hit { readonly triangle: number; readonly u: number; readonly v: number; readonly w: number; readonly t: number }
++
++/** Where the ray from `o` along unit `d` first meets triangle abc within `far` (Moller and Trumbore, 1997), or null. */
++function rayTriangle(o: readonly number[], d: readonly number[], a: readonly number[], b: readonly number[], c: readonly number[], far: number): [number, number, number] | null {
++  const e1 = [b[0]! - a[0]!, b[1]! - a[1]!, b[2]! - a[2]!], e2 = [c[0]! - a[0]!, c[1]! - a[1]!, c[2]! - a[2]!];
++  const p = [d[1]! * e2[2]! - d[2]! * e2[1]!, d[2]! * e2[0]! - d[0]! * e2[2]!, d[0]! * e2[1]! - d[1]! * e2[0]!];
++  const det = e1[0]! * p[0]! + e1[1]! * p[1]! + e1[2]! * p[2]!;
++  if (Math.abs(det) < 1e-12) return null;
++  const inv = 1 / det;
++  const s = [o[0]! - a[0]!, o[1]! - a[1]!, o[2]! - a[2]!];
++  const v = (s[0]! * p[0]! + s[1]! * p[1]! + s[2]! * p[2]!) * inv;
++  if (v < 0 || v > 1) return null;
++  const q = [s[1]! * e1[2]! - s[2]! * e1[1]!, s[2]! * e1[0]! - s[0]! * e1[2]!, s[0]! * e1[1]! - s[1]! * e1[0]!];
++  const w = (d[0]! * q[0]! + d[1]! * q[1]! + d[2]! * q[2]!) * inv;
++  if (w < 0 || v + w > 1) return null;
++  const t = (e2[0]! * q[0]! + e2[1]! * q[1]! + e2[2]! * q[2]!) * inv;
++  return t >= 0 && t <= far ? [t, v, w] : null;
++}
++
++/** A small deterministic generator (mulberry32): the same points on every cook. */
++export function random(seed: number): () => number {
++  let a = seed >>> 0;
++  return () => {
++    a = (a + 0x6d2b79f5) >>> 0;
++    let t = a;
++    t = Math.imul(t ^ (t >>> 15), t | 1);
++    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
++    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
++  };
++}
++
++/** `count` points over the mesh's triangles by area (those `accept` keeps), each with its triangle and barycentrics. */
++export function samplePoints(positions: Float32Array, index: Uint32Array, count: number, seed: number,
++  accept: (triangle: number, u: number, v: number, w: number) => boolean = () => true): Float32Array {
++  const triangles = index.length / 3;
++  const areas = new Float64Array(triangles + 1);
++  for (let t = 0; t < triangles; t++) {
++    const a = index[t * 3]! * 3, b = index[t * 3 + 1]! * 3, c = index[t * 3 + 2]! * 3;
++    const ux = positions[b]! - positions[a]!, uy = positions[b + 1]! - positions[a + 1]!, uz = positions[b + 2]! - positions[a + 2]!;
++    const vx = positions[c]! - positions[a]!, vy = positions[c + 1]! - positions[a + 1]!, vz = positions[c + 2]! - positions[a + 2]!;
++    areas[t + 1] = areas[t]! + Math.hypot(uy * vz - uz * vy, uz * vx - ux * vz, ux * vy - uy * vx) / 2;
++  }
++  const total = areas[triangles]!;
++  const r = random(seed);
++  const out: number[] = [];
++  for (let tries = 0; out.length / 3 < count && tries < count * 20; tries++) {
++    const pick = r() * total;
++    let lo = 0, hi = triangles - 1;
++    while (lo < hi) { const mid = (lo + hi) >> 1; if (areas[mid + 1]! < pick) lo = mid + 1; else hi = mid; }
++    let s = r(), q = r();
++    if (s + q > 1) { s = 1 - s; q = 1 - q; }
++    const u = 1 - s - q;
++    if (!accept(lo, u, s, q)) continue;
++    const a = index[lo * 3]! * 3, b = index[lo * 3 + 1]! * 3, c = index[lo * 3 + 2]! * 3;
++    for (let k = 0; k < 3; k++) out.push(positions[a + k]! * u + positions[b + k]! * s + positions[c + k]! * q);
++  }
++  return Float32Array.from(out);
++}
++
++/** How far `points` lie from the mesh of `grid`: the share `quantile` of them lie nearer (1 the farthest). */
++export function distanceQuantile(points: Float32Array, grid: TriangleGrid, quantile: number): number {
++  const d: number[] = [];
++  for (let i = 0; i < points.length; i += 3) d.push(grid.nearest(points[i]!, points[i + 1]!, points[i + 2]!).distance);
++  d.sort((a, b) => a - b);
++  return d.length ? d[Math.min(d.length - 1, Math.floor(quantile * (d.length - 1)))]! : 0;
++}
+diff --git a/src/dev/peopleCook/pack.ts b/src/dev/peopleCook/pack.ts
+index 3b31b6b2..beaf6bde 100644
+--- a/src/dev/peopleCook/pack.ts
++++ b/src/dev/peopleCook/pack.ts
+@@ -1,7 +1,8 @@
+-import { Matrix4, Vector3, type Bone, type BufferAttribute, type Group, type Object3D, type SkinnedMesh } from 'three';
++import { Matrix4, Vector3, type Bone, type Group, type Object3D, type SkinnedMesh } from 'three';
+ import { packCookedPerson, type CookedHeader, type CookedImpostor, type CookedNode } from '@render/people/cookedPerson';
+ import { PERSON_ALPHA_TEST } from '@render/people/personMaterial';
+-import type { LadderLevel } from './lodLadder';
++/** A level as written: its triangles and its error (a share of the body's height). */
++export interface CookLevel { readonly index: Uint32Array; readonly error: number }
+ 
+ /**
+  * THE FILE: the dressed body's vertices the levels still use, quantised (positions to signed shorts in a box about the body, normals
+@@ -18,8 +19,12 @@ export interface PackInput {
+   readonly normals: Float32Array;
+   readonly atlasUv: Float32Array;
+   readonly personColor: Uint8Array;
+-  readonly levels: readonly LadderLevel[];
+-  /** Each expression's moves of every vertex, metres (`facialMorphs.ts`). */
++  /** Four bones and four weights a vertex (the body's, then the far shell's). */
++  readonly joints: ArrayLike<number>;
++  readonly weights: ArrayLike<number>;
++  /** Every level's triangles on these vertices, near first, and its error as a share of the body's height. */
++  readonly levels: readonly CookLevel[];
++  /** Each expression's moves of the body's vertices, metres (`facialMorphs.ts`); the shell's vertices after them never move. */
+   readonly morphs: readonly { readonly name: string; readonly deltas: ArrayLike<number> }[];
+   readonly height: number;
+   readonly atlas: CookedHeader['atlas'];
+@@ -57,6 +62,7 @@ export function packPerson(input: PackInput): Packed {
+   // The quantisation box: the body and every expression's reach, about its centre, as wide as its widest side (one scale: the normals keep their angles).
+   let reach = 0;
+   for (const morph of input.morphs) for (let i = 0; i < morph.deltas.length; i++) reach = Math.max(reach, Math.abs(morph.deltas[i]!));
++  const moving = (v: number, morph: PackInput['morphs'][number]): boolean => v * 3 + 2 < morph.deltas.length;
+   const min = [Infinity, Infinity, Infinity], max = [-Infinity, -Infinity, -Infinity];
+   for (const v of old) for (let c = 0; c < 3; c++) {
+     const x = input.positions[v * 3 + c]!;
+@@ -67,8 +73,6 @@ export function packPerson(input: PackInput): Packed {
+   const scale = Math.max(max[0]! - min[0]!, max[1]! - min[1]!, max[2]! - min[2]!) / 2 * 1.001;
+   const quantise = (metres: number, c: number): number => Math.max(-32767, Math.min(32767, Math.round(((metres - offset[c]!) / scale) * 32767)));
+ 
+-  const skinIndex = mesh.geometry.getAttribute('skinIndex') as BufferAttribute;
+-  const skinWeight = mesh.geometry.getAttribute('skinWeight') as BufferAttribute;
+   const bones = mesh.skeleton.bones;
+   if (bones.length > 255) throw new Error(`${input.id}: ${bones.length} bones, the index is a byte`);
+   const position = new Int16Array(n * 3), normal = new Int8Array(n * 4), colour = new Uint8Array(n * 4), uv = new Uint16Array(n * 2);
+@@ -82,8 +86,8 @@ export function packPerson(input: PackInput): Packed {
+     colour.set(input.personColor.subarray(v * 4, v * 4 + 4), i * 4);
+     uv[i * 2] = Math.round(Math.min(1, Math.max(0, input.atlasUv[v * 2]!)) * 65535);
+     uv[i * 2 + 1] = Math.round(Math.min(1, Math.max(0, input.atlasUv[v * 2 + 1]!)) * 65535);
+-    for (let k = 0; k < 4; k++) joints[i * 4 + k] = skinIndex.getComponent(v, k);
+-    weightBytes([skinWeight.getComponent(v, 0), skinWeight.getComponent(v, 1), skinWeight.getComponent(v, 2), skinWeight.getComponent(v, 3)], weights, i * 4);
++    for (let k = 0; k < 4; k++) joints[i * 4 + k] = input.joints[v * 4 + k]!;
++    weightBytes([input.weights[v * 4]!, input.weights[v * 4 + 1]!, input.weights[v * 4 + 2]!, input.weights[v * 4 + 3]!], weights, i * 4);
+   });
+ 
+   // Every level's triangles, one after the other, on the new vertex numbers.
+@@ -101,6 +105,7 @@ export function packPerson(input: PackInput): Packed {
+   const morphs = input.morphs.map((morph) => {
+     const vertices: number[] = [], deltas: number[] = [];
+     old.forEach((v, i) => {
++      if (!moving(v, morph)) return;
+       const dx = Math.round((morph.deltas[v * 3]! / scale) * 32767), dy = Math.round((morph.deltas[v * 3 + 1]! / scale) * 32767), dz = Math.round((morph.deltas[v * 3 + 2]! / scale) * 32767);
+       if (dx || dy || dz) { vertices.push(i); deltas.push(dx, dy, dz); }
+     });
+diff --git a/src/dev/peopleCook/shell.ts b/src/dev/peopleCook/shell.ts
+new file mode 100644
+index 00000000..a4d83163
+--- /dev/null
++++ b/src/dev/peopleCook/shell.ts
+@@ -0,0 +1,323 @@
++import { MeshoptSimplifier } from 'meshoptimizer';
++import { TriangleGrid } from './meshDistance';
++
++/**
++ * THE FAR LEVELS' SHELL: the dressed body remeshed as one closed surface, as Simplygon makes a last level of detail by remeshing ("it can
++ * remove interiors and fill small holes"; vertex colours and skinning are carried over, https://www.simplygon.com/posts/ce01b92e-0277-4863-94fb-fc6a59e6698b)
++ * and as a MetaHuman's far levels swap the hair's cards for a hair mesh
++ * (https://dev.epicgames.com/documentation/metahuman/platform-support-and-lod-specifications-for-metahumans):
++ * - the body's opaque surface (the cards where their texel is hair) marked in a grid of `voxel` cells, gaps up to two cells wide closed
++ *   (a dilation, the outside flooded, an erosion), the inside filled;
++ * - its surface by naive surface nets (one vertex a cell the surface crosses, a quad for each crossing edge; S. Gibson, "Constrained elastic
++ *   surface nets", 1998; https://0fps.net/2012/07/12/smooth-voxel-terrain-part-2/), smoothed within each cell;
++ * - simplified by meshoptimizer to each far level's budget, each level from the one before, on the same vertices;
++ * - each vertex kept given the colour of the body's surface round it (the atlas's texel times the vertex's own colour), the bones of the
++ *   body's nearest point and its region (skin, cloth, hair) for the light; drawn in its own colour (the atlas's white cell).
++ */
++
++export interface ShellSource {
++  /** The dressed body's vertices, metres, in the bind posture. */
++  readonly positions: Float32Array;
++  /** The triangles it is made of (the hidden ones already cut). */
++  readonly index: Uint32Array;
++  readonly atlasUv: Float32Array;
++  /** sRGB bytes and the look byte, four a vertex (`bakeAtlas.ts`). */
++  readonly personColor: Uint8Array;
++  /** The atlas, RGBA rows bottom first, `atlasSize` a side. */
++  readonly texels: Uint8Array;
++  readonly atlasSize: number;
++  /** Alpha (0..1) under which an atlas texel is a hole. */
++  readonly alphaTest: number;
++  /** Four bones and four weights a vertex. */
++  readonly joints: ArrayLike<number>;
++  readonly weights: ArrayLike<number>;
++}
++
++export interface Shell {
++  readonly positions: Float32Array;
++  readonly normals: Float32Array;
++  readonly personColor: Uint8Array;
++  readonly joints: Uint16Array;
++  readonly weights: Float32Array;
++  /** Each far level's triangles, on the shell's vertices. */
++  readonly levels: readonly Uint32Array[];
++  /** Cells of the grid, and the surface nets' triangles before simplifying. */
++  readonly cells: readonly [number, number, number];
++  readonly netTriangles: number;
++}
++
++/** Gaps this many cells wide on each side are closed (fingers, strands of hair, a pleat). */
++const CLOSE = 2;
++/** Smoothing passes over the nets, each vertex kept inside its own cell. */
++const SMOOTH = 4;
++/** The colours smoothed over the nets this many times (a vertex's colour stands for a patch about a centimetre or two across). */
++const COLOUR_SMOOTH = 2;
++/** The colour's weight in the far level's simplification (sRGB, 0..1): how far an edge may drift off a colour's edge. */
++const COLOUR_WEIGHT = 0.5;
++/** Rays through a card's hole start this far outside the nets and reach this far inside. */
++const LOOK_OUT = 0.03, LOOK_IN = 0.1;
++
++const toLinear = (byte: number): number => { const c = byte / 255; return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; };
++const toByte = (linear: number): number => {
++  const c = linear <= 0.0031308 ? linear * 12.92 : 1.055 * Math.max(0, linear) ** (1 / 2.4) - 0.055;
++  return Math.round(Math.min(1, Math.max(0, c)) * 255);
++};
++
++export async function buildShell(source: ShellSource, budgets: readonly number[], voxel: number): Promise<Shell> {
++  await MeshoptSimplifier.ready;
++  const { positions, index, atlasUv, personColor, texels, atlasSize } = source;
++  const alphaByte = source.alphaTest * 255;
++  const texel = (u: number, v: number): number => {
++    const x = Math.min(atlasSize - 1, Math.max(0, Math.floor(u * atlasSize))), y = Math.min(atlasSize - 1, Math.max(0, Math.floor(v * atlasSize)));
++    return (y * atlasSize + x) * 4;
++  };
++  const triangles = index.length / 3;
++
++  // ---- the grid round the body, three cells of room beyond the closing's reach
++  const min = [Infinity, Infinity, Infinity], max = [-Infinity, -Infinity, -Infinity];
++  for (const v of index) for (let c = 0; c < 3; c++) { min[c] = Math.min(min[c]!, positions[v * 3 + c]!); max[c] = Math.max(max[c]!, positions[v * 3 + c]!); }
++  const pad = CLOSE + 3;
++  const origin = min.map((x) => x - pad * voxel);
++  const dims = [0, 1, 2].map((c) => Math.ceil((max[c]! - min[c]!) / voxel) + pad * 2 + 1) as [number, number, number];
++  const [nx, ny, nz] = dims;
++  const cell = (x: number, y: number, z: number): number => (x * ny + y) * nz + z;
++  const solid = new Uint8Array(nx * ny * nz);
++
++  // ---- the surface marked: points over each triangle half a cell apart; a card's point only where its texel is hair
++  for (let t = 0; t < triangles; t++) {
++    const a = index[t * 3]!, b = index[t * 3 + 1]!, c = index[t * 3 + 2]!;
++    let longest = 0;
++    for (const [p, q] of [[a, b], [b, c], [c, a]] as const) {
++      longest = Math.max(longest, Math.hypot(positions[p * 3]! - positions[q * 3]!, positions[p * 3 + 1]! - positions[q * 3 + 1]!, positions[p * 3 + 2]! - positions[q * 3 + 2]!));
++    }
++    const steps = Math.max(1, Math.ceil(longest / (voxel * 0.5)));
++    for (let i = 0; i <= steps; i++) for (let j = 0; i + j <= steps; j++) {
++      const v = i / steps, w = j / steps, u = 1 - v - w;
++      const tu = atlasUv[a * 2]! * u + atlasUv[b * 2]! * v + atlasUv[c * 2]! * w, tv = atlasUv[a * 2 + 1]! * u + atlasUv[b * 2 + 1]! * v + atlasUv[c * 2 + 1]! * w;
++      if (texels[texel(tu, tv) + 3]! < alphaByte) continue;
++      const g = [0, 1, 2].map((k) => Math.floor((positions[a * 3 + k]! * u + positions[b * 3 + k]! * v + positions[c * 3 + k]! * w - origin[k]!) / voxel));
++      solid[cell(g[0]!, g[1]!, g[2]!)] = 1;
++    }
++  }
++
++  // ---- closed: dilated by CLOSE (a box, axis by axis), the outside flooded from the grid's border, the rest solid, eroded back by CLOSE
++  const sweep = (grid: Uint8Array, keep: 1 | 0): Uint8Array => {
++    let from = grid;
++    for (const axis of [0, 1, 2] as const) {
++      const to = new Uint8Array(from.length);
++      for (let x = 0; x < nx; x++) for (let y = 0; y < ny; y++) for (let z = 0; z < nz; z++) {
++        const here = [x, y, z];
++        // Dilation: on if any neighbour along the axis within CLOSE is; erosion: on only if every one is.
++        let on = keep === 1 ? 0 : 1;
++        for (let d = -CLOSE; d <= CLOSE; d++) {
++          const q = here.slice();
++          q[axis] = q[axis]! + d;
++          const inside = q[0]! >= 0 && q[1]! >= 0 && q[2]! >= 0 && q[0]! < nx && q[1]! < ny && q[2]! < nz;
++          const value = inside ? from[cell(q[0]!, q[1]!, q[2]!)]! : 0;
++          if (keep === 1 && value) { on = 1; break; }
++          if (keep === 0 && !value) { on = 0; break; }
++        }
++        to[cell(x, y, z)] = on;
++      }
++      from = to;
++    }
++    return from;
++  };
++  const grown = sweep(solid, 1);
++  const outside = new Uint8Array(nx * ny * nz);
++  const queue: number[] = [];
++  for (let x = 0; x < nx; x++) for (let y = 0; y < ny; y++) for (let z = 0; z < nz; z++) {
++    if (x === 0 || y === 0 || z === 0 || x === nx - 1 || y === ny - 1 || z === nz - 1) {
++      const i = cell(x, y, z);
++      if (!grown[i] && !outside[i]) { outside[i] = 1; queue.push(i); }
++    }
++  }
++  for (let head = 0; head < queue.length; head++) {
++    const i = queue[head]!;
++    const z = i % nz, y = Math.floor(i / nz) % ny, x = Math.floor(i / (nz * ny));
++    for (const [dx, dy, dz] of [[1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0], [0, 0, 1], [0, 0, -1]] as const) {
++      const qx = x + dx, qy = y + dy, qz = z + dz;
++      if (qx < 0 || qy < 0 || qz < 0 || qx >= nx || qy >= ny || qz >= nz) continue;
++      const j = cell(qx, qy, qz);
++      if (grown[j] || outside[j]) continue;
++      outside[j] = 1;
++      queue.push(j);
++    }
++  }
++  const filled = new Uint8Array(nx * ny * nz);
++  for (let i = 0; i < filled.length; i++) filled[i] = outside[i] ? 0 : 1;
++  const inside = sweep(filled, 0);
++  // The closing keeps every cell the surface marked (it only adds): nothing of the body is lost to the erosion.
++  for (let i = 0; i < inside.length; i++) if (solid[i]) inside[i] = 1;
++
++  // ---- surface nets: a vertex in each cube of eight cells whose corners differ, at the mean of the crossing edges' middles
++  const cubeIndex = new Int32Array((nx - 1) * (ny - 1) * nz).fill(-1);
++  const cube = (x: number, y: number, z: number): number => (x * (ny - 1) + y) * nz + z;
++  const verts: number[] = [];
++  const bounds: number[] = [];
++  const corners = [[0, 0, 0], [1, 0, 0], [0, 1, 0], [1, 1, 0], [0, 0, 1], [1, 0, 1], [0, 1, 1], [1, 1, 1]] as const;
++  const edges = [[0, 1], [2, 3], [4, 5], [6, 7], [0, 2], [1, 3], [4, 6], [5, 7], [0, 4], [1, 5], [2, 6], [3, 7]] as const;
++  for (let x = 0; x < nx - 1; x++) for (let y = 0; y < ny - 1; y++) for (let z = 0; z < nz - 1; z++) {
++    const values = corners.map(([dx, dy, dz]) => inside[cell(x + dx, y + dy, z + dz)]!);
++    const sum = values.reduce((s, v) => s + v, 0);
++    if (sum === 0 || sum === 8) continue;
++    let px = 0, py = 0, pz = 0, k = 0;
++    for (const [e0, e1] of edges) {
++      if (values[e0] === values[e1]) continue;
++      px += (corners[e0][0] + corners[e1][0]) / 2; py += (corners[e0][1] + corners[e1][1]) / 2; pz += (corners[e0][2] + corners[e1][2]) / 2;
++      k++;
++    }
++    cubeIndex[cube(x, y, z)] = verts.length / 3;
++    verts.push(x + px / k, y + py / k, z + pz / k);
++    bounds.push(x, y, z);
++  }
++  const faces: number[] = [];
++  const quad = (a: number, b: number, c: number, d: number, flip: boolean): void => {
++    if (a < 0 || b < 0 || c < 0 || d < 0) return;
++    if (flip) faces.push(a, c, b, a, d, c); else faces.push(a, b, c, a, c, d);
++  };
++  for (let x = 1; x < nx - 1; x++) for (let y = 1; y < ny - 1; y++) for (let z = 1; z < nz - 1; z++) {
++    const here = inside[cell(x, y, z)]!;
++    // Along x: the edge from (x,y,z) to (x+1,y,z), shared by the cubes at (x, y-1..y, z-1..z).
++    if (here !== inside[cell(x + 1, y, z)]) quad(cubeIndex[cube(x, y - 1, z - 1)]!, cubeIndex[cube(x, y, z - 1)]!, cubeIndex[cube(x, y, z)]!, cubeIndex[cube(x, y - 1, z)]!, here === 0);
++    if (here !== inside[cell(x, y + 1, z)]) quad(cubeIndex[cube(x - 1, y, z - 1)]!, cubeIndex[cube(x - 1, y, z)]!, cubeIndex[cube(x, y, z)]!, cubeIndex[cube(x, y, z - 1)]!, here === 0);
++    if (here !== inside[cell(x, y, z + 1)]) quad(cubeIndex[cube(x - 1, y - 1, z)]!, cubeIndex[cube(x, y - 1, z)]!, cubeIndex[cube(x, y, z)]!, cubeIndex[cube(x - 1, y, z)]!, here === 0);
++  }
++
++  // ---- smoothed, each vertex kept inside its own cube; then in metres (a cell's corner value sits at its centre)
++  const count = verts.length / 3;
++  const neighbours: Set<number>[] = Array.from({ length: count }, () => new Set<number>());
++  for (let i = 0; i < faces.length; i += 3) for (let k = 0; k < 3; k++) {
++    neighbours[faces[i + k]!]!.add(faces[i + (k + 1) % 3]!);
++    neighbours[faces[i + k]!]!.add(faces[i + (k + 2) % 3]!);
++  }
++  let p = Float64Array.from(verts);
++  for (let pass = 0; pass < SMOOTH; pass++) {
++    const next = new Float64Array(p.length);
++    for (let v = 0; v < count; v++) {
++      const around = neighbours[v]!;
++      for (let c = 0; c < 3; c++) {
++        let s = 0;
++        for (const w of around) s += p[w * 3 + c]!;
++        const mean = around.size ? s / around.size : p[v * 3 + c]!;
++        next[v * 3 + c] = Math.min(bounds[v * 3 + c]! + 1, Math.max(bounds[v * 3 + c]!, mean));
++      }
++    }
++    p = next;
++  }
++  const shellPositions = new Float32Array(count * 3);
++  for (let v = 0; v < count; v++) for (let c = 0; c < 3; c++) shellPositions[v * 3 + c] = origin[c]! + (p[v * 3 + c]! + 0.5) * voxel;
++
++  // ---- each vertex of the nets coloured by the body's surface nearest it: the texel and the vertex colour there (sRGB, as seen); where
++  // that point is a card's hole, what lies behind it down the normal. Then the colours smoothed over the nets twice: a vertex stands for
++  // its patch, not for the one point under it (an eye, a button).
++  const netNormals = new Float32Array(count * 3);
++  for (let k = 0; k < faces.length; k += 3) {
++    const a = faces[k]!, b = faces[k + 1]!, c = faces[k + 2]!;
++    const ux = shellPositions[b * 3]! - shellPositions[a * 3]!, uy = shellPositions[b * 3 + 1]! - shellPositions[a * 3 + 1]!, uz = shellPositions[b * 3 + 2]! - shellPositions[a * 3 + 2]!;
++    const vx = shellPositions[c * 3]! - shellPositions[a * 3]!, vy = shellPositions[c * 3 + 1]! - shellPositions[a * 3 + 1]!, vz = shellPositions[c * 3 + 2]! - shellPositions[a * 3 + 2]!;
++    const fx = uy * vz - uz * vy, fy = uz * vx - ux * vz, fz = ux * vy - uy * vx;
++    for (const v of [a, b, c]) { netNormals[v * 3] = netNormals[v * 3]! + fx; netNormals[v * 3 + 1] = netNormals[v * 3 + 1]! + fy; netNormals[v * 3 + 2] = netNormals[v * 3 + 2]! + fz; }
++  }
++  for (let v = 0; v < count; v++) {
++    const l = Math.hypot(netNormals[v * 3]!, netNormals[v * 3 + 1]!, netNormals[v * 3 + 2]!) || 1;
++    netNormals[v * 3] = netNormals[v * 3]! / l; netNormals[v * 3 + 1] = netNormals[v * 3 + 1]! / l; netNormals[v * 3 + 2] = netNormals[v * 3 + 2]! / l;
++  }
++  const grid = new TriangleGrid(positions, index, 0.015);
++  /** The texel's place of a point of triangle `t`. */
++  const texelAt = (t: number, u: number, v: number, w: number): number => {
++    const a = index[t * 3]!, b = index[t * 3 + 1]!, c = index[t * 3 + 2]!;
++    return texel(atlasUv[a * 2]! * u + atlasUv[b * 2]! * v + atlasUv[c * 2]! * w, atlasUv[a * 2 + 1]! * u + atlasUv[b * 2 + 1]! * v + atlasUv[c * 2 + 1]! * w);
++  };
++  const netColour = new Float32Array(count * 3);
++  const netLook = new Uint8Array(count);
++  for (let v = 0; v < count; v++) {
++    const x = shellPositions[v * 3]!, y = shellPositions[v * 3 + 1]!, z = shellPositions[v * 3 + 2]!;
++    let t = -1, u = 0, w1 = 0, w2 = 0;
++    const near = grid.nearest(x, y, z);
++    if (near.triangle >= 0 && texels[texelAt(near.triangle, near.u, near.v, near.w) + 3]! >= alphaByte) { t = near.triangle; u = near.u; w1 = near.v; w2 = near.w; }
++    else {
++      const nx3 = netNormals[v * 3]!, ny3 = netNormals[v * 3 + 1]!, nz3 = netNormals[v * 3 + 2]!;
++      const seen = grid.raycast([x + nx3 * LOOK_OUT, y + ny3 * LOOK_OUT, z + nz3 * LOOK_OUT], [-nx3, -ny3, -nz3], LOOK_OUT + LOOK_IN,
++        (h) => texels[texelAt(h.triangle, h.u, h.v, h.w) + 3]! >= alphaByte);
++      if (seen) { t = seen.triangle; u = seen.u; w1 = seen.v; w2 = seen.w; }
++      else if (near.triangle >= 0) { t = near.triangle; u = near.u; w1 = near.v; w2 = near.w; }
++    }
++    if (t < 0) { netColour.fill(0.5, v * 3, v * 3 + 3); continue; }
++    const p0 = index[t * 3]!, p1 = index[t * 3 + 1]!, p2 = index[t * 3 + 2]!;
++    const at = texelAt(t, u, w1, w2);
++    for (let k = 0; k < 3; k++) {
++      const own = toLinear(personColor[p0 * 4 + k]!) * u + toLinear(personColor[p1 * 4 + k]!) * w1 + toLinear(personColor[p2 * 4 + k]!) * w2;
++      netColour[v * 3 + k] = toByte(toLinear(texels[at + k]!) * own) / 255;
++    }
++    netLook[v] = personColor[[p0, p1, p2][[u, w1, w2].indexOf(Math.max(u, w1, w2))]! * 4 + 3]!;
++  }
++  for (let pass = 0; pass < COLOUR_SMOOTH; pass++) {
++    const next = new Float32Array(netColour.length);
++    for (let v = 0; v < count; v++) {
++      const around = neighbours[v]!;
++      for (let k = 0; k < 3; k++) {
++        let sum = netColour[v * 3 + k]!;
++        for (const q of around) sum += netColour[q * 3 + k]!;
++        next[v * 3 + k] = sum / (around.size + 1);
++      }
++    }
++    netColour.set(next);
++  }
++
++  // ---- each far level from the one before, on the same vertices, the colour an attribute of the error: an edge stays on a colour's edge
++  // (a hem, a collar, a face under hair) rather than a gradient running across it; isolated crumbs pruned
++  const levels: Uint32Array[] = [];
++  let current: Uint32Array = Uint32Array.from(faces);
++  for (const budget of budgets) {
++    const [kept] = MeshoptSimplifier.simplifyWithAttributes(current, shellPositions, 3, netColour, 3, [COLOUR_WEIGHT, COLOUR_WEIGHT, COLOUR_WEIGHT], null, budget * 3, 1, ['Prune']);
++    levels.push(kept);
++    current = kept;
++  }
++
++  // ---- the vertices any level uses, renumbered: their colour and region from the nets, their bones from the body's nearest point
++  const used = new Map<number, number>();
++  for (const level of levels) for (const v of level) if (!used.has(v)) used.set(v, used.size);
++  const n = used.size;
++  const outPositions = new Float32Array(n * 3);
++  const outColour = new Uint8Array(n * 4), outJoints = new Uint16Array(n * 4), outWeights = new Float32Array(n * 4);
++  for (const [v, i] of used) {
++    outPositions.set(shellPositions.subarray(v * 3, v * 3 + 3), i * 3);
++    for (let k = 0; k < 3; k++) outColour[i * 4 + k] = Math.round(Math.min(1, Math.max(0, netColour[v * 3 + k]!)) * 255);
++    outColour[i * 4 + 3] = netLook[v]!;
++  }
++  const outLevels = levels.map((level) => Uint32Array.from(level, (v) => used.get(v)!));
++  for (let i = 0; i < n; i++) {
++    const hit = grid.nearest(outPositions[i * 3]!, outPositions[i * 3 + 1]!, outPositions[i * 3 + 2]!);
++    const t = hit.triangle;
++    const bary = [hit.u, hit.v, hit.w];
++    // Bones: the nearest point's, its corners' weights blended, the four heaviest kept.
++    const byBone = new Map<number, number>();
++    for (let k = 0; k < 3; k++) {
++      const v = index[t * 3 + k]!;
++      for (let j = 0; j < 4; j++) {
++        const weight = (source.weights[v * 4 + j] ?? 0) * bary[k]!;
++        if (weight > 0) byBone.set(source.joints[v * 4 + j]!, (byBone.get(source.joints[v * 4 + j]!) ?? 0) + weight);
++      }
++    }
++    const heaviest = [...byBone].sort((p1, p2) => p2[1] - p1[1]).slice(0, 4);
++    const total = heaviest.reduce((s1, [, w]) => s1 + w, 0) || 1;
++    heaviest.forEach(([bone, w], j) => { outJoints[i * 4 + j] = bone; outWeights[i * 4 + j] = w / total; });
++  }
++
++  // ---- normals from the first far level, by area
++  const normals = new Float32Array(n * 3);
++  const first = outLevels[0]!;
++  for (let k = 0; k < first.length; k += 3) {
++    const a = first[k]!, b = first[k + 1]!, c = first[k + 2]!;
++    const ux = outPositions[b * 3]! - outPositions[a * 3]!, uy = outPositions[b * 3 + 1]! - outPositions[a * 3 + 1]!, uz = outPositions[b * 3 + 2]! - outPositions[a * 3 + 2]!;
++    const vx = outPositions[c * 3]! - outPositions[a * 3]!, vy = outPositions[c * 3 + 1]! - outPositions[a * 3 + 1]!, vz = outPositions[c * 3 + 2]! - outPositions[a * 3 + 2]!;
++    const fx = uy * vz - uz * vy, fy = uz * vx - ux * vz, fz = ux * vy - uy * vx;
++    for (const v of [a, b, c]) { normals[v * 3] = normals[v * 3]! + fx; normals[v * 3 + 1] = normals[v * 3 + 1]! + fy; normals[v * 3 + 2] = normals[v * 3 + 2]! + fz; }
++  }
++  for (let v = 0; v < n; v++) {
++    const l = Math.hypot(normals[v * 3]!, normals[v * 3 + 1]!, normals[v * 3 + 2]!) || 1;
++    normals[v * 3] = normals[v * 3]! / l; normals[v * 3 + 1] = normals[v * 3 + 1]! / l; normals[v * 3 + 2] = normals[v * 3 + 2]! / l;
++  }
++  return { positions: outPositions, normals, personColor: outColour, joints: outJoints, weights: outWeights, levels: outLevels, cells: dims, netTriangles: faces.length / 3 };
++}
+diff --git a/src/dev/peopleCook/visibility.ts b/src/dev/peopleCook/visibility.ts
+new file mode 100644
+index 00000000..0d360866
+--- /dev/null
++++ b/src/dev/peopleCook/visibility.ts
+@@ -0,0 +1,269 @@
++import {
++  BufferAttribute, BufferGeometry, Color, DoubleSide, OrthographicCamera, Quaternion, RGBAFormat, Scene, ShaderMaterial, SkinnedMesh,
++  UnsignedByteType, Vector3, WebGLRenderTarget, type Bone, type Object3D, type WebGLRenderer,
++} from 'three';
++
++/**
++ * THE TRIANGLES NOBODY CAN SEE: every opaque triangle of the dressed body (skin and the garments that cover it) drawn with its own number
++ * from many directions round it and in several postures (standing, arms down, walking, seated, reaching, arms up), as Simplygon's
++ * visibility culling does with a set of cameras (https://documentation.simplygon.com/SimplygonSDK_10.4.132.0/unity/tutorials/visibility.html).
++ * A candidate triangle no view ever shows is hidden, unless it lies within `BAND` of a shown triangle of its own part (the skin under a
++ * cuff, a collar, a hem moves out as the body moves). Hair, brows, lashes, eyes and see-through items hide nothing and are never cut.
++ */
++
++/** Directions round the body, spread evenly over the sphere (a Fibonacci lattice). */
++const DIRECTIONS = 64;
++/** Texels of each view: about 1.2 mm a texel over the 2.4 m frame. */
++const SIZE = 2048;
++/** A hidden triangle this close to a shown one of its own part is kept: the slack a sleeve or a hem has over the moving body, beyond the
++ *  postures drawn. Three centimetres kept the skin round a dress's armholes and hem, and the simplified dress let it through (mh_48). */
++const BAND = 0.015;
++/** Half the side of the square each view takes in, metres, about the body's middle: wide enough for arms out and a seated body. */
++const REACH = 1.2;
++
++const VERTEX = /* glsl */ `
++#include <common>
++#include <skinning_pars_vertex>
++attribute vec3 tid;
++varying vec3 vId;
++void main() {
++  vId = tid;
++  #include <skinbase_vertex>
++  #include <begin_vertex>
++  #include <skinning_vertex>
++  #include <project_vertex>
++}`;
++const FRAGMENT = /* glsl */ `
++precision highp float;
++varying vec3 vId;
++void main() { gl_FragColor = vec4(vId, 1.0); }`;
++
++/** `bone` turned so its child's head lies along `direction` (world); the rest of the skeleton follows. */
++function aim(bone: Bone, child: Bone, direction: Vector3): void {
++  bone.updateWorldMatrix(true, false);
++  child.updateWorldMatrix(true, false);
++  const from = new Vector3().setFromMatrixPosition(bone.matrixWorld);
++  const to = new Vector3().setFromMatrixPosition(child.matrixWorld);
++  const now = to.sub(from).normalize();
++  const delta = new Quaternion().setFromUnitVectors(now, direction.clone().normalize());
++  const parentWorld = new Quaternion();
++  bone.parent?.getWorldQuaternion(parentWorld);
++  const world = new Quaternion();
++  bone.getWorldQuaternion(world);
++  bone.quaternion.copy(parentWorld.invert().multiply(delta).multiply(world));
++  bone.updateWorldMatrix(false, true);
++}
++
++/** A posture: each limb's bone aimed along a world direction, x towards the limb's own side (+1 or -1), z forward (the body faces +z). */
++type Posture = readonly (readonly [string, string, (side: number) => Vector3])[];
++const ARMS_DOWN: Posture = [
++  ['UpperArm', 'Forearm', (s) => new Vector3(0.15 * s, -1, 0)], ['Forearm', 'Hand', (s) => new Vector3(0.1 * s, -1, 0.05)],
++];
++/** The first postures of `POSTURES` are a figure standing or walking. */
++const STANDING = 3;
++const POSTURES: readonly Posture[] = [
++  [],
++  ARMS_DOWN,
++  // Walking: one leg forward, the other back, the arms swung against them.
++  [['Thigh', 'Calf', (s) => new Vector3(0, -1, s > 0 ? 0.55 : -0.35)], ['Calf', 'Foot', (s) => new Vector3(0, -1, s > 0 ? 0.1 : -0.6)],
++    ['UpperArm', 'Forearm', (s) => new Vector3(0.12 * s, -1, s > 0 ? -0.4 : 0.45)], ['Forearm', 'Hand', (s) => new Vector3(0.1 * s, -1, 0.35)]],
++  // Seated: thighs forward, shins down, hands on the lap or a wheel.
++  [['Thigh', 'Calf', (s) => new Vector3(0.1 * s, -0.15, 1)], ['Calf', 'Foot', () => new Vector3(0, -1, 0.1)],
++    ['UpperArm', 'Forearm', (s) => new Vector3(0.15 * s, -1, 0.5)], ['Forearm', 'Hand', (s) => new Vector3(0.05 * s, -0.3, 1)]],
++  // Reaching forward: a rider's grips, a box carried, a phone held up.
++  [['UpperArm', 'Forearm', (s) => new Vector3(0.1 * s, -0.2, 1)], ['Forearm', 'Hand', () => new Vector3(0, 0.2, 1)],
++    ['Thigh', 'Calf', (s) => new Vector3(0.25 * s, -1, 0.2)]],
++  // Arms up (a fright, a cheer): the sides and the waist under a shirt.
++  [['UpperArm', 'Forearm', (s) => new Vector3(0.35 * s, 1, 0.1)], ['Forearm', 'Hand', (s) => new Vector3(0.1 * s, 1, 0)]],
++];
++
++/** The bones of the cooked skeleton by name (`Bip01_L_UpperArm`...). */
++function bonesOf(root: Object3D): Map<string, Bone> {
++  const out = new Map<string, Bone>();
++  root.traverse((o) => { if ((o as Bone).isBone) out.set(o.name, o as Bone); });
++  return out;
++}
++
++/** Puts `root`'s skeleton in `posture` (from the bind: `rest` holds every bone's own rotation). */
++function pose(root: Object3D, bones: Map<string, Bone>, rest: Map<Bone, Quaternion>, posture: Posture): void {
++  for (const [bone, q] of rest) bone.quaternion.copy(q);
++  root.updateMatrixWorld(true);
++  for (const [name, childName, direction] of posture) {
++    for (const side of ['L', 'R']) {
++      const bone = bones.get(`Bip01_${side}_${name}`), child = bones.get(`Bip01_${side}_${childName}`);
++      if (!bone || !child) continue;
++      bone.updateWorldMatrix(true, false);
++      const x = new Vector3().setFromMatrixPosition(bone.matrixWorld).x;
++      aim(bone, child, direction(Math.sign(x) || (side === 'L' ? 1 : -1)));
++    }
++  }
++  root.updateMatrixWorld(true);
++}
++
++export interface VisibilityInput {
++  readonly renderer: WebGLRenderer;
++  /** The rig's scene: the root holding the bones and `mesh`. */
++  readonly scene: Object3D;
++  readonly mesh: SkinnedMesh;
++  /** Every triangle of the dressed body. */
++  readonly index: Uint32Array;
++  /** Each triangle's part (0 the body, k the k-th item worn) and whether it is opaque cover: drawn into the views and cut where unseen. */
++  readonly part: Int32Array;
++  readonly opaque: Uint8Array;
++  /** The body's height, metres: the views are centred half way up. */
++  readonly height: number;
++}
++
++export interface Visibility {
++  /** The triangles kept, in their order. */
++  readonly index: Uint32Array;
++  /** Of `index`, the opaque triangles no standing or walking posture shows (no band): what a coarser level may drop (`lodLadder.ts`). */
++  readonly unseenStanding: Uint8Array;
++  /** Of `index`, each triangle's part and whether it is opaque cover (`VisibilityInput`). */
++  readonly parts: Int32Array;
++  readonly opaque: Uint8Array;
++  /** Triangles cut, of each part (by `part`), and of all. */
++  readonly cutByPart: ReadonlyMap<number, number>;
++  readonly cut: number;
++  /** Triangles never seen but kept inside the band. */
++  readonly banded: number;
++  readonly views: number;
++}
++
++/** The dressed body less every opaque triangle no view and posture shows (outside the band of its own part's shown ones). */
++export function cullHidden(input: VisibilityInput): Visibility {
++  const { renderer, scene, mesh, index, part, opaque, height } = input;
++  const triangles = index.length / 3;
++  if (triangles >= 1 << 24) throw new Error('too many triangles to number in a colour');
++  const position = mesh.geometry.getAttribute('position') as BufferAttribute;
++  const skinIndex = mesh.geometry.getAttribute('skinIndex') as BufferAttribute;
++  const skinWeight = mesh.geometry.getAttribute('skinWeight') as BufferAttribute;
++  // Each opaque triangle on vertices of its own, numbered t + 1 in its colour (0 is the empty background).
++  const drawn: number[] = [];
++  for (let t = 0; t < triangles; t++) if (opaque[t]) drawn.push(t);
++  const n = drawn.length * 3;
++  const p = new Float32Array(n * 3), id = new Float32Array(n * 3), si = new Uint16Array(n * 4), sw = new Float32Array(n * 4);
++  drawn.forEach((t, k) => {
++    const number = t + 1;
++    for (let c = 0; c < 3; c++) {
++      const v = index[t * 3 + c]!, o = k * 3 + c;
++      p[o * 3] = position.getX(v); p[o * 3 + 1] = position.getY(v); p[o * 3 + 2] = position.getZ(v);
++      id[o * 3] = (number & 255) / 255; id[o * 3 + 1] = ((number >> 8) & 255) / 255; id[o * 3 + 2] = ((number >> 16) & 255) / 255;
++      for (let j = 0; j < 4; j++) { si[o * 4 + j] = skinIndex.getComponent(v, j); sw[o * 4 + j] = skinWeight.getComponent(v, j); }
++    }
++  });
++  const geometry = new BufferGeometry();
++  geometry.setAttribute('position', new BufferAttribute(p, 3));
++  geometry.setAttribute('tid', new BufferAttribute(id, 3));
++  geometry.setAttribute('skinIndex', new BufferAttribute(si, 4));
++  geometry.setAttribute('skinWeight', new BufferAttribute(sw, 4));
++  const material = new ShaderMaterial({ vertexShader: VERTEX, fragmentShader: FRAGMENT, side: DoubleSide });
++  const ids = new SkinnedMesh(geometry, material);
++  ids.frustumCulled = false;
++  ids.bind(mesh.skeleton, mesh.bindMatrix);
++  const visibleMesh = mesh.visible;
++  mesh.visible = false;
++  const parent = mesh.parent!;
++  parent.add(ids);
++  const stage = new Scene();
++  const owner = scene.parent;
++  stage.add(scene);
++  const bones = bonesOf(scene);
++  const rest = new Map<Bone, Quaternion>([...bones.values()].map((b) => [b, b.quaternion.clone()]));
++  const target = new WebGLRenderTarget(SIZE, SIZE, { format: RGBAFormat, type: UnsignedByteType, depthBuffer: true, stencilBuffer: false, generateMipmaps: false });
++  const pixels = new Uint8Array(SIZE * SIZE * 4);
++  const seen = new Uint8Array(triangles);
++  // Seen standing, arms down or walking (the first three postures): a figure seated or reaching is seen near, at the finest level.
++  const seenStanding = new Uint8Array(triangles);
++  const camera = new OrthographicCamera(-REACH, REACH, REACH, -REACH, 0.01, 20);
++  const centre = new Vector3(0, height / 2, 0);
++  const previousTarget = renderer.getRenderTarget();
++  const previousClear = new Color();
++  renderer.getClearColor(previousClear);
++  const previousAlpha = renderer.getClearAlpha();
++  let views = 0;
++  try {
++    renderer.setRenderTarget(target);
++    renderer.setClearColor(0x000000, 1);
++    for (const [p, posture] of POSTURES.entries()) {
++      pose(scene, bones, rest, posture);
++      for (let k = 0; k < DIRECTIONS; k++) {
++        // The Fibonacci lattice: even steps in height, the golden angle round.
++        const y = 1 - (2 * (k + 0.5)) / DIRECTIONS, r = Math.sqrt(1 - y * y), phi = k * Math.PI * (3 - Math.sqrt(5));
++        const direction = new Vector3(Math.cos(phi) * r, y, Math.sin(phi) * r);
++        camera.position.copy(centre).addScaledVector(direction, 10);
++        camera.up.set(Math.abs(y) > 0.99 ? 1 : 0, Math.abs(y) > 0.99 ? 0 : 1, 0);
++        camera.lookAt(centre);
++        camera.updateMatrixWorld(true);
++        renderer.clear(true, true, false);
++        renderer.render(stage, camera);
++        renderer.readRenderTargetPixels(target, 0, 0, SIZE, SIZE, pixels);
++        for (let i = 0; i < pixels.length; i += 4) {
++          const number = pixels[i]! | (pixels[i + 1]! << 8) | (pixels[i + 2]! << 16);
++          if (number) { seen[number - 1] = 1; if (p < STANDING) seenStanding[number - 1] = 1; }
++        }
++        views++;
++      }
++    }
++  } finally {
++    pose(scene, bones, rest, []);
++    renderer.setRenderTarget(previousTarget);
++    renderer.setClearColor(previousClear, previousAlpha);
++    target.dispose();
++    material.dispose();
++    geometry.dispose();
++    parent.remove(ids);
++    mesh.visible = visibleMesh;
++    stage.remove(scene);
++    if (owner) owner.add(scene);
++  }
++
++  // The band: a shown triangle's corners, by part, in a grid of BAND cells; an unseen triangle with a corner within BAND of one is kept.
++  const cellOf = (x: number, y: number, z: number): string => `${Math.floor(x / BAND)},${Math.floor(y / BAND)},${Math.floor(z / BAND)}`;
++  const shown = new Map<number, Map<string, number[]>>();
++  for (let t = 0; t < triangles; t++) {
++    if (!opaque[t] || !seen[t]) continue;
++    let grid = shown.get(part[t]!);
++    if (!grid) shown.set(part[t]!, grid = new Map());
++    for (let c = 0; c < 3; c++) {
++      const v = index[t * 3 + c]!;
++      const key = cellOf(position.getX(v), position.getY(v), position.getZ(v));
++      let list = grid.get(key);
++      if (!list) grid.set(key, list = []);
++      list.push(v);
++    }
++  }
++  const near = (t: number): boolean => {
++    const grid = shown.get(part[t]!);
++    if (!grid) return false;
++    for (let c = 0; c < 3; c++) {
++      const v = index[t * 3 + c]!;
++      const x = position.getX(v), y = position.getY(v), z = position.getZ(v);
++      const cx = Math.floor(x / BAND), cy = Math.floor(y / BAND), cz = Math.floor(z / BAND);
++      for (let dx = -1; dx <= 1; dx++) for (let dy = -1; dy <= 1; dy++) for (let dz = -1; dz <= 1; dz++) {
++        for (const w of grid.get(`${cx + dx},${cy + dy},${cz + dz}`) ?? []) {
++          if (Math.hypot(position.getX(w) - x, position.getY(w) - y, position.getZ(w) - z) <= BAND) return true;
++        }
++      }
++    }
++    return false;
++  };
++  const kept: number[] = [];
++  const standing: number[] = [], keptParts: number[] = [], keptOpaque: number[] = [];
++  const cutByPart = new Map<number, number>();
++  let cut = 0, banded = 0;
++  for (let t = 0; t < triangles; t++) {
++    if (opaque[t] && !seen[t]) {
++      if (!near(t)) { cut++; cutByPart.set(part[t]!, (cutByPart.get(part[t]!) ?? 0) + 1); continue; }
++      banded++;
++    }
++    kept.push(index[t * 3]!, index[t * 3 + 1]!, index[t * 3 + 2]!);
++    standing.push(opaque[t] && !seenStanding[t] ? 1 : 0);
++    keptParts.push(part[t]!);
++    keptOpaque.push(opaque[t]!);
++  }
++  return {
++    index: Uint32Array.from(kept), unseenStanding: Uint8Array.from(standing), parts: Int32Array.from(keptParts), opaque: Uint8Array.from(keptOpaque),
++    cutByPart, cut, banded, views,
++  };
++}
+diff --git a/src/dev/peopleCook/weld.ts b/src/dev/peopleCook/weld.ts
+new file mode 100644
+index 00000000..11d7d54c
+--- /dev/null
++++ b/src/dev/peopleCook/weld.ts
+@@ -0,0 +1,100 @@
++/**
++ * THE DRESSED BODY WELDED: MakeHuman's items come with vertices repeated where nothing tells them apart (the same place, atlas texel,
++ * colour, bones and face moves, a shading normal within `CREASE` of each other) and with cards made two-sided by a second, coincident copy
++ * of every triangle. meshoptimizer cannot simplify a mesh whose vertices are not welded ("for meshes with inconsistent topology or many
++ * seams, such as faceted meshes, it can result in simplifier getting stuck"; https://github.com/zeux/meshoptimizer#simplification), and the
++ * person's material draws both sides of every triangle (`personMaterial.ts`, `DoubleSide`), so the second copy draws nothing the first
++ * does not. Here each group of such vertices becomes one (its normals averaged) and a triangle lying on the corners of another is dropped.
++ */
++
++/** Normals further apart than this stay apart: a crease drawn on purpose (a sole's rim, a collar's fold). */
++const CREASE = Math.cos((45 * Math.PI) / 180);
++/** Positions this close are the same place (a tenth of a millimetre). */
++const PLACE = 1e-4;
++
++export interface WeldInput {
++  readonly positions: Float32Array;
++  readonly normals: Float32Array;
++  readonly atlasUv: Float32Array;
++  readonly personColor: Uint8Array;
++  readonly joints: ArrayLike<number>;
++  readonly weights: ArrayLike<number>;
++  /** Each face expression's moves, three a vertex. */
++  readonly morphs: readonly ArrayLike<number>[];
++  readonly index: Uint32Array;
++  /** A flag a triangle of `index`, carried to the triangles kept. */
++  readonly flags: Uint8Array;
++}
++
++export interface Welded {
++  /** The triangles on the welded vertices, the coincident copies gone. */
++  readonly index: Uint32Array;
++  /** The normals with each welded group's average written into its first vertex. */
++  readonly normals: Float32Array;
++  /** `flags` of the triangles kept, in their order. */
++  readonly flags: Uint8Array;
++  readonly merged: number;
++  readonly duplicates: number;
++}
++
++export function weld(input: WeldInput): Welded {
++  const { positions, atlasUv, personColor, joints, weights, morphs, index } = input;
++  const n = positions.length / 3;
++  const normals = Float32Array.from(input.normals);
++  const placeKey = (v: number): string => `${Math.round(positions[v * 3]! / PLACE)},${Math.round(positions[v * 3 + 1]! / PLACE)},${Math.round(positions[v * 3 + 2]! / PLACE)}`;
++  const same = (a: number, b: number): boolean => {
++    if (Math.abs(atlasUv[a * 2]! - atlasUv[b * 2]!) > 1e-6 || Math.abs(atlasUv[a * 2 + 1]! - atlasUv[b * 2 + 1]!) > 1e-6) return false;
++    for (let k = 0; k < 4; k++) if (personColor[a * 4 + k] !== personColor[b * 4 + k]) return false;
++    for (let k = 0; k < 4; k++) if (joints[a * 4 + k] !== joints[b * 4 + k] || Math.abs(weights[a * 4 + k]! - weights[b * 4 + k]!) > 1e-4) return false;
++    for (const m of morphs) {
++      if (b * 3 + 2 >= m.length || a * 3 + 2 >= m.length) { if (b * 3 + 2 >= m.length !== a * 3 + 2 >= m.length) return false; continue; }
++      for (let c = 0; c < 3; c++) if (Math.abs(m[a * 3 + c]! - m[b * 3 + c]!) > 1e-6) return false;
++    }
++    const dot = input.normals[a * 3]! * input.normals[b * 3]! + input.normals[a * 3 + 1]! * input.normals[b * 3 + 1]! + input.normals[a * 3 + 2]! * input.normals[b * 3 + 2]!;
++    return dot >= CREASE;
++  };
++  // Each vertex the first vertex of its group, by place first.
++  const used = new Uint8Array(n);
++  for (const v of index) used[v] = 1;
++  const byPlace = new Map<string, number[]>();
++  for (let v = 0; v < n; v++) {
++    if (!used[v]) continue;
++    const key = placeKey(v);
++    let list = byPlace.get(key);
++    if (!list) byPlace.set(key, list = []);
++    list.push(v);
++  }
++  const into = new Int32Array(n).map((_, v) => v);
++  let merged = 0;
++  for (const list of byPlace.values()) {
++    if (list.length < 2) continue;
++    const heads: number[] = [];
++    for (const v of list) {
++      const head = heads.find((h) => same(h, v));
++      if (head === undefined) { heads.push(v); continue; }
++      into[v] = head;
++      merged++;
++    }
++    for (const head of heads) {
++      let x = 0, y = 0, z = 0;
++      for (const v of list) if (into[v] === head) { x += input.normals[v * 3]!; y += input.normals[v * 3 + 1]!; z += input.normals[v * 3 + 2]!; }
++      const l = Math.hypot(x, y, z) || 1;
++      normals[head * 3] = x / l; normals[head * 3 + 1] = y / l; normals[head * 3 + 2] = z / l;
++    }
++  }
++  // Triangles on the welded vertices; one lying on the same three places as a triangle already kept is its second side.
++  const out: number[] = [];
++  const flags: number[] = [];
++  const corners = new Set<string>();
++  let duplicates = 0;
++  for (let t = 0; t < index.length; t += 3) {
++    const a = into[index[t]!]!, b = into[index[t + 1]!]!, c = into[index[t + 2]!]!;
++    if (a === b || b === c || a === c) { duplicates++; continue; }
++    const key = [placeKey(a), placeKey(b), placeKey(c)].sort().join('|');
++    if (corners.has(key)) { duplicates++; continue; }
++    corners.add(key);
++    out.push(a, b, c);
++    flags.push(input.flags[t / 3]!);
++  }
++  return { index: Uint32Array.from(out), normals, flags: Uint8Array.from(flags), merged, duplicates };
++}
+diff --git a/src/render/people/cookedPerson.ts b/src/render/people/cookedPerson.ts
+index d45393bf..5a3a118c 100644
+--- a/src/render/people/cookedPerson.ts
++++ b/src/render/people/cookedPerson.ts
+@@ -33,8 +33,10 @@ export const VERTEX_LAYOUT = [
+ ] as const;
+ export type VertexAttributeName = (typeof VERTEX_LAYOUT)[number]['name'];
+ 
+-/** The triangle budgets of the levels: near, then each coarser mesh (`src/dev/peopleCook/lodLadder.ts`). Past the last, the impostor. */
+-export const LEVEL_TRIANGLES = [3000, 800, 200, 60] as const;
++/** The triangle budgets of the levels: near, then each coarser mesh. Past the last, the impostor. Three meshes: a fourth of 150 triangles
++ *  measured the same error as the third (the game picks the coarsest level under a pixel, so the third would never be drawn), and one
++ *  of 100 lost the arms' and legs' shape. */
++export const LEVEL_TRIANGLES = [3000, 800, 300] as const;
+ 
+ /** A level's triangles in the shared index buffer, and its geometric error as a share of the body's height (what the level is chosen by). */
+ export interface CookedLevel { readonly start: number; readonly count: number; readonly error: number }

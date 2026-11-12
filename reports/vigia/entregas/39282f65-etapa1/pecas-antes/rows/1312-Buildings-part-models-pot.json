@@ -1,0 +1,56 @@
+{
+ "id": "Buildings: part models/pot",
+ "group": "Buildings: part models",
+ "name": "pot",
+ "variation": "",
+ "origin": "kit",
+ "source": "src/render/buildings/kit.ts",
+ "build": "instanced",
+ "triangles": 112,
+ "vertices": 163,
+ "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+ "bytesPerVertex": 36,
+ "geometryBytes": 6540,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 6540,
+ "materials": "MeshStandardMaterial \"building-part-pot\" [onBeforeCompile() {}|part-pose] (vertex colours, roughness 0.85, metalness 0, opacity 1)",
+ "shader": "patched built-in onBeforeCompile() {}|part-pose",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 112,
+   "vertices": 163
+  }
+ ],
+ "solids": "3 solids: 2 other, 1 closed cylinder",
+ "hiddenTriangles": 42,
+ "shadow": "casts: 1 box pieces under a shadow texel, else its model",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/1312-Buildings-part-models-pot.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "pot",
+   "triangles": 112,
+   "vertices": 163,
+   "bytes": 6540,
+   "material": "MeshStandardMaterial \"building-part-pot\" [onBeforeCompile() {}|part-pose] (vertex colours, roughness 0.85, metalness 0, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [],
+ "countKey": "part:pot",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

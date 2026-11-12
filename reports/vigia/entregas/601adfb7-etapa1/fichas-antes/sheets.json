@@ -1,0 +1,695 @@
+{
+ "folder": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\_wtP-antes\\cooked\\people",
+ "url": "http://127.0.0.1:5362/",
+ "made": "2026-10-24T21:39:58.636Z",
+ "rows": [
+  {
+   "id": "mh_00",
+   "height": 1.2129574676509947,
+   "vertices": 4764,
+   "levels": [
+    {
+     "triangles": 5101,
+     "vertices": 4764,
+     "error": 0.00497772931006046
+    },
+    {
+     "triangles": 3997,
+     "vertices": 4031,
+     "error": 0.01499229338770187
+    },
+    {
+     "triangles": 377,
+     "vertices": 459,
+     "error": 0.039692034187001624
+    },
+    {
+     "triangles": 136,
+     "vertices": 167,
+     "error": 0.09084800138608536
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_00.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 229004,
+   "atlasBytes": 669574
+  },
+  {
+   "id": "mh_04",
+   "height": 1.4625451434403658,
+   "vertices": 2714,
+   "levels": [
+    {
+     "triangles": 3000,
+     "vertices": 2714,
+     "error": 0.004978986035716363
+    },
+    {
+     "triangles": 1958,
+     "vertices": 2036,
+     "error": 0.014897116592713141
+    },
+    {
+     "triangles": 253,
+     "vertices": 249,
+     "error": 0.03805943984940502
+    },
+    {
+     "triangles": 58,
+     "vertices": 76,
+     "error": 0.08789967078846578
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_04.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 151476,
+   "atlasBytes": 624683
+  },
+  {
+   "id": "mh_08",
+   "height": 1.004765769932419,
+   "vertices": 6789,
+   "levels": [
+    {
+     "triangles": 6573,
+     "vertices": 6789,
+     "error": 0.004988760583368401
+    },
+    {
+     "triangles": 5225,
+     "vertices": 5879,
+     "error": 0.014965702467475873
+    },
+    {
+     "triangles": 2249,
+     "vertices": 2921,
+     "error": 0.039976767361898986
+    },
+    {
+     "triangles": 1816,
+     "vertices": 2417,
+     "error": 0.09807982836260555
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_08.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 327124,
+   "atlasBytes": 623641
+  },
+  {
+   "id": "mh_11",
+   "height": 1.0658367106225342,
+   "vertices": 2298,
+   "levels": [
+    {
+     "triangles": 3000,
+     "vertices": 2298,
+     "error": 0.004253745374653606
+    },
+    {
+     "triangles": 1410,
+     "vertices": 1285,
+     "error": 0.014825659211373916
+    },
+    {
+     "triangles": 303,
+     "vertices": 278,
+     "error": 0.03877910816617737
+    },
+    {
+     "triangles": 41,
+     "vertices": 53,
+     "error": 0.0983234232101244
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_11.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 142984,
+   "atlasBytes": 506660
+  },
+  {
+   "id": "mh_14",
+   "height": 1.6557825673371553,
+   "vertices": 6644,
+   "levels": [
+    {
+     "triangles": 6353,
+     "vertices": 6644,
+     "error": 0.004978157153438214
+    },
+    {
+     "triangles": 5227,
+     "vertices": 5885,
+     "error": 0.014620174768955206
+    },
+    {
+     "triangles": 2236,
+     "vertices": 2905,
+     "error": 0.038117092402920376
+    },
+    {
+     "triangles": 1237,
+     "vertices": 1655,
+     "error": 0.0973911293069488
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_14.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 311556,
+   "atlasBytes": 687295
+  },
+  {
+   "id": "mh_18",
+   "height": 1.8239073297008872,
+   "vertices": 3518,
+   "levels": [
+    {
+     "triangles": 3880,
+     "vertices": 3518,
+     "error": 0.004977274810631271
+    },
+    {
+     "triangles": 2550,
+     "vertices": 2542,
+     "error": 0.01493946779645492
+    },
+    {
+     "triangles": 924,
+     "vertices": 933,
+     "error": 0.03947520727339872
+    },
+    {
+     "triangles": 702,
+     "vertices": 687,
+     "error": 0.09277235948701062
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_18.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 185784,
+   "atlasBytes": 608930
+  },
+  {
+   "id": "mh_34",
+   "height": 1.6667783753946424,
+   "vertices": 2287,
+   "levels": [
+    {
+     "triangles": 3000,
+     "vertices": 2287,
+     "error": 0.002926814981674327
+    },
+    {
+     "triangles": 1232,
+     "vertices": 1203,
+     "error": 0.01476081137604792
+    },
+    {
+     "triangles": 199,
+     "vertices": 248,
+     "error": 0.03727006429330572
+    },
+    {
+     "triangles": 81,
+     "vertices": 126,
+     "error": 0.09390099068558638
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_34.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 137328,
+   "atlasBytes": 624585
+  },
+  {
+   "id": "mh_38",
+   "height": 1.8765485561452806,
+   "vertices": 2889,
+   "levels": [
+    {
+     "triangles": 3196,
+     "vertices": 2889,
+     "error": 0.004971528353025982
+    },
+    {
+     "triangles": 2086,
+     "vertices": 2166,
+     "error": 0.014820334284584182
+    },
+    {
+     "triangles": 295,
+     "vertices": 297,
+     "error": 0.039691432729397694
+    },
+    {
+     "triangles": 72,
+     "vertices": 86,
+     "error": 0.09902151529057614
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_38.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 158232,
+   "atlasBytes": 798604
+  },
+  {
+   "id": "mh_44",
+   "height": 1.7229620041325688,
+   "vertices": 6164,
+   "levels": [
+    {
+     "triangles": 5425,
+     "vertices": 6164,
+     "error": 0.0049687107603927725
+    },
+    {
+     "triangles": 4669,
+     "vertices": 5641,
+     "error": 0.014733619207958966
+    },
+    {
+     "triangles": 2098,
+     "vertices": 2942,
+     "error": 0.03974493633796286
+    },
+    {
+     "triangles": 1677,
+     "vertices": 2362,
+     "error": 0.09875391525124282
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_44.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 303996,
+   "atlasBytes": 679999
+  },
+  {
+   "id": "mh_45",
+   "height": 1.9377268962562084,
+   "vertices": 4026,
+   "levels": [
+    {
+     "triangles": 4502,
+     "vertices": 4026,
+     "error": 0.00497222914089961
+    },
+    {
+     "triangles": 2916,
+     "vertices": 3006,
+     "error": 0.014808602317926278
+    },
+    {
+     "triangles": 380,
+     "vertices": 328,
+     "error": 0.03896145067671464
+    },
+    {
+     "triangles": 132,
+     "vertices": 118,
+     "error": 0.09120230183849821
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_45.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 306228,
+   "atlasBytes": 684717
+  },
+  {
+   "id": "mh_48",
+   "height": 1.7051232159137726,
+   "vertices": 6906,
+   "levels": [
+    {
+     "triangles": 6731,
+     "vertices": 6906,
+     "error": 0.004977623379402867
+    },
+    {
+     "triangles": 5467,
+     "vertices": 6060,
+     "error": 0.014897956252480358
+    },
+    {
+     "triangles": 2390,
+     "vertices": 3021,
+     "error": 0.039389333930594336
+    },
+    {
+     "triangles": 1308,
+     "vertices": 1690,
+     "error": 0.09911141371352489
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_48.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 323716,
+   "atlasBytes": 656811
+  },
+  {
+   "id": "mh_51",
+   "height": 1.776587799191475,
+   "vertices": 3185,
+   "levels": [
+    {
+     "triangles": 3440,
+     "vertices": 3185,
+     "error": 0.004977987738787841
+    },
+    {
+     "triangles": 2274,
+     "vertices": 2329,
+     "error": 0.014851741866455983
+    },
+    {
+     "triangles": 534,
+     "vertices": 554,
+     "error": 0.03956453601732661
+    },
+    {
+     "triangles": 223,
+     "vertices": 222,
+     "error": 0.09174486480538778
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_51.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 173988,
+   "atlasBytes": 432500
+  },
+  {
+   "id": "mh_55",
+   "height": 1.709053865633905,
+   "vertices": 7643,
+   "levels": [
+    {
+     "triangles": 6759,
+     "vertices": 7643,
+     "error": 0.004974635807980586
+    },
+    {
+     "triangles": 5879,
+     "vertices": 7023,
+     "error": 0.014789734108265302
+    },
+    {
+     "triangles": 2827,
+     "vertices": 3684,
+     "error": 0.03730741161523713
+    },
+    {
+     "triangles": 1854,
+     "vertices": 2574,
+     "error": 0.09858052480885023
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_55.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 390244,
+   "atlasBytes": 797286
+  },
+  {
+   "id": "mh_59",
+   "height": 1.809638305567205,
+   "vertices": 15533,
+   "levels": [
+    {
+     "triangles": 11590,
+     "vertices": 15533,
+     "error": 0.004979234999678193
+    },
+    {
+     "triangles": 10688,
+     "vertices": 14920,
+     "error": 0.014985831091913742
+    },
+    {
+     "triangles": 8188,
+     "vertices": 11649,
+     "error": 0.03998106621355758
+    },
+    {
+     "triangles": 59,
+     "vertices": 71,
+     "error": 0.09609533613939578
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_59.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 722292,
+   "atlasBytes": 517385
+  },
+  {
+   "id": "mh_64",
+   "height": 1.6011412609368563,
+   "vertices": 7404,
+   "levels": [
+    {
+     "triangles": 6661,
+     "vertices": 7404,
+     "error": 0.004999742697802747
+    },
+    {
+     "triangles": 5563,
+     "vertices": 6677,
+     "error": 0.014922542063522094
+    },
+    {
+     "triangles": 466,
+     "vertices": 535,
+     "error": 0.03931224604357773
+    },
+    {
+     "triangles": 128,
+     "vertices": 152,
+     "error": 0.09439506107220133
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_64.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 418048,
+   "atlasBytes": 605164
+  },
+  {
+   "id": "mh_67",
+   "height": 1.935238515259698,
+   "vertices": 3650,
+   "levels": [
+    {
+     "triangles": 3820,
+     "vertices": 3650,
+     "error": 0.004961437922437568
+    },
+    {
+     "triangles": 2826,
+     "vertices": 2986,
+     "error": 0.0148364992015278
+    },
+    {
+     "triangles": 542,
+     "vertices": 535,
+     "error": 0.03954100537943086
+    },
+    {
+     "triangles": 412,
+     "vertices": 409,
+     "error": 0.09675793921349263
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_67.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 289620,
+   "atlasBytes": 557962
+  }
+ ]
+}

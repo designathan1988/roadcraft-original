@@ -1,0 +1,56 @@
+{
+ "id": "Buildings: part models/chair",
+ "group": "Buildings: part models",
+ "name": "chair",
+ "variation": "",
+ "origin": "kit",
+ "source": "src/render/buildings/kit.ts",
+ "build": "instanced",
+ "triangles": 74,
+ "vertices": 148,
+ "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+ "bytesPerVertex": 36,
+ "geometryBytes": 5772,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 5772,
+ "materials": "MeshStandardMaterial \"building-part-chair\" [thin-part-prefiltered-v4-cards|part-pose] (vertex colours, roughness 0.6, metalness 0, opacity 1)",
+ "shader": "patched built-in thin-part-prefiltered-v4-cards|part-pose",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 74,
+   "vertices": 148
+  }
+ ],
+ "solids": "8 solids: 1 box, 3 other, 4 open prism",
+ "hiddenTriangles": 0,
+ "shadow": "does not cast (small part)",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/1374-Buildings-part-models-chair.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "chair",
+   "triangles": 74,
+   "vertices": 148,
+   "bytes": 5772,
+   "material": "MeshStandardMaterial \"building-part-chair\" [thin-part-prefiltered-v4-cards|part-pose] (vertex colours, roughness 0.6, metalness 0, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [],
+ "countKey": "part:chair",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

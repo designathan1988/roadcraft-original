@@ -1,0 +1,59 @@
+{
+ "id": "Buildings: shell pieces/facade run (bays laid as one, far level)/emitFacadeRuns, 14 triangles, 12.00 x 3.27 x 11.00 m, from residential low small lot",
+ "group": "Buildings: shell pieces",
+ "name": "facade run (bays laid as one, far level)",
+ "variation": "emitFacadeRuns, 14 triangles, 12.00 x 3.27 x 11.00 m, from residential low small lot",
+ "origin": "kit",
+ "source": "src/render/buildings/buildingMesh.ts (emitFacadeRuns)",
+ "build": "merged",
+ "triangles": 14,
+ "vertices": 42,
+ "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+ "bytesPerVertex": 36,
+ "geometryBytes": 1512,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 1512,
+ "materials": "MeshStandardMaterial (vertex colours, roughness 0.85, metalness 0, opacity 1)",
+ "shader": "three MeshStandardMaterial",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 14,
+   "vertices": 42
+  }
+ ],
+ "solids": "2 solids: 1 other, 1 quad",
+ "hiddenTriangles": 0,
+ "shadow": "",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/0882-Buildings-shell-pieces-facade-run-bays-laid-as-one-far-level-emitFacadeRuns-14-t.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "emitFacadeRuns",
+   "triangles": 14,
+   "vertices": 42,
+   "bytes": 1512,
+   "material": "MeshStandardMaterial (vertex colours, roughness 0.85, metalness 0, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [
+  "finishes: plaster",
+  "faces exactly as the shell lays them (Shell.face), not welded: the engine welds equal vertices, so its vertex count is lower"
+ ],
+ "countKey": "",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

@@ -1,0 +1,59 @@
+{
+ "id": "Buildings: shell pieces/building body (walls, slabs)/emitBuilding, 58 triangles, 4.53 x 3.50 x 10.27 m, from function restaurant",
+ "group": "Buildings: shell pieces",
+ "name": "building body (walls, slabs)",
+ "variation": "emitBuilding, 58 triangles, 4.53 x 3.50 x 10.27 m, from function restaurant",
+ "origin": "kit",
+ "source": "src/render/buildings/buildingMesh.ts (emitBuilding)",
+ "build": "merged",
+ "triangles": 58,
+ "vertices": 174,
+ "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+ "bytesPerVertex": 36,
+ "geometryBytes": 6264,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 6264,
+ "materials": "MeshStandardMaterial (vertex colours, roughness 0.85, metalness 0, opacity 1)",
+ "shader": "three MeshStandardMaterial",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 58,
+   "vertices": 174
+  }
+ ],
+ "solids": "6 solids: 5 other, 1 open prism",
+ "hiddenTriangles": 0,
+ "shadow": "",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/0800-Buildings-shell-pieces-building-body-walls-slabs-emitBuilding-58-triangles-4-53-.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "emitBuilding",
+   "triangles": 58,
+   "vertices": 174,
+   "bytes": 6264,
+   "material": "MeshStandardMaterial (vertex colours, roughness 0.85, metalness 0, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [
+  "finishes: metal",
+  "faces exactly as the shell lays them (Shell.face), not welded: the engine welds equal vertices, so its vertex count is lower"
+ ],
+ "countKey": "",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

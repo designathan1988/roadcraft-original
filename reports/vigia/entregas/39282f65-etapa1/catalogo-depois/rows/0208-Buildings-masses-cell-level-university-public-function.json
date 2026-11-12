@@ -1,0 +1,58 @@
+{
+ "id": "Buildings: masses (cell level)/university (public)/function",
+ "group": "Buildings: masses (cell level)",
+ "name": "university (public)",
+ "variation": "function",
+ "origin": "kit",
+ "source": "src/render/buildings/massing.ts (massOf over the program) + massCells.ts (cellMesh)",
+ "build": "merged",
+ "triangles": 196,
+ "vertices": 392,
+ "attributes": "position:3xFloat32=12B normal:4xInt8=4B color:4xUint16=8B facade:2xFloat32=8B facadeGrid:4xUint16=8B glazingSeed:1xFloat32=4B",
+ "bytesPerVertex": 44,
+ "geometryBytes": 18424,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 18424,
+ "materials": "MeshStandardMaterial \"building-massing\" [building-massing-lamps-v6-lots-own-walls] (vertex colours, roughness 0.92, metalness 0, opacity 1)",
+ "shader": "patched built-in building-massing-lamps-v6-lots-own-walls",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 196,
+   "vertices": 392
+  }
+ ],
+ "solids": "9 solids: 9 other",
+ "hiddenTriangles": 0,
+ "shadow": "",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/0208-Buildings-masses-cell-level-university-public-function.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "masses",
+   "triangles": 196,
+   "vertices": 392,
+   "bytes": 18424,
+   "material": "MeshStandardMaterial \"building-massing\" [building-massing-lamps-v6-lots-own-walls] (vertex colours, roughness 0.92, metalness 0, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [
+  "left out or laid flat at this level: up to 0 m; the windows drawn by the massing shader"
+ ],
+ "countKey": "building-mass-cell:university (public)",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

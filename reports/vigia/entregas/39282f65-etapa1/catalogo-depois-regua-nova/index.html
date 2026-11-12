@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engine Geometry Catalogue</title><style>
+:root { --bg: #f5f6f8; --card: #fff; --ink: #18202a; --muted: #5d6875; --line: #dde1e6; --accent: #2457c5; }
+@media (prefers-color-scheme: dark) { :root { --bg: #14181d; --card: #1c2228; --ink: #e8ecf0; --muted: #9aa5b1; --line: #2c343c; --accent: #7ea6ff; } }
+* { box-sizing: border-box; } body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 system-ui, sans-serif; }
+header, main { max-width: 1400px; margin: 0 auto; padding: 16px; } h1 { margin: 8px 0; font-size: 24px; } h2 { margin: 32px 0 8px; font-size: 19px; }
+.muted { color: var(--muted); } nav { columns: 3 260px; font-size: 13px; } nav a { display: block; color: var(--accent); text-decoration: none; }
+table.sum { border-collapse: collapse; width: 100%; font-size: 13px; } table.sum td, table.sum th { padding: 4px 8px; border-bottom: 1px solid var(--line); text-align: right; } table.sum td:first-child, table.sum th:first-child { text-align: left; }
+.row { display: grid; grid-template-columns: minmax(0, 560px) minmax(0, 1fr); gap: 16px; background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 12px; margin: 10px 0; }
+.row img { width: 100%; height: auto; border-radius: 4px; display: block; } .none { display: grid; place-items: center; min-height: 120px; color: var(--muted); border: 1px dashed var(--line); }
+.row h3 { margin: 0 0 6px; font-size: 16px; } .row small { color: var(--muted); font-weight: 400; }
+dl { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 2px 10px; margin: 0; font-size: 13px; } dt { color: var(--muted); } dd { margin: 0; overflow-wrap: anywhere; }
+.file { display: inline-block; margin-top: 8px; color: var(--accent); } code { font-size: 12px; }
+@media (max-width: 800px) { .row { grid-template-columns: 1fr; } dl { grid-template-columns: 1fr; } }
+a { color: var(--accent); }
+.advice { border-left: 3px solid #d0702a; padding: 4px 10px; margin: 0 0 8px; font-size: 13px; } .advice ul { margin: 4px 0 0; padding-left: 18px; }
+</style></head><body>
+<header>
+<h1>Engine Geometry Catalogue</h1>
+<p class="muted">Every object the engine's builders make, each built alone (no city). 482 objects so far, updated 2026-10-24T22:48:26.482Z - finished. Each picture: the object rendered (left) and its hidden-line wireframe (right).</p>
+<p class="muted">hidden triangles: triangles whose centre lies strictly inside another closed convex solid of the same object (its face planes, the solids welded by position), or pressed face to face on another triangle (the same centre, opposite normals); n/a for lines, points and geometry whose arrays could not be read.</p>
+<p><a href="optimization.html"><b>Geometry Optimization: what to change in every object, and why</b></a></p>
+<h2>Groups</h2>
+<table class="sum"><tr><th>Group</th><th>Objects</th><th>Triangles (one of each)</th></tr>
+<tr><td><a href="groups/buildings-far-facade-l1.html">Buildings: far facade (L1)</a></td><td>80</td><td>681,414</td></tr>
+<tr><td><a href="groups/buildings-functions.html">Buildings: functions</a></td><td>42</td><td>348,938</td></tr>
+<tr><td><a href="groups/buildings-made-to-measure.html">Buildings: made to measure</a></td><td>27</td><td>336,032</td></tr>
+<tr><td><a href="groups/buildings-presets.html">Buildings: presets</a></td><td>11</td><td>82,432</td></tr>
+<tr><td><a href="groups/buildings-interiors-cut-open.html">Buildings: interiors (cut open)</a></td><td>3</td><td>25,762</td></tr>
+<tr><td><a href="groups/editor-previews.html">Editor previews</a></td><td>3</td><td>14,618</td></tr>
+<tr><td><a href="groups/buildings-masses-cell-level.html">Buildings: masses (cell level)</a></td><td>79</td><td>6,412</td></tr>
+<tr><td><a href="groups/buildings-masses-tile-level.html">Buildings: masses (tile level)</a></td><td>79</td><td>2,420</td></tr>
+<tr><td><a href="groups/buildings-masses-plate-level.html">Buildings: masses (plate level)</a></td><td>79</td><td>2,204</td></tr>
+<tr><td><a href="groups/buildings-base-farthest-level.html">Buildings: base (farthest level)</a></td><td>79</td><td>1,318</td></tr>
+</table>
+<h2>Layers with no geometry of their own</h2>
+<ul><li>Gardens (src/render/gardens.ts gardenKinds): the landscape kit's tree and bush models (Street trees and bushes), placed by the buildings' garden elements.</li><li>Long grass (src/render/grass.ts grassClump): the landscape kit's grass tuft and wildflower (Street furniture), placed in clumps.</li></ul>
+<h2>Not catalogued yet</h2>
+<ul><li>Copies of each object in a generated city, and triangles x copies (needs the game open: `node scripts/model-catalog.mjs` without --no-game)</li></ul>
+<h2>Could not be measured</h2>
+<ul><li>Clouds: no mesh; drawn by ray marching in the post chain (src/render/postprocess.ts CLOUD_SHADOWS).</li><li>Vehicles' intermediate levels: made at run time by the simplifier (vehicleLevels.ts partLevels, meshoptimizer); the catalogue gives the full model (L0) and the far model.</li><li>Pictures: the colours are each material's base colour where its look needs the running game (baked surfaces, the engine's uniforms); the geometry and every number are the engine's.</li><li>Editor feedback on the ground (src/render/renderer.ts blink) and the tools' 2D gizmos (drawn on a canvas over the view): no catalogued mesh.</li><li>Run without the game (--no-game): no copies, costs (triangles x copies), draw calls or destruction peak: those are counted in a generated city.</li></ul>
+</header></body></html>

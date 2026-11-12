@@ -1,0 +1,56 @@
+{
+ "id": "Buildings: part models/airer",
+ "group": "Buildings: part models",
+ "name": "airer",
+ "variation": "",
+ "origin": "kit",
+ "source": "src/render/buildings/kit.ts",
+ "build": "instanced",
+ "triangles": 152,
+ "vertices": 304,
+ "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+ "bytesPerVertex": 36,
+ "geometryBytes": 11856,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 11856,
+ "materials": "MeshStandardMaterial \"building-part-airer\" [thin-part-prefiltered-v4-cards|part-pose] (vertex colours, roughness 0.8, metalness 0, opacity 1)",
+ "shader": "patched built-in thin-part-prefiltered-v4-cards|part-pose",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 152,
+   "vertices": 304
+  }
+ ],
+ "solids": "12 solids: 2 other, 10 box",
+ "hiddenTriangles": 0,
+ "shadow": "does not cast (small part)",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/1376-Buildings-part-models-airer.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "airer",
+   "triangles": 152,
+   "vertices": 304,
+   "bytes": 11856,
+   "material": "MeshStandardMaterial \"building-part-airer\" [thin-part-prefiltered-v4-cards|part-pose] (vertex colours, roughness 0.8, metalness 0, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [],
+ "countKey": "part:airer",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

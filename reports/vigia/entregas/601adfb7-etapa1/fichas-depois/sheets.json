@@ -1,0 +1,615 @@
+{
+ "folder": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\_wtP-depois\\cooked\\people",
+ "url": "http://127.0.0.1:5363/",
+ "made": "2026-10-24T22:54:13.209Z",
+ "rows": [
+  {
+   "id": "mh_00",
+   "height": 1.2129574676509947,
+   "vertices": 3863,
+   "levels": [
+    {
+     "triangles": 4231,
+     "vertices": 3131,
+     "error": 0.002403839610397595
+    },
+    {
+     "triangles": 1952,
+     "vertices": 1721,
+     "error": 0.009553818314020407
+    },
+    {
+     "triangles": 300,
+     "vertices": 152,
+     "error": 0.042321271840418166
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_00.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 198232,
+   "atlasBytes": 668757
+  },
+  {
+   "id": "mh_04",
+   "height": 1.4625451434403658,
+   "vertices": 2632,
+   "levels": [
+    {
+     "triangles": 2999,
+     "vertices": 2122,
+     "error": 0.0022407553012580507
+    },
+    {
+     "triangles": 1165,
+     "vertices": 991,
+     "error": 0.010331238997352683
+    },
+    {
+     "triangles": 300,
+     "vertices": 152,
+     "error": 0.02165443685269585
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_04.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 149796,
+   "atlasBytes": 624109
+  },
+  {
+   "id": "mh_08",
+   "height": 1.004765769932419,
+   "vertices": 4594,
+   "levels": [
+    {
+     "triangles": 5002,
+     "vertices": 3720,
+     "error": 0.0023067195025095505
+    },
+    {
+     "triangles": 2504,
+     "vertices": 2087,
+     "error": 0.009781342628512423
+    },
+    {
+     "triangles": 300,
+     "vertices": 152,
+     "error": 0.05570681910004659
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_08.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 232188,
+   "atlasBytes": 622900
+  },
+  {
+   "id": "mh_11",
+   "height": 1.0658367106225342,
+   "vertices": 2782,
+   "levels": [
+    {
+     "triangles": 3284,
+     "vertices": 2102,
+     "error": 0.002404938991329891
+    },
+    {
+     "triangles": 1506,
+     "vertices": 1114,
+     "error": 0.011524670868224684
+    },
+    {
+     "triangles": 298,
+     "vertices": 151,
+     "error": 0.03101202506852194
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_11.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 165744,
+   "atlasBytes": 506261
+  },
+  {
+   "id": "mh_14",
+   "height": 1.6557825673371553,
+   "vertices": 3990,
+   "levels": [
+    {
+     "triangles": 4182,
+     "vertices": 3201,
+     "error": 0.0023739709816680997
+    },
+    {
+     "triangles": 1867,
+     "vertices": 1596,
+     "error": 0.00911318047668815
+    },
+    {
+     "triangles": 300,
+     "vertices": 152,
+     "error": 0.037108236710505844
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_14.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 194056,
+   "atlasBytes": 686505
+  },
+  {
+   "id": "mh_18",
+   "height": 1.8239073297008872,
+   "vertices": 3160,
+   "levels": [
+    {
+     "triangles": 3513,
+     "vertices": 2516,
+     "error": 0.0022860583772151685
+    },
+    {
+     "triangles": 1501,
+     "vertices": 1230,
+     "error": 0.012475386032529012
+    },
+    {
+     "triangles": 300,
+     "vertices": 152,
+     "error": 0.023259166350298288
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_18.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 169336,
+   "atlasBytes": 608421
+  },
+  {
+   "id": "mh_34",
+   "height": 1.6667783753946424,
+   "vertices": 2610,
+   "levels": [
+    {
+     "triangles": 2997,
+     "vertices": 2006,
+     "error": 0.00217504871560507
+    },
+    {
+     "triangles": 1153,
+     "vertices": 921,
+     "error": 0.010114320078863964
+    },
+    {
+     "triangles": 300,
+     "vertices": 152,
+     "error": 0.02659341469962721
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_34.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 151436,
+   "atlasBytes": 624043
+  },
+  {
+   "id": "mh_38",
+   "height": 1.8765485561452806,
+   "vertices": 2972,
+   "levels": [
+    {
+     "triangles": 3162,
+     "vertices": 2285,
+     "error": 0.0025180638819354826
+    },
+    {
+     "triangles": 1382,
+     "vertices": 1178,
+     "error": 0.009388755331259718
+    },
+    {
+     "triangles": 300,
+     "vertices": 152,
+     "error": 0.016778731281642898
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_38.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 162852,
+   "atlasBytes": 798697
+  },
+  {
+   "id": "mh_44",
+   "height": 1.7229620041325688,
+   "vertices": 3768,
+   "levels": [
+    {
+     "triangles": 3727,
+     "vertices": 3032,
+     "error": 0.002470709031400649
+    },
+    {
+     "triangles": 1692,
+     "vertices": 1506,
+     "error": 0.01002652321221144
+    },
+    {
+     "triangles": 296,
+     "vertices": 109,
+     "error": 0.030841525253762315
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_44.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 191004,
+   "atlasBytes": 679552
+  },
+  {
+   "id": "mh_45",
+   "height": 1.9377268962562084,
+   "vertices": 3925,
+   "levels": [
+    {
+     "triangles": 4596,
+     "vertices": 3157,
+     "error": 0.002259704728403658
+    },
+    {
+     "triangles": 1712,
+     "vertices": 1462,
+     "error": 0.008934314014834884
+    },
+    {
+     "triangles": 300,
+     "vertices": 152,
+     "error": 0.016954422271282566
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_45.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 241708,
+   "atlasBytes": 684790
+  },
+  {
+   "id": "mh_48",
+   "height": 1.7051232159137726,
+   "vertices": 4342,
+   "levels": [
+    {
+     "triangles": 4637,
+     "vertices": 3457,
+     "error": 0.002282482040168305
+    },
+    {
+     "triangles": 1934,
+     "vertices": 1641,
+     "error": 0.010173952230802015
+    },
+    {
+     "triangles": 294,
+     "vertices": 145,
+     "error": 0.03585446762054668
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_48.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 208884,
+   "atlasBytes": 656730
+  },
+  {
+   "id": "mh_51",
+   "height": 1.776587799191475,
+   "vertices": 3068,
+   "levels": [
+    {
+     "triangles": 3193,
+     "vertices": 2378,
+     "error": 0.002368658965463445
+    },
+    {
+     "triangles": 1377,
+     "vertices": 1184,
+     "error": 0.009964327000101931
+    },
+    {
+     "triangles": 300,
+     "vertices": 152,
+     "error": 0.018216656417778514
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_51.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 167444,
+   "atlasBytes": 432766
+  },
+  {
+   "id": "mh_55",
+   "height": 1.709053865633905,
+   "vertices": 4002,
+   "levels": [
+    {
+     "triangles": 4001,
+     "vertices": 3198,
+     "error": 0.002495192035469548
+    },
+    {
+     "triangles": 1659,
+     "vertices": 1477,
+     "error": 0.008411835041635366
+    },
+    {
+     "triangles": 300,
+     "vertices": 152,
+     "error": 0.0384990517855992
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_55.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 202604,
+   "atlasBytes": 796561
+  },
+  {
+   "id": "mh_59",
+   "height": 1.809638305567205,
+   "vertices": 4894,
+   "levels": [
+    {
+     "triangles": 4369,
+     "vertices": 3866,
+     "error": 0.0022778350863160253
+    },
+    {
+     "triangles": 2038,
+     "vertices": 2075,
+     "error": 0.011463556460759009
+    },
+    {
+     "triangles": 300,
+     "vertices": 152,
+     "error": 0.019675795452719545
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_59.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 234804,
+   "atlasBytes": 516929
+  },
+  {
+   "id": "mh_64",
+   "height": 1.6011412609368563,
+   "vertices": 3702,
+   "levels": [
+    {
+     "triangles": 3887,
+     "vertices": 2960,
+     "error": 0.002290967593089854
+    },
+    {
+     "triangles": 1763,
+     "vertices": 1617,
+     "error": 0.009657266239072836
+    },
+    {
+     "triangles": 300,
+     "vertices": 152,
+     "error": 0.03555802341725199
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_64.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 191244,
+   "atlasBytes": 604121
+  },
+  {
+   "id": "mh_67",
+   "height": 1.935238515259698,
+   "vertices": 3054,
+   "levels": [
+    {
+     "triangles": 3195,
+     "vertices": 2380,
+     "error": 0.002390999619241976
+    },
+    {
+     "triangles": 1315,
+     "vertices": 1217,
+     "error": 0.009225563648776074
+    },
+    {
+     "triangles": 298,
+     "vertices": 151,
+     "error": 0.018642737939542877
+    }
+   ],
+   "impostor": {
+    "frames": 8,
+    "x": 768,
+    "y": 512,
+    "width": 32,
+    "height": 64
+   },
+   "atlas": {
+    "file": "mh_67.ktx2",
+    "size": 1024,
+    "codec": "rgba8"
+   },
+   "morphs": 13,
+   "bones": 53,
+   "binBytes": 201672,
+   "atlasBytes": 557662
+  }
+ ]
+}

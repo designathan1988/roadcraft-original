@@ -1,0 +1,126 @@
+{
+ "id": "Editor previews/building ghost/rowhouse",
+ "group": "Editor previews",
+ "name": "building ghost",
+ "variation": "rowhouse",
+ "origin": "editor preview",
+ "source": "src/render/buildings/buildingMesh.ts (ghost)",
+ "build": "merged",
+ "triangles": 1702,
+ "vertices": 3363,
+ "attributes": "position:3xFloat32=12B shellOctNormal:2xInt16=4B shellPaint:4xUint16=8B facadeSize:2xUint16=4B facadeCell:4xInt16=8B facadeOpening:4xUint8=4B facadeTrim:4xUint8=4B normal:3xFloat32=12B uv:2xFloat32=8B instancePoseA:4xFloat32=16B instancePoseB:4xFloat32=16B color:3xFloat32=12B",
+ "bytesPerVertex": 68,
+ "geometryBytes": 58344,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 58344,
+ "materials": "MeshStandardMaterial [building-ghost-shell-oct] (transparent, roughness 0.7, metalness 0, opacity 0.5) | MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)",
+ "shader": "patched built-in building-ghost-shell-oct | patched built-in onBeforeCompile() {}|part-pose",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 1702,
+   "vertices": 3363
+  }
+ ],
+ "solids": "161 solids: 12 open prism, 36 quad, 41 other, 72 box",
+ "hiddenTriangles": 44,
+ "shadow": "",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": true,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/0007-Editor-previews-building-ghost-rowhouse.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "building-preview-shell",
+   "triangles": 284,
+   "vertices": 464,
+   "bytes": 12840,
+   "material": "MeshStandardMaterial [building-ghost-shell-oct] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-preview-shell",
+   "triangles": 22,
+   "vertices": 43,
+   "bytes": 2024,
+   "material": "MeshStandardMaterial [building-ghost-shell-oct] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-glass-preview x29",
+   "triangles": 58,
+   "vertices": 116,
+   "bytes": 1068,
+   "material": "MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-frame-preview x2",
+   "triangles": 112,
+   "vertices": 288,
+   "bytes": 5008,
+   "material": "MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-concrete-preview x37",
+   "triangles": 444,
+   "vertices": 888,
+   "bytes": 2024,
+   "material": "MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-door-preview",
+   "triangles": 62,
+   "vertices": 124,
+   "bytes": 4372,
+   "material": "MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-shutter-preview x7",
+   "triangles": 84,
+   "vertices": 168,
+   "bytes": 1064,
+   "material": "MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-railing-preview x2",
+   "triangles": 444,
+   "vertices": 888,
+   "bytes": 15604,
+   "material": "MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-glassDark-preview x6",
+   "triangles": 12,
+   "vertices": 24,
+   "bytes": 332,
+   "material": "MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-lamp-preview",
+   "triangles": 12,
+   "vertices": 24,
+   "bytes": 872,
+   "material": "MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-airer-preview",
+   "triangles": 168,
+   "vertices": 336,
+   "bytes": 13136,
+   "material": "MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  }
+ ],
+ "textures": [],
+ "notes": [],
+ "countKey": "",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

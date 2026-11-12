@@ -1,0 +1,56 @@
+{
+ "id": "Buildings: part models/lounger",
+ "group": "Buildings: part models",
+ "name": "lounger",
+ "variation": "",
+ "origin": "kit",
+ "source": "src/render/buildings/kit.ts",
+ "build": "instanced",
+ "triangles": 64,
+ "vertices": 128,
+ "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+ "bytesPerVertex": 36,
+ "geometryBytes": 4992,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 4992,
+ "materials": "MeshStandardMaterial \"building-part-lounger\" [onBeforeCompile() {}|part-pose] (vertex colours, roughness 0.75, metalness 0, opacity 1)",
+ "shader": "patched built-in onBeforeCompile() {}|part-pose",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 64,
+   "vertices": 128
+  }
+ ],
+ "solids": "7 solids: 1 box, 2 other, 4 open prism",
+ "hiddenTriangles": 2,
+ "shadow": "does not cast (small part)",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/1372-Buildings-part-models-lounger.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "lounger",
+   "triangles": 64,
+   "vertices": 128,
+   "bytes": 4992,
+   "material": "MeshStandardMaterial \"building-part-lounger\" [onBeforeCompile() {}|part-pose] (vertex colours, roughness 0.75, metalness 0, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [],
+ "countKey": "part:lounger",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

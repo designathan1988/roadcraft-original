@@ -1,0 +1,59 @@
+{
+ "id": "Buildings: shell pieces/roof plant/emitRoofPlant, 40 triangles, 1.20 x 3.50 x 3.08 m, from function restaurant",
+ "group": "Buildings: shell pieces",
+ "name": "roof plant",
+ "variation": "emitRoofPlant, 40 triangles, 1.20 x 3.50 x 3.08 m, from function restaurant",
+ "origin": "kit",
+ "source": "src/render/buildings/buildingMesh.ts (emitRoofPlant)",
+ "build": "merged",
+ "triangles": 40,
+ "vertices": 120,
+ "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+ "bytesPerVertex": 36,
+ "geometryBytes": 4320,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 4320,
+ "materials": "MeshStandardMaterial (vertex colours, roughness 0.85, metalness 0, opacity 1)",
+ "shader": "three MeshStandardMaterial",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 40,
+   "vertices": 120
+  }
+ ],
+ "solids": "4 solids: 4 other",
+ "hiddenTriangles": 0,
+ "shadow": "",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/0766-Buildings-shell-pieces-roof-plant-emitRoofPlant-40-triangles-1-20-x-3-50-x-3-08-.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "emitRoofPlant",
+   "triangles": 40,
+   "vertices": 120,
+   "bytes": 4320,
+   "material": "MeshStandardMaterial (vertex colours, roughness 0.85, metalness 0, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [
+  "finishes: metal",
+  "faces exactly as the shell lays them (Shell.face), not welded: the engine welds equal vertices, so its vertex count is lower"
+ ],
+ "countKey": "",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

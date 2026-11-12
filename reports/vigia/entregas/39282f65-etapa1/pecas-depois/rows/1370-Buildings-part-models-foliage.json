@@ -1,0 +1,56 @@
+{
+ "id": "Buildings: part models/foliage",
+ "group": "Buildings: part models",
+ "name": "foliage",
+ "variation": "",
+ "origin": "kit",
+ "source": "src/render/buildings/kit.ts",
+ "build": "instanced",
+ "triangles": 192,
+ "vertices": 380,
+ "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+ "bytesPerVertex": 36,
+ "geometryBytes": 14832,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 14832,
+ "materials": "MeshStandardMaterial \"building-part-foliage\" [onBeforeCompile() {}|part-pose] (vertex colours, double-sided, roughness 0.75, metalness 0, opacity 1)",
+ "shader": "patched built-in onBeforeCompile() {}|part-pose",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 192,
+   "vertices": 380
+  }
+ ],
+ "solids": "93 solids: 93 other",
+ "hiddenTriangles": 0,
+ "shadow": "casts: 1 box pieces under a shadow texel, else its model",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/1370-Buildings-part-models-foliage.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "foliage",
+   "triangles": 192,
+   "vertices": 380,
+   "bytes": 14832,
+   "material": "MeshStandardMaterial \"building-part-foliage\" [onBeforeCompile() {}|part-pose] (vertex colours, double-sided, roughness 0.75, metalness 0, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [],
+ "countKey": "part:foliage",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

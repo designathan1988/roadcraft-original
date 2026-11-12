@@ -1,0 +1,59 @@
+{
+ "id": "Buildings: shell pieces/facade run (bays laid as one, far level)/emitFacadeRuns, 10 triangles, 20.00 x 7.00 x 24.00 m, from function nightclub",
+ "group": "Buildings: shell pieces",
+ "name": "facade run (bays laid as one, far level)",
+ "variation": "emitFacadeRuns, 10 triangles, 20.00 x 7.00 x 24.00 m, from function nightclub",
+ "origin": "kit",
+ "source": "src/render/buildings/buildingMesh.ts (emitFacadeRuns)",
+ "build": "merged",
+ "triangles": 10,
+ "vertices": 30,
+ "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+ "bytesPerVertex": 36,
+ "geometryBytes": 1080,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 1080,
+ "materials": "MeshStandardMaterial (vertex colours, roughness 0.85, metalness 0, opacity 1)",
+ "shader": "three MeshStandardMaterial",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 10,
+   "vertices": 30
+  }
+ ],
+ "solids": "1 solids: 1 other",
+ "hiddenTriangles": 0,
+ "shadow": "",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/0791-Buildings-shell-pieces-facade-run-bays-laid-as-one-far-level-emitFacadeRuns-10-t.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "emitFacadeRuns",
+   "triangles": 10,
+   "vertices": 30,
+   "bytes": 1080,
+   "material": "MeshStandardMaterial (vertex colours, roughness 0.85, metalness 0, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [
+  "finishes: panel",
+  "faces exactly as the shell lays them (Shell.face), not welded: the engine welds equal vertices, so its vertex count is lower"
+ ],
+ "countKey": "",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

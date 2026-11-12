@@ -1,0 +1,58 @@
+{
+ "id": "Buildings: base (farthest level)/courtyard (preset)/preset",
+ "group": "Buildings: base (farthest level)",
+ "name": "courtyard (preset)",
+ "variation": "preset",
+ "origin": "kit",
+ "source": "src/render/buildings/massBase.ts (writeBase over the program)",
+ "build": "merged",
+ "triangles": 40,
+ "vertices": 32,
+ "attributes": "position:3xFloat32=12B normal:3xFloat32=12B",
+ "bytesPerVertex": 24,
+ "geometryBytes": 1008,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 1008,
+ "materials": "MeshStandardMaterial (roughness 0.9, metalness 0, opacity 1)",
+ "shader": "three MeshStandardMaterial",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 40,
+   "vertices": 32
+  }
+ ],
+ "solids": "1 solids: 1 other",
+ "hiddenTriangles": 0,
+ "shadow": "",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/0131-Buildings-base-farthest-level-courtyard-preset-preset.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "base",
+   "triangles": 40,
+   "vertices": 32,
+   "bytes": 1008,
+   "material": "MeshStandardMaterial (roughness 0.9, metalness 0, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [
+  "each block a prism, each paved lot a slab; on the GPU a vertex is 4 shorts on its square's grid (massBase.ts)"
+ ],
+ "countKey": "building-base:courtyard (preset)",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

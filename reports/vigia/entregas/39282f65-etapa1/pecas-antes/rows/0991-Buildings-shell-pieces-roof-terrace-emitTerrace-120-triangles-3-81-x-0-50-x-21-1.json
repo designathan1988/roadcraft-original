@@ -1,0 +1,59 @@
+{
+ "id": "Buildings: shell pieces/roof terrace/emitTerrace, 120 triangles, 3.81 x 0.50 x 21.13 m, from residential medium large lot",
+ "group": "Buildings: shell pieces",
+ "name": "roof terrace",
+ "variation": "emitTerrace, 120 triangles, 3.81 x 0.50 x 21.13 m, from residential medium large lot",
+ "origin": "kit",
+ "source": "src/render/buildings/buildingMesh.ts (emitTerrace)",
+ "build": "merged",
+ "triangles": 120,
+ "vertices": 360,
+ "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+ "bytesPerVertex": 36,
+ "geometryBytes": 12960,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 12960,
+ "materials": "MeshStandardMaterial (vertex colours, roughness 0.85, metalness 0, opacity 1)",
+ "shader": "three MeshStandardMaterial",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 120,
+   "vertices": 360
+  }
+ ],
+ "solids": "4 solids: 4 other",
+ "hiddenTriangles": 0,
+ "shadow": "",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/0991-Buildings-shell-pieces-roof-terrace-emitTerrace-120-triangles-3-81-x-0-50-x-21-1.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "emitTerrace",
+   "triangles": 120,
+   "vertices": 360,
+   "bytes": 12960,
+   "material": "MeshStandardMaterial (vertex colours, roughness 0.85, metalness 0, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [
+  "finishes: ceramic, plaster",
+  "faces exactly as the shell lays them (Shell.face), not welded: the engine welds equal vertices, so its vertex count is lower"
+ ],
+ "countKey": "",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

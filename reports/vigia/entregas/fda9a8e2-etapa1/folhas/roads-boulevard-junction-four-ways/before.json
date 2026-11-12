@@ -1,0 +1,190 @@
+{
+ "id": "Roads/boulevard junction/four ways",
+ "key": "Roads/boulevard junction/four ways",
+ "metrics": {
+  "id": "Roads/boulevard junction/four ways",
+  "triangles": 3044,
+  "vertices": 4088,
+  "index": "Uint16",
+  "geometryBytes": 372580,
+  "bytesPerVertex": 56,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B roadSection:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [terrain-splat-v34-verge-lots] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v2-footway-lots-own] (vertex colours, roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v2-carriageway-lots-own] (vertex colours, roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [paint-worn-aa] (transparent, roughness 0.72, metalness 0, opacity 1) | MeshStandardMaterial [paint-worn-aa-dashed] (transparent, roughness 0.72, metalness 0, opacity 1)",
+  "draws": 28,
+  "levels": [
+   {
+    "triangles": 3044,
+    "vertices": 4088
+   },
+   {
+    "triangles": 2314,
+    "vertices": 3579
+   }
+  ],
+  "hidden": 0,
+  "solids": "52 solids: 40 other, 12 quad",
+  "size": [
+   140.2002410888672,
+   0.679999977350235,
+   140.2002410888672
+  ],
+  "pieces": [
+   {
+    "label": "verge",
+    "triangles": 214,
+    "vertices": 195
+   },
+   {
+    "label": "verge",
+    "triangles": 212,
+    "vertices": 194
+   },
+   {
+    "label": "verge",
+    "triangles": 212,
+    "vertices": 194
+   },
+   {
+    "label": "verge",
+    "triangles": 214,
+    "vertices": 195
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 266,
+    "vertices": 411
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 266,
+    "vertices": 411
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 266,
+    "vertices": 412
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 266,
+    "vertices": 408
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 154,
+    "vertices": 266
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 154,
+    "vertices": 266
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 154,
+    "vertices": 266
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 154,
+    "vertices": 266
+   },
+   {
+    "label": "asphalt",
+    "triangles": 104,
+    "vertices": 105
+   },
+   {
+    "label": "asphalt",
+    "triangles": 102,
+    "vertices": 104
+   },
+   {
+    "label": "asphalt",
+    "triangles": 106,
+    "vertices": 106
+   },
+   {
+    "label": "asphalt",
+    "triangles": 104,
+    "vertices": 105
+   },
+   {
+    "label": "median-planting",
+    "triangles": 18,
+    "vertices": 34
+   },
+   {
+    "label": "median-planting",
+    "triangles": 18,
+    "vertices": 34
+   },
+   {
+    "label": "median-planting",
+    "triangles": 18,
+    "vertices": 34
+   },
+   {
+    "label": "median-planting",
+    "triangles": 18,
+    "vertices": 34
+   },
+   {
+    "label": "markings-ece9d9",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-ece9d9",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-ece9d9",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-ece9d9",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-f4f1e3~dashed",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "markings-f4f1e3~dashed",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "markings-f4f1e3~dashed",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "markings-f4f1e3~dashed",
+    "triangles": 4,
+    "vertices": 8
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   -0.04999999701976776,
+   0
+  ],
+  "distance": 91.80159053051307,
+  "floor": -0.8299999856948852,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.15086787137454763
+ ],
+ "distance": 91.80159053051307,
+ "error": null,
+ "overlap": null
+}

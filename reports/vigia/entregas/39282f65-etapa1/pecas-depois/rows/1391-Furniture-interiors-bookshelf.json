@@ -1,0 +1,58 @@
+{
+ "id": "Furniture (interiors)/bookshelf",
+ "group": "Furniture (interiors)",
+ "name": "bookshelf",
+ "variation": "",
+ "origin": "kit",
+ "source": "src/render/buildings/furnitureKit.ts",
+ "build": "instanced",
+ "triangles": 1814,
+ "vertices": 3628,
+ "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+ "bytesPerVertex": 96,
+ "geometryBytes": 359172,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 359172,
+ "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+ "shader": "patched built-in building-furniture-rounded|part-pose",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 1814,
+   "vertices": 3628
+  }
+ ],
+ "solids": "182 solids: 182 other",
+ "hiddenTriangles": 0,
+ "shadow": "",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/1391-Furniture-interiors-bookshelf.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "bookshelf",
+   "triangles": 1814,
+   "vertices": 3628,
+   "bytes": 359172,
+   "material": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [
+  "built from 184 box (184 parts)"
+ ],
+ "countKey": "furniture:bookshelf",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

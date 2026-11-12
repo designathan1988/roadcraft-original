@@ -1,0 +1,56 @@
+{
+ "id": "Buildings: part models/dish",
+ "group": "Buildings: part models",
+ "name": "dish",
+ "variation": "",
+ "origin": "kit",
+ "source": "src/render/buildings/kit.ts",
+ "build": "instanced",
+ "triangles": 140,
+ "vertices": 159,
+ "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+ "bytesPerVertex": 36,
+ "geometryBytes": 6564,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 6564,
+ "materials": "MeshStandardMaterial \"building-part-dish\" [onBeforeCompile() {}|part-pose] (vertex colours, roughness 0.5, metalness 0.2, opacity 1)",
+ "shader": "patched built-in onBeforeCompile() {}|part-pose",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 140,
+   "vertices": 159
+  }
+ ],
+ "solids": "5 solids: 4 other, 1 box",
+ "hiddenTriangles": 0,
+ "shadow": "does not cast (small part)",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/1377-Buildings-part-models-dish.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "dish",
+   "triangles": 140,
+   "vertices": 159,
+   "bytes": 6564,
+   "material": "MeshStandardMaterial \"building-part-dish\" [onBeforeCompile() {}|part-pose] (vertex colours, roughness 0.5, metalness 0.2, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [],
+ "countKey": "part:dish",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

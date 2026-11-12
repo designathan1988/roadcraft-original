@@ -1,0 +1,58 @@
+{
+ "id": "Furniture (interiors)/sofa",
+ "group": "Furniture (interiors)",
+ "name": "sofa",
+ "variation": "",
+ "origin": "kit",
+ "source": "src/render/buildings/furnitureKit.ts",
+ "build": "instanced",
+ "triangles": 172,
+ "vertices": 288,
+ "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+ "bytesPerVertex": 96,
+ "geometryBytes": 28680,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 28680,
+ "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+ "shader": "patched built-in building-furniture-rounded|part-pose",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 172,
+   "vertices": 288
+  }
+ ],
+ "solids": "12 solids: 5 other, 4 open prism, 3 box",
+ "hiddenTriangles": 11,
+ "shadow": "",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/1384-Furniture-interiors-sofa.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "sofa",
+   "triangles": 172,
+   "vertices": 288,
+   "bytes": 28680,
+   "material": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [
+  "built from 10 box, 4 cylinder (14 parts)"
+ ],
+ "countKey": "furniture:sofa",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

@@ -1,0 +1,56 @@
+{
+ "id": "Buildings: part models/table",
+ "group": "Buildings: part models",
+ "name": "table",
+ "variation": "",
+ "origin": "kit",
+ "source": "src/render/buildings/kit.ts",
+ "build": "instanced",
+ "triangles": 146,
+ "vertices": 223,
+ "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+ "bytesPerVertex": 36,
+ "geometryBytes": 8904,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 8904,
+ "materials": "MeshStandardMaterial \"building-part-table\" [thin-part-prefiltered-v3-cards|part-pose] (vertex colours, roughness 0.55, metalness 0.1, opacity 1)",
+ "shader": "patched built-in thin-part-prefiltered-v3-cards|part-pose",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 146,
+   "vertices": 223
+  }
+ ],
+ "solids": "2 solids: 2 other",
+ "hiddenTriangles": 8,
+ "shadow": "does not cast (small part)",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/1318-Buildings-part-models-table.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "table",
+   "triangles": 146,
+   "vertices": 223,
+   "bytes": 8904,
+   "material": "MeshStandardMaterial \"building-part-table\" [thin-part-prefiltered-v3-cards|part-pose] (vertex colours, roughness 0.55, metalness 0.1, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [],
+ "countKey": "part:table",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

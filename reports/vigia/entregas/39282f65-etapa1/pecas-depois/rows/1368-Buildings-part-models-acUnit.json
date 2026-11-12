@@ -1,0 +1,61 @@
+{
+ "id": "Buildings: part models/acUnit",
+ "group": "Buildings: part models",
+ "name": "acUnit",
+ "variation": "",
+ "origin": "kit",
+ "source": "src/render/buildings/kit.ts",
+ "build": "instanced",
+ "triangles": 70,
+ "vertices": 128,
+ "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+ "bytesPerVertex": 36,
+ "geometryBytes": 7368,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 7368,
+ "materials": "MeshStandardMaterial \"building-part-acUnit\" [facade-ac-front|part-pose] (vertex colours, roughness 0.55, metalness 0.15, opacity 1)",
+ "shader": "patched built-in facade-ac-front|part-pose",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 70,
+   "vertices": 128
+  },
+  {
+   "level": 1,
+   "triangles": 30,
+   "vertices": 60
+  }
+ ],
+ "solids": "9 solids: 5 other, 2 quad, 2 open prism",
+ "hiddenTriangles": 2,
+ "shadow": "casts: 1 box pieces under a shadow texel, else its model",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/1368-Buildings-part-models-acUnit.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "acUnit",
+   "triangles": 70,
+   "vertices": 128,
+   "bytes": 5028,
+   "material": "MeshStandardMaterial \"building-part-acUnit\" [facade-ac-front|part-pose] (vertex colours, roughness 0.55, metalness 0.15, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [],
+ "countKey": "part:acUnit",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

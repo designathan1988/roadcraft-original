@@ -1,0 +1,42 @@
+22:33:26 surfaces read: true
+22:33:34 saved: 10 objects
+22:33:36 saved: 20 objects
+22:33:36 saved: 30 objects
+22:33:37 saved: 40 objects
+22:33:37 saved: 50 objects
+22:33:38 saved: 60 objects
+22:33:38 saved: 70 objects
+22:33:39 saved: 80 objects
+22:33:40 saved: 90 objects
+22:33:41 saved: 100 objects
+22:33:41 saved: 110 objects
+22:33:41 saved: 120 objects
+22:33:42 saved: 130 objects
+22:33:42 saved: 140 objects
+22:33:42 saved: 150 objects
+22:33:43 saved: 160 objects
+22:33:43 saved: 170 objects
+22:33:43 saved: 180 objects
+22:33:44 saved: 190 objects
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.evaluate: Error: UNKNOWN: unknown error, open 'C:\Users\Jonathan\Documents\Projects\city\roadcraft\reports\vigia\entregas\39282f65-regua\catalogo-759af93f-regua-nova\groups\buildings-made-to-measure.html'
+    at writeFileSync (node:fs:2482:20)
+    at writeReport (file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/_wtb-base/scripts/model-catalog-report.mjs:75:3)
+    at file:///C:/Users/Jonathan/Documents/Projects/city/roadcraft/_wtb-base/scripts/model-catalog.mjs:100:21
+    at binding (C:\Users\Jonathan\Documents\Projects\city\roadcraft\node_modules\playwright-core\lib\coreBundle.js:61153:48)
+    at BindingCall.call (C:\Users\Jonathan\Documents\Projects\city\roadcraft\node_modules\playwright-core\lib\coreBundle.js:61638:33)
+    at _Page._onBinding (C:\Users\Jonathan\Documents\Projects\city\roadcraft\node_modules\playwright-core\lib\coreBundle.js:61056:29)
+    at Proxy.<anonymous> (C:\Users\Jonathan\Documents\Projects\city\roadcraft\node_modules\playwright-core\lib\coreBundle.js:60971:63)
+    at Proxy._callHandler (C:\Users\Jonathan\Documents\Projects\city\roadcraft\node_modules\playwright-core\lib\coreBundle.js:10746:33)
+    at Proxy.emit (C:\Users\Jonathan\Documents\Projects\city\roadcraft\node_modules\playwright-core\lib\coreBundle.js:10736:16)
+    at Connection.dispatch (C:\Users\Jonathan\Documents\Projects\city\roadcraft\node_modules\playwright-core\lib\coreBundle.js:63525:25)
+    at call (C:\Users\Jonathan\Documents\Projects\city\roadcraft\_wtb-base\scripts\model-catalog.mjs:83:44)
+    at C:\Users\Jonathan\Documents\Projects\city\roadcraft\_wtb-base\scripts\model-catalog.mjs:112:23 {
+  log: []
+}
+
+Node.js v24.22.0
+exit 1

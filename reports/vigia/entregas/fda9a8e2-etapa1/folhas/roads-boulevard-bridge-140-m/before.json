@@ -1,0 +1,170 @@
+{
+ "id": "Roads/boulevard bridge/140 m",
+ "key": "Roads/boulevard bridge/140 m",
+ "metrics": {
+  "id": "Roads/boulevard bridge/140 m",
+  "triangles": 3564,
+  "vertices": 4964,
+  "index": "Uint16",
+  "geometryBytes": 300960,
+  "bytesPerVertex": 56,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B roadSection:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [detail-road-edges-v2-footway-lots-own] (vertex colours, roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v2-carriageway-lots-own] (vertex colours, roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial (roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [detail] (roughness 1, metalness 0.02, opacity 1)",
+  "draws": 34,
+  "levels": [
+   {
+    "triangles": 3564,
+    "vertices": 4964
+   },
+   {
+    "triangles": 2088,
+    "vertices": 2128
+   }
+  ],
+  "hidden": 0,
+  "solids": "34 solids: 8 open prism, 22 other, 4 box",
+  "size": [
+   140.2002410888672,
+   5.271999835968018,
+   26
+  ],
+  "pieces": [
+   {
+    "label": "verge-bridge",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "verge-bridge",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "verge-bridge",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "verge-bridge",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "footway-bridge+curb-ramp-bridge",
+    "triangles": 176,
+    "vertices": 170
+   },
+   {
+    "label": "footway-bridge+curb-ramp-bridge",
+    "triangles": 176,
+    "vertices": 170
+   },
+   {
+    "label": "footway-bridge+curb-ramp-bridge",
+    "triangles": 176,
+    "vertices": 170
+   },
+   {
+    "label": "footway-bridge+curb-ramp-bridge",
+    "triangles": 176,
+    "vertices": 170
+   },
+   {
+    "label": "kerb-bridge+median-kerb-bridge",
+    "triangles": 118,
+    "vertices": 136
+   },
+   {
+    "label": "kerb-bridge+median-kerb-bridge",
+    "triangles": 118,
+    "vertices": 136
+   },
+   {
+    "label": "kerb-bridge+median-kerb-bridge",
+    "triangles": 118,
+    "vertices": 136
+   },
+   {
+    "label": "kerb-bridge+median-kerb-bridge",
+    "triangles": 118,
+    "vertices": 136
+   },
+   {
+    "label": "asphalt-bridge",
+    "triangles": 110,
+    "vertices": 90
+   },
+   {
+    "label": "asphalt-bridge",
+    "triangles": 110,
+    "vertices": 90
+   },
+   {
+    "label": "asphalt-bridge",
+    "triangles": 110,
+    "vertices": 90
+   },
+   {
+    "label": "asphalt-bridge",
+    "triangles": 110,
+    "vertices": 90
+   },
+   {
+    "label": "median-planting-bridge",
+    "triangles": 48,
+    "vertices": 56
+   },
+   {
+    "label": "median-planting-bridge",
+    "triangles": 48,
+    "vertices": 56
+   },
+   {
+    "label": "median-planting-bridge",
+    "triangles": 48,
+    "vertices": 56
+   },
+   {
+    "label": "median-planting-bridge",
+    "triangles": 48,
+    "vertices": 56
+   },
+   {
+    "label": "structure-piers x4",
+    "triangles": 192,
+    "vertices": 268
+   },
+   {
+    "label": "structure-pier-caps x2",
+    "triangles": 24,
+    "vertices": 48
+   },
+   {
+    "label": "structure-abutments x2",
+    "triangles": 24,
+    "vertices": 48
+   },
+   {
+    "label": "structure-parapets",
+    "triangles": 1236,
+    "vertices": 2472
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   1.6359999179840088,
+   0
+  ],
+  "distance": 91.80159053051307,
+  "floor": -1.44,
+  "long": "x"
+ },
+ "levelErrors": [
+  1.275659432578308e-11
+ ],
+ "distance": 91.80159053051307,
+ "error": null,
+ "overlap": null
+}

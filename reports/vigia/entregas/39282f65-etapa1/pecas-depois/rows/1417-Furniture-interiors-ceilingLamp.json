@@ -1,0 +1,58 @@
+{
+ "id": "Furniture (interiors)/ceilingLamp",
+ "group": "Furniture (interiors)",
+ "name": "ceilingLamp",
+ "variation": "",
+ "origin": "kit",
+ "source": "src/render/buildings/furnitureKit.ts",
+ "build": "instanced",
+ "triangles": 190,
+ "vertices": 242,
+ "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B",
+ "bytesPerVertex": 96,
+ "geometryBytes": 24372,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 24372,
+ "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+ "shader": "patched built-in building-furniture-rounded|part-pose",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 190,
+   "vertices": 242
+  }
+ ],
+ "solids": "3 solids: 2 closed cylinder, 1 other",
+ "hiddenTriangles": 20,
+ "shadow": "",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/1417-Furniture-interiors-ceilingLamp.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "ceilingLamp",
+   "triangles": 190,
+   "vertices": 242,
+   "bytes": 24372,
+   "material": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [
+  "built from 2 cylinder, 1 sphere (3 parts)"
+ ],
+ "countKey": "furniture:ceilingLamp",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

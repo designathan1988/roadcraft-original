@@ -1,0 +1,59 @@
+{
+ "id": "Buildings: shell pieces/lot/emitLots, 62 triangles, 47.98 x 0.30 x 13.98 m, from function cityHall",
+ "group": "Buildings: shell pieces",
+ "name": "lot",
+ "variation": "emitLots, 62 triangles, 47.98 x 0.30 x 13.98 m, from function cityHall",
+ "origin": "kit",
+ "source": "src/render/buildings/buildingMesh.ts (emitLots)",
+ "build": "merged",
+ "triangles": 62,
+ "vertices": 186,
+ "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+ "bytesPerVertex": 36,
+ "geometryBytes": 6696,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 6696,
+ "materials": "MeshStandardMaterial (vertex colours, roughness 0.85, metalness 0, opacity 1)",
+ "shader": "three MeshStandardMaterial",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 62,
+   "vertices": 186
+  }
+ ],
+ "solids": "1 solids: 1 other",
+ "hiddenTriangles": 0,
+ "shadow": "",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/0368-Buildings-shell-pieces-lot-emitLots-62-triangles-47-98-x-0-30-x-13-98-m-from-fun.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "emitLots",
+   "triangles": 62,
+   "vertices": 186,
+   "bytes": 6696,
+   "material": "MeshStandardMaterial (vertex colours, roughness 0.85, metalness 0, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [
+  "finishes: stone",
+  "faces exactly as the shell lays them (Shell.face), not welded: the engine welds equal vertices, so its vertex count is lower"
+ ],
+ "countKey": "",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

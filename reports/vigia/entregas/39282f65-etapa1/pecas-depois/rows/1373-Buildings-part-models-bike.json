@@ -1,0 +1,56 @@
+{
+ "id": "Buildings: part models/bike",
+ "group": "Buildings: part models",
+ "name": "bike",
+ "variation": "",
+ "origin": "kit",
+ "source": "src/render/buildings/kit.ts",
+ "build": "instanced",
+ "triangles": 238,
+ "vertices": 340,
+ "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+ "bytesPerVertex": 36,
+ "geometryBytes": 13668,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 13668,
+ "materials": "MeshStandardMaterial \"building-part-bike\" [thin-part-prefiltered-v4-cards|part-pose] (vertex colours, double-sided, roughness 0.4, metalness 0.3, opacity 1)",
+ "shader": "patched built-in thin-part-prefiltered-v4-cards|part-pose",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 238,
+   "vertices": 340
+  }
+ ],
+ "solids": "12 solids: 4 open prism, 7 box, 1 other",
+ "hiddenTriangles": 16,
+ "shadow": "does not cast (small part)",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/1373-Buildings-part-models-bike.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "bike",
+   "triangles": 238,
+   "vertices": 340,
+   "bytes": 13668,
+   "material": "MeshStandardMaterial \"building-part-bike\" [thin-part-prefiltered-v4-cards|part-pose] (vertex colours, double-sided, roughness 0.4, metalness 0.3, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [],
+ "countKey": "part:bike",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

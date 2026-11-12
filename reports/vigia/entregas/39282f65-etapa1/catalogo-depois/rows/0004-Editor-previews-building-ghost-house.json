@@ -1,0 +1,154 @@
+{
+ "id": "Editor previews/building ghost/house",
+ "group": "Editor previews",
+ "name": "building ghost",
+ "variation": "house",
+ "origin": "editor preview",
+ "source": "src/render/buildings/buildingMesh.ts (ghost)",
+ "build": "merged",
+ "triangles": 2064,
+ "vertices": 3892,
+ "attributes": "position:3xFloat32=12B shellOctNormal:2xInt16=4B shellPaint:4xUint16=8B facadeSize:2xUint16=4B facadeCell:4xInt16=8B facadeOpening:4xUint8=4B facadeTrim:4xUint8=4B normal:3xFloat32=12B uv:2xFloat32=8B instancePoseA:4xFloat32=16B instancePoseB:4xFloat32=16B color:3xFloat32=12B",
+ "bytesPerVertex": 68,
+ "geometryBytes": 72588,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 72588,
+ "materials": "MeshStandardMaterial [building-ghost-shell-oct] (transparent, roughness 0.7, metalness 0, opacity 0.5) | MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)",
+ "shader": "patched built-in building-ghost-shell-oct | patched built-in onBeforeCompile() {}|part-pose",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 2064,
+   "vertices": 3892
+  }
+ ],
+ "solids": "262 solids: 206 other, 30 quad, 17 open prism, 8 box, 1 closed cylinder",
+ "hiddenTriangles": 125,
+ "shadow": "",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": true,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/0004-Editor-previews-building-ghost-house.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "building-preview-shell",
+   "triangles": 266,
+   "vertices": 422,
+   "bytes": 11724,
+   "material": "MeshStandardMaterial [building-ghost-shell-oct] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-preview-shell",
+   "triangles": 16,
+   "vertices": 32,
+   "bytes": 1504,
+   "material": "MeshStandardMaterial [building-ghost-shell-oct] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-glass-preview x17",
+   "triangles": 34,
+   "vertices": 68,
+   "bytes": 684,
+   "material": "MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-frame-preview x2",
+   "triangles": 88,
+   "vertices": 176,
+   "bytes": 3144,
+   "material": "MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-concrete-preview x24",
+   "triangles": 240,
+   "vertices": 480,
+   "bytes": 1468,
+   "material": "MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-door-preview",
+   "triangles": 60,
+   "vertices": 120,
+   "bytes": 4232,
+   "material": "MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-shutter-preview x8",
+   "triangles": 80,
+   "vertices": 160,
+   "bytes": 956,
+   "material": "MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-railing-preview x3",
+   "triangles": 630,
+   "vertices": 1260,
+   "bytes": 14796,
+   "material": "MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-glassDark-preview x6",
+   "triangles": 12,
+   "vertices": 24,
+   "bytes": 332,
+   "material": "MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-lamp-preview",
+   "triangles": 12,
+   "vertices": 24,
+   "bytes": 872,
+   "material": "MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-edge-preview",
+   "triangles": 12,
+   "vertices": 24,
+   "bytes": 872,
+   "material": "MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-pot-preview",
+   "triangles": 70,
+   "vertices": 89,
+   "bytes": 3656,
+   "material": "MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-foliage-preview",
+   "triangles": 192,
+   "vertices": 380,
+   "bytes": 14864,
+   "material": "MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-chair-preview x3",
+   "triangles": 222,
+   "vertices": 444,
+   "bytes": 5868,
+   "material": "MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  },
+  {
+   "label": "building-table-preview",
+   "triangles": 130,
+   "vertices": 189,
+   "bytes": 7616,
+   "material": "MeshStandardMaterial [onBeforeCompile() {}|part-pose] (transparent, roughness 0.7, metalness 0, opacity 0.5)"
+  }
+ ],
+ "textures": [],
+ "notes": [],
+ "countKey": "",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}
