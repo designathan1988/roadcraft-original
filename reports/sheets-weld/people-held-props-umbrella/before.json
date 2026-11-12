@@ -1,0 +1,49 @@
+{
+ "id": "People: held props/umbrella",
+ "key": "People: held props/umbrella",
+ "metrics": {
+  "id": "People: held props/umbrella",
+  "triangles": 40,
+  "vertices": 120,
+  "index": "none",
+  "geometryBytes": 4320,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial (vertex colours, roughness 0.7, metalness 0, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 40,
+    "vertices": 120
+   }
+  ],
+  "hidden": 6,
+  "solids": "2 solids: 1 closed cylinder, 1 other",
+  "size": [
+   1.100000023841858,
+   1.1549999862909317,
+   1.100000023841858
+  ],
+  "pieces": [
+   {
+    "label": "held-umbrella",
+    "triangles": 40,
+    "vertices": 120
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.432499997317791,
+   0
+  ],
+  "distance": 4.042463560003678,
+  "floor": -0.164375302465858,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 4.042463560003678,
+ "error": null,
+ "overlap": null
+}

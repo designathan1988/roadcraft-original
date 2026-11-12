@@ -1,0 +1,82 @@
+{
+ "id": "People: held props/newspaper",
+ "key": "People: held props/newspaper",
+ "metrics": {
+  "id": "People: held props/newspaper",
+  "triangles": 24,
+  "vertices": 48,
+  "index": "Uint16",
+  "geometryBytes": 1872,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial (vertex colours, roughness 0.7, metalness 0, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 24,
+    "vertices": 48
+   }
+  ],
+  "hidden": 8,
+  "solids": "2 solids: 2 box",
+  "size": [
+   0.20999998971819878,
+   0.1600000001490116,
+   0.03749999962747097
+  ],
+  "pieces": [
+   {
+    "label": "held-newspaper",
+    "triangles": 24,
+    "vertices": 48
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0.08999999798834324,
+   0.020000001415610313,
+   -0.03624999988824129
+  ],
+  "distance": 0.5563542421360504,
+  "floor": -0.06999999865889549,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 0.5563542421360504,
+ "error": {
+  "max": 7.036052104729889e-16,
+  "mean": 1.3278659793045815e-17,
+  "forward": {
+   "max": 7.036052104729889e-16,
+   "mean": 1.3278659793045815e-17,
+   "samples": 20072,
+   "at": [
+    0.03203111438018873,
+    0.0950000062584877,
+    -0.03777117904748184
+   ]
+  },
+  "backward": {
+   "max": 7.036052104729889e-16,
+   "mean": 1.3278659793045815e-17,
+   "samples": 20072,
+   "at": [
+    0.03203111438018873,
+    0.0950000062584877,
+    -0.03777117904748184
+   ]
+  },
+  "at": [
+   0.03203111438018873,
+   0.0950000062584877,
+   -0.03777117904748184
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

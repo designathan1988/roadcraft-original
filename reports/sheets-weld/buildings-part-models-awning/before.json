@@ -1,0 +1,49 @@
+{
+ "id": "Buildings: part models/awning",
+ "key": "Buildings: part models/awning",
+ "metrics": {
+  "id": "Buildings: part models/awning",
+  "triangles": 24,
+  "vertices": 48,
+  "index": "Uint16",
+  "geometryBytes": 1680,
+  "bytesPerVertex": 32,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "MeshStandardMaterial \"building-part-awning\" [onBeforeCompile() {}|part-pose] (roughness 0.92, metalness 0, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 24,
+    "vertices": 48
+   }
+  ],
+  "hidden": 4,
+  "solids": "2 solids: 2 box",
+  "size": [
+   1,
+   0.9300000332295895,
+   0.8880000114440918
+  ],
+  "pieces": [
+   {
+    "label": "awning",
+    "triangles": 24,
+    "vertices": 48
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   -0.5050000119954348,
+   0.5
+  ],
+  "distance": 3.398619142286643,
+  "floor": -0.9862894241856698,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 3.398619142286643,
+ "error": null,
+ "overlap": null
+}

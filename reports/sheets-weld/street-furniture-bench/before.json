@@ -1,0 +1,49 @@
+{
+ "id": "Street furniture/bench",
+ "key": "Street furniture/bench",
+ "metrics": {
+  "id": "Street furniture/bench",
+  "triangles": 164,
+  "vertices": 328,
+  "index": "Uint16",
+  "geometryBytes": 12792,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [onBeforeCompile() {}|pose-yaw] (vertex colours, roughness 0.62, metalness 0.28, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 164,
+    "vertices": 328
+   }
+  ],
+  "hidden": 10,
+  "solids": "15 solids: 11 box, 4 open prism",
+  "size": [
+   1.7999999523162842,
+   0.8606952622358222,
+   0.5380777567625046
+  ],
+  "pieces": [
+   {
+    "label": "bench",
+    "triangles": 164,
+    "vertices": 328
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.42999999747553375,
+   -0.039038874208927155
+  ],
+  "distance": 4.311495473665661,
+  "floor": -0.021012395521228938,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 4.311495473665661,
+ "error": null,
+ "overlap": null
+}

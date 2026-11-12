@@ -1,0 +1,49 @@
+{
+ "id": "Utility poles/utility-lamp-lenses",
+ "key": "Utility poles/utility-lamp-lenses",
+ "metrics": {
+  "id": "Utility poles/utility-lamp-lenses",
+  "triangles": 2,
+  "vertices": 4,
+  "index": "Uint16",
+  "geometryBytes": 140,
+  "bytesPerVertex": 32,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "MeshBasicMaterial (opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 2,
+    "vertices": 4
+   }
+  ],
+  "hidden": 0,
+  "solids": "1 solids: 1 quad",
+  "size": [
+   1,
+   6.123234262925839e-17,
+   1
+  ],
+  "pieces": [
+   {
+    "label": "utility-lamp-lenses",
+    "triangles": 2,
+    "vertices": 4
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   0
+  ],
+  "distance": 2.950614872174388,
+  "floor": -0.014142135623730984,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 2.950614872174388,
+ "error": null,
+ "overlap": null
+}

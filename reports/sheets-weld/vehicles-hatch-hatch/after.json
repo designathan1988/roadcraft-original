@@ -1,0 +1,113 @@
+{
+ "id": "Vehicles/hatch/hatch",
+ "key": "Vehicles/hatch/hatch",
+ "metrics": {
+  "id": "Vehicles/hatch/hatch",
+  "triangles": 14330,
+  "vertices": 11160,
+  "index": "Uint16",
+  "geometryBytes": 490548,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 6,
+  "levels": [
+   {
+    "triangles": 14330,
+    "vertices": 11160
+   },
+   {
+    "triangles": 36,
+    "vertices": 72
+   }
+  ],
+  "hidden": 109,
+  "solids": "75 solids: 16 other, 44 box, 15 closed cylinder",
+  "size": [
+   3.9079999923706055,
+   1.7299789935350418,
+   2.218498706817627
+  ],
+  "pieces": [
+   {
+    "label": "shell",
+    "triangles": 9228,
+    "vertices": 6021
+   },
+   {
+    "label": "glass",
+    "triangles": 992,
+    "vertices": 660
+   },
+   {
+    "label": "trim",
+    "triangles": 460,
+    "vertices": 720
+   },
+   {
+    "label": "interior",
+    "triangles": 1570,
+    "vertices": 2498
+   },
+   {
+    "label": "roof",
+    "triangles": 1540,
+    "vertices": 840
+   },
+   {
+    "label": "steering wheel",
+    "triangles": 540,
+    "vertices": 421
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.6599894985556602,
+   0
+  ],
+  "distance": 10.046622183180025,
+  "floor": -0.2531529085814247,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.8038500942293835
+ ],
+ "distance": 10.046622183180025,
+ "error": {
+  "max": 3.533640205966799e-13,
+  "mean": 1.8053821345019013e-16,
+  "forward": {
+   "max": 3.533640205966799e-13,
+   "mean": 1.8232914433845412e-16,
+   "samples": 103380,
+   "at": [
+    -0.5618187191567623,
+    0.21343311097312398,
+    0.7599999904632568
+   ]
+  },
+  "backward": {
+   "max": 3.0351195439324585e-13,
+   "mean": 1.7868056312231097e-16,
+   "samples": 99667,
+   "at": [
+    0.3503377492640175,
+    0.21506380521634247,
+    -0.7599999904632568
+   ]
+  },
+  "at": [
+   -0.5618187191567623,
+   0.21343311097312398,
+   0.7599999904632568
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

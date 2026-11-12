@@ -1,0 +1,49 @@
+{
+ "id": "People: held props/bag",
+ "key": "People: held props/bag",
+ "metrics": {
+  "id": "People: held props/bag",
+  "triangles": 24,
+  "vertices": 72,
+  "index": "none",
+  "geometryBytes": 2592,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial (vertex colours, roughness 0.7, metalness 0, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 24,
+    "vertices": 72
+   }
+  ],
+  "hidden": 0,
+  "solids": "2 solids: 2 box",
+  "size": [
+   0.30000001192092896,
+   0.4399999983608723,
+   0.11999999731779099
+  ],
+  "pieces": [
+   {
+    "label": "held-bag",
+    "triangles": 24,
+    "vertices": 72
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   -0.21999999843537807,
+   0
+  ],
+  "distance": 1.138952638398519,
+  "floor": -0.4499999976158142,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 1.138952638398519,
+ "error": null,
+ "overlap": null
+}

@@ -1,0 +1,103 @@
+{
+ "id": "Buildings: part models/table",
+ "key": "Buildings: part models/table",
+ "metrics": {
+  "id": "Buildings: part models/table",
+  "triangles": 130,
+  "vertices": 133,
+  "index": "Uint16",
+  "geometryBytes": 13198,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-part-table\" [thin-part-prefiltered-v3-cards|part-pose] (vertex colours, roughness 0.55, metalness 0.1, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 130,
+    "vertices": 133
+   },
+   {
+    "triangles": 76,
+    "vertices": 82
+   },
+   {
+    "triangles": 55,
+    "vertices": 61
+   },
+   {
+    "triangles": 30,
+    "vertices": 36
+   },
+   {
+    "triangles": 2,
+    "vertices": 4
+   }
+  ],
+  "hidden": 0,
+  "solids": "3 solids: 1 closed cylinder, 1 open prism, 1 other",
+  "size": [
+   0.6696692705154419,
+   0.7350000144913793,
+   0.6800000071525574
+  ],
+  "pieces": [
+   {
+    "label": "table",
+    "triangles": 130,
+    "vertices": 133
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.3675000070594251,
+   0
+  ],
+  "distance": 2.5132951962816232,
+  "floor": -0.012046086533715668,
+  "long": "z"
+ },
+ "levelErrors": [
+  0.020504519289594625,
+  0.02533283843049875,
+  0.0828322421116867,
+  0.5757771322023404
+ ],
+ "distance": 2.5132951962816232,
+ "error": {
+  "max": 1.665695898455916e-16,
+  "mean": 1.2409292811583913e-17,
+  "forward": {
+   "max": 1.665695898455916e-16,
+   "mean": 1.2368437834388632e-17,
+   "samples": 20402,
+   "at": [
+    0.009270060128121002,
+    0.36317045214451465,
+    -0.026160215137387473
+   ]
+  },
+  "backward": {
+   "max": 1.665695898455916e-16,
+   "mean": 1.2450147788779193e-17,
+   "samples": 20402,
+   "at": [
+    0.009270060128121002,
+    0.36317045214451465,
+    -0.026160215137387473
+   ]
+  },
+  "at": [
+   0.009270060128121002,
+   0.36317045214451465,
+   -0.026160215137387473
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

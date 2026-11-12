@@ -1,0 +1,49 @@
+{
+ "id": "Furniture (interiors)/rack",
+ "key": "Furniture (interiors)/rack",
+ "metrics": {
+  "id": "Furniture (interiors)/rack",
+  "triangles": 240,
+  "vertices": 480,
+  "index": "Uint16",
+  "geometryBytes": 47520,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 240,
+    "vertices": 480
+   }
+  ],
+  "hidden": 0,
+  "solids": "21 solids: 6 other, 15 box",
+  "size": [
+   4,
+   3.200000071525574,
+   1.100000023841858
+  ],
+  "pieces": [
+   {
+    "label": "rack",
+    "triangles": 240,
+    "vertices": 480
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   1.6000000119209288,
+   0
+  ],
+  "distance": 10.931221831135064,
+  "floor": -0.0523927719184917,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 10.931221831135064,
+ "error": null,
+ "overlap": null
+}

@@ -1,0 +1,49 @@
+{
+ "id": "Furniture (interiors)/chair",
+ "key": "Furniture (interiors)/chair",
+ "metrics": {
+  "id": "Furniture (interiors)/chair",
+  "triangles": 112,
+  "vertices": 168,
+  "index": "Uint16",
+  "geometryBytes": 16800,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 112,
+    "vertices": 168
+   }
+  ],
+  "hidden": 0,
+  "solids": "9 solids: 1 box, 6 open prism, 2 other",
+  "size": [
+   0.47999998927116394,
+   0.9399999964237213,
+   0.47999998927116394
+  ],
+  "pieces": [
+   {
+    "label": "chair",
+    "triangles": 112,
+    "vertices": 168
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.46999999940395354,
+   0
+  ],
+  "distance": 2.4191443127572168,
+  "floor": -0.011594825122592623,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 2.4191443127572168,
+ "error": null,
+ "overlap": null
+}

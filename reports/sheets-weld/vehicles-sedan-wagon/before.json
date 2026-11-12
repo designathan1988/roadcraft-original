@@ -1,0 +1,80 @@
+{
+ "id": "Vehicles/sedan/wagon",
+ "key": "Vehicles/sedan/wagon",
+ "metrics": {
+  "id": "Vehicles/sedan/wagon",
+  "triangles": 15014,
+  "vertices": 15234,
+  "index": "Uint16 + none",
+  "geometryBytes": 631572,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 6,
+  "levels": [
+   {
+    "triangles": 15014,
+    "vertices": 15234
+   },
+   {
+    "triangles": 36,
+    "vertices": 72
+   }
+  ],
+  "hidden": 121,
+  "solids": "75 solids: 16 other, 44 box, 15 closed cylinder",
+  "size": [
+   4.708000183105469,
+   1.6999200135469437,
+   2.3389413356781006
+  ],
+  "pieces": [
+   {
+    "label": "shell",
+    "triangles": 9908,
+    "vertices": 6140
+   },
+   {
+    "label": "glass",
+    "triangles": 920,
+    "vertices": 595
+   },
+   {
+    "label": "trim",
+    "triangles": 460,
+    "vertices": 720
+   },
+   {
+    "label": "interior",
+    "triangles": 1562,
+    "vertices": 2486
+   },
+   {
+    "label": "roof",
+    "triangles": 1624,
+    "vertices": 4872
+   },
+   {
+    "label": "steering wheel",
+    "triangles": 540,
+    "vertices": 421
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.6449600085616112,
+   0
+  ],
+  "distance": 11.527361708918555,
+  "floor": -0.26025001210174326,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.8047307580709457
+ ],
+ "distance": 11.527361708918555,
+ "error": null,
+ "overlap": null
+}

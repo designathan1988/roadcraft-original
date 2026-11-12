@@ -1,0 +1,93 @@
+{
+ "id": "Buildings: part models/bush",
+ "key": "Buildings: part models/bush",
+ "metrics": {
+  "id": "Buildings: part models/bush",
+  "triangles": 168,
+  "vertices": 350,
+  "index": "Uint16",
+  "geometryBytes": 26380,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-part-bush\" [onBeforeCompile() {}|part-pose] (vertex colours, double-sided, roughness 0.8, metalness 0, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 168,
+    "vertices": 350
+   },
+   {
+    "triangles": 124,
+    "vertices": 328
+   },
+   {
+    "triangles": 2,
+    "vertices": 4
+   }
+  ],
+  "hidden": 0,
+  "solids": "100 solids: 100 other",
+  "size": [
+   0.4959293305873871,
+   0.3306357469409704,
+   0.4359903186559677
+  ],
+  "pieces": [
+   {
+    "label": "bush",
+    "triangles": 168,
+    "vertices": 350
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   -0.00982917845249176,
+   0.1753178732469678,
+   -0.023640848696231842
+  ],
+  "distance": 1.5407655664010405,
+  "floor": -2.2351741811588166e-10,
+  "long": "x"
+ },
+ "levelErrors": [
+  6.917728576842955e-9,
+  0.6661456947444109
+ ],
+ "distance": 1.5407655664010405,
+ "error": {
+  "max": 7.016522229951154e-17,
+  "mean": 9.088969992655413e-18,
+  "forward": {
+   "max": 7.016522229951154e-17,
+   "mean": 9.088969992655413e-18,
+   "samples": 20488,
+   "at": [
+    0.016622277759756606,
+    0.28867003976082023,
+    -0.03166411602589544
+   ]
+  },
+  "backward": {
+   "max": 7.016522229951154e-17,
+   "mean": 9.088969992655413e-18,
+   "samples": 20488,
+   "at": [
+    0.016622277759756606,
+    0.28867003976082023,
+    -0.03166411602589544
+   ]
+  },
+  "at": [
+   0.016622277759756606,
+   0.28867003976082023,
+   -0.03166411602589544
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

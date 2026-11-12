@@ -1,0 +1,49 @@
+{
+ "id": "Furniture (interiors)/locker",
+ "key": "Furniture (interiors)/locker",
+ "metrics": {
+  "id": "Furniture (interiors)/locker",
+  "triangles": 40,
+  "vertices": 80,
+  "index": "Uint16",
+  "geometryBytes": 7920,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 40,
+    "vertices": 80
+   }
+  ],
+  "hidden": 4,
+  "solids": "4 solids: 4 other",
+  "size": [
+   0.5,
+   1.899999964237213,
+   0.5250000059604645
+  ],
+  "pieces": [
+   {
+    "label": "locker",
+    "triangles": 40,
+    "vertices": 80
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.9499999940395356,
+   0.012500002980232239
+  ],
+  "distance": 4.242951802326234,
+  "floor": -0.02033622389192448,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 4.242951802326234,
+ "error": null,
+ "overlap": null
+}

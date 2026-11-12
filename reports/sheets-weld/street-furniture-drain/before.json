@@ -1,0 +1,49 @@
+{
+ "id": "Street furniture/drain",
+ "key": "Street furniture/drain",
+ "metrics": {
+  "id": "Street furniture/drain",
+  "triangles": 108,
+  "vertices": 216,
+  "index": "Uint16",
+  "geometryBytes": 8424,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [onBeforeCompile() {}|pose-yaw] (vertex colours, roughness 0.62, metalness 0.28, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 108,
+    "vertices": 216
+   }
+  ],
+  "hidden": 56,
+  "solids": "11 solids: 3 box, 7 other, 1 quad",
+  "size": [
+   1,
+   0.15399999730288982,
+   0.6999999848008156
+  ],
+  "pieces": [
+   {
+    "label": "drain",
+    "triangles": 108,
+    "vertices": 216
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   -0.046999999321997166,
+   -0.34999999567866324
+  ],
+  "distance": 2.5669636973186485,
+  "floor": -0.13630331450960595,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 2.5669636973186485,
+ "error": null,
+ "overlap": null
+}

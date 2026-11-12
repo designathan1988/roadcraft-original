@@ -1,0 +1,113 @@
+{
+ "id": "Vehicles/suv/suv",
+ "key": "Vehicles/suv/suv",
+ "metrics": {
+  "id": "Vehicles/suv/suv",
+  "triangles": 14394,
+  "vertices": 11159,
+  "index": "Uint16",
+  "geometryBytes": 490896,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 6,
+  "levels": [
+   {
+    "triangles": 14394,
+    "vertices": 11159
+   },
+   {
+    "triangles": 36,
+    "vertices": 72
+   }
+  ],
+  "hidden": 95,
+  "solids": "75 solids: 16 other, 44 box, 15 closed cylinder",
+  "size": [
+   4.9079999923706055,
+   2.0299820452928543,
+   2.4461259841918945
+  ],
+  "pieces": [
+   {
+    "label": "shell",
+    "triangles": 9360,
+    "vertices": 6058
+   },
+   {
+    "label": "glass",
+    "triangles": 844,
+    "vertices": 569
+   },
+   {
+    "label": "trim",
+    "triangles": 460,
+    "vertices": 720
+   },
+   {
+    "label": "interior",
+    "triangles": 1566,
+    "vertices": 2506
+   },
+   {
+    "label": "roof",
+    "triangles": 1624,
+    "vertices": 885
+   },
+   {
+    "label": "steering wheel",
+    "triangles": 540,
+    "vertices": 421
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.8099910244345665,
+   0
+  ],
+  "distance": 12.200145513245083,
+  "floor": -0.2634746280609328,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.9239428490400314
+ ],
+ "distance": 12.200145513245083,
+ "error": {
+  "max": 4.967645997342373e-13,
+  "mean": 2.1263654320803402e-16,
+  "forward": {
+   "max": 4.967645997342373e-13,
+   "mean": 2.07854698213679e-16,
+   "samples": 103353,
+   "at": [
+    -1.2801740169525146,
+    1.1459989408155098,
+    0.4677446444002673
+   ]
+  },
+  "backward": {
+   "max": 4.894974448709769e-13,
+   "mean": 2.1756600545245912e-16,
+   "samples": 100258,
+   "at": [
+    -0.12338392299781697,
+    0.3183198402574083,
+    -0.875
+   ]
+  },
+  "at": [
+   -1.2801740169525146,
+   1.1459989408155098,
+   0.4677446444002673
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

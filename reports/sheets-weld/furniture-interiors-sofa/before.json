@@ -1,0 +1,49 @@
+{
+ "id": "Furniture (interiors)/sofa",
+ "key": "Furniture (interiors)/sofa",
+ "metrics": {
+  "id": "Furniture (interiors)/sofa",
+  "triangles": 172,
+  "vertices": 288,
+  "index": "Uint16",
+  "geometryBytes": 28680,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 172,
+    "vertices": 288
+   }
+  ],
+  "hidden": 11,
+  "solids": "12 solids: 5 other, 4 open prism, 3 box",
+  "size": [
+   2.200000047683716,
+   0.860000013411045,
+   0.8999999761581421
+  ],
+  "pieces": [
+   {
+    "label": "sofa",
+    "triangles": 172,
+    "vertices": 288
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.4300000075995922,
+   0
+  ],
+  "distance": 5.273930124407526,
+  "floor": -0.025277657601052092,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 5.273930124407526,
+ "error": null,
+ "overlap": null
+}

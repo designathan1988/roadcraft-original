@@ -1,0 +1,87 @@
+{
+ "id": "Street trees and bushes/bush",
+ "key": "Street trees and bushes/bush",
+ "metrics": {
+  "id": "Street trees and bushes/bush",
+  "triangles": 112,
+  "vertices": 304,
+  "index": "none + Uint16",
+  "geometryBytes": 12160,
+  "bytesPerVertex": 52,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aCorner:2xFloat32=8B",
+  "materials": "MeshStandardMaterial [wind-nearfade|pose-yaw] (vertex colours, flat shading, roughness 0.86, metalness 0, opacity 1) | MeshStandardMaterial [wind-nearfade-billboard-coverage-near|pose-yaw] (vertex colours, double-sided, alpha test 0.5, roughness 0.8, metalness 0, opacity 1)",
+  "draws": 2,
+  "levels": [
+   {
+    "triangles": 112,
+    "vertices": 304
+   }
+  ],
+  "hidden": 0,
+  "solids": "17 solids: 1 closed cylinder, 16 other",
+  "size": [
+   1.5525234937667847,
+   0.9214465916156769,
+   0.9363187551498413
+  ],
+  "pieces": [
+   {
+    "label": "body",
+    "triangles": 80,
+    "vertices": 240
+   },
+   {
+    "label": "foliage cards",
+    "triangles": 32,
+    "vertices": 64
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0.0533137321472168,
+   0.20083539187908173,
+   0.09705895185470581
+  ],
+  "distance": 4.243188257511528,
+  "floor": -0.2802252730583745,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 4.243188257511528,
+ "error": {
+  "max": 1.1102230246251565e-16,
+  "mean": 1.5154666249074375e-17,
+  "forward": {
+   "max": 1.1102230246251565e-16,
+   "mean": 1.5154666249074375e-17,
+   "samples": 20332,
+   "at": [
+    -0.016896777036586465,
+    0.2520277945864992,
+    -0.3154375015298495
+   ]
+  },
+  "backward": {
+   "max": 1.1102230246251565e-16,
+   "mean": 1.5154666249074375e-17,
+   "samples": 20332,
+   "at": [
+    -0.016896777036586465,
+    0.2520277945864992,
+    -0.3154375015298495
+   ]
+  },
+  "at": [
+   -0.016896777036586465,
+   0.2520277945864992,
+   -0.3154375015298495
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

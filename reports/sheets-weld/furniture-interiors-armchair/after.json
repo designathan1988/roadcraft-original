@@ -1,0 +1,82 @@
+{
+ "id": "Furniture (interiors)/armchair",
+ "key": "Furniture (interiors)/armchair",
+ "metrics": {
+  "id": "Furniture (interiors)/armchair",
+  "triangles": 128,
+  "vertices": 200,
+  "index": "Uint16",
+  "geometryBytes": 19968,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 128,
+    "vertices": 200
+   }
+  ],
+  "hidden": 5,
+  "solids": "8 solids: 3 other, 4 open prism, 1 box",
+  "size": [
+   0.9000000357627869,
+   0.860000013411045,
+   0.8999999761581421
+  ],
+  "pieces": [
+   {
+    "label": "armchair",
+    "triangles": 128,
+    "vertices": 200
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.4300000075995922,
+   0
+  ],
+  "distance": 3.2049165596614286,
+  "floor": -0.015360988802316032,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 3.2049165596614286,
+ "error": {
+  "max": 6.206335383118183e-16,
+  "mean": 3.9967989360191143e-17,
+  "forward": {
+   "max": 6.206335383118183e-16,
+   "mean": 3.9967989360191143e-17,
+   "samples": 20372,
+   "at": [
+    -0.041444563998942974,
+    0.8100000023841858,
+    -0.3301860707081918
+   ]
+  },
+  "backward": {
+   "max": 6.206335383118183e-16,
+   "mean": 3.9967989360191143e-17,
+   "samples": 20372,
+   "at": [
+    -0.041444563998942974,
+    0.8100000023841858,
+    -0.3301860707081918
+   ]
+  },
+  "at": [
+   -0.041444563998942974,
+   0.8100000023841858,
+   -0.3301860707081918
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

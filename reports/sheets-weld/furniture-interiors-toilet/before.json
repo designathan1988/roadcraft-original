@@ -1,0 +1,49 @@
+{
+ "id": "Furniture (interiors)/toilet",
+ "key": "Furniture (interiors)/toilet",
+ "metrics": {
+  "id": "Furniture (interiors)/toilet",
+  "triangles": 70,
+  "vertices": 111,
+  "index": "Uint16",
+  "geometryBytes": 11076,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 70,
+    "vertices": 111
+   }
+  ],
+  "hidden": 0,
+  "solids": "3 solids: 2 other, 1 box",
+  "size": [
+   0.44999998807907104,
+   0.7799999743700028,
+   0.6399999856948853
+  ],
+  "pieces": [
+   {
+    "label": "toilet",
+    "triangles": 70,
+    "vertices": 111
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.3899999842047691,
+   -0.030000001192092896
+  ],
+  "distance": 2.304976005764482,
+  "floor": -0.011047626846828314,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 2.304976005764482,
+ "error": null,
+ "overlap": null
+}

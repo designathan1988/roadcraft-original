@@ -1,0 +1,82 @@
+{
+ "id": "Street furniture/phone",
+ "key": "Street furniture/phone",
+ "metrics": {
+  "id": "Street furniture/phone",
+  "triangles": 590,
+  "vertices": 433,
+  "index": "Uint16",
+  "geometryBytes": 19128,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [onBeforeCompile() {}|pose-yaw] (vertex colours, roughness 0.62, metalness 0.28, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 590,
+    "vertices": 433
+   }
+  ],
+  "hidden": 14,
+  "solids": "4 solids: 2 other, 1 closed cylinder, 1 box",
+  "size": [
+   0.8999289274215698,
+   2.0460829496383663,
+   0.9309898018836975
+  ],
+  "pieces": [
+   {
+    "label": "phone",
+    "triangles": 590,
+    "vertices": 433
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   1.0230414986610414,
+   -0.14825716614723206
+  ],
+  "distance": 5.051961721030917,
+  "floor": -0.02421375224206227,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 5.051961721030917,
+ "error": {
+  "max": 3.331391796911832e-16,
+  "mean": 3.044692758054484e-17,
+  "forward": {
+   "max": 3.331391796911832e-16,
+   "mean": 3.0501289523181116e-17,
+   "samples": 21767,
+   "at": [
+    -0.04298031813613613,
+    0.6777846500994823,
+    -0.21053227091511614
+   ]
+  },
+  "backward": {
+   "max": 3.331391796911832e-16,
+   "mean": 3.039256563790856e-17,
+   "samples": 21767,
+   "at": [
+    -0.04298031813613613,
+    0.6777846500994823,
+    -0.21053227091511614
+   ]
+  },
+  "at": [
+   -0.04298031813613613,
+   0.6777846500994823,
+   -0.21053227091511614
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

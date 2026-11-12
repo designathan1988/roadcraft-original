@@ -1,0 +1,49 @@
+{
+ "id": "Buildings: part models/wash",
+ "key": "Buildings: part models/wash",
+ "metrics": {
+  "id": "Buildings: part models/wash",
+  "triangles": 2,
+  "vertices": 4,
+  "index": "Uint16",
+  "geometryBytes": 140,
+  "bytesPerVertex": 32,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "MeshBasicMaterial \"building-part-wash\" [outside-wash-lot|part-pose] (transparent, opacity 0)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 2,
+    "vertices": 4
+   }
+  ],
+  "hidden": 0,
+  "solids": "1 solids: 1 quad",
+  "size": [
+   1,
+   1,
+   0
+  ],
+  "pieces": [
+   {
+    "label": "wash",
+    "triangles": 2,
+    "vertices": 4
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   -0.05000000074505806
+  ],
+  "distance": 2.950614872174388,
+  "floor": -0.5141421356237309,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 2.950614872174388,
+ "error": null,
+ "overlap": null
+}

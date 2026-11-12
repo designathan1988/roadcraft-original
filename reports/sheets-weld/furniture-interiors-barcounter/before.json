@@ -1,0 +1,49 @@
+{
+ "id": "Furniture (interiors)/barCounter",
+ "key": "Furniture (interiors)/barCounter",
+ "metrics": {
+  "id": "Furniture (interiors)/barCounter",
+  "triangles": 246,
+  "vertices": 366,
+  "index": "Uint16",
+  "geometryBytes": 36612,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 246,
+    "vertices": 366
+   }
+  ],
+  "hidden": 0,
+  "solids": "8 solids: 7 other, 1 box",
+  "size": [
+   4.039999961853027,
+   1.3799999943375587,
+   0.7400000095367432
+  ],
+  "pieces": [
+   {
+    "label": "barCounter",
+    "triangles": 246,
+    "vertices": 366
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.6899999980628491,
+   0
+  ],
+  "distance": 9.040059851852131,
+  "floor": -0.04332851130085634,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 9.040059851852131,
+ "error": null,
+ "overlap": null
+}

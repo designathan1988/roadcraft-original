@@ -1,0 +1,54 @@
+{
+ "id": "Vehicles/wheel/tyre + rim",
+ "key": "Vehicles/wheel/tyre + rim",
+ "metrics": {
+  "id": "Vehicles/wheel/tyre + rim",
+  "triangles": 404,
+  "vertices": 413,
+  "index": "Uint16",
+  "geometryBytes": 16680,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B uv:2xFloat32=8B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 2,
+  "levels": [
+   {
+    "triangles": 404,
+    "vertices": 413
+   }
+  ],
+  "hidden": 64,
+  "solids": "8 solids: 1 other, 2 closed cylinder, 5 box",
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "pieces": [
+   {
+    "label": "tyre",
+    "triangles": 256,
+    "vertices": 153
+   },
+   {
+    "label": "rim",
+    "triangles": 148,
+    "vertices": 260
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   0
+  ],
+  "distance": 3.6137504321473304,
+  "floor": -0.5173205080756887,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 3.6137504321473304,
+ "error": null,
+ "overlap": null
+}

@@ -1,0 +1,49 @@
+{
+ "id": "Furniture (interiors)/bed",
+ "key": "Furniture (interiors)/bed",
+ "metrics": {
+  "id": "Furniture (interiors)/bed",
+  "triangles": 126,
+  "vertices": 196,
+  "index": "Uint16",
+  "geometryBytes": 19572,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 126,
+    "vertices": 196
+   }
+  ],
+  "hidden": 4,
+  "solids": "10 solids: 5 other, 4 open prism, 1 box",
+  "size": [
+   1.6399999856948853,
+   0.9999999993294477,
+   2.0049999952316284
+  ],
+  "pieces": [
+   {
+    "label": "bed",
+    "triangles": 126,
+    "vertices": 196
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.5000000003352761,
+   -0.002499997615814209
+  ],
+  "distance": 5.793141740478626,
+  "floor": -0.027766210688970554,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 5.793141740478626,
+ "error": null,
+ "overlap": null
+}

@@ -1,0 +1,82 @@
+{
+ "id": "Furniture (interiors)/wardrobe",
+ "key": "Furniture (interiors)/wardrobe",
+ "metrics": {
+  "id": "Furniture (interiors)/wardrobe",
+  "triangles": 40,
+  "vertices": 80,
+  "index": "Uint16",
+  "geometryBytes": 7920,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 40,
+    "vertices": 80
+   }
+  ],
+  "hidden": 4,
+  "solids": "4 solids: 4 other",
+  "size": [
+   1.600000023841858,
+   2,
+   0.625
+  ],
+  "pieces": [
+   {
+    "label": "wardrobe",
+    "triangles": 40,
+    "vertices": 80
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   1,
+   0.012499988079071045
+  ],
+  "distance": 5.500592352437337,
+  "floor": -0.026364038151038143,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 5.500592352437337,
+ "error": {
+  "max": 5.613217783960923e-16,
+  "mean": 7.097693969614588e-17,
+  "forward": {
+   "max": 5.613217783960923e-16,
+   "mean": 7.097693969614588e-17,
+   "samples": 20116,
+   "at": [
+    -0.5009162250489783,
+    2,
+    0.21049414777665268
+   ]
+  },
+  "backward": {
+   "max": 5.613217783960923e-16,
+   "mean": 7.097693969614588e-17,
+   "samples": 20116,
+   "at": [
+    -0.5009162250489783,
+    2,
+    0.21049414777665268
+   ]
+  },
+  "at": [
+   -0.5009162250489783,
+   2,
+   0.21049414777665268
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

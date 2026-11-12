@@ -1,0 +1,55 @@
+{
+ "id": "Street furniture/lamp",
+ "key": "Street furniture/lamp",
+ "metrics": {
+  "id": "Street furniture/lamp",
+  "triangles": 132,
+  "vertices": 200,
+  "index": "Uint16",
+  "geometryBytes": 10308,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [onBeforeCompile() {}|pose-yaw] (vertex colours, roughness 0.62, metalness 0.28, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 132,
+    "vertices": 200
+   },
+   {
+    "triangles": 32,
+    "vertices": 59
+   }
+  ],
+  "hidden": 0,
+  "solids": "6 solids: 3 open prism, 2 closed cylinder, 1 box",
+  "size": [
+   2.6826984882354736,
+   9.155190461874009,
+   0.4000000059604645
+  ],
+  "pieces": [
+   {
+    "label": "lamp",
+    "triangles": 132,
+    "vertices": 200
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   1.1511379480361938,
+   4.577595236897468,
+   0
+  ],
+  "distance": 19.922046393836943,
+  "floor": -0.09548527226436866,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.1421492707911933
+ ],
+ "distance": 19.922046393836943,
+ "error": null,
+ "overlap": null
+}

@@ -1,0 +1,88 @@
+{
+ "id": "Buildings: part models/door",
+ "key": "Buildings: part models/door",
+ "metrics": {
+  "id": "Buildings: part models/door",
+  "triangles": 62,
+  "vertices": 124,
+  "index": "Uint16",
+  "geometryBytes": 5180,
+  "bytesPerVertex": 32,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "MeshStandardMaterial \"building-part-door\" [onBeforeCompile() {}|part-pose] (roughness 0.55, metalness 0, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 62,
+    "vertices": 124
+   },
+   {
+    "triangles": 12,
+    "vertices": 24
+   }
+  ],
+  "hidden": 2,
+  "solids": "6 solids: 1 box, 5 other",
+  "size": [
+   1,
+   1,
+   2.200000047683716
+  ],
+  "pieces": [
+   {
+    "label": "door",
+    "triangles": 62,
+    "vertices": 124
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   0.6000000238418579
+  ],
+  "distance": 5.456643574307914,
+  "floor": -0.5261533940623552,
+  "long": "z"
+ },
+ "levelErrors": [
+  1.600000038743019
+ ],
+ "distance": 5.456643574307914,
+ "error": {
+  "max": 1.0069767038100264e-13,
+  "mean": 1.4253560534001036e-16,
+  "forward": {
+   "max": 1.0069767038100264e-13,
+   "mean": 1.4253560534001036e-16,
+   "samples": 20180,
+   "at": [
+    0.3499999940395355,
+    -0.054846637726122555,
+    0.5861398218727973
+   ]
+  },
+  "backward": {
+   "max": 1.0069767038100264e-13,
+   "mean": 1.4253560534001036e-16,
+   "samples": 20180,
+   "at": [
+    0.3499999940395355,
+    -0.054846637726122555,
+    0.5861398218727973
+   ]
+  },
+  "at": [
+   0.3499999940395355,
+   -0.054846637726122555,
+   0.5861398218727973
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

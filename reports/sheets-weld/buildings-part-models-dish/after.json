@@ -1,0 +1,98 @@
+{
+ "id": "Buildings: part models/dish",
+ "key": "Buildings: part models/dish",
+ "metrics": {
+  "id": "Buildings: part models/dish",
+  "triangles": 142,
+  "vertices": 145,
+  "index": "Uint16",
+  "geometryBytes": 12556,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-part-dish\" [onBeforeCompile() {}|part-pose] (vertex colours, roughness 0.5, metalness 0.2, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 142,
+    "vertices": 145
+   },
+   {
+    "triangles": 70,
+    "vertices": 109
+   },
+   {
+    "triangles": 26,
+    "vertices": 49
+   },
+   {
+    "triangles": 2,
+    "vertices": 4
+   }
+  ],
+  "hidden": 3,
+  "solids": "5 solids: 3 other, 2 box",
+  "size": [
+   0.6025791168212891,
+   0.6533638536930084,
+   0.9163672983646394
+  ],
+  "pieces": [
+   {
+    "label": "dish",
+    "triangles": 142,
+    "vertices": 145
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   -0.17668192088603973,
+   0.4581836432218551
+  ],
+  "distance": 2.663503998299443,
+  "floor": -0.5161298766485922,
+  "long": "z"
+ },
+ "levelErrors": [
+  0.021975549081854368,
+  0.11343859380863672,
+  0.9163672924041748
+ ],
+ "distance": 2.663503998299443,
+ "error": {
+  "max": 1.838217638754292e-15,
+  "mean": 2.2773023484852873e-17,
+  "forward": {
+   "max": 1.838217638754292e-15,
+   "mean": 2.2773023484852873e-17,
+   "samples": 20438,
+   "at": [
+    0.012500000186264515,
+    0.09082477396282912,
+    0.3736436064058712
+   ]
+  },
+  "backward": {
+   "max": 1.838217638754292e-15,
+   "mean": 2.2773023484852873e-17,
+   "samples": 20438,
+   "at": [
+    0.012500000186264515,
+    0.09082477396282912,
+    0.3736436064058712
+   ]
+  },
+  "at": [
+   0.012500000186264515,
+   0.09082477396282912,
+   0.3736436064058712
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

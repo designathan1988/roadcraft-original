@@ -1,0 +1,54 @@
+{
+ "id": "Street trees and bushes/broadleaf",
+ "key": "Street trees and bushes/broadleaf",
+ "metrics": {
+  "id": "Street trees and bushes/broadleaf",
+  "triangles": 282,
+  "vertices": 766,
+  "index": "none + Uint16",
+  "geometryBytes": 30616,
+  "bytesPerVertex": 52,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aCorner:2xFloat32=8B",
+  "materials": "MeshStandardMaterial [wind-nearfade|pose-yaw] (vertex colours, flat shading, roughness 0.85, metalness 0, opacity 1) | MeshStandardMaterial [wind-nearfade-billboard-coverage-near|pose-yaw] (vertex colours, double-sided, alpha test 0.5, roughness 0.8, metalness 0, opacity 1)",
+  "draws": 2,
+  "levels": [
+   {
+    "triangles": 282,
+    "vertices": 766
+   }
+  ],
+  "hidden": 0,
+  "solids": "46 solids: 4 open prism, 2 closed cylinder, 40 other",
+  "size": [
+   0.4952727109193802,
+   0.7937551140785217,
+   0.5711223036050797
+  ],
+  "pieces": [
+   {
+    "label": "body",
+    "triangles": 202,
+    "vertices": 606
+   },
+   {
+    "label": "foliage cards",
+    "triangles": 80,
+    "vertices": 160
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0.015166781842708588,
+   0.39687755703926086,
+   -0.04749318212270737
+  ],
+  "distance": 2.28698628425008,
+  "floor": -0.010961400115780884,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 2.28698628425008,
+ "error": null,
+ "overlap": null
+}

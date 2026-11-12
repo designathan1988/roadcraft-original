@@ -1,0 +1,82 @@
+{
+ "id": "People: held props/box",
+ "key": "People: held props/box",
+ "metrics": {
+  "id": "People: held props/box",
+  "triangles": 24,
+  "vertices": 48,
+  "index": "Uint16",
+  "geometryBytes": 1872,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial (vertex colours, roughness 0.7, metalness 0, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 24,
+    "vertices": 48
+   }
+  ],
+  "hidden": 4,
+  "solids": "2 solids: 2 box",
+  "size": [
+   1,
+   1.0049999952316284,
+   1.0099999904632568
+  ],
+  "pieces": [
+   {
+    "label": "held-box",
+    "triangles": 24,
+    "vertices": 48
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.002499997615814209,
+   0
+  ],
+  "distance": 3.6318491316588575,
+  "floor": -0.5174072541520808,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 3.6318491316588575,
+ "error": {
+  "max": 2.2304557403922736e-13,
+  "mean": 9.682360827276573e-17,
+  "forward": {
+   "max": 2.2304557403922736e-13,
+   "mean": 9.682360827276573e-17,
+   "samples": 20068,
+   "at": [
+    -0.05999999865889549,
+    0.49937850277666046,
+    -0.007313121399434408
+   ]
+  },
+  "backward": {
+   "max": 2.2304557403922736e-13,
+   "mean": 9.682360827276573e-17,
+   "samples": 20068,
+   "at": [
+    -0.05999999865889549,
+    0.49937850277666046,
+    -0.007313121399434408
+   ]
+  },
+  "at": [
+   -0.05999999865889549,
+   0.49937850277666046,
+   -0.007313121399434408
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

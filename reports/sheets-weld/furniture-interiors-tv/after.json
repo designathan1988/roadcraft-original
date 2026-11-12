@@ -1,0 +1,82 @@
+{
+ "id": "Furniture (interiors)/tv",
+ "key": "Furniture (interiors)/tv",
+ "metrics": {
+  "id": "Furniture (interiors)/tv",
+  "triangles": 32,
+  "vertices": 64,
+  "index": "Uint16",
+  "geometryBytes": 6336,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 32,
+    "vertices": 64
+   }
+  ],
+  "hidden": 0,
+  "solids": "3 solids: 2 other, 1 box",
+  "size": [
+   1.2000000476837158,
+   1.0499999463558196,
+   0.4000000059604645
+  ],
+  "pieces": [
+   {
+    "label": "tv",
+    "triangles": 32,
+    "vertices": 64
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.5249999791383744,
+   0
+  ],
+  "distance": 3.429891493321082,
+  "floor": -0.016439276282250642,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 3.429891493321082,
+ "error": {
+  "max": 2.932889951024638e-13,
+  "mean": 2.1324800699021622e-16,
+  "forward": {
+   "max": 2.932889951024638e-13,
+   "mean": 2.1324800699021622e-16,
+   "samples": 20090,
+   "at": [
+    -0.02947137069955144,
+    0.5249999761581421,
+    0.02718493913993638
+   ]
+  },
+  "backward": {
+   "max": 2.932889951024638e-13,
+   "mean": 2.1324800699021622e-16,
+   "samples": 20090,
+   "at": [
+    -0.02947137069955144,
+    0.5249999761581421,
+    0.02718493913993638
+   ]
+  },
+  "at": [
+   -0.02947137069955144,
+   0.5249999761581421,
+   0.02718493913993638
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

@@ -1,0 +1,55 @@
+{
+ "id": "Buildings: part models/concrete",
+ "key": "Buildings: part models/concrete",
+ "metrics": {
+  "id": "Buildings: part models/concrete",
+  "triangles": 12,
+  "vertices": 24,
+  "index": "Uint16",
+  "geometryBytes": 980,
+  "bytesPerVertex": 32,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "MeshStandardMaterial \"building-part-column\" [onBeforeCompile() {}|part-pose] (roughness 0.82, metalness 0, opacity 1)",
+  "draws": 6,
+  "levels": [
+   {
+    "triangles": 12,
+    "vertices": 24
+   },
+   {
+    "triangles": 2,
+    "vertices": 4
+   }
+  ],
+  "hidden": 0,
+  "solids": "1 solids: 1 box",
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "pieces": [
+   {
+    "label": "concrete",
+    "triangles": 12,
+    "vertices": 24
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   0
+  ],
+  "distance": 3.6137504321473304,
+  "floor": -0.5173205080756887,
+  "long": "x"
+ },
+ "levelErrors": [
+  1
+ ],
+ "distance": 3.6137504321473304,
+ "error": null,
+ "overlap": null
+}

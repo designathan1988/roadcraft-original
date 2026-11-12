@@ -1,0 +1,49 @@
+{
+ "id": "Furniture (interiors)/table",
+ "key": "Furniture (interiors)/table",
+ "metrics": {
+  "id": "Furniture (interiors)/table",
+  "triangles": 76,
+  "vertices": 96,
+  "index": "Uint16",
+  "geometryBytes": 9672,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 76,
+    "vertices": 96
+   }
+  ],
+  "hidden": 0,
+  "solids": "5 solids: 1 box, 4 open prism",
+  "size": [
+   1.600000023841858,
+   0.7499999892711635,
+   0.8999999761581421
+  ],
+  "pieces": [
+   {
+    "label": "table",
+    "triangles": 76,
+    "vertices": 96
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.37500000536441824,
+   0
+  ],
+  "distance": 4.137441781929514,
+  "floor": -0.019830521329798116,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 4.137441781929514,
+ "error": null,
+ "overlap": null
+}

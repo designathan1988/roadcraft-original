@@ -1,0 +1,82 @@
+{
+ "id": "Street furniture/lamp lens",
+ "key": "Street furniture/lamp lens",
+ "metrics": {
+  "id": "Street furniture/lamp lens",
+  "triangles": 2,
+  "vertices": 4,
+  "index": "Uint16",
+  "geometryBytes": 156,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshBasicMaterial (opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 2,
+    "vertices": 4
+   }
+  ],
+  "hidden": 0,
+  "solids": "1 solids: 1 quad",
+  "size": [
+   0.570749044418335,
+   0,
+   0.302170068025589
+  ],
+  "pieces": [
+   {
+    "label": "lamp lens",
+    "triangles": 2,
+    "vertices": 4
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   2.100000023841858,
+   8.997650146484375,
+   0
+  ],
+  "distance": 1.347402766762772,
+  "floor": 8.987650146484375,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 1.347402766762772,
+ "error": {
+  "max": 4.742874840267547e-16,
+  "mean": 3.1358612957616544e-17,
+  "forward": {
+   "max": 4.742874840267547e-16,
+   "mean": 3.1358612957616544e-17,
+   "samples": 20006,
+   "at": [
+    2.1222129370511875,
+    8.997650146484375,
+    -0.13824009200946427
+   ]
+  },
+  "backward": {
+   "max": 4.742874840267547e-16,
+   "mean": 3.1358612957616544e-17,
+   "samples": 20006,
+   "at": [
+    2.1222129370511875,
+    8.997650146484375,
+    -0.13824009200946427
+   ]
+  },
+  "at": [
+   2.1222129370511875,
+   8.997650146484375,
+   -0.13824009200946427
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

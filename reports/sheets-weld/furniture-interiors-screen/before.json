@@ -1,0 +1,49 @@
+{
+ "id": "Furniture (interiors)/screen",
+ "key": "Furniture (interiors)/screen",
+ "metrics": {
+  "id": "Furniture (interiors)/screen",
+  "triangles": 22,
+  "vertices": 44,
+  "index": "Uint16",
+  "geometryBytes": 4356,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 22,
+    "vertices": 44
+   }
+  ],
+  "hidden": 6,
+  "solids": "2 solids: 1 box, 1 other",
+  "size": [
+   8,
+   4,
+   0.3100000023841858
+  ],
+  "pieces": [
+   {
+    "label": "screen",
+    "triangles": 22,
+    "vertices": 44
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   3.5,
+   0.004999995231628418
+  ],
+  "distance": 18.672532083749516,
+  "floor": 1.4105035754895883,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 18.672532083749516,
+ "error": null,
+ "overlap": null
+}

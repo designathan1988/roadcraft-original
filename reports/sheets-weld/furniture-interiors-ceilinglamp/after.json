@@ -1,0 +1,82 @@
+{
+ "id": "Furniture (interiors)/ceilingLamp",
+ "key": "Furniture (interiors)/ceilingLamp",
+ "metrics": {
+  "id": "Furniture (interiors)/ceilingLamp",
+  "triangles": 190,
+  "vertices": 182,
+  "index": "Uint16",
+  "geometryBytes": 18612,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 190,
+    "vertices": 182
+   }
+  ],
+  "hidden": 20,
+  "solids": "3 solids: 2 closed cylinder, 1 other",
+  "size": [
+   0.6000000238418579,
+   0.3799999915063381,
+   0.6000000238418579
+  ],
+  "pieces": [
+   {
+    "label": "ceilingLamp",
+    "triangles": 190,
+    "vertices": 182
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.15999999828636646,
+   0
+  ],
+  "distance": 1.939790915571224,
+  "floor": -0.0399999974668026,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 1.939790915571224,
+ "error": {
+  "max": 8.441528768080324e-17,
+  "mean": 1.0196361920795925e-17,
+  "forward": {
+   "max": 8.441528768080324e-17,
+   "mean": 1.0198497861195658e-17,
+   "samples": 20560,
+   "at": [
+    0.07739730107078488,
+    0.019999997690320015,
+    -0.015449241067658784
+   ]
+  },
+  "backward": {
+   "max": 8.441528768080324e-17,
+   "mean": 1.0194225980396194e-17,
+   "samples": 20560,
+   "at": [
+    0.07739730107078488,
+    0.019999997690320015,
+    -0.015449241067658784
+   ]
+  },
+  "at": [
+   0.07739730107078488,
+   0.019999997690320015,
+   -0.015449241067658784
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

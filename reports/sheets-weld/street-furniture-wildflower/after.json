@@ -1,0 +1,82 @@
+{
+ "id": "Street furniture/wildflower",
+ "key": "Street furniture/wildflower",
+ "metrics": {
+  "id": "Street furniture/wildflower",
+  "triangles": 40,
+  "vertices": 92,
+  "index": "Uint16",
+  "geometryBytes": 3552,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [wind-nearfade|pose-yaw] (vertex colours, double-sided, roughness 0.8, metalness 0, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 40,
+    "vertices": 92
+   }
+  ],
+  "hidden": 0,
+  "solids": "3 solids: 1 open prism, 1 box, 1 closed cylinder",
+  "size": [
+   0.20935481786727905,
+   0.969767916202545,
+   0.14461064338684082
+  ],
+  "pieces": [
+   {
+    "label": "wildflower",
+    "triangles": 40,
+    "vertices": 92
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0.032372087240219116,
+   0.4848839700222016,
+   0
+  ],
+  "distance": 2.091808535021922,
+  "floor": -0.010025911922990807,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 2.091808535021922,
+ "error": {
+  "max": 1.768887244611347e-15,
+  "mean": 1.9758284616890863e-17,
+  "forward": {
+   "max": 1.768887244611347e-15,
+   "mean": 1.9882789134626433e-17,
+   "samples": 20116,
+   "at": [
+    0.03944757616676905,
+    0.3283842333369418,
+    0.03583203514017455
+   ]
+  },
+  "backward": {
+   "max": 1.768887244611347e-15,
+   "mean": 1.96337800991553e-17,
+   "samples": 20116,
+   "at": [
+    0.03944757616676905,
+    0.3283842333369418,
+    0.03583203514017455
+   ]
+  },
+  "at": [
+   0.03944757616676905,
+   0.3283842333369418,
+   0.03583203514017455
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "Furniture (interiors)/wardBed",
+ "key": "Furniture (interiors)/wardBed",
+ "metrics": {
+  "id": "Furniture (interiors)/wardBed",
+  "triangles": 132,
+  "vertices": 208,
+  "index": "Uint16",
+  "geometryBytes": 20760,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 132,
+    "vertices": 208
+   }
+  ],
+  "hidden": 0,
+  "solids": "9 solids: 1 closed cylinder, 4 open prism, 2 other, 2 box",
+  "size": [
+   1.0399999618530273,
+   1.1499999821186067,
+   2.0999999046325684
+  ],
+  "pieces": [
+   {
+    "label": "wardBed",
+    "triangles": 132,
+    "vertices": 208
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.5749999850988388,
+   0
+  ],
+  "distance": 5.446302558296378,
+  "floor": -0.026103836098940205,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 5.446302558296378,
+ "error": null,
+ "overlap": null
+}

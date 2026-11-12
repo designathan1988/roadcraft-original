@@ -1,0 +1,82 @@
+{
+ "id": "Furniture (interiors)/sink",
+ "key": "Furniture (interiors)/sink",
+ "metrics": {
+  "id": "Furniture (interiors)/sink",
+  "triangles": 64,
+  "vertices": 95,
+  "index": "Uint16",
+  "geometryBytes": 9504,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 64,
+    "vertices": 95
+   }
+  ],
+  "hidden": 0,
+  "solids": "3 solids: 3 other",
+  "size": [
+   1,
+   1.1499999833106993,
+   0.6000000238418579
+  ],
+  "pieces": [
+   {
+    "label": "sink",
+    "triangles": 64,
+    "vertices": 95
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.5749999845027924,
+   0
+  ],
+  "distance": 3.4171763641381636,
+  "floor": -0.01637834647687468,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 3.4171763641381636,
+ "error": {
+  "max": 1.4836439126281665e-14,
+  "mean": 7.538914674357496e-17,
+  "forward": {
+   "max": 1.4836439126281665e-14,
+   "mean": 7.538914674357496e-17,
+   "samples": 20188,
+   "at": [
+    0.14405482352049148,
+    0.884483640638348,
+    0.30000001192092896
+   ]
+  },
+  "backward": {
+   "max": 1.4836439126281665e-14,
+   "mean": 7.538914674357496e-17,
+   "samples": 20188,
+   "at": [
+    0.14405482352049148,
+    0.884483640638348,
+    0.30000001192092896
+   ]
+  },
+  "at": [
+   0.14405482352049148,
+   0.884483640638348,
+   0.30000001192092896
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

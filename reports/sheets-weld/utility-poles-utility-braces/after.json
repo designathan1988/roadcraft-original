@@ -1,0 +1,82 @@
+{
+ "id": "Utility poles/utility-braces",
+ "key": "Utility poles/utility-braces",
+ "metrics": {
+  "id": "Utility poles/utility-braces",
+  "triangles": 12,
+  "vertices": 24,
+  "index": "Uint16",
+  "geometryBytes": 840,
+  "bytesPerVertex": 32,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "MeshStandardMaterial (roughness 0.45, metalness 0.55, opacity 1)",
+  "draws": 6,
+  "levels": [
+   {
+    "triangles": 12,
+    "vertices": 24
+   }
+  ],
+  "hidden": 0,
+  "solids": "1 solids: 1 box",
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "pieces": [
+   {
+    "label": "utility-braces",
+    "triangles": 12,
+    "vertices": 24
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   0
+  ],
+  "distance": 3.6137504321473304,
+  "floor": -0.5173205080756887,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 3.6137504321473304,
+ "error": {
+  "max": 1.1102230246251565e-16,
+  "mean": 6.2015124402814235e-18,
+  "forward": {
+   "max": 1.1102230246251565e-16,
+   "mean": 6.2015124402814235e-18,
+   "samples": 20040,
+   "at": [
+    -0.3540234212186988,
+    0.5,
+    0.3707894339440827
+   ]
+  },
+  "backward": {
+   "max": 1.1102230246251565e-16,
+   "mean": 6.2015124402814235e-18,
+   "samples": 20040,
+   "at": [
+    -0.3540234212186988,
+    0.5,
+    0.3707894339440827
+   ]
+  },
+  "at": [
+   -0.3540234212186988,
+   0.5,
+   0.3707894339440827
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

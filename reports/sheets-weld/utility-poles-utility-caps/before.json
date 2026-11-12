@@ -1,0 +1,60 @@
+{
+ "id": "Utility poles/utility-caps",
+ "key": "Utility poles/utility-caps",
+ "metrics": {
+  "id": "Utility poles/utility-caps",
+  "triangles": 40,
+  "vertices": 64,
+  "index": "Uint16",
+  "geometryBytes": 4704,
+  "bytesPerVertex": 32,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "MeshStandardMaterial (roughness 0.45, metalness 0.55, opacity 1)",
+  "draws": 3,
+  "levels": [
+   {
+    "triangles": 40,
+    "vertices": 64
+   },
+   {
+    "triangles": 24,
+    "vertices": 40
+   },
+   {
+    "triangles": 16,
+    "vertices": 28
+   }
+  ],
+  "hidden": 0,
+  "solids": "1 solids: 1 closed cylinder",
+  "size": [
+   0.2406173050403595,
+   0.07999999821186066,
+   0.2529999911785126
+  ],
+  "pieces": [
+   {
+    "label": "utility-caps",
+    "triangles": 40,
+    "vertices": 64
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   0
+  ],
+  "distance": 0.7473438676124635,
+  "floor": -0.04999999910593033,
+  "long": "z"
+ },
+ "levelErrors": [
+  0.011436153366759058,
+  0.025589701417768246
+ ],
+ "distance": 0.7473438676124635,
+ "error": null,
+ "overlap": null
+}

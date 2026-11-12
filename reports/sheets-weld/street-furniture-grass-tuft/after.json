@@ -1,0 +1,82 @@
+{
+ "id": "Street furniture/grass tuft",
+ "key": "Street furniture/grass tuft",
+ "metrics": {
+  "id": "Street furniture/grass tuft",
+  "triangles": 35,
+  "vertices": 49,
+  "index": "Uint16",
+  "geometryBytes": 1974,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [wind-nearfade|pose-yaw] (vertex colours, double-sided, roughness 0.95, metalness 0, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 35,
+    "vertices": 49
+   }
+  ],
+  "hidden": 0,
+  "solids": "7 solids: 7 other",
+  "size": [
+   0.557431161403656,
+   0.902722954750061,
+   0.8309767544269562
+  ],
+  "pieces": [
+   {
+    "label": "grass tuft",
+    "triangles": 35,
+    "vertices": 49
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0.0022206902503967285,
+   0.4513614773750305,
+   -0.039795681834220886
+  ],
+  "distance": 2.8117367292865123,
+  "floor": -0.013476500284326296,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 2.8117367292865123,
+ "error": {
+  "max": 9.354133428510259e-16,
+  "mean": 3.2547855996472435e-17,
+  "forward": {
+   "max": 9.354133428510259e-16,
+   "mean": 3.2547855996472435e-17,
+   "samples": 20102,
+   "at": [
+    -0.044929771456639414,
+    0.49191883841880035,
+    0.032069147753581814
+   ]
+  },
+  "backward": {
+   "max": 9.354133428510259e-16,
+   "mean": 3.2547855996472435e-17,
+   "samples": 20102,
+   "at": [
+    -0.044929771456639414,
+    0.49191883841880035,
+    0.032069147753581814
+   ]
+  },
+  "at": [
+   -0.044929771456639414,
+   0.49191883841880035,
+   0.032069147753581814
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

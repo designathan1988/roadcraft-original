@@ -1,0 +1,80 @@
+{
+ "id": "Vehicles/hatch/hatch",
+ "key": "Vehicles/hatch/hatch",
+ "metrics": {
+  "id": "Vehicles/hatch/hatch",
+  "triangles": 14838,
+  "vertices": 14940,
+  "index": "Uint16 + none",
+  "geometryBytes": 620436,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 6,
+  "levels": [
+   {
+    "triangles": 14838,
+    "vertices": 14940
+   },
+   {
+    "triangles": 36,
+    "vertices": 72
+   }
+  ],
+  "hidden": 109,
+  "solids": "75 solids: 16 other, 44 box, 15 closed cylinder",
+  "size": [
+   3.9079999923706055,
+   1.7299789935350418,
+   2.218498706817627
+  ],
+  "pieces": [
+   {
+    "label": "shell",
+    "triangles": 9720,
+    "vertices": 6021
+   },
+   {
+    "label": "glass",
+    "triangles": 1008,
+    "vertices": 660
+   },
+   {
+    "label": "trim",
+    "triangles": 460,
+    "vertices": 720
+   },
+   {
+    "label": "interior",
+    "triangles": 1570,
+    "vertices": 2498
+   },
+   {
+    "label": "roof",
+    "triangles": 1540,
+    "vertices": 4620
+   },
+   {
+    "label": "steering wheel",
+    "triangles": 540,
+    "vertices": 421
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.6599894985556602,
+   0
+  ],
+  "distance": 10.046622183180025,
+  "floor": -0.2531529085814247,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.8038500942293835
+ ],
+ "distance": 10.046622183180025,
+ "error": null,
+ "overlap": null
+}

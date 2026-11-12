@@ -1,0 +1,82 @@
+{
+ "id": "Street furniture/lamp light pool (night)",
+ "key": "Street furniture/lamp light pool (night)",
+ "metrics": {
+  "id": "Street furniture/lamp light pool (night)",
+  "triangles": 28,
+  "vertices": 30,
+  "index": "Uint16",
+  "geometryBytes": 1128,
+  "bytesPerVertex": 32,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "MeshBasicMaterial (transparent, opacity 0)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 28,
+    "vertices": 30
+   }
+  ],
+  "hidden": 0,
+  "solids": "1 solids: 1 other",
+  "size": [
+   2,
+   1.2246468525851679e-16,
+   2
+  ],
+  "pieces": [
+   {
+    "label": "lamp light pool (night)",
+    "triangles": 28,
+    "vertices": 30
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   0
+  ],
+  "distance": 5.901229744348776,
+  "floor": -0.028284271247461967,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 5.901229744348776,
+ "error": {
+  "max": 2.7755575615628914e-16,
+  "mean": 3.193440274429887e-17,
+  "forward": {
+   "max": 2.7755575615628914e-16,
+   "mean": 3.193440274429887e-17,
+   "samples": 20076,
+   "at": [
+    0.18256391591757842,
+    -1.0862116436626636e-17,
+    0.17739182072706794
+   ]
+  },
+  "backward": {
+   "max": 2.7755575615628914e-16,
+   "mean": 3.193440274429887e-17,
+   "samples": 20076,
+   "at": [
+    0.18256391591757842,
+    -1.0862116436626636e-17,
+    0.17739182072706794
+   ]
+  },
+  "at": [
+   0.18256391591757842,
+   -1.0862116436626636e-17,
+   0.17739182072706794
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

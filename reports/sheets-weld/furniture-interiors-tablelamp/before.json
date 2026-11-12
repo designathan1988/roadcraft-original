@@ -1,0 +1,49 @@
+{
+ "id": "Furniture (interiors)/tableLamp",
+ "key": "Furniture (interiors)/tableLamp",
+ "metrics": {
+  "id": "Furniture (interiors)/tableLamp",
+  "triangles": 138,
+  "vertices": 206,
+  "index": "Uint16",
+  "geometryBytes": 20604,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 138,
+    "vertices": 206
+   }
+  ],
+  "hidden": 0,
+  "solids": "2 solids: 1 other, 1 closed cylinder",
+  "size": [
+   0.3446827232837677,
+   0.5299999710544944,
+   0.3499999940395355
+  ],
+  "pieces": [
+   {
+    "label": "tableLamp",
+    "triangles": 138,
+    "vertices": 206
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.2649999858625233,
+   0
+  ],
+  "distance": 1.5077124401513817,
+  "floor": -0.00999999966472386,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 1.5077124401513817,
+ "error": null,
+ "overlap": null
+}

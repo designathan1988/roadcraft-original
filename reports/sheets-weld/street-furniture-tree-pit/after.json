@@ -1,0 +1,82 @@
+{
+ "id": "Street furniture/tree pit",
+ "key": "Street furniture/tree pit",
+ "metrics": {
+  "id": "Street furniture/tree pit",
+  "triangles": 90,
+  "vertices": 166,
+  "index": "Uint16",
+  "geometryBytes": 6516,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [onBeforeCompile() {}|pose-yaw] (vertex colours, roughness 0.62, metalness 0.28, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 90,
+    "vertices": 166
+   }
+  ],
+  "hidden": 32,
+  "solids": "6 solids: 2 other, 4 open prism",
+  "size": [
+   0.800000011920929,
+   0.05499999925494195,
+   0.800000011920929
+  ],
+  "pieces": [
+   {
+    "label": "tree pit",
+    "triangles": 90,
+    "vertices": 166
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.0275000000745058,
+   0
+  ],
+  "distance": 2.3632795399149726,
+  "floor": -0.011327069068356243,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 2.3632795399149726,
+ "error": {
+  "max": 1.3655787276077348e-14,
+  "mean": 2.596707091768613e-16,
+  "forward": {
+   "max": 1.3655787276077348e-14,
+   "mean": 2.596707091768613e-16,
+   "samples": 20252,
+   "at": [
+    0.1875,
+    0.02030927408562312,
+    -0.1659501765160294
+   ]
+  },
+  "backward": {
+   "max": 1.3655787276077348e-14,
+   "mean": 2.596707091768613e-16,
+   "samples": 20252,
+   "at": [
+    0.1875,
+    0.02030927408562312,
+    -0.1659501765160294
+   ]
+  },
+  "at": [
+   0.1875,
+   0.02030927408562312,
+   -0.1659501765160294
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

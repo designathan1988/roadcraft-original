@@ -1,0 +1,60 @@
+{
+ "id": "Buildings: part models/acUnit",
+ "key": "Buildings: part models/acUnit",
+ "metrics": {
+  "id": "Buildings: part models/acUnit",
+  "triangles": 70,
+  "vertices": 128,
+  "index": "Uint16",
+  "geometryBytes": 7588,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-part-acUnit\" [facade-ac-front|part-pose] (vertex colours, roughness 0.55, metalness 0.15, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 70,
+    "vertices": 128
+   },
+   {
+    "triangles": 30,
+    "vertices": 60
+   },
+   {
+    "triangles": 2,
+    "vertices": 4
+   }
+  ],
+  "hidden": 2,
+  "solids": "9 solids: 5 other, 2 quad, 2 open prism",
+  "size": [
+   0.7655563652515411,
+   0.7878857851028442,
+   0.39499999582767487
+  ],
+  "pieces": [
+   {
+    "label": "acUnit",
+    "triangles": 70,
+    "vertices": 128
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0.022778168320655823,
+   -0.13394290208816528,
+   -0.017500005662441254
+  ],
+  "distance": 2.4357013508820327,
+  "floor": -0.5395599779319986,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.25238579511642456,
+  0.2778488808187013
+ ],
+ "distance": 2.4357013508820327,
+ "error": null,
+ "overlap": null
+}

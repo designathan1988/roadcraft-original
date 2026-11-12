@@ -1,0 +1,49 @@
+{
+ "id": "Furniture (interiors)/pew",
+ "key": "Furniture (interiors)/pew",
+ "metrics": {
+  "id": "Furniture (interiors)/pew",
+  "triangles": 44,
+  "vertices": 88,
+  "index": "Uint16",
+  "geometryBytes": 8712,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 44,
+    "vertices": 88
+   }
+  ],
+  "hidden": 0,
+  "solids": "4 solids: 2 box, 2 other",
+  "size": [
+   3.200000047683716,
+   0.9499999821186065,
+   0.6000000238418579
+  ],
+  "pieces": [
+   {
+    "label": "pew",
+    "triangles": 44,
+    "vertices": 88
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.4749999970197678,
+   0
+  ],
+  "distance": 7.07609501615537,
+  "floor": -0.03391533024575837,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 7.07609501615537,
+ "error": null,
+ "overlap": null
+}

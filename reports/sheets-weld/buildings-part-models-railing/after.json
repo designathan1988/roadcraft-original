@@ -1,0 +1,88 @@
+{
+ "id": "Buildings: part models/railing",
+ "key": "Buildings: part models/railing",
+ "metrics": {
+  "id": "Buildings: part models/railing",
+  "triangles": 218,
+  "vertices": 436,
+  "index": "Uint16",
+  "geometryBytes": 16004,
+  "bytesPerVertex": 32,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "MeshStandardMaterial \"building-part-railing\" [thin-part-prefiltered-v3-cards|part-pose] (roughness 0.45, metalness 0.55, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 218,
+    "vertices": 436
+   },
+   {
+    "triangles": 12,
+    "vertices": 24
+   }
+  ],
+  "hidden": 11,
+  "solids": "21 solids: 4 box, 17 other",
+  "size": [
+   1.0499999523162842,
+   0.9699999988079071,
+   1.024999976158142
+  ],
+  "pieces": [
+   {
+    "label": "railing",
+    "triangles": 218,
+    "vertices": 436
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.5150000005960464,
+   0.512499988079071
+  ],
+  "distance": 3.6699439199455726,
+  "floor": 0.012410160804312991,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.2443486311410726
+ ],
+ "distance": 3.6699439199455726,
+ "error": {
+  "max": 4.272506369836353e-14,
+  "mean": 3.8328594635607995e-16,
+  "forward": {
+   "max": 4.272506369836353e-14,
+   "mean": 3.8328594635607995e-16,
+   "samples": 20604,
+   "at": [
+    -0.004477387885344797,
+    0.14000000059604645,
+    1.010578320741921
+   ]
+  },
+  "backward": {
+   "max": 4.272506369836353e-14,
+   "mean": 3.8328594635607995e-16,
+   "samples": 20604,
+   "at": [
+    -0.004477387885344797,
+    0.14000000059604645,
+    1.010578320741921
+   ]
+  },
+  "at": [
+   -0.004477387885344797,
+   0.14000000059604645,
+   1.010578320741921
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

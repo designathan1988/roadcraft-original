@@ -1,0 +1,49 @@
+{
+ "id": "Furniture (interiors)/pallet",
+ "key": "Furniture (interiors)/pallet",
+ "metrics": {
+  "id": "Furniture (interiors)/pallet",
+  "triangles": 20,
+  "vertices": 40,
+  "index": "Uint16",
+  "geometryBytes": 3960,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 20,
+    "vertices": 40
+   }
+  ],
+  "hidden": 0,
+  "solids": "2 solids: 2 other",
+  "size": [
+   1.2000000476837158,
+   1.159999966919422,
+   1
+  ],
+  "pieces": [
+   {
+    "label": "pallet",
+    "triangles": 20,
+    "vertices": 40
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.5799999831616879,
+   0
+  ],
+  "distance": 4.059428466791347,
+  "floor": -0.019456618806114444,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 4.059428466791347,
+ "error": null,
+ "overlap": null
+}

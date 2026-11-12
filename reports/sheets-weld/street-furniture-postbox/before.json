@@ -1,0 +1,49 @@
+{
+ "id": "Street furniture/postbox",
+ "key": "Street furniture/postbox",
+ "metrics": {
+  "id": "Street furniture/postbox",
+  "triangles": 92,
+  "vertices": 164,
+  "index": "Uint16",
+  "geometryBytes": 6456,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [onBeforeCompile() {}|pose-yaw] (vertex colours, roughness 0.62, metalness 0.28, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 92,
+    "vertices": 164
+   }
+  ],
+  "hidden": 0,
+  "solids": "4 solids: 2 other, 2 box",
+  "size": [
+   0.4399999976158142,
+   1.1399999856948853,
+   0.35500000417232513
+  ],
+  "pieces": [
+   {
+    "label": "postbox",
+    "triangles": 92,
+    "vertices": 164
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.5699999928474426,
+   0.007500000298023224
+  ],
+  "distance": 2.654918081126506,
+  "floor": -0.01272487708486257,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 2.654918081126506,
+ "error": null,
+ "overlap": null
+}

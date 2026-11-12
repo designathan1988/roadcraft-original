@@ -1,0 +1,82 @@
+{
+ "id": "Furniture (interiors)/stairwell",
+ "key": "Furniture (interiors)/stairwell",
+ "metrics": {
+  "id": "Furniture (interiors)/stairwell",
+  "triangles": 34,
+  "vertices": 68,
+  "index": "Uint16",
+  "geometryBytes": 6732,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 34,
+    "vertices": 68
+   }
+  ],
+  "hidden": 4,
+  "solids": "4 solids: 4 other",
+  "size": [
+   1.2000000476837158,
+   1.000000000052154,
+   3.524999976158142
+  ],
+  "pieces": [
+   {
+    "label": "stairwell",
+    "triangles": 34,
+    "vertices": 68
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.49999999997392297,
+   0.012499988079071045
+  ],
+  "distance": 8.044315863567162,
+  "floor": -0.038555965798663556,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 8.044315863567162,
+ "error": {
+  "max": 1.2717687361104698e-13,
+  "mean": 1.5801861766070285e-16,
+  "forward": {
+   "max": 1.2717687361104698e-13,
+   "mean": 1.5801861766070285e-16,
+   "samples": 20102,
+   "at": [
+    0.16551963354637178,
+    0.0036259752486694015,
+    -1.75
+   ]
+  },
+  "backward": {
+   "max": 1.2717687361104698e-13,
+   "mean": 1.5801861766070285e-16,
+   "samples": 20102,
+   "at": [
+    0.16551963354637178,
+    0.0036259752486694015,
+    -1.75
+   ]
+  },
+  "at": [
+   0.16551963354637178,
+   0.0036259752486694015,
+   -1.75
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

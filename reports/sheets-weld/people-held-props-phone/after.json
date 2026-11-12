@@ -1,0 +1,82 @@
+{
+ "id": "People: held props/phone",
+ "key": "People: held props/phone",
+ "metrics": {
+  "id": "People: held props/phone",
+  "triangles": 12,
+  "vertices": 24,
+  "index": "Uint16",
+  "geometryBytes": 936,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial (vertex colours, roughness 0.7, metalness 0, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 12,
+    "vertices": 24
+   }
+  ],
+  "hidden": 0,
+  "solids": "1 solids: 1 box",
+  "size": [
+   0.1400000061839819,
+   0.07000000029802322,
+   0.009999999776482582
+  ],
+  "pieces": [
+   {
+    "label": "held-phone",
+    "triangles": 12,
+    "vertices": 24
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0.08000000286847353,
+   0,
+   -0.024999999441206455
+  ],
+  "distance": 0.32723903132647403,
+  "floor": -0.045000000149011614,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 0.32723903132647403,
+ "error": {
+  "max": 1.0826675909080688e-15,
+  "mean": 1.4084707994906485e-17,
+  "forward": {
+   "max": 1.0826675909080688e-15,
+   "mean": 1.4084707994906485e-17,
+   "samples": 20036,
+   "at": [
+    0.06516985212295023,
+    0.03500000014901161,
+    -0.02232730912739638
+   ]
+  },
+  "backward": {
+   "max": 1.0826675909080688e-15,
+   "mean": 1.4084707994906485e-17,
+   "samples": 20036,
+   "at": [
+    0.06516985212295023,
+    0.03500000014901161,
+    -0.02232730912739638
+   ]
+  },
+  "at": [
+   0.06516985212295023,
+   0.03500000014901161,
+   -0.02232730912739638
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

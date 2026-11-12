@@ -1,0 +1,88 @@
+{
+ "id": "Buildings: part models/roofRailing",
+ "key": "Buildings: part models/roofRailing",
+ "metrics": {
+  "id": "Buildings: part models/roofRailing",
+  "triangles": 78,
+  "vertices": 156,
+  "index": "Uint16",
+  "geometryBytes": 5708,
+  "bytesPerVertex": 32,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "MeshStandardMaterial \"building-part-roofRailing\" [thin-part-prefiltered-v3-cards|part-pose] (roughness 0.45, metalness 0.55, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 78,
+    "vertices": 156
+   },
+   {
+    "triangles": 4,
+    "vertices": 8
+   }
+  ],
+  "hidden": 8,
+  "solids": "7 solids: 4 box, 3 other",
+  "size": [
+   1.0199999809265137,
+   0.9699999988079071,
+   0.05000000074505806
+  ],
+  "pieces": [
+   {
+    "label": "roofRailing",
+    "triangles": 78,
+    "vertices": 156
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.5150000005960464,
+   0
+  ],
+  "distance": 2.938640554231318,
+  "floor": 0.015915257819024524,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.1171249017830363
+ ],
+ "distance": 2.938640554231318,
+ "error": {
+  "max": 4.030188075011504e-14,
+  "mean": 6.430772100049574e-16,
+  "forward": {
+   "max": 4.030188075011504e-14,
+   "mean": 6.430772100049574e-16,
+   "samples": 20240,
+   "at": [
+    -0.2656811394799661,
+    0.4300000071525574,
+    -0.014691261579362206
+   ]
+  },
+  "backward": {
+   "max": 4.030188075011504e-14,
+   "mean": 6.430772100049574e-16,
+   "samples": 20240,
+   "at": [
+    -0.2656811394799661,
+    0.4300000071525574,
+    -0.014691261579362206
+   ]
+  },
+  "at": [
+   -0.2656811394799661,
+   0.4300000071525574,
+   -0.014691261579362206
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

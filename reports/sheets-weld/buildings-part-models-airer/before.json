@@ -1,0 +1,55 @@
+{
+ "id": "Buildings: part models/airer",
+ "key": "Buildings: part models/airer",
+ "metrics": {
+  "id": "Buildings: part models/airer",
+  "triangles": 168,
+  "vertices": 336,
+  "index": "Uint16",
+  "geometryBytes": 13324,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-part-airer\" [thin-part-prefiltered-v3-cards|part-pose] (vertex colours, roughness 0.8, metalness 0, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 168,
+    "vertices": 336
+   },
+   {
+    "triangles": 2,
+    "vertices": 4
+   }
+  ],
+  "hidden": 20,
+  "solids": "14 solids: 14 box",
+  "size": [
+   1.2200000286102295,
+   0.9262004578486085,
+   0.6190146207809448
+  ],
+  "pieces": [
+   {
+    "label": "airer",
+    "triangles": 168,
+    "vertices": 336
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.4600000041536987,
+   0
+  ],
+  "distance": 3.446936063660133,
+  "floor": -0.01962120070627144,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.8052761966196321
+ ],
+ "distance": 3.446936063660133,
+ "error": null,
+ "overlap": null
+}

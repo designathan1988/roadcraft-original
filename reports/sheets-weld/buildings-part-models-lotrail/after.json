@@ -1,0 +1,88 @@
+{
+ "id": "Buildings: part models/lotRail",
+ "key": "Buildings: part models/lotRail",
+ "metrics": {
+  "id": "Buildings: part models/lotRail",
+  "triangles": 8,
+  "vertices": 16,
+  "index": "Uint16",
+  "geometryBytes": 940,
+  "bytesPerVertex": 44,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-shell\" [building-shell-v2-weathered-laid-maps-lots-own-walls|part-pose] (vertex colours, roughness 1, metalness 1, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 8,
+    "vertices": 16
+   },
+   {
+    "triangles": 2,
+    "vertices": 4
+   }
+  ],
+  "hidden": 0,
+  "solids": "1 solids: 1 open prism",
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "pieces": [
+   {
+    "label": "lotRail",
+    "triangles": 8,
+    "vertices": 16
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   0
+  ],
+  "distance": 3.6137504321473304,
+  "floor": -0.5173205080756887,
+  "long": "x"
+ },
+ "levelErrors": [
+  1
+ ],
+ "distance": 3.6137504321473304,
+ "error": {
+  "max": 1.2412670766236366e-16,
+  "mean": 1.2162465127913389e-17,
+  "forward": {
+   "max": 1.2412670766236366e-16,
+   "mean": 1.2162465127913389e-17,
+   "samples": 20024,
+   "at": [
+    -0.39394605342067734,
+    -0.2813051778489353,
+    0.5
+   ]
+  },
+  "backward": {
+   "max": 1.2412670766236366e-16,
+   "mean": 1.2162465127913389e-17,
+   "samples": 20024,
+   "at": [
+    -0.39394605342067734,
+    -0.2813051778489353,
+    0.5
+   ]
+  },
+  "at": [
+   -0.39394605342067734,
+   -0.2813051778489353,
+   0.5
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

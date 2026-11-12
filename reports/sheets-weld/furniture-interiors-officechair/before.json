@@ -1,0 +1,49 @@
+{
+ "id": "Furniture (interiors)/officeChair",
+ "key": "Furniture (interiors)/officeChair",
+ "metrics": {
+  "id": "Furniture (interiors)/officeChair",
+  "triangles": 727,
+  "vertices": 633,
+  "index": "Uint16",
+  "geometryBytes": 65130,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 727,
+    "vertices": 633
+   }
+  ],
+  "hidden": 79,
+  "solids": "13 solids: 7 box, 6 other",
+  "size": [
+   0.5735704898834229,
+   1.049999951645732,
+   0.5635316967964172
+  ],
+  "pieces": [
+   {
+    "label": "officeChair",
+    "triangles": 727,
+    "vertices": 633
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.5249999764934182,
+   -0.016765832901000977
+  ],
+  "distance": 2.759298997485822,
+  "floor": -0.013225168434662964,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 2.759298997485822,
+ "error": null,
+ "overlap": null
+}

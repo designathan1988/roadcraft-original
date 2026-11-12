@@ -1,0 +1,98 @@
+{
+ "id": "Buildings: part models/bike",
+ "key": "Buildings: part models/bike",
+ "metrics": {
+  "id": "Buildings: part models/bike",
+  "triangles": 238,
+  "vertices": 332,
+  "index": "Uint16",
+  "geometryBytes": 31948,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-part-bike\" [thin-part-prefiltered-v3-cards|part-pose] (vertex colours, double-sided, roughness 0.4, metalness 0.3, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 238,
+    "vertices": 332
+   },
+   {
+    "triangles": 168,
+    "vertices": 262
+   },
+   {
+    "triangles": 118,
+    "vertices": 200
+   },
+   {
+    "triangles": 2,
+    "vertices": 4
+   }
+  ],
+  "hidden": 16,
+  "solids": "12 solids: 4 open prism, 7 box, 1 other",
+  "size": [
+   1.7200000286102295,
+   0.9348346330225468,
+   0.5
+  ],
+  "pieces": [
+   {
+    "label": "bike",
+    "triangles": 238,
+    "vertices": 332
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.4725826811045408,
+   0
+  ],
+  "distance": 4.215516882682323,
+  "floor": -0.015039377150980592,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.04038599133491516,
+  0.1419983700458272,
+  0.644612018974734
+ ],
+ "distance": 4.215516882682323,
+ "error": {
+  "max": 9.605995809674355e-15,
+  "mean": 2.467927371309442e-16,
+  "forward": {
+   "max": 9.605995809674355e-15,
+   "mean": 2.467927371309442e-16,
+   "samples": 20706,
+   "at": [
+    0.2510204752031042,
+    0.7435062290939142,
+    -0.014999999664723873
+   ]
+  },
+  "backward": {
+   "max": 9.605995809674355e-15,
+   "mean": 2.467927371309442e-16,
+   "samples": 20706,
+   "at": [
+    0.2510204752031042,
+    0.7435062290939142,
+    -0.014999999664723873
+   ]
+  },
+  "at": [
+   0.2510204752031042,
+   0.7435062290939142,
+   -0.014999999664723873
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

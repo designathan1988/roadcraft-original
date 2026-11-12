@@ -1,0 +1,88 @@
+{
+ "id": "Buildings: part models/brise",
+ "key": "Buildings: part models/brise",
+ "metrics": {
+  "id": "Buildings: part models/brise",
+  "triangles": 60,
+  "vertices": 120,
+  "index": "Uint16",
+  "geometryBytes": 5496,
+  "bytesPerVertex": 32,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "MeshStandardMaterial \"building-part-brise\" [onBeforeCompile() {}|part-pose] (roughness 0.75, metalness 0, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 60,
+    "vertices": 120
+   },
+   {
+    "triangles": 24,
+    "vertices": 48
+   }
+  ],
+  "hidden": 0,
+  "solids": "6 solids: 6 other",
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "pieces": [
+   {
+    "label": "brise",
+    "triangles": 60,
+    "vertices": 120
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   0
+  ],
+  "distance": 3.6137504321473304,
+  "floor": -0.5173205080756887,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.01750001311302185
+ ],
+ "distance": 3.6137504321473304,
+ "error": {
+  "max": 1.2412670766236366e-16,
+  "mean": 6.468398375827429e-18,
+  "forward": {
+   "max": 1.2412670766236366e-16,
+   "mean": 6.468398375827429e-18,
+   "samples": 20196,
+   "at": [
+    0.3018501101219028,
+    0.1202062815791578,
+    0.5
+   ]
+  },
+  "backward": {
+   "max": 1.2412670766236366e-16,
+   "mean": 6.468398375827429e-18,
+   "samples": 20196,
+   "at": [
+    0.3018501101219028,
+    0.1202062815791578,
+    0.5
+   ]
+  },
+  "at": [
+   0.3018501101219028,
+   0.1202062815791578,
+   0.5
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

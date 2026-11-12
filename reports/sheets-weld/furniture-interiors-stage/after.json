@@ -1,0 +1,82 @@
+{
+ "id": "Furniture (interiors)/stage",
+ "key": "Furniture (interiors)/stage",
+ "metrics": {
+  "id": "Furniture (interiors)/stage",
+  "triangles": 40,
+  "vertices": 80,
+  "index": "Uint16",
+  "geometryBytes": 7920,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 40,
+    "vertices": 80
+   }
+  ],
+  "hidden": 0,
+  "solids": "4 solids: 4 other",
+  "size": [
+   5,
+   1.8000000834465029,
+   3
+  ],
+  "pieces": [
+   {
+    "label": "stage",
+    "triangles": 40,
+    "vertices": 80
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.9000000298023223,
+   0
+  ],
+  "distance": 12.732168196134108,
+  "floor": -0.061024597376634945,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 12.732168196134108,
+ "error": {
+  "max": 1.4386065865270355e-14,
+  "mean": 2.4675053719813224e-16,
+  "forward": {
+   "max": 1.4386065865270355e-14,
+   "mean": 2.4675053719813224e-16,
+   "samples": 20120,
+   "at": [
+    -0.26152564763378905,
+    0.036568619257706346,
+    1.5
+   ]
+  },
+  "backward": {
+   "max": 1.4386065865270355e-14,
+   "mean": 2.4675053719813224e-16,
+   "samples": 20120,
+   "at": [
+    -0.26152564763378905,
+    0.036568619257706346,
+    1.5
+   ]
+  },
+  "at": [
+   -0.26152564763378905,
+   0.036568619257706346,
+   1.5
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

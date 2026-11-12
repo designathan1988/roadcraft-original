@@ -1,0 +1,49 @@
+{
+ "id": "Buildings: part models/glass",
+ "key": "Buildings: part models/glass",
+ "metrics": {
+  "id": "Buildings: part models/glass",
+  "triangles": 2,
+  "vertices": 4,
+  "index": "Uint16",
+  "geometryBytes": 140,
+  "bytesPerVertex": 32,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "MeshStandardMaterial \"building-part-glass\" [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.06, metalness 0, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 2,
+    "vertices": 4
+   }
+  ],
+  "hidden": 0,
+  "solids": "1 solids: 1 quad",
+  "size": [
+   1,
+   1,
+   0
+  ],
+  "pieces": [
+   {
+    "label": "glass",
+    "triangles": 2,
+    "vertices": 4
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   0
+  ],
+  "distance": 2.950614872174388,
+  "floor": -0.5141421356237309,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 2.950614872174388,
+ "error": null,
+ "overlap": null
+}

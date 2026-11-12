@@ -1,0 +1,88 @@
+{
+ "id": "Buildings: part models/lounger",
+ "key": "Buildings: part models/lounger",
+ "metrics": {
+  "id": "Buildings: part models/lounger",
+  "triangles": 66,
+  "vertices": 132,
+  "index": "Uint16",
+  "geometryBytes": 5368,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-part-lounger\" [onBeforeCompile() {}|part-pose] (vertex colours, roughness 0.75, metalness 0, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 66,
+    "vertices": 132
+   },
+   {
+    "triangles": 2,
+    "vertices": 4
+   }
+  ],
+  "hidden": 2,
+  "solids": "7 solids: 2 box, 1 other, 4 open prism",
+  "size": [
+   1.763864517211914,
+   0.7796002686023713,
+   0.6200000047683716
+  ],
+  "pieces": [
+   {
+    "label": "lounger",
+    "triangles": 66,
+    "vertices": 132
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0.01806771755218506,
+   0.3898001283407211,
+   0
+  ],
+  "distance": 4.226386121904861,
+  "floor": -0.020256843373537933,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.7933797497702622
+ ],
+ "distance": 4.226386121904861,
+ "error": {
+  "max": 3.109635710212021e-14,
+  "mean": 2.0283398163465502e-16,
+  "forward": {
+   "max": 3.109635710212021e-14,
+   "mean": 2.0283398163465502e-16,
+   "samples": 20198,
+   "at": [
+    0.007035012364886781,
+    0.29875743949004885,
+    0.3100000023841858
+   ]
+  },
+  "backward": {
+   "max": 3.109635710212021e-14,
+   "mean": 2.0283398163465502e-16,
+   "samples": 20198,
+   "at": [
+    0.007035012364886781,
+    0.29875743949004885,
+    0.3100000023841858
+   ]
+  },
+  "at": [
+   0.007035012364886781,
+   0.29875743949004885,
+   0.3100000023841858
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

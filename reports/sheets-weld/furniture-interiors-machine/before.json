@@ -1,0 +1,49 @@
+{
+ "id": "Furniture (interiors)/machine",
+ "key": "Furniture (interiors)/machine",
+ "metrics": {
+  "id": "Furniture (interiors)/machine",
+  "triangles": 86,
+  "vertices": 148,
+  "index": "Uint16",
+  "geometryBytes": 14724,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 86,
+    "vertices": 148
+   }
+  ],
+  "hidden": 4,
+  "solids": "4 solids: 3 other, 1 closed cylinder",
+  "size": [
+   1.600000023841858,
+   1.7800000309944153,
+   2.6919999718666077
+  ],
+  "pieces": [
+   {
+    "label": "machine",
+    "triangles": 86,
+    "vertices": 148
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.7100000083446503,
+   0.7959999740123749
+  ],
+  "distance": 7.515461101340535,
+  "floor": -0.2160212009628184,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 7.515461101340535,
+ "error": null,
+ "overlap": null
+}

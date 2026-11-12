@@ -1,0 +1,113 @@
+{
+ "id": "Vehicles/van/van",
+ "key": "Vehicles/van/van",
+ "metrics": {
+  "id": "Vehicles/van/van",
+  "triangles": 13412,
+  "vertices": 9972,
+  "index": "Uint16",
+  "geometryBytes": 442272,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 6,
+  "levels": [
+   {
+    "triangles": 13412,
+    "vertices": 9972
+   },
+   {
+    "triangles": 36,
+    "vertices": 72
+   }
+  ],
+  "hidden": 49,
+  "solids": "55 solids: 8 other, 32 box, 15 closed cylinder",
+  "size": [
+   5.607999801635742,
+   2.6349999755620956,
+   2.5
+  ],
+  "pieces": [
+   {
+    "label": "shell",
+    "triangles": 8392,
+    "vertices": 5407
+   },
+   {
+    "label": "glass",
+    "triangles": 828,
+    "vertices": 542
+   },
+   {
+    "label": "trim",
+    "triangles": 460,
+    "vertices": 720
+   },
+   {
+    "label": "interior",
+    "triangles": 1092,
+    "vertices": 1742
+   },
+   {
+    "label": "roof",
+    "triangles": 2100,
+    "vertices": 1140
+   },
+   {
+    "label": "steering wheel",
+    "triangles": 540,
+    "vertices": 421
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   1.0774999931454659,
+   0
+  ],
+  "distance": 13.940349546618185,
+  "floor": -0.3068153271920834,
+  "long": "x"
+ },
+ "levelErrors": [
+  1.00600004196167
+ ],
+ "distance": 13.940349546618185,
+ "error": {
+  "max": 8.442138507341659e-13,
+  "mean": 2.6377295372141884e-16,
+  "forward": {
+   "max": 8.442138507341659e-13,
+   "mean": 2.6340655981326785e-16,
+   "samples": 94669,
+   "at": [
+    -1.827036771502371,
+    1.160593032836914,
+    0.906983684024992
+   ]
+  },
+  "backward": {
+   "max": 8.138124096919568e-13,
+   "mean": 2.641455064032665e-16,
+   "samples": 93104,
+   "at": [
+    -1.5640041574617722,
+    1.160593032836914,
+    0.9104212309753845
+   ]
+  },
+  "at": [
+   -1.827036771502371,
+   1.160593032836914,
+   0.906983684024992
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

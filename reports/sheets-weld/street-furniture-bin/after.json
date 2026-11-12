@@ -1,0 +1,82 @@
+{
+ "id": "Street furniture/bin",
+ "key": "Street furniture/bin",
+ "metrics": {
+  "id": "Street furniture/bin",
+  "triangles": 182,
+  "vertices": 185,
+  "index": "Uint16",
+  "geometryBytes": 7752,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [onBeforeCompile() {}|pose-yaw] (vertex colours, roughness 0.62, metalness 0.28, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 182,
+    "vertices": 185
+   }
+  ],
+  "hidden": 14,
+  "solids": "3 solids: 2 other, 1 closed cylinder",
+  "size": [
+   0.4777146875858307,
+   1.0349999659508466,
+   0.49000000953674316
+  ],
+  "pieces": [
+   {
+    "label": "bin",
+    "triangles": 182,
+    "vertices": 185
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.5174999836459756,
+   0
+  ],
+  "distance": 2.588764178606278,
+  "floor": -0.012407804379493799,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 2.588764178606278,
+ "error": {
+  "max": 2.254873622441467e-16,
+  "mean": 1.6216372369591217e-17,
+  "forward": {
+   "max": 2.254873622441467e-16,
+   "mean": 1.623748402903537e-17,
+   "samples": 20538,
+   "at": [
+    -0.1561188317444001,
+    0.08101629127298826,
+    0.1258780712744263
+   ]
+  },
+  "backward": {
+   "max": 2.254873622441467e-16,
+   "mean": 1.619526071014706e-17,
+   "samples": 20538,
+   "at": [
+    -0.1561188317444001,
+    0.08101629127298826,
+    0.1258780712744263
+   ]
+  },
+  "at": [
+   -0.1561188317444001,
+   0.08101629127298826,
+   0.1258780712744263
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

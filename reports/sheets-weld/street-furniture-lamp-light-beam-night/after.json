@@ -1,0 +1,82 @@
+{
+ "id": "Street furniture/lamp light beam (night)",
+ "key": "Street furniture/lamp light beam (night)",
+ "metrics": {
+  "id": "Street furniture/lamp light beam (night)",
+  "triangles": 144,
+  "vertices": 95,
+  "index": "Uint16",
+  "geometryBytes": 3904,
+  "bytesPerVertex": 32,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "ShaderMaterial \"street-light-beam\" (transparent, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 144,
+    "vertices": 95
+   }
+  ],
+  "hidden": 0,
+  "solids": "1 solids: 1 other",
+  "size": [
+   1.9696154594421387,
+   1,
+   2
+  ],
+  "pieces": [
+   {
+    "label": "lamp light beam (night)",
+    "triangles": 144,
+    "vertices": 95
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   -0.5,
+   0
+  ],
+  "distance": 6.2171160507505965,
+  "floor": -1.0297982970286448,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 6.2171160507505965,
+ "error": {
+  "max": 2.220446049250313e-16,
+  "mean": 1.799220919124821e-17,
+  "forward": {
+   "max": 2.220446049250313e-16,
+   "mean": 1.799220919124821e-17,
+   "samples": 20430,
+   "at": [
+    0.5201764141945434,
+    -0.8010575026963238,
+    0.6275721932715972
+   ]
+  },
+  "backward": {
+   "max": 2.220446049250313e-16,
+   "mean": 1.799220919124821e-17,
+   "samples": 20430,
+   "at": [
+    0.5201764141945434,
+    -0.8010575026963238,
+    0.6275721932715972
+   ]
+  },
+  "at": [
+   0.5201764141945434,
+   -0.8010575026963238,
+   0.6275721932715972
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

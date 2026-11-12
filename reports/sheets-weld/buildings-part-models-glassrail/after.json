@@ -1,0 +1,88 @@
+{
+ "id": "Buildings: part models/glassRail",
+ "key": "Buildings: part models/glassRail",
+ "metrics": {
+  "id": "Buildings: part models/glassRail",
+  "triangles": 12,
+  "vertices": 24,
+  "index": "Uint16",
+  "geometryBytes": 1056,
+  "bytesPerVertex": 32,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "MeshStandardMaterial \"building-part-glassRail\" [onBeforeCompile() {}|part-pose] (transparent, roughness 0.05, metalness 0.2, opacity 0.42)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 12,
+    "vertices": 24
+   },
+   {
+    "triangles": 4,
+    "vertices": 8
+   }
+  ],
+  "hidden": 0,
+  "solids": "1 solids: 1 box",
+  "size": [
+   1,
+   0.9200000055134296,
+   0.019999999552965164
+  ],
+  "pieces": [
+   {
+    "label": "glassRail",
+    "triangles": 12,
+    "vertices": 24
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.4799999948590994,
+   0
+  ],
+  "distance": 2.8353551371369567,
+  "floor": 0.006410290081638015,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.009999999776482582
+ ],
+ "distance": 2.8353551371369567,
+ "error": {
+  "max": 5.99521234464731e-14,
+  "mean": 1.6535906144890525e-16,
+  "forward": {
+   "max": 5.99521234464731e-14,
+   "mean": 1.6535906144890525e-16,
+   "samples": 20036,
+   "at": [
+    0.07559577203539902,
+    0.019999992102384567,
+    -0.0024582852325808566
+   ]
+  },
+  "backward": {
+   "max": 5.99521234464731e-14,
+   "mean": 1.6535906144890525e-16,
+   "samples": 20036,
+   "at": [
+    0.07559577203539902,
+    0.019999992102384567,
+    -0.0024582852325808566
+   ]
+  },
+  "at": [
+   0.07559577203539902,
+   0.019999992102384567,
+   -0.0024582852325808566
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

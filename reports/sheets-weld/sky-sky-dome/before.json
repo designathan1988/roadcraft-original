@@ -1,0 +1,49 @@
+{
+ "id": "Sky/sky/dome",
+ "key": "Sky/sky/dome",
+ "metrics": {
+  "id": "Sky/sky/dome",
+  "triangles": 960,
+  "vertices": 561,
+  "index": "Uint16",
+  "geometryBytes": 23712,
+  "bytesPerVertex": 32,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 960,
+    "vertices": 561
+   }
+  ],
+  "hidden": 0,
+  "solids": "1 solids: 1 closed cylinder",
+  "size": [
+   2,
+   2,
+   2
+  ],
+  "pieces": [
+   {
+    "label": "sphere 32x16",
+    "triangles": 960,
+    "vertices": 561
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   0
+  ],
+  "distance": 7.227500864294661,
+  "floor": -1.0346410161513775,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 7.227500864294661,
+ "error": null,
+ "overlap": null
+}

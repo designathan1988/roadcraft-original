@@ -1,0 +1,87 @@
+{
+ "id": "Street trees and bushes/broadleafTall",
+ "key": "Street trees and bushes/broadleafTall",
+ "metrics": {
+  "id": "Street trees and bushes/broadleafTall",
+  "triangles": 180,
+  "vertices": 472,
+  "index": "none + Uint16",
+  "geometryBytes": 19576,
+  "bytesPerVertex": 52,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aCorner:2xFloat32=8B",
+  "materials": "MeshStandardMaterial [wind-nearfade|pose-yaw] (vertex colours, flat shading, roughness 0.85, metalness 0, opacity 1) | MeshStandardMaterial [wind-nearfade-billboard-coverage-near|pose-yaw] (vertex colours, double-sided, alpha test 0.5, roughness 0.8, metalness 0, opacity 1)",
+  "draws": 2,
+  "levels": [
+   {
+    "triangles": 180,
+    "vertices": 472
+   }
+  ],
+  "hidden": 0,
+  "solids": "38 solids: 3 open prism, 1 closed cylinder, 34 other",
+  "size": [
+   0.3634230047464371,
+   0.8488970398902893,
+   0.3597954660654068
+  ],
+  "pieces": [
+   {
+    "label": "body",
+    "triangles": 112,
+    "vertices": 336
+   },
+   {
+    "label": "foliage cards",
+    "triangles": 68,
+    "vertices": 136
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   -0.023796476423740387,
+   0.42444851994514465,
+   0.0015675053000450134
+  ],
+  "distance": 2.0677003379850385,
+  "floor": -0.01,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 2.0677003379850385,
+ "error": {
+  "max": 1.1983411512519015e-16,
+  "mean": 1.042323467490746e-17,
+  "forward": {
+   "max": 1.1983411512519015e-16,
+   "mean": 1.042323467490746e-17,
+   "samples": 20545,
+   "at": [
+    -0.05113922960313702,
+    0.6810717146867554,
+    -0.011142823149110553
+   ]
+  },
+  "backward": {
+   "max": 1.1983411512519015e-16,
+   "mean": 1.042323467490746e-17,
+   "samples": 20545,
+   "at": [
+    -0.05113922960313702,
+    0.6810717146867554,
+    -0.011142823149110553
+   ]
+  },
+  "at": [
+   -0.05113922960313702,
+   0.6810717146867554,
+   -0.011142823149110553
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

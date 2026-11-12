@@ -1,0 +1,113 @@
+{
+ "id": "Vehicles/sedan/sedan",
+ "key": "Vehicles/sedan/sedan",
+ "metrics": {
+  "id": "Vehicles/sedan/sedan",
+  "triangles": 14670,
+  "vertices": 11105,
+  "index": "Uint16",
+  "geometryBytes": 490608,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 6,
+  "levels": [
+   {
+    "triangles": 14670,
+    "vertices": 11105
+   },
+   {
+    "triangles": 36,
+    "vertices": 72
+   }
+  ],
+  "hidden": 110,
+  "solids": "72 solids: 16 other, 41 box, 15 closed cylinder",
+  "size": [
+   4.708000183105469,
+   1.6999908238649368,
+   2.3387439250946045
+  ],
+  "pieces": [
+   {
+    "label": "shell",
+    "triangles": 10748,
+    "vertices": 6690
+   },
+   {
+    "label": "glass",
+    "triangles": 596,
+    "vertices": 405
+   },
+   {
+    "label": "trim",
+    "triangles": 460,
+    "vertices": 720
+   },
+   {
+    "label": "interior",
+    "triangles": 1766,
+    "vertices": 2554
+   },
+   {
+    "label": "roof",
+    "triangles": 560,
+    "vertices": 315
+   },
+   {
+    "label": "steering wheel",
+    "triangles": 540,
+    "vertices": 421
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.6449954137206078,
+   0
+  ],
+  "distance": 11.527232809165898,
+  "floor": -0.2602493942922822,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.7363622628657759
+ ],
+ "distance": 11.527232809165898,
+ "error": {
+  "max": 4.034829631060367e-13,
+  "mean": 1.804548024097235e-16,
+  "forward": {
+   "max": 4.034829631060367e-13,
+   "mean": 1.7778480099029878e-16,
+   "samples": 106557,
+   "at": [
+    -0.6421999454658163,
+    0.21192494791719813,
+    0.8199999928474426
+   ]
+  },
+  "backward": {
+   "max": 3.4273030839026685e-13,
+   "mean": 1.8323531238069398e-16,
+   "samples": 102322,
+   "at": [
+    0.30771633027233225,
+    0.21777769767571323,
+    -0.8199999928474426
+   ]
+  },
+  "at": [
+   -0.6421999454658163,
+   0.21192494791719813,
+   0.8199999928474426
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

@@ -1,0 +1,55 @@
+{
+ "id": "Buildings: part models/foliage",
+ "key": "Buildings: part models/foliage",
+ "metrics": {
+  "id": "Buildings: part models/foliage",
+  "triangles": 192,
+  "vertices": 380,
+  "index": "Uint16",
+  "geometryBytes": 15052,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-part-foliage\" [onBeforeCompile() {}|part-pose] (vertex colours, double-sided, roughness 0.75, metalness 0, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 192,
+    "vertices": 380
+   },
+   {
+    "triangles": 2,
+    "vertices": 4
+   }
+  ],
+  "hidden": 0,
+  "solids": "93 solids: 93 other",
+  "size": [
+   0.6023851335048676,
+   0.48035355657339096,
+   0.6676810085773468
+  ],
+  "pieces": [
+   {
+    "label": "foliage",
+    "triangles": 192,
+    "vertices": 380
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   -0.04298771917819977,
+   0.25232409313321114,
+   -0.03397636115550995
+  ],
+  "distance": 2.1271102307642322,
+  "floor": 0.0019521919066230412,
+  "long": "z"
+ },
+ "levelErrors": [
+  0.6940997174310117
+ ],
+ "distance": 2.1271102307642322,
+ "error": null,
+ "overlap": null
+}

@@ -1,0 +1,82 @@
+{
+ "id": "Furniture (interiors)/treadmill",
+ "key": "Furniture (interiors)/treadmill",
+ "metrics": {
+  "id": "Furniture (interiors)/treadmill",
+  "triangles": 48,
+  "vertices": 96,
+  "index": "Uint16",
+  "geometryBytes": 9504,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 48,
+    "vertices": 96
+   }
+  ],
+  "hidden": 0,
+  "solids": "5 solids: 2 other, 2 open prism, 1 box",
+  "size": [
+   0.800000011920929,
+   1.2699999845027923,
+   1.899999976158142
+  ],
+  "pieces": [
+   {
+    "label": "treadmill",
+    "triangles": 48,
+    "vertices": 96
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.6349999886751175,
+   0
+  ],
+  "distance": 5.0518886375386645,
+  "floor": -0.02421342937501993,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 5.0518886375386645,
+ "error": {
+  "max": 2.7471310742074493e-13,
+  "mean": 4.953729413967139e-16,
+  "forward": {
+   "max": 2.7471310742074493e-13,
+   "mean": 4.953729413967139e-16,
+   "samples": 20148,
+   "at": [
+    -0.33000001311302185,
+    0.18180059830113124,
+    -0.43343068569277277
+   ]
+  },
+  "backward": {
+   "max": 2.7471310742074493e-13,
+   "mean": 4.953729413967139e-16,
+   "samples": 20148,
+   "at": [
+    -0.33000001311302185,
+    0.18180059830113124,
+    -0.43343068569277277
+   ]
+  },
+  "at": [
+   -0.33000001311302185,
+   0.18180059830113124,
+   -0.43343068569277277
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

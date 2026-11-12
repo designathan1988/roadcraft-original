@@ -1,0 +1,82 @@
+{
+ "id": "Furniture (interiors)/blackboard",
+ "key": "Furniture (interiors)/blackboard",
+ "metrics": {
+  "id": "Furniture (interiors)/blackboard",
+  "triangles": 34,
+  "vertices": 68,
+  "index": "Uint16",
+  "geometryBytes": 6732,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 34,
+    "vertices": 68
+   }
+  ],
+  "hidden": 6,
+  "solids": "3 solids: 2 box, 1 other",
+  "size": [
+   4,
+   1.21999990940094,
+   0.16999999806284904
+  ],
+  "pieces": [
+   {
+    "label": "blackboard",
+    "triangles": 34,
+    "vertices": 68
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   1.4899999499320984,
+   0.03499999828636646
+  ],
+  "distance": 8.732349519299193,
+  "floor": 0.8381463218226196,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 8.732349519299193,
+ "error": {
+  "max": 2.591534895113166e-12,
+  "mean": 7.1009511342277124e-15,
+  "forward": {
+   "max": 2.591534895113166e-12,
+   "mean": 7.1009511342277124e-15,
+   "samples": 20098,
+   "at": [
+    -0.5360465879137797,
+    2.049999952316284,
+    0.05770535496732297
+   ]
+  },
+  "backward": {
+   "max": 2.591534895113166e-12,
+   "mean": 7.1009511342277124e-15,
+   "samples": 20098,
+   "at": [
+    -0.5360465879137797,
+    2.049999952316284,
+    0.05770535496732297
+   ]
+  },
+  "at": [
+   -0.5360465879137797,
+   2.049999952316284,
+   0.05770535496732297
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

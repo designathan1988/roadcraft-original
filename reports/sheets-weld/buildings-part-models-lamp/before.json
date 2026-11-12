@@ -1,0 +1,49 @@
+{
+ "id": "Buildings: part models/lamp",
+ "key": "Buildings: part models/lamp",
+ "metrics": {
+  "id": "Buildings: part models/lamp",
+  "triangles": 12,
+  "vertices": 24,
+  "index": "Uint16",
+  "geometryBytes": 840,
+  "bytesPerVertex": 32,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "MeshStandardMaterial \"building-part-lamp\" [outside-lamp-lot|part-pose] (roughness 0.35, metalness 0, opacity 1)",
+  "draws": 6,
+  "levels": [
+   {
+    "triangles": 12,
+    "vertices": 24
+   }
+  ],
+  "hidden": 0,
+  "solids": "1 solids: 1 box",
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "pieces": [
+   {
+    "label": "lamp",
+    "triangles": 12,
+    "vertices": 24
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   0
+  ],
+  "distance": 3.6137504321473304,
+  "floor": -0.5173205080756887,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 3.6137504321473304,
+ "error": null,
+ "overlap": null
+}

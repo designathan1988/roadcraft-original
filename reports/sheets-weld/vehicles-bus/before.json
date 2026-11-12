@@ -1,0 +1,75 @@
+{
+ "id": "Vehicles/bus",
+ "key": "Vehicles/bus",
+ "metrics": {
+  "id": "Vehicles/bus",
+  "triangles": 8872,
+  "vertices": 18007,
+  "index": "Uint16",
+  "geometryBytes": 707580,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "",
+  "draws": 5,
+  "levels": [
+   {
+    "triangles": 8872,
+    "vertices": 18007
+   },
+   {
+    "triangles": 80,
+    "vertices": 156
+   }
+  ],
+  "hidden": 769,
+  "solids": "319 solids: 9 other, 62 closed cylinder, 208 box, 40 quad",
+  "size": [
+   12.014999866485596,
+   3.6320001035928726,
+   2.5799999237060547
+  ],
+  "pieces": [
+   {
+    "label": "shell",
+    "triangles": 2196,
+    "vertices": 4472
+   },
+   {
+    "label": "glass",
+    "triangles": 92,
+    "vertices": 174
+   },
+   {
+    "label": "trim",
+    "triangles": 96,
+    "vertices": 168
+   },
+   {
+    "label": "interior",
+    "triangles": 6172,
+    "vertices": 12910
+   },
+   {
+    "label": "steering wheel",
+    "triangles": 316,
+    "vertices": 283
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   -0.0074999332427978516,
+   1.5740000531077385,
+   0
+  ],
+  "distance": 26.735896176869943,
+  "floor": -0.3701436860675425,
+  "long": "x"
+ },
+ "levelErrors": [
+  1.3870651536807024
+ ],
+ "distance": 26.735896176869943,
+ "error": null,
+ "overlap": null
+}

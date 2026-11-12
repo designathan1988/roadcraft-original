@@ -1,0 +1,55 @@
+{
+ "id": "Buildings: part models/frame",
+ "key": "Buildings: part models/frame",
+ "metrics": {
+  "id": "Buildings: part models/frame",
+  "triangles": 56,
+  "vertices": 112,
+  "index": "Uint16",
+  "geometryBytes": 4076,
+  "bytesPerVertex": 32,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "MeshStandardMaterial \"building-part-frame\" [thin-part-prefiltered-v3-cards|part-pose] (roughness 0.55, metalness 0.05, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 56,
+    "vertices": 112
+   },
+   {
+    "triangles": 2,
+    "vertices": 4
+   }
+  ],
+  "hidden": 0,
+  "solids": "3 solids: 1 other, 2 open prism",
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "pieces": [
+   {
+    "label": "frame",
+    "triangles": 56,
+    "vertices": 112
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   0
+  ],
+  "distance": 3.6137504321473304,
+  "floor": -0.5173205080756887,
+  "long": "x"
+ },
+ "levelErrors": [
+  1
+ ],
+ "distance": 3.6137504321473304,
+ "error": null,
+ "overlap": null
+}

@@ -1,0 +1,82 @@
+{
+ "id": "Furniture (interiors)/stairs",
+ "key": "Furniture (interiors)/stairs",
+ "metrics": {
+  "id": "Furniture (interiors)/stairs",
+  "triangles": 152,
+  "vertices": 304,
+  "index": "Uint16",
+  "geometryBytes": 30096,
+  "bytesPerVertex": 96,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aRoundP:3xFloat32=12B aRoundB:4xFloat32=16B aRoundX:3xFloat32=12B aRoundY:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-furniture\" [building-furniture-rounded|part-pose] (vertex colours, roughness 0.68, metalness 0.04, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 152,
+    "vertices": 304
+   }
+  ],
+  "hidden": 0,
+  "solids": "18 solids: 14 open prism, 4 other",
+  "size": [
+   1,
+   3.5100000381469734,
+   3.4040000438690186
+  ],
+  "pieces": [
+   {
+    "label": "stairs",
+    "triangles": 152,
+    "vertices": 304
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   1.7549999713897702,
+   0
+  ],
+  "distance": 10.412643498410617,
+  "floor": -0.04990727818837591,
+  "long": "z"
+ },
+ "levelErrors": [],
+ "distance": 10.412643498410617,
+ "error": {
+  "max": 3.790428881204246e-13,
+  "mean": 3.0700679481764343e-16,
+  "forward": {
+   "max": 3.790428881204246e-13,
+   "mean": 3.0700679481764343e-16,
+   "samples": 20462,
+   "at": [
+    0.5,
+    2.3526066931580516,
+    0.9982725464602252
+   ]
+  },
+  "backward": {
+   "max": 3.790428881204246e-13,
+   "mean": 3.0700679481764343e-16,
+   "samples": 20462,
+   "at": [
+    0.5,
+    2.3526066931580516,
+    0.9982725464602252
+   ]
+  },
+  "at": [
+   0.5,
+   2.3526066931580516,
+   0.9982725464602252
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

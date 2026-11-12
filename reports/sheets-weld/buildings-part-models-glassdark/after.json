@@ -1,0 +1,82 @@
+{
+ "id": "Buildings: part models/glassDark",
+ "key": "Buildings: part models/glassDark",
+ "metrics": {
+  "id": "Buildings: part models/glassDark",
+  "triangles": 2,
+  "vertices": 4,
+  "index": "Uint16",
+  "geometryBytes": 140,
+  "bytesPerVertex": 32,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "MeshStandardMaterial \"building-part-glassDark\" [room-lights-awake-interior-v15-recess|part-pose] (roughness 0.08, metalness 0, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 2,
+    "vertices": 4
+   }
+  ],
+  "hidden": 0,
+  "solids": "1 solids: 1 quad",
+  "size": [
+   1,
+   1,
+   0
+  ],
+  "pieces": [
+   {
+    "label": "glassDark",
+    "triangles": 2,
+    "vertices": 4
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   0
+  ],
+  "distance": 2.950614872174388,
+  "floor": -0.5141421356237309,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 2.950614872174388,
+ "error": {
+  "max": 1.1102230246251565e-16,
+  "mean": 6.280665036710114e-18,
+  "forward": {
+   "max": 1.1102230246251565e-16,
+   "mean": 6.280665036710114e-18,
+   "samples": 20006,
+   "at": [
+    -0.25948969015007606,
+    -0.49402542884308787,
+    0
+   ]
+  },
+  "backward": {
+   "max": 1.1102230246251565e-16,
+   "mean": 6.280665036710114e-18,
+   "samples": 20006,
+   "at": [
+    -0.25948969015007606,
+    -0.49402542884308787,
+    0
+   ]
+  },
+  "at": [
+   -0.25948969015007606,
+   -0.49402542884308787,
+   0
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

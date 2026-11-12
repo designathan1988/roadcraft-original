@@ -1,0 +1,88 @@
+{
+ "id": "Buildings: part models/chair",
+ "key": "Buildings: part models/chair",
+ "metrics": {
+  "id": "Buildings: part models/chair",
+  "triangles": 78,
+  "vertices": 156,
+  "index": "Uint16",
+  "geometryBytes": 6304,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B color:3xFloat32=12B",
+  "materials": "MeshStandardMaterial \"building-part-chair\" [thin-part-prefiltered-v3-cards|part-pose] (vertex colours, roughness 0.6, metalness 0, opacity 1)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 78,
+    "vertices": 156
+   },
+   {
+    "triangles": 2,
+    "vertices": 4
+   }
+  ],
+  "hidden": 4,
+  "solids": "8 solids: 3 box, 1 other, 4 open prism",
+  "size": [
+   0.44999998807907104,
+   0.8688450491428374,
+   0.45989425480365753
+  ],
+  "pieces": [
+   {
+    "label": "chair",
+    "triangles": 78,
+    "vertices": 156
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.4344225209951401,
+   -0.009947128593921661
+  ],
+  "distance": 2.255719919256496,
+  "floor": -0.010811545715550855,
+  "long": "z"
+ },
+ "levelErrors": [
+  0.6027540922246521
+ ],
+ "distance": 2.255719919256496,
+ "error": {
+  "max": 3.615050515640691e-15,
+  "mean": 4.0446383442192176e-17,
+  "forward": {
+   "max": 3.615050515640691e-15,
+   "mean": 4.0446383442192176e-17,
+   "samples": 20222,
+   "at": [
+    -0.02697264816461198,
+    0.8671249976191123,
+    -0.22475061351022813
+   ]
+  },
+  "backward": {
+   "max": 3.615050515640691e-15,
+   "mean": 4.0446383442192176e-17,
+   "samples": 20222,
+   "at": [
+    -0.02697264816461198,
+    0.8671249976191123,
+    -0.22475061351022813
+   ]
+  },
+  "at": [
+   -0.02697264816461198,
+   0.8671249976191123,
+   -0.22475061351022813
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

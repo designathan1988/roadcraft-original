@@ -1,0 +1,60 @@
+{
+ "id": "Utility poles/utility-transformers",
+ "key": "Utility poles/utility-transformers",
+ "metrics": {
+  "id": "Utility poles/utility-transformers",
+  "triangles": 56,
+  "vertices": 88,
+  "index": "Uint16",
+  "geometryBytes": 6216,
+  "bytesPerVertex": 32,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "MeshStandardMaterial (roughness 0.45, metalness 0.55, opacity 1)",
+  "draws": 3,
+  "levels": [
+   {
+    "triangles": 56,
+    "vertices": 88
+   },
+   {
+    "triangles": 32,
+    "vertices": 52
+   },
+   {
+    "triangles": 20,
+    "vertices": 34
+   }
+  ],
+  "hidden": 0,
+  "solids": "1 solids: 1 closed cylinder",
+  "size": [
+   0.5459596514701843,
+   0.949999988079071,
+   0.5600000023841858
+  ],
+  "pieces": [
+   {
+    "label": "utility-transformers",
+    "triangles": 56,
+    "vertices": 88
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   0
+  ],
+  "distance": 2.567350263043847,
+  "floor": -0.48730516336406726,
+  "long": "z"
+ },
+ "levelErrors": [
+  0.014348387718200684,
+  0.03785423934459686
+ ],
+ "distance": 2.567350263043847,
+ "error": null,
+ "overlap": null
+}

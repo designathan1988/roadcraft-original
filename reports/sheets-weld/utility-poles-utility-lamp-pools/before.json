@@ -1,0 +1,49 @@
+{
+ "id": "Utility poles/utility-lamp-pools",
+ "key": "Utility poles/utility-lamp-pools",
+ "metrics": {
+  "id": "Utility poles/utility-lamp-pools",
+  "triangles": 28,
+  "vertices": 30,
+  "index": "Uint16",
+  "geometryBytes": 1128,
+  "bytesPerVertex": 32,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B",
+  "materials": "MeshBasicMaterial (transparent, opacity 0)",
+  "draws": 1,
+  "levels": [
+   {
+    "triangles": 28,
+    "vertices": 30
+   }
+  ],
+  "hidden": 0,
+  "solids": "1 solids: 1 other",
+  "size": [
+   2,
+   1.2246468525851679e-16,
+   2
+  ],
+  "pieces": [
+   {
+    "label": "utility-lamp-pools",
+    "triangles": 28,
+    "vertices": 30
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0,
+   0
+  ],
+  "distance": 5.901229744348776,
+  "floor": -0.028284271247461967,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 5.901229744348776,
+ "error": null,
+ "overlap": null
+}

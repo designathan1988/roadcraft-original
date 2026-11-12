@@ -1,0 +1,87 @@
+{
+ "id": "Street trees and bushes/conifer",
+ "key": "Street trees and bushes/conifer",
+ "metrics": {
+  "id": "Street trees and bushes/conifer",
+  "triangles": 158,
+  "vertices": 334,
+  "index": "none + Uint16",
+  "geometryBytes": 17344,
+  "bytesPerVertex": 52,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B aCorner:2xFloat32=8B",
+  "materials": "MeshStandardMaterial [wind-nearfade|pose-yaw] (vertex colours, flat shading, roughness 0.85, metalness 0, opacity 1) | MeshStandardMaterial [wind-nearfade-billboard-coverage-near|pose-yaw] (vertex colours, double-sided, alpha test 0.5, roughness 0.8, metalness 0, opacity 1)",
+  "draws": 2,
+  "levels": [
+   {
+    "triangles": 158,
+    "vertices": 334
+   }
+  ],
+  "hidden": 0,
+  "solids": "71 solids: 1 open prism, 70 other",
+  "size": [
+   0.46897803246974945,
+   1,
+   0.4192362576723099
+  ],
+  "pieces": [
+   {
+    "label": "body",
+    "triangles": 18,
+    "vertices": 54
+   },
+   {
+    "label": "foliage cards",
+    "triangles": 140,
+    "vertices": 280
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   -0.0019391253590583801,
+   0.5,
+   0.0019650980830192566
+  ],
+  "distance": 2.464866943754665,
+  "floor": -0.011813972383099095,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 2.464866943754665,
+ "error": {
+  "max": 2.225860458774576e-16,
+  "mean": 1.540387872700774e-17,
+  "forward": {
+   "max": 2.225860458774576e-16,
+   "mean": 1.540387872700774e-17,
+   "samples": 20466,
+   "at": [
+    -0.0035794682021144594,
+    0.8970687167028735,
+    0.003948578807122776
+   ]
+  },
+  "backward": {
+   "max": 2.225860458774576e-16,
+   "mean": 1.540387872700774e-17,
+   "samples": 20466,
+   "at": [
+    -0.0035794682021144594,
+    0.8970687167028735,
+    0.003948578807122776
+   ]
+  },
+  "at": [
+   -0.0035794682021144594,
+   0.8970687167028735,
+   0.003948578807122776
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}
