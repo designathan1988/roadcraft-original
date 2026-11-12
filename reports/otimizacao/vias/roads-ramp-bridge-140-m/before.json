@@ -1,0 +1,48 @@
+{
+ "id": "Roads/ramp bridge/140 m",
+ "key": "Roads/ramp bridge/140 m",
+ "metrics": {
+  "id": "Roads/ramp bridge/140 m",
+  "triangles": 2648,
+  "vertices": 4156,
+  "index": "Uint16",
+  "geometryBytes": 216752,
+  "bytesPerVertex": 56,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B roadSection:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-footway-lots-own] (vertex colours, roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-carriageway-lots-own] (vertex colours, roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [paint-worn-aa] (transparent, roughness 0.72, metalness 0, opacity 1) | MeshStandardMaterial (roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [detail] (roughness 1, metalness 0.02, opacity 1)",
+  "draws": 32,
+  "levels": [
+   {
+    "triangles": 2648,
+    "vertices": 4156
+   },
+   {
+    "triangles": 1172,
+    "vertices": 1320
+   }
+  ],
+  "hidden": 0,
+  "solids": "48 solids: 12 open prism, 10 other, 22 quad, 4 box",
+  "size": [
+   140.2002410888672,
+   5.271999835968018,
+   12
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   1.6359999179840088,
+   0
+  ],
+  "distance": 91.80159053051307,
+  "floor": -1.44,
+  "long": "x"
+ },
+ "levelErrors": [
+  5.405925040085271e-13
+ ],
+ "distance": 91.80159053051307,
+ "error": null,
+ "overlap": null
+}

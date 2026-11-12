@@ -1,0 +1,117 @@
+{
+ "id": "Roads: network far level/urban straight/140 m",
+ "key": "Roads: network far level/urban straight/140 m",
+ "metrics": {
+  "id": "Roads: network far level/urban straight/140 m",
+  "triangles": 16,
+  "vertices": 32,
+  "index": "Uint32",
+  "geometryBytes": 1344,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B",
+  "materials": "MeshStandardMaterial (vertex colours, roughness 0.9, metalness 0, opacity 1)",
+  "draws": 8,
+  "levels": [
+   {
+    "triangles": 16,
+    "vertices": 32
+   }
+  ],
+  "hidden": 0,
+  "solids": "8 solids: 8 quad",
+  "size": [
+   140.2002410888672,
+   0,
+   14
+  ],
+  "pieces": [
+   {
+    "label": "casing (footways and kerbs), cell -1,-1",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "carriageway, cell -1,-1",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "casing (footways and kerbs), cell -1,0",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "carriageway, cell -1,0",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "casing (footways and kerbs), cell 0,-1",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "carriageway, cell 0,-1",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "casing (footways and kerbs), cell 0,0",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "carriageway, cell 0,0",
+    "triangles": 2,
+    "vertices": 4
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.11999999731779099,
+   0
+  ],
+  "distance": 91.80159053051307,
+  "floor": -0.320000002682209,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 91.80159053051307,
+ "error": {
+  "max": 1.6138717578445367e-12,
+  "mean": 7.633753379588148e-14,
+  "forward": {
+   "max": 1.6138717578445367e-12,
+   "mean": 7.633753379588148e-14,
+   "samples": 20048,
+   "at": [
+    -45.08373950401769,
+    0.11999999731779099,
+    6.179250340085673
+   ]
+  },
+  "backward": {
+   "max": 1.6138717578445367e-12,
+   "mean": 7.633753379588148e-14,
+   "samples": 20048,
+   "at": [
+    -45.08373950401769,
+    0.11999999731779099,
+    6.179250340085673
+   ]
+  },
+  "at": [
+   -45.08373950401769,
+   0.11999999731779099,
+   6.179250340085673
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

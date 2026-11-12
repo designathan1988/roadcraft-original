@@ -1,0 +1,48 @@
+{
+ "id": "Roads/ramp raised/140 m elevated",
+ "key": "Roads/ramp raised/140 m elevated",
+ "metrics": {
+  "id": "Roads/ramp raised/140 m elevated",
+  "triangles": 2756,
+  "vertices": 4314,
+  "index": "Uint16",
+  "geometryBytes": 216752,
+  "bytesPerVertex": 56,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B roadSection:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-footway-lots-own] (vertex colours, roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-carriageway-lots-own] (vertex colours, roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [paint-worn-aa] (transparent, roughness 0.72, metalness 0, opacity 1) | MeshStandardMaterial (roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [detail] (roughness 1, metalness 0.02, opacity 1)",
+  "draws": 32,
+  "levels": [
+   {
+    "triangles": 2756,
+    "vertices": 4314
+   },
+   {
+    "triangles": 1172,
+    "vertices": 1320
+   }
+  ],
+  "hidden": 0,
+  "solids": "51 solids: 12 open prism, 12 other, 22 quad, 5 box",
+  "size": [
+   140.2002410888672,
+   7.9420002698898315,
+   12
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   2.9010000824928284,
+   0
+  ],
+  "distance": 91.80159053051307,
+  "floor": -1.5100000524520873,
+  "long": "x"
+ },
+ "levelErrors": [
+  5.405925040085271e-13
+ ],
+ "distance": 91.80159053051307,
+ "error": null,
+ "overlap": null
+}

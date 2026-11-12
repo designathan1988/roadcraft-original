@@ -1,0 +1,183 @@
+{
+ "id": "Roads/local raised/140 m elevated",
+ "key": "Roads/local raised/140 m elevated",
+ "metrics": {
+  "id": "Roads/local raised/140 m elevated",
+  "triangles": 3088,
+  "vertices": 4562,
+  "index": "Uint16",
+  "geometryBytes": 252736,
+  "bytesPerVertex": 56,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B roadSection:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-footway-lots-own] (vertex colours, roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-carriageway-lots-own] (vertex colours, roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial (roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [detail] (roughness 1, metalness 0.02, opacity 1)",
+  "draws": 30,
+  "levels": [
+   {
+    "triangles": 3088,
+    "vertices": 4562
+   },
+   {
+    "triangles": 1504,
+    "vertices": 1568
+   }
+  ],
+  "hidden": 0,
+  "solids": "29 solids: 8 open prism, 16 other, 5 box",
+  "size": [
+   140.2002410888672,
+   7.952000260353088,
+   12
+  ],
+  "pieces": [
+   {
+    "label": "verge-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "verge-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "verge-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "verge-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "footway-elevated+curb-ramp-elevated",
+    "triangles": 164,
+    "vertices": 164
+   },
+   {
+    "label": "footway-elevated+curb-ramp-elevated",
+    "triangles": 164,
+    "vertices": 164
+   },
+   {
+    "label": "footway-elevated+curb-ramp-elevated",
+    "triangles": 164,
+    "vertices": 164
+   },
+   {
+    "label": "footway-elevated+curb-ramp-elevated",
+    "triangles": 164,
+    "vertices": 164
+   },
+   {
+    "label": "kerb-elevated+median-kerb-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "kerb-elevated+median-kerb-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "kerb-elevated+median-kerb-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "kerb-elevated+median-kerb-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "asphalt-elevated",
+    "triangles": 72,
+    "vertices": 68
+   },
+   {
+    "label": "asphalt-elevated",
+    "triangles": 72,
+    "vertices": 68
+   },
+   {
+    "label": "asphalt-elevated",
+    "triangles": 72,
+    "vertices": 68
+   },
+   {
+    "label": "asphalt-elevated",
+    "triangles": 72,
+    "vertices": 68
+   },
+   {
+    "label": "structure-piers x6",
+    "triangles": 288,
+    "vertices": 402
+   },
+   {
+    "label": "structure-pier-caps x3",
+    "triangles": 36,
+    "vertices": 72
+   },
+   {
+    "label": "structure-abutments x2",
+    "triangles": 24,
+    "vertices": 48
+   },
+   {
+    "label": "structure-parapets",
+    "triangles": 1236,
+    "vertices": 2472
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   2.9010000824928284,
+   0
+  ],
+  "distance": 91.80159053051307,
+  "floor": -1.5100000524520873,
+  "long": "x"
+ },
+ "levelErrors": [
+  4.5091480919934806e-13
+ ],
+ "distance": 91.80159053051307,
+ "error": {
+  "max": 0.010000228881835938,
+  "mean": 0.00012675474171073092,
+  "forward": {
+   "max": 3.3588677919250486e-13,
+   "mean": 9.162711391419795e-16,
+   "samples": 28774,
+   "at": [
+    -63.47872143161947,
+    0.6081631093147672,
+    3
+   ]
+  },
+  "backward": {
+   "max": 0.010000228881835938,
+   "mean": 0.0002524869858488379,
+   "samples": 29008,
+   "at": [
+    -6.237818241119385,
+    4.6479997634887695,
+    5
+   ]
+  },
+  "at": [
+   -6.237818241119385,
+   4.6479997634887695,
+   5
+  ]
+ },
+ "overlap": [
+  0.9991250328112696,
+  0.9988384560400286,
+  0.9973404255319149,
+  1
+ ]
+}

@@ -1,0 +1,117 @@
+{
+ "id": "Roads: network far level/boulevard straight/140 m",
+ "key": "Roads: network far level/boulevard straight/140 m",
+ "metrics": {
+  "id": "Roads: network far level/boulevard straight/140 m",
+  "triangles": 16,
+  "vertices": 32,
+  "index": "Uint32",
+  "geometryBytes": 1344,
+  "bytesPerVertex": 36,
+  "attributes": "position:3xFloat32=12B color:3xFloat32=12B normal:3xFloat32=12B",
+  "materials": "MeshStandardMaterial (vertex colours, roughness 0.9, metalness 0, opacity 1)",
+  "draws": 8,
+  "levels": [
+   {
+    "triangles": 16,
+    "vertices": 32
+   }
+  ],
+  "hidden": 0,
+  "solids": "8 solids: 8 quad",
+  "size": [
+   140.2002410888672,
+   0,
+   26
+  ],
+  "pieces": [
+   {
+    "label": "casing (footways and kerbs), cell -1,-1",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "carriageway, cell -1,-1",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "casing (footways and kerbs), cell -1,0",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "carriageway, cell -1,0",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "casing (footways and kerbs), cell 0,-1",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "carriageway, cell 0,-1",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "casing (footways and kerbs), cell 0,0",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "carriageway, cell 0,0",
+    "triangles": 2,
+    "vertices": 4
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   0.11999999731779099,
+   0
+  ],
+  "distance": 91.80159053051307,
+  "floor": -0.320000002682209,
+  "long": "x"
+ },
+ "levelErrors": [],
+ "distance": 91.80159053051307,
+ "error": {
+  "max": 8.100888350807565e-13,
+  "mean": 2.6808636159413707e-14,
+  "forward": {
+   "max": 8.100888350807565e-13,
+   "mean": 2.6808636159413707e-14,
+   "samples": 20052,
+   "at": [
+    23.05478024428867,
+    0.11999999731779099,
+    -10.208586894099426
+   ]
+  },
+  "backward": {
+   "max": 8.100888350807565e-13,
+   "mean": 2.6808636159413707e-14,
+   "samples": 20052,
+   "at": [
+    23.05478024428867,
+    0.11999999731779099,
+    -10.208586894099426
+   ]
+  },
+  "at": [
+   23.05478024428867,
+   0.11999999731779099,
+   -10.208586894099426
+  ]
+ },
+ "overlap": [
+  1,
+  1,
+  1,
+  1
+ ]
+}

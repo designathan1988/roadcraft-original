@@ -1,0 +1,183 @@
+{
+ "id": "Roads/boulevard one way/140 m",
+ "key": "Roads/boulevard one way/140 m",
+ "metrics": {
+  "id": "Roads/boulevard one way/140 m",
+  "triangles": 430,
+  "vertices": 493,
+  "index": "Uint16",
+  "geometryBytes": 48040,
+  "bytesPerVertex": 56,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B roadSection:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [terrain-splat-v34-verge-lots] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-footway-lots-own] (vertex colours, roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-carriageway-lots-own] (vertex colours, roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [paint-worn-aa-dashed] (transparent, roughness 0.72, metalness 0, opacity 1)",
+  "draws": 20,
+  "levels": [
+   {
+    "triangles": 430,
+    "vertices": 493
+   },
+   {
+    "triangles": 430,
+    "vertices": 493
+   }
+  ],
+  "hidden": 0,
+  "solids": "22 solids: 8 other, 4 open prism, 10 quad",
+  "size": [
+   140.2002410888672,
+   0.6699999868869781,
+   24
+  ],
+  "pieces": [
+   {
+    "label": "verge",
+    "triangles": 62,
+    "vertices": 44
+   },
+   {
+    "label": "verge",
+    "triangles": 70,
+    "vertices": 48
+   },
+   {
+    "label": "verge",
+    "triangles": 64,
+    "vertices": 45
+   },
+   {
+    "label": "verge",
+    "triangles": 62,
+    "vertices": 44
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 30,
+    "vertices": 52
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 30,
+    "vertices": 52
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 30,
+    "vertices": 52
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 30,
+    "vertices": 52
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 8,
+    "vertices": 16
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 8,
+    "vertices": 16
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 8,
+    "vertices": 16
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 8,
+    "vertices": 16
+   },
+   {
+    "label": "asphalt",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "asphalt",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "asphalt",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "asphalt",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-eee8d7~dashed",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "markings-eee8d7~dashed",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-eee8d7~dashed",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "markings-eee8d7~dashed",
+    "triangles": 2,
+    "vertices": 4
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   -0.04999999701976776,
+   0
+  ],
+  "distance": 91.80159053051307,
+  "floor": -0.8199999952316284,
+  "long": "x"
+ },
+ "levelErrors": [
+  4.041212368694858e-9
+ ],
+ "distance": 91.80159053051307,
+ "error": {
+  "max": 0.03177173717321923,
+  "mean": 0.0012811842964927872,
+  "forward": {
+   "max": 0.031748328857770854,
+   "mean": 0.0007173197674150628,
+   "samples": 32429,
+   "at": [
+    40.49974821138304,
+    0.20063128341190622,
+    11.19819635869976
+   ]
+  },
+  "backward": {
+   "max": 0.03177173717321923,
+   "mean": 0.002140387511108966,
+   "samples": 21282,
+   "at": [
+    -0.30691370368003845,
+    0.23155510425567627,
+    -11.206018447875977
+   ]
+  },
+  "at": [
+   -0.30691370368003845,
+   0.23155510425567627,
+   -11.206018447875977
+  ]
+ },
+ "overlap": [
+  0.9991763220031848,
+  0.9991763220031848,
+  0.9976282880551962,
+  1
+ ]
+}

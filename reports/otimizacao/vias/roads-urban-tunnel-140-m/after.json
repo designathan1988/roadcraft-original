@@ -1,0 +1,188 @@
+{
+ "id": "Roads/urban tunnel/140 m",
+ "key": "Roads/urban tunnel/140 m",
+ "metrics": {
+  "id": "Roads/urban tunnel/140 m",
+  "triangles": 3046,
+  "vertices": 3001,
+  "index": "Uint16",
+  "geometryBytes": 237446,
+  "bytesPerVertex": 56,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B roadSection:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [terrain-splat-v34-verge-lots] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-footway-lots-own] (vertex colours, roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-carriageway-lots-own] (vertex colours, roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [paint-worn-aa-dashed] (transparent, roughness 0.72, metalness 0, opacity 1) | MeshStandardMaterial (roughness 1, metalness 0.02, opacity 1)",
+  "draws": 36,
+  "levels": [
+   {
+    "triangles": 3046,
+    "vertices": 3001
+   },
+   {
+    "triangles": 1807,
+    "vertices": 1983
+   }
+  ],
+  "hidden": 0,
+  "solids": "26 solids: 18 other, 8 box",
+  "size": [
+   140.2002410888672,
+   11.609865367412567,
+   14.399999618530273
+  ],
+  "pieces": [
+   {
+    "label": "verge-tunnel",
+    "triangles": 138,
+    "vertices": 152
+   },
+   {
+    "label": "verge-tunnel",
+    "triangles": 138,
+    "vertices": 152
+   },
+   {
+    "label": "verge-tunnel",
+    "triangles": 138,
+    "vertices": 152
+   },
+   {
+    "label": "verge-tunnel",
+    "triangles": 138,
+    "vertices": 152
+   },
+   {
+    "label": "footway-tunnel+curb-ramp-tunnel+median-paved-tunnel",
+    "triangles": 277,
+    "vertices": 258
+   },
+   {
+    "label": "footway-tunnel+curb-ramp-tunnel+median-paved-tunnel",
+    "triangles": 277,
+    "vertices": 258
+   },
+   {
+    "label": "footway-tunnel+curb-ramp-tunnel+median-paved-tunnel",
+    "triangles": 277,
+    "vertices": 258
+   },
+   {
+    "label": "footway-tunnel+curb-ramp-tunnel+median-paved-tunnel",
+    "triangles": 279,
+    "vertices": 259
+   },
+   {
+    "label": "kerb-tunnel+median-kerb-tunnel",
+    "triangles": 138,
+    "vertices": 152
+   },
+   {
+    "label": "kerb-tunnel+median-kerb-tunnel",
+    "triangles": 138,
+    "vertices": 152
+   },
+   {
+    "label": "kerb-tunnel+median-kerb-tunnel",
+    "triangles": 138,
+    "vertices": 152
+   },
+   {
+    "label": "kerb-tunnel+median-kerb-tunnel",
+    "triangles": 138,
+    "vertices": 152
+   },
+   {
+    "label": "asphalt-tunnel",
+    "triangles": 168,
+    "vertices": 120
+   },
+   {
+    "label": "asphalt-tunnel",
+    "triangles": 168,
+    "vertices": 120
+   },
+   {
+    "label": "asphalt-tunnel",
+    "triangles": 168,
+    "vertices": 120
+   },
+   {
+    "label": "asphalt-tunnel",
+    "triangles": 168,
+    "vertices": 120
+   },
+   {
+    "label": "markings-e1c45a~dashed-tunnel",
+    "triangles": 32,
+    "vertices": 40
+   },
+   {
+    "label": "markings-e1c45a~dashed-tunnel",
+    "triangles": 32,
+    "vertices": 40
+   },
+   {
+    "label": "tunnel-jambs x4",
+    "triangles": 48,
+    "vertices": 96
+   },
+   {
+    "label": "tunnel-lintels x2",
+    "triangles": 24,
+    "vertices": 48
+   },
+   {
+    "label": "tunnel-headwalls x2",
+    "triangles": 24,
+    "vertices": 48
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   -0.4725119173526764,
+   0
+  ],
+  "distance": 91.80159053051307,
+  "floor": -6.7124447250366215,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.2180546746438137
+ ],
+ "distance": 91.80159053051307,
+ "error": {
+  "max": 0.043082885898845305,
+  "mean": 0.0003589585869273703,
+  "forward": {
+   "max": 0.017430827296948042,
+   "mean": 0.000033207108022463854,
+   "samples": 29076,
+   "at": [
+    -63.599998474121094,
+    0.07698468863964081,
+    0.07999999821186066
+   ]
+  },
+  "backward": {
+   "max": 0.043082885898845305,
+   "mean": 0.000684363128812108,
+   "samples": 29107,
+   "at": [
+    -2.5822186053605765,
+    -5.7028578534647245,
+    0.036752817260969774
+   ]
+  },
+  "at": [
+   -2.5822186053605765,
+   -5.7028578534647245,
+   0.036752817260969774
+  ]
+ },
+ "overlap": [
+  0.9994635512904572,
+  0.9994635512904572,
+  0.9988194786030496,
+  1
+ ]
+}

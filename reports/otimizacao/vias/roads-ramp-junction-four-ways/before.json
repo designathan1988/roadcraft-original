@@ -1,0 +1,48 @@
+{
+ "id": "Roads/ramp junction/four ways",
+ "key": "Roads/ramp junction/four ways",
+ "metrics": {
+  "id": "Roads/ramp junction/four ways",
+  "triangles": 5248,
+  "vertices": 5546,
+  "index": "Uint16",
+  "geometryBytes": 359424,
+  "bytesPerVertex": 56,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B roadSection:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [terrain-splat-v34-verge-lots] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-footway-lots-own] (vertex colours, roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-carriageway-lots-own] (vertex colours, roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [paint-worn-aa] (transparent, roughness 0.72, metalness 0, opacity 1)",
+  "draws": 19,
+  "levels": [
+   {
+    "triangles": 5248,
+    "vertices": 5546
+   },
+   {
+    "triangles": 1216,
+    "vertices": 1990
+   }
+  ],
+  "hidden": 0,
+  "solids": "56 solids: 16 other, 40 quad",
+  "size": [
+   140.2002410888672,
+   0.6599999964237213,
+   140.2002410888672
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   -0.04999999701976776,
+   0
+  ],
+  "distance": 91.80159053051307,
+  "floor": -0.8199999952316284,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.1980924844737082
+ ],
+ "distance": 91.80159053051307,
+ "error": null,
+ "overlap": null
+}

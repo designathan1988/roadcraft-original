@@ -1,0 +1,213 @@
+{
+ "id": "Roads/avenue raised/140 m elevated",
+ "key": "Roads/avenue raised/140 m elevated",
+ "metrics": {
+  "id": "Roads/avenue raised/140 m elevated",
+  "triangles": 3432,
+  "vertices": 4874,
+  "index": "Uint16",
+  "geometryBytes": 284512,
+  "bytesPerVertex": 56,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B roadSection:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-footway-lots-own] (vertex colours, roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-carriageway-lots-own] (vertex colours, roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [paint-worn-aa] (transparent, roughness 0.72, metalness 0, opacity 1) | MeshStandardMaterial [paint-worn-aa-dashed] (transparent, roughness 0.72, metalness 0, opacity 1) | MeshStandardMaterial (roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [detail] (roughness 1, metalness 0.02, opacity 1)",
+  "draws": 36,
+  "levels": [
+   {
+    "triangles": 3432,
+    "vertices": 4874
+   },
+   {
+    "triangles": 1848,
+    "vertices": 1880
+   }
+  ],
+  "hidden": 0,
+  "solids": "35 solids: 8 open prism, 22 other, 5 box",
+  "size": [
+   140.2002410888672,
+   7.952000260353088,
+   20
+  ],
+  "pieces": [
+   {
+    "label": "verge-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "verge-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "verge-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "verge-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "footway-elevated+curb-ramp-elevated",
+    "triangles": 164,
+    "vertices": 164
+   },
+   {
+    "label": "footway-elevated+curb-ramp-elevated",
+    "triangles": 164,
+    "vertices": 164
+   },
+   {
+    "label": "footway-elevated+curb-ramp-elevated",
+    "triangles": 164,
+    "vertices": 164
+   },
+   {
+    "label": "footway-elevated+curb-ramp-elevated",
+    "triangles": 164,
+    "vertices": 164
+   },
+   {
+    "label": "kerb-elevated+median-kerb-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "kerb-elevated+median-kerb-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "kerb-elevated+median-kerb-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "kerb-elevated+median-kerb-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "asphalt-elevated",
+    "triangles": 110,
+    "vertices": 89
+   },
+   {
+    "label": "asphalt-elevated",
+    "triangles": 110,
+    "vertices": 89
+   },
+   {
+    "label": "asphalt-elevated",
+    "triangles": 110,
+    "vertices": 89
+   },
+   {
+    "label": "asphalt-elevated",
+    "triangles": 110,
+    "vertices": 89
+   },
+   {
+    "label": "markings-eee8d7-elevated",
+    "triangles": 32,
+    "vertices": 38
+   },
+   {
+    "label": "markings-eee8d7-elevated",
+    "triangles": 32,
+    "vertices": 38
+   },
+   {
+    "label": "markings-eee8d7~dashed-elevated",
+    "triangles": 32,
+    "vertices": 38
+   },
+   {
+    "label": "markings-eee8d7~dashed-elevated",
+    "triangles": 32,
+    "vertices": 38
+   },
+   {
+    "label": "markings-eee8d7~dashed-elevated",
+    "triangles": 32,
+    "vertices": 38
+   },
+   {
+    "label": "markings-eee8d7~dashed-elevated",
+    "triangles": 32,
+    "vertices": 38
+   },
+   {
+    "label": "structure-piers x6",
+    "triangles": 288,
+    "vertices": 402
+   },
+   {
+    "label": "structure-pier-caps x3",
+    "triangles": 36,
+    "vertices": 72
+   },
+   {
+    "label": "structure-abutments x2",
+    "triangles": 24,
+    "vertices": 48
+   },
+   {
+    "label": "structure-parapets",
+    "triangles": 1236,
+    "vertices": 2472
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   2.9010000824928284,
+   0
+  ],
+  "distance": 91.80159053051307,
+  "floor": -1.5100000524520873,
+  "long": "x"
+ },
+ "levelErrors": [
+  4.5091480919934806e-13
+ ],
+ "distance": 91.80159053051307,
+ "error": {
+  "max": 0.0579360709068046,
+  "mean": 0.0002715516600454002,
+  "forward": {
+   "max": 0.05077908951352706,
+   "mean": 0.00006112899466669944,
+   "samples": 30391,
+   "at": [
+    -28.399999618530273,
+    5.7274980545043945,
+    3.563999891281128
+   ]
+  },
+  "backward": {
+   "max": 0.0579360709068046,
+   "mean": 0.0004816080003267067,
+   "samples": 30444,
+   "at": [
+    -63.84009708997241,
+    0.41072776004697215,
+    -3.534378859175466
+   ]
+  },
+  "at": [
+   -63.84009708997241,
+   0.41072776004697215,
+   -3.534378859175466
+  ]
+ },
+ "overlap": [
+  0.9994616580930733,
+  0.999458939521462,
+  0.9977640178878568,
+  1
+ ]
+}

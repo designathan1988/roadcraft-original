@@ -1,0 +1,213 @@
+{
+ "id": "Roads/avenue bridge/140 m",
+ "key": "Roads/avenue bridge/140 m",
+ "metrics": {
+  "id": "Roads/avenue bridge/140 m",
+  "triangles": 3324,
+  "vertices": 4720,
+  "index": "Uint16",
+  "geometryBytes": 284960,
+  "bytesPerVertex": 56,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B roadSection:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-footway-lots-own] (vertex colours, roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-carriageway-lots-own] (vertex colours, roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [paint-worn-aa] (transparent, roughness 0.72, metalness 0, opacity 1) | MeshStandardMaterial [paint-worn-aa-dashed] (transparent, roughness 0.72, metalness 0, opacity 1) | MeshStandardMaterial (roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [detail] (roughness 1, metalness 0.02, opacity 1)",
+  "draws": 36,
+  "levels": [
+   {
+    "triangles": 3324,
+    "vertices": 4720
+   },
+   {
+    "triangles": 1848,
+    "vertices": 1884
+   }
+  ],
+  "hidden": 0,
+  "solids": "32 solids: 8 open prism, 20 other, 4 box",
+  "size": [
+   140.2002410888672,
+   5.271999835968018,
+   20
+  ],
+  "pieces": [
+   {
+    "label": "verge-bridge",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "verge-bridge",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "verge-bridge",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "verge-bridge",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "footway-bridge+curb-ramp-bridge",
+    "triangles": 164,
+    "vertices": 164
+   },
+   {
+    "label": "footway-bridge+curb-ramp-bridge",
+    "triangles": 164,
+    "vertices": 164
+   },
+   {
+    "label": "footway-bridge+curb-ramp-bridge",
+    "triangles": 164,
+    "vertices": 164
+   },
+   {
+    "label": "footway-bridge+curb-ramp-bridge",
+    "triangles": 164,
+    "vertices": 164
+   },
+   {
+    "label": "kerb-bridge+median-kerb-bridge",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "kerb-bridge+median-kerb-bridge",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "kerb-bridge+median-kerb-bridge",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "kerb-bridge+median-kerb-bridge",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "asphalt-bridge",
+    "triangles": 110,
+    "vertices": 90
+   },
+   {
+    "label": "asphalt-bridge",
+    "triangles": 110,
+    "vertices": 90
+   },
+   {
+    "label": "asphalt-bridge",
+    "triangles": 110,
+    "vertices": 90
+   },
+   {
+    "label": "asphalt-bridge",
+    "triangles": 110,
+    "vertices": 90
+   },
+   {
+    "label": "markings-eee8d7-bridge",
+    "triangles": 32,
+    "vertices": 38
+   },
+   {
+    "label": "markings-eee8d7-bridge",
+    "triangles": 32,
+    "vertices": 38
+   },
+   {
+    "label": "markings-eee8d7~dashed-bridge",
+    "triangles": 32,
+    "vertices": 38
+   },
+   {
+    "label": "markings-eee8d7~dashed-bridge",
+    "triangles": 32,
+    "vertices": 38
+   },
+   {
+    "label": "markings-eee8d7~dashed-bridge",
+    "triangles": 32,
+    "vertices": 38
+   },
+   {
+    "label": "markings-eee8d7~dashed-bridge",
+    "triangles": 32,
+    "vertices": 38
+   },
+   {
+    "label": "structure-piers x4",
+    "triangles": 192,
+    "vertices": 268
+   },
+   {
+    "label": "structure-pier-caps x2",
+    "triangles": 24,
+    "vertices": 48
+   },
+   {
+    "label": "structure-abutments x2",
+    "triangles": 24,
+    "vertices": 48
+   },
+   {
+    "label": "structure-parapets",
+    "triangles": 1236,
+    "vertices": 2472
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   1.6359999179840088,
+   0
+  ],
+  "distance": 91.80159053051307,
+  "floor": -1.44,
+  "long": "x"
+ },
+ "levelErrors": [
+  4.2361199285582224e-13
+ ],
+ "distance": 91.80159053051307,
+ "error": {
+  "max": 0.05732966246587833,
+  "mean": 0.00027594979128677563,
+  "forward": {
+   "max": 0.048078133803838546,
+   "mean": 0.00007190861688300861,
+   "samples": 29777,
+   "at": [
+    45.20000076293945,
+    3.073307514190674,
+    3.563999891281128
+   ]
+  },
+  "backward": {
+   "max": 0.05732966246587833,
+   "mean": 0.0004802860410419708,
+   "samples": 29734,
+   "at": [
+    63.796509290964295,
+    0.41576633732706225,
+    -3.5324006195074595
+   ]
+  },
+  "at": [
+   63.796509290964295,
+   0.41576633732706225,
+   -3.5324006195074595
+  ]
+ },
+ "overlap": [
+  0.9988779306679265,
+  0.9988779969292547,
+  0.9964358452138493,
+  1
+ ]
+}

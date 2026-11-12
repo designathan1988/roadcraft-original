@@ -1,0 +1,48 @@
+{
+ "id": "Roads/urban raised/140 m elevated",
+ "key": "Roads/urban raised/140 m elevated",
+ "metrics": {
+  "id": "Roads/urban raised/140 m elevated",
+  "triangles": 3132,
+  "vertices": 4650,
+  "index": "Uint16",
+  "geometryBytes": 258896,
+  "bytesPerVertex": 56,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B roadSection:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-footway-lots-own] (vertex colours, roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-carriageway-lots-own] (vertex colours, roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [paint-worn-aa] (transparent, roughness 0.72, metalness 0, opacity 1) | MeshStandardMaterial (roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [detail] (roughness 1, metalness 0.02, opacity 1)",
+  "draws": 32,
+  "levels": [
+   {
+    "triangles": 3132,
+    "vertices": 4650
+   },
+   {
+    "triangles": 1548,
+    "vertices": 1656
+   }
+  ],
+  "hidden": 0,
+  "solids": "51 solids: 8 open prism, 16 other, 22 quad, 5 box",
+  "size": [
+   140.2002410888672,
+   7.9420002698898315,
+   14
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   2.9010000824928284,
+   0
+  ],
+  "distance": 91.80159053051307,
+  "floor": -1.5100000524520873,
+  "long": "x"
+ },
+ "levelErrors": [
+  4.974822036355499e-13
+ ],
+ "distance": 91.80159053051307,
+ "error": null,
+ "overlap": null
+}

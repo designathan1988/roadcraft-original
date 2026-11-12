@@ -1,0 +1,56 @@
+| Object | Triangles | Vertices | Geometry bytes | Bytes/vertex | Surface moved (max) | Least silhouette overlap | Sheet |
+|---|---|---|---|---|---|---|---|
+| Roads/avenue bend/two roads at a right angle | 5376 → 1552 (71 %) | 4827 → 1791 (63 %) | 361754 → 167974 (54 %) | 56 → 56 | 136.5 mm at (-9.8, -0.0, -11.1) | 99.70 % | [sheet](roads-avenue-bend-two-roads-at-a-right-angle.png) |
+| Roads/avenue bridge/140 m | 3284 → 3324 (-1 %) | 4744 → 4720 (1 %) | 282368 → 284960 (-1 %) | 56 → 56 | 57.3 mm at (63.8, 0.4, -3.5) | 99.64 % | [sheet](roads-avenue-bridge-140-m.png) |
+| Roads/avenue junction/four ways | 10428 → 2744 (74 %) | 9389 → 3472 (63 %) | 671742 → 326596 (51 %) | 56 → 56 | 136.5 mm at (-9.8, -0.0, -11.1) | 99.88 % | [sheet](roads-avenue-junction-four-ways.png) |
+| Roads/avenue junction/three ways | 7697 → 1840 (76 %) | 6827 → 2238 (67 %) | 497392 → 213542 (57 %) | 56 → 56 | 136.5 mm at (-9.8, -0.0, -11.1) | 99.81 % | [sheet](roads-avenue-junction-three-ways.png) |
+| Roads/avenue one way/140 m | 4116 → 430 (90 %) | 3438 → 493 (86 %) | 270052 → 48040 (82 %) | 56 → 56 | 31.8 mm at (-0.3, 0.2, -9.2) | 99.49 % | [sheet](roads-avenue-one-way-140-m.png) |
+| Roads/avenue parking/140 m, parallel bays left, a cycle lane right | 4690 → 494 (89 %) | 4029 → 621 (85 %) | 313508 → 57000 (82 %) | 56 → 56 | 31.8 mm at (-0.3, 0.2, -11.2) | 99.36 % | [sheet](roads-avenue-parking-140-m-parallel-bays-left-a-cycle-lane-right.png) |
+| Roads/avenue raised/140 m elevated | 3392 → 3432 (-1 %) | 4898 → 4874 (0 %) | 281920 → 284512 (-1 %) | 56 → 56 | 57.9 mm at (-63.8, 0.4, -3.5) | 99.78 % | [sheet](roads-avenue-raised-140-m-elevated.png) |
+| Roads/avenue straight/140 m | 4136 → 430 (90 %) | 3418 → 493 (86 %) | 269012 → 47848 (82 %) | 56 → 56 | 31.8 mm at (-0.3, 0.2, -9.2) | 99.49 % | [sheet](roads-avenue-straight-140-m.png) |
+| Roads/avenue tunnel/140 m | 4232 → 4272 (-1 %) | 3742 → 3726 (0 %) | 287066 → 290424 (-1 %) | 56 → 56 | 41.2 mm at (6.0, -5.6, -3.5) | 99.90 % | [sheet](roads-avenue-tunnel-140-m.png) |
+| Roads/boulevard bend/two roads at a right angle | 6461 → 1662 (74 %) | 5817 → 1985 (66 %) | 436490 → 180828 (59 %) | 56 → 56 | 124.4 mm at (-12.8, -0.0, -14.2) | 99.79 % | [sheet](roads-boulevard-bend-two-roads-at-a-right-angle.png) |
+| Roads/boulevard bridge/140 m | 3652 → 3692 (-1 %) | 5140 → 5116 (0 %) | 313280 → 315872 (-1 %) | 56 → 56 | 62.4 mm at (-64.2, 0.4, 5.0) | 99.84 % | [sheet](roads-boulevard-bridge-140-m.png) |
+| Roads/boulevard junction/four ways | 12228 → 3067 (75 %) | 11193 → 3951 (65 %) | 785732 → 356638 (55 %) | 56 → 56 | 146.4 mm at (13.0, 0.1, 14.6) | 99.89 % | [sheet](roads-boulevard-junction-four-ways.png) |
+| Roads/boulevard junction/three ways | 9130 → 2042 (78 %) | 8154 → 2556 (69 %) | 587226 → 234674 (60 %) | 56 → 56 | 135.6 mm at (13.0, 0.1, -14.4) | 99.82 % | [sheet](roads-boulevard-junction-three-ways.png) |
+| Roads/boulevard one way/140 m | 4190 → 430 (90 %) | 3475 → 493 (86 %) | 272648 → 48040 (82 %) | 56 → 56 | 31.8 mm at (-0.3, 0.2, -11.2) | 99.76 % | [sheet](roads-boulevard-one-way-140-m.png) |
+| Roads/boulevard parking/140 m, parallel bays left, a cycle lane right | 5680 → 538 (91 %) | 4916 → 709 (86 %) | 379994 → 63160 (83 %) | 56 → 56 | 31.8 mm at (-0.3, 0.2, -14.2) | 99.80 % | [sheet](roads-boulevard-parking-140-m-parallel-bays-left-a-cycle-lane-right.png) |
+| Roads/boulevard raised/140 m elevated | 3760 → 3800 (-1 %) | 5294 → 5270 (0 %) | 312832 → 315424 (-1 %) | 56 → 56 | 60.9 mm at (-64.3, 0.4, -5.0) | 99.80 % | [sheet](roads-boulevard-raised-140-m-elevated.png) |
+| Roads/boulevard straight/140 m | 5020 → 474 (91 %) | 4248 → 581 (86 %) | 331442 → 54008 (84 %) | 56 → 56 | 31.8 mm at (-0.3, 0.2, -12.2) | 99.78 % | [sheet](roads-boulevard-straight-140-m.png) |
+| Roads/boulevard tunnel/140 m | 5116 → 5156 (-1 %) | 4608 → 4592 (0 %) | 352192 → 355302 (-1 %) | 56 → 56 | 43.1 mm at (-2.3, -5.7, -5.1) | 99.88 % | [sheet](roads-boulevard-tunnel-140-m.png) |
+| Roads/highway bend/two roads at a right angle | 4881 → 1384 (72 %) | 4594 → 1581 (66 %) | 352966 → 134776 (62 %) | 56 → 56 | 96.8 mm at (10.5, -0.0, 10.5) | 99.76 % | [sheet](roads-highway-bend-two-roads-at-a-right-angle.png) |
+| Roads/highway bridge/140 m | 3228 → 3268 (-1 %) | 4780 → 4756 (1 %) | 267872 → 270464 (-1 %) | 56 → 56 | 54.6 mm at (67.6, 0.2, -5.0) | 99.93 % | [sheet](roads-highway-bridge-140-m.png) |
+| Roads/highway junction/four ways | 9188 → 2707 (71 %) | 8821 → 3340 (62 %) | 593096 → 282442 (52 %) | 56 → 56 | 32.3 mm at (12.1, 0.2, -10.7) | 99.94 % | [sheet](roads-highway-junction-four-ways.png) |
+| Roads/highway junction/three ways | 6805 → 1685 (75 %) | 6358 → 2007 (68 %) | 458512 → 170838 (63 %) | 56 → 56 | 32.2 mm at (-10.8, -0.0, -13.2) | 99.83 % | [sheet](roads-highway-junction-three-ways.png) |
+| Roads/highway one way/140 m | 3626 → 342 (91 %) | 3047 → 349 (89 %) | 255968 → 30856 (88 %) | 56 → 56 | 31.8 mm at (-0.3, 0.2, -9.2) | 99.49 % | [sheet](roads-highway-one-way-140-m.png) |
+| Roads/highway parking/140 m, parallel bays left, a cycle lane right | 4456 → 386 (91 %) | 3820 → 437 (89 %) | 314800 → 36824 (88 %) | 56 → 56 | 31.8 mm at (-0.3, 0.2, -10.2) | 99.74 % | [sheet](roads-highway-parking-140-m-parallel-bays-left-a-cycle-lane-right.png) |
+| Roads/highway raised/140 m elevated | 3336 → 3376 (-1 %) | 4934 → 4910 (0 %) | 267424 → 270016 (-1 %) | 56 → 56 | 61.6 mm at (64.2, 0.4, 5.0) | 99.80 % | [sheet](roads-highway-raised-140-m-elevated.png) |
+| Roads/highway straight/140 m | 4456 → 386 (91 %) | 3820 → 437 (89 %) | 314800 → 36824 (88 %) | 56 → 56 | 31.8 mm at (-0.3, 0.2, -10.2) | 99.74 % | [sheet](roads-highway-straight-140-m.png) |
+| Roads/highway tunnel/140 m | 4552 → 4592 (-1 %) | 4180 → 4164 (0 %) | 329312 → 332608 (-1 %) | 56 → 56 | 43.3 mm at (-1.5, -5.7, 5.0) | 99.91 % | [sheet](roads-highway-tunnel-140-m.png) |
+| Roads/local bend/two roads at a right angle | 3766 → 1412 (63 %) | 3767 → 1663 (56 %) | 284650 → 154204 (46 %) | 56 → 56 | 209.1 mm at (-5.8, -0.0, -5.8) | 99.53 % | [sheet](roads-local-bend-two-roads-at-a-right-angle.png) |
+| Roads/local bridge/140 m | 2980 → 2980 (0 %) | 4404 → 4404 (0 %) | 252736 → 252736 (0 %) | 56 → 56 | 10.0 mm at (-67.5, 0.1, 3.2) | 99.77 % | [sheet](roads-local-bridge-140-m.png) |
+| Roads/local junction/four ways | 7420 → 2770 (63 %) | 7406 → 3364 (55 %) | 513900 → 305442 (41 %) | 56 → 56 | 209.1 mm at (-5.8, -0.0, -5.8) | 99.87 % | [sheet](roads-local-junction-four-ways.png) |
+| Roads/local junction/three ways | 5423 → 1808 (67 %) | 5320 → 2150 (60 %) | 387234 → 199400 (49 %) | 56 → 56 | 209.1 mm at (-5.8, -0.0, -5.8) | 99.73 % | [sheet](roads-local-junction-three-ways.png) |
+| Roads/local one way/140 m | 2642 → 434 (84 %) | 2561 → 483 (81 %) | 220428 → 47064 (79 %) | 56 → 56 | 31.8 mm at (0.6, -0.0, 5.8) | 99.43 % | [sheet](roads-local-one-way-140-m.png) |
+| Roads/local parking/140 m, parallel bays left, a cycle lane right | 3250 → 494 (85 %) | 3137 → 603 (81 %) | 249692 → 55464 (78 %) | 56 → 56 | 31.8 mm at (0.6, -0.0, 7.8) | 99.56 % | [sheet](roads-local-parking-140-m-parallel-bays-left-a-cycle-lane-right.png) |
+| Roads/local raised/140 m elevated | 3088 → 3088 (0 %) | 4562 → 4562 (0 %) | 252736 → 252736 (0 %) | 56 → 56 | 10.0 mm at (-6.2, 4.6, 5.0) | 99.73 % | [sheet](roads-local-raised-140-m-elevated.png) |
+| Roads/local straight/140 m | 2598 → 430 (83 %) | 2473 → 475 (81 %) | 214268 → 46312 (78 %) | 56 → 56 | 31.8 mm at (0.6, -0.0, 5.8) | 99.43 % | [sheet](roads-local-straight-140-m.png) |
+| Roads/local tunnel/140 m | 2694 → 2694 (0 %) | 2761 → 2761 (0 %) | 229694 → 229756 (0 %) | 56 → 56 | 10.0 mm at (-67.5, -0.4, 4.8) | 99.82 % | [sheet](roads-local-tunnel-140-m.png) |
+| Roads/ramp bend/two roads at a right angle | 2673 → 1146 (57 %) | 2814 → 1237 (56 %) | 217208 → 109342 (50 %) | 56 → 56 | 96.8 mm at (5.5, -0.0, 5.5) | 99.51 % | [sheet](roads-ramp-bend-two-roads-at-a-right-angle.png) |
+| Roads/ramp bridge/140 m | 2648 → 2668 (-1 %) | 4156 → 4144 (0 %) | 216752 → 218048 (-1 %) | 56 → 56 | 125.7 mm at (43.8, 3.2, -0.1) | 99.77 % | [sheet](roads-ramp-bridge-140-m.png) |
+| Roads/ramp junction/four ways | 5248 → 2199 (58 %) | 5546 → 2534 (54 %) | 359424 → 218104 (39 %) | 56 → 56 | 32.7 mm at (6.2, 0.2, 5.3) | 99.87 % | [sheet](roads-ramp-junction-four-ways.png) |
+| Roads/ramp junction/three ways | 3809 → 1404 (63 %) | 3941 → 1552 (61 %) | 283792 → 134922 (52 %) | 56 → 56 | 32.0 mm at (5.2, 0.2, -8.5) | 99.73 % | [sheet](roads-ramp-junction-three-ways.png) |
+| Roads/ramp one way/140 m | 2040 → 342 (83 %) | 2048 → 331 (84 %) | 197792 → 29128 (85 %) | 56 → 56 | 31.8 mm at (0.6, -0.0, 3.8) | 99.45 % | [sheet](roads-ramp-one-way-140-m.png) |
+| Roads/ramp parking/140 m, parallel bays left, a cycle lane right | 2372 → 346 (85 %) | 2284 → 339 (85 %) | 201984 → 29880 (85 %) | 56 → 56 | 31.8 mm at (0.6, -0.0, 5.8) | 99.59 % | [sheet](roads-ramp-parking-140-m-parallel-bays-left-a-cycle-lane-right.png) |
+| Roads/ramp raised/140 m elevated | 2756 → 2776 (-1 %) | 4314 → 4302 (0 %) | 216752 → 218048 (-1 %) | 56 → 56 | 108.7 mm at (-26.2, 5.9, -0.1) | 99.73 % | [sheet](roads-ramp-raised-140-m-elevated.png) |
+| Roads/ramp straight/140 m | 2372 → 346 (85 %) | 2284 → 339 (85 %) | 201984 → 29880 (85 %) | 56 → 56 | 31.8 mm at (0.6, -0.0, 5.8) | 99.43 % | [sheet](roads-ramp-straight-140-m.png) |
+| Roads/ramp tunnel/140 m | 2468 → 2488 (-1 %) | 2584 → 2576 (0 %) | 213184 → 214832 (-1 %) | 56 → 56 | 43.1 mm at (-2.6, -5.7, 0.0) | 99.82 % | [sheet](roads-ramp-tunnel-140-m.png) |
+| Roads/urban bend/two roads at a right angle | 4009 → 1338 (67 %) | 3918 → 1578 (60 %) | 290962 → 151692 (48 %) | 56 → 56 | 96.8 mm at (6.5, -0.0, 6.5) | 99.57 % | [sheet](roads-urban-bend-two-roads-at-a-right-angle.png) |
+| Roads/urban bridge/140 m | 3024 → 3044 (-1 %) | 4492 → 4480 (0 %) | 258896 → 260192 (-1 %) | 56 → 56 | 125.7 mm at (43.8, 3.2, -0.1) | 99.52 % | [sheet](roads-urban-bridge-140-m.png) |
+| Roads/urban junction/four ways | 7798 → 2395 (69 %) | 7579 → 3036 (60 %) | 527454 → 291544 (45 %) | 56 → 56 | 32.1 mm at (-6.6, 0.2, -6.4) | 99.97 % | [sheet](roads-urban-junction-four-ways.png) |
+| Roads/urban junction/three ways | 5775 → 1627 (72 %) | 5540 → 2003 (64 %) | 398088 → 194092 (51 %) | 56 → 56 | 32.9 mm at (6.7, 0.2, -6.3) | 99.78 % | [sheet](roads-urban-junction-three-ways.png) |
+| Roads/urban one way/140 m | 2930 → 434 (85 %) | 2709 → 483 (82 %) | 218460 → 47064 (78 %) | 56 → 56 | 31.8 mm at (0.6, -0.0, 6.8) | 99.63 % | [sheet](roads-urban-one-way-140-m.png) |
+| Roads/urban parking/140 m, parallel bays left, a cycle lane right | 3914 → 486 (88 %) | 3535 → 605 (83 %) | 276932 → 55688 (80 %) | 56 → 56 | 31.8 mm at (-0.3, 0.2, -8.2) | 99.70 % | [sheet](roads-urban-parking-140-m-parallel-bays-left-a-cycle-lane-right.png) |
+| Roads/urban raised/140 m elevated | 3132 → 3152 (-1 %) | 4650 → 4638 (0 %) | 258896 → 260192 (-1 %) | 56 → 56 | 108.7 mm at (-26.2, 5.9, -0.1) | 99.74 % | [sheet](roads-urban-raised-140-m-elevated.png) |
+| Roads/urban straight/140 m | 2930 → 434 (85 %) | 2709 → 483 (82 %) | 218460 → 47064 (78 %) | 56 → 56 | 31.8 mm at (0.6, -0.0, 6.8) | 99.63 % | [sheet](roads-urban-straight-140-m.png) |
+| Roads/urban tunnel/140 m | 3026 → 3046 (-1 %) | 3009 → 3001 (0 %) | 235736 → 237446 (-1 %) | 56 → 56 | 43.1 mm at (-2.6, -5.7, 0.0) | 99.88 % | [sheet](roads-urban-tunnel-140-m.png) |

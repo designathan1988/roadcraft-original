@@ -1,0 +1,48 @@
+{
+ "id": "Roads/boulevard straight/140 m",
+ "key": "Roads/boulevard straight/140 m",
+ "metrics": {
+  "id": "Roads/boulevard straight/140 m",
+  "triangles": 5020,
+  "vertices": 4248,
+  "index": "Uint16",
+  "geometryBytes": 331442,
+  "bytesPerVertex": 56,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B roadSection:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [terrain-splat-v34-verge-lots] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-footway-lots-own] (vertex colours, roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-carriageway-lots-own] (vertex colours, roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [paint-worn-aa] (transparent, roughness 0.72, metalness 0, opacity 1)",
+  "draws": 24,
+  "levels": [
+   {
+    "triangles": 5020,
+    "vertices": 4248
+   },
+   {
+    "triangles": 2515,
+    "vertices": 2701
+   }
+  ],
+  "hidden": 0,
+  "solids": "68 solids: 16 other, 8 open prism, 44 quad",
+  "size": [
+   140.2002410888672,
+   0.6699999868869781,
+   26
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   -0.04500000178813934,
+   0
+  ],
+  "distance": 91.80159053051307,
+  "floor": -0.8199999952316284,
+  "long": "x"
+ },
+ "levelErrors": [
+  3.4270084340369976e-11
+ ],
+ "distance": 91.80159053051307,
+ "error": null,
+ "overlap": null
+}

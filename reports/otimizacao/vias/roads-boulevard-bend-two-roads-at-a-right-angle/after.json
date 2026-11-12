@@ -1,0 +1,208 @@
+{
+ "id": "Roads/boulevard bend/two roads at a right angle",
+ "key": "Roads/boulevard bend/two roads at a right angle",
+ "metrics": {
+  "id": "Roads/boulevard bend/two roads at a right angle",
+  "triangles": 1662,
+  "vertices": 1985,
+  "index": "Uint16",
+  "geometryBytes": 180828,
+  "bytesPerVertex": 56,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B roadSection:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [terrain-splat-v34-verge-lots] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-footway-lots-own] (vertex colours, roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-carriageway-lots-own] (vertex colours, roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [paint-worn-aa-dashed] (transparent, roughness 0.72, metalness 0, opacity 1)",
+  "draws": 25,
+  "levels": [
+   {
+    "triangles": 1662,
+    "vertices": 1985
+   },
+   {
+    "triangles": 1324,
+    "vertices": 1789
+   }
+  ],
+  "hidden": 1,
+  "solids": "36 solids: 18 other, 10 open prism, 8 quad",
+  "size": [
+   83.1001205444336,
+   0.679999977350235,
+   83.1001205444336
+  ],
+  "pieces": [
+   {
+    "label": "verge",
+    "triangles": 132,
+    "vertices": 84
+   },
+   {
+    "label": "verge",
+    "triangles": 262,
+    "vertices": 208
+   },
+   {
+    "label": "verge",
+    "triangles": 174,
+    "vertices": 103
+   },
+   {
+    "label": "verge",
+    "triangles": 110,
+    "vertices": 74
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 70,
+    "vertices": 110
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 250,
+    "vertices": 390
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 80,
+    "vertices": 114
+   },
+   {
+    "label": "footway+curb-ramp+median-paved",
+    "triangles": 70,
+    "vertices": 110
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 26,
+    "vertices": 52
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 136,
+    "vertices": 248
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 108,
+    "vertices": 186
+   },
+   {
+    "label": "kerb+median-kerb",
+    "triangles": 26,
+    "vertices": 52
+   },
+   {
+    "label": "asphalt",
+    "triangles": 18,
+    "vertices": 17
+   },
+   {
+    "label": "asphalt",
+    "triangles": 94,
+    "vertices": 87
+   },
+   {
+    "label": "asphalt",
+    "triangles": 40,
+    "vertices": 37
+   },
+   {
+    "label": "asphalt",
+    "triangles": 18,
+    "vertices": 17
+   },
+   {
+    "label": "median-planting",
+    "triangles": 8,
+    "vertices": 16
+   },
+   {
+    "label": "median-planting",
+    "triangles": 16,
+    "vertices": 32
+   },
+   {
+    "label": "median-planting",
+    "triangles": 8,
+    "vertices": 16
+   },
+   {
+    "label": "markings-eee8d7~dashed",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-eee8d7~dashed",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "markings-eee8d7~dashed",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-f4f1e3~dashed",
+    "triangles": 2,
+    "vertices": 4
+   },
+   {
+    "label": "markings-f4f1e3~dashed",
+    "triangles": 4,
+    "vertices": 8
+   },
+   {
+    "label": "markings-f4f1e3~dashed",
+    "triangles": 2,
+    "vertices": 4
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   -28.550060272216797,
+   -0.04500000178813934,
+   -28.550060272216797
+  ],
+  "distance": 91.80159053051307,
+  "floor": -0.8199999952316284,
+  "long": "x"
+ },
+ "levelErrors": [
+  0.1547136890967048
+ ],
+ "distance": 91.80159053051307,
+ "error": {
+  "max": 0.12442183454257909,
+  "mean": 0.0015129672947973472,
+  "forward": {
+   "max": 0.10927384586851518,
+   "mean": 0.0006288954887358149,
+   "samples": 44548,
+   "at": [
+    -12.824253864275974,
+    0.1259290021819921,
+    -14.222537500215552
+   ]
+  },
+  "backward": {
+   "max": 0.12442183454257909,
+   "mean": 0.0030961015479801716,
+   "samples": 24877,
+   "at": [
+    -12.844635009765625,
+    -0.0015586395747959614,
+    -14.200819969177246
+   ]
+  },
+  "at": [
+   -12.844635009765625,
+   -0.0015586395747959614,
+   -14.200819969177246
+  ]
+ },
+ "overlap": [
+  0.9997329874885567,
+  0.9979918802112892,
+  0.9978544455887401,
+  1
+ ]
+}

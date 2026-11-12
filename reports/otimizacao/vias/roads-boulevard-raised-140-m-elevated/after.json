@@ -1,0 +1,223 @@
+{
+ "id": "Roads/boulevard raised/140 m elevated",
+ "key": "Roads/boulevard raised/140 m elevated",
+ "metrics": {
+  "id": "Roads/boulevard raised/140 m elevated",
+  "triangles": 3800,
+  "vertices": 5270,
+  "index": "Uint16",
+  "geometryBytes": 315424,
+  "bytesPerVertex": 56,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B roadSection:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-footway-lots-own] (vertex colours, roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-carriageway-lots-own] (vertex colours, roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [paint-worn-aa-dashed] (transparent, roughness 0.72, metalness 0, opacity 1) | MeshStandardMaterial (roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [detail] (roughness 1, metalness 0.02, opacity 1)",
+  "draws": 38,
+  "levels": [
+   {
+    "triangles": 3800,
+    "vertices": 5270
+   },
+   {
+    "triangles": 2216,
+    "vertices": 2276
+   }
+  ],
+  "hidden": 0,
+  "solids": "41 solids: 8 open prism, 28 other, 5 box",
+  "size": [
+   140.2002410888672,
+   7.952000260353088,
+   26
+  ],
+  "pieces": [
+   {
+    "label": "verge-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "verge-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "verge-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "verge-elevated",
+    "triangles": 70,
+    "vertices": 80
+   },
+   {
+    "label": "footway-elevated+curb-ramp-elevated",
+    "triangles": 176,
+    "vertices": 170
+   },
+   {
+    "label": "footway-elevated+curb-ramp-elevated",
+    "triangles": 176,
+    "vertices": 170
+   },
+   {
+    "label": "footway-elevated+curb-ramp-elevated",
+    "triangles": 176,
+    "vertices": 170
+   },
+   {
+    "label": "footway-elevated+curb-ramp-elevated",
+    "triangles": 176,
+    "vertices": 170
+   },
+   {
+    "label": "kerb-elevated+median-kerb-elevated",
+    "triangles": 118,
+    "vertices": 136
+   },
+   {
+    "label": "kerb-elevated+median-kerb-elevated",
+    "triangles": 118,
+    "vertices": 136
+   },
+   {
+    "label": "kerb-elevated+median-kerb-elevated",
+    "triangles": 118,
+    "vertices": 136
+   },
+   {
+    "label": "kerb-elevated+median-kerb-elevated",
+    "triangles": 118,
+    "vertices": 136
+   },
+   {
+    "label": "asphalt-elevated",
+    "triangles": 110,
+    "vertices": 89
+   },
+   {
+    "label": "asphalt-elevated",
+    "triangles": 110,
+    "vertices": 89
+   },
+   {
+    "label": "asphalt-elevated",
+    "triangles": 110,
+    "vertices": 89
+   },
+   {
+    "label": "asphalt-elevated",
+    "triangles": 110,
+    "vertices": 89
+   },
+   {
+    "label": "median-planting-elevated",
+    "triangles": 48,
+    "vertices": 56
+   },
+   {
+    "label": "median-planting-elevated",
+    "triangles": 48,
+    "vertices": 56
+   },
+   {
+    "label": "median-planting-elevated",
+    "triangles": 48,
+    "vertices": 56
+   },
+   {
+    "label": "median-planting-elevated",
+    "triangles": 48,
+    "vertices": 56
+   },
+   {
+    "label": "markings-eee8d7~dashed-elevated",
+    "triangles": 32,
+    "vertices": 38
+   },
+   {
+    "label": "markings-eee8d7~dashed-elevated",
+    "triangles": 32,
+    "vertices": 38
+   },
+   {
+    "label": "markings-eee8d7~dashed-elevated",
+    "triangles": 32,
+    "vertices": 38
+   },
+   {
+    "label": "markings-eee8d7~dashed-elevated",
+    "triangles": 32,
+    "vertices": 38
+   },
+   {
+    "label": "structure-piers x6",
+    "triangles": 288,
+    "vertices": 402
+   },
+   {
+    "label": "structure-pier-caps x3",
+    "triangles": 36,
+    "vertices": 72
+   },
+   {
+    "label": "structure-abutments x2",
+    "triangles": 24,
+    "vertices": 48
+   },
+   {
+    "label": "structure-parapets",
+    "triangles": 1236,
+    "vertices": 2472
+   }
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   2.9010000824928284,
+   0
+  ],
+  "distance": 91.80159053051307,
+  "floor": -1.5100000524520873,
+  "long": "x"
+ },
+ "levelErrors": [
+  1.4310336899800434e-11
+ ],
+ "distance": 91.80159053051307,
+ "error": {
+  "max": 0.0609118217682995,
+  "mean": 0.00030723743037162665,
+  "forward": {
+   "max": 0.05077908951352706,
+   "mean": 0.00006005893126359984,
+   "samples": 31157,
+   "at": [
+    -28.399999618530273,
+    5.7274980545043945,
+    5.064000129699707
+   ]
+  },
+  "backward": {
+   "max": 0.0609118217682995,
+   "mean": 0.0005538302547035017,
+   "samples": 31231,
+   "at": [
+    -64.28950753900101,
+    0.36302964234921303,
+    -4.970185782299511
+   ]
+  },
+  "at": [
+   -64.28950753900101,
+   0.36302964234921303,
+   -4.970185782299511
+  ]
+ },
+ "overlap": [
+  0.9992339366082543,
+  0.9993770067570805,
+  0.998017385999695,
+  1
+ ]
+}

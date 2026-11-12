@@ -1,0 +1,48 @@
+{
+ "id": "Roads/ramp parking/140 m, parallel bays left, a cycle lane right",
+ "key": "Roads/ramp parking/140 m, parallel bays left, a cycle lane right",
+ "metrics": {
+  "id": "Roads/ramp parking/140 m, parallel bays left, a cycle lane right",
+  "triangles": 2372,
+  "vertices": 2284,
+  "index": "Uint16",
+  "geometryBytes": 201984,
+  "bytesPerVertex": 56,
+  "attributes": "position:3xFloat32=12B normal:3xFloat32=12B uv:2xFloat32=8B color:3xFloat32=12B roadSection:3xFloat32=12B",
+  "materials": "MeshStandardMaterial [terrain-splat-v34-verge-lots] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-footway-lots-own] (vertex colours, roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-lots-own] (roughness 1, metalness 0, opacity 1) | MeshStandardMaterial [detail-road-edges-v1-carriageway-lots-own] (vertex colours, roughness 1, metalness 0.02, opacity 1) | MeshStandardMaterial [paint-worn-aa] (transparent, roughness 0.72, metalness 0, opacity 1)",
+  "draws": 18,
+  "levels": [
+   {
+    "triangles": 2372,
+    "vertices": 2284
+   },
+   {
+    "triangles": 1804,
+    "vertices": 1952
+   }
+  ],
+  "hidden": 0,
+  "solids": "38 solids: 16 other, 22 quad",
+  "size": [
+   140.2002410888672,
+   0.6599999964237213,
+   12
+  ]
+ },
+ "framing": {
+  "centre": [
+   0,
+   -0.04999999701976776,
+   0
+  ],
+  "distance": 293.5865000590915,
+  "floor": -1.7871440248665398,
+  "long": "x"
+ },
+ "levelErrors": [
+  1.0900103591758682e-10
+ ],
+ "distance": 293.5865000590915,
+ "error": null,
+ "overlap": null
+}
