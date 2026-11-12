@@ -1,0 +1,583 @@
+2026-10-26T03:22:58.165Z [debug] [vite] connecting...
+2026-10-26T03:22:58.167Z [debug] [vite] connected.
+2026-10-26T03:22:58.556Z [driver] opened http://127.0.0.1:5300/?city=small&seed=7
+2026-10-26T03:22:58.560Z [driver] listening on 5399
+2026-10-26T03:22:59.164Z [warning] THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision
+(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision
+(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision
+(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision
+(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision
+2026-10-26T03:23:01.662Z [info] [nature] trees (triangles, body + cards): oak 202 + 80, oak 202 + 80, cypress 18 + 140, cypress 18 + 140, palm 240 + 240, palm 240 + 240
+2026-10-26T03:23:18.786Z [warning] [roads] a road tile worker has been silent for 10007 ms with tiles waiting (busy or without CPU); still waiting
+2026-10-26T03:24:27.127Z [log] THREE.WebGLRenderer: Context Lost.
+2026-10-26T03:24:27.127Z [info] [field] webgl-lost: WebGL context lost 
+2026-10-26T03:24:28.143Z [log] THREE.WebGLRenderer: Context Restored.
+2026-10-26T03:24:28.156Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:28.157Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:28.157Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.259Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.259Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.259Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.259Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.259Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.260Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.260Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.260Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.260Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.260Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.260Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.260Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.260Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.260Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.260Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.260Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.260Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.260Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.260Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.260Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.260Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.260Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.260Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.260Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.260Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.261Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.261Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.261Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.261Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.261Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.261Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.261Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.261Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.261Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.261Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.261Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.261Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.261Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.261Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.261Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.261Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.261Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.261Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.261Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.262Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.262Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.262Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.262Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.262Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.262Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.262Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.262Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.262Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.262Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.262Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.262Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.262Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.262Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.262Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.263Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.263Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.263Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.263Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.263Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.263Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.263Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.263Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.263Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.263Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.263Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.263Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.263Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.263Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.263Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.263Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.263Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.263Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.263Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.263Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.263Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.263Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.264Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.264Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.264Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.264Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.264Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.264Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.264Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.264Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.264Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.264Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.264Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.265Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.265Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.265Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.265Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.265Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.265Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.265Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.265Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.265Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.265Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.265Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.265Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.265Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.265Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.265Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.265Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.266Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.267Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.267Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.267Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.267Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.267Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.267Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.267Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.267Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.267Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.267Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.267Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.267Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.267Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.267Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.267Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.267Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.267Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.267Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.267Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.267Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.267Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.268Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.268Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.268Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.268Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.268Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.268Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.269Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.269Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.269Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.269Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.269Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.269Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.269Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.269Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.269Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.269Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.269Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.269Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.269Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.269Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.269Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.269Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.269Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.269Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.269Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.269Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.269Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.270Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.270Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.270Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.270Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.270Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.270Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.270Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.270Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.270Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.270Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.270Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.270Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.270Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.270Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.270Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.270Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.270Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.270Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.270Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.270Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.270Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.271Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.271Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.271Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.271Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.271Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.271Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.271Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.271Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.272Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.272Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.272Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.272Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.272Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.272Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.272Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.272Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.272Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.272Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.272Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.272Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.272Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.272Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.272Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.272Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.272Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.272Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.272Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.272Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.273Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.273Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.273Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.273Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.273Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.273Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.273Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.273Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.273Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.273Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.273Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.273Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.273Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.273Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.273Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.273Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.273Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.273Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.274Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.274Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.274Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.274Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.274Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.274Z [warning] WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context
+2026-10-26T03:24:29.274Z [warning] WebGL: INVALID_OPERATION: delete: object does not belong to this context
+2026-10-26T03:24:29.274Z [warning] WebGL: too many errors, no more errors will be reported to the console for this context.
+2026-10-26T03:24:29.284Z [info] [field] webgl-restored: WebGL context restored 
+2026-10-26T03:24:30.437Z [info] [field] error: TypeError: Cannot read properties of null (reading 'byteLength') 
+2026-10-26T03:24:30.438Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:30.461Z [info] [field] error: TypeError: Cannot read properties of null (reading 'byteLength') 
+2026-10-26T03:24:30.461Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:30.508Z [info] [field] error: TypeError: Cannot read properties of null (reading 'byteLength') 
+2026-10-26T03:24:30.508Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:30.615Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:30.694Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:30.773Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:30.828Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:30.863Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:30.915Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:30.924Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:30.930Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:30.948Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:30.966Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:30.982Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:31.023Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:31.050Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:31.063Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:31.072Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:31.095Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:31.111Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:31.129Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:31.148Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:31.165Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:31.176Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:31.194Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:31.212Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:31.241Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
+2026-10-26T03:24:31.252Z [pageerror] TypeError: Cannot read properties of null (reading 'byteLength')
+    at createBuffer (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:42:22)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:119:47)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2386:53)
+    at Object.update (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:2609:15)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10105:32)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at projectObject (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10129:53)
+    at WebGLRenderer.render (http://127.0.0.1:5300/node_modules/.vite/deps/three.js?v=88f552d4:10033:4)
+    at RenderPass.render (http://127.0.0.1:5300/node_modules/.vite/deps/three_examples_jsm_postprocessing_RenderPass__js.js?v=88f552d4:125:12)
