@@ -1,0 +1,17 @@
+**Arquivos:** `src/render/mesh/tileShape.ts`, `src/render/mesh/tileMesh.ts`, `src/render/mesh/surfaceMesh.ts`, `src/render/roadTileShape.ts`, `src/render/roadTileMesh.ts`, `src/render/roadSurfaces.ts`, `src/render/roadSurfacePass.ts`, `src/render/roadSurfaceReads.ts`.
+
+**Medido em:** o construtor do jogo (`buildRoadSurfaces`) na malha de testes "grade e curvas" sobre um terreno ondulado; as fichas mostram o cruzamento em (0, 0), as contagens são da malha inteira. A ficha "vias-conjunto" mostra todas as superfícies juntas e não entra no total (já está somada nas partes).
+
+**Técnicas aplicadas:**
+- Refinamento adaptativo no lugar da grade fixa: cada triângulo é dividido pela aresta mais longa só onde a superfície sai da corda (altura, faixa ou tinta além da tolerância); chão plano, rampa reta e tabuleiro plano ficam com os triângulos do próprio contorno. Antes, uma rua plana era uma grade de 3,2 m.
+- Tolerância garantida de 1 cm: cada aresta é lida no meio **e nos quartos** (numa inflexão da ondulação a superfície cruza a corda no meio e foge dela nos quartos: 1,8 cm em 32 m de rua), e o centro de cada triângulo também; um triângulo com o centro fora divide a aresta mais longa, inclusive no vizinho já assentado (sem junção em T, sem fresta).
+- Paredes (saias) só onde há queda: a borda da calçada encostada no meio-fio, a do meio-fio sob a calçada e a do gramado sob a calçada não geram parede (face colada em face que ninguém vê). Na ficha da calçada, sozinha, isso aparece como a borda sem parede; com o meio-fio (ficha conjunto e no jogo) a imagem é a mesma.
+- Textura por "moldura" da via: um triângulo cujos cantos leem molduras de vias diferentes é copiado na moldura do centro (verificação exata; o critério antigo por esticamento deixava passar 12 % de esticamento num triângulo longo sobre a esquina).
+
+**Na cidade grande (semente 4242):** triângulos das camadas de via 5,84 M → 3,12 M (−47 %); diferença de pixels entre antes e depois nas quatro vistas: rua 0,37 %, cruzamento 0,16 %, distrito 1,43 %, mapa 2,43 %; criar a cidade: 12,1 s antes, 11,8 s depois. Única alta: as faixas pintadas, +6 % (2.963 → 3.151 triângulos na malha de testes).
+
+**Correções encontradas no caminho:** o refinamento original não garantia a tolerância (1,6 cm fora no centro de triângulos; o giro de diagonais depois de refinar criava cordas que atravessavam a ondulação), e a leitura dos quartos com cache sem direção comparava a aresta j-i com as pontas trocadas (13 mil triângulos onde 900 bastam). O giro de diagonais após o refinamento foi retirado (custava um terço do tempo de montar as vias para os mesmos triângulos).
+
+- Trabalhadores das vias: o terreno é lido pela página ponto a ponto; um ponto ainda não dado parava o refinamento e custava uma volta inteira por nível (4 a 12 voltas por tile, cada uma refazendo o tile). Agora o trabalhador pede de saída uma grade de 4 m do terreno sobre o tile e lê entre os pontos dela (bilinear, meio milímetro de erro) até receber os pontos exatos, que pede todos de uma vez, sem repetir; um tile só é aceito de uma volta em que nenhum ponto faltou, então sai igual byte a byte ao da página. A cidade pequena dos testes: 12,8 s → 4,4 s.
+
+**Verificação:** testes de malha, de vias, de tiles e de trabalhadores passando; as impressões digitais byte a byte das vias foram regravadas com a justificativa no próprio teste (`surfaceReads.spec.ts`).

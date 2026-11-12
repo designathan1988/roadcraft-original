@@ -1,0 +1,170 @@
+{
+ "bicycle": {
+  "antes": {
+   "triangles": 84,
+   "vertices": 182,
+   "bytes": 7056,
+   "far": null
+  },
+  "depois": {
+   "triangles": 50,
+   "vertices": 98,
+   "bytes": 2064,
+   "far": null
+  }
+ },
+ "bus": {
+  "antes": {
+   "triangles": 8572,
+   "vertices": 17756,
+   "bytes": 690648,
+   "far": 80
+  },
+  "depois": {
+   "triangles": 2170,
+   "vertices": 4221,
+   "bytes": 88998,
+   "far": 80
+  }
+ },
+ "hatch-hatch": {
+  "antes": {
+   "triangles": 14826,
+   "vertices": 16103,
+   "bytes": 656256,
+   "far": 36
+  },
+  "depois": {
+   "triangles": 2604,
+   "vertices": 2830,
+   "bytes": 66564,
+   "far": 36
+  }
+ },
+ "motorcycle": {
+  "antes": {
+   "triangles": 308,
+   "vertices": 612,
+   "bytes": 23880,
+   "far": null
+  },
+  "depois": {
+   "triangles": 214,
+   "vertices": 370,
+   "bytes": 7944,
+   "far": null
+  }
+ },
+ "roda-aro": {
+  "antes": {
+   "triangles": 148,
+   "vertices": 260,
+   "bytes": 10248,
+   "far": null
+  },
+  "depois": {
+   "triangles": 40,
+   "vertices": 62,
+   "bytes": 1914,
+   "far": null
+  }
+ },
+ "roda-pneu": {
+  "antes": {
+   "triangles": 256,
+   "vertices": 153,
+   "bytes": 6432,
+   "far": null
+  },
+  "depois": {
+   "triangles": 60,
+   "vertices": 44,
+   "bytes": 1416,
+   "far": null
+  }
+ },
+ "sedan-sedan": {
+  "antes": {
+   "triangles": 15154,
+   "vertices": 13201,
+   "bytes": 560496,
+   "far": 36
+  },
+  "depois": {
+   "triangles": 2758,
+   "vertices": 2854,
+   "bytes": 67920,
+   "far": 36
+  }
+ },
+ "sedan-wagon": {
+  "antes": {
+   "triangles": 14954,
+   "vertices": 16253,
+   "bytes": 662208,
+   "far": 36
+  },
+  "depois": {
+   "triangles": 2500,
+   "vertices": 2725,
+   "bytes": 64050,
+   "far": 36
+  }
+ },
+ "suv-pickup": {
+  "antes": {
+   "triangles": 14254,
+   "vertices": 13256,
+   "bytes": 555684,
+   "far": 36
+  },
+  "depois": {
+   "triangles": 2488,
+   "vertices": 2656,
+   "bytes": 62736,
+   "far": 36
+  }
+ },
+ "suv-suv": {
+  "antes": {
+   "triangles": 14766,
+   "vertices": 16117,
+   "bytes": 656280,
+   "far": 36
+  },
+  "depois": {
+   "triangles": 2656,
+   "vertices": 2825,
+   "bytes": 66786,
+   "far": 36
+  }
+ },
+ "truck": {
+  "antes": {
+   "triangles": 2156,
+   "vertices": 4204,
+   "bytes": 164280,
+   "far": 96
+  },
+  "depois": {
+   "triangles": 1018,
+   "vertices": 1920,
+   "bytes": 40668,
+   "far": 96
+  }
+ },
+ "van-van": {
+  "antes": {
+   "triangles": 13492,
+   "vertices": 16007,
+   "bytes": 642012,
+   "far": 36
+  },
+  "depois": {
+   "triangles": 2298,
+   "vertices": 2364,
+   "bytes": 56340,
+   "far": 36
+  }
+ }
+}

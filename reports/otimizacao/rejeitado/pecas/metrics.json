@@ -1,0 +1,14 @@
+{
+ "parapeito-de-vidro-longe": {
+  "antes": {
+   "triangles": 12,
+   "vertices": 24,
+   "bytes": 840
+  },
+  "depois": {
+   "triangles": 4,
+   "vertices": 8,
+   "bytes": 216
+  }
+ }
+}

@@ -1,0 +1,58 @@
+{
+ "id": "Buildings: masses (tile level)/rowhouse (preset)/preset",
+ "group": "Buildings: masses (tile level)",
+ "name": "rowhouse (preset)",
+ "variation": "preset",
+ "origin": "kit",
+ "source": "src/render/buildings/massing.ts (emitMassing) + massCells.ts (cellMesh)",
+ "build": "merged",
+ "triangles": 26,
+ "vertices": 54,
+ "attributes": "position:3xFloat32=12B normal:4xInt8=4B color:4xUint16=8B facade:2xFloat32=8B facadeGrid:4xUint16=8B glazingSeed:1xFloat32=4B",
+ "bytesPerVertex": 44,
+ "geometryBytes": 2532,
+ "textureBytes": 0,
+ "extraBytes": 0,
+ "totalBytes": 2532,
+ "materials": "MeshStandardMaterial \"building-massing\" [building-massing-lamps-v6-lots-own-walls] (vertex colours, roughness 0.92, metalness 0, opacity 1)",
+ "shader": "patched built-in building-massing-lamps-v6-lots-own-walls",
+ "motion": "",
+ "levels": [
+  {
+   "level": 0,
+   "triangles": 26,
+   "vertices": 54
+  }
+ ],
+ "solids": "1 solids: 1 other",
+ "hiddenTriangles": 0,
+ "shadow": "",
+ "bones": 0,
+ "morphTargets": 0,
+ "morphBytes": 0,
+ "released": false,
+ "floors": 0,
+ "trianglesPerFloor": 0,
+ "preview": false,
+ "effect": false,
+ "sceneCopy": false,
+ "sheet": "images/0099-Buildings-masses-tile-level-rowhouse-preset-preset.png",
+ "model": "",
+ "pieces": [
+  {
+   "label": "masses",
+   "triangles": 26,
+   "vertices": 54,
+   "bytes": 2532,
+   "material": "MeshStandardMaterial \"building-massing\" [building-massing-lamps-v6-lots-own-walls] (vertex colours, roughness 0.92, metalness 0, opacity 1)"
+  }
+ ],
+ "textures": [],
+ "notes": [
+  "left out or laid flat at this level: up to 3 m; the windows drawn by the massing shader"
+ ],
+ "countKey": "building-mass-tile:rowhouse (preset)",
+ "instances": 0,
+ "instancesFrom": "",
+ "totalTriangles": 0
+}

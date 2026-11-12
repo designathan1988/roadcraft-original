@@ -1,0 +1,74 @@
+{
+ "banco-bloco-distante": {
+  "antes": {
+   "triangles": 164,
+   "vertices": 328,
+   "bytes": 12792
+  },
+  "depois": {
+   "triangles": 12,
+   "vertices": 24,
+   "bytes": 1128
+  }
+ },
+ "boca-de-lobo-bloco-distante": {
+  "antes": {
+   "triangles": 108,
+   "vertices": 216,
+   "bytes": 8424
+  },
+  "depois": {
+   "triangles": 12,
+   "vertices": 24,
+   "bytes": 1128
+  }
+ },
+ "caixa-de-correio-bloco-distante": {
+  "antes": {
+   "triangles": 92,
+   "vertices": 164,
+   "bytes": 6456
+  },
+  "depois": {
+   "triangles": 12,
+   "vertices": 24,
+   "bytes": 1128
+  }
+ },
+ "hidrante-bloco-distante": {
+  "antes": {
+   "triangles": 164,
+   "vertices": 243,
+   "bytes": 9732
+  },
+  "depois": {
+   "triangles": 12,
+   "vertices": 24,
+   "bytes": 1128
+  }
+ },
+ "lixeira-bloco-distante": {
+  "antes": {
+   "triangles": 182,
+   "vertices": 237,
+   "bytes": 9624
+  },
+  "depois": {
+   "triangles": 12,
+   "vertices": 24,
+   "bytes": 1128
+  }
+ },
+ "orelhao-bloco-distante": {
+  "antes": {
+   "triangles": 560,
+   "vertices": 401,
+   "bytes": 17796
+  },
+  "depois": {
+   "triangles": 12,
+   "vertices": 24,
+   "bytes": 1128
+  }
+ }
+}

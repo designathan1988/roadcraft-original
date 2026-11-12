@@ -1,0 +1,5 @@
+**Medido, nada mudado.** Os prédios já são desenhados em três níveis (detalhe até ~280 m, fachada com as aberturas desenhadas pelo material, volume ao longe), as paredes coladas aos vizinhos já saem (`partyWalls.ts`), e os elementos dos lotes já são instâncias com nível só de topo.
+
+- **Faces escondidas nas cascas:** em 406 prédios da cidade grande (um a cada 20, 591 mil triângulos de casca no nível de detalhe), nenhum triângulo colado face a face com outro e 24 lascas sem área. Não há faces invisíveis a tirar sem mudar como as paredes são cortadas em volta das aberturas, que é o que já tirou detalhe dos prédios em rodadas anteriores e foi revertido.
+- **Caixas dos lotes:** separar os mourões das paredes empatou (−1,8 % de triângulos, +10 chamadas de desenho): ver Peças de construção.
+- **Terreno:** pouco a ganhar. O chão perto e a laje somam poucos milhares de triângulos no inventário; o chão distante desenha só o trecho do seu índice que está em uso (`drawRange`), e o inventário conta a capacidade inteira (327.680), não o que é desenhado.

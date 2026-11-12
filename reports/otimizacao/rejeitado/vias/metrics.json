@@ -1,0 +1,74 @@
+{
+ "vias-asfalto": {
+  "antes": {
+   "triangles": 36710,
+   "vertices": 24476,
+   "bytes": 1003492
+  },
+  "depois": {
+   "triangles": 11144,
+   "vertices": 8870,
+   "bytes": 350704
+  }
+ },
+ "vias-calcada": {
+  "antes": {
+   "triangles": 49303,
+   "vertices": 48322,
+   "bytes": 1842122
+  },
+  "depois": {
+   "triangles": 19876,
+   "vertices": 18422,
+   "bytes": 708760
+  }
+ },
+ "vias-conjunto": {
+  "antes": {
+   "triangles": 133500,
+   "vertices": 132110,
+   "bytes": 5028520
+  },
+  "depois": {
+   "triangles": 60593,
+   "vertices": 61177,
+   "bytes": 2321222
+  }
+ },
+ "vias-faixas": {
+  "antes": {
+   "triangles": 2963,
+   "vertices": 5711,
+   "bytes": 200530
+  },
+  "depois": {
+   "triangles": 3151,
+   "vertices": 5770,
+   "bytes": 203546
+  }
+ },
+ "vias-gramado": {
+  "antes": {
+   "triangles": 22240,
+   "vertices": 25534,
+   "bytes": 950528
+  },
+  "depois": {
+   "triangles": 9101,
+   "vertices": 8793,
+   "bytes": 335982
+  }
+ },
+ "vias-meio-fio": {
+  "antes": {
+   "triangles": 22284,
+   "vertices": 28067,
+   "bytes": 1031848
+  },
+  "depois": {
+   "triangles": 17321,
+   "vertices": 19322,
+   "bytes": 722230
+  }
+ }
+}

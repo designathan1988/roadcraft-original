@@ -1,0 +1,546 @@
+diff --git a/src/render/buildings/buildingMesh.ts b/src/render/buildings/buildingMesh.ts
+index 8d921d63..71cc3a0c 100644
+--- a/src/render/buildings/buildingMesh.ts
++++ b/src/render/buildings/buildingMesh.ts
+@@ -28,10 +28,10 @@ import {
+   Box3,
+ } from 'three';
+ import {
+-  type Bounds, COLOURED_PARTS, type CellArrays, type CellSelection, FACADE_BYTES, FACADE_FLOATS, FACADE_GRID, FINISH_ATTRIBUTE, type KitBoxes, NORMAL_SHORTS, type ShellGrid, PAINT_ATTRIBUTE, SHELL_MESH, SHELL_NORMAL, SHELL_SHORTS, WEAR_STEPS, cellArrays, finishId, finishWear, octNormal, paintShort, wearByte,
++  type Bounds, COLOURED_PARTS, type CellArrays, type CellSelection, FACADE_BYTES, FACADE_FLOATS, FACADE_GRID, FINISH_ATTRIBUTE, type KitBoxes, NORMAL_SHORTS, type ShellGrid, PAINT_ATTRIBUTE, PAINT_UNIT, SHELL_MESH, SHELL_NORMAL, SHELL_SHORTS, WEAR_STEPS, cellArrays, finishId, finishWear, octNormal, paintShort, wearByte,
+ } from './cellArrays';
+ import {
+-  COVER_INSET, GRIME_REACH, GROUND_ATTRIBUTE, LOOK_FLOATS, MACRO_SCALE, NO_GROUND, SHELL_PARTS, SHELL_PART_FACES, SHELL_PART_KINDS, type ShellPartKind, macroNoiseInto,
++  COVER_INSET, GRIME_REACH, GROUND_ATTRIBUTE, LOOK_FLOATS, MACRO_SCALE, NO_GROUND, SHELL_PARTS, SHELL_PART_FACES, SHELL_PART_KINDS, type ShellPartKind, macroNoiseInto, macroTone,
+ } from './shellParts';
+ import { partLook } from './fade';
+ 
+@@ -650,6 +650,8 @@ interface FacadeStamp {
+   readonly uv: readonly (readonly [number, number])[];
+   /** Offices and shops: their lit rooms take the offices' lamps (`roomLamps.ts`). */
+   readonly office: boolean;
++  /** The detail level's runs: laid with their window grid even with no opening, their wall's tone worked out per pixel (`facadeLevel.ts`). */
++  readonly near: boolean;
+ }
+ 
+ /** A share 0..1 as a byte. */
+@@ -703,8 +705,8 @@ class Shell {
+   /** DO NOT lay only the first two triangles: a lantern's octagonal and 24-sided caps */
+   face(points: readonly (readonly [number, number, number])[], n: readonly [number, number, number], c: Paint, shades?: readonly number[]): void {
+     if (Shell.tap) Shell.tap(points, n, c);
+-    // A run of bays with no opening (kind 0) draws as a wall: it needs no window grid.
+-    const st = this.stamp && this.stamp.kind !== FACADE_KIND.none ? this.stamp : null;
++    // A far run of bays with no opening (kind 0) draws as a wall: it needs no window grid. A detail run keeps it: its tone is the shader's.
++    const st = this.stamp && (this.stamp.kind !== FACADE_KIND.none || this.stamp.near) ? this.stamp : null;
+     const parts = st ? this.runs : this.parts;
+     let part = parts.get(c.finish);
+     if (!part) {
+@@ -743,10 +745,14 @@ class Shell {
+       position[p3] = x + 0; position[p3 + 1] = z + 0; position[p3 + 2] = 0 - y;
+       // No two stretches of wall quite the same tone, and the base weathered.
+       // A vertex's own shade (a streak under a sill darker at its foot, `emitStreak`).
+-      const noise = this.noise;
+-      noise[0] = x / MACRO_SCALE; noise[1] = y / MACRO_SCALE; noise[2] = z / MACRO_SCALE;
+-      macroNoiseInto(noise);
+-      let tone = (0.97 + noise[3]! * 0.06) * (shades?.[i] ?? 1);
++      // A run spans many bays: its corners' noise would smear the drift over it, so the facade's shader lays the tone per pixel.
++      let tone = shades?.[i] ?? 1;
++      if (!st) {
++        const noise = this.noise;
++        noise[0] = x / MACRO_SCALE; noise[1] = y / MACRO_SCALE; noise[2] = z / MACRO_SCALE;
++        macroNoiseInto(noise);
++        tone *= macroTone(noise[3]!);
++      }
+       if (grime) {
+         const t = Math.min(1, Math.max(0, (z - this.ground) / GRIME_REACH));
+         tone *= 0.8 + 0.2 * t * t * (3 - 2 * t);
+@@ -981,6 +987,8 @@ class Emitter {
+   room: ((a: number, h: number) => readonly number[]) | null = null;
+   /** The bay being emitted is flattened (the far level, `emitChunk` `far`): its wall and opening laid by `emitFacadeRuns`. */
+   flat = false;
++  /** The detail level's bay whose wall is one face (a plain wall, or round an opening its pane closes, `paneClosed`): the wall and its streak laid by its run (`emitFacadeRuns`), the rest by `emitBay`. */
++  byRun = false;
+ 
+   put(kind: PartKind, f: BayFace, a: number, h: number, depth: number, sx: number, sy: number, sz: number, colour?: Color, turn = 0): void {
+     // A flattened bay of the far level: what is set into its opening is drawn by the shader (`facadeLevel.ts`).
+@@ -1161,8 +1169,9 @@ function emitBuilding(
+   const volumes = new Map(b.volumes.map((v) => [v.id, v]));
+   // The rooms behind the windows, a type of floor of a block at a time: the interior the cut-open view draws (`interiorAt`, furnished once a type for the blocks).
+   const roomsOf = new Map<readonly Furniture[], Map<number, ReturnType<typeof roomsOfStorey>>>();
+-  // The far level's bays, laid as runs once all are known.
++  // The far level's bays, laid as runs once all are known; the detail level's bays laid by their run (`Emitter.byRun`).
+   const farBays: FarBay[] = [];
++  const nearBays: FarBay[] = [];
+   // One face written again for each bay (nothing keeps it past its bay: `e.room` is let go with it).
+   const face: BayFace = { ax: 0, ay: 0, tx: 0, ty: 0, nx: 0, ny: 0, z0: 0, W: 0, H: 0 };
+   for (const bay of bays) {
+@@ -1216,6 +1225,16 @@ function emitBuilding(
+       e.flat = false;
+       shell.ground = floor;
+     } else {
++      // The detail level: a bay whose wall is one face (a plain wall, or one round an opening its own pane closes) has its wall and streak laid by
++      // its storey's run, as the far level's are (`emitFacadeRuns`): the facade one quad a run of alike bays, not two to four faces a bay.
++      if (!shell.far && b.cutaway === undefined && bay.component !== 'pillar') {
++        const found = openingOf(bay.component, bay.width, bay.height, controls);
++        if (found === null || paneClosed(bay, found, recess)) {
++          const wall = wallOf(v, bay.side, bay.storey);
++          nearBays.push({ bay, wall, opening: found, ground: floor + volumeLift(v), streak: streakOf(bay.component, found, wall) });
++          e.byRun = true;
++        }
++      }
+       e.slot = slotOfBay(b, v, bay, spacesOf, slots);
+       if (b.id >= 0 && b.cutaway === undefined) {
+         // The levels of one type share their pieces (`interiorAt`), and so their rooms, a pane alike looked at once.
+@@ -1233,6 +1252,7 @@ function emitBuilding(
+       shell.ground = floor;
+       e.slot = -1;
+       e.room = null;
++      e.byRun = false;
+     }
+     const ribDepth = controls?.pierDepth ?? (grammar === 'artDecoCrown' ? m(.65) : grammar === 'artDeco' ? m(.3) : 0);
+     if (ribDepth > 0 && bay.index % (controls?.pierEvery ?? 1) === 0) {
+@@ -1249,7 +1269,8 @@ function emitBuilding(
+       e.jamb(face, a1, foot, face.H, depth, 0, e.N(face.tx, face.ty), stone);
+     }
+   }
+-  if (farBays.length > 0) emitFacadeRuns(e, volumes, floor, farBays, frameTrim);
++  if (farBays.length > 0) emitFacadeRuns(e, volumes, floor, farBays, frameTrim, false);
++  if (nearBays.length > 0) emitFacadeRuns(e, volumes, floor, nearBays, frameTrim, true);
+ 
+   // ---- reliefs: the cheeks, head and sill of every face region pushed in or out
+   for (const v of b.volumes) {
+@@ -1472,7 +1493,7 @@ const STREAKED: ReadonlySet<Finish> = new Set<Finish>(['plaster', 'stucco', 'con
+ /** The rain streak under a sill: water off the sill runs down the wall and leaves a darker wash fading downwards */
+ function emitStreak(e: Emitter, f: BayFace, bay: FacadeBay, am: number, w: number, sill: number, wall: Paint): void {
+   // A flattened bay's streak is drawn by the far level's shader, from its run's streak (`streakOf`, `facadeLevel.ts`).
+-  if (e.flat || !STREAKED.has(wall.finish) || sill < m(0.5)) return;
++  if (e.flat || e.byRun || !STREAKED.has(wall.finish) || sill < m(0.5)) return;
+   const h = bayHash(bay);
+   if (h % 3 === 0) return;
+   const reach = Math.min(sill - m(0.05), m(0.7 + (h % 7) * 0.12));
+@@ -1529,7 +1550,8 @@ interface FarRun {
+ }
+ 
+ /** DO NOT lay the far level bay by bay: a storey of like bays is one quad, like storeys over the base one quad, the windows drawn by the shader (`facadeLevel.ts`) */
+-function emitFacadeRuns(e: Emitter, volumes: ReadonlyMap<number, Volume>, floor: number, list: readonly FarBay[], trim: Paint): void {
++/** `near`: the detail level's runs (`Emitter.byRun`): each opening `covered` by its own pane, only the wall round it and its streak drawn by the run. */
++function emitFacadeRuns(e: Emitter, volumes: ReadonlyMap<number, Volume>, floor: number, list: readonly FarBay[], trim: Paint, near: boolean): void {
+   // Bays alike: same block, side, plane, bay and storey size, paint, opening and grime foot.
+   const keyOf = (x: FarBay, kind: number): string => {
+     const { bay, wall, opening: o } = x;
+@@ -1541,7 +1563,7 @@ function emitFacadeRuns(e: Emitter, volumes: ReadonlyMap<number, Volume>, floor:
+   const rows: FarRun[] = [];
+   let last: FarRun | null = null;
+   for (const x of sorted) {
+-    const kind = x.opening ? facadeKind(x.bay.component) + FACADE_STREAK * x.streak : FACADE_KIND.none;
++    const kind = x.opening ? (near ? FACADE_KIND.covered : facadeKind(x.bay.component)) + FACADE_STREAK * x.streak : FACADE_KIND.none;
+     const at = last ? last.first.bay : null;
+     // The key written out only for a bay that starts a run: the next bay is compared field by field, as its key would be.
+     if (last && at && alikeBays(last.first, last.kind, x, kind) && at.level === x.bay.level && x.bay.index === at.index + last.bays
+@@ -1588,6 +1610,7 @@ function emitFacadeRuns(e: Emitter, volumes: ReadonlyMap<number, Volume>, floor:
+       trim: [tc.r, tc.g, tc.b],
+       uv: [[u0, v0], [u1, v0], [u1, v1], [u0, v1]],
+       office: e.building.use === 'commercial' || e.building.use === 'industrial',
++      near,
+     };
+     e.rect(f, 0, f.W, 0, f.H, 0, e.N(f.nx, f.ny), wall);
+     shell.stamp = null;
+@@ -1620,6 +1643,18 @@ function bayHash(bay: FacadeBay): number {
+   return (h ^ (h >>> 13)) >>> 0;
+ }
+ 
++/** An opening with nothing in its recess but its glass and frame (what else it has stands on the wall or out of it: a balcony's slab and
++ *  railing, an awning, fins, folded shutters, a sill): its wall one face and its pane on it, the pane drawing the recess (`glazedRecessed`).
++ *  Not one with a roller shutter or a transom inside, a door, a porch (`recess`), or an opening down to the floor (its threshold is a step of its own). */
++function paneClosed(bay: FacadeBay, found: Opening, recess: number): boolean {
++  if (recess > 0 || found.h0 <= 1e-6) return false;
++  const c = bay.component;
++  const pick = c === 'sashWindow' ? 13 : bayHash(bay) % 20;
++  return ((c === 'window' || c === 'sashWindow') && !(pick >= 9 && pick < 13)) || c === 'wideWindow' || c === 'balcony' || c === 'shopfront'
++    || c === 'brise' || c === 'shutteredWindow' || c === 'gourmet'
++    || ((c === 'frenchWindow' || c === 'bayWindow' || c === 'ribbon') && found.h1 - found.h0 <= m(2.2));
++}
++
+ /** The height of a door canopy's slab (its centre, `half` its thickness) */
+ function canopyAt(head: number, H: number, half: number, over: number): number {
+   return Math.min(head + over, H - m(0.42) - half);
+@@ -1659,27 +1694,20 @@ function emitBay(
+   const tc = trimColour(trim);
+   const found = openingOf(bay.component, W, H, geometry);
+   if (!found) {
+-    if (!e.flat) e.rect(f, 0, W, 0, H, 0, out, wall);
++    if (!e.flat && !e.byRun) e.rect(f, 0, W, 0, H, 0, out, wall);
+     return;
+   }
+   // A porch runs down to the floor and back to the door; its floor is the top of the flight, so it has no sill of its own.
+   const o = recess > 0 ? { ...found, h0: 0, depth: recess } : found;
+   // No two rows alike: some rooms darker, some with the roller shutter part way down - picked from the bay, so stable.
+   const pick = bay.component === 'sashWindow' ? 13 : bayHash(bay) % 20;
+-  const sash = bay.component === 'window' || bay.component === 'sashWindow';
+-  // An opening with nothing in its recess but its glass and frame (what else it has stands on the wall or out of it: a balcony's slab and
+-  // railing, an awning, fins, folded shutters, a sill): its wall one face and its pane on it, the pane drawing the recess (`glazedRecessed`).
+-  // Not one with a roller shutter or a transom inside, a door, or an opening down to the floor (its threshold is a step of its own).
+-  const clear = (sash && !(pick >= 9 && pick < 13)) || bay.component === 'wideWindow' || bay.component === 'balcony' || bay.component === 'shopfront'
+-    || bay.component === 'brise' || bay.component === 'shutteredWindow' || bay.component === 'gourmet'
+-    || ((bay.component === 'frenchWindow' || bay.component === 'bayWindow' || bay.component === 'ribbon') && found.h1 - found.h0 <= m(2.2));
+-  const flush = !e.flat && recess <= 0 && o.h0 > 1e-6 && clear;
++  const flush = !e.flat && paneClosed(bay, found, recess);
+   /** The opening's pane: laid on the wall's face where the opening is clear (`flush`), else at its glass. */
+   const glaze = (kind: 'glass' | 'glassDark', thickness: number): void => {
+     if (flush) e.glazedRecessed(kind, f, am, hm, o.depth, w, h, thickness, tc);
+     else e.glazed(kind, f, am, hm, o.depth, w, h, thickness, tc);
+   };
+-  if (flush) e.rect(f, 0, W, 0, H, 0, out, wall);
++  if (flush && !e.byRun) e.rect(f, 0, W, 0, H, 0, out, wall);
+   // The wall around the hole, then the four reveals into it (a flattened bay's wall is its run's, `emitFacadeRuns`).
+   if (!e.flat && !flush) {
+     e.rect(f, 0, o.a0, 0, H, 0, out, wall);
+@@ -3823,9 +3851,11 @@ function runChunks(shell: Shell): Partial<Record<Finish, RunChunk>> | undefined
+   for (const finish of shell.runOrder) {
+     const part = shell.runs.get(finish)!;
+     if (part.index.length === 0 || !part.facade || !part.grid || !part.opening) continue;
+-    (runs ??= {})[finish] = shell.reused
++    const run = shell.reused
+       ? { ...shellChunkOf(part, true), facade: part.facade.copy(), grid: part.grid.copy(), opening: part.opening.copy() }
+       : { ...shellChunkOf(part, false), facade: part.facade.view(), grid: part.grid.view(), opening: part.opening.view() };
++    // The detail level's runs are drawn over the near shell's maps and wear (`kit.facadeNear`).
++    (runs ??= {})[finish] = shell.far ? run : { ...run, near: true };
+   }
+   return runs;
+ }
+@@ -3870,11 +3900,30 @@ export function shellPartFaces(parts: Readonly<Record<PartKind, PartBatch>>): Pa
+   return shellChunks(shell);
+ }
+ 
+-/** A chunk with its shell's parts laid in its shell again (`shellPartFaces`): what a ruin breaks (`destruction.ts`), and what the specs compare with the shell as it was. */
++/** The detail level's runs of bays as plain shell fragments, each vertex given back the tone its run's shader lays per pixel (`macroTone`). */
++function nearRunsAsShells(runs: BuildingChunk['runs']): [Finish, ShellChunk][] {
++  const out: [Finish, ShellChunk][] = [];
++  const noise = new Float64Array(4);
++  for (const [finish, run] of Object.entries(runs ?? {}) as [Finish, RunChunk][]) {
++    if (!run.near) continue;
++    const paint = run.paint.slice();
++    for (let v = 0; v < run.position.length / 3; v++) {
++      // In three's axes (x, up, -north): the noise's are the map's.
++      noise[0] = run.position[v * 3]! / MACRO_SCALE; noise[1] = -run.position[v * 3 + 2]! / MACRO_SCALE; noise[2] = run.position[v * 3 + 1]! / MACRO_SCALE;
++      macroNoiseInto(noise);
++      const tone = macroTone(noise[3]!);
++      for (let c = 0; c < 3; c++) paint[v * SHELL_SHORTS + c] = Math.min(PAINT_UNIT, Math.round(paint[v * SHELL_SHORTS + c]! * tone));
++    }
++    out.push([finish, { position: run.position, normal: run.normal, paint, index: run.index }]);
++  }
++  return out;
++}
++
++/** A chunk with its shell's parts laid in its shell again (`shellPartFaces`), and its detail runs of bays as plain faces: what a ruin breaks (`destruction.ts`), and what the specs compare with the shell as it was. */
+ export function withShellParts(chunk: BuildingChunk): BuildingChunk {
+-  const laid = shellPartFaces(chunk.parts);
++  const laid = [...Object.entries(shellPartFaces(chunk.parts)) as [Finish, ShellChunk][], ...nearRunsAsShells(chunk.runs)];
+   const shells: Partial<Record<Finish, ShellChunk>> = { ...chunk.shells };
+-  for (const [finish, add] of Object.entries(laid) as [Finish, ShellChunk][]) {
++  for (const [finish, add] of laid) {
+     const was = shells[finish];
+     if (!was) { shells[finish] = add; continue; }
+     const base = was.position.length / 3;
+@@ -3898,7 +3947,11 @@ export function withShellParts(chunk: BuildingChunk): BuildingChunk {
+   const none: PartBatch = { poses: new Float32Array(0), colours: new Float32Array(0), count: 0, looks: new Float32Array(0) };
+   const parts = { ...chunk.parts } as Record<PartKind, PartBatch>;
+   for (const kind of SHELL_PART_KINDS) parts[kind] = none;
+-  return { ...chunk, shells, parts };
++  // The far level's runs stay runs (a ruin is broken from the detail level); the detail's are in the shells now.
++  const farRuns = Object.fromEntries(Object.entries(chunk.runs ?? {}).filter(([, run]) => !run.near)) as Partial<Record<Finish, RunChunk>>;
++  const { runs: _runs, ...rest } = chunk;
++  void _runs;
++  return Object.keys(farRuns).length ? { ...rest, shells, parts, runs: farRuns } : { ...rest, shells, parts };
+ }
+ 
+ /** Each part's and piece of furniture's geometry box as the kit draws them (`cellArrays.ts` works the batches' bounds from them). */
+@@ -3985,7 +4038,10 @@ export function meshesOf(arrays: CellArrays, kit: BuildingKit, ghost: boolean, d
+     // The bounds in the mesh's own frame: on a grid, its points over its step from its origin.
+     g.boundingBox = place ? boxOf(gridBounds(shell.bounds, place)) : boxOf(shell.bounds);
+     g.boundingSphere = place ? sphereOf(gridBounds(shell.bounds, place)) : sphereOf(shell.bounds);
+-    const mesh = new Mesh(g, ghost ? kit.ghostShell : dim ? kit.dimShell : far ? kit.facade : kit.shellMaterial);
++    // The detail level's runs over the near shell's maps and wear, the far level's over the far shell (`facadeLevel.ts`).
++    const runs = far ? (shell.near ? kit.facadeNear : kit.facade) : null;
++    const mesh = new Mesh(g, ghost ? kit.ghostShell : dim ? kit.dimShell : runs ?? kit.shellMaterial);
++    if (shell.near) mesh.userData['facadeNear'] = true;
+     if (place) {
+       mesh.position.set(place.x, place.y, place.z);
+       mesh.scale.setScalar(place.step * 65535);
+diff --git a/src/render/buildings/cellArrays.ts b/src/render/buildings/cellArrays.ts
+index 55af0d9f..8d6dd4a2 100644
+--- a/src/render/buildings/cellArrays.ts
++++ b/src/render/buildings/cellArrays.ts
+@@ -147,6 +147,8 @@ interface ShellArrays {
+   readonly facade?: Uint16Array;
+   readonly grid?: Int16Array;
+   readonly opening?: Uint8Array;
++  /** The detail level's runs (`RunChunk.near`): drawn over the near shell (`kit.facadeNear`). */
++  readonly near?: true;
+ }
+ 
+ interface InstanceArrays {
+@@ -406,7 +408,7 @@ function shellPieces(chunks: readonly BuildingChunk[], of: FragmentsOf, groups?:
+ function shellArrays(chunks: readonly BuildingChunk[], of: FragmentsOf): ShellArrays | null {
+   let vertices = 0;
+   let indices = 0;
+-  let runs = false;
++  let runs = false, near = false;
+   for (const chunk of chunks) {
+     const fragments = of(chunk);
+     if (!fragments) continue;
+@@ -415,7 +417,7 @@ function shellArrays(chunks: readonly BuildingChunk[], of: FragmentsOf): ShellAr
+       if (!part) continue;
+       vertices += part.position.length / 3;
+       indices += part.index.length;
+-      if ('facade' in part) runs = true;
++      if ('facade' in part) { runs = true; if (part.near) near = true; }
+     }
+   }
+   if (indices === 0) return null;
+@@ -446,7 +448,7 @@ function shellArrays(chunks: readonly BuildingChunk[], of: FragmentsOf): ShellAr
+     }
+   }
+   const bounds = shellBounds(position);
+-  return { position, normal, paint, index, bounds, ...(facade && grid && opening ? { facade, grid, opening } : {}) };
++  return { position, normal, paint, index, bounds, ...(facade && grid && opening ? { facade, grid, opening } : {}), ...(near ? { near: true as const } : {}) };
+ }
+ 
+ /** 1 in half float: an instance with no tint of its own. */
+diff --git a/src/render/buildings/chunk.ts b/src/render/buildings/chunk.ts
+index 38b3cd28..ed8ac09b 100644
+--- a/src/render/buildings/chunk.ts
++++ b/src/render/buildings/chunk.ts
+@@ -103,12 +103,14 @@ export interface RunChunk extends ShellChunk {
+   readonly grid: Int16Array;
+   /** Each vertex's opening and frame colour, `FACADE_BYTES` bytes. */
+   readonly opening: Uint8Array;
++  /** The detail level's runs (their openings closed by their own panes): drawn over the near shell (`kit.facadeNear`). */
++  readonly near?: true;
+ }
+ 
+ export interface BuildingChunk {
+   /** The shell, one fragment per finish it uses; at the far level every face but the runs of bays with openings. */
+   readonly shells: Readonly<Partial<Record<Finish, ShellChunk>>>;
+-  /** The far level only: its runs of bays with openings, one fragment per finish, drawn by the facade's material; none on the detail. */
++  /** Its runs of bays, one fragment per finish, drawn by the facade's material: the far level's with openings, the detail level's every wall laid as one face a run. */
+   readonly runs?: Readonly<Partial<Record<Finish, RunChunk>>>;
+   readonly parts: Readonly<Record<PartKind, PartBatch>>;
+   /** Furniture of a cut-open interior, by kind; absent when none is drawn. */
+diff --git a/src/render/buildings/facadeLevel.ts b/src/render/buildings/facadeLevel.ts
+index 78af82b4..d51abceb 100644
+--- a/src/render/buildings/facadeLevel.ts
++++ b/src/render/buildings/facadeLevel.ts
+@@ -2,11 +2,13 @@ import type { MeshStandardMaterial } from 'three';
+ import { m } from '@world/units';
+ import { PULSE_GLSL, ROOM_SEEN_GLSL, type MassingUniforms } from './massingMaterial';
+ import { ROOM_LAMP_GLSL } from './roomLamps';
++import { MACRO_SCALE, SHELL_NOISE_GLSL } from './shellParts';
+ 
+ /** THE BUILDINGS' FAR LEVEL (L1): the same building emitted again with its walls as runs of bays (`emitChunk` `far`) */
+ 
+ /** How the far level's shader fills a bay's opening (`buildingMesh.ts` `facadeKind` writes the same numbers), after `emitBay`'s panes */
+-export const FACADE_KIND = { none: 0, window: 1, clear: 2, darkQuarter: 3, darkFifth: 4, door: 5, shutterDoor: 6 } as const;
++export const FACADE_KIND = { none: 0, window: 1, clear: 2, darkQuarter: 3, darkFifth: 4, door: 5, shutterDoor: 6, covered: 7 } as const;
++// `covered`: the detail level's opening closed by its own pane (`glazedRecessed`): the run draws the wall round it and its streak alone.
+ /** Added to a vertex's kind where its run's bays go against its face's own horizontal (`shellUv`'s t): the shader turns the derived direction round. */
+ export const FACADE_FLIP = 8;
+ /** Its run's rain streak times this added to a vertex's kind (`buildingMesh.ts` `streakOf`): the shader darkens the wall under each sill as `emitStreak` does. */
+@@ -52,6 +54,7 @@ float facadeStreak = 1.0;
+ vec3 facadeLamp = vec3(1.0);
+ ${ROOM_LAMP_GLSL}
+ ${PULSE_GLSL('facade')}
++${SHELL_NOISE_GLSL}
+ // buildingMesh.ts bayHash, to the bit: Math.imul is a uint product, >>> a uint shift.
+ uint facadeBayHash(int volume, int level, int side, int index, int x7, int y7) {
+   uint h = (uint(volume + 1) * 0x27d4eb2du) ^ (uint(level + 7) * 0x165667b1u) ^ (uint(side + 3) * 0x3c6ef372u) ^ (uint(index + 11) * 0x85ebca6bu);
+@@ -77,19 +80,23 @@ float facadeSub = smoothstep(0.25, 0.5, max(facadeFoot.x, facadeFoot.y));
+ int facadeRaw = int(vFacadeKey.x + 0.5);
+ int facadeKind = facadeRaw & ${FACADE_FLIP - 1};
+ uint facadeHash = 0u;
++// The wall's drift of tone over the facade (\`Shell.face\` lays it on every other vertex, \`macroTone\`): a run spans many bays, so per pixel.
++float facadeTone = 0.97 + shellMacroNoise(vec3(vFacadeWorld.x, -vFacadeWorld.z, vFacadeWorld.y) / ${num(MACRO_SCALE)}) * 0.06;
++if (facadeKind == ${K.none}) diffuseColor.rgb *= facadeTone;
+ if (facadeKind > ${K.none}) {
+   vec2 cell = vFacadeGrid.xy;
+   float bayW = max(vFacadeGrid.z, 0.01), storeyH = max(vFacadeGrid.w, 0.01);
+   vec4 o = vFacadeOpening;
+   float fu = ${num(FRAME)} / bayW, fh = ${num(FRAME)} / storeyH;
+-  float paneAcross = facadePulse(cell.x, facadeFoot.x, o.x + fu, o.y - fu);
+-  float hole = facadePulse(cell.x, facadeFoot.x, o.x, o.y) * facadePulse(cell.y, facadeFoot.y, o.z, o.w);
+-  float pane = paneAcross * facadePulse(cell.y, facadeFoot.y, o.z + fh, o.w - fh);
+   // The bay under the pixel: its centre on the plan (the piece's middle on its facade line), and its pick.
+   float index = floor(cell.x), level = floor(cell.y);
+   vec2 centre = vec2(vFacadeWorld.x, -vFacadeWorld.z) + vFacadeKey.zw * (bayW * (index + 0.5 - cell.x));
+   int key = int(vFacadeKey.y + 0.5);
+   facadeHash = facadeBayHash(key / 4, int(level), key - (key / 4) * 4, int(index), int(floor(centre.x * 7.0 + 0.5)), int(floor(centre.y * 7.0 + 0.5)));
++  if (facadeKind != ${K.covered}) {
++  float paneAcross = facadePulse(cell.x, facadeFoot.x, o.x + fu, o.y - fu);
++  float hole = facadePulse(cell.x, facadeFoot.x, o.x, o.y) * facadePulse(cell.y, facadeFoot.y, o.z, o.w);
++  float pane = paneAcross * facadePulse(cell.y, facadeFoot.y, o.z + fh, o.w - fh);
+   float darkNear = facadeKind == ${K.window} ? (facadeHash % 20u < 5u ? 1.0 : 0.0)
+     : facadeKind == ${K.darkQuarter} ? (facadeHash % 4u == 0u ? 1.0 : 0.0)
+     : facadeKind == ${K.darkFifth} ? (facadeHash % 5u == 0u ? 1.0 : 0.0) : 0.0;
+@@ -117,6 +124,7 @@ if (facadeKind > ${K.none}) {
+     facadeGlass = max(pane - facadeSolid, 0.0);
+   }
+   facadeWall = 1.0 - facadeFrame - facadeGlass - facadeSolid;
++  }
+   // The rain streak under the sill (\`emitStreak\`): two bays in three, darkest at the sill, fading down its reach.
+   int streak = facadeRaw / ${FACADE_STREAK};
+   if (streak > 0) {
+@@ -133,7 +141,7 @@ if (facadeKind > ${K.none}) {
+   // The pane scatters next to nothing, as the detail's (\`glassRoom.ts\`: its albedo times 0.06): its sky reflection and the room behind it show (emissive). DO NOT draw it its base colour: black glass read pale blue at this level (the player, 2026-10-20).
+   vec3 glassColour = mix(FACADE_GLASS, FACADE_GLASS_DARK, facadeDark) * 0.06;
+   vec3 solidColour = mix(FACADE_DOOR, FACADE_SHUTTER, facadeShutter);
+-  diffuseColor.rgb = diffuseColor.rgb * facadeWall * facadeStreak + vFacadeTrim.rgb * facadeFrame + glassColour * facadeGlass + solidColour * facadeSolid;
++  diffuseColor.rgb = diffuseColor.rgb * facadeTone * facadeWall * facadeStreak +vFacadeTrim.rgb * facadeFrame + glassColour * facadeGlass + solidColour * facadeSolid;
+   // Its room lit at night: the share awake once the window is under a pixel, its lamp from the mix the detailed panes draw from.
+   // By day (\`massingNight\` 0, a uniform: every pixel takes the same branch) no window glows, so none is worked out.
+   if (massingNight > 0.0) {
+@@ -148,9 +156,10 @@ if (facadeKind > ${K.none}) {
+ }
+ 
+ /** Made once with the kit: the far level's material, the shell's own (`finishes.ts`: every finish's maps, weathering, lots), its openings drawn from the window grid with the panes' looks and the massing's night uniforms */
+-export function createFacadeMaterial(base: MeshStandardMaterial, p: FacadePanes, uniforms: MassingUniforms): MeshStandardMaterial {
++/** `name`: the far level's ('building-facade', the far shell under it) or the detail level's ('building-facade-near', the near shell's maps and wear under it, its openings `covered` by their panes). */
++export function createFacadeMaterial(base: MeshStandardMaterial, p: FacadePanes, uniforms: MassingUniforms, name = 'building-facade'): MeshStandardMaterial {
+   const material = base.clone();
+-  material.name = 'building-facade';
++  material.name = name;
+   const baseCompile = base.onBeforeCompile.bind(base);
+   const baseKey = base.customProgramCacheKey.bind(base);
+   const solid = (k: 'roughness' | 'metalness' | 'envMapIntensity'): string =>
+@@ -205,6 +214,6 @@ totalEmissiveRadiance += (facadeLamp * massingNight * facadeLit + ${ROOM_SEEN_GL
+     // The shell's own after: each of its additions lands right after its chunk, so before these (its finish's map, roughness, metalness and relief first).
+     baseCompile(shader, renderer);
+   };
+-  material.customProgramCacheKey = () => `${baseKey()}-facade-level-v7`;
++  material.customProgramCacheKey = () => `${baseKey()}-facade-level-v8`;
+   return material;
+ }
+diff --git a/src/render/buildings/fade.ts b/src/render/buildings/fade.ts
+index 5a1a0c55..95fceca1 100644
+--- a/src/render/buildings/fade.ts
++++ b/src/render/buildings/fade.ts
+@@ -20,7 +20,7 @@ export function fadeMeshes(root: Object3D, kit: BuildingKit, faded: boolean): vo
+     if (name === SHELL_MESH) {
+       const mesh = o as Mesh;
+       // The facade level's shells (their window grid) back to their own material (`facadeLevel.ts`).
+-      const solid = mesh.geometry.hasAttribute('facadeCell') ? kit.facade : kit.shellMaterial;
++      const solid = mesh.geometry.hasAttribute('facadeCell') ? (mesh.userData['facadeNear'] === true ? kit.facadeNear : kit.facade) : kit.shellMaterial;
+       mesh.material = faded ? kit.dimShell : solid;
+       mesh.renderOrder = faded ? 1 : 0;
+       return;
+diff --git a/src/render/buildings/kit.ts b/src/render/buildings/kit.ts
+index 4cd64df3..f1138f63 100644
+--- a/src/render/buildings/kit.ts
++++ b/src/render/buildings/kit.ts
+@@ -168,6 +168,8 @@ export interface BuildingKit {
+   readonly massingBase: MeshStandardMaterial;
+   /** The facade level (L1): the shells with their openings drawn by the shader, every finish (`facadeLevel.ts`). */
+   readonly facade: MeshStandardMaterial;
++  /** The detail level's runs of bays: the near shell's maps and wear, its openings closed by their own panes (`facadeLevel.ts` `covered`). */
++  readonly facadeNear: MeshStandardMaterial;
+   /** Parts that cast shadows; the small ones do not, to spare the shadow pass. */
+   readonly castsShadow: ReadonlySet<PartKind>;
+   /** The furniture models, built the first time an interior is drawn. */
+@@ -613,7 +615,9 @@ objectNormal = shellUnfold(${SHELL_NORMAL});
+   const panes = { glass: material.glass, glassDark: material.glassDark, door: material.door, shutter: material.shutter, frame: material.frame } as FacadePanes;
+   // The facade level stands past the detail's reach (`massCells.ts` FINE_PIXELS, ~280 m at 1080p), where a finish's 15 cm features are half a pixel: its walls drawn by the shell's far program, its windows, frames and panes as they are. DO NOT give it the near program: its maps, normal frame and wear weighed on every wall of every facade cell of the view for texture no pixel resolved.
+   const facade = createFacadeMaterial(createShellMaterial({ far: true }, anisotropy), panes, { roomsAwake, massingNight, roomDaylight });
+-  const unique = new Set<Material>([...Object.values(material), shell, ruinShell, farShell, dimShell, facade, ghostShell, ghostParts, dimParts, massing, massingBase]);
++  // The detail level's walls laid as runs of bays (`emitFacadeRuns` near): the near shell's own program under the window grid, its openings closed by their panes.
++  const facadeNear = createFacadeMaterial(createShellMaterial({}, anisotropy), panes, { roomsAwake, massingNight, roomDaylight }, 'building-facade-near');
++  const unique = new Set<Material>([...Object.values(material), shell, ruinShell, farShell, dimShell, facade, facadeNear, ghostShell, ghostParts, dimParts, massing, massingBase]);
+   // LEVELS OF DETAIL: each kind's finest, then lighter ones by what they leave out (a frame's depth, a blade's thickness)
+   const levels = {} as Record<PartKind, PartLevel[]>;
+   for (const kind of PART_KINDS) levels[kind] = [{ geometry: geometry[kind], triangles: trianglesOf(geometry[kind]), error: [0, 0, 0] }];
+@@ -682,6 +686,7 @@ objectNormal = shellUnfold(${SHELL_NORMAL});
+     massing,
+     massingBase,
+     facade,
++    facadeNear,
+     finishTone: finishAlbedo(),
+     // Glass, doors and shutters close the openings for the sun
+     // And the shell's parts, as the shell they were laid in casts.
+diff --git a/src/render/buildings/shellBatch.ts b/src/render/buildings/shellBatch.ts
+index 66f921b1..28134be8 100644
+--- a/src/render/buildings/shellBatch.ts
++++ b/src/render/buildings/shellBatch.ts
+@@ -12,9 +12,9 @@ import { GpuBatchedMesh } from './gpuBatchedMesh';
+ // BatchedMesh: "reduce the number of draw calls"); its instances take identity matrices, the pieces' vertices already in the
+ // world, and a piece is hidden as its cell is.
+ 
+-/** The three attribute sets a cell's shells come in: the detail level's plain walls, the facade level's plain ones, and its runs
+- *  of bays with openings (their own window grid attributes). One batch each, one draw each. */
+-type ShellSet = 'detail' | 'facade' | 'runs';
++/** The four attribute sets a cell's shells come in: the detail level's plain faces and its runs of bays (their window grid over the near shell),
++ *  the facade level's plain ones and its runs of bays with openings (their own window grid attributes). One batch each, one draw each. */
++type ShellSet = 'detail' | 'detailRuns' | 'facade' | 'runs';
+ 
+ const IDENTITY = new Matrix4();
+ 
+@@ -77,7 +77,7 @@ export class ShellBatch {
+         continue;
+       }
+       const runs = source.hasAttribute('facadeCell');
+-      const set: ShellSet = kind === 'cell' ? 'detail' : runs ? 'runs' : 'facade';
++      const set: ShellSet = kind === 'cell' ? (runs ? 'detailRuns' : 'detail') : runs ? 'runs' : 'facade';
+       const target = this.batches.find((one) => one.set === set)!;
+       const geometry = worldGeometry(mesh, this.scratch);
+       const vertices = geometry.getAttribute('position').count;
+@@ -167,8 +167,9 @@ export class ShellBatch {
+     this.faded = faded;
+     const material = faded ? this.kit.dimShell : this.kit.shellMaterial;
+     const facadeMaterial = faded ? this.kit.dimShell : this.kit.facade;
++    const nearMaterial = faded ? this.kit.dimShell : this.kit.facadeNear;
+     for (const batch of this.batches) {
+-      batch.mesh.material = batch.set === 'detail' ? material : facadeMaterial;
++      batch.mesh.material = batch.set === 'detail' ? material : batch.set === 'detailRuns' ? nearMaterial : facadeMaterial;
+       // Faded (transparent) shells drawn back to front; opaque ones unsorted (`makeBatches`).
+       batch.mesh.sortObjects = faded;
+     }
+@@ -216,6 +217,7 @@ export class ShellBatch {
+     };
+     return [
+       make('detail', this.detailGroup, this.kit.shellMaterial),
++      make('detailRuns', this.detailGroup, this.kit.facadeNear),
+       make('facade', this.facadeGroup, this.kit.facade),
+       make('runs', this.facadeGroup, this.kit.facade),
+     ];
+diff --git a/src/render/buildings/shellParts.ts b/src/render/buildings/shellParts.ts
+index 4e4b6f2e..1010fff1 100644
+--- a/src/render/buildings/shellParts.ts
++++ b/src/render/buildings/shellParts.ts
+@@ -120,10 +120,8 @@ export const SHELL_PART_FACES: Readonly<Record<ShellPartKind, readonly ShellPart
+ /** A number as a GLSL float literal. */
+ const glsl = (x: number): string => x.toFixed(6);
+ 
+-/** GLSL of the shell's vertex shader drawn instanced (`finishes.ts`): `macroNoiseInto` to the bit (Math.imul is a uint product, >>> a uint shift). */
+-export const SHELL_PART_PARS = `
+-#ifdef USE_INSTANCING
+-attribute float ${GROUND_ATTRIBUTE};
++/** GLSL: `macroNoiseInto` to the bit (Math.imul is a uint product, >>> a uint shift): `shellMacroNoise(p)`, p in `MACRO_SCALE`s. */
++export const SHELL_NOISE_GLSL = `
+ // An int's two's complement bits as a uint, without converting a negative int (whose conversion GLSL ES leaves to the driver).
+ uint shellBits(int i) { return i >= 0 ? uint(i) : uint(i + 2147483647) + 2147483649u; }
+ float shellNoiseHash(ivec3 c) {
+@@ -142,7 +140,16 @@ float shellMacroNoise(vec3 p) {
+   float ab1 = p1a + (p1b - p1a) * f.x, cd1 = p1c + (p1d - p1c) * f.x;
+   float plane0 = ab0 + (cd0 - ab0) * f.y, plane1 = ab1 + (cd1 - ab1) * f.y;
+   return plane0 + (plane1 - plane0) * f.z;
+-}
++}`;
++
++/** The tone `Shell.face` lays on a vertex from its noise: `macroTone`; a facade run's walls take it per pixel (`facadeLevel.ts`). */
++export const macroTone = (noise: number): number => 0.97 + noise * 0.06;
++
++/** GLSL of the shell's vertex shader drawn instanced (`finishes.ts`). */
++export const SHELL_PART_PARS = `
++#ifdef USE_INSTANCING
++attribute float ${GROUND_ATTRIBUTE};
++${SHELL_NOISE_GLSL}
+ #endif`;
+ 
+ /** GLSL after `begin_vertex`: a paving's sides stand `COVER_INSET` in from its top's edge whatever its size (its model's uv.x marks them). */

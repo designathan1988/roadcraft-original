@@ -1,0 +1,242 @@
+{
+ "arbusto-rasteiro": {
+  "antes": {
+   "triangles": 60,
+   "vertices": 180,
+   "bytes": 6480
+  },
+  "depois": {
+   "triangles": 39,
+   "vertices": 36,
+   "bytes": 666
+  }
+ },
+ "broadleafTall-medio": {
+  "antes": {
+   "triangles": 180,
+   "vertices": 472,
+   "bytes": 19576
+  },
+  "depois": {
+   "triangles": 85,
+   "vertices": 221,
+   "bytes": 3400
+  }
+ },
+ "broadleafTall": {
+  "antes": {
+   "triangles": 180,
+   "vertices": 472,
+   "bytes": 19576
+  },
+  "depois": {
+   "triangles": 179,
+   "vertices": 469,
+   "bytes": 7124
+  }
+ },
+ "bush-medio": {
+  "antes": {
+   "triangles": 112,
+   "vertices": 304,
+   "bytes": 12160
+  },
+  "depois": {
+   "triangles": 36,
+   "vertices": 92,
+   "bytes": 1456
+  }
+ },
+ "bush": {
+  "antes": {
+   "triangles": 112,
+   "vertices": 304,
+   "bytes": 12160
+  },
+  "depois": {
+   "triangles": 112,
+   "vertices": 304,
+   "bytes": 4352
+  }
+ },
+ "bushFlowering-medio": {
+  "antes": {
+   "triangles": 112,
+   "vertices": 304,
+   "bytes": 12160
+  },
+  "depois": {
+   "triangles": 36,
+   "vertices": 92,
+   "bytes": 1456
+  }
+ },
+ "bushFlowering": {
+  "antes": {
+   "triangles": 112,
+   "vertices": 304,
+   "bytes": 12160
+  },
+  "depois": {
+   "triangles": 112,
+   "vertices": 304,
+   "bytes": 4352
+  }
+ },
+ "cypress-medio": {
+  "antes": {
+   "triangles": 158,
+   "vertices": 334,
+   "bytes": 17344
+  },
+  "depois": {
+   "triangles": 88,
+   "vertices": 194,
+   "bytes": 3868
+  }
+ },
+ "cypress": {
+  "antes": {
+   "triangles": 158,
+   "vertices": 334,
+   "bytes": 17344
+  },
+  "depois": {
+   "triangles": 158,
+   "vertices": 334,
+   "bytes": 7088
+  }
+ },
+ "hedge-medio": {
+  "antes": {
+   "triangles": 120,
+   "vertices": 320,
+   "bytes": 13040
+  },
+  "depois": {
+   "triangles": 40,
+   "vertices": 100,
+   "bytes": 1640
+  }
+ },
+ "hedge": {
+  "antes": {
+   "triangles": 120,
+   "vertices": 320,
+   "bytes": 13040
+  },
+  "depois": {
+   "triangles": 120,
+   "vertices": 320,
+   "bytes": 4720
+  }
+ },
+ "ipePink-medio": {
+  "antes": {
+   "triangles": 240,
+   "vertices": 612,
+   "bytes": 26136
+  },
+  "depois": {
+   "triangles": 126,
+   "vertices": 324,
+   "bytes": 5076
+  }
+ },
+ "ipePink": {
+  "antes": {
+   "triangles": 240,
+   "vertices": 612,
+   "bytes": 26136
+  },
+  "depois": {
+   "triangles": 240,
+   "vertices": 612,
+   "bytes": 9720
+  }
+ },
+ "ipeYellow-medio": {
+  "antes": {
+   "triangles": 240,
+   "vertices": 612,
+   "bytes": 26136
+  },
+  "depois": {
+   "triangles": 126,
+   "vertices": 324,
+   "bytes": 5076
+  }
+ },
+ "ipeYellow": {
+  "antes": {
+   "triangles": 240,
+   "vertices": 612,
+   "bytes": 26136
+  },
+  "depois": {
+   "triangles": 240,
+   "vertices": 612,
+   "bytes": 9720
+  }
+ },
+ "oak-medio": {
+  "antes": {
+   "triangles": 282,
+   "vertices": 766,
+   "bytes": 30616
+  },
+  "depois": {
+   "triangles": 116,
+   "vertices": 308,
+   "bytes": 4576
+  }
+ },
+ "oak": {
+  "antes": {
+   "triangles": 282,
+   "vertices": 766,
+   "bytes": 30616
+  },
+  "depois": {
+   "triangles": 282,
+   "vertices": 766,
+   "bytes": 10952
+  }
+ },
+ "palm-medio": {
+  "antes": {
+   "triangles": 480,
+   "vertices": 930,
+   "bytes": 38280
+  },
+  "depois": {
+   "triangles": 388,
+   "vertices": 654,
+   "bytes": 10968
+  }
+ },
+ "palm": {
+  "antes": {
+   "triangles": 480,
+   "vertices": 930,
+   "bytes": 38280
+  },
+  "depois": {
+   "triangles": 388,
+   "vertices": 654,
+   "bytes": 10968
+  }
+ },
+ "pedra": {
+  "antes": {
+   "triangles": 36,
+   "vertices": 108,
+   "bytes": 4752
+  },
+  "depois": {
+   "triangles": 36,
+   "vertices": 108,
+   "bytes": 1296
+  }
+ }
+}
