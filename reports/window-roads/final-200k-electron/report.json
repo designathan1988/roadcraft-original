@@ -1,0 +1,617 @@
+{
+  "out": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\reports\\window-roads\\final-200k-electron",
+  "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "console": [
+    "warning: %cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security\n  Policy set or a policy with \"unsafe-eval\" enabled. This exposes users of\n  this app to unnecessary security risks.\n\nFor more information and help, consult\nhttps://electronjs.org/docs/tutorial/security.\nThis warning will not show up\nonce the app is packaged.",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: gardens-far-cells [MeshStandardMaterial] (34 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: gardens-far-cells [MeshDepthMaterial] (33 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: street-light-lamps-far-cells [MeshBasicMaterial] (32 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: street-light-pools-far-cells [MeshBasicMaterial] (31 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: street-light-beams-far-cells [street-light-beam] (30 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: street-lights-near-far-cells [MeshStandardMaterial] (29 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: street-lights-mid-mid-far-cells [MeshStandardMaterial] (28 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: street-lights-shadow-far-cells [MeshStandardMaterial] (27 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: street-lights-shadow-far-cells [MeshDepthMaterial] (26 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: street-lights-far-far-cells [MeshStandardMaterial] (25 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: street-lights-far-far-cells [MeshDepthMaterial] (24 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: street-bins-near-unsimplified-far-cells [MeshStandardMaterial] (23 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: street-bins-near-unsimplified-far-cells [MeshDepthMaterial] (22 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: benches-near-unsimplified-far-cells [MeshStandardMaterial] (21 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: benches-near-unsimplified-far-cells [MeshDepthMaterial] (20 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: hydrants-near-unsimplified-far-cells [MeshStandardMaterial] (19 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: hydrants-near-unsimplified-far-cells [MeshDepthMaterial] (18 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: utility-poles-cast [MeshStandardMaterial] (17 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: utility-poles-cast [MeshDepthMaterial] (16 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: utility-caps-cast [MeshStandardMaterial] (15 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: utility-insulators-cast [MeshStandardMaterial] (14 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: utility-lamp-arms-cast [MeshStandardMaterial] (13 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: utility-lamp-heads-cast [MeshStandardMaterial] (12 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: utility-lamp-lenses-cast [MeshBasicMaterial] (11 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: utility-lamp-pools-cast [MeshBasicMaterial] (10 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: utility-lamp-beams-cast [street-light-beam] (9 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: utility-wires-cast [MeshStandardMaterial] (8 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: utility-wires-cast [MeshDepthMaterial] (7 compiles in flight)",
+    "warning: [uploads] a program was not built in 10000 ms: drawn as it is: Group [MeshStandardMaterial, MeshStandardMaterial, MeshStandardMaterial, MeshStandardMaterial] (1 compiles in flight)"
+  ],
+  "steps": [
+    {
+      "i": 0,
+      "step": "eval",
+      "value": "started"
+    },
+    {
+      "i": 1,
+      "step": "until",
+      "value": {
+        "name": "city applied",
+        "seconds": 231.884
+      }
+    },
+    {
+      "i": 2,
+      "step": "until",
+      "value": {
+        "name": "city shown",
+        "seconds": 51.419
+      }
+    },
+    {
+      "i": 3,
+      "step": "until",
+      "value": {
+        "name": "curtain gone",
+        "seconds": 0.455
+      }
+    },
+    {
+      "i": 4,
+      "step": "press"
+    },
+    {
+      "i": 5,
+      "step": "press"
+    },
+    {
+      "i": 6,
+      "step": "wait"
+    },
+    {
+      "i": 7,
+      "step": "eval",
+      "value": 1
+    },
+    {
+      "i": 8,
+      "step": "setView"
+    },
+    {
+      "i": 9,
+      "step": "wait"
+    },
+    {
+      "i": 10,
+      "step": "shot",
+      "file": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\reports\\window-roads\\final-200k-electron\\10-map.png"
+    },
+    {
+      "i": 11,
+      "step": "record"
+    },
+    {
+      "i": 12,
+      "step": "wait"
+    },
+    {
+      "i": 13,
+      "step": "recordEnd",
+      "value": {
+        "name": "map",
+        "frames": 5,
+        "seconds": 4.452,
+        "p50": 1000.3,
+        "p95": 1000.4,
+        "p99": 1000.4,
+        "max": 1000,
+        "hitches": 5,
+        "dropped": 262,
+        "vsyncMs": 16.67,
+        "worst": [
+          [
+            1451,
+            1000
+          ],
+          [
+            3451,
+            1000
+          ],
+          [
+            2451,
+            1000
+          ],
+          [
+            700,
+            750
+          ],
+          [
+            0,
+            700
+          ]
+        ],
+        "game": {
+          "frames": 7,
+          "long": 7,
+          "total": {
+            "p50": 535.2,
+            "p95": 656.3,
+            "max": 656.3
+          },
+          "systems": {
+            "panels": {
+              "p50": 0,
+              "p95": 0,
+              "max": 0
+            },
+            "camera": {
+              "p50": 0,
+              "p95": 0,
+              "max": 0
+            },
+            "topology": {
+              "p50": 0,
+              "p95": 0,
+              "max": 0
+            },
+            "simulation": {
+              "p50": 0.1,
+              "p95": 0.1,
+              "max": 0.1
+            },
+            "roadNetwork": {
+              "p50": 0,
+              "p95": 0,
+              "max": 0
+            },
+            "buildings": {
+              "p50": 0,
+              "p95": 0,
+              "max": 0
+            },
+            "poles": {
+              "p50": 0,
+              "p95": 0,
+              "max": 0
+            },
+            "drawing": {
+              "p50": 535,
+              "p95": 656,
+              "max": 656
+            },
+            "overlay": {
+              "p50": 0.1,
+              "p95": 0.1,
+              "max": 0.1
+            }
+          }
+        },
+        "gpu": {
+          "supported": true,
+          "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "n": 228,
+          "p50": 77.84,
+          "p95": 127.72,
+          "p99": 292.6,
+          "max": 334.67,
+          "over": 216,
+          "skipped": 0,
+          "disjoint": 0
+        }
+      }
+    },
+    {
+      "i": 14,
+      "step": "eval",
+      "value": "{\"stepMs\":135.71520533390128,\"lastStepMs\":20.87809999997262,\"vehicles\":25}"
+    },
+    {
+      "i": 15,
+      "step": "memory",
+      "value": {
+        "buildings": 249122,
+        "segments": 52333,
+        "lots": 249122,
+        "heapMB": 1085.8,
+        "geometryMB": 547,
+        "geometryCpuMB": 123.7,
+        "textureMB": 545.2,
+        "targetMB": 265,
+        "buildingDetailMB": 0,
+        "drawCalls": 952,
+        "builtTriangles": 119208,
+        "drawnTriangles": 24894412,
+        "programs": 230,
+        "cpuByName": [
+          "building-massing-tile 28.2",
+          "building-concrete 8.4",
+          "flat-world-far 7.7",
+          "building-fin 5",
+          "asphalt+footway+curb-ramp+median-paved+kerb+median-kerb+median-planting-far 2.9",
+          "utility-insulators-cast 2.9",
+          "building-brise 2.5",
+          "building-roofRailing 2.1"
+        ],
+        "gpuByName": [
+          "building-massing-tile 246.6",
+          "building-massing-base 69.3",
+          "building-massing 51",
+          "road-far-network 39",
+          "building-massing-plate 29.9",
+          "asphalt+footway+curb-ramp+median-paved+kerb+median-kerb+median-planting-far 11.8",
+          "building-concrete 8.4",
+          "flat-world-far 7.7",
+          "building-fin 5",
+          "asphalt+footway+curb-ramp+median-paved+kerb+median-kerb+median-planting 3.7",
+          "utility-insulators-cast 2.9",
+          "car-bus-bus-body@# 2.5"
+        ],
+        "heapKBPerBuilding": 4
+      }
+    },
+    {
+      "i": 16,
+      "step": "setView"
+    },
+    {
+      "i": 17,
+      "step": "wait"
+    },
+    {
+      "i": 18,
+      "step": "shot",
+      "file": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\reports\\window-roads\\final-200k-electron\\18-district.png"
+    },
+    {
+      "i": 19,
+      "step": "record"
+    },
+    {
+      "i": 20,
+      "step": "wait"
+    },
+    {
+      "i": 21,
+      "step": "recordEnd",
+      "value": {
+        "name": "district",
+        "frames": 5,
+        "seconds": 4.618,
+        "p50": 1000.4,
+        "p95": 1000.5,
+        "p99": 1000.5,
+        "max": 1000,
+        "hitches": 5,
+        "dropped": 272,
+        "vsyncMs": 16.67,
+        "worst": [
+          [
+            617,
+            1000
+          ],
+          [
+            3618,
+            1000
+          ],
+          [
+            1617,
+            1000
+          ],
+          [
+            2618,
+            1000
+          ],
+          [
+            0,
+            617
+          ]
+        ],
+        "game": {
+          "frames": 6,
+          "long": 6,
+          "total": {
+            "p50": 353.2,
+            "p95": 481.1,
+            "max": 481.1
+          },
+          "systems": {
+            "panels": {
+              "p50": 0,
+              "p95": 0,
+              "max": 0
+            },
+            "camera": {
+              "p50": 0,
+              "p95": 0,
+              "max": 0
+            },
+            "topology": {
+              "p50": 0,
+              "p95": 0,
+              "max": 0
+            },
+            "simulation": {
+              "p50": 0.1,
+              "p95": 0.1,
+              "max": 0.1
+            },
+            "roadNetwork": {
+              "p50": 0,
+              "p95": 0,
+              "max": 0
+            },
+            "buildings": {
+              "p50": 0,
+              "p95": 0,
+              "max": 0
+            },
+            "poles": {
+              "p50": 0,
+              "p95": 0,
+              "max": 0
+            },
+            "drawing": {
+              "p50": 353.1,
+              "p95": 480.9,
+              "max": 480.9
+            },
+            "overlay": {
+              "p50": 0,
+              "p95": 0.1,
+              "max": 0.1
+            }
+          }
+        },
+        "gpu": {
+          "supported": true,
+          "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "n": 25,
+          "p50": 83.76,
+          "p95": 175.38,
+          "p99": 283.91,
+          "max": 283.91,
+          "over": 25,
+          "skipped": 0,
+          "disjoint": 0
+        }
+      }
+    },
+    {
+      "i": 22,
+      "step": "eval",
+      "value": "{\"stepMs\":97.95750581567054,\"lastStepMs\":13.931299999996554,\"vehicles\":98}"
+    },
+    {
+      "i": 23,
+      "step": "memory",
+      "value": {
+        "buildings": 249122,
+        "segments": 52333,
+        "lots": 249122,
+        "heapMB": 1205.7,
+        "geometryMB": 519.1,
+        "geometryCpuMB": 228.3,
+        "textureMB": 581.2,
+        "targetMB": 265,
+        "buildingDetailMB": 0,
+        "drawCalls": 230,
+        "builtTriangles": 119208,
+        "drawnTriangles": 2319391,
+        "programs": 236,
+        "cpuByName": [
+          "building-massing-tile 131.3",
+          "building-concrete 8.4",
+          "flat-world-far 7.7",
+          "building-fin 5",
+          "utility-insulators-cast 3.1",
+          "asphalt+footway+curb-ramp+median-paved+kerb+median-kerb+median-planting-far 2.9",
+          "building-brise 2.5",
+          "building-roofRailing 2.1"
+        ],
+        "gpuByName": [
+          "building-massing-tile 215.3",
+          "building-massing-base 69.3",
+          "building-massing 51",
+          "road-far-network 39",
+          "building-massing-plate 29.9",
+          "asphalt+footway+curb-ramp+median-paved+kerb+median-kerb+median-planting-far 11.8",
+          "building-concrete 8.4",
+          "flat-world-far 7.7",
+          "building-fin 5",
+          "asphalt+footway+curb-ramp+median-paved+kerb+median-kerb+median-planting 3.7",
+          "utility-insulators-cast 3.1",
+          "car-bus-bus-body@# 2.5"
+        ],
+        "heapKBPerBuilding": 5
+      }
+    },
+    {
+      "i": 24,
+      "step": "setView"
+    },
+    {
+      "i": 25,
+      "step": "wait"
+    },
+    {
+      "i": 26,
+      "step": "shot",
+      "file": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\reports\\window-roads\\final-200k-electron\\26-street.png"
+    },
+    {
+      "i": 27,
+      "step": "record"
+    },
+    {
+      "i": 28,
+      "step": "wait"
+    },
+    {
+      "i": 29,
+      "step": "recordEnd",
+      "value": {
+        "name": "street",
+        "frames": 5,
+        "seconds": 4.318,
+        "p50": 1000.1,
+        "p95": 1000.5,
+        "p99": 1000.5,
+        "max": 1001,
+        "hitches": 5,
+        "dropped": 254,
+        "vsyncMs": 16.67,
+        "worst": [
+          [
+            1317,
+            1001
+          ],
+          [
+            3318,
+            1000
+          ],
+          [
+            2317,
+            1000
+          ],
+          [
+            583,
+            734
+          ],
+          [
+            0,
+            583
+          ]
+        ],
+        "game": {
+          "frames": 6,
+          "long": 6,
+          "total": {
+            "p50": 461.4,
+            "p95": 529,
+            "max": 529
+          },
+          "systems": {
+            "panels": {
+              "p50": 0,
+              "p95": 0,
+              "max": 0
+            },
+            "camera": {
+              "p50": 0,
+              "p95": 0,
+              "max": 0
+            },
+            "topology": {
+              "p50": 0,
+              "p95": 0,
+              "max": 0
+            },
+            "simulation": {
+              "p50": 0,
+              "p95": 0.2,
+              "max": 0.2
+            },
+            "roadNetwork": {
+              "p50": 0,
+              "p95": 0,
+              "max": 0
+            },
+            "buildings": {
+              "p50": 0,
+              "p95": 0,
+              "max": 0
+            },
+            "poles": {
+              "p50": 0,
+              "p95": 0,
+              "max": 0
+            },
+            "drawing": {
+              "p50": 461.1,
+              "p95": 528.6,
+              "max": 528.6
+            },
+            "overlay": {
+              "p50": 0.1,
+              "p95": 0.1,
+              "max": 0.1
+            }
+          }
+        },
+        "gpu": {
+          "supported": true,
+          "label": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "n": 22,
+          "p50": 88.8,
+          "p95": 105.47,
+          "p99": 121.6,
+          "max": 121.6,
+          "over": 22,
+          "skipped": 0,
+          "disjoint": 0
+        }
+      }
+    },
+    {
+      "i": 30,
+      "step": "eval",
+      "value": "{\"stepMs\":77.25350208911414,\"lastStepMs\":10.093699999968521,\"vehicles\":23}"
+    },
+    {
+      "i": 31,
+      "step": "memory",
+      "value": {
+        "buildings": 249122,
+        "segments": 52333,
+        "lots": 249122,
+        "heapMB": 1286,
+        "geometryMB": 504,
+        "geometryCpuMB": 119.9,
+        "textureMB": 581.2,
+        "targetMB": 265,
+        "buildingDetailMB": 0,
+        "drawCalls": 245,
+        "builtTriangles": 119208,
+        "drawnTriangles": 2490187,
+        "programs": 236,
+        "cpuByName": [
+          "building-massing-tile 23.6",
+          "building-concrete 8.4",
+          "flat-world-far 7.7",
+          "building-fin 5",
+          "building-massing-base 2.7",
+          "building-brise 2.5",
+          "utility-insulators-cast 2.4",
+          "building-roofRailing 2.1"
+        ],
+        "gpuByName": [
+          "building-massing-tile 121.9",
+          "building-massing-plate 118.4",
+          "building-massing-base 69.3",
+          "building-massing 44.4",
+          "road-far-network 39",
+          "asphalt+footway+curb-ramp+median-paved+kerb+median-kerb+median-planting-far 11.8",
+          "building-concrete 8.4",
+          "flat-world-far 7.7",
+          "building-fin 5",
+          "car-bus-bus-body@# 2.5",
+          "building-brise 2.5",
+          "utility-insulators-cast 2.4"
+        ],
+        "heapKBPerBuilding": 5
+      }
+    },
+    {
+      "i": 32,
+      "step": "eval",
+      "value": 1
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "out": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\reports\\window-roads\\look-2",
+  "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "console": [
+    "warning: THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision",
+    "warning: [roads] a road tile worker has been silent for 10004 ms with tiles waiting (busy or without CPU); still waiting"
+  ],
+  "steps": [
+    {
+      "i": 0,
+      "step": "eval",
+      "value": "started"
+    },
+    {
+      "i": 1,
+      "step": "until",
+      "value": {
+        "name": "city applied",
+        "seconds": 15.944
+      }
+    },
+    {
+      "i": 2,
+      "step": "until",
+      "value": {
+        "name": "city shown",
+        "seconds": 22.039
+      }
+    },
+    {
+      "i": 3,
+      "step": "until",
+      "value": {
+        "name": "curtain gone",
+        "seconds": 2.301
+      }
+    },
+    {
+      "i": 4,
+      "step": "press"
+    },
+    {
+      "i": 5,
+      "step": "press"
+    },
+    {
+      "i": 6,
+      "step": "wait"
+    },
+    {
+      "i": 7,
+      "step": "eval",
+      "value": 1
+    },
+    {
+      "i": 8,
+      "step": "setView"
+    },
+    {
+      "i": 9,
+      "step": "wait"
+    },
+    {
+      "i": 10,
+      "step": "shot",
+      "file": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\reports\\window-roads\\look-2\\10-map.png"
+    },
+    {
+      "i": 11,
+      "step": "eval",
+      "value": "{\"stepMs\":11.199954189380312,\"vehicles\":857,\"people\":614,\"controllers\":230,\"lotsMoving\":12,\"issues\":0}"
+    },
+    {
+      "i": 12,
+      "step": "setView"
+    },
+    {
+      "i": 13,
+      "step": "wait"
+    },
+    {
+      "i": 14,
+      "step": "shot",
+      "file": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\reports\\window-roads\\look-2\\14-district.png"
+    },
+    {
+      "i": 15,
+      "step": "eval",
+      "value": "{\"stepMs\":12.144689276447886,\"vehicles\":837,\"people\":614,\"controllers\":230,\"lotsMoving\":12,\"issues\":0}"
+    },
+    {
+      "i": 16,
+      "step": "setView"
+    },
+    {
+      "i": 17,
+      "step": "wait"
+    },
+    {
+      "i": 18,
+      "step": "shot",
+      "file": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\reports\\window-roads\\look-2\\18-street.png"
+    },
+    {
+      "i": 19,
+      "step": "eval",
+      "value": "{\"stepMs\":6.80004331617131,\"vehicles\":592,\"people\":153,\"controllers\":108,\"lotsMoving\":3,\"issues\":0}"
+    },
+    {
+      "i": 20,
+      "step": "setView"
+    },
+    {
+      "i": 21,
+      "step": "wait"
+    },
+    {
+      "i": 22,
+      "step": "shot",
+      "file": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\reports\\window-roads\\look-2\\22-street-moved.png"
+    },
+    {
+      "i": 23,
+      "step": "eval",
+      "value": "{\"stepMs\":1.5844553659102967,\"vehicles\":95,\"people\":61,\"controllers\":25,\"lotsMoving\":0,\"issues\":0}"
+    },
+    {
+      "i": 24,
+      "step": "setView"
+    },
+    {
+      "i": 25,
+      "step": "wait"
+    },
+    {
+      "i": 26,
+      "step": "shot",
+      "file": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\reports\\window-roads\\look-2\\26-district-moved.png"
+    },
+    {
+      "i": 27,
+      "step": "memory",
+      "value": {
+        "buildings": 8102,
+        "segments": 1687,
+        "lots": 8102,
+        "heapMB": 183.5,
+        "geometryMB": 253,
+        "geometryCpuMB": 103.8,
+        "textureMB": 314.3,
+        "targetMB": 262.2,
+        "buildingDetailMB": 13.5,
+        "drawCalls": 273,
+        "builtTriangles": 616515,
+        "drawnTriangles": 905634,
+        "programs": 237,
+        "cpuByName": [
+          "far-forest 8.7",
+          "building-concrete 8.4",
+          "flat-world-far 7.7",
+          "building-fin 5",
+          "building-brise 2.5",
+          "terrain-seams 2.3",
+          "utility-insulators-cast 2.1",
+          "building-roofRailing 2.1"
+        ],
+        "gpuByName": [
+          "building-massing-plate 41.2",
+          "building-massing-tile 29.8",
+          "asphalt+footway+curb-ramp+median-paved+kerb+median-kerb+median-planting-far 22.5",
+          "building-massing 17.9",
+          "far-forest 11.3",
+          "building-shell-batch-facade 10.7",
+          "building-concrete 8.5",
+          "flat-world-far 7.7",
+          "gardens-far-cells 7.6",
+          "building-fin 5",
+          "building-shell-batch-detail 4.2",
+          "building-lotBox 2.9"
+        ],
+        "heapKBPerBuilding": 23
+      }
+    }
+  ]
+}

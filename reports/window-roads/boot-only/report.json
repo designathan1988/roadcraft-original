@@ -1,0 +1,14 @@
+{
+  "out": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\reports\\window-roads\\boot-only",
+  "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "console": [
+    "warning: %cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security\n  Policy set or a policy with \"unsafe-eval\" enabled. This exposes users of\n  this app to unnecessary security risks.\n\nFor more information and help, consult\nhttps://electronjs.org/docs/tutorial/security.\nThis warning will not show up\nonce the app is packaged."
+  ],
+  "steps": [
+    {
+      "i": 0,
+      "step": "eval",
+      "value": "{\"probes\":\"object\",\"ready\":\"complete\"}"
+    }
+  ]
+}

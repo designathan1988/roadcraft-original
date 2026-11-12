@@ -1,0 +1,23 @@
+{
+  "out": "C:\\Users\\Jonathan\\Documents\\Projects\\city\\roadcraft\\reports\\window-roads\\look-5",
+  "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "console": [
+    "warning: THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision",
+    "pageerror: Cannot read properties of undefined (reading 'scene')\nTypeError: Cannot read properties of undefined (reading 'scene')\n    at eval (eval at predicate (eval at evaluate (:311:30)), <anonymous>:1:149)\n    at eval (eval at predicate (eval at evaluate (:311:30)), <anonymous>:1:168)\n    at eval (<anonymous>)\n    at predicate (eval at evaluate (:311:30), <anonymous>:4:60)\n    at next (eval at evaluate (:311:30), <anonymous>:29:33)\n    at eval (eval at evaluate (:311:30), <anonymous>:42:13)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+  ],
+  "steps": [
+    {
+      "i": 0,
+      "step": "eval",
+      "value": "started"
+    },
+    {
+      "i": 1,
+      "step": "until",
+      "value": {
+        "name": "city applied",
+        "seconds": 22.247
+      }
+    }
+  ]
+}
